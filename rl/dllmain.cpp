@@ -16,17 +16,17 @@ void OnAttach() {
 		printf("TESTING\n");
 		try
 		{
-			//for (int j = 0; j < myWorld->Levels.Max; j++) {
-			//	ULevel* pLevel = myWorld->Levels.Data[j];
-			//	if (pLevel) {
-			//		for (int i = 0; i < pLevel->Actors.Count; i++) {
-			//			AActor* Actor = pLevel->Actors.Data[i];
-			//			if (Actor && !Actor->bDeleteMe) {
-			//				printf(Actor->GetName());
-			//			}
-			//		}
-			//	}
-			//}
+			for (int j = 0; j < myWorld->Levels.Max; j++) {
+				ULevel* pLevel = myWorld->Levels.Data[j];
+				if (pLevel) {
+					for (int i = 0; i < pLevel->Actors.Count; i++) {
+						AActor* Actor = pLevel->Actors.Data[i];
+						if (Actor && !Actor->bDeleteMe) {
+							printf(Actor->GetName());
+						}
+					}
+				}
+			}
 		}
 		catch (const std::exception& ex) {
 			printf("Exception1");
