@@ -11,6 +11,9 @@
 #############################################################################################
 */
 #include <stdio.h>
+#include <iostream>
+#include <fstream>
+using namespace std;
 
 #ifdef _MSC_VER
 	#pragma pack ( push, 0x4 )
@@ -101,6 +104,48 @@ char* UObject::GetFullName()
 	return "(null)"; 
 } 
 
+void UObject::ListObjects()
+{
+	while (!UObject::GObjObjects())
+		Sleep(100);
+
+	while (!FName::Names())
+		Sleep(100);
+
+	for (int i = 0; i < UObject::GObjObjects()->Count; ++i)
+	{
+		UObject* Object = UObject::GObjObjects()->Data[i];
+ 
+		if(	!Object	)continue;
+
+		printf(Object->GetFullName());
+	}
+}
+
+void UObject::SaveObjects()
+{
+	while (!UObject::GObjObjects())
+		Sleep(100);
+
+	while (!FName::Names())
+		Sleep(100);
+
+	ofstream myfile;
+	myfile.open("obj.txt");
+
+	for (int i = 0; i < UObject::GObjObjects()->Count; ++i)
+	{
+		UObject* Object = UObject::GObjObjects()->Data[i];
+
+		if (!Object)continue;
+
+		myfile << Object->GetFullName();
+		myfile << "\n";
+	}
+	myfile.close();
+}
+
+
 template< class T > T* UObject::FindObject ( char* ObjectFullName ) 
 { 
 	while ( ! UObject::GObjObjects() ) 
@@ -117,7 +162,7 @@ template< class T > T* UObject::FindObject ( char* ObjectFullName )
 		if 
 		( 
 				! Object 
-			||	! Object->IsA ( T::StaticClass() ) 
+			//||	! Object->IsA ( T::StaticClass() ) 
 		) 
 			continue; 
 
