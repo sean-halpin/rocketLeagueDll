@@ -212,7 +212,7 @@
 class UObject
 {
 public:
-	struct FPointer                                    VfTableObject;                                    		// 0x0000 (0x0004) [0x0000000000821002]              ( CPF_Const | CPF_Native | CPF_EditConst | CPF_NoExport )
+	//struct FPointer                                    VfTableObject;                                    		// 0x0000 (0x0004) [0x0000000000821002]              ( CPF_Const | CPF_Native | CPF_EditConst | CPF_NoExport )
 	struct FPointer                                    HashNext;                                         		// 0x0004 (0x0004) [0x0000000000021002]              ( CPF_Const | CPF_Native | CPF_EditConst )
 	unsigned char                                      UnknownData00[ 0x8 ];                             		// 0x0008 (0x0008) UNKNOWN PROPERTY: QWordProperty Core.Object.ObjectFlags
 	struct FPointer                                    HashOuterNext;                                    		// 0x0010 (0x0004) [0x0000000000021002]              ( CPF_Const | CPF_Native | CPF_EditConst )
@@ -235,7 +235,9 @@ public:
 	char* GetName(); 
 	char* GetNameCPP(); 
 	char* GetFullName(); 
-
+	
+	void ListObjects();
+	void SaveObjects();
 	template< class T > static T* FindObject ( char* ObjectFullName ); 
 	static UClass* FindClass ( char* ClassFullName ); 
 

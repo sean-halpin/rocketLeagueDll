@@ -17,8 +17,12 @@
 # ========================================================================================= #
 */
 
-#define GObjects			0x02AA4888
-#define GNames				0x02AA4858
+#define GObjects			0x01D24888
+//0x02AA4888
+//1D24888
+#define GNames				0x01D24858
+//0x02AA4858
+//1D24858
 
 /*
 # ========================================================================================= #
@@ -79,7 +83,7 @@ struct FNameEntry
 struct FName
 {
 	int				Index;
-	unsigned char	unknownData00[0x4];
+	unsigned char	unknownData00hh[0x4];
 
 	FName() : Index(0) {};
 
@@ -196,14 +200,14 @@ struct FScriptDelegate
 #include "SDK_HEADERS\AkAudio_classes.h"
 #include "SDK_HEADERS\AkAudio_f_structs.h"
 #include "SDK_HEADERS\AkAudio_functions.h"
-#include "SDK_HEADERS\WinDrv_structs.h"
-#include "SDK_HEADERS\WinDrv_classes.h"
-#include "SDK_HEADERS\WinDrv_f_structs.h"
-#include "SDK_HEADERS\WinDrv_functions.h"
-#include "SDK_HEADERS\OnlineSubsystemSteamworks_structs.h"
-#include "SDK_HEADERS\OnlineSubsystemSteamworks_classes.h"
-#include "SDK_HEADERS\OnlineSubsystemSteamworks_f_structs.h"
-#include "SDK_HEADERS\OnlineSubsystemSteamworks_functions.h"
+//#include "SDK_HEADERS\WinDrv_structs.h"
+//#include "SDK_HEADERS\WinDrv_classes.h"
+//#include "SDK_HEADERS\WinDrv_f_structs.h"
+//#include "SDK_HEADERS\WinDrv_functions.h"
+//#include "SDK_HEADERS\OnlineSubsystemSteamworks_structs.h"
+//#include "SDK_HEADERS\OnlineSubsystemSteamworks_classes.h"
+//#include "SDK_HEADERS\OnlineSubsystemSteamworks_f_structs.h"
+//#include "SDK_HEADERS\OnlineSubsystemSteamworks_functions.h"
 #include "SDK_HEADERS\ProjectX_structs.h"
 #include "SDK_HEADERS\ProjectX_classes.h"
 #include "SDK_HEADERS\ProjectX_f_structs.h"
