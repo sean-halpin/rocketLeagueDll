@@ -13,6 +13,7 @@
 #include <stdio.h>
 #include <iostream>
 #include <fstream>
+//#include "Globals.h"
 using namespace std;
 
 #ifdef _MSC_VER
@@ -27,7 +28,7 @@ using namespace std;
 
 TArray< UObject* >* UObject::GObjObjects() 
 { 
-	TArray< UObject* >* ObjectArray = (TArray< UObject* >*) GObjects; 
+	TArray< UObject* >* ObjectArray = (TArray< UObject* >*) Glob::GObjects();//GObjects; 
 	return ObjectArray; 
 } 
 
