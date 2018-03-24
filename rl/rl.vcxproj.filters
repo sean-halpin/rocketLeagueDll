@@ -180,4 +180,8 @@
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
+  <ItemGroup>
+    <Text Include="..\obj.txt" />
+    <Text Include="..\objects.txt" />
+  </ItemGroup>
 </Project>
