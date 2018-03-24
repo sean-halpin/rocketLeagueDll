@@ -24,12 +24,11 @@ UObject* pCallObject = NULL;
 UFunction* pFunction = NULL;
 void* pParms = NULL;
 void* pResult = NULL;
-char FunctionName[256] = { '\0' };
+char FunctionName[256];
 
 void __declspec (naked) hkProcessEventWP()
 {
 	__asm mov pCallObject, ecx;
-
 	__asm
 	{
 		push eax
@@ -40,31 +39,29 @@ void __declspec (naked) hkProcessEventWP()
 		mov eax, dword ptr[esp + 0x10]
 		mov pResult, eax
 		pop eax
-
-		pushad
 	}
+	_asm pushad
 
-	if (pFunction)
-	{
-		strcpy(FunctionName, pFunction->GetFullName());
-		if (!strcmp(FunctionName, "Function Engine.PlayerController.PlayerTick"))
-		{
-			fDeltaTime += 1;
-			//if (!playerController && pCallObject) {
-			//	playerController = (APlayerController*)pCallObject;
-			//}
-		}
-		else if (!strcmp(FunctionName, "Function Engine.PlayerController.Destroyed"))
-		{
-			//if (pCallObject && playerController == pCallObject)
-			//{
-			//	playerController = NULL;
-			//}
-		}
-	}
-
+	//if (pFunction)
+	//{
+		//strcpy(FunctionName, pFunction->GetFullName());
+		fDeltaTime += 1;
+		//if (!strcmp(FunctionName, "Function Engine.PlayerController.PlayerTick"))
+		//{
+		//	fDeltaTime += 1;
+		//	//if (!playerController && pCallObject) {
+		//	//	playerController = (APlayerController*)pCallObject;
+		//	//}
+		//}
+		//else if (!strcmp(FunctionName, "Function Engine.PlayerController.Destroyed"))
+		//{
+		//	//if (pCallObject && playerController == pCallObject)
+		//	//{
+		//	//	playerController = NULL;
+		//	//}
+		//}
+	//}
 	__asm popad;
-
 	__asm
 	{
 		push pResult
@@ -83,7 +80,7 @@ void OnAttach() {
 	AttachConsole(GetCurrentProcessId());
 	freopen("CON", "w", stdout);
 	printf("Attach success\n");
-
+	
 	APlayerController* controller = NULL;
 	PDWORD newcontroller = NULL;
 	//controller = UObject::FindObject<UObject>("PlayerController_TA TAGame.Default__PlayerController_TA");
