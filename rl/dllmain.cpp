@@ -1,13 +1,19 @@
 #include "stdafx.h"
 #include "SdkHeaders.h"
+#include "TFL_HT.h"
 #include <chrono>
 #include <thread>
 #include "VMTH.h"
 
-#define ProcessEventWP 0x0041EAC0//0x00746500 0x0041EAC0
-#define ProcessEventWP_Index 66	
+//#define ProcessEventWP 0x0041EAC0//0x00746500 0x0041EAC0
+//#define ProcessEventWP_Index 66	
+#define ProcessEvent_Pattern	"\x74\x00\x83\xC0\x07\x83\xE0\xF8\xE8\x00\x00\x00\x00\x8B\xC4"
+#define ProcessEvent_Mask		"x?xxxxxxx????xx"
+DWORD	ProcessEventWP = 0;
+UINT	ProcessEventWP_Index = 0;
+
 typedef void(__stdcall* tProcessEventWP) (UFunction*, void*, void*);
-tProcessEventWP pProcessEventWP = (tProcessEventWP)ProcessEventWP;
+tProcessEventWP pProcessEventWP = NULL;
 
 UObject* pCallObject = NULL;
 UFunction* pFunction = NULL;
@@ -20,6 +26,28 @@ APlayerController* pPlayerController = NULL;
 float fDeltaTime = NULL;
 
 char FunctionName[256] = { '\0' };
+
+UClass * SUObject::FindClass(char * ClassFullName)
+{
+	while (!UObject::GObjObjects())
+		Sleep(100);
+
+	while (!FName::Names())
+		Sleep(100);
+
+	for (int i = 0; i < UObject::GObjObjects()->Count; ++i)
+	{
+		UObject* Object = UObject::GObjObjects()->Data[i];
+
+		if (!Object)
+			continue;
+
+		if (!_stricmp(Object->GetFullName(), ClassFullName))
+			return (UClass*)Object;
+	}
+
+	return NULL;
+}
 
 FColor MakeColor(int R, int G, int B, int A)
 {
@@ -40,6 +68,10 @@ void PostRender(UCanvas* pCanvas)
 		pCanvas->Draw2DLine(pCanvas->ClipX / 2 - 10, pCanvas->ClipY / 2, pCanvas->ClipX / 2 + 10, pCanvas->ClipY / 2, Green);
 		pCanvas->Draw2DLine(pCanvas->ClipX / 2, pCanvas->ClipY / 2 - 10, pCanvas->ClipX / 2, pCanvas->ClipY / 2 + 10, Green);
 	}
+}
+
+void PlayerTick() {
+
 }
 
 /* [...] */
@@ -63,26 +95,23 @@ void __declspec (naked) hkProcessEventWP()
 	}
 	if (pFunction)
 	{
+		printf("Hooked ");
 		strcpy(FunctionName, pFunction->GetFullName());
 
-#ifdef DUMP_FUNCTIONS
-		fputs(FunctionName, funcallsfp);
-		fputs("\n", funcallsfp);
-#endif
+		//if (!strcmp(FunctionName, "Function Engine.GameViewportClient.PostRender")) //If its a postrender call
+		//{
+		//	UGameViewportClient* viewport = (UGameViewportClient*)pCallObject;
+		//	UGameViewportClient_eventPostRender_Parms* parameters = (UGameViewportClient_eventPostRender_Parms*)pParms;
 
-		if (!strcmp(FunctionName, "Function Engine.GameViewportClient.PostRender")) //If its a postrender call
-		{
-			UGameViewportClient* viewport = (UGameViewportClient*)pCallObject;
-			UGameViewportClient_eventPostRender_Parms* parameters = (UGameViewportClient_eventPostRender_Parms*)pParms;
-
-			if (parameters)
-			{
-				PostRender(parameters->Canvas);
-			}
-		}
+		//	if (parameters)
+		//	{
+		//		PostRender(parameters->Canvas);
+		//	}
+		//}
 		if (!strcmp(FunctionName, "Function Engine.PlayerController.PlayerTick"))
 		{
-			APlayerController_TA* playerController = (APlayerController_TA*)pCallObject;
+			//APlayerController* playerController = (APlayerController*)pCallObject;
+			printf("Hooked F");
 		}
 	}
 
@@ -113,6 +142,23 @@ void OnAttach() {
 
 	PDWORD oldviewport = *(PDWORD*)viewport;
 	PDWORD oldcontroller = *(PDWORD*)controller;
+
+	//FIND PROCESS EVENT
+	UClass * pClass = (UClass*)UObject::FindClass("Class Core.Object");
+	unsigned long VfTable = (unsigned long)(((SUClass *)pClass)->VfTableObject.Dummy);
+	tProcessEventWP pProcessEventWP = (tProcessEventWP)ProcessEventWP;
+
+	for (unsigned long i = 0x0; i < 0x400; i += 0x4)
+	{
+		if (TFLHACKT00LS::FindPattern(*(unsigned long*)(VfTable + i), 0x200, (unsigned char*)ProcessEvent_Pattern, (char*)ProcessEvent_Mask))
+		{
+			ProcessEventWP = (*(unsigned long*)(VfTable + i));
+			ProcessEventWP_Index = i / 4;
+			break;
+		}
+	}
+
+	pProcessEventWP = (tProcessEventWP)ProcessEventWP;
 
 	if (VMTH::SwapVMT((PDWORD*)viewport))
 	{

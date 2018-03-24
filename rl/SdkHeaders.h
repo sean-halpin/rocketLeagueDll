@@ -17,13 +17,13 @@
 # ========================================================================================= #
 */
 
-#define GObjects			0x01D24888
-//0x02AA4888
+//#define GObjects			0x01D24888
+//#define GObjects	0x02AA4888
 //1D24888
-#define GNames				0x01D24858
-//0x02AA4858
+//#define GNames				0x01D24858
+//#define GNames	0x02AA4858
 //1D24858
-
+#include "Globals.h"
 /*
 # ========================================================================================= #
 # Structs
@@ -119,7 +119,7 @@ struct FName
 
 	static TArray< FNameEntry* >* Names()
 	{
-		return (TArray< FNameEntry* >*) GNames;
+		return (TArray< FNameEntry* >*) Glob::GNames();//GNames;
 	};
 
 	char* GetName()
@@ -216,3 +216,42 @@ struct FScriptDelegate
 #include "SDK_HEADERS\TAGame_classes.h"
 #include "SDK_HEADERS\TAGame_f_structs.h"
 #include "SDK_HEADERS\TAGame_functions.h"
+
+
+class SUObject
+{
+public:
+	struct FPointer            VfTableObject;
+
+public:
+	static UClass* FindClass(char* ClassFullName);
+};
+
+class SUField : public SUObject
+{
+public:
+	class SUField*        Next;
+};
+
+class SUStruct : public SUField
+{
+public:
+	unsigned char            UnknownData00[8];
+	class UField*            SuperField;
+	class UField*            Children;
+	unsigned long            PropertySize;
+	unsigned char            UnknownData01[48];
+};
+
+class SUState : public SUStruct
+{
+public:
+	unsigned char            UnknownData00[72];
+};
+
+
+class SUClass : public SUState
+{
+public:
+	unsigned char            UnknownData00[324];
+};
