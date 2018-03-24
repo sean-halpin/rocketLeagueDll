@@ -4,14 +4,19 @@
 #include <chrono>
 #include <thread>
 #include "VMTH.h"
+	
+//#define DUMP_OBJECTS
+#define OBJECT_DUMP_PATH    "objects.txt"
 
-//#define ProcessEventWP 0x0041EAC0//0x00746500 0x0041EAC0
-//#define ProcessEventWP_Index 66	
 #define ProcessEvent_Pattern	"\x74\x00\x83\xC0\x07\x83\xE0\xF8\xE8\x00\x00\x00\x00\x8B\xC4"
 #define ProcessEvent_Mask		"x?xxxxxxx????xx"
 DWORD	ProcessEventWP = 0;
 UINT	ProcessEventWP_Index = 0;
 
+float fDeltaTime = 0.0;
+APlayerController* playerController = NULL;
+
+/* [...] */
 typedef void(__stdcall* tProcessEventWP) (UFunction*, void*, void*);
 tProcessEventWP pProcessEventWP = NULL;
 
@@ -19,67 +24,11 @@ UObject* pCallObject = NULL;
 UFunction* pFunction = NULL;
 void* pParms = NULL;
 void* pResult = NULL;
-
-AHUD* pAHUD = NULL;
-UCanvas* pCanvas = NULL;
-APlayerController* pPlayerController = NULL;
-float fDeltaTime = NULL;
-
-char FunctionName[256] = { '\0' };
-
-UClass * SUObject::FindClass(char * ClassFullName)
-{
-	while (!UObject::GObjObjects())
-		Sleep(100);
-
-	while (!FName::Names())
-		Sleep(100);
-
-	for (int i = 0; i < UObject::GObjObjects()->Count; ++i)
-	{
-		UObject* Object = UObject::GObjObjects()->Data[i];
-
-		if (!Object)
-			continue;
-
-		if (!_stricmp(Object->GetFullName(), ClassFullName))
-			return (UClass*)Object;
-	}
-
-	return NULL;
-}
-
-FColor MakeColor(int R, int G, int B, int A)
-{
-	FColor ReturnedColor;
-	ReturnedColor.R = R;
-	ReturnedColor.G = G;
-	ReturnedColor.B = B;
-	ReturnedColor.A = A;
-	return ReturnedColor;
-}
-FColor Green = MakeColor(0, 255, 0, 255);
-FColor Red = MakeColor(255, 0, 0, 255);
-void PostRender(UCanvas* pCanvas)
-{
-	if (pCanvas)
-	{
-		FColor Green = MakeColor(0, 255, 0, 255);
-		pCanvas->Draw2DLine(pCanvas->ClipX / 2 - 10, pCanvas->ClipY / 2, pCanvas->ClipX / 2 + 10, pCanvas->ClipY / 2, Green);
-		pCanvas->Draw2DLine(pCanvas->ClipX / 2, pCanvas->ClipY / 2 - 10, pCanvas->ClipX / 2, pCanvas->ClipY / 2 + 10, Green);
-	}
-}
-
-void PlayerTick() {
-
-}
-
-/* [...] */
+char FunctionName[256];
 
 void __declspec (naked) hkProcessEventWP()
 {
 	__asm mov pCallObject, ecx;
-
 	__asm
 	{
 		push eax
@@ -90,33 +39,29 @@ void __declspec (naked) hkProcessEventWP()
 		mov eax, dword ptr[esp + 0x10]
 		mov pResult, eax
 		pop eax
-
-		pushad
 	}
-	if (pFunction)
-	{
-		printf("Hooked ");
-		strcpy(FunctionName, pFunction->GetFullName());
+	_asm pushad
 
-		//if (!strcmp(FunctionName, "Function Engine.GameViewportClient.PostRender")) //If its a postrender call
+	//if (pFunction)
+	//{
+		//strcpy(FunctionName, pFunction->GetFullName());
+		fDeltaTime += 1;
+		//if (!strcmp(FunctionName, "Function Engine.PlayerController.PlayerTick"))
 		//{
-		//	UGameViewportClient* viewport = (UGameViewportClient*)pCallObject;
-		//	UGameViewportClient_eventPostRender_Parms* parameters = (UGameViewportClient_eventPostRender_Parms*)pParms;
-
-		//	if (parameters)
-		//	{
-		//		PostRender(parameters->Canvas);
-		//	}
+		//	fDeltaTime += 1;
+		//	//if (!playerController && pCallObject) {
+		//	//	playerController = (APlayerController*)pCallObject;
+		//	//}
 		//}
-		if (!strcmp(FunctionName, "Function Engine.PlayerController.PlayerTick"))
-		{
-			//APlayerController* playerController = (APlayerController*)pCallObject;
-			printf("Hooked F");
-		}
-	}
-
+		//else if (!strcmp(FunctionName, "Function Engine.PlayerController.Destroyed"))
+		//{
+		//	//if (pCallObject && playerController == pCallObject)
+		//	//{
+		//	//	playerController = NULL;
+		//	//}
+		//}
+	//}
 	__asm popad;
-
 	__asm
 	{
 		push pResult
@@ -131,23 +76,23 @@ void __declspec (naked) hkProcessEventWP()
 /* [...] */
 
 void OnAttach() {
-	UObject* viewport = NULL;
-	UObject* controller = NULL;
-
-	PDWORD newviewport = NULL;
+	AllocConsole();
+	AttachConsole(GetCurrentProcessId());
+	freopen("CON", "w", stdout);
+	printf("Attach success\n");
+	
+	APlayerController* controller = NULL;
 	PDWORD newcontroller = NULL;
-
-	viewport = UObject::FindObject<UObject>("GameViewportClient_TA TAGame.Default__GameViewportClient_TA");
-	controller = UObject::FindObject<UObject>("PlayerController_TA TAGame.Default__PlayerController_TA");
-
-	PDWORD oldviewport = *(PDWORD*)viewport;
+	//controller = UObject::FindObject<UObject>("PlayerController_TA TAGame.Default__PlayerController_TA");
+	controller = UObject::FindObject<APlayerController>("PlayerController_TA TheWorld.PersistentLevel.PlayerController_TA");
+	//controller = UObject::FindObject<UObject>("Class Engine.PlayerController");
+	//controller = UObject::FindObject<UObject>("PlayerController Engine.Default__PlayerController");
+	//controller = UObject::FindObject<UObject>("GamePlayerController GameFramework.Default__GamePlayerController");
 	PDWORD oldcontroller = *(PDWORD*)controller;
 
 	//FIND PROCESS EVENT
-	UClass * pClass = (UClass*)UObject::FindClass("Class Core.Object");
-	unsigned long VfTable = (unsigned long)(((SUClass *)pClass)->VfTableObject.Dummy);
-	tProcessEventWP pProcessEventWP = (tProcessEventWP)ProcessEventWP;
-
+	UObject * pClass = UObject::FindClass("Class Core.Object");
+	unsigned long VfTable = *(DWORD*)pClass;
 	for (unsigned long i = 0x0; i < 0x400; i += 0x4)
 	{
 		if (TFLHACKT00LS::FindPattern(*(unsigned long*)(VfTable + i), 0x200, (unsigned char*)ProcessEvent_Pattern, (char*)ProcessEvent_Mask))
@@ -157,20 +102,55 @@ void OnAttach() {
 			break;
 		}
 	}
-
 	pProcessEventWP = (tProcessEventWP)ProcessEventWP;
-
-	if (VMTH::SwapVMT((PDWORD*)viewport))
-	{
-		newviewport = *(PDWORD*)viewport;
-		VMTH::HookVMTFuncion((PDWORD*)viewport, (DWORD)hkProcessEventWP, (UINT)ProcessEventWP_Index);
-	}
 
 	if (VMTH::SwapVMT((PDWORD*)controller))
 	{
 		newcontroller = *(PDWORD*)controller;
-		VMTH::HookVMTFuncion((PDWORD*)controller, (DWORD)hkProcessEventWP, (UINT)ProcessEventWP_Index);
+		if(VMTH::HookVMTFuncion((PDWORD*)controller, (DWORD)hkProcessEventWP, (UINT)ProcessEventWP_Index)) {
+			printf("HookVMTFuncion successfull for controller\n");
+		}
 	}
+
+#ifdef DUMP_OBJECTS
+	TArray<UObject*> * arr2 = UObject::GObjObjects();
+
+	FILE* fp = fopen(OBJECT_DUMP_PATH, "w");
+
+	if (arr2)
+	{
+		printf("Dumping.....\n");
+		for (int i = 0; i < arr2->Num(); i++)
+		{
+			if ((*arr2)(i) == NULL) // there are null objects for somereason
+				continue;
+			if (strcmp((*arr2)(i)->GetName(), "None") && (*arr2)(i))
+			{
+				fprintf(fp, "%d - %d : %s\n", i, arr2->Num(), (*arr2)(i)->GetFullName());
+			}
+		}
+		printf("Done\n");
+	}
+	else
+	{
+		printf("Objects not found\n");
+	}
+	fclose(fp);
+#endif
+
+	while (true) {
+		Sleep(1000/30);
+		if (fDeltaTime) {
+			printf("Delta %.6f \n", fDeltaTime);
+		}
+		if (playerController) {
+			printf("Car %.6f \n", 0.0);
+		}
+	}
+}
+
+void onDetach() {
+	FreeConsole();
 }
 
 BOOL APIENTRY DllMain(HMODULE hModule,
@@ -187,6 +167,8 @@ BOOL APIENTRY DllMain(HMODULE hModule,
 	case DLL_THREAD_ATTACH:
 	case DLL_THREAD_DETACH:
 	case DLL_PROCESS_DETACH:
+		onDetach();
+		return false;
 		break;
 	}
 	return TRUE;

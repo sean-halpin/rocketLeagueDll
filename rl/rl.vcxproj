@@ -213,6 +213,10 @@
     <ClCompile Include="TFL_HT.cpp" />
     <ClCompile Include="VMTH.cpp" />
   </ItemGroup>
+  <ItemGroup>
+    <Text Include="..\obj.txt" />
+    <Text Include="..\objects.txt" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
