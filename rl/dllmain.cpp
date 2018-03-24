@@ -12,14 +12,6 @@
 DWORD	ProcessEventWP = 0;
 UINT	ProcessEventWP_Index = 0;
 
-typedef void(__stdcall* tProcessEventWP) (UFunction*, void*, void*);
-tProcessEventWP pProcessEventWP = NULL;
-
-UObject* pCallObject = NULL;
-UFunction* pFunction = NULL;
-void* pParms = NULL;
-void* pResult = NULL;
-
 AHUD* pAHUD = NULL;
 UCanvas* pCanvas = NULL;
 APlayerController* pPlayerController = NULL;
@@ -60,7 +52,7 @@ FColor MakeColor(int R, int G, int B, int A)
 }
 FColor Green = MakeColor(0, 255, 0, 255);
 FColor Red = MakeColor(255, 0, 0, 255);
-void PostRender(UCanvas* pCanvas)
+void inline PostRender(UCanvas* pCanvas)
 {
 	if (pCanvas)
 	{
@@ -75,6 +67,13 @@ void PlayerTick() {
 }
 
 /* [...] */
+typedef void(__stdcall* tProcessEventWP) (UFunction*, void*, void*);
+tProcessEventWP pProcessEventWP = NULL;
+
+UObject* pCallObject = NULL;
+UFunction* pFunction = NULL;
+void* pParms = NULL;
+void* pResult = NULL;
 
 void __declspec (naked) hkProcessEventWP()
 {
@@ -93,26 +92,26 @@ void __declspec (naked) hkProcessEventWP()
 
 		pushad
 	}
+	printf("Hooked ");
 	if (pFunction)
 	{
-		printf("Hooked ");
 		strcpy(FunctionName, pFunction->GetFullName());
 
-		//if (!strcmp(FunctionName, "Function Engine.GameViewportClient.PostRender")) //If its a postrender call
-		//{
-		//	UGameViewportClient* viewport = (UGameViewportClient*)pCallObject;
-		//	UGameViewportClient_eventPostRender_Parms* parameters = (UGameViewportClient_eventPostRender_Parms*)pParms;
-
-		//	if (parameters)
-		//	{
-		//		PostRender(parameters->Canvas);
-		//	}
-		//}
-		if (!strcmp(FunctionName, "Function Engine.PlayerController.PlayerTick"))
+		if (!strcmp(FunctionName, "Function Engine.GameViewportClient.PostRender")) //If its a postrender call
 		{
-			//APlayerController* playerController = (APlayerController*)pCallObject;
-			printf("Hooked F");
+			UGameViewportClient* viewport = (UGameViewportClient*)pCallObject;
+			UGameViewportClient_eventPostRender_Parms* parameters = (UGameViewportClient_eventPostRender_Parms*)pParms;
+
+			if (parameters)
+			{
+				PostRender(parameters->Canvas);
+			}
 		}
+		//if (!strcmp(FunctionName, "Function Engine.PlayerController.PlayerTick"))
+		//{
+		//	//APlayerController* playerController = (APlayerController*)pCallObject;
+		//	printf("Hooked F");
+		//}
 	}
 
 	__asm popad;
@@ -131,6 +130,12 @@ void __declspec (naked) hkProcessEventWP()
 /* [...] */
 
 void OnAttach() {
+	AllocConsole();
+	AttachConsole(GetCurrentProcessId());
+	freopen("CON", "w", stdout);
+	printf("Attach success\n");
+
+
 	UObject* viewport = NULL;
 	UObject* controller = NULL;
 
@@ -146,8 +151,6 @@ void OnAttach() {
 	//FIND PROCESS EVENT
 	UClass * pClass = (UClass*)UObject::FindClass("Class Core.Object");
 	unsigned long VfTable = (unsigned long)(((SUClass *)pClass)->VfTableObject.Dummy);
-	tProcessEventWP pProcessEventWP = (tProcessEventWP)ProcessEventWP;
-
 	for (unsigned long i = 0x0; i < 0x400; i += 0x4)
 	{
 		if (TFLHACKT00LS::FindPattern(*(unsigned long*)(VfTable + i), 0x200, (unsigned char*)ProcessEvent_Pattern, (char*)ProcessEvent_Mask))
@@ -157,20 +160,31 @@ void OnAttach() {
 			break;
 		}
 	}
-
 	pProcessEventWP = (tProcessEventWP)ProcessEventWP;
 
 	if (VMTH::SwapVMT((PDWORD*)viewport))
 	{
 		newviewport = *(PDWORD*)viewport;
-		VMTH::HookVMTFuncion((PDWORD*)viewport, (DWORD)hkProcessEventWP, (UINT)ProcessEventWP_Index);
+		if (VMTH::HookVMTFuncion((PDWORD*)viewport, (DWORD)hkProcessEventWP, (UINT)ProcessEventWP_Index)) {
+			printf("HookVMTFuncion successfull for viewport\n");
+		}
 	}
 
 	if (VMTH::SwapVMT((PDWORD*)controller))
 	{
 		newcontroller = *(PDWORD*)controller;
-		VMTH::HookVMTFuncion((PDWORD*)controller, (DWORD)hkProcessEventWP, (UINT)ProcessEventWP_Index);
+		if(VMTH::HookVMTFuncion((PDWORD*)controller, (DWORD)hkProcessEventWP, (UINT)ProcessEventWP_Index)) {
+			printf("HookVMTFuncion successfull for controller\n");
+		}
 	}
+
+	while (true) {
+		Sleep(1);
+	}
+}
+
+void onDetach() {
+	FreeConsole();
 }
 
 BOOL APIENTRY DllMain(HMODULE hModule,
@@ -187,6 +201,8 @@ BOOL APIENTRY DllMain(HMODULE hModule,
 	case DLL_THREAD_ATTACH:
 	case DLL_THREAD_DETACH:
 	case DLL_PROCESS_DETACH:
+		onDetach();
+		return false;
 		break;
 	}
 	return TRUE;
