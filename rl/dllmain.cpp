@@ -1,11 +1,14 @@
+//#define _CRT_SECURE_NO_WARNINGS
+//#pragma optimize("", off) 
+//#define DUMP_OBJECTS
+
 #include "stdafx.h"
 #include "SdkHeaders.h"
 #include "TFL_HT.h"
-#include <chrono>
-#include <thread>
+//#include <chrono>
+//#include <thread>
 #include "VMTH.h"
-	
-//#define DUMP_OBJECTS
+
 #define OBJECT_DUMP_PATH    "objects.txt"
 
 #define ProcessEvent_Pattern	"\x74\x00\x83\xC0\x07\x83\xE0\xF8\xE8\x00\x00\x00\x00\x8B\xC4"
@@ -26,7 +29,7 @@ void* pParms = NULL;
 void* pResult = NULL;
 char FunctionName[256];
 
-void __declspec (naked) hkProcessEventWP()
+void __declspec (naked) __stdcall hkProcessEventWP()
 {
 	__asm mov pCallObject, ecx;
 	__asm
@@ -42,25 +45,25 @@ void __declspec (naked) hkProcessEventWP()
 	}
 	_asm pushad
 
-	//if (pFunction)
-	//{
-		//strcpy(FunctionName, pFunction->GetFullName());
-		fDeltaTime += 1;
-		//if (!strcmp(FunctionName, "Function Engine.PlayerController.PlayerTick"))
-		//{
-		//	fDeltaTime += 1;
-		//	//if (!playerController && pCallObject) {
-		//	//	playerController = (APlayerController*)pCallObject;
-		//	//}
-		//}
-		//else if (!strcmp(FunctionName, "Function Engine.PlayerController.Destroyed"))
-		//{
-		//	//if (pCallObject && playerController == pCallObject)
-		//	//{
-		//	//	playerController = NULL;
-		//	//}
-		//}
-	//}
+	if (pFunction)
+	{
+		//fDeltaTime += 1;
+		strcpy(FunctionName, pFunction->GetFullName());
+		if (!strcmp(FunctionName, "Function Engine.PlayerController.PlayerTick"))
+		{
+			fDeltaTime += 1;
+			//if (!playerController && pCallObject) {
+			//	playerController = (APlayerController*)pCallObject;
+			//}
+		}
+		else if (!strcmp(FunctionName, "Function Engine.PlayerController.Destroyed"))
+		{
+			//if (pCallObject && playerController == pCallObject)
+			//{
+			//	playerController = NULL;
+			//}
+		}
+	}
 	__asm popad;
 	__asm
 	{
