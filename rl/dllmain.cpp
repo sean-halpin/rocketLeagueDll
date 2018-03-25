@@ -1,12 +1,6 @@
-//#define _CRT_SECURE_NO_WARNINGS
-//#pragma optimize("", off) 
-//#define DUMP_OBJECTS
-
 #include "stdafx.h"
 #include "SdkHeaders.h"
 #include "TFL_HT.h"
-//#include <chrono>
-//#include <thread>
 #include "VMTH.h"
 
 #define OBJECT_DUMP_PATH    "objects.txt"
@@ -47,21 +41,20 @@ void __declspec (naked) __stdcall hkProcessEventWP()
 
 	if (pFunction)
 	{
-		//fDeltaTime += 1;
 		strcpy(FunctionName, pFunction->GetFullName());
 		if (!strcmp(FunctionName, "Function Engine.PlayerController.PlayerTick"))
 		{
 			fDeltaTime += 1;
-			//if (!playerController && pCallObject) {
-			//	playerController = (APlayerController*)pCallObject;
-			//}
+			if (playerController==NULL && pCallObject != NULL) {
+				playerController = (APlayerController*)pCallObject;
+			}
 		}
 		else if (!strcmp(FunctionName, "Function Engine.PlayerController.Destroyed"))
 		{
-			//if (pCallObject && playerController == pCallObject)
-			//{
-			//	playerController = NULL;
-			//}
+			if (pCallObject != NULL && playerController == pCallObject)
+			{
+				playerController = NULL;
+			}
 		}
 	}
 	__asm popad;
@@ -86,11 +79,7 @@ void OnAttach() {
 	
 	APlayerController* controller = NULL;
 	PDWORD newcontroller = NULL;
-	//controller = UObject::FindObject<UObject>("PlayerController_TA TAGame.Default__PlayerController_TA");
 	controller = UObject::FindObject<APlayerController>("PlayerController_TA TheWorld.PersistentLevel.PlayerController_TA");
-	//controller = UObject::FindObject<UObject>("Class Engine.PlayerController");
-	//controller = UObject::FindObject<UObject>("PlayerController Engine.Default__PlayerController");
-	//controller = UObject::FindObject<UObject>("GamePlayerController GameFramework.Default__GamePlayerController");
 	PDWORD oldcontroller = *(PDWORD*)controller;
 
 	//FIND PROCESS EVENT
@@ -143,11 +132,13 @@ void OnAttach() {
 
 	while (true) {
 		Sleep(1000/30);
-		if (fDeltaTime) {
+		if (fDeltaTime != NULL) {
 			printf("Delta %.6f \n", fDeltaTime);
 		}
-		if (playerController) {
-			printf("Car %.6f \n", 0.0);
+		if (playerController != NULL && playerController->Pawn != NULL) {
+			printf("Car.X %.6f ", playerController->Pawn->Location.X);
+			printf("Car.Y %.6f ", playerController->Pawn->Location.Y);
+			printf("Car.Z %.6f \n", playerController->Pawn->Location.Z);
 		}
 	}
 }
