@@ -1,11 +1,8 @@
 #include "stdafx.h"
 #include "SdkHeaders.h"
 #include "TFL_HT.h"
-#include <chrono>
-#include <thread>
 #include "VMTH.h"
-	
-//#define DUMP_OBJECTS
+
 #define OBJECT_DUMP_PATH    "objects.txt"
 
 #define ProcessEvent_Pattern	"\x74\x00\x83\xC0\x07\x83\xE0\xF8\xE8\x00\x00\x00\x00\x8B\xC4"
@@ -26,7 +23,7 @@ void* pParms = NULL;
 void* pResult = NULL;
 char FunctionName[256];
 
-void __declspec (naked) hkProcessEventWP()
+void __declspec (naked) __stdcall hkProcessEventWP()
 {
 	__asm mov pCallObject, ecx;
 	__asm
@@ -42,25 +39,24 @@ void __declspec (naked) hkProcessEventWP()
 	}
 	_asm pushad
 
-	//if (pFunction)
-	//{
-		//strcpy(FunctionName, pFunction->GetFullName());
-		fDeltaTime += 1;
-		//if (!strcmp(FunctionName, "Function Engine.PlayerController.PlayerTick"))
-		//{
-		//	fDeltaTime += 1;
-		//	//if (!playerController && pCallObject) {
-		//	//	playerController = (APlayerController*)pCallObject;
-		//	//}
-		//}
-		//else if (!strcmp(FunctionName, "Function Engine.PlayerController.Destroyed"))
-		//{
-		//	//if (pCallObject && playerController == pCallObject)
-		//	//{
-		//	//	playerController = NULL;
-		//	//}
-		//}
-	//}
+	if (pFunction)
+	{
+		strcpy(FunctionName, pFunction->GetFullName());
+		if (!strcmp(FunctionName, "Function Engine.PlayerController.PlayerTick"))
+		{
+			fDeltaTime += 1;
+			if (playerController==NULL && pCallObject != NULL) {
+				playerController = (APlayerController*)pCallObject;
+			}
+		}
+		else if (!strcmp(FunctionName, "Function Engine.PlayerController.Destroyed"))
+		{
+			if (pCallObject != NULL && playerController == pCallObject)
+			{
+				playerController = NULL;
+			}
+		}
+	}
 	__asm popad;
 	__asm
 	{
@@ -83,11 +79,7 @@ void OnAttach() {
 	
 	APlayerController* controller = NULL;
 	PDWORD newcontroller = NULL;
-	//controller = UObject::FindObject<UObject>("PlayerController_TA TAGame.Default__PlayerController_TA");
 	controller = UObject::FindObject<APlayerController>("PlayerController_TA TheWorld.PersistentLevel.PlayerController_TA");
-	//controller = UObject::FindObject<UObject>("Class Engine.PlayerController");
-	//controller = UObject::FindObject<UObject>("PlayerController Engine.Default__PlayerController");
-	//controller = UObject::FindObject<UObject>("GamePlayerController GameFramework.Default__GamePlayerController");
 	PDWORD oldcontroller = *(PDWORD*)controller;
 
 	//FIND PROCESS EVENT
@@ -140,11 +132,13 @@ void OnAttach() {
 
 	while (true) {
 		Sleep(1000/30);
-		if (fDeltaTime) {
+		if (fDeltaTime != NULL) {
 			printf("Delta %.6f \n", fDeltaTime);
 		}
-		if (playerController) {
-			printf("Car %.6f \n", 0.0);
+		if (playerController != NULL && playerController->Pawn != NULL) {
+			printf("Car.X %.6f ", playerController->Pawn->Location.X);
+			printf("Car.Y %.6f ", playerController->Pawn->Location.Y);
+			printf("Car.Z %.6f \n", playerController->Pawn->Location.Z);
 		}
 	}
 }
