@@ -4,14 +4,15 @@
 #include "VMTH.h"
 
 #define OBJECT_DUMP_PATH    "objects.txt"
-
 #define ProcessEvent_Pattern	"\x74\x00\x83\xC0\x07\x83\xE0\xF8\xE8\x00\x00\x00\x00\x8B\xC4"
 #define ProcessEvent_Mask		"x?xxxxxxx????xx"
 DWORD	ProcessEventWP = 0;
 UINT	ProcessEventWP_Index = 0;
 
 float fDeltaTime = 0.0;
-APlayerController* playerController = NULL;
+AGameEvent_Soccar_TA * gameEvent = NULL;
+APlayerController_TA* playerController = NULL; //PlayerController_TA TheWorld.PersistentLevel.PlayerController_TA //APlayerController
+AActor* ball = NULL; ////Ball_TA TheWorld.PersistentLevel.Ball_TA //ABall_TA
 
 /* [...] */
 typedef void(__stdcall* tProcessEventWP) (UFunction*, void*, void*);
@@ -45,8 +46,8 @@ void __declspec (naked) __stdcall hkProcessEventWP()
 		if (!strcmp(FunctionName, "Function Engine.PlayerController.PlayerTick"))
 		{
 			fDeltaTime += 1;
-			if (playerController==NULL && pCallObject != NULL) {
-				playerController = (APlayerController*)pCallObject;
+			if (playerController == NULL && pCallObject != NULL) {
+				playerController = (APlayerController_TA*)pCallObject;
 			}
 		}
 		else if (!strcmp(FunctionName, "Function Engine.PlayerController.Destroyed"))
@@ -57,6 +58,7 @@ void __declspec (naked) __stdcall hkProcessEventWP()
 			}
 		}
 	}
+
 	__asm popad;
 	__asm
 	{
@@ -69,19 +71,70 @@ void __declspec (naked) __stdcall hkProcessEventWP()
 	}
 }
 
+template <typename T> void findInstanceAndHookVMT(char* objectName, T * instance) {
+	PDWORD newInstance = NULL;
+	instance = UObject::FindObject<T>(objectName);
+	if (instance != NULL) {
+		PDWORD oldInstance = *(PDWORD*)instance;
+
+		//FIND PROCESS EVENT
+		UObject * pClass = UObject::FindClass("Class Core.Object");
+		unsigned long VfTable = *(DWORD*)pClass;
+		for (unsigned long i = 0x0; i < 0x400; i += 0x4)
+		{
+			if (TFLHACKT00LS::FindPattern(*(unsigned long*)(VfTable + i), 0x200, (unsigned char*)ProcessEvent_Pattern, (char*)ProcessEvent_Mask))
+			{
+				ProcessEventWP = (*(unsigned long*)(VfTable + i));
+				ProcessEventWP_Index = i / 4;
+				break;
+			}
+		}
+		pProcessEventWP = (tProcessEventWP)ProcessEventWP;
+
+
+
+		if (VMTH::SwapVMT((PDWORD*)instance))
+		{
+			newInstance = *(PDWORD*)instance;
+			if (VMTH::HookVMTFuncion((PDWORD*)instance, (DWORD)hkProcessEventWP, (UINT)ProcessEventWP_Index)) {
+				printf("HookVMTFuncion successfull for controller\n");
+			}
+		}
+	}
+}
+
+void findPlayerController() {
+	PDWORD newcontroller = NULL;
+	playerController = UObject::FindObject<APlayerController_TA>("PlayerController_TA TheWorld.PersistentLevel.PlayerController_TA");
+	if (playerController != NULL) {
+		PDWORD oldcontroller = *(PDWORD*)playerController;
+
+		//FIND PROCESS EVENT
+		UObject * pClass = UObject::FindClass("Class Core.Object");
+		unsigned long VfTable = *(DWORD*)pClass;
+		for (unsigned long i = 0x0; i < 0x400; i += 0x4)
+		{
+			if (TFLHACKT00LS::FindPattern(*(unsigned long*)(VfTable + i), 0x200, (unsigned char*)ProcessEvent_Pattern, (char*)ProcessEvent_Mask))
+			{
+				ProcessEventWP = (*(unsigned long*)(VfTable + i));
+				ProcessEventWP_Index = i / 4;
+				break;
+			}
+		}
+		pProcessEventWP = (tProcessEventWP)ProcessEventWP;
+
+		if (VMTH::SwapVMT((PDWORD*)playerController))
+		{
+			newcontroller = *(PDWORD*)playerController;
+			if (VMTH::HookVMTFuncion((PDWORD*)playerController, (DWORD)hkProcessEventWP, (UINT)ProcessEventWP_Index)) {
+				printf("HookVMTFuncion successfull for controller\n");
+			}
+		}
+	}
+}
 /* [...] */
 
-void OnAttach() {
-	AllocConsole();
-	AttachConsole(GetCurrentProcessId());
-	freopen("CON", "w", stdout);
-	printf("Attach success\n");
-	
-	APlayerController* controller = NULL;
-	PDWORD newcontroller = NULL;
-	controller = UObject::FindObject<APlayerController>("PlayerController_TA TheWorld.PersistentLevel.PlayerController_TA");
-	PDWORD oldcontroller = *(PDWORD*)controller;
-
+void HookProcessEvent() {
 	//FIND PROCESS EVENT
 	UObject * pClass = UObject::FindClass("Class Core.Object");
 	unsigned long VfTable = *(DWORD*)pClass;
@@ -96,49 +149,77 @@ void OnAttach() {
 	}
 	pProcessEventWP = (tProcessEventWP)ProcessEventWP;
 
-	if (VMTH::SwapVMT((PDWORD*)controller))
-	{
-		newcontroller = *(PDWORD*)controller;
-		if(VMTH::HookVMTFuncion((PDWORD*)controller, (DWORD)hkProcessEventWP, (UINT)ProcessEventWP_Index)) {
-			printf("HookVMTFuncion successfull for controller\n");
-		}
-	}
+}
 
-#ifdef DUMP_OBJECTS
-	TArray<UObject*> * arr2 = UObject::GObjObjects();
+void OnAttach() {
+	AllocConsole();
+	AttachConsole(GetCurrentProcessId());
+	freopen("CON", "w", stdout);
+	printf("Attach success\n");
+	//findInstanceAndHookVMT("GameEvent_Soccar_TA TheWorld.PersistentLevel.GameEvent_Soccar_TA", gameEvent);
+	findInstanceAndHookVMT("PlayerController_TA TheWorld.PersistentLevel.PlayerController_TA", playerController);
+	//findInstanceAndHookVMT("Ball_TA TheWorld.PersistentLevel.Ball_TA", ball);
 
-	FILE* fp = fopen(OBJECT_DUMP_PATH, "w");
-
-	if (arr2)
-	{
-		printf("Dumping.....\n");
-		for (int i = 0; i < arr2->Num(); i++)
-		{
-			if ((*arr2)(i) == NULL) // there are null objects for somereason
-				continue;
-			if (strcmp((*arr2)(i)->GetName(), "None") && (*arr2)(i))
-			{
-				fprintf(fp, "%d - %d : %s\n", i, arr2->Num(), (*arr2)(i)->GetFullName());
-			}
-		}
-		printf("Done\n");
-	}
-	else
-	{
-		printf("Objects not found\n");
-	}
-	fclose(fp);
-#endif
+	float tempDeltaTime = 0.0;
 
 	while (true) {
-		Sleep(1000/30);
+		Sleep(1000 / 30);
 		if (fDeltaTime != NULL) {
-			printf("Delta %.6f \n", fDeltaTime);
+			//printf("Previous Delta %.6f \n", tempDeltaTime);
+			//printf("Delta %.6f \n", fDeltaTime);
+			if (tempDeltaTime == fDeltaTime && playerController == NULL) {
+				Sleep(1000 / 4);
+				//findInstanceAndHookVMT("GameEvent_Soccar_TA TheWorld.PersistentLevel.GameEvent_Soccar_TA", gameEvent);
+				findInstanceAndHookVMT("PlayerController_TA TheWorld.PersistentLevel.PlayerController_TA", playerController);
+				//findInstanceAndHookVMT("Ball_TA TheWorld.PersistentLevel.Ball_TA", ball);
+			}
+			tempDeltaTime = fDeltaTime;
 		}
+		else {
+			//findInstanceAndHookVMT("GameEvent_Soccar_TA TheWorld.PersistentLevel.GameEvent_Soccar_TA", gameEvent);
+			findInstanceAndHookVMT("PlayerController_TA TheWorld.PersistentLevel.PlayerController_TA", playerController);
+			//findInstanceAndHookVMT("Ball_TA TheWorld.PersistentLevel.Ball_TA", ball);
+		}
+
 		if (playerController != NULL && playerController->Pawn != NULL) {
-			printf("Car.X %.6f ", playerController->Pawn->Location.X);
-			printf("Car.Y %.6f ", playerController->Pawn->Location.Y);
-			printf("Car.Z %.6f \n", playerController->Pawn->Location.Z);
+			if (!playerController->bDeleteMe && !playerController->Pawn->bDeleteMe) {
+				if (((int)fDeltaTime) % 30 == 0) {
+					//printf("Camera.X %.6f ", playerController->Pawn->Location.X);
+					//printf("Camera.Y %.6f ", playerController->Pawn->Location.Y);
+					//printf("Camera.Z %.6f \n", playerController->Pawn->Location.Z);
+					printf("Car.X %.6f ", playerController->Location.X);
+					printf("Car.Y %.6f ", playerController->Location.Y);
+					printf("Car.Z %.6f \n", playerController->Location.Z);
+					printf("Throttle %.6f ", playerController->LastInputs.Throttle);
+					printf("Steer %.6f ", playerController->LastInputs.Steer);
+					printf("Pitch %.6f ", playerController->LastInputs.Pitch);
+					printf("Yaw %.6f ", playerController->LastInputs.Yaw);
+					printf("Roll %.6f ", playerController->LastInputs.Roll);
+					printf("DodgeForward %.6f ", playerController->LastInputs.DodgeForward);
+					printf("DodgeStrafe %.6f ", playerController->LastInputs.DodgeStrafe);
+					printf("bJump %lu ", playerController->LastInputs.bJump);
+					printf("bActivateBoost %lu ", playerController->LastInputs.bActivateBoost);
+					printf("bHoldingBoost %lu ", playerController->LastInputs.bHoldingBoost);
+					printf("bHandbrake %lu ", playerController->LastInputs.bHandbrake);
+					printf("bJumped %lu \n", playerController->LastInputs.bJumped);
+				}
+				playerController->Pawn->Location.Z += 1;
+				playerController->Location.Z += 1;
+			}
+		}
+
+		if (playerController->Car != NULL && 
+			playerController->Car->BallIndicator != NULL && 
+			playerController->Car->BallIndicator->Ball != NULL) {
+			if (!playerController->Car->BallIndicator->Ball->bDeleteMe) {
+				ball = playerController->Car->BallIndicator->Ball;
+				if (((int)fDeltaTime) % 30 == 0) {
+					printf("Ball.X %.6f ", ball->Location.X);
+					printf("Ball.Y %.6f ", ball->Location.Y);
+					printf("Ball.Z %.6f \n", ball->Location.Z);
+				}
+				ball->Location.Z += 10;
+			}
 		}
 	}
 }
@@ -167,4 +248,3 @@ BOOL APIENTRY DllMain(HMODULE hModule,
 	}
 	return TRUE;
 }
-
