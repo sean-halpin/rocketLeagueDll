@@ -103,62 +103,12 @@ template <typename T> void findInstanceAndHookVMT(char* objectName, T * instance
 	}
 }
 
-void findPlayerController() {
-	PDWORD newcontroller = NULL;
-	playerController = UObject::FindObject<APlayerController_TA>("PlayerController_TA TheWorld.PersistentLevel.PlayerController_TA");
-	if (playerController != NULL) {
-		PDWORD oldcontroller = *(PDWORD*)playerController;
-
-		//FIND PROCESS EVENT
-		UObject * pClass = UObject::FindClass("Class Core.Object");
-		unsigned long VfTable = *(DWORD*)pClass;
-		for (unsigned long i = 0x0; i < 0x400; i += 0x4)
-		{
-			if (TFLHACKT00LS::FindPattern(*(unsigned long*)(VfTable + i), 0x200, (unsigned char*)ProcessEvent_Pattern, (char*)ProcessEvent_Mask))
-			{
-				ProcessEventWP = (*(unsigned long*)(VfTable + i));
-				ProcessEventWP_Index = i / 4;
-				break;
-			}
-		}
-		pProcessEventWP = (tProcessEventWP)ProcessEventWP;
-
-		if (VMTH::SwapVMT((PDWORD*)playerController))
-		{
-			newcontroller = *(PDWORD*)playerController;
-			if (VMTH::HookVMTFuncion((PDWORD*)playerController, (DWORD)hkProcessEventWP, (UINT)ProcessEventWP_Index)) {
-				printf("HookVMTFuncion successfull for controller\n");
-			}
-		}
-	}
-}
-/* [...] */
-
-void HookProcessEvent() {
-	//FIND PROCESS EVENT
-	UObject * pClass = UObject::FindClass("Class Core.Object");
-	unsigned long VfTable = *(DWORD*)pClass;
-	for (unsigned long i = 0x0; i < 0x400; i += 0x4)
-	{
-		if (TFLHACKT00LS::FindPattern(*(unsigned long*)(VfTable + i), 0x200, (unsigned char*)ProcessEvent_Pattern, (char*)ProcessEvent_Mask))
-		{
-			ProcessEventWP = (*(unsigned long*)(VfTable + i));
-			ProcessEventWP_Index = i / 4;
-			break;
-		}
-	}
-	pProcessEventWP = (tProcessEventWP)ProcessEventWP;
-
-}
-
 void OnAttach() {
 	AllocConsole();
 	AttachConsole(GetCurrentProcessId());
 	freopen("CON", "w", stdout);
 	printf("Attach success\n");
-	//findInstanceAndHookVMT("GameEvent_Soccar_TA TheWorld.PersistentLevel.GameEvent_Soccar_TA", gameEvent);
 	findInstanceAndHookVMT("PlayerController_TA TheWorld.PersistentLevel.PlayerController_TA", playerController);
-	//findInstanceAndHookVMT("Ball_TA TheWorld.PersistentLevel.Ball_TA", ball);
 
 	float tempDeltaTime = 0.0;
 
@@ -176,17 +126,12 @@ void OnAttach() {
 			tempDeltaTime = fDeltaTime;
 		}
 		else {
-			//findInstanceAndHookVMT("GameEvent_Soccar_TA TheWorld.PersistentLevel.GameEvent_Soccar_TA", gameEvent);
 			findInstanceAndHookVMT("PlayerController_TA TheWorld.PersistentLevel.PlayerController_TA", playerController);
-			//findInstanceAndHookVMT("Ball_TA TheWorld.PersistentLevel.Ball_TA", ball);
 		}
 
 		if (playerController != NULL && playerController->Pawn != NULL) {
 			if (!playerController->bDeleteMe && !playerController->Pawn->bDeleteMe) {
 				if (((int)fDeltaTime) % 30 == 0) {
-					//printf("Camera.X %.6f ", playerController->Pawn->Location.X);
-					//printf("Camera.Y %.6f ", playerController->Pawn->Location.Y);
-					//printf("Camera.Z %.6f \n", playerController->Pawn->Location.Z);
 					printf("Car.X %.6f ", playerController->Location.X);
 					printf("Car.Y %.6f ", playerController->Location.Y);
 					printf("Car.Z %.6f \n", playerController->Location.Z);
@@ -203,8 +148,6 @@ void OnAttach() {
 					printf("bHandbrake %lu ", playerController->LastInputs.bHandbrake);
 					printf("bJumped %lu \n", playerController->LastInputs.bJumped);
 				}
-				playerController->Pawn->Location.Z += 1;
-				playerController->Location.Z += 1;
 			}
 		}
 
@@ -218,7 +161,6 @@ void OnAttach() {
 					printf("Ball.Y %.6f ", ball->Location.Y);
 					printf("Ball.Z %.6f \n", ball->Location.Z);
 				}
-				ball->Location.Z += 10;
 			}
 		}
 	}
