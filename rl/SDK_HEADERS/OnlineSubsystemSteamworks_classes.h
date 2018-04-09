@@ -88,14 +88,12 @@
 */
 
 // Class OnlineSubsystemSteamworks.OnlineAuthInterfaceSteamworks
-// 0x0028 (0x02D4 - 0x02AC)
+// 0x0014 (0x02E0 - 0x02CC)
 class UOnlineAuthInterfaceSteamworks : public UOnlineAuthInterfaceImpl
 {
 public:
-	TArray< unsigned char >                            SessionTicket;                                    		// 0x02AC (0x000C) [0x0000000000400002]              ( CPF_Const | CPF_NeedCtorLink )
-	TArray< unsigned char >                            EncryptedTicket;                                  		// 0x02B8 (0x000C) [0x0000000000400002]              ( CPF_Const | CPF_NeedCtorLink )
-	unsigned char                                      UnknownData00[ 0x8 ];                             		// 0x02C4 (0x0008) UNKNOWN PROPERTY: QWordProperty OnlineSubsystemSteamworks.OnlineAuthInterfaceSteamworks.SessionTicketHandle
-	unsigned char                                      UnknownData01[ 0x8 ];                             		// 0x02CC (0x0008) UNKNOWN PROPERTY: QWordProperty OnlineSubsystemSteamworks.OnlineAuthInterfaceSteamworks.EncryptedTicketHandle
+	TArray< unsigned char >                            EncryptedTicket;                                  		// 0x02CC (0x000C) [0x0000000000400002]              ( CPF_Const | CPF_NeedCtorLink )
+	unsigned char                                      UnknownData00[ 0x8 ];                             		// 0x02D8 (0x0008) UNKNOWN PROPERTY: QWordProperty OnlineSubsystemSteamworks.OnlineAuthInterfaceSteamworks.EncryptedTicketHandle
 
 private:
 	static UClass* pClassPointer;
@@ -104,15 +102,13 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3209 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3223 ];
 
 		return pClassPointer;
 	};
 
-	bool RequiresMTXAuthorizationCode ( );
-	bool RequiresAuthorizationCode ( );
-	bool IsRequestingAuthorizationCode ( struct FUniqueNetId PlayerID, struct FScriptDelegate Callback );
-	bool RequestAuthorizationCode ( struct FUniqueNetId PlayerID, struct FScriptDelegate Callback );
+	bool RequestAuthTicket ( struct FUniqueNetId PlayerID, struct FScriptDelegate Callback );
+	bool RequiresAuthTicket ( );
 	bool GetServerAddr ( struct FIpAddr* OutServerIP, int* OutServerPort );
 	bool GetServerUniqueId ( struct FUniqueNetId* OutServerUID );
 	bool VerifyServerAuthSession ( struct FUniqueNetId ServerUID, struct FIpAddr ServerIP, int AuthTicketUID );
@@ -152,7 +148,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3211 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3225 ];
 
 		return pClassPointer;
 	};
@@ -220,7 +216,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3213 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3227 ];
 
 		return pClassPointer;
 	};
@@ -262,7 +258,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3215 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3229 ];
 
 		return pClassPointer;
 	};
@@ -302,7 +298,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3217 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3231 ];
 
 		return pClassPointer;
 	};
@@ -320,7 +316,6 @@ public:
 	bool GetLobbyAdmin ( struct FUniqueLobbyId* LobbyId, struct FUniqueNetId* AdminId );
 	void OnLobbyKicked ( int AdminIndex, struct FActiveLobbyInfo* Lobby );
 	bool SendLobbyBinaryData ( struct FUniqueLobbyId* LobbyId, TArray< unsigned char >* Data );
-	bool SendLobbyMessage ( struct FString Message, struct FUniqueLobbyId* LobbyId );
 	bool SetLobbyUserSetting ( struct FString Key, struct FString Value, struct FUniqueLobbyId* LobbyId );
 	bool LeaveLobby ( struct FUniqueLobbyId* LobbyId );
 	bool JoinLobby ( int LocalPlayerNum, struct FUniqueLobbyId* LobbyId );
@@ -558,11 +553,12 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3219 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3233 ];
 
 		return pClassPointer;
 	};
 
+	bool CanSendOfflinePartyInvite ( struct FUniqueNetId PlayerID );
 	bool AllowPsyNetParty ( );
 	bool CheckParentalControlInfo ( unsigned long bShowUi );
 	bool RecordPlayersRecentlyMetKeys ( unsigned char LocalUserNum, TArray< struct FFriendHistoryKey > PlayerKeys );
@@ -959,7 +955,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3221 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3235 ];
 
 		return pClassPointer;
 	};
@@ -989,7 +985,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3223 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3237 ];
 
 		return pClassPointer;
 	};
@@ -1013,7 +1009,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3225 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3239 ];
 
 		return pClassPointer;
 	};
@@ -1023,12 +1019,12 @@ public:
 UClass* USteamWorkshopEngine::pClassPointer = NULL;
 
 // Class OnlineSubsystemSteamworks.IpNetDriverSteamworks
-// 0x0010 (0x01FC - 0x01EC)
+// 0x0010 (0x020C - 0x01FC)
 class UIpNetDriverSteamworks : public UTcpNetDriver
 {
 public:
-	unsigned long                                      bSteamSocketsOnly : 1;                            		// 0x01EC (0x0004) [0x0000000000004000] [0x00000001] ( CPF_Config )
-	unsigned char                                      UnknownData00[ 0xC ];                             		// 0x01F0 (0x000C) MISSED OFFSET
+	unsigned long                                      bSteamSocketsOnly : 1;                            		// 0x01FC (0x0004) [0x0000000000004000] [0x00000001] ( CPF_Config )
+	unsigned char                                      UnknownData00[ 0xC ];                             		// 0x0200 (0x000C) MISSED OFFSET
 
 private:
 	static UClass* pClassPointer;
@@ -1037,7 +1033,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3227 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3241 ];
 
 		return pClassPointer;
 	};
@@ -1047,7 +1043,7 @@ public:
 UClass* UIpNetDriverSteamworks::pClassPointer = NULL;
 
 // Class OnlineSubsystemSteamworks.IpNetConnectionSteamworks
-// 0x0000 (0x9158 - 0x9158)
+// 0x0000 (0x916C - 0x916C)
 class UIpNetConnectionSteamworks : public UTcpipConnection
 {
 public:
@@ -1059,7 +1055,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3230 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3244 ];
 
 		return pClassPointer;
 	};

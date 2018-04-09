@@ -54,11 +54,20 @@
 	AkLS_MAX                                           = 3
 };*/
 
+// Enum AkAudio.AkSoundSource.EAkEnvironmentType
+/*enum EAkEnvironmentType
+{
+	EnvironmentType_SpatializedAudio                   = 0,
+	EnvironmentType_UnspatializedAudio                 = 1,
+	EnvironmentType_Music                              = 2,
+	EnvironmentType_MAX                                = 3
+};*/
+
 // Enum AkAudio.SeqAct_AkEnvironment.EAkEnvironmentTarget
 /*enum EAkEnvironmentTarget
 {
 	AkEnvironmentTarget_LevelDefault                   = 0,
-	AkEnvironmentTarget_Music                          = 1,
+	AkEnvironmentTarget_Actor                          = 1,
 	AkEnvironmentTarget_MAX                            = 2
 };*/
 
@@ -83,7 +92,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3139 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3153 ];
 
 		return pClassPointer;
 	};
@@ -93,14 +102,14 @@ public:
 UClass* UActorFactoryAkAmbientSound::pClassPointer = NULL;
 
 // Class AkAudio.AkAmbientSound
-// 0x0008 (0x0208 - 0x0200)
+// 0x0008 (0x021C - 0x0214)
 class AAkAmbientSound : public AKeypoint
 {
 public:
-	unsigned long                                      bAutoPlay : 1;                                    		// 0x0200 (0x0004) [0x0000000000000000] [0x00000001] 
-	unsigned long                                      StopWhenOwnerIsDestroyed : 1;                     		// 0x0200 (0x0004) [0x0000000000000001] [0x00000002] ( CPF_Edit )
-	unsigned long                                      bIsPlaying : 1;                                   		// 0x0200 (0x0004) [0x0000000000002000] [0x00000004] ( CPF_Transient )
-	class UAkEvent*                                    PlayEvent;                                        		// 0x0204 (0x0004) [0x0000000000000001]              ( CPF_Edit )
+	unsigned long                                      bAutoPlay : 1;                                    		// 0x0214 (0x0004) [0x0000000000000000] [0x00000001] 
+	unsigned long                                      StopWhenOwnerIsDestroyed : 1;                     		// 0x0214 (0x0004) [0x0000000000000001] [0x00000002] ( CPF_Edit )
+	unsigned long                                      bIsPlaying : 1;                                   		// 0x0214 (0x0004) [0x0000000000002000] [0x00000004] ( CPF_Transient )
+	class UAkEvent*                                    PlayEvent;                                        		// 0x0218 (0x0004) [0x0000000000000001]              ( CPF_Edit )
 
 private:
 	static UClass* pClassPointer;
@@ -109,7 +118,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3141 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3155 ];
 
 		return pClassPointer;
 	};
@@ -134,7 +143,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3143 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3157 ];
 
 		return pClassPointer;
 	};
@@ -162,11 +171,13 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3145 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3159 ];
 
 		return pClassPointer;
 	};
 
+	void SetSoundEnvironment ( class AActor* Actor, unsigned char EnvironmentType );
+	class UAkEnvironments* GetEnvironments ( );
 	void NotifyWhenInitialized ( struct FScriptDelegate Callback );
 	void ProfileStop ( );
 	void ProfileStart ( );
@@ -209,7 +220,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3147 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3161 ];
 
 		return pClassPointer;
 	};
@@ -219,13 +230,15 @@ public:
 UClass* UAkDialogueEvent::pClassPointer = NULL;
 
 // Class AkAudio.AkEnvironments
-// 0x001C (0x0058 - 0x003C)
+// 0x0020 (0x005C - 0x003C)
 class UAkEnvironments : public UObject
 {
 public:
-	TArray< struct FAkEnvironment >                    LevelEnvironments;                                		// 0x003C (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	TArray< struct FAkEnvironment >                    MusicEnvironments;                                		// 0x0048 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	unsigned long                                      bLevelDirty : 1;                                  		// 0x0054 (0x0004) [0x0000000000000000] [0x00000001] 
+	struct FPointer                                    VfTable_FObjectDestructionSubscriber;             		// 0x003C (0x0004) [0x0000000000801002]              ( CPF_Const | CPF_Native | CPF_NoExport )
+	TArray< struct FAkEnvironment >                    LevelEnvironments;                                		// 0x0040 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
+	TArray< struct FAkActorEnvironment >               ActorEnvironments;                                		// 0x004C (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
+	unsigned long                                      bLevelDirty : 1;                                  		// 0x0058 (0x0004) [0x0000000000000000] [0x00000001] 
+	unsigned long                                      bActorEnvironmentDirty : 1;                       		// 0x0058 (0x0004) [0x0000000000000000] [0x00000002] 
 
 private:
 	static UClass* pClassPointer;
@@ -234,23 +247,24 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3149 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3163 ];
 
 		return pClassPointer;
 	};
 
-	void AddMusic ( struct FAkEnvironment* Environment );
+	void RemoveActorEnvironment ( class AActor* TargetActor, struct FString* EnvironmentID );
+	void AddActorEnvironment ( class AActor* TargetActor, struct FAkEnvironment* Environment );
 	void AddLevelDefault ( struct FAkEnvironment* Environment );
 };
 
 UClass* UAkEnvironments::pClassPointer = NULL;
 
 // Class AkAudio.AkEnvironmentVolume
-// 0x001C (0x0244 - 0x0228)
+// 0x001C (0x0258 - 0x023C)
 class AAkEnvironmentVolume : public AVolume
 {
 public:
-	struct FAkEnvironment                              Environment;                                      		// 0x0228 (0x001C) [0x0000000000400001]              ( CPF_Edit | CPF_NeedCtorLink )
+	struct FAkEnvironment                              Environment;                                      		// 0x023C (0x001C) [0x0000000000400001]              ( CPF_Edit | CPF_NeedCtorLink )
 
 private:
 	static UClass* pClassPointer;
@@ -259,7 +273,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3151 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3165 ];
 
 		return pClassPointer;
 	};
@@ -284,7 +298,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3153 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3167 ];
 
 		return pClassPointer;
 	};
@@ -330,7 +344,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3155 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3169 ];
 
 		return pClassPointer;
 	};
@@ -377,7 +391,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3157 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3171 ];
 
 		return pClassPointer;
 	};
@@ -413,7 +427,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3159 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3173 ];
 
 		return pClassPointer;
 	};
@@ -438,7 +452,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3161 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3175 ];
 
 		return pClassPointer;
 	};
@@ -448,7 +462,7 @@ public:
 UClass* UAkSoundCue::pClassPointer = NULL;
 
 // Class AkAudio.AkSoundSource
-// 0x0093 (0x00F8 - 0x0065)
+// 0x0094 (0x00F9 - 0x0065)
 class UAkSoundSource : public UActorComponent
 {
 public:
@@ -463,6 +477,7 @@ public:
 	struct FRotator                                    WorldRotation;                                    		// 0x00DC (0x000C) [0x0000000000002002]              ( CPF_Const | CPF_Transient )
 	class UAkParamGroup*                               Params;                                           		// 0x00E8 (0x0004) [0x000000000408200A]              ( CPF_Const | CPF_ExportObject | CPF_Transient | CPF_Component | CPF_EditInline )
 	TArray< struct FActiveSound >                      ActiveSounds;                                     		// 0x00EC (0x000C) [0x0000000000402002]              ( CPF_Const | CPF_Transient | CPF_NeedCtorLink )
+	unsigned char                                      EnvironmentType;                                  		// 0x00F8 (0x0001) [0x0000000000002000]              ( CPF_Transient )
 
 private:
 	static UClass* pClassPointer;
@@ -471,7 +486,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3163 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3177 ];
 
 		return pClassPointer;
 	};
@@ -498,7 +513,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3165 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3179 ];
 
 		return pClassPointer;
 	};
@@ -521,7 +536,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3167 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3181 ];
 
 		return pClassPointer;
 	};
@@ -544,7 +559,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3169 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3183 ];
 
 		return pClassPointer;
 	};
@@ -567,7 +582,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3171 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3185 ];
 
 		return pClassPointer;
 	};
@@ -589,7 +604,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3173 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3187 ];
 
 		return pClassPointer;
 	};
@@ -611,7 +626,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3175 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3189 ];
 
 		return pClassPointer;
 	};
@@ -635,7 +650,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3177 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3191 ];
 
 		return pClassPointer;
 	};
@@ -661,7 +676,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3179 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3193 ];
 
 		return pClassPointer;
 	};
@@ -685,7 +700,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3181 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3195 ];
 
 		return pClassPointer;
 	};
@@ -708,7 +723,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3183 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3197 ];
 
 		return pClassPointer;
 	};
@@ -733,7 +748,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3185 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3199 ];
 
 		return pClassPointer;
 	};
@@ -757,7 +772,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3187 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3201 ];
 
 		return pClassPointer;
 	};
@@ -781,7 +796,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3189 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3203 ];
 
 		return pClassPointer;
 	};
@@ -803,7 +818,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3191 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3205 ];
 
 		return pClassPointer;
 	};
@@ -825,7 +840,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3193 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3207 ];
 
 		return pClassPointer;
 	};
@@ -835,11 +850,11 @@ public:
 UClass* USeqAct_AkStopAll::pClassPointer = NULL;
 
 // Class AkAudio.AkAmbientSoundActor
-// 0x0004 (0x0204 - 0x0200)
+// 0x0004 (0x0218 - 0x0214)
 class AAkAmbientSoundActor : public AKeypoint
 {
 public:
-	class UAkPlaySoundComponent*                       PlaySoundComponent;                               		// 0x0200 (0x0004) [0x0000000004080009]              ( CPF_Edit | CPF_ExportObject | CPF_Component | CPF_EditInline )
+	class UAkPlaySoundComponent*                       PlaySoundComponent;                               		// 0x0214 (0x0004) [0x0000000004080009]              ( CPF_Edit | CPF_ExportObject | CPF_Component | CPF_EditInline )
 
 private:
 	static UClass* pClassPointer;
@@ -848,7 +863,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 47292 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 47378 ];
 
 		return pClassPointer;
 	};
@@ -873,7 +888,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 47467 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 47561 ];
 
 		return pClassPointer;
 	};
@@ -903,7 +918,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 97435 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 103852 ];
 
 		return pClassPointer;
 	};

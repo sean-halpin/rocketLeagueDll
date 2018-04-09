@@ -21,6 +21,53 @@
 # ========================================================================================= #
 */
 
+// Function AkAudio.AkDevice.SetSoundEnvironment
+// [0x04022401] ( FUNC_Final | FUNC_Native )
+// Parameters infos:
+// class AActor*                  Actor                          ( CPF_Parm )
+// unsigned char                  EnvironmentType                ( CPF_Parm )
+
+void UAkDevice::SetSoundEnvironment ( class AActor* Actor, unsigned char EnvironmentType )
+{
+	static UFunction* pFnSetSoundEnvironment = NULL;
+
+	if ( ! pFnSetSoundEnvironment )
+		pFnSetSoundEnvironment = (UFunction*) UObject::GObjObjects()->Data[ 47448 ];
+
+	UAkDevice_execSetSoundEnvironment_Parms SetSoundEnvironment_Parms;
+	SetSoundEnvironment_Parms.Actor = Actor;
+	SetSoundEnvironment_Parms.EnvironmentType = EnvironmentType;
+
+	pFnSetSoundEnvironment->FunctionFlags |= ~0x400;
+
+	this->ProcessEvent ( pFnSetSoundEnvironment, &SetSoundEnvironment_Parms, NULL );
+
+	pFnSetSoundEnvironment->FunctionFlags |= 0x400;
+};
+
+// Function AkAudio.AkDevice.GetEnvironments
+// [0x04022401] ( FUNC_Final | FUNC_Native )
+// Parameters infos:
+// class UAkEnvironments*         ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
+
+class UAkEnvironments* UAkDevice::GetEnvironments ( )
+{
+	static UFunction* pFnGetEnvironments = NULL;
+
+	if ( ! pFnGetEnvironments )
+		pFnGetEnvironments = (UFunction*) UObject::GObjObjects()->Data[ 47449 ];
+
+	UAkDevice_execGetEnvironments_Parms GetEnvironments_Parms;
+
+	pFnGetEnvironments->FunctionFlags |= ~0x400;
+
+	this->ProcessEvent ( pFnGetEnvironments, &GetEnvironments_Parms, NULL );
+
+	pFnGetEnvironments->FunctionFlags |= 0x400;
+
+	return GetEnvironments_Parms.ReturnValue;
+};
+
 // Function AkAudio.AkDevice.NotifyWhenInitialized
 // [0x00022401] ( FUNC_Final | FUNC_Native )
 // Parameters infos:
@@ -31,7 +78,7 @@ void UAkDevice::NotifyWhenInitialized ( struct FScriptDelegate Callback )
 	static UFunction* pFnNotifyWhenInitialized = NULL;
 
 	if ( ! pFnNotifyWhenInitialized )
-		pFnNotifyWhenInitialized = (UFunction*) UObject::GObjObjects()->Data[ 47360 ];
+		pFnNotifyWhenInitialized = (UFunction*) UObject::GObjObjects()->Data[ 47446 ];
 
 	UAkDevice_execNotifyWhenInitialized_Parms NotifyWhenInitialized_Parms;
 	memcpy ( &NotifyWhenInitialized_Parms.Callback, &Callback, 0x10 );
@@ -52,7 +99,7 @@ void UAkDevice::ProfileStop ( )
 	static UFunction* pFnProfileStop = NULL;
 
 	if ( ! pFnProfileStop )
-		pFnProfileStop = (UFunction*) UObject::GObjObjects()->Data[ 47359 ];
+		pFnProfileStop = (UFunction*) UObject::GObjObjects()->Data[ 47445 ];
 
 	UAkDevice_execProfileStop_Parms ProfileStop_Parms;
 
@@ -72,7 +119,7 @@ void UAkDevice::ProfileStart ( )
 	static UFunction* pFnProfileStart = NULL;
 
 	if ( ! pFnProfileStart )
-		pFnProfileStart = (UFunction*) UObject::GObjObjects()->Data[ 47358 ];
+		pFnProfileStart = (UFunction*) UObject::GObjObjects()->Data[ 47444 ];
 
 	UAkDevice_execProfileStart_Parms ProfileStart_Parms;
 
@@ -92,7 +139,7 @@ void UAkDevice::PrintData ( )
 	static UFunction* pFnPrintData = NULL;
 
 	if ( ! pFnPrintData )
-		pFnPrintData = (UFunction*) UObject::GObjObjects()->Data[ 47357 ];
+		pFnPrintData = (UFunction*) UObject::GObjObjects()->Data[ 47443 ];
 
 	UAkDevice_execPrintData_Parms PrintData_Parms;
 
@@ -113,7 +160,7 @@ void UAkDevice::SetOutputType ( unsigned char Type )
 	static UFunction* pFnSetOutputType = NULL;
 
 	if ( ! pFnSetOutputType )
-		pFnSetOutputType = (UFunction*) UObject::GObjObjects()->Data[ 47355 ];
+		pFnSetOutputType = (UFunction*) UObject::GObjObjects()->Data[ 47441 ];
 
 	UAkDevice_execSetOutputType_Parms SetOutputType_Parms;
 	SetOutputType_Parms.Type = Type;
@@ -136,7 +183,7 @@ void UAkDevice::SetListenerSpatialization ( class ULocalPlayer* Player, unsigned
 	static UFunction* pFnSetListenerSpatialization = NULL;
 
 	if ( ! pFnSetListenerSpatialization )
-		pFnSetListenerSpatialization = (UFunction*) UObject::GObjObjects()->Data[ 47352 ];
+		pFnSetListenerSpatialization = (UFunction*) UObject::GObjObjects()->Data[ 47438 ];
 
 	UAkDevice_execSetListenerSpatialization_Parms SetListenerSpatialization_Parms;
 	SetListenerSpatialization_Parms.Player = Player;
@@ -159,7 +206,7 @@ void UAkDevice::RemoveListener ( class ULocalPlayer* Player )
 	static UFunction* pFnRemoveListener = NULL;
 
 	if ( ! pFnRemoveListener )
-		pFnRemoveListener = (UFunction*) UObject::GObjObjects()->Data[ 47350 ];
+		pFnRemoveListener = (UFunction*) UObject::GObjObjects()->Data[ 47436 ];
 
 	UAkDevice_execRemoveListener_Parms RemoveListener_Parms;
 	RemoveListener_Parms.Player = Player;
@@ -181,7 +228,7 @@ void UAkDevice::AddListener ( class ULocalPlayer* Player )
 	static UFunction* pFnAddListener = NULL;
 
 	if ( ! pFnAddListener )
-		pFnAddListener = (UFunction*) UObject::GObjObjects()->Data[ 47347 ];
+		pFnAddListener = (UFunction*) UObject::GObjObjects()->Data[ 47433 ];
 
 	UAkDevice_execAddListener_Parms AddListener_Parms;
 	AddListener_Parms.Player = Player;
@@ -204,7 +251,7 @@ void UAkDevice::SetMusicRTCP ( struct FName Key, float Value )
 	static UFunction* pFnSetMusicRTCP = NULL;
 
 	if ( ! pFnSetMusicRTCP )
-		pFnSetMusicRTCP = (UFunction*) UObject::GObjObjects()->Data[ 47349 ];
+		pFnSetMusicRTCP = (UFunction*) UObject::GObjObjects()->Data[ 47435 ];
 
 	UAkDevice_execSetMusicRTCP_Parms SetMusicRTCP_Parms;
 	memcpy ( &SetMusicRTCP_Parms.Key, &Key, 0x8 );
@@ -228,7 +275,7 @@ void UAkDevice::SetGlobalRTCP ( struct FName Key, float Value )
 	static UFunction* pFnSetGlobalRTCP = NULL;
 
 	if ( ! pFnSetGlobalRTCP )
-		pFnSetGlobalRTCP = (UFunction*) UObject::GObjObjects()->Data[ 47344 ];
+		pFnSetGlobalRTCP = (UFunction*) UObject::GObjObjects()->Data[ 47430 ];
 
 	UAkDevice_execSetGlobalRTCP_Parms SetGlobalRTCP_Parms;
 	memcpy ( &SetGlobalRTCP_Parms.Key, &Key, 0x8 );
@@ -251,7 +298,7 @@ void UAkDevice::StopPlayingID ( int PlayingID )
 	static UFunction* pFnStopPlayingID = NULL;
 
 	if ( ! pFnStopPlayingID )
-		pFnStopPlayingID = (UFunction*) UObject::GObjObjects()->Data[ 47342 ];
+		pFnStopPlayingID = (UFunction*) UObject::GObjObjects()->Data[ 47428 ];
 
 	UAkDevice_execStopPlayingID_Parms StopPlayingID_Parms;
 	StopPlayingID_Parms.PlayingID = PlayingID;
@@ -273,7 +320,7 @@ void UAkDevice::StopBGMusic ( class UAkSoundCue* Sound )
 	static UFunction* pFnStopBGMusic = NULL;
 
 	if ( ! pFnStopBGMusic )
-		pFnStopBGMusic = (UFunction*) UObject::GObjObjects()->Data[ 47340 ];
+		pFnStopBGMusic = (UFunction*) UObject::GObjObjects()->Data[ 47426 ];
 
 	UAkDevice_execStopBGMusic_Parms StopBGMusic_Parms;
 	StopBGMusic_Parms.Sound = Sound;
@@ -296,7 +343,7 @@ int UAkDevice::PlayBGMusic ( class UAkSoundCue* Sound )
 	static UFunction* pFnPlayBGMusic = NULL;
 
 	if ( ! pFnPlayBGMusic )
-		pFnPlayBGMusic = (UFunction*) UObject::GObjObjects()->Data[ 47337 ];
+		pFnPlayBGMusic = (UFunction*) UObject::GObjObjects()->Data[ 47423 ];
 
 	UAkDevice_execPlayBGMusic_Parms PlayBGMusic_Parms;
 	PlayBGMusic_Parms.Sound = Sound;
@@ -320,7 +367,7 @@ void UAkDevice::StopGlobalSound ( class UAkSoundCue* Sound )
 	static UFunction* pFnStopGlobalSound = NULL;
 
 	if ( ! pFnStopGlobalSound )
-		pFnStopGlobalSound = (UFunction*) UObject::GObjObjects()->Data[ 47335 ];
+		pFnStopGlobalSound = (UFunction*) UObject::GObjObjects()->Data[ 47421 ];
 
 	UAkDevice_execStopGlobalSound_Parms StopGlobalSound_Parms;
 	StopGlobalSound_Parms.Sound = Sound;
@@ -342,7 +389,7 @@ void UAkDevice::PlayGlobalSound ( class UAkSoundCue* Sound )
 	static UFunction* pFnPlayGlobalSound = NULL;
 
 	if ( ! pFnPlayGlobalSound )
-		pFnPlayGlobalSound = (UFunction*) UObject::GObjObjects()->Data[ 47333 ];
+		pFnPlayGlobalSound = (UFunction*) UObject::GObjObjects()->Data[ 47419 ];
 
 	UAkDevice_execPlayGlobalSound_Parms PlayGlobalSound_Parms;
 	PlayGlobalSound_Parms.Sound = Sound;
@@ -365,7 +412,7 @@ void UAkDevice::SetState ( struct FName InStateGroup, struct FName InState )
 	static UFunction* pFnSetState = NULL;
 
 	if ( ! pFnSetState )
-		pFnSetState = (UFunction*) UObject::GObjObjects()->Data[ 47330 ];
+		pFnSetState = (UFunction*) UObject::GObjObjects()->Data[ 47416 ];
 
 	UAkDevice_execSetState_Parms SetState_Parms;
 	memcpy ( &SetState_Parms.InStateGroup, &InStateGroup, 0x8 );
@@ -390,7 +437,7 @@ void UAkDevice::SetSwitch ( class AActor* SourceActor, struct FName Key, struct 
 	static UFunction* pFnSetSwitch = NULL;
 
 	if ( ! pFnSetSwitch )
-		pFnSetSwitch = (UFunction*) UObject::GObjObjects()->Data[ 47326 ];
+		pFnSetSwitch = (UFunction*) UObject::GObjObjects()->Data[ 47412 ];
 
 	UAkDevice_execSetSwitch_Parms SetSwitch_Parms;
 	SetSwitch_Parms.SourceActor = SourceActor;
@@ -416,7 +463,7 @@ void UAkDevice::SetRTCP ( class AActor* SourceActor, struct FName Key, float Val
 	static UFunction* pFnSetRTCP = NULL;
 
 	if ( ! pFnSetRTCP )
-		pFnSetRTCP = (UFunction*) UObject::GObjObjects()->Data[ 47321 ];
+		pFnSetRTCP = (UFunction*) UObject::GObjObjects()->Data[ 47407 ];
 
 	UAkDevice_execSetRTCP_Parms SetRTCP_Parms;
 	SetRTCP_Parms.SourceActor = SourceActor;
@@ -440,7 +487,7 @@ void UAkDevice::StopAllSounds ( class AActor* SourceActor )
 	static UFunction* pFnStopAllSounds = NULL;
 
 	if ( ! pFnStopAllSounds )
-		pFnStopAllSounds = (UFunction*) UObject::GObjObjects()->Data[ 47325 ];
+		pFnStopAllSounds = (UFunction*) UObject::GObjObjects()->Data[ 47411 ];
 
 	UAkDevice_execStopAllSounds_Parms StopAllSounds_Parms;
 	StopAllSounds_Parms.SourceActor = SourceActor;
@@ -463,7 +510,7 @@ void UAkDevice::StopSound ( class AActor* SourceActor, class UAkSoundCue* Sound 
 	static UFunction* pFnStopSound = NULL;
 
 	if ( ! pFnStopSound )
-		pFnStopSound = (UFunction*) UObject::GObjObjects()->Data[ 47318 ];
+		pFnStopSound = (UFunction*) UObject::GObjObjects()->Data[ 47404 ];
 
 	UAkDevice_execStopSound_Parms StopSound_Parms;
 	StopSound_Parms.SourceActor = SourceActor;
@@ -490,7 +537,7 @@ class UAkSoundSource* UAkDevice::PlaySound ( class AActor* SourceActor, class UA
 	static UFunction* pFnPlaySound = NULL;
 
 	if ( ! pFnPlaySound )
-		pFnPlaySound = (UFunction*) UObject::GObjObjects()->Data[ 47312 ];
+		pFnPlaySound = (UFunction*) UObject::GObjObjects()->Data[ 47398 ];
 
 	UAkDevice_execPlaySound_Parms PlaySound_Parms;
 	PlaySound_Parms.SourceActor = SourceActor;
@@ -517,7 +564,7 @@ void UAkDevice::EventMusicTrackEnd ( int PlayingID )
 	static UFunction* pFnEventMusicTrackEnd = NULL;
 
 	if ( ! pFnEventMusicTrackEnd )
-		pFnEventMusicTrackEnd = (UFunction*) UObject::GObjObjects()->Data[ 47305 ];
+		pFnEventMusicTrackEnd = (UFunction*) UObject::GObjObjects()->Data[ 47391 ];
 
 	UAkDevice_execEventMusicTrackEnd_Parms EventMusicTrackEnd_Parms;
 	EventMusicTrackEnd_Parms.PlayingID = PlayingID;
@@ -536,7 +583,7 @@ void UAkDevice::EventMusicTrackStart ( int PlayingID, struct FString FileMarker 
 	static UFunction* pFnEventMusicTrackStart = NULL;
 
 	if ( ! pFnEventMusicTrackStart )
-		pFnEventMusicTrackStart = (UFunction*) UObject::GObjObjects()->Data[ 47307 ];
+		pFnEventMusicTrackStart = (UFunction*) UObject::GObjObjects()->Data[ 47393 ];
 
 	UAkDevice_execEventMusicTrackStart_Parms EventMusicTrackStart_Parms;
 	EventMusicTrackStart_Parms.PlayingID = PlayingID;
@@ -554,35 +601,63 @@ void UAkDevice::EventInitialized ( )
 	static UFunction* pFnEventInitialized = NULL;
 
 	if ( ! pFnEventInitialized )
-		pFnEventInitialized = (UFunction*) UObject::GObjObjects()->Data[ 47303 ];
+		pFnEventInitialized = (UFunction*) UObject::GObjObjects()->Data[ 47389 ];
 
 	UAkDevice_execEventInitialized_Parms EventInitialized_Parms;
 
 	this->ProcessEvent ( pFnEventInitialized, &EventInitialized_Parms, NULL );
 };
 
-// Function AkAudio.AkEnvironments.AddMusic
+// Function AkAudio.AkEnvironments.RemoveActorEnvironment
 // [0x00420401] ( FUNC_Final | FUNC_Native )
 // Parameters infos:
+// class AActor*                  TargetActor                    ( CPF_Parm )
+// struct FString                 EnvironmentID                  ( CPF_Const | CPF_Parm | CPF_OutParm | CPF_NeedCtorLink )
+
+void UAkEnvironments::RemoveActorEnvironment ( class AActor* TargetActor, struct FString* EnvironmentID )
+{
+	static UFunction* pFnRemoveActorEnvironment = NULL;
+
+	if ( ! pFnRemoveActorEnvironment )
+		pFnRemoveActorEnvironment = (UFunction*) UObject::GObjObjects()->Data[ 47651 ];
+
+	UAkEnvironments_execRemoveActorEnvironment_Parms RemoveActorEnvironment_Parms;
+	RemoveActorEnvironment_Parms.TargetActor = TargetActor;
+
+	pFnRemoveActorEnvironment->FunctionFlags |= ~0x400;
+
+	this->ProcessEvent ( pFnRemoveActorEnvironment, &RemoveActorEnvironment_Parms, NULL );
+
+	pFnRemoveActorEnvironment->FunctionFlags |= 0x400;
+
+	if ( EnvironmentID )
+		memcpy ( EnvironmentID, &RemoveActorEnvironment_Parms.EnvironmentID, 0xC );
+};
+
+// Function AkAudio.AkEnvironments.AddActorEnvironment
+// [0x00420401] ( FUNC_Final | FUNC_Native )
+// Parameters infos:
+// class AActor*                  TargetActor                    ( CPF_Parm )
 // struct FAkEnvironment          Environment                    ( CPF_Const | CPF_Parm | CPF_OutParm | CPF_NeedCtorLink )
 
-void UAkEnvironments::AddMusic ( struct FAkEnvironment* Environment )
+void UAkEnvironments::AddActorEnvironment ( class AActor* TargetActor, struct FAkEnvironment* Environment )
 {
-	static UFunction* pFnAddMusic = NULL;
+	static UFunction* pFnAddActorEnvironment = NULL;
 
-	if ( ! pFnAddMusic )
-		pFnAddMusic = (UFunction*) UObject::GObjObjects()->Data[ 47556 ];
+	if ( ! pFnAddActorEnvironment )
+		pFnAddActorEnvironment = (UFunction*) UObject::GObjObjects()->Data[ 47652 ];
 
-	UAkEnvironments_execAddMusic_Parms AddMusic_Parms;
+	UAkEnvironments_execAddActorEnvironment_Parms AddActorEnvironment_Parms;
+	AddActorEnvironment_Parms.TargetActor = TargetActor;
 
-	pFnAddMusic->FunctionFlags |= ~0x400;
+	pFnAddActorEnvironment->FunctionFlags |= ~0x400;
 
-	this->ProcessEvent ( pFnAddMusic, &AddMusic_Parms, NULL );
+	this->ProcessEvent ( pFnAddActorEnvironment, &AddActorEnvironment_Parms, NULL );
 
-	pFnAddMusic->FunctionFlags |= 0x400;
+	pFnAddActorEnvironment->FunctionFlags |= 0x400;
 
 	if ( Environment )
-		memcpy ( Environment, &AddMusic_Parms.Environment, 0x1C );
+		memcpy ( Environment, &AddActorEnvironment_Parms.Environment, 0x1C );
 };
 
 // Function AkAudio.AkEnvironments.AddLevelDefault
@@ -595,7 +670,7 @@ void UAkEnvironments::AddLevelDefault ( struct FAkEnvironment* Environment )
 	static UFunction* pFnAddLevelDefault = NULL;
 
 	if ( ! pFnAddLevelDefault )
-		pFnAddLevelDefault = (UFunction*) UObject::GObjObjects()->Data[ 47554 ];
+		pFnAddLevelDefault = (UFunction*) UObject::GObjObjects()->Data[ 47648 ];
 
 	UAkEnvironments_execAddLevelDefault_Parms AddLevelDefault_Parms;
 
@@ -619,7 +694,7 @@ void UAkParamGroup::PrintDebugInfo ( class UDebugDrawer* Drawer )
 	static UFunction* pFnPrintDebugInfo = NULL;
 
 	if ( ! pFnPrintDebugInfo )
-		pFnPrintDebugInfo = (UFunction*) UObject::GObjObjects()->Data[ 47402 ];
+		pFnPrintDebugInfo = (UFunction*) UObject::GObjObjects()->Data[ 47496 ];
 
 	UAkParamGroup_execPrintDebugInfo_Parms PrintDebugInfo_Parms;
 	PrintDebugInfo_Parms.Drawer = Drawer;
@@ -638,7 +713,7 @@ void UAkParamGroup::SetActorParameter ( struct FName Key, class AActor* Value )
 	static UFunction* pFnSetActorParameter = NULL;
 
 	if ( ! pFnSetActorParameter )
-		pFnSetActorParameter = (UFunction*) UObject::GObjObjects()->Data[ 47413 ];
+		pFnSetActorParameter = (UFunction*) UObject::GObjObjects()->Data[ 47507 ];
 
 	UAkParamGroup_execSetActorParameter_Parms SetActorParameter_Parms;
 	memcpy ( &SetActorParameter_Parms.Key, &Key, 0x8 );
@@ -662,7 +737,7 @@ void UAkParamGroup::SetLinearColorParameter ( struct FName Key, struct FLinearCo
 	static UFunction* pFnSetLinearColorParameter = NULL;
 
 	if ( ! pFnSetLinearColorParameter )
-		pFnSetLinearColorParameter = (UFunction*) UObject::GObjObjects()->Data[ 47414 ];
+		pFnSetLinearColorParameter = (UFunction*) UObject::GObjObjects()->Data[ 47508 ];
 
 	UAkParamGroup_execSetLinearColorParameter_Parms SetLinearColorParameter_Parms;
 	memcpy ( &SetLinearColorParameter_Parms.Key, &Key, 0x8 );
@@ -686,7 +761,7 @@ void UAkParamGroup::SetVectorParameter ( struct FName Key, struct FVector Value 
 	static UFunction* pFnSetVectorParameter = NULL;
 
 	if ( ! pFnSetVectorParameter )
-		pFnSetVectorParameter = (UFunction*) UObject::GObjObjects()->Data[ 47417 ];
+		pFnSetVectorParameter = (UFunction*) UObject::GObjObjects()->Data[ 47511 ];
 
 	UAkParamGroup_execSetVectorParameter_Parms SetVectorParameter_Parms;
 	memcpy ( &SetVectorParameter_Parms.Key, &Key, 0x8 );
@@ -710,7 +785,7 @@ void UAkParamGroup::SetFloatParameter ( struct FName Key, float Value )
 	static UFunction* pFnSetFloatParameter = NULL;
 
 	if ( ! pFnSetFloatParameter )
-		pFnSetFloatParameter = (UFunction*) UObject::GObjObjects()->Data[ 47420 ];
+		pFnSetFloatParameter = (UFunction*) UObject::GObjObjects()->Data[ 47514 ];
 
 	UAkParamGroup_execSetFloatParameter_Parms SetFloatParameter_Parms;
 	memcpy ( &SetFloatParameter_Parms.Key, &Key, 0x8 );
@@ -734,7 +809,7 @@ void UAkParamGroup::SetNameParameter ( struct FName Key, struct FName Value )
 	static UFunction* pFnSetNameParameter = NULL;
 
 	if ( ! pFnSetNameParameter )
-		pFnSetNameParameter = (UFunction*) UObject::GObjObjects()->Data[ 47423 ];
+		pFnSetNameParameter = (UFunction*) UObject::GObjObjects()->Data[ 47517 ];
 
 	UAkParamGroup_execSetNameParameter_Parms SetNameParameter_Parms;
 	memcpy ( &SetNameParameter_Parms.Key, &Key, 0x8 );
@@ -760,7 +835,7 @@ void UAkParamGroup::GetDebugData ( TArray< struct FName >* RTCPKeys, TArray< flo
 	static UFunction* pFnGetDebugData = NULL;
 
 	if ( ! pFnGetDebugData )
-		pFnGetDebugData = (UFunction*) UObject::GObjObjects()->Data[ 47393 ];
+		pFnGetDebugData = (UFunction*) UObject::GObjObjects()->Data[ 47487 ];
 
 	UAkParamGroup_execGetDebugData_Parms GetDebugData_Parms;
 
@@ -793,7 +868,7 @@ void UAkParamGroup::StopSound ( class UAkSoundCue* Sound )
 	static UFunction* pFnStopSound = NULL;
 
 	if ( ! pFnStopSound )
-		pFnStopSound = (UFunction*) UObject::GObjObjects()->Data[ 47391 ];
+		pFnStopSound = (UFunction*) UObject::GObjObjects()->Data[ 47485 ];
 
 	UAkParamGroup_execStopSound_Parms StopSound_Parms;
 	StopSound_Parms.Sound = Sound;
@@ -818,7 +893,7 @@ class UAkSoundSource* UAkParamGroup::PlaySound ( class UAkSoundCue* Sound, struc
 	static UFunction* pFnPlaySound = NULL;
 
 	if ( ! pFnPlaySound )
-		pFnPlaySound = (UFunction*) UObject::GObjObjects()->Data[ 47386 ];
+		pFnPlaySound = (UFunction*) UObject::GObjObjects()->Data[ 47480 ];
 
 	UAkParamGroup_execPlaySound_Parms PlaySound_Parms;
 	PlaySound_Parms.Sound = Sound;
@@ -845,7 +920,7 @@ void UAkParamGroup::SetSwitch ( struct FName Key, struct FName Value )
 	static UFunction* pFnSetSwitch = NULL;
 
 	if ( ! pFnSetSwitch )
-		pFnSetSwitch = (UFunction*) UObject::GObjObjects()->Data[ 47383 ];
+		pFnSetSwitch = (UFunction*) UObject::GObjObjects()->Data[ 47477 ];
 
 	UAkParamGroup_execSetSwitch_Parms SetSwitch_Parms;
 	memcpy ( &SetSwitch_Parms.Key, &Key, 0x8 );
@@ -869,7 +944,7 @@ void UAkParamGroup::SetRTCP ( struct FName Key, float Value )
 	static UFunction* pFnSetRTCP = NULL;
 
 	if ( ! pFnSetRTCP )
-		pFnSetRTCP = (UFunction*) UObject::GObjObjects()->Data[ 47380 ];
+		pFnSetRTCP = (UFunction*) UObject::GObjObjects()->Data[ 47474 ];
 
 	UAkParamGroup_execSetRTCP_Parms SetRTCP_Parms;
 	memcpy ( &SetRTCP_Parms.Key, &Key, 0x8 );
@@ -893,7 +968,7 @@ void UAkPlaySoundComponent::SetActorParameter ( struct FName Key, class AActor* 
 	static UFunction* pFnSetActorParameter = NULL;
 
 	if ( ! pFnSetActorParameter )
-		pFnSetActorParameter = (UFunction*) UObject::GObjObjects()->Data[ 47289 ];
+		pFnSetActorParameter = (UFunction*) UObject::GObjObjects()->Data[ 47375 ];
 
 	UAkPlaySoundComponent_execSetActorParameter_Parms SetActorParameter_Parms;
 	memcpy ( &SetActorParameter_Parms.Key, &Key, 0x8 );
@@ -917,7 +992,7 @@ void UAkPlaySoundComponent::SetLinearColorParameter ( struct FName Key, struct F
 	static UFunction* pFnSetLinearColorParameter = NULL;
 
 	if ( ! pFnSetLinearColorParameter )
-		pFnSetLinearColorParameter = (UFunction*) UObject::GObjObjects()->Data[ 47286 ];
+		pFnSetLinearColorParameter = (UFunction*) UObject::GObjObjects()->Data[ 47372 ];
 
 	UAkPlaySoundComponent_execSetLinearColorParameter_Parms SetLinearColorParameter_Parms;
 	memcpy ( &SetLinearColorParameter_Parms.Key, &Key, 0x8 );
@@ -941,7 +1016,7 @@ void UAkPlaySoundComponent::SetVectorParameter ( struct FName Key, struct FVecto
 	static UFunction* pFnSetVectorParameter = NULL;
 
 	if ( ! pFnSetVectorParameter )
-		pFnSetVectorParameter = (UFunction*) UObject::GObjObjects()->Data[ 47283 ];
+		pFnSetVectorParameter = (UFunction*) UObject::GObjObjects()->Data[ 47369 ];
 
 	UAkPlaySoundComponent_execSetVectorParameter_Parms SetVectorParameter_Parms;
 	memcpy ( &SetVectorParameter_Parms.Key, &Key, 0x8 );
@@ -965,7 +1040,7 @@ void UAkPlaySoundComponent::SetFloatParameter ( struct FName Key, float Value )
 	static UFunction* pFnSetFloatParameter = NULL;
 
 	if ( ! pFnSetFloatParameter )
-		pFnSetFloatParameter = (UFunction*) UObject::GObjObjects()->Data[ 47280 ];
+		pFnSetFloatParameter = (UFunction*) UObject::GObjObjects()->Data[ 47366 ];
 
 	UAkPlaySoundComponent_execSetFloatParameter_Parms SetFloatParameter_Parms;
 	memcpy ( &SetFloatParameter_Parms.Key, &Key, 0x8 );
@@ -989,7 +1064,7 @@ void UAkPlaySoundComponent::SetNameParameter ( struct FName Key, struct FName Va
 	static UFunction* pFnSetNameParameter = NULL;
 
 	if ( ! pFnSetNameParameter )
-		pFnSetNameParameter = (UFunction*) UObject::GObjObjects()->Data[ 47277 ];
+		pFnSetNameParameter = (UFunction*) UObject::GObjObjects()->Data[ 47363 ];
 
 	UAkPlaySoundComponent_execSetNameParameter_Parms SetNameParameter_Parms;
 	memcpy ( &SetNameParameter_Parms.Key, &Key, 0x8 );
@@ -1013,7 +1088,7 @@ void UAkPlaySoundComponent::SetRTCP ( struct FName Key, float Value )
 	static UFunction* pFnSetRTCP = NULL;
 
 	if ( ! pFnSetRTCP )
-		pFnSetRTCP = (UFunction*) UObject::GObjObjects()->Data[ 47274 ];
+		pFnSetRTCP = (UFunction*) UObject::GObjObjects()->Data[ 47360 ];
 
 	UAkPlaySoundComponent_execSetRTCP_Parms SetRTCP_Parms;
 	memcpy ( &SetRTCP_Parms.Key, &Key, 0x8 );
@@ -1037,7 +1112,7 @@ void UAkPlaySoundComponent::SetSwitch ( struct FName Key, struct FName Value )
 	static UFunction* pFnSetSwitch = NULL;
 
 	if ( ! pFnSetSwitch )
-		pFnSetSwitch = (UFunction*) UObject::GObjObjects()->Data[ 47271 ];
+		pFnSetSwitch = (UFunction*) UObject::GObjObjects()->Data[ 47357 ];
 
 	UAkPlaySoundComponent_execSetSwitch_Parms SetSwitch_Parms;
 	memcpy ( &SetSwitch_Parms.Key, &Key, 0x8 );
@@ -1060,7 +1135,7 @@ bool UAkPlaySoundComponent::IsPlaying ( )
 	static UFunction* pFnIsPlaying = NULL;
 
 	if ( ! pFnIsPlaying )
-		pFnIsPlaying = (UFunction*) UObject::GObjObjects()->Data[ 47269 ];
+		pFnIsPlaying = (UFunction*) UObject::GObjObjects()->Data[ 47355 ];
 
 	UAkPlaySoundComponent_execIsPlaying_Parms IsPlaying_Parms;
 
@@ -1082,7 +1157,7 @@ void UAkPlaySoundComponent::Stop ( )
 	static UFunction* pFnStop = NULL;
 
 	if ( ! pFnStop )
-		pFnStop = (UFunction*) UObject::GObjObjects()->Data[ 47268 ];
+		pFnStop = (UFunction*) UObject::GObjObjects()->Data[ 47354 ];
 
 	UAkPlaySoundComponent_execStop_Parms Stop_Parms;
 
@@ -1102,7 +1177,7 @@ void UAkPlaySoundComponent::Play ( )
 	static UFunction* pFnPlay = NULL;
 
 	if ( ! pFnPlay )
-		pFnPlay = (UFunction*) UObject::GObjObjects()->Data[ 47267 ];
+		pFnPlay = (UFunction*) UObject::GObjObjects()->Data[ 47353 ];
 
 	UAkPlaySoundComponent_execPlay_Parms Play_Parms;
 
@@ -1123,7 +1198,7 @@ void UAkRevPhysicsSimulation::PrintDebugInfo ( class UDebugDrawer* Drawer )
 	static UFunction* pFnPrintDebugInfo = NULL;
 
 	if ( ! pFnPrintDebugInfo )
-		pFnPrintDebugInfo = (UFunction*) UObject::GObjObjects()->Data[ 47547 ];
+		pFnPrintDebugInfo = (UFunction*) UObject::GObjObjects()->Data[ 47641 ];
 
 	UAkRevPhysicsSimulation_execPrintDebugInfo_Parms PrintDebugInfo_Parms;
 	PrintDebugInfo_Parms.Drawer = Drawer;
@@ -1142,7 +1217,7 @@ float UAkRevPhysicsSimulation::GetGearRatio ( struct FAkRevSimUpdateParams* SimU
 	static UFunction* pFnGetGearRatio = NULL;
 
 	if ( ! pFnGetGearRatio )
-		pFnGetGearRatio = (UFunction*) UObject::GObjObjects()->Data[ 47544 ];
+		pFnGetGearRatio = (UFunction*) UObject::GObjObjects()->Data[ 47638 ];
 
 	UAkRevPhysicsSimulation_execGetGearRatio_Parms GetGearRatio_Parms;
 
@@ -1170,7 +1245,7 @@ float UAkRevPhysicsSimulation::CalcVelocity ( float GearRatio, float RPM )
 	static UFunction* pFnCalcVelocity = NULL;
 
 	if ( ! pFnCalcVelocity )
-		pFnCalcVelocity = (UFunction*) UObject::GObjObjects()->Data[ 47540 ];
+		pFnCalcVelocity = (UFunction*) UObject::GObjObjects()->Data[ 47634 ];
 
 	UAkRevPhysicsSimulation_execCalcVelocity_Parms CalcVelocity_Parms;
 	CalcVelocity_Parms.GearRatio = GearRatio;
@@ -1197,7 +1272,7 @@ float UAkRevPhysicsSimulation::CalcRPM ( float GearRatio, float Velocity )
 	static UFunction* pFnCalcRPM = NULL;
 
 	if ( ! pFnCalcRPM )
-		pFnCalcRPM = (UFunction*) UObject::GObjObjects()->Data[ 47536 ];
+		pFnCalcRPM = (UFunction*) UObject::GObjObjects()->Data[ 47630 ];
 
 	UAkRevPhysicsSimulation_execCalcRPM_Parms CalcRPM_Parms;
 	CalcRPM_Parms.GearRatio = GearRatio;
@@ -1224,7 +1299,7 @@ struct FAkRevSimFrame UAkRevPhysicsSimulation::Step ( float DeltaTime, struct FA
 	static UFunction* pFnStep = NULL;
 
 	if ( ! pFnStep )
-		pFnStep = (UFunction*) UObject::GObjObjects()->Data[ 47532 ];
+		pFnStep = (UFunction*) UObject::GObjObjects()->Data[ 47626 ];
 
 	UAkRevPhysicsSimulation_execStep_Parms Step_Parms;
 	Step_Parms.DeltaTime = DeltaTime;
@@ -1251,7 +1326,7 @@ void UAkRevPhysicsSimulation::EventGearChange ( class UAkRevPhysicsSimulation* S
 	static UFunction* pFnEventGearChange = NULL;
 
 	if ( ! pFnEventGearChange )
-		pFnEventGearChange = (UFunction*) UObject::GObjObjects()->Data[ 47517 ];
+		pFnEventGearChange = (UFunction*) UObject::GObjObjects()->Data[ 47611 ];
 
 	UAkRevPhysicsSimulation_execEventGearChange_Parms EventGearChange_Parms;
 	EventGearChange_Parms.Simulation = Simulation;
@@ -1269,7 +1344,7 @@ bool UAkSoundSource::IsPlayingAny ( )
 	static UFunction* pFnIsPlayingAny = NULL;
 
 	if ( ! pFnIsPlayingAny )
-		pFnIsPlayingAny = (UFunction*) UObject::GObjObjects()->Data[ 47454 ];
+		pFnIsPlayingAny = (UFunction*) UObject::GObjObjects()->Data[ 47548 ];
 
 	UAkSoundSource_execIsPlayingAny_Parms IsPlayingAny_Parms;
 
@@ -1293,7 +1368,7 @@ bool UAkSoundSource::IsPlaying ( class UAkSoundCue* Sound )
 	static UFunction* pFnIsPlaying = NULL;
 
 	if ( ! pFnIsPlaying )
-		pFnIsPlaying = (UFunction*) UObject::GObjObjects()->Data[ 47450 ];
+		pFnIsPlaying = (UFunction*) UObject::GObjObjects()->Data[ 47544 ];
 
 	UAkSoundSource_execIsPlaying_Parms IsPlaying_Parms;
 	IsPlaying_Parms.Sound = Sound;
@@ -1316,7 +1391,7 @@ void UAkSoundSource::StopAll ( )
 	static UFunction* pFnStopAll = NULL;
 
 	if ( ! pFnStopAll )
-		pFnStopAll = (UFunction*) UObject::GObjObjects()->Data[ 47453 ];
+		pFnStopAll = (UFunction*) UObject::GObjObjects()->Data[ 47547 ];
 
 	UAkSoundSource_execStopAll_Parms StopAll_Parms;
 
@@ -1337,7 +1412,7 @@ void UAkSoundSource::Stop ( class UAkSoundCue* Sound )
 	static UFunction* pFnStop = NULL;
 
 	if ( ! pFnStop )
-		pFnStop = (UFunction*) UObject::GObjObjects()->Data[ 47448 ];
+		pFnStop = (UFunction*) UObject::GObjObjects()->Data[ 47542 ];
 
 	UAkSoundSource_execStop_Parms Stop_Parms;
 	Stop_Parms.Sound = Sound;
@@ -1359,7 +1434,7 @@ void UAkSoundSource::Play ( class UAkSoundCue* Sound )
 	static UFunction* pFnPlay = NULL;
 
 	if ( ! pFnPlay )
-		pFnPlay = (UFunction*) UObject::GObjObjects()->Data[ 47446 ];
+		pFnPlay = (UFunction*) UObject::GObjObjects()->Data[ 47540 ];
 
 	UAkSoundSource_execPlay_Parms Play_Parms;
 	Play_Parms.Sound = Sound;
@@ -1381,7 +1456,7 @@ void AAkAmbientSoundActor::OnToggle ( class USeqAct_Toggle* Action )
 	static UFunction* pFnOnToggle = NULL;
 
 	if ( ! pFnOnToggle )
-		pFnOnToggle = (UFunction*) UObject::GObjObjects()->Data[ 47294 ];
+		pFnOnToggle = (UFunction*) UObject::GObjObjects()->Data[ 47380 ];
 
 	AAkAmbientSoundActor_execOnToggle_Parms OnToggle_Parms;
 	OnToggle_Parms.Action = Action;
@@ -1400,7 +1475,7 @@ void USeqAct_AkPlaySound::ToggleSoundFor ( class AActor* A, unsigned long bPlay 
 	static UFunction* pFnToggleSoundFor = NULL;
 
 	if ( ! pFnToggleSoundFor )
-		pFnToggleSoundFor = (UFunction*) UObject::GObjObjects()->Data[ 47475 ];
+		pFnToggleSoundFor = (UFunction*) UObject::GObjObjects()->Data[ 47569 ];
 
 	USeqAct_AkPlaySound_execToggleSoundFor_Parms ToggleSoundFor_Parms;
 	ToggleSoundFor_Parms.A = A;
@@ -1419,7 +1494,7 @@ void USeqAct_AkPlaySound::ToggleSound ( unsigned long bPlay )
 	static UFunction* pFnToggleSound = NULL;
 
 	if ( ! pFnToggleSound )
-		pFnToggleSound = (UFunction*) UObject::GObjObjects()->Data[ 47471 ];
+		pFnToggleSound = (UFunction*) UObject::GObjObjects()->Data[ 47565 ];
 
 	USeqAct_AkPlaySound_execToggleSound_Parms ToggleSound_Parms;
 	ToggleSound_Parms.bPlay = bPlay;
@@ -1436,7 +1511,7 @@ void USeqAct_AkPlaySound::eventActivated ( )
 	static UFunction* pFnActivated = NULL;
 
 	if ( ! pFnActivated )
-		pFnActivated = (UFunction*) UObject::GObjObjects()->Data[ 47470 ];
+		pFnActivated = (UFunction*) UObject::GObjObjects()->Data[ 47564 ];
 
 	USeqAct_AkPlaySound_eventActivated_Parms Activated_Parms;
 

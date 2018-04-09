@@ -1791,6 +1791,22 @@ struct UOnlineSubsystemCommonImpl_execOnSanitizeStringComplete_Parms
 	struct FWordFilterResult                           Result;                                           		// 0x0000 (0x0028) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
+// Function IpDrv.OnlineAuthInterfaceImpl.RequestAccountAuthorization
+// [0x00020000] 
+struct UOnlineAuthInterfaceImpl_execRequestAccountAuthorization_Parms
+{
+	struct FUniqueNetId                                PlayerID;                                         		// 0x0000 (0x0048) [0x0000000000000080]              ( CPF_Parm )
+	struct FScriptDelegate                             Callback;                                         		// 0x0048 (0x0010) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
+	class UAsyncTask*                                  ReturnValue;                                      		// 0x0058 (0x0004) [0x0000000000000580]              ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
+};
+
+// Function IpDrv.OnlineAuthInterfaceImpl.OnAccountAuthorization
+// [0x00120000] 
+struct UOnlineAuthInterfaceImpl_execOnAccountAuthorization_Parms
+{
+	struct FString                                     Token;                                            		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
+};
+
 // Function IpDrv.OnlineAuthInterfaceImpl.OnLoginChanged
 // [0x00020000] 
 struct UOnlineAuthInterfaceImpl_execOnLoginChanged_Parms
@@ -1798,46 +1814,37 @@ struct UOnlineAuthInterfaceImpl_execOnLoginChanged_Parms
 	unsigned long                                      bLoggedIn : 1;                                    		// 0x0000 (0x0004) [0x0000000000000080] [0x00000001] ( CPF_Parm )
 };
 
-// Function IpDrv.OnlineAuthInterfaceImpl.RequiresMTXAuthorizationCode
+// Function IpDrv.OnlineAuthInterfaceImpl.RequestMtxCode
 // [0x00020000] 
-struct UOnlineAuthInterfaceImpl_execRequiresMTXAuthorizationCode_Parms
-{
-	unsigned long                                      ReturnValue : 1;                                  		// 0x0000 (0x0004) [0x0000000000000580] [0x00000001] ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-};
-
-// Function IpDrv.OnlineAuthInterfaceImpl.RequiresAuthorizationCode
-// [0x00020000] 
-struct UOnlineAuthInterfaceImpl_execRequiresAuthorizationCode_Parms
-{
-	unsigned long                                      ReturnValue : 1;                                  		// 0x0000 (0x0004) [0x0000000000000580] [0x00000001] ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-};
-
-// Function IpDrv.OnlineAuthInterfaceImpl.IsRequestingAuthorizationCode
-// [0x00020000] 
-struct UOnlineAuthInterfaceImpl_execIsRequestingAuthorizationCode_Parms
+struct UOnlineAuthInterfaceImpl_execRequestMtxCode_Parms
 {
 	struct FUniqueNetId                                PlayerID;                                         		// 0x0000 (0x0048) [0x0000000000000080]              ( CPF_Parm )
 	struct FScriptDelegate                             Callback;                                         		// 0x0048 (0x0010) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 	unsigned long                                      ReturnValue : 1;                                  		// 0x0058 (0x0004) [0x0000000000000580] [0x00000001] ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
 };
 
-// Function IpDrv.OnlineAuthInterfaceImpl.RequestAuthorizationCode
+// Function IpDrv.OnlineAuthInterfaceImpl.RequestAuthTicket
 // [0x00020000] 
-struct UOnlineAuthInterfaceImpl_execRequestAuthorizationCode_Parms
+struct UOnlineAuthInterfaceImpl_execRequestAuthTicket_Parms
 {
 	struct FUniqueNetId                                PlayerID;                                         		// 0x0000 (0x0048) [0x0000000000000080]              ( CPF_Parm )
 	struct FScriptDelegate                             Callback;                                         		// 0x0048 (0x0010) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 	unsigned long                                      ReturnValue : 1;                                  		// 0x0058 (0x0004) [0x0000000000000580] [0x00000001] ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
 };
 
-// Function IpDrv.OnlineAuthInterfaceImpl.OnReceivedAuthorizationCode
+// Function IpDrv.OnlineAuthInterfaceImpl.RequiresAuthTicket
+// [0x00020000] 
+struct UOnlineAuthInterfaceImpl_execRequiresAuthTicket_Parms
+{
+	unsigned long                                      ReturnValue : 1;                                  		// 0x0000 (0x0004) [0x0000000000000580] [0x00000001] ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
+};
+
+// Function IpDrv.OnlineAuthInterfaceImpl.OnReceivedAuthCode
 // [0x00120000] 
-struct UOnlineAuthInterfaceImpl_execOnReceivedAuthorizationCode_Parms
+struct UOnlineAuthInterfaceImpl_execOnReceivedAuthCode_Parms
 {
 	unsigned long                                      bSuccess : 1;                                     		// 0x0000 (0x0004) [0x0000000000000080] [0x00000001] ( CPF_Parm )
-	struct FString                                     AuthorizationCode;                                		// 0x0004 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
-	struct FString                                     EncryptedTicket;                                  		// 0x0010 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
-	int                                                IssuerID;                                         		// 0x001C (0x0004) [0x0000000000000080]              ( CPF_Parm )
+	struct FString                                     Code;                                             		// 0x0004 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function IpDrv.OnlineAuthInterfaceImpl.GetServerAddr
@@ -6863,6 +6870,13 @@ struct UOnlineImageDownloaderWeb_execDownloadNextImage_Parms
 {
 	// int                                             Idx;                                              		// 0x0000 (0x0004) [0x0000000000000000]              
 	// int                                             PendingDownloads;                                 		// 0x0004 (0x0004) [0x0000000000000000]              
+};
+
+// Function IpDrv.OnlineImageDownloaderWeb.ClearPendingDownloads
+// [0x00020002] 
+struct UOnlineImageDownloaderWeb_execClearPendingDownloads_Parms
+{
+	// int                                             Idx;                                              		// 0x0000 (0x0004) [0x0000000000000000]              
 };
 
 // Function IpDrv.OnlineImageDownloaderWeb.ClearAllDownloads

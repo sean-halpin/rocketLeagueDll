@@ -94,6 +94,13 @@ struct UObject_execPadString_Parms
 	// int                                             PadIdx;                                           		// 0x001C (0x0004) [0x0000000000000000]              
 };
 
+// Function Core.Object.GetFrameCounter
+// [0x00022401] ( FUNC_Final | FUNC_Native )
+struct UObject_execGetFrameCounter_Parms
+{
+	// UNKNOWN PROPERTY: QWordProperty Core.Object.GetFrameCounter.ReturnValue
+};
+
 // Function Core.Object.GetScaledAxisValue
 // [0x00022401] ( FUNC_Final | FUNC_Native )
 struct UObject_execGetScaledAxisValue_Parms
@@ -249,7 +256,8 @@ struct UObject_execDuplicateObject_Parms
 {
 	class UObject*                                     Template;                                         		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 	class UObject*                                     ObjOuter;                                         		// 0x0004 (0x0004) [0x0000000000000090]              ( CPF_OptionalParm | CPF_Parm )
-	class UObject*                                     ReturnValue;                                      		// 0x0008 (0x0004) [0x0000000000000D80]              ( CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_CoerceParm )
+	class UClass*                                      DestClass;                                        		// 0x0008 (0x0004) [0x0000000000000090]              ( CPF_OptionalParm | CPF_Parm )
+	class UObject*                                     ReturnValue;                                      		// 0x000C (0x0004) [0x0000000000000D80]              ( CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_CoerceParm )
 };
 
 // Function Core.Object.RunningAverage
@@ -286,6 +294,22 @@ struct UObject_execGetMaxColorBrightness_Parms
 	struct FColor                                      ReturnValue;                                      		// 0x0004 (0x0004) [0x0000000000000580]              ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
 };
 
+// Function Core.Object.LABtoRGB
+// [0x00022401] ( FUNC_Final | FUNC_Native )
+struct UObject_execLABtoRGB_Parms
+{
+	struct FLinearColor                                C;                                                		// 0x0000 (0x0010) [0x0000000000000080]              ( CPF_Parm )
+	struct FLinearColor                                ReturnValue;                                      		// 0x0010 (0x0010) [0x0000000000000580]              ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
+};
+
+// Function Core.Object.RGBtoLAB
+// [0x00022401] ( FUNC_Final | FUNC_Native )
+struct UObject_execRGBtoLAB_Parms
+{
+	struct FLinearColor                                C;                                                		// 0x0000 (0x0010) [0x0000000000000080]              ( CPF_Parm )
+	struct FLinearColor                                ReturnValue;                                      		// 0x0010 (0x0010) [0x0000000000000580]              ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
+};
+
 // Function Core.Object.HSVtoRGB
 // [0x00022401] ( FUNC_Final | FUNC_Native )
 struct UObject_execHSVtoRGB_Parms
@@ -300,6 +324,14 @@ struct UObject_execRGBtoHSV_Parms
 {
 	struct FLinearColor                                C;                                                		// 0x0000 (0x0010) [0x0000000000000080]              ( CPF_Parm )
 	struct FLinearColor                                ReturnValue;                                      		// 0x0010 (0x0010) [0x0000000000000580]              ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
+};
+
+// Function Core.Object.IntToLinearColor
+// [0x00022103] ( FUNC_Final )
+struct UObject_execIntToLinearColor_Parms
+{
+	int                                                I;                                                		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
+	struct FLinearColor                                ReturnValue;                                      		// 0x0004 (0x0010) [0x0000000000000580]              ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
 };
 
 // Function Core.Object.IntToColor
@@ -3830,6 +3862,14 @@ struct UFileSystem_execGetFilename_Parms
 {
 	struct FString                                     Path;                                             		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 	struct FString                                     ReturnValue;                                      		// 0x000C (0x000C) [0x0000000000400580]              ( CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink )
+};
+
+// Function Core.FileSystem.FindFiles
+// [0x00422401] ( FUNC_Final | FUNC_Native )
+struct UFileSystem_execFindFiles_Parms
+{
+	struct FString                                     Path;                                             		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
+	TArray< struct FString >                           OutFilenames;                                     		// 0x000C (0x000C) [0x0000000000400180]              ( CPF_Parm | CPF_OutParm | CPF_NeedCtorLink )
 };
 
 // Function Core.ErrorType.CreateError

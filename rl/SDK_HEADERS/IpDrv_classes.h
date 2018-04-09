@@ -365,7 +365,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3017 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3031 ];
 
 		return pClassPointer;
 	};
@@ -397,7 +397,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3019 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3033 ];
 
 		return pClassPointer;
 	};
@@ -425,7 +425,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3021 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3035 ];
 
 		return pClassPointer;
 	};
@@ -449,7 +449,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3023 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3037 ];
 
 		return pClassPointer;
 	};
@@ -459,7 +459,7 @@ public:
 UClass* UClientBeaconAddressResolver::pClassPointer = NULL;
 
 // Class IpDrv.HTTPDownload
-// 0x0100 (0x0B70 - 0x0A70)
+// 0x0104 (0x0B74 - 0x0A70)
 class UHTTPDownload : public UDownload
 {
 public:
@@ -467,7 +467,7 @@ public:
 	int                                                ProxyServerPort;                                  		// 0x0A7C (0x0004) [0x0000000000004000]              ( CPF_Config )
 	unsigned long                                      MaxRedirection : 1;                               		// 0x0A80 (0x0004) [0x0000000000004000] [0x00000001] ( CPF_Config )
 	float                                              ConnectionTimeout;                                		// 0x0A84 (0x0004) [0x0000000000004000]              ( CPF_Config )
-	unsigned char                                      UnknownData00[ 0xE8 ];                            		// 0x0A88 (0x00E8) MISSED OFFSET
+	unsigned char                                      UnknownData00[ 0xEC ];                            		// 0x0A88 (0x00EC) MISSED OFFSET
 
 private:
 	static UClass* pClassPointer;
@@ -476,7 +476,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3025 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3039 ];
 
 		return pClassPointer;
 	};
@@ -502,7 +502,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3033 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3047 ];
 
 		return pClassPointer;
 	};
@@ -540,7 +540,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3035 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3049 ];
 
 		return pClassPointer;
 	};
@@ -559,19 +559,19 @@ public:
 UClass* UHttpResponseCurl::pClassPointer = NULL;
 
 // Class IpDrv.InternetLink
-// 0x0018 (0x0214 - 0x01FC)
+// 0x0018 (0x0228 - 0x0210)
 class AInternetLink : public AInfo
 {
 public:
-	unsigned char                                      LinkMode;                                         		// 0x01FC (0x0001) [0x0000000000000000]              
-	unsigned char                                      InLineMode;                                       		// 0x01FD (0x0001) [0x0000000000000000]              
-	unsigned char                                      OutLineMode;                                      		// 0x01FE (0x0001) [0x0000000000000000]              
-	unsigned char                                      ReceiveMode;                                      		// 0x01FF (0x0001) [0x0000000000000000]              
-	struct FPointer                                    Socket;                                           		// 0x0200 (0x0004) [0x0000000000000002]              ( CPF_Const )
-	int                                                Port;                                             		// 0x0204 (0x0004) [0x0000000000000002]              ( CPF_Const )
-	struct FPointer                                    RemoteSocket;                                     		// 0x0208 (0x0004) [0x0000000000000002]              ( CPF_Const )
-	struct FPointer                                    PrivateResolveInfo;                               		// 0x020C (0x0004) [0x0000000000001002]              ( CPF_Const | CPF_Native )
-	int                                                DataPending;                                      		// 0x0210 (0x0004) [0x0000000000000002]              ( CPF_Const )
+	unsigned char                                      LinkMode;                                         		// 0x0210 (0x0001) [0x0000000000000000]              
+	unsigned char                                      InLineMode;                                       		// 0x0211 (0x0001) [0x0000000000000000]              
+	unsigned char                                      OutLineMode;                                      		// 0x0212 (0x0001) [0x0000000000000000]              
+	unsigned char                                      ReceiveMode;                                      		// 0x0213 (0x0001) [0x0000000000000000]              
+	struct FPointer                                    Socket;                                           		// 0x0214 (0x0004) [0x0000000000000002]              ( CPF_Const )
+	int                                                Port;                                             		// 0x0218 (0x0004) [0x0000000000000002]              ( CPF_Const )
+	struct FPointer                                    RemoteSocket;                                     		// 0x021C (0x0004) [0x0000000000000002]              ( CPF_Const )
+	struct FPointer                                    PrivateResolveInfo;                               		// 0x0220 (0x0004) [0x0000000000001002]              ( CPF_Const | CPF_Native )
+	int                                                DataPending;                                      		// 0x0224 (0x0004) [0x0000000000000002]              ( CPF_Const )
 
 private:
 	static UClass* pClassPointer;
@@ -580,7 +580,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3037 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3051 ];
 
 		return pClassPointer;
 	};
@@ -599,15 +599,15 @@ public:
 UClass* AInternetLink::pClassPointer = NULL;
 
 // Class IpDrv.TcpLink
-// 0x0034 (0x0248 - 0x0214)
+// 0x0034 (0x025C - 0x0228)
 class ATcpLink : public AInternetLink
 {
 public:
-	unsigned char                                      LinkState;                                        		// 0x0214 (0x0001) [0x0000000000000000]              
-	struct FIpAddr                                     RemoteAddr;                                       		// 0x0218 (0x0014) [0x0000000000000000]              
-	class UClass*                                      AcceptClass;                                      		// 0x022C (0x0004) [0x0000000000000000]              
-	TArray< unsigned char >                            SendFIFO;                                         		// 0x0230 (0x000C) [0x0000000000400002]              ( CPF_Const | CPF_NeedCtorLink )
-	struct FString                                     RecvBuf;                                          		// 0x023C (0x000C) [0x0000000000400002]              ( CPF_Const | CPF_NeedCtorLink )
+	unsigned char                                      LinkState;                                        		// 0x0228 (0x0001) [0x0000000000000000]              
+	struct FIpAddr                                     RemoteAddr;                                       		// 0x022C (0x0014) [0x0000000000000000]              
+	class UClass*                                      AcceptClass;                                      		// 0x0240 (0x0004) [0x0000000000000000]              
+	TArray< unsigned char >                            SendFIFO;                                         		// 0x0244 (0x000C) [0x0000000000400002]              ( CPF_Const | CPF_NeedCtorLink )
+	struct FString                                     RecvBuf;                                          		// 0x0250 (0x000C) [0x0000000000400002]              ( CPF_Const | CPF_NeedCtorLink )
 
 private:
 	static UClass* pClassPointer;
@@ -616,7 +616,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3039 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3053 ];
 
 		return pClassPointer;
 	};
@@ -655,7 +655,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3041 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3055 ];
 
 		return pClassPointer;
 	};
@@ -682,7 +682,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3043 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3057 ];
 
 		return pClassPointer;
 	};
@@ -708,7 +708,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3045 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3059 ];
 
 		return pClassPointer;
 	};
@@ -739,7 +739,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3047 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3061 ];
 
 		return pClassPointer;
 	};
@@ -777,7 +777,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3049 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3063 ];
 
 		return pClassPointer;
 	};
@@ -814,7 +814,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3051 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3065 ];
 
 		return pClassPointer;
 	};
@@ -842,7 +842,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3053 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3067 ];
 
 		return pClassPointer;
 	};
@@ -882,7 +882,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3055 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3069 ];
 
 		return pClassPointer;
 	};
@@ -932,7 +932,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3057 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3071 ];
 
 		return pClassPointer;
 	};
@@ -975,7 +975,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3059 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3073 ];
 
 		return pClassPointer;
 	};
@@ -1030,7 +1030,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3061 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3075 ];
 
 		return pClassPointer;
 	};
@@ -1098,7 +1098,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3063 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3077 ];
 
 		return pClassPointer;
 	};
@@ -1142,7 +1142,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3065 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3079 ];
 
 		return pClassPointer;
 	};
@@ -1188,7 +1188,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3067 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3081 ];
 
 		return pClassPointer;
 	};
@@ -1239,7 +1239,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3069 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3083 ];
 
 		return pClassPointer;
 	};
@@ -1254,54 +1254,58 @@ public:
 UClass* UOnlineSubsystemCommonImpl::pClassPointer = NULL;
 
 // Class IpDrv.OnlineAuthInterfaceImpl
-// 0x0270 (0x02AC - 0x003C)
+// 0x0290 (0x02CC - 0x003C)
 class UOnlineAuthInterfaceImpl : public UObject
 {
 public:
 	struct FPointer                                    VfTable_IOnlineAuthInterface;                     		// 0x003C (0x0004) [0x0000000000801002]              ( CPF_Const | CPF_Native | CPF_NoExport )
-	class UOnlineSubsystemCommonImpl*                  OwningSubsystem;                                  		// 0x0040 (0x0004) [0x0000000000000000]              
-	unsigned long                                      bAuthReady : 1;                                   		// 0x0044 (0x0004) [0x0000000000000002] [0x00000001] ( CPF_Const )
-	struct FSparseArray_Mirror                         ClientAuthSessions;                               		// 0x0048 (0x0030) [0x0000000000001002]              ( CPF_Const | CPF_Native )
-	struct FSparseArray_Mirror                         ServerAuthSessions;                               		// 0x0078 (0x0030) [0x0000000000001002]              ( CPF_Const | CPF_Native )
-	struct FSparseArray_Mirror                         PeerAuthSessions;                                 		// 0x00A8 (0x0030) [0x0000000000001002]              ( CPF_Const | CPF_Native )
-	struct FSparseArray_Mirror                         LocalClientAuthSessions;                          		// 0x00D8 (0x0030) [0x0000000000001002]              ( CPF_Const | CPF_Native )
-	struct FSparseArray_Mirror                         LocalServerAuthSessions;                          		// 0x0108 (0x0030) [0x0000000000001002]              ( CPF_Const | CPF_Native )
-	struct FSparseArray_Mirror                         LocalPeerAuthSessions;                            		// 0x0138 (0x0030) [0x0000000000001002]              ( CPF_Const | CPF_Native )
-	TArray< struct FScriptDelegate >                   AuthReadyDelegates;                               		// 0x0168 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	TArray< struct FScriptDelegate >                   ClientAuthRequestDelegates;                       		// 0x0174 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	TArray< struct FScriptDelegate >                   ServerAuthRequestDelegates;                       		// 0x0180 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	TArray< struct FScriptDelegate >                   ClientAuthResponseDelegates;                      		// 0x018C (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	TArray< struct FScriptDelegate >                   ServerAuthResponseDelegates;                      		// 0x0198 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	TArray< struct FScriptDelegate >                   ClientAuthCompleteDelegates;                      		// 0x01A4 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	TArray< struct FScriptDelegate >                   ServerAuthCompleteDelegates;                      		// 0x01B0 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	TArray< struct FScriptDelegate >                   ClientAuthEndSessionRequestDelegates;             		// 0x01BC (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	TArray< struct FScriptDelegate >                   ServerAuthRetryRequestDelegates;                  		// 0x01C8 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	TArray< struct FScriptDelegate >                   ClientConnectionCloseDelegates;                   		// 0x01D4 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	TArray< struct FScriptDelegate >                   ServerConnectionCloseDelegates;                   		// 0x01E0 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	struct FScriptDelegate                             __OnAuthReady__Delegate;                          		// 0x01EC (0x0010) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	unsigned char                                      UnknownData00[ 0x4 ];                             		// 0x01F0 (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
-	struct FScriptDelegate                             __OnClientAuthRequest__Delegate;                  		// 0x01FC (0x0010) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	unsigned char                                      UnknownData01[ 0x4 ];                             		// 0x0200 (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
-	struct FScriptDelegate                             __OnServerAuthRequest__Delegate;                  		// 0x020C (0x0010) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	unsigned char                                      UnknownData02[ 0x4 ];                             		// 0x0210 (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
-	struct FScriptDelegate                             __OnClientAuthResponse__Delegate;                 		// 0x021C (0x0010) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	unsigned char                                      UnknownData03[ 0x4 ];                             		// 0x0220 (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
-	struct FScriptDelegate                             __OnServerAuthResponse__Delegate;                 		// 0x022C (0x0010) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	unsigned char                                      UnknownData04[ 0x4 ];                             		// 0x0230 (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
-	struct FScriptDelegate                             __OnClientAuthComplete__Delegate;                 		// 0x023C (0x0010) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	unsigned char                                      UnknownData05[ 0x4 ];                             		// 0x0240 (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
-	struct FScriptDelegate                             __OnServerAuthComplete__Delegate;                 		// 0x024C (0x0010) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	unsigned char                                      UnknownData06[ 0x4 ];                             		// 0x0250 (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
-	struct FScriptDelegate                             __OnClientAuthEndSessionRequest__Delegate;        		// 0x025C (0x0010) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	unsigned char                                      UnknownData07[ 0x4 ];                             		// 0x0260 (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
-	struct FScriptDelegate                             __OnServerAuthRetryRequest__Delegate;             		// 0x026C (0x0010) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	unsigned char                                      UnknownData08[ 0x4 ];                             		// 0x0270 (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
-	struct FScriptDelegate                             __OnClientConnectionClose__Delegate;              		// 0x027C (0x0010) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	unsigned char                                      UnknownData09[ 0x4 ];                             		// 0x0280 (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
-	struct FScriptDelegate                             __OnServerConnectionClose__Delegate;              		// 0x028C (0x0010) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	unsigned char                                      UnknownData10[ 0x4 ];                             		// 0x0290 (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
-	struct FScriptDelegate                             __OnReceivedAuthorizationCode__Delegate;          		// 0x029C (0x0010) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	unsigned char                                      UnknownData11[ 0x4 ];                             		// 0x02A0 (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
+	TArray< struct FAuthCodeRequest >                  AuthCodeRequests;                                 		// 0x0040 (0x000C) [0x0000000000402000]              ( CPF_Transient | CPF_NeedCtorLink )
+	int                                                NextAuthCodeID;                                   		// 0x004C (0x0004) [0x0000000000002000]              ( CPF_Transient )
+	class UOnlineSubsystemCommonImpl*                  OwningSubsystem;                                  		// 0x0050 (0x0004) [0x0000000000000000]              
+	unsigned long                                      bAuthReady : 1;                                   		// 0x0054 (0x0004) [0x0000000000000002] [0x00000001] ( CPF_Const )
+	struct FSparseArray_Mirror                         ClientAuthSessions;                               		// 0x0058 (0x0030) [0x0000000000001002]              ( CPF_Const | CPF_Native )
+	struct FSparseArray_Mirror                         ServerAuthSessions;                               		// 0x0088 (0x0030) [0x0000000000001002]              ( CPF_Const | CPF_Native )
+	struct FSparseArray_Mirror                         PeerAuthSessions;                                 		// 0x00B8 (0x0030) [0x0000000000001002]              ( CPF_Const | CPF_Native )
+	struct FSparseArray_Mirror                         LocalClientAuthSessions;                          		// 0x00E8 (0x0030) [0x0000000000001002]              ( CPF_Const | CPF_Native )
+	struct FSparseArray_Mirror                         LocalServerAuthSessions;                          		// 0x0118 (0x0030) [0x0000000000001002]              ( CPF_Const | CPF_Native )
+	struct FSparseArray_Mirror                         LocalPeerAuthSessions;                            		// 0x0148 (0x0030) [0x0000000000001002]              ( CPF_Const | CPF_Native )
+	TArray< struct FScriptDelegate >                   AuthReadyDelegates;                               		// 0x0178 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
+	TArray< struct FScriptDelegate >                   ClientAuthRequestDelegates;                       		// 0x0184 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
+	TArray< struct FScriptDelegate >                   ServerAuthRequestDelegates;                       		// 0x0190 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
+	TArray< struct FScriptDelegate >                   ClientAuthResponseDelegates;                      		// 0x019C (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
+	TArray< struct FScriptDelegate >                   ServerAuthResponseDelegates;                      		// 0x01A8 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
+	TArray< struct FScriptDelegate >                   ClientAuthCompleteDelegates;                      		// 0x01B4 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
+	TArray< struct FScriptDelegate >                   ServerAuthCompleteDelegates;                      		// 0x01C0 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
+	TArray< struct FScriptDelegate >                   ClientAuthEndSessionRequestDelegates;             		// 0x01CC (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
+	TArray< struct FScriptDelegate >                   ServerAuthRetryRequestDelegates;                  		// 0x01D8 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
+	TArray< struct FScriptDelegate >                   ClientConnectionCloseDelegates;                   		// 0x01E4 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
+	TArray< struct FScriptDelegate >                   ServerConnectionCloseDelegates;                   		// 0x01F0 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
+	struct FScriptDelegate                             __OnAuthReady__Delegate;                          		// 0x01FC (0x0010) [0x0000000000400000]              ( CPF_NeedCtorLink )
+	unsigned char                                      UnknownData00[ 0x4 ];                             		// 0x0200 (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
+	struct FScriptDelegate                             __OnClientAuthRequest__Delegate;                  		// 0x020C (0x0010) [0x0000000000400000]              ( CPF_NeedCtorLink )
+	unsigned char                                      UnknownData01[ 0x4 ];                             		// 0x0210 (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
+	struct FScriptDelegate                             __OnServerAuthRequest__Delegate;                  		// 0x021C (0x0010) [0x0000000000400000]              ( CPF_NeedCtorLink )
+	unsigned char                                      UnknownData02[ 0x4 ];                             		// 0x0220 (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
+	struct FScriptDelegate                             __OnClientAuthResponse__Delegate;                 		// 0x022C (0x0010) [0x0000000000400000]              ( CPF_NeedCtorLink )
+	unsigned char                                      UnknownData03[ 0x4 ];                             		// 0x0230 (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
+	struct FScriptDelegate                             __OnServerAuthResponse__Delegate;                 		// 0x023C (0x0010) [0x0000000000400000]              ( CPF_NeedCtorLink )
+	unsigned char                                      UnknownData04[ 0x4 ];                             		// 0x0240 (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
+	struct FScriptDelegate                             __OnClientAuthComplete__Delegate;                 		// 0x024C (0x0010) [0x0000000000400000]              ( CPF_NeedCtorLink )
+	unsigned char                                      UnknownData05[ 0x4 ];                             		// 0x0250 (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
+	struct FScriptDelegate                             __OnServerAuthComplete__Delegate;                 		// 0x025C (0x0010) [0x0000000000400000]              ( CPF_NeedCtorLink )
+	unsigned char                                      UnknownData06[ 0x4 ];                             		// 0x0260 (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
+	struct FScriptDelegate                             __OnClientAuthEndSessionRequest__Delegate;        		// 0x026C (0x0010) [0x0000000000400000]              ( CPF_NeedCtorLink )
+	unsigned char                                      UnknownData07[ 0x4 ];                             		// 0x0270 (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
+	struct FScriptDelegate                             __OnServerAuthRetryRequest__Delegate;             		// 0x027C (0x0010) [0x0000000000400000]              ( CPF_NeedCtorLink )
+	unsigned char                                      UnknownData08[ 0x4 ];                             		// 0x0280 (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
+	struct FScriptDelegate                             __OnClientConnectionClose__Delegate;              		// 0x028C (0x0010) [0x0000000000400000]              ( CPF_NeedCtorLink )
+	unsigned char                                      UnknownData09[ 0x4 ];                             		// 0x0290 (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
+	struct FScriptDelegate                             __OnServerConnectionClose__Delegate;              		// 0x029C (0x0010) [0x0000000000400000]              ( CPF_NeedCtorLink )
+	unsigned char                                      UnknownData10[ 0x4 ];                             		// 0x02A0 (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
+	struct FScriptDelegate                             __OnReceivedAuthCode__Delegate;                   		// 0x02AC (0x0010) [0x0000000000400000]              ( CPF_NeedCtorLink )
+	unsigned char                                      UnknownData11[ 0x4 ];                             		// 0x02B0 (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
+	struct FScriptDelegate                             __OnAccountAuthorization__Delegate;               		// 0x02BC (0x0010) [0x0000000000400000]              ( CPF_NeedCtorLink )
+	unsigned char                                      UnknownData12[ 0x4 ];                             		// 0x02C0 (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
 
 private:
 	static UClass* pClassPointer;
@@ -1310,17 +1314,18 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3071 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3085 ];
 
 		return pClassPointer;
 	};
 
+	class UAsyncTask* RequestAccountAuthorization ( struct FUniqueNetId PlayerID, struct FScriptDelegate Callback );
+	void OnAccountAuthorization ( struct FString Token );
 	void OnLoginChanged ( unsigned long bLoggedIn );
-	bool RequiresMTXAuthorizationCode ( );
-	bool RequiresAuthorizationCode ( );
-	bool IsRequestingAuthorizationCode ( struct FUniqueNetId PlayerID, struct FScriptDelegate Callback );
-	bool RequestAuthorizationCode ( struct FUniqueNetId PlayerID, struct FScriptDelegate Callback );
-	void OnReceivedAuthorizationCode ( unsigned long bSuccess, struct FString AuthorizationCode, struct FString EncryptedTicket, int IssuerID );
+	bool RequestMtxCode ( struct FUniqueNetId PlayerID, struct FScriptDelegate Callback );
+	bool RequestAuthTicket ( struct FUniqueNetId PlayerID, struct FScriptDelegate Callback );
+	bool RequiresAuthTicket ( );
+	void OnReceivedAuthCode ( unsigned long bSuccess, struct FString Code );
 	bool GetServerAddr ( struct FIpAddr* OutServerIP, int* OutServerPort );
 	bool GetServerUniqueId ( struct FUniqueNetId* OutServerUID );
 	bool FindLocalServerAuthSession ( class UPlayer* ClientConnection, struct FLocalAuthSession* OutSessionInfo );
@@ -1460,7 +1465,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3073 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3087 ];
 
 		return pClassPointer;
 	};
@@ -1608,7 +1613,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3075 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3089 ];
 
 		return pClassPointer;
 	};
@@ -1731,7 +1736,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3077 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3091 ];
 
 		return pClassPointer;
 	};
@@ -1784,7 +1789,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3079 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3093 ];
 
 		return pClassPointer;
 	};
@@ -1823,7 +1828,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3081 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3095 ];
 
 		return pClassPointer;
 	};
@@ -1866,7 +1871,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3083 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3097 ];
 
 		return pClassPointer;
 	};
@@ -1915,7 +1920,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3085 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3099 ];
 
 		return pClassPointer;
 	};
@@ -1946,11 +1951,11 @@ public:
 UClass* UPartyBeaconHost::pClassPointer = NULL;
 
 // Class IpDrv.TcpipConnection
-// 0x001C (0x9158 - 0x913C)
+// 0x001C (0x916C - 0x9150)
 class UTcpipConnection : public UNetConnection
 {
 public:
-	unsigned char                                      UnknownData00[ 0x1C ];                            		// 0x913C (0x001C) MISSED OFFSET
+	unsigned char                                      UnknownData00[ 0x1C ];                            		// 0x9150 (0x001C) MISSED OFFSET
 
 private:
 	static UClass* pClassPointer;
@@ -1959,7 +1964,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3087 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3101 ];
 
 		return pClassPointer;
 	};
@@ -1969,15 +1974,15 @@ public:
 UClass* UTcpipConnection::pClassPointer = NULL;
 
 // Class IpDrv.TcpNetDriver
-// 0x005C (0x01EC - 0x0190)
+// 0x005C (0x01FC - 0x01A0)
 class UTcpNetDriver : public UNetDriver
 {
 public:
-	unsigned long                                      EnableDynamicIP : 1;                              		// 0x0190 (0x0004) [0x0000000000004000] [0x00000001] ( CPF_Config )
-	unsigned char                                      UnknownData00[ 0x3C ];                            		// 0x0194 (0x003C) MISSED OFFSET
-	unsigned long                                      AllowPlayerPortUnreach : 1;                       		// 0x01D0 (0x0004) [0x0000000000004000] [0x00000001] ( CPF_Config )
-	unsigned long                                      LogPortUnreach : 1;                               		// 0x01D4 (0x0004) [0x0000000000004000] [0x00000001] ( CPF_Config )
-	unsigned char                                      UnknownData01[ 0x14 ];                            		// 0x01D8 (0x0014) MISSED OFFSET
+	unsigned long                                      EnableDynamicIP : 1;                              		// 0x01A0 (0x0004) [0x0000000000004000] [0x00000001] ( CPF_Config )
+	unsigned char                                      UnknownData00[ 0x3C ];                            		// 0x01A4 (0x003C) MISSED OFFSET
+	unsigned long                                      AllowPlayerPortUnreach : 1;                       		// 0x01E0 (0x0004) [0x0000000000004000] [0x00000001] ( CPF_Config )
+	unsigned long                                      LogPortUnreach : 1;                               		// 0x01E4 (0x0004) [0x0000000000004000] [0x00000001] ( CPF_Config )
+	unsigned char                                      UnknownData01[ 0x14 ];                            		// 0x01E8 (0x0014) MISSED OFFSET
 
 private:
 	static UClass* pClassPointer;
@@ -1986,7 +1991,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3089 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3103 ];
 
 		return pClassPointer;
 	};
@@ -2017,7 +2022,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3094 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3108 ];
 
 		return pClassPointer;
 	};
@@ -2060,7 +2065,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3096 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3110 ];
 
 		return pClassPointer;
 	};
@@ -2107,7 +2112,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3098 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3112 ];
 
 		return pClassPointer;
 	};
@@ -2136,7 +2141,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3100 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3114 ];
 
 		return pClassPointer;
 	};
@@ -2166,7 +2171,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 37400 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 37484 ];
 
 		return pClassPointer;
 	};
@@ -2182,22 +2187,22 @@ public:
 UClass* UWebApplication::pClassPointer = NULL;
 
 // Class IpDrv.WebServer
-// 0x014C (0x0394 - 0x0248)
+// 0x014C (0x03A8 - 0x025C)
 class AWebServer : public ATcpLink
 {
 public:
-	struct FString                                     ServerName;                                       		// 0x0248 (0x000C) [0x0000000000404000]              ( CPF_Config | CPF_NeedCtorLink )
-	struct FString                                     Applications[ 0xA ];                              		// 0x0254 (0x0078) [0x0000000000404000]              ( CPF_Config | CPF_NeedCtorLink )
-	struct FString                                     ApplicationPaths[ 0xA ];                          		// 0x02CC (0x0078) [0x0000000000404000]              ( CPF_Config | CPF_NeedCtorLink )
-	unsigned long                                      bEnabled : 1;                                     		// 0x0344 (0x0004) [0x0000000000004000] [0x00000001] ( CPF_Config )
-	int                                                ListenPort;                                       		// 0x0348 (0x0004) [0x0000000000004000]              ( CPF_Config )
-	int                                                MaxConnections;                                   		// 0x034C (0x0004) [0x0000000000004000]              ( CPF_Config )
-	int                                                DefaultApplication;                               		// 0x0350 (0x0004) [0x0000000000004000]              ( CPF_Config )
-	int                                                ExpirationSeconds;                                		// 0x0354 (0x0004) [0x0000000000004000]              ( CPF_Config )
-	struct FString                                     ServerURL;                                        		// 0x0358 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	class UWebApplication*                             ApplicationObjects[ 0xA ];                        		// 0x0364 (0x0028) [0x0000000000000000]              
-	int                                                ConnectionCount;                                  		// 0x038C (0x0004) [0x0000000000000000]              
-	int                                                ConnID;                                           		// 0x0390 (0x0004) [0x0000000000000000]              
+	struct FString                                     ServerName;                                       		// 0x025C (0x000C) [0x0000000000404000]              ( CPF_Config | CPF_NeedCtorLink )
+	struct FString                                     Applications[ 0xA ];                              		// 0x0268 (0x0078) [0x0000000000404000]              ( CPF_Config | CPF_NeedCtorLink )
+	struct FString                                     ApplicationPaths[ 0xA ];                          		// 0x02E0 (0x0078) [0x0000000000404000]              ( CPF_Config | CPF_NeedCtorLink )
+	unsigned long                                      bEnabled : 1;                                     		// 0x0358 (0x0004) [0x0000000000004000] [0x00000001] ( CPF_Config )
+	int                                                ListenPort;                                       		// 0x035C (0x0004) [0x0000000000004000]              ( CPF_Config )
+	int                                                MaxConnections;                                   		// 0x0360 (0x0004) [0x0000000000004000]              ( CPF_Config )
+	int                                                DefaultApplication;                               		// 0x0364 (0x0004) [0x0000000000004000]              ( CPF_Config )
+	int                                                ExpirationSeconds;                                		// 0x0368 (0x0004) [0x0000000000004000]              ( CPF_Config )
+	struct FString                                     ServerURL;                                        		// 0x036C (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
+	class UWebApplication*                             ApplicationObjects[ 0xA ];                        		// 0x0378 (0x0028) [0x0000000000000000]              
+	int                                                ConnectionCount;                                  		// 0x03A0 (0x0004) [0x0000000000000000]              
+	int                                                ConnID;                                           		// 0x03A4 (0x0004) [0x0000000000000000]              
 
 private:
 	static UClass* pClassPointer;
@@ -2206,7 +2211,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 37403 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 37487 ];
 
 		return pClassPointer;
 	};
@@ -2233,7 +2238,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 37419 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 37503 ];
 
 		return pClassPointer;
 	};
@@ -2257,7 +2262,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 37507 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 37591 ];
 
 		return pClassPointer;
 	};
@@ -2284,7 +2289,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 37555 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 37639 ];
 
 		return pClassPointer;
 	};
@@ -2320,7 +2325,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 37574 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 37658 ];
 
 		return pClassPointer;
 	};
@@ -2362,7 +2367,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 37849 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 37933 ];
 
 		return pClassPointer;
 	};
@@ -2400,7 +2405,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 37855 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 37939 ];
 
 		return pClassPointer;
 	};
@@ -2464,7 +2469,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 38064 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 38148 ];
 
 		return pClassPointer;
 	};
@@ -2525,7 +2530,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 38173 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 38257 ];
 
 		return pClassPointer;
 	};
@@ -2572,7 +2577,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 38333 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 38417 ];
 
 		return pClassPointer;
 	};
@@ -2605,7 +2610,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 38368 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 38452 ];
 
 		return pClassPointer;
 	};
@@ -2641,7 +2646,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 38431 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 38515 ];
 
 		return pClassPointer;
 	};
@@ -2683,7 +2688,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 38498 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 38582 ];
 
 		return pClassPointer;
 	};
@@ -2720,7 +2725,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 38822 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 38906 ];
 
 		return pClassPointer;
 	};
@@ -2749,7 +2754,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 38837 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 38921 ];
 
 		return pClassPointer;
 	};
@@ -2795,7 +2800,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 39051 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 39135 ];
 
 		return pClassPointer;
 	};
@@ -2856,7 +2861,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 39217 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 39301 ];
 
 		return pClassPointer;
 	};
@@ -2915,7 +2920,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 39494 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 39578 ];
 
 		return pClassPointer;
 	};
@@ -2963,7 +2968,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 39556 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 39640 ];
 
 		return pClassPointer;
 	};
@@ -3005,7 +3010,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 40441 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 40535 ];
 
 		return pClassPointer;
 	};
@@ -3013,6 +3018,7 @@ public:
 	void DebugDraw ( class UCanvas* Canvas );
 	void OnDownloadComplete ( class UHttpRequestInterface* OriginalRequest, class UHttpResponseInterface* Response, unsigned long bDidSucceed );
 	void DownloadNextImage ( );
+	void ClearPendingDownloads ( );
 	void ClearAllDownloads ( );
 	void ClearDownloads ( TArray< struct FString > URLs );
 	int GetNumPendingDownloads ( );
@@ -3024,20 +3030,20 @@ public:
 UClass* UOnlineImageDownloaderWeb::pClassPointer = NULL;
 
 // Class IpDrv.WebConnection
-// 0x0030 (0x0278 - 0x0248)
+// 0x0030 (0x028C - 0x025C)
 class AWebConnection : public ATcpLink
 {
 public:
-	class AWebServer*                                  WebServer;                                        		// 0x0248 (0x0004) [0x0000000000000000]              
-	struct FString                                     ReceivedData;                                     		// 0x024C (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	class UWebRequest*                                 Request;                                          		// 0x0258 (0x0004) [0x0000000000000000]              
-	class UWebResponse*                                Response;                                         		// 0x025C (0x0004) [0x0000000000000000]              
-	class UWebApplication*                             Application;                                      		// 0x0260 (0x0004) [0x0000000000000000]              
-	unsigned long                                      bDelayCleanup : 1;                                		// 0x0264 (0x0004) [0x0000000000000000] [0x00000001] 
-	int                                                RawBytesExpecting;                                		// 0x0268 (0x0004) [0x0000000000000000]              
-	int                                                MaxValueLength;                                   		// 0x026C (0x0004) [0x0000000000004000]              ( CPF_Config )
-	int                                                MaxLineLength;                                    		// 0x0270 (0x0004) [0x0000000000004000]              ( CPF_Config )
-	int                                                ConnID;                                           		// 0x0274 (0x0004) [0x0000000000000000]              
+	class AWebServer*                                  WebServer;                                        		// 0x025C (0x0004) [0x0000000000000000]              
+	struct FString                                     ReceivedData;                                     		// 0x0260 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
+	class UWebRequest*                                 Request;                                          		// 0x026C (0x0004) [0x0000000000000000]              
+	class UWebResponse*                                Response;                                         		// 0x0270 (0x0004) [0x0000000000000000]              
+	class UWebApplication*                             Application;                                      		// 0x0274 (0x0004) [0x0000000000000000]              
+	unsigned long                                      bDelayCleanup : 1;                                		// 0x0278 (0x0004) [0x0000000000000000] [0x00000001] 
+	int                                                RawBytesExpecting;                                		// 0x027C (0x0004) [0x0000000000000000]              
+	int                                                MaxValueLength;                                   		// 0x0280 (0x0004) [0x0000000000004000]              ( CPF_Config )
+	int                                                MaxLineLength;                                    		// 0x0284 (0x0004) [0x0000000000004000]              ( CPF_Config )
+	int                                                ConnID;                                           		// 0x0288 (0x0004) [0x0000000000000000]              
 
 private:
 	static UClass* pClassPointer;
@@ -3046,7 +3052,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 41402 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 41498 ];
 
 		return pClassPointer;
 	};

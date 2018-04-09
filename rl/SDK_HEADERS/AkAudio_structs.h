@@ -29,6 +29,15 @@ struct FAkParamSet
 	struct FMap_Mirror                                 Switches;                                         		// 0x003C (0x003C) [0x0000000000001002]              ( CPF_Const | CPF_Native )
 };
 
+// ScriptStruct AkAudio.AkSoundSource.ActiveSound
+// 0x000C
+struct FActiveSound
+{
+	class UAkSoundCue*                                 Sound;                                            		// 0x0000 (0x0004) [0x0000000000000000]              
+	int                                                PlayId;                                           		// 0x0004 (0x0004) [0x0000000000000000]              
+	int                                                StopId;                                           		// 0x0008 (0x0004) [0x0000000000000000]              
+};
+
 // ScriptStruct AkAudio.AkEnvironments.uint
 // 0x0004
 struct Fuint
@@ -45,15 +54,6 @@ struct FAkEnvironment
 	float                                              WetValue;                                         		// 0x0010 (0x0004) [0x0000000000000001]              ( CPF_Edit )
 	float                                              DryValue;                                         		// 0x0014 (0x0004) [0x0000000000000001]              ( CPF_Edit )
 	struct Fuint                                       HashedEnvID;                                      		// 0x0018 (0x0004) [0x0000000000000002]              ( CPF_Const )
-};
-
-// ScriptStruct AkAudio.AkSoundSource.ActiveSound
-// 0x000C
-struct FActiveSound
-{
-	class UAkSoundCue*                                 Sound;                                            		// 0x0000 (0x0004) [0x0000000000000000]              
-	int                                                PlayId;                                           		// 0x0004 (0x0004) [0x0000000000000000]              
-	int                                                StopId;                                           		// 0x0008 (0x0004) [0x0000000000000000]              
 };
 
 // ScriptStruct AkAudio.InterpTrackAkEvent.AkEventTrackKey
@@ -95,6 +95,14 @@ struct FAkRevSimUpdateParams
 	unsigned long                                      bEnableUpShifting : 1;                            		// 0x0014 (0x0004) [0x0000000000000000] [0x00000001] 
 	struct FAkRevSimPhysicsControls                    Controls;                                         		// 0x0018 (0x0018) [0x0000000000400000]              ( CPF_NeedCtorLink )
 	struct FAkRevSimFrame                              frame;                                            		// 0x0030 (0x000C) [0x0000000000000000]              
+};
+
+// ScriptStruct AkAudio.AkEnvironments.AkActorEnvironment
+// 0x0010
+struct FAkActorEnvironment
+{
+	TArray< struct FAkEnvironment >                    Environments;                                     		// 0x0000 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
+	class AActor*                                      TargetActor;                                      		// 0x000C (0x0004) [0x0000000000000000]              
 };
 
 

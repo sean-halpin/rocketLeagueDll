@@ -128,12 +128,10 @@ struct FCarInteractionConfig
 	float                                              BumperPushFactor;                                 		// 0x0004 (0x0004) [0x0000000000000000]              
 	float                                              ZPushFactor;                                      		// 0x0008 (0x0004) [0x0000000000000000]              
 	float                                              BumpInterval;                                     		// 0x000C (0x0004) [0x0000000000000000]              
-	float                                              BumperHitNormalAngle;                             		// 0x0010 (0x0004) [0x0000000000000000]              
-	float                                              BumperCarLocationAngle;                           		// 0x0014 (0x0004) [0x0000000000000000]              
-	float                                              BumperHitDepth;                                   		// 0x0018 (0x0004) [0x0000000000000000]              
-	unsigned long                                      bCheckHitNormal : 1;                              		// 0x001C (0x0004) [0x0000000000000000] [0x00000001] 
-	unsigned long                                      bCheckExtent : 1;                                 		// 0x001C (0x0004) [0x0000000000000000] [0x00000002] 
-	unsigned long                                      bCheckCarAngle : 1;                               		// 0x001C (0x0004) [0x0000000000000000] [0x00000004] 
+	float                                              BumperAngleDemolishYaw;                           		// 0x0010 (0x0004) [0x0000000000000000]              
+	float                                              BumperAngleDemolishPitch;                         		// 0x0014 (0x0004) [0x0000000000000000]              
+	float                                              BumperAngleBumpYaw;                               		// 0x0018 (0x0004) [0x0000000000000000]              
+	float                                              BumperAngleBumpPitch;                             		// 0x001C (0x0004) [0x0000000000000000]              
 };
 
 // ScriptStruct ProjectX._Types_X.SuperSonicConfig
@@ -221,13 +219,6 @@ struct FTierSkillRating : FSkillRating
 	int                                                Division;                                         		// 0x000C (0x0004) [0x0000000000000000]              
 	int                                                MatchesPlayed;                                    		// 0x0010 (0x0004) [0x0000000000000000]              
 	float                                              MMR;                                              		// 0x0014 (0x0004) [0x0000000000000000]              
-};
-
-// ScriptStruct ProjectX._Types_X.GroupSkillRating
-// 0x000C(0x0024 - 0x0018)
-struct FGroupSkillRating : FTierSkillRating
-{
-	TArray< struct FUniqueNetId >                      Players;                                          		// 0x0018 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
 };
 
 // ScriptStruct ProjectX._Types_X.SkillMatchPartyRating
@@ -1086,15 +1077,6 @@ struct FPlaylistRestrictionPlayer
 	int                                                Tier;                                             		// 0x0048 (0x0004) [0x0000000000000000]              
 };
 
-// ScriptStruct ProjectX.OnlineGameParty_X.PlaylistSkillRestrictionInfo
-// 0x009C
-struct FPlaylistSkillRestrictionInfo
-{
-	struct FPlaylistRestrictionPlayer                  HighestPlayer;                                    		// 0x0000 (0x004C) [0x0000000000000000]              
-	struct FPlaylistRestrictionPlayer                  LowestPlayer;                                     		// 0x004C (0x004C) [0x0000000000000000]              
-	int                                                PlaylistId;                                       		// 0x0098 (0x0004) [0x0000000000000000]              
-};
-
 // ScriptStruct ProjectX.OnlineGamePlayerTitles_X.CachedTitleData
 // 0x0030
 struct FCachedTitleData
@@ -1159,6 +1141,14 @@ struct FTeamPairHistory
 	struct FUniqueNetId                                PartyA;                                           		// 0x0000 (0x0048) [0x0000000000000000]              
 	struct FUniqueNetId                                PartyB;                                           		// 0x0048 (0x0048) [0x0000000000000000]              
 	int                                                Count;                                            		// 0x0090 (0x0004) [0x0000000000000000]              
+};
+
+// ScriptStruct ProjectX.OnlineGameReservations_X.PendingReservation
+// 0x0008
+struct FPendingReservation
+{
+	class UTcpConnection*                              Connection;                                       		// 0x0000 (0x0004) [0x0000000000000000]              
+	class UAddReservationMessage_X*                    Message;                                          		// 0x0004 (0x0004) [0x0000000000000000]              
 };
 
 // ScriptStruct ProjectX.OnlineGameSkill_X.SkillSyncRequest
@@ -1374,34 +1364,6 @@ struct FShakeReceiver
 {
 	class APlayerController*                           Player;                                           		// 0x0000 (0x0004) [0x0000000000000000]              
 	float                                              Scale;                                            		// 0x0004 (0x0004) [0x0000000000000000]              
-};
-
-// ScriptStruct ProjectX.OnlineGameSkillGroups_X.GroupSkillSyncRequest
-// 0x0018
-struct FGroupSkillSyncRequest
-{
-	class URPC_GetGroupSkills_X*                       RPC;                                              		// 0x0000 (0x0004) [0x0000000000000000]              
-	int                                                GroupIndex;                                       		// 0x0004 (0x0004) [0x0000000000000000]              
-	struct FScriptDelegate                             Callback;                                         		// 0x0008 (0x0010) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	unsigned char                                      UnknownData00[ 0x4 ];                             		// 0x000C (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
-};
-
-// ScriptStruct ProjectX.OnlineGameSkillGroups_X.PlayerGroup
-// 0x0010
-struct FPlayerGroup
-{
-	TArray< int >                                      Players;                                          		// 0x0000 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	int                                                PlayersHash;                                      		// 0x000C (0x0004) [0x0000000000000000]              
-};
-
-// ScriptStruct ProjectX.OnlineGameSkillGroups_X.CachedGroupSkillRating
-// 0x0024
-struct FCachedGroupSkillRating
-{
-	int                                                GroupIndex;                                       		// 0x0000 (0x0004) [0x0000000000000000]              
-	int                                                Playlist;                                         		// 0x0004 (0x0004) [0x0000000000000000]              
-	struct FTierSkillRating                            Rating;                                           		// 0x0008 (0x0018) [0x0000000000000000]              
-	unsigned long                                      bSynced : 1;                                      		// 0x0020 (0x0004) [0x0000000000000000] [0x00000001] 
 };
 
 // ScriptStruct ProjectX.RPC_CustomGameServerGet_X.FindPrivateServerResult
@@ -1675,7 +1637,7 @@ struct FOnlinePersonaData
 	struct FUniqueNetId                                PlayerID;                                         		// 0x0000 (0x0048) [0x0000000000000000]              
 	struct FString                                     PlayerName;                                       		// 0x0048 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
 	struct FString                                     PresenceInfo;                                     		// 0x0054 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	struct FString                                     FriendState;                                      		// 0x0060 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
+	struct FString                                     PresenceState;                                    		// 0x0060 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
 };
 
 // ScriptStruct ProjectX.SystemMetrics_X.OSMetrics
@@ -1716,6 +1678,80 @@ struct FVideoCardMetrics
 struct FNetworkAdapterMetrics
 {
 	TArray< struct FString >                           Types;                                            		// 0x0000 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
+};
+
+// ScriptStruct ProjectX.SetPlayerStorageResult_X.SetPlayerStorageResultItem
+// 0x000C
+struct FSetPlayerStorageResultItem
+{
+	struct FName                                       Category;                                         		// 0x0000 (0x0008) [0x0000000000000000]              
+	int                                                Tick;                                             		// 0x0008 (0x0004) [0x0000000000000000]              
+};
+
+// ScriptStruct ProjectX.OnlinePlayerStorageQueue_X.PendingStorage
+// 0x000C
+struct FPendingStorage
+{
+	class UObject*                                     Data;                                             		// 0x0000 (0x0004) [0x0000000000000000]              
+	class UClass*                                      DataClass;                                        		// 0x0004 (0x0004) [0x0000000000000000]              
+	int                                                Tick;                                             		// 0x0008 (0x0004) [0x0000000000000000]              
+};
+
+// ScriptStruct ProjectX.GetPlayerStorageResult_X.GetPlayerStorageResultItem
+// 0x0020
+struct FGetPlayerStorageResultItem
+{
+	struct FName                                       Category;                                         		// 0x0000 (0x0008) [0x0000000000000000]              
+	int                                                Tick;                                             		// 0x0008 (0x0004) [0x0000000000000000]              
+	TArray< unsigned char >                            Data;                                             		// 0x000C (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
+	int                                                Checksum;                                         		// 0x0018 (0x0004) [0x0000000000000000]              
+	unsigned long                                      bChecksumMatch : 1;                               		// 0x001C (0x0004) [0x0000000000000000] [0x00000001] 
+};
+
+// ScriptStruct ProjectX.OnlinePlayerStorageManifest_X.StorageMetadata
+// 0x000C
+struct UOnlinePlayerStorageManifest_X_FStorageMetadata
+{
+	struct FName                                       Category;                                         		// 0x0000 (0x0008) [0x0000000000000000]              
+	int                                                Checksum;                                         		// 0x0008 (0x0004) [0x0000000000000000]              
+};
+
+// ScriptStruct ProjectX.RPC_PlayerStorageSet_X.SetPlayerStorageRequestItem
+// 0x001C
+struct FSetPlayerStorageRequestItem
+{
+	struct FName                                       Category;                                         		// 0x0000 (0x0008) [0x0000000000000000]              
+	int                                                Tick;                                             		// 0x0008 (0x0004) [0x0000000000000000]              
+	int                                                Checksum;                                         		// 0x000C (0x0004) [0x0000000000000000]              
+	TArray< unsigned char >                            Data;                                             		// 0x0010 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
+};
+
+// ScriptStruct ProjectX.OnlinePlayerStorageSync_X.OnlinePlayerStorageSyncResult
+// 0x0014
+struct FOnlinePlayerStorageSyncResult
+{
+	class UClass*                                      DataClass;                                        		// 0x0000 (0x0004) [0x0000000000000000]              
+	class UObject*                                     RemoteData;                                       		// 0x0004 (0x0004) [0x0000000000000000]              
+	int                                                ServerTick;                                       		// 0x0008 (0x0004) [0x0000000000000000]              
+	int                                                Checksum;                                         		// 0x000C (0x0004) [0x0000000000000000]              
+	unsigned long                                      bChecksumMatch : 1;                               		// 0x0010 (0x0004) [0x0000000000000000] [0x00000001] 
+};
+
+// ScriptStruct ProjectX.OnlinePlayerStorageSync_X.OnlinePlayerStorageSyncRequest
+// 0x0008
+struct FOnlinePlayerStorageSyncRequest
+{
+	class UObject*                                     DataObj;                                          		// 0x0000 (0x0004) [0x0000000000000000]              
+	int                                                ClientTick;                                       		// 0x0004 (0x0004) [0x0000000000000000]              
+};
+
+// ScriptStruct ProjectX.RPC_PlayerStorageGet_X.GetPlayerStorageRequestItem
+// 0x0010
+struct FGetPlayerStorageRequestItem
+{
+	struct FName                                       Category;                                         		// 0x0000 (0x0008) [0x0000000000000000]              
+	int                                                Tick;                                             		// 0x0008 (0x0004) [0x0000000000000000]              
+	int                                                Checksum;                                         		// 0x000C (0x0004) [0x0000000000000000]              
 };
 
 

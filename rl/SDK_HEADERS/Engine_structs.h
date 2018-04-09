@@ -1315,6 +1315,32 @@ struct FClientAdjustment
 	unsigned char                                      bAckGoodMove;                                     		// 0x0030 (0x0001) [0x0000000000000000]              
 };
 
+// ScriptStruct Engine.PlayerReplicationInfo.ClientConnectionStats
+// 0x0050
+struct FClientConnectionStats
+{
+	int                                                ConnectionCount;                                  		// 0x0000 (0x0004) [0x0000000000000000]              
+	int                                                PingTotal;                                        		// 0x0004 (0x0004) [0x0000000000000000]              
+	int                                                PingMin;                                          		// 0x0008 (0x0004) [0x0000000000000000]              
+	int                                                PingMax;                                          		// 0x000C (0x0004) [0x0000000000000000]              
+	float                                              CurrentAckTime;                                   		// 0x0010 (0x0004) [0x0000000000000000]              
+	float                                              TotalAckTime;                                     		// 0x0014 (0x0004) [0x0000000000000000]              
+	float                                              CurrentReceiveTime;                               		// 0x0018 (0x0004) [0x0000000000000000]              
+	float                                              TotalReceiveTime;                                 		// 0x001C (0x0004) [0x0000000000000000]              
+	int                                                TotalPacketsLost;                                 		// 0x0020 (0x0004) [0x0000000000000000]              
+	int                                                TotalPacketsInOut;                                		// 0x0024 (0x0004) [0x0000000000000000]              
+	float                                              InPacketLossPerSecMin;                            		// 0x0028 (0x0004) [0x0000000000000000]              
+	float                                              InPacketLossPerSecMax;                            		// 0x002C (0x0004) [0x0000000000000000]              
+	float                                              OutPacketLossPerSecMin;                           		// 0x0030 (0x0004) [0x0000000000000000]              
+	float                                              OutPacketLossPerSecMax;                           		// 0x0034 (0x0004) [0x0000000000000000]              
+	int                                                MaxInBPS;                                         		// 0x0038 (0x0004) [0x0000000000000000]              
+	int                                                TotalInBPS;                                       		// 0x003C (0x0004) [0x0000000000000000]              
+	int                                                MaxOutBPS;                                        		// 0x0040 (0x0004) [0x0000000000000000]              
+	int                                                TotalOutBPS;                                      		// 0x0044 (0x0004) [0x0000000000000000]              
+	float                                              CurrentLatency;                                   		// 0x0048 (0x0004) [0x0000000000000000]              
+	float                                              CurrentJitter;                                    		// 0x004C (0x0004) [0x0000000000000000]              
+};
+
 // ScriptStruct Engine.HUD.KismetDrawTextInfo
 // 0x0034
 struct FKismetDrawTextInfo
@@ -2964,7 +2990,7 @@ struct FEmitterBaseInfo
 };
 
 // ScriptStruct Engine.Engine.NetworkEncryptionKey
-// 0x0088
+// 0x0084
 struct FNetworkEncryptionKey
 {
 	TArray< unsigned char >                            EncryptionKey;                                    		// 0x0000 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
@@ -2973,8 +2999,7 @@ struct FNetworkEncryptionKey
 	TArray< unsigned char >                            SessionIdentifier;                                		// 0x0024 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
 	struct FUniqueNetId                                PlayerID;                                         		// 0x0030 (0x0048) [0x0000000000000000]              
 	int                                                Id;                                               		// 0x0078 (0x0004) [0x0000000000000000]              
-	unsigned long                                      InUse : 1;                                        		// 0x007C (0x0004) [0x0000000000000000] [0x00000001] 
-	struct FDouble                                     TimeLastUsed;                                     		// 0x0080 (0x0008) [0x0000000000000000]              
+	struct FDouble                                     TimeLastUsed;                                     		// 0x007C (0x0008) [0x0000000000000000]              
 };
 
 // ScriptStruct Engine.Engine.StatColorMapEntry
@@ -3194,50 +3219,6 @@ struct FNavMeshPathConstraintCacheDatum
 {
 	int                                                ListIdx;                                          		// 0x0000 (0x0004) [0x0000000000000000]              
 	class UNavMeshPathConstraint*                      List[ 0x5 ];                                      		// 0x0004 (0x0014) [0x0000000000000000]              
-};
-
-// ScriptStruct Engine.WorldInfo.PitchTekClearSettings
-// 0x0010
-struct FPitchTekClearSettings
-{
-	unsigned long                                      bClearColorTargetEveryFrame : 1;                  		// 0x0000 (0x0004) [0x0000000000000001] [0x00000001] ( CPF_Edit )
-	struct FColor                                      ColorTargetClearColor;                            		// 0x0004 (0x0004) [0x0000000000000001]              ( CPF_Edit )
-	unsigned long                                      bClearDataTargetEveryFrame : 1;                   		// 0x0008 (0x0004) [0x0000000000000001] [0x00000001] ( CPF_Edit )
-	struct FColor                                      DataTargetClearColor;                             		// 0x000C (0x0004) [0x0000000000000001]              ( CPF_Edit )
-};
-
-// ScriptStruct Engine.WorldInfo.PitchTekWorldInfoSettings
-// 0x0044
-struct FPitchTekWorldInfoSettings
-{
-	unsigned char                                      ColorTargetSize;                                  		// 0x0000 (0x0001) [0x0000000000000001]              ( CPF_Edit )
-	unsigned char                                      DataTargetSize;                                   		// 0x0001 (0x0001) [0x0000000000000001]              ( CPF_Edit )
-	float                                              PitchLengthX;                                     		// 0x0004 (0x0004) [0x0000000000000001]              ( CPF_Edit )
-	float                                              PitchLengthY;                                     		// 0x0008 (0x0004) [0x0000000000000001]              ( CPF_Edit )
-	unsigned long                                      bUseInitialColorTexture : 1;                      		// 0x000C (0x0004) [0x0000000000000001] [0x00000001] ( CPF_Edit )
-	class UTexture2D*                                  InitialColorTexture;                              		// 0x0010 (0x0004) [0x0000000000000001]              ( CPF_Edit )
-	unsigned long                                      bUseInitialDataTexture : 1;                       		// 0x0014 (0x0004) [0x0000000000000001] [0x00000001] ( CPF_Edit )
-	class UTexture2D*                                  InitialDataTexture;                               		// 0x0018 (0x0004) [0x0000000000000001]              ( CPF_Edit )
-	struct FPitchTekClearSettings                      ClearSettings;                                    		// 0x001C (0x0010) [0x0000000000000001]              ( CPF_Edit )
-	unsigned long                                      bRenderCarPositionDecal : 1;                      		// 0x002C (0x0004) [0x0000000000000001] [0x00000001] ( CPF_Edit )
-	unsigned long                                      bRenderBallDecalOnContact : 1;                    		// 0x002C (0x0004) [0x0000000000000001] [0x00000002] ( CPF_Edit )
-	float                                              BallContactHeight;                                		// 0x0030 (0x0004) [0x0000000000000001]              ( CPF_Edit )
-	float                                              WheelContactHeight;                               		// 0x0034 (0x0004) [0x0000000000000001]              ( CPF_Edit )
-	float                                              CarBodyContactHeight;                             		// 0x0038 (0x0004) [0x0000000000000001]              ( CPF_Edit )
-	float                                              DemolitionExplosionMaxHeight;                     		// 0x003C (0x0004) [0x0000000000000001]              ( CPF_Edit )
-	float                                              JumpBlastMaxHeight;                               		// 0x0040 (0x0004) [0x0000000000000001]              ( CPF_Edit )
-};
-
-// ScriptStruct Engine.WorldInfo.PitchTekTextureDecalSettings
-// 0x0018
-struct FPitchTekTextureDecalSettings
-{
-	unsigned long                                      bDrawColorDecal : 1;                              		// 0x0000 (0x0004) [0x0000000000000001] [0x00000001] ( CPF_Edit )
-	float                                              ColorTextureScale;                                		// 0x0004 (0x0004) [0x0000000000000001]              ( CPF_Edit )
-	class UTexture2D*                                  ColorTexture;                                     		// 0x0008 (0x0004) [0x0000000000000001]              ( CPF_Edit )
-	unsigned long                                      bDrawDataDecal : 1;                               		// 0x000C (0x0004) [0x0000000000000001] [0x00000001] ( CPF_Edit )
-	float                                              DataTextureScale;                                 		// 0x0010 (0x0004) [0x0000000000000001]              ( CPF_Edit )
-	class UTexture2D*                                  DataTexture;                                      		// 0x0014 (0x0004) [0x0000000000000001]              ( CPF_Edit )
 };
 
 // ScriptStruct Engine.WorldInfo.LightmassWorldInfoSettings
@@ -5416,6 +5397,28 @@ struct FDateTimeStruct
 	int                                                Minute;                                           		// 0x0014 (0x0004) [0x0000000040000000]              ( CPF_EditInlineNotify )
 	int                                                Second;                                           		// 0x0018 (0x0004) [0x0000000040000000]              ( CPF_EditInlineNotify )
 	unsigned char                                      TimeZone;                                         		// 0x001C (0x0001) [0x0000000040000000]              ( CPF_EditInlineNotify )
+};
+
+// ScriptStruct Engine.PitchTekSettings.PitchTekTextureDecalSettings
+// 0x0018
+struct FPitchTekTextureDecalSettings
+{
+	unsigned long                                      bDrawColorDecal : 1;                              		// 0x0000 (0x0004) [0x0000000000000001] [0x00000001] ( CPF_Edit )
+	float                                              ColorTextureScale;                                		// 0x0004 (0x0004) [0x0000000000000001]              ( CPF_Edit )
+	class UTexture2D*                                  ColorTexture;                                     		// 0x0008 (0x0004) [0x0000000000000001]              ( CPF_Edit )
+	unsigned long                                      bDrawDataDecal : 1;                               		// 0x000C (0x0004) [0x0000000000000001] [0x00000001] ( CPF_Edit )
+	float                                              DataTextureScale;                                 		// 0x0010 (0x0004) [0x0000000000000001]              ( CPF_Edit )
+	class UTexture2D*                                  DataTexture;                                      		// 0x0014 (0x0004) [0x0000000000000001]              ( CPF_Edit )
+};
+
+// ScriptStruct Engine.PitchTekSettings.PitchTekClearSettings
+// 0x0010
+struct FPitchTekClearSettings
+{
+	unsigned long                                      bClearColorTargetEveryFrame : 1;                  		// 0x0000 (0x0004) [0x0000000000000001] [0x00000001] ( CPF_Edit )
+	struct FColor                                      ColorTargetClearColor;                            		// 0x0004 (0x0004) [0x0000000000000001]              ( CPF_Edit )
+	unsigned long                                      bClearDataTargetEveryFrame : 1;                   		// 0x0008 (0x0004) [0x0000000000000001] [0x00000001] ( CPF_Edit )
+	struct FColor                                      DataTargetClearColor;                             		// 0x000C (0x0004) [0x0000000000000001]              ( CPF_Edit )
 };
 
 

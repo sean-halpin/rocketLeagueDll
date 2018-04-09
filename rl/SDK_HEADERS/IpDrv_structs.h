@@ -467,6 +467,16 @@ struct FClientMeshBeaconConnection
 	int                                                MinutesSinceLastTest;                             		// 0x0094 (0x0004) [0x0000000000000000]              
 };
 
+// ScriptStruct IpDrv.OnlineAuthInterfaceImpl.AuthCodeRequest
+// 0x005C
+struct FAuthCodeRequest
+{
+	struct FUniqueNetId                                PlayerID;                                         		// 0x0000 (0x0048) [0x0000000000000000]              
+	struct FScriptDelegate                             Callback;                                         		// 0x0048 (0x0010) [0x0000000000400000]              ( CPF_NeedCtorLink )
+	unsigned char                                      UnknownData00[ 0x4 ];                             		// 0x004C (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
+	int                                                RequestID;                                        		// 0x0058 (0x0004) [0x0000000000000000]              
+};
+
 // ScriptStruct IpDrv.OnlineEventsInterfaceMcp.EventUploadConfig
 // 0x0018
 struct FEventUploadConfig

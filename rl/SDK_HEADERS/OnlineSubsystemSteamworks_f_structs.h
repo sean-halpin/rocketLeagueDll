@@ -21,36 +21,20 @@
 # ========================================================================================= #
 */
 
-// Function OnlineSubsystemSteamworks.OnlineAuthInterfaceSteamworks.RequiresMTXAuthorizationCode
-// [0x00020002] 
-struct UOnlineAuthInterfaceSteamworks_execRequiresMTXAuthorizationCode_Parms
-{
-	unsigned long                                      ReturnValue : 1;                                  		// 0x0000 (0x0004) [0x0000000000000580] [0x00000001] ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-};
-
-// Function OnlineSubsystemSteamworks.OnlineAuthInterfaceSteamworks.RequiresAuthorizationCode
-// [0x00020002] 
-struct UOnlineAuthInterfaceSteamworks_execRequiresAuthorizationCode_Parms
-{
-	unsigned long                                      ReturnValue : 1;                                  		// 0x0000 (0x0004) [0x0000000000000580] [0x00000001] ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-};
-
-// Function OnlineSubsystemSteamworks.OnlineAuthInterfaceSteamworks.IsRequestingAuthorizationCode
+// Function OnlineSubsystemSteamworks.OnlineAuthInterfaceSteamworks.RequestAuthTicket
 // [0x00020400] ( FUNC_Native )
-struct UOnlineAuthInterfaceSteamworks_execIsRequestingAuthorizationCode_Parms
+struct UOnlineAuthInterfaceSteamworks_execRequestAuthTicket_Parms
 {
 	struct FUniqueNetId                                PlayerID;                                         		// 0x0000 (0x0048) [0x0000000000000080]              ( CPF_Parm )
 	struct FScriptDelegate                             Callback;                                         		// 0x0048 (0x0010) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 	unsigned long                                      ReturnValue : 1;                                  		// 0x0058 (0x0004) [0x0000000000000580] [0x00000001] ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
 };
 
-// Function OnlineSubsystemSteamworks.OnlineAuthInterfaceSteamworks.RequestAuthorizationCode
-// [0x00020400] ( FUNC_Native )
-struct UOnlineAuthInterfaceSteamworks_execRequestAuthorizationCode_Parms
+// Function OnlineSubsystemSteamworks.OnlineAuthInterfaceSteamworks.RequiresAuthTicket
+// [0x00020002] 
+struct UOnlineAuthInterfaceSteamworks_execRequiresAuthTicket_Parms
 {
-	struct FUniqueNetId                                PlayerID;                                         		// 0x0000 (0x0048) [0x0000000000000080]              ( CPF_Parm )
-	struct FScriptDelegate                             Callback;                                         		// 0x0048 (0x0010) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
-	unsigned long                                      ReturnValue : 1;                                  		// 0x0058 (0x0004) [0x0000000000000580] [0x00000001] ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
+	unsigned long                                      ReturnValue : 1;                                  		// 0x0000 (0x0004) [0x0000000000000580] [0x00000001] ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
 };
 
 // Function OnlineSubsystemSteamworks.OnlineAuthInterfaceSteamworks.GetServerAddr
@@ -701,15 +685,6 @@ struct UOnlineLobbyInterfaceSteamworks_execSendLobbyBinaryData_Parms
 	unsigned long                                      ReturnValue : 1;                                  		// 0x0018 (0x0004) [0x0000000000000580] [0x00000001] ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
 };
 
-// Function OnlineSubsystemSteamworks.OnlineLobbyInterfaceSteamworks.SendLobbyMessage
-// [0x00420400] ( FUNC_Native )
-struct UOnlineLobbyInterfaceSteamworks_execSendLobbyMessage_Parms
-{
-	struct FUniqueLobbyId                              LobbyId;                                          		// 0x0000 (0x000C) [0x0000000000000182]              ( CPF_Const | CPF_Parm | CPF_OutParm )
-	struct FString                                     Message;                                          		// 0x000C (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
-	unsigned long                                      ReturnValue : 1;                                  		// 0x0018 (0x0004) [0x0000000000000580] [0x00000001] ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-};
-
 // Function OnlineSubsystemSteamworks.OnlineLobbyInterfaceSteamworks.SetLobbyUserSetting
 // [0x00420400] ( FUNC_Native )
 struct UOnlineLobbyInterfaceSteamworks_execSetLobbyUserSetting_Parms
@@ -766,6 +741,14 @@ struct UOnlineLobbyInterfaceSteamworks_execCreateLobby_Parms
 	unsigned char                                      Type;                                             		// 0x0008 (0x0001) [0x0000000000000090]              ( CPF_OptionalParm | CPF_Parm )
 	TArray< struct FLobbyMetaData >                    InitialSettings;                                  		// 0x000C (0x000C) [0x0000000000400090]              ( CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink )
 	unsigned long                                      ReturnValue : 1;                                  		// 0x0018 (0x0004) [0x0000000000000580] [0x00000001] ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
+};
+
+// Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.CanSendOfflinePartyInvite
+// [0x00020002] 
+struct UOnlineSubsystemSteamworks_execCanSendOfflinePartyInvite_Parms
+{
+	struct FUniqueNetId                                PlayerID;                                         		// 0x0000 (0x0048) [0x0000000000000080]              ( CPF_Parm )
+	unsigned long                                      ReturnValue : 1;                                  		// 0x0048 (0x0004) [0x0000000000000580] [0x00000001] ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
 };
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AllowPsyNetParty

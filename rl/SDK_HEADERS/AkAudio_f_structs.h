@@ -21,6 +21,21 @@
 # ========================================================================================= #
 */
 
+// Function AkAudio.AkDevice.SetSoundEnvironment
+// [0x04022401] ( FUNC_Final | FUNC_Native )
+struct UAkDevice_execSetSoundEnvironment_Parms
+{
+	class AActor*                                      Actor;                                            		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
+	unsigned char                                      EnvironmentType;                                  		// 0x0004 (0x0001) [0x0000000000000080]              ( CPF_Parm )
+};
+
+// Function AkAudio.AkDevice.GetEnvironments
+// [0x04022401] ( FUNC_Final | FUNC_Native )
+struct UAkDevice_execGetEnvironments_Parms
+{
+	class UAkEnvironments*                             ReturnValue;                                      		// 0x0000 (0x0004) [0x0000000000000580]              ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
+};
+
 // Function AkAudio.AkDevice.NotifyWhenInitialized
 // [0x00022401] ( FUNC_Final | FUNC_Native )
 struct UAkDevice_execNotifyWhenInitialized_Parms
@@ -200,11 +215,20 @@ struct UAkDevice_execEventInitialized_Parms
 {
 };
 
-// Function AkAudio.AkEnvironments.AddMusic
+// Function AkAudio.AkEnvironments.RemoveActorEnvironment
 // [0x00420401] ( FUNC_Final | FUNC_Native )
-struct UAkEnvironments_execAddMusic_Parms
+struct UAkEnvironments_execRemoveActorEnvironment_Parms
 {
-	struct FAkEnvironment                              Environment;                                      		// 0x0000 (0x001C) [0x0000000000400182]              ( CPF_Const | CPF_Parm | CPF_OutParm | CPF_NeedCtorLink )
+	class AActor*                                      TargetActor;                                      		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
+	struct FString                                     EnvironmentID;                                    		// 0x0004 (0x000C) [0x0000000000400182]              ( CPF_Const | CPF_Parm | CPF_OutParm | CPF_NeedCtorLink )
+};
+
+// Function AkAudio.AkEnvironments.AddActorEnvironment
+// [0x00420401] ( FUNC_Final | FUNC_Native )
+struct UAkEnvironments_execAddActorEnvironment_Parms
+{
+	class AActor*                                      TargetActor;                                      		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
+	struct FAkEnvironment                              Environment;                                      		// 0x0004 (0x001C) [0x0000000000400182]              ( CPF_Const | CPF_Parm | CPF_OutParm | CPF_NeedCtorLink )
 };
 
 // Function AkAudio.AkEnvironments.AddLevelDefault

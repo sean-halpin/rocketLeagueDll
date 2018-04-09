@@ -1,3 +1,4 @@
+#pragma once
 #include "TFL_HT.h"
 
 class Glob

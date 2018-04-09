@@ -21,6 +21,8 @@
 # ========================================================================================= #
 */
 
+#define CONST_ZeroRotator                                        Rot(0,0,0)
+#define CONST_ZeroVector                                         Vect(0,0,0)
 #define CONST_UpVector                                           Vect(0,0,1)
 #define CONST_RightVector                                        Vect(0,1,0)
 #define CONST_ForwardVector                                      Vect(1,0,0)
@@ -196,8 +198,10 @@
 	GameVersion_Update18                               = 21,
 	GameVersion_Update19                               = 22,
 	GameVersion_Update20                               = 23,
-	GameVersion_Unreleased                             = 24,
-	GameVersion_MAX                                    = 25
+	GameVersion_Update21                               = 24,
+	GameVersion_Update22                               = 25,
+	GameVersion_Unreleased                             = 26,
+	GameVersion_MAX                                    = 27
 };*/
 
 
@@ -235,9 +239,7 @@ public:
 	char* GetName(); 
 	char* GetNameCPP(); 
 	char* GetFullName(); 
-	
-	void ListObjects();
-	void SaveObjects();
+
 	template< class T > static T* FindObject ( char* ObjectFullName ); 
 	static UClass* FindClass ( char* ClassFullName ); 
 
@@ -259,6 +261,7 @@ public:
 	int SortDescendingInt ( int A, int B );
 	int SortAscendingInt ( int A, int B );
 	struct FString PadString ( struct FString Str, int Characters );
+	void GetFrameCounter ( );
 	float GetScaledAxisValue ( float Value, float Sensitivity, float MaxSensitivity );
 	class UObjectProvider* GetObjectProvider ( );
 	unsigned char GetEdition ( );
@@ -278,13 +281,16 @@ public:
 	class UObject* FindStructProperty ( class UClass* PropertyClass, struct FName PropertyName, struct FName StructName );
 	class UObject* FindProperty ( class UClass* PropertyClass, struct FName PropertyName );
 	bool Identical ( class UObject* Left, class UObject* Right );
-	class UObject* DuplicateObject ( class UObject* Template, class UObject* ObjOuter );
+	class UObject* DuplicateObject ( class UObject* Template, class UObject* ObjOuter, class UClass* DestClass );
 	float RunningAverage ( float OldAverage, float NewValue, int NewCount, int OldCount );
 	float GetCurrentTime ( );
 	struct FLinearColor GetMaxLinearColorBrightness ( struct FLinearColor C );
 	struct FColor GetMaxColorBrightness ( struct FColor C );
+	struct FLinearColor LABtoRGB ( struct FLinearColor C );
+	struct FLinearColor RGBtoLAB ( struct FLinearColor C );
 	struct FLinearColor HSVtoRGB ( struct FLinearColor C );
 	struct FLinearColor RGBtoHSV ( struct FLinearColor C );
+	struct FLinearColor IntToLinearColor ( int I );
 	struct FColor IntToColor ( int I );
 	int LinearColorToInt ( struct FLinearColor C );
 	int ColorToInt ( struct FColor C );
@@ -645,73 +651,73 @@ public:
 	bool Not_PreBool ( unsigned long A );
 
 	// Virtual Functions
-	virtual void VirtualFunction00 ( );																			// 0x00692FC0 (0x00)
-	virtual void VirtualFunction01 ( );																			// 0x00437040 (0x04)
-	virtual void VirtualFunction02 ( );																			// 0x004344D0 (0x08)
-	virtual void VirtualFunction03 ( );																			// 0x00F2B210 (0x0C)
-	virtual void VirtualFunction04 ( );																			// 0x0129ABC0 (0x10)
-	virtual void VirtualFunction05 ( );																			// 0x00F3E7F0 (0x14)
-	virtual void VirtualFunction06 ( );																			// 0x00463B80 (0x18)
-	virtual void VirtualFunction07 ( );																			// 0x00463BE0 (0x1C)
-	virtual void VirtualFunction08 ( );																			// 0x00430A80 (0x20)
-	virtual void VirtualFunction09 ( );																			// 0x0046F4D0 (0x24)
-	virtual void VirtualFunction10 ( );																			// 0x00692FC0 (0x28)
-	virtual void VirtualFunction11 ( );																			// 0x004641E0 (0x2C)
-	virtual void VirtualFunction12 ( );																			// 0x00429A50 (0x30)
-	virtual void VirtualFunction13 ( );																			// 0x00432130 (0x34)
-	virtual void VirtualFunction14 ( );																			// 0x003DB2B0 (0x38)
-	virtual void VirtualFunction15 ( );																			// 0x00F3E7F0 (0x3C)
-	virtual void VirtualFunction16 ( );																			// 0x00464B70 (0x40)
-	virtual void VirtualFunction17 ( );																			// 0x00463600 (0x44)
-	virtual void VirtualFunction18 ( );																			// 0x0046C1F0 (0x48)
-	virtual void VirtualFunction19 ( );																			// 0x00464C40 (0x4C)
-	virtual void VirtualFunction20 ( );																			// 0x00463AC0 (0x50)
-	virtual void VirtualFunction21 ( );																			// 0x00463620 (0x54)
-	virtual void VirtualFunction22 ( );																			// 0x00463AF0 (0x58)
-	virtual void VirtualFunction23 ( );																			// 0x00F3E7F0 (0x5C)
-	virtual void VirtualFunction24 ( );																			// 0x00F3E7F0 (0x60)
-	virtual void VirtualFunction25 ( );																			// 0x00D864A0 (0x64)
-	virtual void VirtualFunction26 ( );																			// 0x00463610 (0x68)
-	virtual void VirtualFunction27 ( );																			// 0x00463620 (0x6C)
-	virtual void VirtualFunction28 ( );																			// 0x00463AF0 (0x70)
-	virtual void VirtualFunction29 ( );																			// 0x00463620 (0x74)
-	virtual void VirtualFunction30 ( );																			// 0x00463AF0 (0x78)
-	virtual void VirtualFunction31 ( );																			// 0x0046A100 (0x7C)
-	virtual void VirtualFunction32 ( );																			// 0x00464D30 (0x80)
-	virtual void VirtualFunction33 ( );																			// 0x00464ED0 (0x84)
-	virtual void VirtualFunction34 ( );																			// 0x00F3E7F0 (0x88)
-	virtual void VirtualFunction35 ( );																			// 0x004221E0 (0x8C)
-	virtual void VirtualFunction36 ( );																			// 0x004762D0 (0x90)
-	virtual void VirtualFunction37 ( );																			// 0x003D6BB0 (0x94)
-	virtual void VirtualFunction38 ( );																			// 0x00463D40 (0x98)
-	virtual void VirtualFunction39 ( );																			// 0x003D6BE0 (0x9C)
-	virtual void VirtualFunction40 ( );																			// 0x003D7520 (0xA0)
-	virtual void VirtualFunction41 ( );																			// 0x012FBBC0 (0xA4)
-	virtual void VirtualFunction42 ( );																			// 0x00D864A0 (0xA8)
-	virtual void VirtualFunction43 ( );																			// 0x00D864A0 (0xAC)
-	virtual void VirtualFunction44 ( );																			// 0x00F3E7F0 (0xB0)
-	virtual void VirtualFunction45 ( );																			// 0x012FBBC0 (0xB4)
-	virtual void VirtualFunction46 ( );																			// 0x008B2190 (0xB8)
-	virtual void VirtualFunction47 ( );																			// 0x008B74F0 (0xBC)
-	virtual void VirtualFunction48 ( );																			// 0x00422270 (0xC0)
-	virtual void VirtualFunction49 ( );																			// 0x0042D050 (0xC4)
-	virtual void VirtualFunction50 ( );																			// 0x0129ABC0 (0xC8)
-	virtual void VirtualFunction51 ( );																			// 0x00464750 (0xCC)
-	virtual void VirtualFunction52 ( );																			// 0x00408FA0 (0xD0)
-	virtual void VirtualFunction53 ( );																			// 0x004341C0 (0xD4)
-	virtual void VirtualFunction54 ( );																			// 0x00464830 (0xD8)
-	virtual void VirtualFunction55 ( );																			// 0x010E6100 (0xDC)
-	virtual void VirtualFunction56 ( );																			// 0x00463AA0 (0xE0)
-	virtual void VirtualFunction57 ( );																			// 0x004647A0 (0xE4)
-	virtual void VirtualFunction58 ( );																			// 0x003DA8B0 (0xE8)
-	virtual void VirtualFunction59 ( );																			// 0x00475B00 (0xEC)
-	virtual void VirtualFunction60 ( );																			// 0x012FBBC0 (0xF0)
-	virtual void VirtualFunction61 ( );																			// 0x003D4CD0 (0xF4)
-	virtual void VirtualFunction62 ( );																			// 0x003D4CF0 (0xF8)
-	virtual void VirtualFunction63 ( );																			// 0x004794C0 (0xFC)
-	virtual void VirtualFunction64 ( );																			// 0x00463630 (0x100)
-	virtual void VirtualFunction65 ( );																			// 0x00430970 (0x104)
-	virtual void ProcessEvent ( class UFunction* pFunction, void* pParms, void* pResult = NULL );				// 0x0041EAC0 (0x108)
+	virtual void VirtualFunction00 ( );																			// 0x014F24B0 (0x00)
+	virtual void VirtualFunction01 ( );																			// 0x00B68980 (0x04)
+	virtual void VirtualFunction02 ( );																			// 0x00B65E10 (0x08)
+	virtual void VirtualFunction03 ( );																			// 0x016651D0 (0x0C)
+	virtual void VirtualFunction04 ( );																			// 0x01201AC0 (0x10)
+	virtual void VirtualFunction05 ( );																			// 0x017A1980 (0x14)
+	virtual void VirtualFunction06 ( );																			// 0x00B95110 (0x18)
+	virtual void VirtualFunction07 ( );																			// 0x00B95170 (0x1C)
+	virtual void VirtualFunction08 ( );																			// 0x00B62400 (0x20)
+	virtual void VirtualFunction09 ( );																			// 0x00BA09B0 (0x24)
+	virtual void VirtualFunction10 ( );																			// 0x014F24B0 (0x28)
+	virtual void VirtualFunction11 ( );																			// 0x00B957A0 (0x2C)
+	virtual void VirtualFunction12 ( );																			// 0x00B5AAE0 (0x30)
+	virtual void VirtualFunction13 ( );																			// 0x00B63A20 (0x34)
+	virtual void VirtualFunction14 ( );																			// 0x00B0BC50 (0x38)
+	virtual void VirtualFunction15 ( );																			// 0x017A1980 (0x3C)
+	virtual void VirtualFunction16 ( );																			// 0x00B96100 (0x40)
+	virtual void VirtualFunction17 ( );																			// 0x00B94B80 (0x44)
+	virtual void VirtualFunction18 ( );																			// 0x00B9D650 (0x48)
+	virtual void VirtualFunction19 ( );																			// 0x00B961D0 (0x4C)
+	virtual void VirtualFunction20 ( );																			// 0x00B95080 (0x50)
+	virtual void VirtualFunction21 ( );																			// 0x00B94BA0 (0x54)
+	virtual void VirtualFunction22 ( );																			// 0x00B95050 (0x58)
+	virtual void VirtualFunction23 ( );																			// 0x017A1980 (0x5C)
+	virtual void VirtualFunction24 ( );																			// 0x017A1980 (0x60)
+	virtual void VirtualFunction25 ( );																			// 0x019587B0 (0x64)
+	virtual void VirtualFunction26 ( );																			// 0x00B94B90 (0x68)
+	virtual void VirtualFunction27 ( );																			// 0x00B94BA0 (0x6C)
+	virtual void VirtualFunction28 ( );																			// 0x00B95050 (0x70)
+	virtual void VirtualFunction29 ( );																			// 0x00B94BA0 (0x74)
+	virtual void VirtualFunction30 ( );																			// 0x00B95050 (0x78)
+	virtual void VirtualFunction31 ( );																			// 0x00B9B6F0 (0x7C)
+	virtual void VirtualFunction32 ( );																			// 0x00B962C0 (0x80)
+	virtual void VirtualFunction33 ( );																			// 0x00B96460 (0x84)
+	virtual void VirtualFunction34 ( );																			// 0x017A1980 (0x88)
+	virtual void VirtualFunction35 ( );																			// 0x00B52DD0 (0x8C)
+	virtual void VirtualFunction36 ( );																			// 0x00BA7750 (0x90)
+	virtual void VirtualFunction37 ( );																			// 0x00B075C0 (0x94)
+	virtual void VirtualFunction38 ( );																			// 0x00B952E0 (0x98)
+	virtual void VirtualFunction39 ( );																			// 0x00B075F0 (0x9C)
+	virtual void VirtualFunction40 ( );																			// 0x00B08170 (0xA0)
+	virtual void VirtualFunction41 ( );																			// 0x016749D0 (0xA4)
+	virtual void VirtualFunction42 ( );																			// 0x019587B0 (0xA8)
+	virtual void VirtualFunction43 ( );																			// 0x019587B0 (0xAC)
+	virtual void VirtualFunction44 ( );																			// 0x017A1980 (0xB0)
+	virtual void VirtualFunction45 ( );																			// 0x016749D0 (0xB4)
+	virtual void VirtualFunction46 ( );																			// 0x00FE2C00 (0xB8)
+	virtual void VirtualFunction47 ( );																			// 0x00FE7DF0 (0xBC)
+	virtual void VirtualFunction48 ( );																			// 0x00B52E60 (0xC0)
+	virtual void VirtualFunction49 ( );																			// 0x00B5E370 (0xC4)
+	virtual void VirtualFunction50 ( );																			// 0x01201AC0 (0xC8)
+	virtual void VirtualFunction51 ( );																			// 0x00B95D10 (0xCC)
+	virtual void VirtualFunction52 ( );																			// 0x00B39A30 (0xD0)
+	virtual void VirtualFunction53 ( );																			// 0x00B65B00 (0xD4)
+	virtual void VirtualFunction54 ( );																			// 0x00B95DC0 (0xD8)
+	virtual void VirtualFunction55 ( );																			// 0x00E0A7D0 (0xDC)
+	virtual void VirtualFunction56 ( );																			// 0x00B95030 (0xE0)
+	virtual void VirtualFunction57 ( );																			// 0x00B95D30 (0xE4)
+	virtual void VirtualFunction58 ( );																			// 0x00B0B320 (0xE8)
+	virtual void VirtualFunction59 ( );																			// 0x00BA6F80 (0xEC)
+	virtual void VirtualFunction60 ( );																			// 0x016749D0 (0xF0)
+	virtual void VirtualFunction61 ( );																			// 0x00B04DD0 (0xF4)
+	virtual void VirtualFunction62 ( );																			// 0x00B04DF0 (0xF8)
+	virtual void VirtualFunction63 ( );																			// 0x00BAA950 (0xFC)
+	virtual void VirtualFunction64 ( );																			// 0x00B94BB0 (0x100)
+	virtual void VirtualFunction65 ( );																			// 0x00B622F0 (0x104)
+	virtual void ProcessEvent ( class UFunction* pFunction, void* pParms, void* pResult = NULL );				// 0x00B4F8D0 (0x108)
 };
 
 UClass* UObject::pClassPointer = NULL;
@@ -1004,11 +1010,11 @@ public:
 UClass* ULinker::pClassPointer = NULL;
 
 // Class Core.LinkerSave
-// 0x00A4 (0x0218 - 0x0174)
+// 0x00A8 (0x021C - 0x0174)
 class ULinkerSave : public ULinker
 {
 public:
-	unsigned char                                      UnknownData00[ 0xA4 ];                            		// 0x0174 (0x00A4) MISSED OFFSET
+	unsigned char                                      UnknownData00[ 0xA8 ];                            		// 0x0174 (0x00A8) MISSED OFFSET
 
 private:
 	static UClass* pClassPointer;
@@ -1027,11 +1033,11 @@ public:
 UClass* ULinkerSave::pClassPointer = NULL;
 
 // Class Core.LinkerLoad
-// 0x05C4 (0x0738 - 0x0174)
+// 0x05C8 (0x073C - 0x0174)
 class ULinkerLoad : public ULinker
 {
 public:
-	unsigned char                                      UnknownData00[ 0x5C4 ];                           		// 0x0174 (0x05C4) MISSED OFFSET
+	unsigned char                                      UnknownData00[ 0x5C8 ];                           		// 0x0174 (0x05C8) MISSED OFFSET
 
 private:
 	static UClass* pClassPointer;
@@ -1103,6 +1109,7 @@ public:
 	struct FString GetFilePathWithoutExtension ( struct FString Path );
 	struct FString GetFileNameWithoutExtension ( struct FString Path );
 	struct FString GetFilename ( struct FString Path );
+	void FindFiles ( struct FString Path, TArray< struct FString >* OutFilenames );
 };
 
 UClass* UFileSystem::pClassPointer = NULL;
@@ -1620,7 +1627,7 @@ public:
 UClass* UConst::pClassPointer = NULL;
 
 // Class Core.FeatureSystem
-// 0x01E0 (0x021C - 0x003C)
+// 0x020C (0x0248 - 0x003C)
 class UFeatureSystem : public UObject
 {
 public:
@@ -1659,64 +1666,73 @@ public:
 	unsigned long                                      BuyDLC : 1;                                       		// 0x00C4 (0x0004) [0x0000000040000000] [0x00000001] ( CPF_EditInlineNotify )
 	unsigned char                                      UnknownData05[ 0x4 ];                             		// 0x00C8 (0x0004) MISSED OFFSET
 	unsigned long                                      PlayerReporting : 1;                              		// 0x00CC (0x0004) [0x0000000040000000] [0x00000001] ( CPF_EditInlineNotify )
-	unsigned char                                      UnknownData06[ 0x4 ];                             		// 0x00D0 (0x0004) MISSED OFFSET
-	unsigned long                                      PremiumGarage : 1;                                		// 0x00D4 (0x0004) [0x0000000040000000] [0x00000001] ( CPF_EditInlineNotify )
-	unsigned long                                      PodiumSpotlight : 1;                              		// 0x00D8 (0x0004) [0x0000000040000000] [0x00000001] ( CPF_EditInlineNotify )
-	unsigned char                                      UnknownData07[ 0x4 ];                             		// 0x00DC (0x0004) MISSED OFFSET
-	unsigned long                                      CustomTeamNames : 1;                              		// 0x00E0 (0x0004) [0x0000000040000000] [0x00000001] ( CPF_EditInlineNotify )
-	unsigned long                                      CustomTeamColors : 1;                             		// 0x00E4 (0x0004) [0x0000000040000000] [0x00000001] ( CPF_EditInlineNotify )
-	unsigned long                                      PlayerTrading : 1;                                		// 0x00E8 (0x0004) [0x0000000040000000] [0x00000001] ( CPF_EditInlineNotify )
-	unsigned long                                      GaragePresets : 1;                                		// 0x00EC (0x0004) [0x0000000040000000] [0x00000001] ( CPF_EditInlineNotify )
-	unsigned long                                      PartyChat : 1;                                    		// 0x00F0 (0x0004) [0x0000000040000000] [0x00000001] ( CPF_EditInlineNotify )
-	unsigned char                                      UnknownData08[ 0x10 ];                            		// 0x00F4 (0x0010) MISSED OFFSET
-	unsigned long                                      OnlineServices : 1;                               		// 0x0104 (0x0004) [0x0000000040000000] [0x00000001] ( CPF_EditInlineNotify )
-	unsigned long                                      RemoveCrossPlatformProducts : 1;                  		// 0x0108 (0x0004) [0x0000000040000000] [0x00000001] ( CPF_EditInlineNotify )
-	unsigned long                                      Mutators : 1;                                     		// 0x010C (0x0004) [0x0000000040000000] [0x00000001] ( CPF_EditInlineNotify )
-	unsigned long                                      ProductValidation : 1;                            		// 0x0110 (0x0004) [0x0000000040000000] [0x00000001] ( CPF_EditInlineNotify )
-	unsigned long                                      RumbleMode : 1;                                   		// 0x0114 (0x0004) [0x0000000040000000] [0x00000001] ( CPF_EditInlineNotify )
-	unsigned long                                      PlayerTitle : 1;                                  		// 0x0118 (0x0004) [0x0000000040000000] [0x00000001] ( CPF_EditInlineNotify )
-	unsigned long                                      DynamicThumbnails : 1;                            		// 0x011C (0x0004) [0x0000000040000000] [0x00000001] ( CPF_EditInlineNotify )
-	unsigned long                                      MapPrefs : 1;                                     		// 0x0120 (0x0004) [0x0000000040000000] [0x00000001] ( CPF_EditInlineNotify )
-	unsigned long                                      Workshop : 1;                                     		// 0x0124 (0x0004) [0x0000000040000000] [0x00000001] ( CPF_EditInlineNotify )
-	unsigned char                                      UnknownData09[ 0x4 ];                             		// 0x0128 (0x0004) MISSED OFFSET
-	unsigned long                                      Avatars : 1;                                      		// 0x012C (0x0004) [0x0000000040000000] [0x00000001] ( CPF_EditInlineNotify )
-	unsigned char                                      UnknownData10[ 0x2C ];                            		// 0x0130 (0x002C) MISSED OFFSET
-	unsigned long                                      Inventory : 1;                                    		// 0x015C (0x0004) [0x0000000040000000] [0x00000001] ( CPF_EditInlineNotify )
-	unsigned long                                      TrainingEditor : 1;                               		// 0x0160 (0x0004) [0x0000000040000000] [0x00000001] ( CPF_EditInlineNotify )
-	unsigned long                                      RedeemCode : 1;                                   		// 0x0164 (0x0004) [0x0000000040000000] [0x00000001] ( CPF_EditInlineNotify )
-	unsigned long                                      VoiceChat : 1;                                    		// 0x0168 (0x0004) [0x0000000040000000] [0x00000001] ( CPF_EditInlineNotify )
-	unsigned long                                      EditBindings : 1;                                 		// 0x016C (0x0004) [0x0000000040000000] [0x00000001] ( CPF_EditInlineNotify )
-	unsigned long                                      UIScale : 1;                                      		// 0x0170 (0x0004) [0x0000000040000000] [0x00000001] ( CPF_EditInlineNotify )
-	unsigned long                                      SplitScreen : 1;                                  		// 0x0174 (0x0004) [0x0000000040000000] [0x00000001] ( CPF_EditInlineNotify )
-	unsigned long                                      Crossplay : 1;                                    		// 0x0178 (0x0004) [0x0000000040000000] [0x00000001] ( CPF_EditInlineNotify )
-	unsigned long                                      CompetitiveDivisions : 1;                         		// 0x017C (0x0004) [0x0000000040000000] [0x00000001] ( CPF_EditInlineNotify )
-	unsigned long                                      KeySelection : 1;                                 		// 0x0180 (0x0004) [0x0000000040000000] [0x00000001] ( CPF_EditInlineNotify )
-	unsigned char                                      UnknownData11[ 0x10 ];                            		// 0x0184 (0x0010) MISSED OFFSET
-	unsigned long                                      FreePlayMapSelection : 1;                         		// 0x0194 (0x0004) [0x0000000040000000] [0x00000001] ( CPF_EditInlineNotify )
-	unsigned char                                      UnknownData12[ 0x8 ];                             		// 0x0198 (0x0008) MISSED OFFSET
-	unsigned long                                      MatchAdmin : 1;                                   		// 0x01A0 (0x0004) [0x0000000040000000] [0x00000001] ( CPF_EditInlineNotify )
-	unsigned long                                      FilterContent : 1;                                		// 0x01A4 (0x0004) [0x0000000040000000] [0x00000001] ( CPF_EditInlineNotify )
-	unsigned char                                      UnknownData13[ 0x8 ];                             		// 0x01A8 (0x0008) MISSED OFFSET
-	unsigned long                                      GarageSuperSonicTrail : 1;                        		// 0x01B0 (0x0004) [0x0000000040000000] [0x00000001] ( CPF_EditInlineNotify )
-	unsigned long                                      GarageBallExplosions : 1;                         		// 0x01B4 (0x0004) [0x0000000040000000] [0x00000001] ( CPF_EditInlineNotify )
-	unsigned long                                      GarageEngineAudio : 1;                            		// 0x01B8 (0x0004) [0x0000000040000000] [0x00000001] ( CPF_EditInlineNotify )
-	unsigned char                                      UnknownData14[ 0x4 ];                             		// 0x01BC (0x0004) MISSED OFFSET
-	unsigned long                                      EsportsCamera : 1;                                		// 0x01C0 (0x0004) [0x0000000040000000] [0x00000001] ( CPF_EditInlineNotify )
-	unsigned char                                      UnknownData15[ 0x8 ];                             		// 0x01C4 (0x0008) MISSED OFFSET
-	unsigned long                                      ClientXP : 1;                                     		// 0x01CC (0x0004) [0x0000000040000000] [0x00000001] ( CPF_EditInlineNotify )
-	unsigned char                                      UnknownData16[ 0xC ];                             		// 0x01D0 (0x000C) MISSED OFFSET
-	unsigned long                                      ClanforgeReservation : 1;                         		// 0x01DC (0x0004) [0x0000000040000000] [0x00000001] ( CPF_EditInlineNotify )
-	unsigned char                                      UnknownData17[ 0x4 ];                             		// 0x01E0 (0x0004) MISSED OFFSET
-	unsigned long                                      UserSettingObserver : 1;                          		// 0x01E4 (0x0004) [0x0000000040000000] [0x00000001] ( CPF_EditInlineNotify )
-	unsigned long                                      Metrics : 1;                                      		// 0x01E8 (0x0004) [0x0000000040000000] [0x00000001] ( CPF_EditInlineNotify )
-	unsigned long                                      MusicPlaylistSelection : 1;                       		// 0x01EC (0x0004) [0x0000000040000000] [0x00000001] ( CPF_EditInlineNotify )
-	unsigned char                                      UnknownData18[ 0x8 ];                             		// 0x01F0 (0x0008) MISSED OFFSET
-	unsigned long                                      SpecialEvents : 1;                                		// 0x01F8 (0x0004) [0x0000000040000000] [0x00000001] ( CPF_EditInlineNotify )
-	unsigned char                                      UnknownData19[ 0x10 ];                            		// 0x01FC (0x0010) MISSED OFFSET
-	unsigned long                                      PlayerBannerCustomization : 1;                    		// 0x020C (0x0004) [0x0000000040000000] [0x00000001] ( CPF_EditInlineNotify )
-	unsigned long                                      SecureUDP : 1;                                    		// 0x0210 (0x0004) [0x0000000040000000] [0x00000001] ( CPF_EditInlineNotify )
-	unsigned long                                      PsyNet : 1;                                       		// 0x0214 (0x0004) [0x0000000040000000] [0x00000001] ( CPF_EditInlineNotify )
-	unsigned char                                      UnknownData20[ 0x4 ];                             		// 0x0218 (0x0004) MISSED OFFSET
+	unsigned long                                      PremiumGarage : 1;                                		// 0x00D0 (0x0004) [0x0000000040000000] [0x00000001] ( CPF_EditInlineNotify )
+	unsigned long                                      PodiumSpotlight : 1;                              		// 0x00D4 (0x0004) [0x0000000040000000] [0x00000001] ( CPF_EditInlineNotify )
+	unsigned char                                      UnknownData06[ 0x4 ];                             		// 0x00D8 (0x0004) MISSED OFFSET
+	unsigned long                                      CustomTeamNames : 1;                              		// 0x00DC (0x0004) [0x0000000040000000] [0x00000001] ( CPF_EditInlineNotify )
+	unsigned long                                      CustomTeamColors : 1;                             		// 0x00E0 (0x0004) [0x0000000040000000] [0x00000001] ( CPF_EditInlineNotify )
+	unsigned long                                      PlayerTrading : 1;                                		// 0x00E4 (0x0004) [0x0000000040000000] [0x00000001] ( CPF_EditInlineNotify )
+	unsigned long                                      GaragePresets : 1;                                		// 0x00E8 (0x0004) [0x0000000040000000] [0x00000001] ( CPF_EditInlineNotify )
+	unsigned long                                      PartyChat : 1;                                    		// 0x00EC (0x0004) [0x0000000040000000] [0x00000001] ( CPF_EditInlineNotify )
+	unsigned char                                      UnknownData07[ 0x10 ];                            		// 0x00F0 (0x0010) MISSED OFFSET
+	unsigned long                                      OnlineServices : 1;                               		// 0x0100 (0x0004) [0x0000000040000000] [0x00000001] ( CPF_EditInlineNotify )
+	unsigned long                                      RemoveCrossPlatformProducts : 1;                  		// 0x0104 (0x0004) [0x0000000040000000] [0x00000001] ( CPF_EditInlineNotify )
+	unsigned long                                      Mutators : 1;                                     		// 0x0108 (0x0004) [0x0000000040000000] [0x00000001] ( CPF_EditInlineNotify )
+	unsigned long                                      ProductValidation : 1;                            		// 0x010C (0x0004) [0x0000000040000000] [0x00000001] ( CPF_EditInlineNotify )
+	unsigned long                                      RumbleMode : 1;                                   		// 0x0110 (0x0004) [0x0000000040000000] [0x00000001] ( CPF_EditInlineNotify )
+	unsigned long                                      PlayerTitle : 1;                                  		// 0x0114 (0x0004) [0x0000000040000000] [0x00000001] ( CPF_EditInlineNotify )
+	unsigned long                                      DynamicThumbnails : 1;                            		// 0x0118 (0x0004) [0x0000000040000000] [0x00000001] ( CPF_EditInlineNotify )
+	unsigned long                                      MapPrefs : 1;                                     		// 0x011C (0x0004) [0x0000000040000000] [0x00000001] ( CPF_EditInlineNotify )
+	unsigned long                                      Workshop : 1;                                     		// 0x0120 (0x0004) [0x0000000040000000] [0x00000001] ( CPF_EditInlineNotify )
+	unsigned char                                      UnknownData08[ 0x4 ];                             		// 0x0124 (0x0004) MISSED OFFSET
+	unsigned long                                      Avatars : 1;                                      		// 0x0128 (0x0004) [0x0000000040000000] [0x00000001] ( CPF_EditInlineNotify )
+	unsigned char                                      UnknownData09[ 0x4 ];                             		// 0x012C (0x0004) MISSED OFFSET
+	unsigned long                                      Tournaments : 1;                                  		// 0x0130 (0x0004) [0x0000000040000000] [0x00000001] ( CPF_EditInlineNotify )
+	unsigned char                                      UnknownData10[ 0x24 ];                            		// 0x0134 (0x0024) MISSED OFFSET
+	unsigned long                                      Inventory : 1;                                    		// 0x0158 (0x0004) [0x0000000040000000] [0x00000001] ( CPF_EditInlineNotify )
+	unsigned long                                      TrainingEditor : 1;                               		// 0x015C (0x0004) [0x0000000040000000] [0x00000001] ( CPF_EditInlineNotify )
+	unsigned long                                      RedeemCode : 1;                                   		// 0x0160 (0x0004) [0x0000000040000000] [0x00000001] ( CPF_EditInlineNotify )
+	unsigned long                                      VoiceChat : 1;                                    		// 0x0164 (0x0004) [0x0000000040000000] [0x00000001] ( CPF_EditInlineNotify )
+	unsigned long                                      EditBindings : 1;                                 		// 0x0168 (0x0004) [0x0000000040000000] [0x00000001] ( CPF_EditInlineNotify )
+	unsigned long                                      UIScale : 1;                                      		// 0x016C (0x0004) [0x0000000040000000] [0x00000001] ( CPF_EditInlineNotify )
+	unsigned long                                      SplitScreen : 1;                                  		// 0x0170 (0x0004) [0x0000000040000000] [0x00000001] ( CPF_EditInlineNotify )
+	unsigned long                                      Crossplay : 1;                                    		// 0x0174 (0x0004) [0x0000000040000000] [0x00000001] ( CPF_EditInlineNotify )
+	unsigned long                                      CompetitiveDivisions : 1;                         		// 0x0178 (0x0004) [0x0000000040000000] [0x00000001] ( CPF_EditInlineNotify )
+	unsigned long                                      KeySelection : 1;                                 		// 0x017C (0x0004) [0x0000000040000000] [0x00000001] ( CPF_EditInlineNotify )
+	unsigned char                                      UnknownData11[ 0x10 ];                            		// 0x0180 (0x0010) MISSED OFFSET
+	unsigned long                                      FreePlayMapSelection : 1;                         		// 0x0190 (0x0004) [0x0000000040000000] [0x00000001] ( CPF_EditInlineNotify )
+	unsigned char                                      UnknownData12[ 0x8 ];                             		// 0x0194 (0x0008) MISSED OFFSET
+	unsigned long                                      MatchAdmin : 1;                                   		// 0x019C (0x0004) [0x0000000040000000] [0x00000001] ( CPF_EditInlineNotify )
+	unsigned long                                      FilterContent : 1;                                		// 0x01A0 (0x0004) [0x0000000040000000] [0x00000001] ( CPF_EditInlineNotify )
+	unsigned char                                      UnknownData13[ 0x4 ];                             		// 0x01A4 (0x0004) MISSED OFFSET
+	unsigned long                                      GarageSuperSonicTrail : 1;                        		// 0x01A8 (0x0004) [0x0000000040000000] [0x00000001] ( CPF_EditInlineNotify )
+	unsigned long                                      GarageBallExplosions : 1;                         		// 0x01AC (0x0004) [0x0000000040000000] [0x00000001] ( CPF_EditInlineNotify )
+	unsigned long                                      GarageEngineAudio : 1;                            		// 0x01B0 (0x0004) [0x0000000040000000] [0x00000001] ( CPF_EditInlineNotify )
+	unsigned char                                      UnknownData14[ 0x4 ];                             		// 0x01B4 (0x0004) MISSED OFFSET
+	unsigned long                                      EsportsCamera : 1;                                		// 0x01B8 (0x0004) [0x0000000040000000] [0x00000001] ( CPF_EditInlineNotify )
+	unsigned char                                      UnknownData15[ 0x8 ];                             		// 0x01BC (0x0008) MISSED OFFSET
+	unsigned long                                      ClientXP : 1;                                     		// 0x01C4 (0x0004) [0x0000000040000000] [0x00000001] ( CPF_EditInlineNotify )
+	unsigned char                                      UnknownData16[ 0xC ];                             		// 0x01C8 (0x000C) MISSED OFFSET
+	unsigned long                                      ClanforgeReservation : 1;                         		// 0x01D4 (0x0004) [0x0000000040000000] [0x00000001] ( CPF_EditInlineNotify )
+	unsigned char                                      UnknownData17[ 0x4 ];                             		// 0x01D8 (0x0004) MISSED OFFSET
+	unsigned long                                      UserSettingObserver : 1;                          		// 0x01DC (0x0004) [0x0000000040000000] [0x00000001] ( CPF_EditInlineNotify )
+	unsigned long                                      Metrics : 1;                                      		// 0x01E0 (0x0004) [0x0000000040000000] [0x00000001] ( CPF_EditInlineNotify )
+	unsigned long                                      MusicPlaylistSelection : 1;                       		// 0x01E4 (0x0004) [0x0000000040000000] [0x00000001] ( CPF_EditInlineNotify )
+	unsigned char                                      UnknownData18[ 0x8 ];                             		// 0x01E8 (0x0008) MISSED OFFSET
+	unsigned long                                      SpecialEvents : 1;                                		// 0x01F0 (0x0004) [0x0000000040000000] [0x00000001] ( CPF_EditInlineNotify )
+	unsigned char                                      UnknownData19[ 0x14 ];                            		// 0x01F4 (0x0014) MISSED OFFSET
+	unsigned long                                      PlayerBannerCustomization : 1;                    		// 0x0208 (0x0004) [0x0000000040000000] [0x00000001] ( CPF_EditInlineNotify )
+	unsigned long                                      SecureUDP : 1;                                    		// 0x020C (0x0004) [0x0000000040000000] [0x00000001] ( CPF_EditInlineNotify )
+	unsigned long                                      PsyNet : 1;                                       		// 0x0210 (0x0004) [0x0000000040000000] [0x00000001] ( CPF_EditInlineNotify )
+	unsigned long                                      OnlinePlayerStorage : 1;                          		// 0x0214 (0x0004) [0x0000000040000000] [0x00000001] ( CPF_EditInlineNotify )
+	unsigned long                                      OnlineSaveData : 1;                               		// 0x0218 (0x0004) [0x0000000040000000] [0x00000001] ( CPF_EditInlineNotify )
+	unsigned long                                      LocalSaveData : 1;                                		// 0x021C (0x0004) [0x0000000040000000] [0x00000001] ( CPF_EditInlineNotify )
+	unsigned char                                      UnknownData20[ 0x8 ];                             		// 0x0220 (0x0008) MISSED OFFSET
+	unsigned long                                      CrowdV2 : 1;                                      		// 0x0228 (0x0004) [0x0000000040000000] [0x00000001] ( CPF_EditInlineNotify )
+	unsigned long                                      ChatBan : 1;                                      		// 0x022C (0x0004) [0x0000000040000000] [0x00000001] ( CPF_EditInlineNotify )
+	unsigned char                                      UnknownData21[ 0x10 ];                            		// 0x0230 (0x0010) MISSED OFFSET
+	unsigned long                                      MonsterCarV2 : 1;                                 		// 0x0240 (0x0004) [0x0000000040000000] [0x00000001] ( CPF_EditInlineNotify )
+	unsigned long                                      SpotifyButton : 1;                                		// 0x0244 (0x0004) [0x0000000040000000] [0x00000001] ( CPF_EditInlineNotify )
 
 private:
 	static UClass* pClassPointer;
@@ -1759,7 +1775,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 179 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 187 ];
 
 		return pClassPointer;
 	};
@@ -1781,7 +1797,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 178 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 186 ];
 
 		return pClassPointer;
 	};
@@ -1807,7 +1823,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 182 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 190 ];
 
 		return pClassPointer;
 	};
@@ -1830,7 +1846,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 188 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 196 ];
 
 		return pClassPointer;
 	};
@@ -1856,7 +1872,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 190 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 198 ];
 
 		return pClassPointer;
 	};
@@ -1882,7 +1898,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 192 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 200 ];
 
 		return pClassPointer;
 	};
@@ -1916,7 +1932,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 194 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 202 ];
 
 		return pClassPointer;
 	};
@@ -1952,7 +1968,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 197 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 205 ];
 
 		return pClassPointer;
 	};
@@ -1975,7 +1991,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 196 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 204 ];
 
 		return pClassPointer;
 	};
@@ -2006,7 +2022,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 200 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 208 ];
 
 		return pClassPointer;
 	};
@@ -2032,7 +2048,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 202 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 210 ];
 
 		return pClassPointer;
 	};
@@ -2065,7 +2081,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 205 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 213 ];
 
 		return pClassPointer;
 	};
@@ -2088,7 +2104,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 204 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 212 ];
 
 		return pClassPointer;
 	};
@@ -2122,7 +2138,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 209 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 217 ];
 
 		return pClassPointer;
 	};
@@ -2161,7 +2177,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 208 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 216 ];
 
 		return pClassPointer;
 	};
@@ -2184,7 +2200,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 212 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 220 ];
 
 		return pClassPointer;
 	};
@@ -2207,7 +2223,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 214 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 222 ];
 
 		return pClassPointer;
 	};
@@ -2230,7 +2246,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 216 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 224 ];
 
 		return pClassPointer;
 	};
@@ -2252,7 +2268,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 5838 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 5898 ];
 
 		return pClassPointer;
 	};
@@ -2275,7 +2291,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 5986 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 6050 ];
 
 		return pClassPointer;
 	};
@@ -2297,7 +2313,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 6104 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 6168 ];
 
 		return pClassPointer;
 	};
@@ -2321,7 +2337,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 97425 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 103841 ];
 
 		return pClassPointer;
 	};
@@ -2344,7 +2360,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 100853 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 107334 ];
 
 		return pClassPointer;
 	};

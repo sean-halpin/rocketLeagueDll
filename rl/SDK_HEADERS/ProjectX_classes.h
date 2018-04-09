@@ -62,6 +62,14 @@
 	WRA_MAX                                            = 4
 };*/
 
+// Enum ProjectX._Types_X.EConsoleQualityMode
+/*enum EConsoleQualityMode
+{
+	ConsoleQualityMode_Performance                     = 0,
+	ConsoleQualityMode_Quality                         = 1,
+	ConsoleQualityMode_MAX                             = 2
+};*/
+
 // Enum ProjectX._Types_X.EPlayerAuthState
 /*enum EPlayerAuthState
 {
@@ -367,6 +375,16 @@
 	PerConStatus_MAX                                   = 3
 };*/
 
+// Enum ProjectX.DynamicValue_X.EDynamicValueModType
+/*enum EDynamicValueModType
+{
+	ModType_Add                                        = 0,
+	ModType_Multiply                                   = 1,
+	ModType_MultiplyAdd                                = 2,
+	ModType_Set                                        = 3,
+	ModType_MAX                                        = 4
+};*/
+
 
 /*
 # ========================================================================================= #
@@ -387,7 +405,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3233 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3247 ];
 
 		return pClassPointer;
 	};
@@ -423,7 +441,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3235 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3249 ];
 
 		return pClassPointer;
 	};
@@ -451,7 +469,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3237 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3251 ];
 
 		return pClassPointer;
 	};
@@ -489,7 +507,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3239 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3253 ];
 
 		return pClassPointer;
 	};
@@ -517,7 +535,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3241 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3255 ];
 
 		return pClassPointer;
 	};
@@ -579,7 +597,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3243 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3257 ];
 
 		return pClassPointer;
 	};
@@ -617,7 +635,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3245 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3259 ];
 
 		return pClassPointer;
 	};
@@ -643,28 +661,29 @@ public:
 UClass* UAdHocBeacon_X::pClassPointer = NULL;
 
 // Class ProjectX.FXActor_X
-// 0x005C (0x0258 - 0x01FC)
+// 0x005C (0x026C - 0x0210)
 class AFXActor_X : public AActor
 {
 public:
-	class UFXActorEvent_X*                             SpawnState;                                       		// 0x01FC (0x0004) [0x0000000000000000]              
-	class UFXActorEvent_X*                             ActivationState;                                  		// 0x0200 (0x0004) [0x0000000000000000]              
-	TArray< struct FFXAttachment >                     Attachments;                                      		// 0x0204 (0x000C) [0x0000000000480001]              ( CPF_Edit | CPF_Component | CPF_NeedCtorLink )
-	struct FName                                       SocketOrBoneName;                                 		// 0x0210 (0x0008) [0x0000000000000001]              ( CPF_Edit )
-	unsigned long                                      bDeactivateWhenOwnerDestroyed : 1;                		// 0x0218 (0x0004) [0x0000000000000001] [0x00000001] ( CPF_Edit )
-	unsigned long                                      bAllowShadowCasting : 1;                          		// 0x0218 (0x0004) [0x0000000000000001] [0x00000002] ( CPF_Edit )
-	unsigned long                                      bActive : 1;                                      		// 0x0218 (0x0004) [0x0000000000002000] [0x00000004] ( CPF_Transient )
-	unsigned long                                      bPendingDestroy : 1;                              		// 0x0218 (0x0004) [0x0000000000002000] [0x00000008] ( CPF_Transient )
-	unsigned long                                      bHadOwner : 1;                                    		// 0x0218 (0x0004) [0x0000000000002002] [0x00000010] ( CPF_Const | CPF_Transient )
-	class AFXActor_X*                                  Parent;                                           		// 0x021C (0x0004) [0x0000000000000001]              ( CPF_Edit )
-	class AActor*                                      AttachmentActor;                                  		// 0x0220 (0x0004) [0x0000000000002000]              ( CPF_Transient )
-	TArray< class UFXActorEvent_X* >                   FXStates;                                         		// 0x0224 (0x000C) [0x0000000000402000]              ( CPF_Transient | CPF_NeedCtorLink )
-	class UParameterDispenser_X*                       Parameters;                                       		// 0x0230 (0x0004) [0x0000000004080009]              ( CPF_Edit | CPF_ExportObject | CPF_Component | CPF_EditInline )
-	int                                                EditID;                                           		// 0x0234 (0x0004) [0x0000000000020003]              ( CPF_Edit | CPF_Const | CPF_EditConst )
-	struct FScriptDelegate                             __EventFXStatePushed__Delegate;                   		// 0x0238 (0x0010) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	unsigned char                                      UnknownData00[ 0x4 ];                             		// 0x023C (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
-	struct FScriptDelegate                             __EventFXStatePopped__Delegate;                   		// 0x0248 (0x0010) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	unsigned char                                      UnknownData01[ 0x4 ];                             		// 0x024C (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
+	class UFXActorEvent_X*                             SpawnState;                                       		// 0x0210 (0x0004) [0x0000000000000000]              
+	class UFXActorEvent_X*                             ActivationState;                                  		// 0x0214 (0x0004) [0x0000000000000000]              
+	TArray< struct FFXAttachment >                     Attachments;                                      		// 0x0218 (0x000C) [0x0000000000480001]              ( CPF_Edit | CPF_Component | CPF_NeedCtorLink )
+	struct FName                                       SocketOrBoneName;                                 		// 0x0224 (0x0008) [0x0000000000000001]              ( CPF_Edit )
+	unsigned long                                      bDeactivateWhenOwnerDestroyed : 1;                		// 0x022C (0x0004) [0x0000000000000001] [0x00000001] ( CPF_Edit )
+	unsigned long                                      bAllowShadowCasting : 1;                          		// 0x022C (0x0004) [0x0000000000000001] [0x00000002] ( CPF_Edit )
+	unsigned long                                      bAutoActivate : 1;                                		// 0x022C (0x0004) [0x0000000000000001] [0x00000004] ( CPF_Edit )
+	unsigned long                                      bActive : 1;                                      		// 0x022C (0x0004) [0x0000000000002000] [0x00000008] ( CPF_Transient )
+	unsigned long                                      bPendingDestroy : 1;                              		// 0x022C (0x0004) [0x0000000000002000] [0x00000010] ( CPF_Transient )
+	unsigned long                                      bHadOwner : 1;                                    		// 0x022C (0x0004) [0x0000000000002002] [0x00000020] ( CPF_Const | CPF_Transient )
+	class AFXActor_X*                                  Parent;                                           		// 0x0230 (0x0004) [0x0000000000000001]              ( CPF_Edit )
+	class AActor*                                      AttachmentActor;                                  		// 0x0234 (0x0004) [0x0000000000002000]              ( CPF_Transient )
+	TArray< class UFXActorEvent_X* >                   FXStates;                                         		// 0x0238 (0x000C) [0x0000000000402000]              ( CPF_Transient | CPF_NeedCtorLink )
+	class UParameterDispenser_X*                       Parameters;                                       		// 0x0244 (0x0004) [0x0000000004080009]              ( CPF_Edit | CPF_ExportObject | CPF_Component | CPF_EditInline )
+	int                                                EditID;                                           		// 0x0248 (0x0004) [0x0000000000020003]              ( CPF_Edit | CPF_Const | CPF_EditConst )
+	struct FScriptDelegate                             __EventFXStatePushed__Delegate;                   		// 0x024C (0x0010) [0x0000000000400000]              ( CPF_NeedCtorLink )
+	unsigned char                                      UnknownData00[ 0x4 ];                             		// 0x0250 (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
+	struct FScriptDelegate                             __EventFXStatePopped__Delegate;                   		// 0x025C (0x0010) [0x0000000000400000]              ( CPF_NeedCtorLink )
+	unsigned char                                      UnknownData01[ 0x4 ];                             		// 0x0260 (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
 
 private:
 	static UClass* pClassPointer;
@@ -673,12 +692,13 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3247 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3261 ];
 
 		return pClassPointer;
 	};
 
 	void eventDestroyed ( );
+	void SetStateEnabled ( class UFXActorEvent_X* State, unsigned long bEnable );
 	void OnToggle ( class USeqAct_Toggle* Action );
 	void OnTriggerFXActor_X ( class USeqAct_TriggerFXActor_X* SeqAct );
 	void Inherit ( class AFXActor_X* Other );
@@ -697,10 +717,11 @@ public:
 	void RemoveState ( class UFXActorEvent_X* OldState );
 	void AddState ( class UFXActorEvent_X* NewState );
 	bool IsStateActive ( class UFXActorEvent_X* InState );
-	void eventDeactivate ( );
-	void eventActivate ( );
+	void Deactivate ( );
+	void Activate ( );
 	void HandleParentStatePopped ( class AFXActor_X* P, class UFXActorEvent_X* Event );
 	void HandleParentStatePushed ( class AFXActor_X* P, class UFXActorEvent_X* Event );
+	void SetHiddenFrom ( class AActor* Other );
 	void BindTo ( class AFXActor_X* ParentFXActor );
 	void SetAttachmentActor ( class AActor* AttachToActor );
 	void PostBeginPlay ( );
@@ -731,7 +752,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3249 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3263 ];
 
 		return pClassPointer;
 	};
@@ -741,12 +762,12 @@ public:
 UClass* UAnimateParametersComponent_X::pClassPointer = NULL;
 
 // Class ProjectX.ArchetypePrefab_X
-// 0x0018 (0x0214 - 0x01FC)
+// 0x0018 (0x0228 - 0x0210)
 class AArchetypePrefab_X : public AActor
 {
 public:
-	TArray< class AActor* >                            PrefabArchetypes;                                 		// 0x01FC (0x000C) [0x0000000000400001]              ( CPF_Edit | CPF_NeedCtorLink )
-	TArray< class AActor* >                            ArchetypeInstances;                               		// 0x0208 (0x000C) [0x0000000000402002]              ( CPF_Const | CPF_Transient | CPF_NeedCtorLink )
+	TArray< class AActor* >                            PrefabArchetypes;                                 		// 0x0210 (0x000C) [0x0000000000400001]              ( CPF_Edit | CPF_NeedCtorLink )
+	TArray< class AActor* >                            ArchetypeInstances;                               		// 0x021C (0x000C) [0x0000000000402002]              ( CPF_Const | CPF_Transient | CPF_NeedCtorLink )
 
 private:
 	static UClass* pClassPointer;
@@ -755,7 +776,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3251 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3265 ];
 
 		return pClassPointer;
 	};
@@ -765,23 +786,23 @@ public:
 UClass* AArchetypePrefab_X::pClassPointer = NULL;
 
 // Class ProjectX.ArchetypeSpawnPoint_X
-// 0x0044 (0x0240 - 0x01FC)
+// 0x0044 (0x0254 - 0x0210)
 class AArchetypeSpawnPoint_X : public AActor
 {
 public:
-	struct FPointer                                    VfTable_IInterface_NavMeshPathObject;             		// 0x01FC (0x0004) [0x0000000000801002]              ( CPF_Const | CPF_Native | CPF_NoExport )
-	struct FString                                     ArchetypePath;                                    		// 0x0200 (0x000C) [0x0000000000400003]              ( CPF_Edit | CPF_Const | CPF_NeedCtorLink )
-	unsigned long                                      bSeedNavMesh : 1;                                 		// 0x020C (0x0004) [0x0000000000000001] [0x00000001] ( CPF_Edit )
-	unsigned long                                      bSpawnOnLevelStart : 1;                           		// 0x020C (0x0004) [0x0000000000000001] [0x00000002] ( CPF_Edit )
-	unsigned long                                      bOnlyAllowOneInstance : 1;                        		// 0x020C (0x0004) [0x0000000000000001] [0x00000004] ( CPF_Edit )
-	class AActor*                                      ActorArchetype;                                   		// 0x0210 (0x0004) [0x0000000000000001]              ( CPF_Edit )
-	class USpriteComponent*                            PlacementSprite;                                  		// 0x0214 (0x0004) [0x0000000004080008]              ( CPF_ExportObject | CPF_Component | CPF_EditInline )
-	class USkeletalMeshComponent*                      ArchetypeSkeletalMesh;                            		// 0x0218 (0x0004) [0x0000000004080008]              ( CPF_ExportObject | CPF_Component | CPF_EditInline )
-	class UStaticMeshComponent*                        ArchetypeStaticMesh;                              		// 0x021C (0x0004) [0x0000000004080008]              ( CPF_ExportObject | CPF_Component | CPF_EditInline )
-	TArray< class AActor* >                            SpawnedActors;                                    		// 0x0220 (0x000C) [0x0000000000402000]              ( CPF_Transient | CPF_NeedCtorLink )
-	class AActor*                                      SpawnedActor;                                     		// 0x022C (0x0004) [0x0000000000002000]              ( CPF_Transient )
-	struct FScriptDelegate                             __EventSpawned__Delegate;                         		// 0x0230 (0x0010) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	unsigned char                                      UnknownData00[ 0x4 ];                             		// 0x0234 (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
+	struct FPointer                                    VfTable_IInterface_NavMeshPathObject;             		// 0x0210 (0x0004) [0x0000000000801002]              ( CPF_Const | CPF_Native | CPF_NoExport )
+	struct FString                                     ArchetypePath;                                    		// 0x0214 (0x000C) [0x0000000000400003]              ( CPF_Edit | CPF_Const | CPF_NeedCtorLink )
+	unsigned long                                      bSeedNavMesh : 1;                                 		// 0x0220 (0x0004) [0x0000000000000001] [0x00000001] ( CPF_Edit )
+	unsigned long                                      bSpawnOnLevelStart : 1;                           		// 0x0220 (0x0004) [0x0000000000000001] [0x00000002] ( CPF_Edit )
+	unsigned long                                      bOnlyAllowOneInstance : 1;                        		// 0x0220 (0x0004) [0x0000000000000001] [0x00000004] ( CPF_Edit )
+	class AActor*                                      ActorArchetype;                                   		// 0x0224 (0x0004) [0x0000000000000001]              ( CPF_Edit )
+	class USpriteComponent*                            PlacementSprite;                                  		// 0x0228 (0x0004) [0x0000000004080008]              ( CPF_ExportObject | CPF_Component | CPF_EditInline )
+	class USkeletalMeshComponent*                      ArchetypeSkeletalMesh;                            		// 0x022C (0x0004) [0x0000000004080008]              ( CPF_ExportObject | CPF_Component | CPF_EditInline )
+	class UStaticMeshComponent*                        ArchetypeStaticMesh;                              		// 0x0230 (0x0004) [0x0000000004080008]              ( CPF_ExportObject | CPF_Component | CPF_EditInline )
+	TArray< class AActor* >                            SpawnedActors;                                    		// 0x0234 (0x000C) [0x0000000000402000]              ( CPF_Transient | CPF_NeedCtorLink )
+	class AActor*                                      SpawnedActor;                                     		// 0x0240 (0x0004) [0x0000000000002000]              ( CPF_Transient )
+	struct FScriptDelegate                             __EventSpawned__Delegate;                         		// 0x0244 (0x0010) [0x0000000000400000]              ( CPF_NeedCtorLink )
+	unsigned char                                      UnknownData00[ 0x4 ];                             		// 0x0248 (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
 
 private:
 	static UClass* pClassPointer;
@@ -790,7 +811,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3253 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3267 ];
 
 		return pClassPointer;
 	};
@@ -818,7 +839,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3255 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3269 ];
 
 		return pClassPointer;
 	};
@@ -852,7 +873,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3257 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3271 ];
 
 		return pClassPointer;
 	};
@@ -891,7 +912,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3259 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3273 ];
 
 		return pClassPointer;
 	};
@@ -919,7 +940,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3261 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3275 ];
 
 		return pClassPointer;
 	};
@@ -958,7 +979,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3263 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3277 ];
 
 		return pClassPointer;
 	};
@@ -994,7 +1015,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3265 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3279 ];
 
 		return pClassPointer;
 	};
@@ -1006,30 +1027,30 @@ public:
 UClass* UCachedWebData_X::pClassPointer = NULL;
 
 // Class ProjectX.Camera_X
-// 0x00F4 (0x05CC - 0x04D8)
+// 0x00F4 (0x05E0 - 0x04EC)
 class ACamera_X : public ACamera
 {
 public:
-	TArray< class UCameraState_X* >                    States;                                           		// 0x04D8 (0x000C) [0x0000000000400001]              ( CPF_Edit | CPF_NeedCtorLink )
-	struct FRotator                                    PCDeltaRotation;                                  		// 0x04E4 (0x000C) [0x0000000000002000]              ( CPF_Transient )
-	struct FRotator                                    OldControllerRotation;                            		// 0x04F0 (0x000C) [0x0000000000002000]              ( CPF_Transient )
-	struct FVector                                     PCDeltaLocation;                                  		// 0x04FC (0x000C) [0x0000000000002000]              ( CPF_Transient )
-	struct FVector                                     OldControllerLocation;                            		// 0x0508 (0x000C) [0x0000000000002000]              ( CPF_Transient )
-	struct FCameraOrientation                          PreProcessPOV;                                    		// 0x0514 (0x002C) [0x0000000000002000]              ( CPF_Transient )
-	struct FCameraOrientation                          PostProcessPOV;                                   		// 0x0540 (0x002C) [0x0000000000002000]              ( CPF_Transient )
-	class UCameraStateBlender_X*                       Blender;                                          		// 0x056C (0x0004) [0x0000000004080008]              ( CPF_ExportObject | CPF_Component | CPF_EditInline )
-	struct FVector                                     ShakeLocationOffset;                              		// 0x0570 (0x000C) [0x0000000000002002]              ( CPF_Const | CPF_Transient )
-	struct FRotator                                    ShakeRotationOffset;                              		// 0x057C (0x000C) [0x0000000000002002]              ( CPF_Const | CPF_Transient )
-	float                                              ShakeFOVOffset;                                   		// 0x0588 (0x0004) [0x0000000000002002]              ( CPF_Const | CPF_Transient )
-	struct FColor                                      StartFadeColor;                                   		// 0x058C (0x0004) [0x0000000000002000]              ( CPF_Transient )
-	struct FColor                                      EndFadeColor;                                     		// 0x0590 (0x0004) [0x0000000000002000]              ( CPF_Transient )
-	struct FVector                                     ClipOffset;                                       		// 0x0594 (0x000C) [0x0000000000002000]              ( CPF_Transient )
-	TArray< struct FLocationCameraKnock >              LocationKnocks;                                   		// 0x05A0 (0x000C) [0x0000000000402000]              ( CPF_Transient | CPF_NeedCtorLink )
-	TArray< struct FRotationCameraKnock >              RotationKnocks;                                   		// 0x05AC (0x000C) [0x0000000000402000]              ( CPF_Transient | CPF_NeedCtorLink )
-	unsigned long                                      bDisableCameraShake : 1;                          		// 0x05B8 (0x0004) [0x0000000000002000] [0x00000001] ( CPF_Transient )
-	unsigned long                                      bSnapNextTransition : 1;                          		// 0x05B8 (0x0004) [0x0000000000002000] [0x00000002] ( CPF_Transient )
-	struct FScriptDelegate                             __EventCameraStateChanged__Delegate;              		// 0x05BC (0x0010) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	unsigned char                                      UnknownData00[ 0x4 ];                             		// 0x05C0 (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
+	TArray< class UCameraState_X* >                    States;                                           		// 0x04EC (0x000C) [0x0000000000400001]              ( CPF_Edit | CPF_NeedCtorLink )
+	struct FRotator                                    PCDeltaRotation;                                  		// 0x04F8 (0x000C) [0x0000000000002000]              ( CPF_Transient )
+	struct FRotator                                    OldControllerRotation;                            		// 0x0504 (0x000C) [0x0000000000002000]              ( CPF_Transient )
+	struct FVector                                     PCDeltaLocation;                                  		// 0x0510 (0x000C) [0x0000000000002000]              ( CPF_Transient )
+	struct FVector                                     OldControllerLocation;                            		// 0x051C (0x000C) [0x0000000000002000]              ( CPF_Transient )
+	struct FCameraOrientation                          PreProcessPOV;                                    		// 0x0528 (0x002C) [0x0000000000002000]              ( CPF_Transient )
+	struct FCameraOrientation                          PostProcessPOV;                                   		// 0x0554 (0x002C) [0x0000000000002000]              ( CPF_Transient )
+	class UCameraStateBlender_X*                       Blender;                                          		// 0x0580 (0x0004) [0x0000000004080008]              ( CPF_ExportObject | CPF_Component | CPF_EditInline )
+	struct FVector                                     ShakeLocationOffset;                              		// 0x0584 (0x000C) [0x0000000000002002]              ( CPF_Const | CPF_Transient )
+	struct FRotator                                    ShakeRotationOffset;                              		// 0x0590 (0x000C) [0x0000000000002002]              ( CPF_Const | CPF_Transient )
+	float                                              ShakeFOVOffset;                                   		// 0x059C (0x0004) [0x0000000000002002]              ( CPF_Const | CPF_Transient )
+	struct FColor                                      StartFadeColor;                                   		// 0x05A0 (0x0004) [0x0000000000002000]              ( CPF_Transient )
+	struct FColor                                      EndFadeColor;                                     		// 0x05A4 (0x0004) [0x0000000000002000]              ( CPF_Transient )
+	struct FVector                                     ClipOffset;                                       		// 0x05A8 (0x000C) [0x0000000000002000]              ( CPF_Transient )
+	TArray< struct FLocationCameraKnock >              LocationKnocks;                                   		// 0x05B4 (0x000C) [0x0000000000402000]              ( CPF_Transient | CPF_NeedCtorLink )
+	TArray< struct FRotationCameraKnock >              RotationKnocks;                                   		// 0x05C0 (0x000C) [0x0000000000402000]              ( CPF_Transient | CPF_NeedCtorLink )
+	unsigned long                                      bDisableCameraShake : 1;                          		// 0x05CC (0x0004) [0x0000000000002000] [0x00000001] ( CPF_Transient )
+	unsigned long                                      bSnapNextTransition : 1;                          		// 0x05CC (0x0004) [0x0000000000002000] [0x00000002] ( CPF_Transient )
+	struct FScriptDelegate                             __EventCameraStateChanged__Delegate;              		// 0x05D0 (0x0010) [0x0000000000400000]              ( CPF_NeedCtorLink )
+	unsigned char                                      UnknownData00[ 0x4 ];                             		// 0x05D4 (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
 
 private:
 	static UClass* pClassPointer;
@@ -1038,7 +1059,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3267 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3281 ];
 
 		return pClassPointer;
 	};
@@ -1097,7 +1118,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3269 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3283 ];
 
 		return pClassPointer;
 	};
@@ -1121,7 +1142,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3271 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3285 ];
 
 		return pClassPointer;
 	};
@@ -1148,7 +1169,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3273 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3287 ];
 
 		return pClassPointer;
 	};
@@ -1159,29 +1180,27 @@ public:
 UClass* UCanvasTextureComponent_X::pClassPointer = NULL;
 
 // Class ProjectX.PlayerController_X
-// 0x007C (0x063C - 0x05C0)
+// 0x006C (0x063C - 0x05D0)
 class APlayerController_X : public APlayerController
 {
 public:
-	class ACamera*                                     CameraArchetype;                                  		// 0x05C0 (0x0004) [0x0000000000000001]              ( CPF_Edit )
-	class AHUD*                                        HUDArchetype;                                     		// 0x05C4 (0x0004) [0x0000000000000001]              ( CPF_Edit )
-	class APawn*                                       OldPawnReference;                                 		// 0x05C8 (0x0004) [0x0000000000002000]              ( CPF_Transient )
-	class AActor*                                      LockedDebugActor;                                 		// 0x05CC (0x0004) [0x0000000000002000]              ( CPF_Transient )
-	class APlayerReplicationInfo*                      LastPRI;                                          		// 0x05D0 (0x0004) [0x0000000000002000]              ( CPF_Transient )
-	unsigned long                                      bPausedForExternalUI : 1;                         		// 0x05D4 (0x0004) [0x0000000000002000] [0x00000001] ( CPF_Transient )
-	class UNetConnection*                              NetConnection;                                    		// 0x05D8 (0x0004) [0x0000000000002000]              ( CPF_Transient )
-	struct FScriptDelegate                             __EventReceivedPRI__Delegate;                     		// 0x05DC (0x0010) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	unsigned char                                      UnknownData00[ 0x4 ];                             		// 0x05E0 (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
-	struct FScriptDelegate                             __EventPawnChange__Delegate;                      		// 0x05EC (0x0010) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	unsigned char                                      UnknownData01[ 0x4 ];                             		// 0x05F0 (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
-	struct FScriptDelegate                             __EventReceivedPlayer__Delegate;                  		// 0x05FC (0x0010) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	unsigned char                                      UnknownData02[ 0x4 ];                             		// 0x0600 (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
-	struct FScriptDelegate                             __EventDestroyed__Delegate;                       		// 0x060C (0x0010) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	unsigned char                                      UnknownData03[ 0x4 ];                             		// 0x0610 (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
-	struct FScriptDelegate                             __EventPlayerCameraChange__Delegate;              		// 0x061C (0x0010) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	unsigned char                                      UnknownData04[ 0x4 ];                             		// 0x0620 (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
-	struct FScriptDelegate                             __EventPlayerKicked__Delegate;                    		// 0x062C (0x0010) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	unsigned char                                      UnknownData05[ 0x4 ];                             		// 0x0630 (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
+	class ACamera*                                     CameraArchetype;                                  		// 0x05D0 (0x0004) [0x0000000000000001]              ( CPF_Edit )
+	class AHUD*                                        HUDArchetype;                                     		// 0x05D4 (0x0004) [0x0000000000000001]              ( CPF_Edit )
+	class APawn*                                       OldPawnReference;                                 		// 0x05D8 (0x0004) [0x0000000000002000]              ( CPF_Transient )
+	class AActor*                                      LockedDebugActor;                                 		// 0x05DC (0x0004) [0x0000000000002000]              ( CPF_Transient )
+	class APlayerReplicationInfo*                      LastPRI;                                          		// 0x05E0 (0x0004) [0x0000000000002000]              ( CPF_Transient )
+	unsigned long                                      bPausedForExternalUI : 1;                         		// 0x05E4 (0x0004) [0x0000000000002000] [0x00000001] ( CPF_Transient )
+	class UNetConnection*                              NetConnection;                                    		// 0x05E8 (0x0004) [0x0000000000002000]              ( CPF_Transient )
+	struct FScriptDelegate                             __EventReceivedPRI__Delegate;                     		// 0x05EC (0x0010) [0x0000000000400000]              ( CPF_NeedCtorLink )
+	unsigned char                                      UnknownData00[ 0x4 ];                             		// 0x05F0 (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
+	struct FScriptDelegate                             __EventPawnChange__Delegate;                      		// 0x05FC (0x0010) [0x0000000000400000]              ( CPF_NeedCtorLink )
+	unsigned char                                      UnknownData01[ 0x4 ];                             		// 0x0600 (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
+	struct FScriptDelegate                             __EventReceivedPlayer__Delegate;                  		// 0x060C (0x0010) [0x0000000000400000]              ( CPF_NeedCtorLink )
+	unsigned char                                      UnknownData02[ 0x4 ];                             		// 0x0610 (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
+	struct FScriptDelegate                             __EventDestroyed__Delegate;                       		// 0x061C (0x0010) [0x0000000000400000]              ( CPF_NeedCtorLink )
+	unsigned char                                      UnknownData03[ 0x4 ];                             		// 0x0620 (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
+	struct FScriptDelegate                             __EventPlayerCameraChange__Delegate;              		// 0x062C (0x0010) [0x0000000000400000]              ( CPF_NeedCtorLink )
+	unsigned char                                      UnknownData04[ 0x4 ];                             		// 0x0630 (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
 
 private:
 	static UClass* pClassPointer;
@@ -1190,7 +1209,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3275 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3289 ];
 
 		return pClassPointer;
 	};
@@ -1201,8 +1220,8 @@ public:
 	void DisconnectSplitScreenPlayer ( class UPlayer* P );
 	void ServerDestroy ( );
 	void KickPlayerForReason ( struct FString Reason, struct FString Title );
-	void ClientNetLag ( float PktLag, float PktVariance, float PktLoss, float PktDup );
-	void ServerNetLag ( float PktLag, float PktVariance, float PktLoss, float PktDup );
+	void ClientNetLag ( float PktLag, float PktVariance, float PktLoss, float PktDup, float PktSpike );
+	void ServerNetLag ( float PktLag, float PktVariance, float PktLoss, float PktDup, float PktSpike );
 	void Pause ( );
 	void RemoveOptionFromLastURL ( struct FString OptName );
 	void PrintDebugInfo ( class UDebugDrawer* Drawer );
@@ -1239,7 +1258,6 @@ public:
 	void SpawnDefaultHUD ( );
 	void SetPRI ( class APlayerReplicationInfo* PRI );
 	void eventReplicatedEvent ( struct FName VarName );
-	void EventPlayerKicked ( class APlayerController_X* PC, struct FString Reason );
 	void EventPlayerCameraChange ( class APlayerController_X* PC );
 	void EventDestroyed ( class APlayerController_X* PC );
 	void EventReceivedPlayer ( class APlayerController_X* PC );
@@ -1264,14 +1282,15 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3277 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3291 ];
 
 		return pClassPointer;
 	};
 
-	void LoadPsynetStaticData ( struct FString Environment, struct FString Platform, struct FString Language );
 	void HandleImageDownloaded ( class UOnlineImageDownloaderWeb_X* Downloader, struct FDownloadedImage Image );
 	void DownloadImage ( struct FString URL );
+	void RandomSleep ( float MinDelay, float MaxDelay, float MinSleep, float MaxSleep );
+	void Sleep ( float Seconds );
 	void LoadKismetLevel ( struct FName LeveFileName );
 	void DrawBulletContacts ( float Lifetime );
 	void PrintReproPhysics ( struct FString Command, class AActor* A );
@@ -1302,7 +1321,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3279 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3293 ];
 
 		return pClassPointer;
 	};
@@ -1324,7 +1343,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3281 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3295 ];
 
 		return pClassPointer;
 	};
@@ -1352,7 +1371,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3283 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3297 ];
 
 		return pClassPointer;
 	};
@@ -1376,7 +1395,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3285 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3299 ];
 
 		return pClassPointer;
 	};
@@ -1402,7 +1421,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3287 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3301 ];
 
 		return pClassPointer;
 	};
@@ -1434,7 +1453,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3289 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3303 ];
 
 		return pClassPointer;
 	};
@@ -1467,7 +1486,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3291 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3305 ];
 
 		return pClassPointer;
 	};
@@ -1490,7 +1509,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3293 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3307 ];
 
 		return pClassPointer;
 	};
@@ -1537,7 +1556,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3295 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3309 ];
 
 		return pClassPointer;
 	};
@@ -1548,12 +1567,14 @@ public:
 	struct FString GetRegionString ( );
 	struct FString GetPlatformString ( );
 	void Crash ( );
+	bool ConfigGetString ( struct FString SectionName, struct FString KeyName, struct FString* OutValue );
 	bool ParseCommandlineString ( struct FString Param, struct FString* OutValue );
 	bool ParseCommandlineQWORD ( struct FString Param );
 	bool ParseCommandlineFloat ( struct FString Param, float* OutValue );
 	bool ParseCommandlineInt ( struct FString Param, int* OutValue );
 	bool ParseCommandlineParam ( struct FString Param );
 	void InitOnlineGame ( class UOnlineSubsystem* NewOnlineSubsystem );
+	bool IsUsingNullRHI ( );
 	bool IsLanServer ( );
 	bool IsDedicatedServer ( );
 	void EventCrashed ( );
@@ -1569,7 +1590,7 @@ public:
 UClass* UEngineShare_X::pClassPointer = NULL;
 
 // Class ProjectX.Errors_X
-// 0x0100 (0x0154 - 0x0054)
+// 0x0120 (0x0174 - 0x0054)
 class UErrors_X : public UErrorList
 {
 public:
@@ -1597,36 +1618,44 @@ public:
 	class UErrorType*                                  FileMountCorrupt;                                 		// 0x00D0 (0x0004) [0x0000000000000002]              ( CPF_Const )
 	class UErrorType*                                  FileSaveFail;                                     		// 0x00D4 (0x0004) [0x0000000000000002]              ( CPF_Const )
 	class UErrorType*                                  FileSaveNoSpace;                                  		// 0x00D8 (0x0004) [0x0000000000000002]              ( CPF_Const )
-	class UErrorType*                                  UserBanned;                                       		// 0x00DC (0x0004) [0x0000000000000002]              ( CPF_Const )
-	class UErrorType*                                  NotLoggedInToPsynet;                              		// 0x00E0 (0x0004) [0x0000000000000002]              ( CPF_Const )
-	class UErrorType*                                  FriendsList;                                      		// 0x00E4 (0x0004) [0x0000000000000002]              ( CPF_Const )
-	class UErrorType*                                  AuthenticationFailed;                             		// 0x00E8 (0x0004) [0x0000000000000002]              ( CPF_Const )
-	class UErrorType*                                  NoExportCountry;                                  		// 0x00EC (0x0004) [0x0000000000000002]              ( CPF_Const )
-	class UErrorType*                                  UnauthorizedAccess;                               		// 0x00F0 (0x0004) [0x0000000000000002]              ( CPF_Const )
-	class UErrorType*                                  ServiceNotFound;                                  		// 0x00F4 (0x0004) [0x0000000000000002]              ( CPF_Const )
-	class UErrorType*                                  FeatureDisabled;                                  		// 0x00F8 (0x0004) [0x0000000000000002]              ( CPF_Const )
-	class UErrorType*                                  MatchmakingDisabled;                              		// 0x00FC (0x0004) [0x0000000000000002]              ( CPF_Const )
-	class UErrorType*                                  PlayerNameNotSet;                                 		// 0x0100 (0x0004) [0x0000000000000002]              ( CPF_Const )
-	class UErrorType*                                  PlayerNameAlreadyTaken;                           		// 0x0104 (0x0004) [0x0000000000000002]              ( CPF_Const )
-	class UErrorType*                                  PlayerNameTooShort;                               		// 0x0108 (0x0004) [0x0000000000000002]              ( CPF_Const )
-	class UErrorType*                                  PlayerNameTooLong;                                		// 0x010C (0x0004) [0x0000000000000002]              ( CPF_Const )
-	class UErrorType*                                  PlayerNameInappropriate;                          		// 0x0110 (0x0004) [0x0000000000000002]              ( CPF_Const )
-	class UErrorType*                                  PlayerNameInvalidCharacter;                       		// 0x0114 (0x0004) [0x0000000000000002]              ( CPF_Const )
-	class UErrorType*                                  PlayerNameFailed;                                 		// 0x0118 (0x0004) [0x0000000000000002]              ( CPF_Const )
-	class UErrorType*                                  NotAuthorized;                                    		// 0x011C (0x0004) [0x0000000000000002]              ( CPF_Const )
-	class UErrorType*                                  SessionAlreadyActive;                             		// 0x0120 (0x0004) [0x0000000000000002]              ( CPF_Const )
-	class UErrorType*                                  GameServerPending;                                		// 0x0124 (0x0004) [0x0000000000000002]              ( CPF_Const )
-	class UErrorType*                                  CacheError;                                       		// 0x0128 (0x0004) [0x0000000000000002]              ( CPF_Const )
-	class UErrorType*                                  WordFilterEvil;                                   		// 0x012C (0x0004) [0x0000000000000002]              ( CPF_Const )
-	class UErrorType*                                  WordFilterPlatformError;                          		// 0x0130 (0x0004) [0x0000000000000002]              ( CPF_Const )
-	class UErrorType*                                  WordFilterPlatformChatError;                      		// 0x0134 (0x0004) [0x0000000000000002]              ( CPF_Const )
-	class UErrorType*                                  InvalidSettings;                                  		// 0x0138 (0x0004) [0x0000000000000002]              ( CPF_Const )
-	class UErrorType*                                  Maintenance;                                      		// 0x013C (0x0004) [0x0000000000000002]              ( CPF_Const )
-	class UErrorType*                                  PlatformAuthError;                                		// 0x0140 (0x0004) [0x0000000000000002]              ( CPF_Const )
-	class UErrorType*                                  LocalHostConnectionError;                         		// 0x0144 (0x0004) [0x0000000000000002]              ( CPF_Const )
-	class UErrorType*                                  UGCRestricted;                                    		// 0x0148 (0x0004) [0x0000000000000002]              ( CPF_Const )
-	class UPsyNetErrorType_X*                          PerConBroken;                                     		// 0x014C (0x0004) [0x0000000000000002]              ( CPF_Const )
-	class UErrorType*                                  MicrotransactionServiceMaintenance;               		// 0x0150 (0x0004) [0x0000000000000002]              ( CPF_Const )
+	class UErrorType*                                  FileSaveCorrupt;                                  		// 0x00DC (0x0004) [0x0000000000000002]              ( CPF_Const )
+	class UErrorType*                                  UserBanned;                                       		// 0x00E0 (0x0004) [0x0000000000000002]              ( CPF_Const )
+	class UErrorType*                                  NotLoggedInToPsynet;                              		// 0x00E4 (0x0004) [0x0000000000000002]              ( CPF_Const )
+	class UErrorType*                                  FriendsList;                                      		// 0x00E8 (0x0004) [0x0000000000000002]              ( CPF_Const )
+	class UErrorType*                                  AuthenticationFailed;                             		// 0x00EC (0x0004) [0x0000000000000002]              ( CPF_Const )
+	class UErrorType*                                  NoExportCountry;                                  		// 0x00F0 (0x0004) [0x0000000000000002]              ( CPF_Const )
+	class UErrorType*                                  UnauthorizedAccess;                               		// 0x00F4 (0x0004) [0x0000000000000002]              ( CPF_Const )
+	class UErrorType*                                  ServiceNotFound;                                  		// 0x00F8 (0x0004) [0x0000000000000002]              ( CPF_Const )
+	class UErrorType*                                  FeatureDisabled;                                  		// 0x00FC (0x0004) [0x0000000000000002]              ( CPF_Const )
+	class UErrorType*                                  MatchmakingDisabled;                              		// 0x0100 (0x0004) [0x0000000000000002]              ( CPF_Const )
+	class UErrorType*                                  PlayerNameNotSet;                                 		// 0x0104 (0x0004) [0x0000000000000002]              ( CPF_Const )
+	class UErrorType*                                  PlayerNameAlreadyTaken;                           		// 0x0108 (0x0004) [0x0000000000000002]              ( CPF_Const )
+	class UErrorType*                                  PlayerNameTooShort;                               		// 0x010C (0x0004) [0x0000000000000002]              ( CPF_Const )
+	class UErrorType*                                  PlayerNameTooLong;                                		// 0x0110 (0x0004) [0x0000000000000002]              ( CPF_Const )
+	class UErrorType*                                  PlayerNameInappropriate;                          		// 0x0114 (0x0004) [0x0000000000000002]              ( CPF_Const )
+	class UErrorType*                                  PlayerNameInvalidCharacter;                       		// 0x0118 (0x0004) [0x0000000000000002]              ( CPF_Const )
+	class UErrorType*                                  PlayerNameFailed;                                 		// 0x011C (0x0004) [0x0000000000000002]              ( CPF_Const )
+	class UErrorType*                                  NotAuthorized;                                    		// 0x0120 (0x0004) [0x0000000000000002]              ( CPF_Const )
+	class UErrorType*                                  SessionAlreadyActive;                             		// 0x0124 (0x0004) [0x0000000000000002]              ( CPF_Const )
+	class UErrorType*                                  GameServerPending;                                		// 0x0128 (0x0004) [0x0000000000000002]              ( CPF_Const )
+	class UErrorType*                                  CacheError;                                       		// 0x012C (0x0004) [0x0000000000000002]              ( CPF_Const )
+	class UErrorType*                                  WordFilterEvil;                                   		// 0x0130 (0x0004) [0x0000000000000002]              ( CPF_Const )
+	class UErrorType*                                  WordFilterPlatformError;                          		// 0x0134 (0x0004) [0x0000000000000002]              ( CPF_Const )
+	class UErrorType*                                  WordFilterPlatformChatError;                      		// 0x0138 (0x0004) [0x0000000000000002]              ( CPF_Const )
+	class UErrorType*                                  InvalidSettings;                                  		// 0x013C (0x0004) [0x0000000000000002]              ( CPF_Const )
+	class UErrorType*                                  Maintenance;                                      		// 0x0140 (0x0004) [0x0000000000000002]              ( CPF_Const )
+	class UErrorType*                                  PlatformAuthError;                                		// 0x0144 (0x0004) [0x0000000000000002]              ( CPF_Const )
+	class UErrorType*                                  MicrotransactionAuthExpired;                      		// 0x0148 (0x0004) [0x0000000000000002]              ( CPF_Const )
+	class UErrorType*                                  CannotFriendSelf;                                 		// 0x014C (0x0004) [0x0000000000000002]              ( CPF_Const )
+	class UErrorType*                                  InvalidPlayer;                                    		// 0x0150 (0x0004) [0x0000000000000002]              ( CPF_Const )
+	class UErrorType*                                  AlreadyFriends;                                   		// 0x0154 (0x0004) [0x0000000000000002]              ( CPF_Const )
+	class UErrorType*                                  LocalHostConnectionError;                         		// 0x0158 (0x0004) [0x0000000000000002]              ( CPF_Const )
+	class UErrorType*                                  UGCRestricted;                                    		// 0x015C (0x0004) [0x0000000000000002]              ( CPF_Const )
+	class UPsyNetErrorType_X*                          PerConBroken;                                     		// 0x0160 (0x0004) [0x0000000000000002]              ( CPF_Const )
+	class UErrorType*                                  MicrotransactionServiceMaintenance;               		// 0x0164 (0x0004) [0x0000000000000002]              ( CPF_Const )
+	class UErrorType*                                  GenericStorageOutOfSync;                          		// 0x0168 (0x0004) [0x0000000000000002]              ( CPF_Const )
+	class UErrorType*                                  InvalidPlatform;                                  		// 0x016C (0x0004) [0x0000000000000002]              ( CPF_Const )
+	class UErrorType*                                  InvalidPlatformForCodeRedemption;                 		// 0x0170 (0x0004) [0x0000000000000002]              ( CPF_Const )
 
 private:
 	static UClass* pClassPointer;
@@ -1635,7 +1664,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3297 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3311 ];
 
 		return pClassPointer;
 	};
@@ -1670,7 +1699,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3299 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3313 ];
 
 		return pClassPointer;
 	};
@@ -1697,7 +1726,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3301 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3315 ];
 
 		return pClassPointer;
 	};
@@ -1720,7 +1749,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3303 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3317 ];
 
 		return pClassPointer;
 	};
@@ -1745,7 +1774,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3305 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3319 ];
 
 		return pClassPointer;
 	};
@@ -1773,7 +1802,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3307 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3321 ];
 
 		return pClassPointer;
 	};
@@ -1798,7 +1827,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3309 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3323 ];
 
 		return pClassPointer;
 	};
@@ -1820,7 +1849,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3311 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3325 ];
 
 		return pClassPointer;
 	};
@@ -1832,18 +1861,18 @@ public:
 UClass* UGameEngine_X::pClassPointer = NULL;
 
 // Class ProjectX.GameInfo_X
-// 0x0038 (0x0410 - 0x03D8)
+// 0x0038 (0x0424 - 0x03EC)
 class AGameInfo_X : public AFrameworkGame
 {
 public:
-	class AGameReplicationInfo*                        GameReplicationInfoArchetype;                     		// 0x03D8 (0x0004) [0x0000000000000001]              ( CPF_Edit )
-	class APlayerController*                           PlayerControllerArchetype;                        		// 0x03DC (0x0004) [0x0000000000000001]              ( CPF_Edit )
-	class APawn*                                       PawnArchetype;                                    		// 0x03E0 (0x0004) [0x0000000000000001]              ( CPF_Edit )
-	TArray< struct FPauserData >                       PCPausers;                                        		// 0x03E4 (0x000C) [0x0000000000402000]              ( CPF_Transient | CPF_NeedCtorLink )
-	struct FScriptDelegate                             __EventSpawned__Delegate;                         		// 0x03F0 (0x0010) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	unsigned char                                      UnknownData00[ 0x4 ];                             		// 0x03F4 (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
-	struct FScriptDelegate                             __EventInit__Delegate;                            		// 0x0400 (0x0010) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	unsigned char                                      UnknownData01[ 0x4 ];                             		// 0x0404 (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
+	class AGameReplicationInfo*                        GameReplicationInfoArchetype;                     		// 0x03EC (0x0004) [0x0000000000000001]              ( CPF_Edit )
+	class APlayerController*                           PlayerControllerArchetype;                        		// 0x03F0 (0x0004) [0x0000000000000001]              ( CPF_Edit )
+	class APawn*                                       PawnArchetype;                                    		// 0x03F4 (0x0004) [0x0000000000000001]              ( CPF_Edit )
+	TArray< struct FPauserData >                       PCPausers;                                        		// 0x03F8 (0x000C) [0x0000000000402000]              ( CPF_Transient | CPF_NeedCtorLink )
+	struct FScriptDelegate                             __EventSpawned__Delegate;                         		// 0x0404 (0x0010) [0x0000000000400000]              ( CPF_NeedCtorLink )
+	unsigned char                                      UnknownData00[ 0x4 ];                             		// 0x0408 (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
+	struct FScriptDelegate                             __EventInit__Delegate;                            		// 0x0414 (0x0010) [0x0000000000400000]              ( CPF_NeedCtorLink )
+	unsigned char                                      UnknownData01[ 0x4 ];                             		// 0x0418 (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
 
 private:
 	static UClass* pClassPointer;
@@ -1852,13 +1881,15 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3313 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3327 ];
 
 		return pClassPointer;
 	};
 
 	void PrintDebugInfo ( class UDebugDrawer* Drawer );
 	void eventClientMapLoadFail ( struct FUniqueNetId PlayerID, struct FString MapName );
+	void RemovePauser ( class APlayerController* PC, unsigned long bForceRemove );
+	void AddPauser ( class APlayerController* PC );
 	void SetPaused ( class APlayerController* PC, unsigned long bPause );
 	void TogglePause ( class APlayerController* PC );
 	bool IsPaused ( class APlayerController* PC );
@@ -1904,7 +1935,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3315 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3329 ];
 
 		return pClassPointer;
 	};
@@ -1932,7 +1963,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3317 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3331 ];
 
 		return pClassPointer;
 	};
@@ -1972,7 +2003,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3319 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3333 ];
 
 		return pClassPointer;
 	};
@@ -2023,7 +2054,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3321 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3335 ];
 
 		return pClassPointer;
 	};
@@ -2053,7 +2084,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3323 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3337 ];
 
 		return pClassPointer;
 	};
@@ -2093,7 +2124,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3325 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3339 ];
 
 		return pClassPointer;
 	};
@@ -2146,7 +2177,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3327 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3341 ];
 
 		return pClassPointer;
 	};
@@ -2204,7 +2235,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3329 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3343 ];
 
 		return pClassPointer;
 	};
@@ -2263,7 +2294,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3331 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3345 ];
 
 		return pClassPointer;
 	};
@@ -2306,7 +2337,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3333 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3347 ];
 
 		return pClassPointer;
 	};
@@ -2332,7 +2363,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3335 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3349 ];
 
 		return pClassPointer;
 	};
@@ -2356,7 +2387,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3337 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3351 ];
 
 		return pClassPointer;
 	};
@@ -2389,7 +2420,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3339 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3353 ];
 
 		return pClassPointer;
 	};
@@ -2413,7 +2444,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3341 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3355 ];
 
 		return pClassPointer;
 	};
@@ -2444,7 +2475,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3343 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3357 ];
 
 		return pClassPointer;
 	};
@@ -2477,7 +2508,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3345 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3359 ];
 
 		return pClassPointer;
 	};
@@ -2514,14 +2545,15 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3347 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3361 ];
 
 		return pClassPointer;
 	};
 
 	bool HasActiveTasks ( );
-	void ExportObject ( class UObject* CacheObject, struct FString Path, struct FScriptDelegate Callback );
-	void ImportObject ( class UObject* CacheObject, struct FString Path, struct FScriptDelegate Callback );
+	void ExportObjectAsync ( class UObject* CacheObject, struct FString Path, struct FScriptDelegate Callback );
+	void ImportObjectAsync ( class UObject* CacheObject, struct FString Path, struct FScriptDelegate Callback );
+	class UError* ImportObject ( class UObject* CacheObject, struct FString Path );
 	void EventExportFinished ( class ULocalCache_X* Cache, class UObject* CacheObject, class UError* Error );
 	void EventImportFinished ( class ULocalCache_X* Cache, class UObject* CacheObject, class UError* Error );
 };
@@ -2542,7 +2574,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3349 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3363 ];
 
 		return pClassPointer;
 	};
@@ -2556,18 +2588,18 @@ public:
 UClass* ULocalPlayer_X::pClassPointer = NULL;
 
 // Class ProjectX.MapFlythroughProfiler_X
-// 0x0048 (0x0244 - 0x01FC)
+// 0x0048 (0x0258 - 0x0210)
 class AMapFlythroughProfiler_X : public AActor
 {
 public:
-	float                                              Accel;                                            		// 0x01FC (0x0004) [0x0000000000000001]              ( CPF_Edit )
-	float                                              TurnRate;                                         		// 0x0200 (0x0004) [0x0000000000000001]              ( CPF_Edit )
-	float                                              ProfileTime;                                      		// 0x0204 (0x0004) [0x0000000000000001]              ( CPF_Edit )
-	float                                              FinishTime;                                       		// 0x0208 (0x0004) [0x0000000000002000]              ( CPF_Transient )
-	float                                              Speed;                                            		// 0x020C (0x0004) [0x0000000000002000]              ( CPF_Transient )
-	struct FRenderProfile                              Profile;                                          		// 0x0210 (0x0024) [0x0000000000002000]              ( CPF_Transient )
-	struct FScriptDelegate                             __EventFinished__Delegate;                        		// 0x0234 (0x0010) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	unsigned char                                      UnknownData00[ 0x4 ];                             		// 0x0238 (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
+	float                                              Accel;                                            		// 0x0210 (0x0004) [0x0000000000000001]              ( CPF_Edit )
+	float                                              TurnRate;                                         		// 0x0214 (0x0004) [0x0000000000000001]              ( CPF_Edit )
+	float                                              ProfileTime;                                      		// 0x0218 (0x0004) [0x0000000000000001]              ( CPF_Edit )
+	float                                              FinishTime;                                       		// 0x021C (0x0004) [0x0000000000002000]              ( CPF_Transient )
+	float                                              Speed;                                            		// 0x0220 (0x0004) [0x0000000000002000]              ( CPF_Transient )
+	struct FRenderProfile                              Profile;                                          		// 0x0224 (0x0024) [0x0000000000002000]              ( CPF_Transient )
+	struct FScriptDelegate                             __EventFinished__Delegate;                        		// 0x0248 (0x0010) [0x0000000000400000]              ( CPF_NeedCtorLink )
+	unsigned char                                      UnknownData00[ 0x4 ];                             		// 0x024C (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
 
 private:
 	static UClass* pClassPointer;
@@ -2576,7 +2608,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3351 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3365 ];
 
 		return pClassPointer;
 	};
@@ -2605,7 +2637,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3353 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3367 ];
 
 		return pClassPointer;
 	};
@@ -2637,7 +2669,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3355 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3369 ];
 
 		return pClassPointer;
 	};
@@ -2664,7 +2696,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3357 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3371 ];
 
 		return pClassPointer;
 	};
@@ -2675,7 +2707,7 @@ public:
 UClass* UCrossplayConfig_X::pClassPointer = NULL;
 
 // Class ProjectX.PhysicsConfig_X
-// 0x0048 (0x0094 - 0x004C)
+// 0x004C (0x0098 - 0x004C)
 class UPhysicsConfig_X : public UOnlineConfig_X
 {
 public:
@@ -2685,6 +2717,9 @@ public:
 	struct FSuperSonicConfig                           SuperSonicSettings;                               		// 0x0084 (0x000C) [0x0000000000000000]              
 	unsigned long                                      bUseAckermannSteering : 1;                        		// 0x0090 (0x0004) [0x0000000000000000] [0x00000001] 
 	unsigned long                                      bPredictContacts : 1;                             		// 0x0090 (0x0004) [0x0000000000000000] [0x00000002] 
+	unsigned long                                      bEnableSimTimeScaling : 1;                        		// 0x0090 (0x0004) [0x0000000000000000] [0x00000004] 
+	unsigned long                                      bQuantizePhysics : 1;                             		// 0x0090 (0x0004) [0x0000000000000000] [0x00000008] 
+	float                                              FixedAdjustSimTimeRate;                           		// 0x0094 (0x0004) [0x0000000000000000]              
 
 private:
 	static UClass* pClassPointer;
@@ -2693,7 +2728,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3359 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3373 ];
 
 		return pClassPointer;
 	};
@@ -2730,7 +2765,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3361 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3375 ];
 
 		return pClassPointer;
 	};
@@ -2754,7 +2789,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3363 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3377 ];
 
 		return pClassPointer;
 	};
@@ -2781,7 +2816,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3365 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3379 ];
 
 		return pClassPointer;
 	};
@@ -2819,7 +2854,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3367 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3381 ];
 
 		return pClassPointer;
 	};
@@ -2863,7 +2898,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3369 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3383 ];
 
 		return pClassPointer;
 	};
@@ -2892,7 +2927,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3371 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3385 ];
 
 		return pClassPointer;
 	};
@@ -2919,7 +2954,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3373 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3387 ];
 
 		return pClassPointer;
 	};
@@ -2957,7 +2992,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3375 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3389 ];
 
 		return pClassPointer;
 	};
@@ -2992,7 +3027,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3377 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3391 ];
 
 		return pClassPointer;
 	};
@@ -3014,7 +3049,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3379 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3393 ];
 
 		return pClassPointer;
 	};
@@ -3038,7 +3073,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3381 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3395 ];
 
 		return pClassPointer;
 	};
@@ -3048,23 +3083,23 @@ public:
 UClass* UParticleModuleWind_X::pClassPointer = NULL;
 
 // Class ProjectX.Pawn_X
-// 0x005C (0x04DC - 0x0480)
+// 0x005C (0x04F0 - 0x0494)
 class APawn_X : public APawn
 {
 public:
-	float                                              GravityScale;                                     		// 0x0480 (0x0004) [0x0000000000000001]              ( CPF_Edit )
-	class UDamageComponent_X*                          LegacyTakeDamageComponent;                        		// 0x0484 (0x0004) [0x0000000004080008]              ( CPF_ExportObject | CPF_Component | CPF_EditInline )
-	class AController*                                 PreviousController;                               		// 0x0488 (0x0004) [0x0000000000002000]              ( CPF_Transient )
-	struct FScriptDelegate                             __EventTakeDamage__Delegate;                      		// 0x048C (0x0010) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	unsigned char                                      UnknownData00[ 0x4 ];                             		// 0x0490 (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
-	struct FScriptDelegate                             __EventHealDamage__Delegate;                      		// 0x049C (0x0010) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	unsigned char                                      UnknownData01[ 0x4 ];                             		// 0x04A0 (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
-	struct FScriptDelegate                             __EventDied__Delegate;                            		// 0x04AC (0x0010) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	unsigned char                                      UnknownData02[ 0x4 ];                             		// 0x04B0 (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
-	struct FScriptDelegate                             __EventDestroyed__Delegate;                       		// 0x04BC (0x0010) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	unsigned char                                      UnknownData03[ 0x4 ];                             		// 0x04C0 (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
-	struct FScriptDelegate                             __EventAnimEnd__Delegate;                         		// 0x04CC (0x0010) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	unsigned char                                      UnknownData04[ 0x4 ];                             		// 0x04D0 (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
+	float                                              GravityScale;                                     		// 0x0494 (0x0004) [0x0000000000000001]              ( CPF_Edit )
+	class UDamageComponent_X*                          LegacyTakeDamageComponent;                        		// 0x0498 (0x0004) [0x0000000004080008]              ( CPF_ExportObject | CPF_Component | CPF_EditInline )
+	class AController*                                 PreviousController;                               		// 0x049C (0x0004) [0x0000000000002000]              ( CPF_Transient )
+	struct FScriptDelegate                             __EventTakeDamage__Delegate;                      		// 0x04A0 (0x0010) [0x0000000000400000]              ( CPF_NeedCtorLink )
+	unsigned char                                      UnknownData00[ 0x4 ];                             		// 0x04A4 (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
+	struct FScriptDelegate                             __EventHealDamage__Delegate;                      		// 0x04B0 (0x0010) [0x0000000000400000]              ( CPF_NeedCtorLink )
+	unsigned char                                      UnknownData01[ 0x4 ];                             		// 0x04B4 (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
+	struct FScriptDelegate                             __EventDied__Delegate;                            		// 0x04C0 (0x0010) [0x0000000000400000]              ( CPF_NeedCtorLink )
+	unsigned char                                      UnknownData02[ 0x4 ];                             		// 0x04C4 (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
+	struct FScriptDelegate                             __EventDestroyed__Delegate;                       		// 0x04D0 (0x0010) [0x0000000000400000]              ( CPF_NeedCtorLink )
+	unsigned char                                      UnknownData03[ 0x4 ];                             		// 0x04D4 (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
+	struct FScriptDelegate                             __EventAnimEnd__Delegate;                         		// 0x04E0 (0x0010) [0x0000000000400000]              ( CPF_NeedCtorLink )
+	unsigned char                                      UnknownData04[ 0x4 ];                             		// 0x04E4 (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
 
 private:
 	static UClass* pClassPointer;
@@ -3073,7 +3108,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3383 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3397 ];
 
 		return pClassPointer;
 	};
@@ -3126,7 +3161,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3385 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3399 ];
 
 		return pClassPointer;
 	};
@@ -3154,7 +3189,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3387 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3401 ];
 
 		return pClassPointer;
 	};
@@ -3164,7 +3199,7 @@ public:
 UClass* UPhysicalMaterialProperty_X::pClassPointer = NULL;
 
 // Class ProjectX.PlayerInput_X
-// 0x00A0 (0x0310 - 0x0270)
+// 0x00C0 (0x0330 - 0x0270)
 class UPlayerInput_X : public UPlayerInput
 {
 public:
@@ -3188,6 +3223,10 @@ public:
 	unsigned long                                      bAbsorbCurrentKeyPress : 1;                       		// 0x02FC (0x0004) [0x0000000000002002] [0x00000002] ( CPF_Const | CPF_Transient )
 	struct FScriptDelegate                             __EventActionToggled__Delegate;                   		// 0x0300 (0x0010) [0x0000000000400000]              ( CPF_NeedCtorLink )
 	unsigned char                                      UnknownData00[ 0x4 ];                             		// 0x0304 (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
+	struct FScriptDelegate                             __EventBindingsChanged__Delegate;                 		// 0x0310 (0x0010) [0x0000000000400000]              ( CPF_NeedCtorLink )
+	unsigned char                                      UnknownData01[ 0x4 ];                             		// 0x0314 (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
+	struct FScriptDelegate                             __EventSetBindingsToUserBindings__Delegate;       		// 0x0320 (0x0010) [0x0000000000400000]              ( CPF_NeedCtorLink )
+	unsigned char                                      UnknownData02[ 0x4 ];                             		// 0x0324 (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
 
 private:
 	static UClass* pClassPointer;
@@ -3196,7 +3235,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3389 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3403 ];
 
 		return pClassPointer;
 	};
@@ -3215,18 +3254,20 @@ public:
 	void InitInputSystem ( );
 	void ResetInput ( );
 	void SetControlPreset ( struct FName PresetName );
+	void EventSetBindingsToUserBindings ( class UPlayerInput_X* PlayerInput );
+	void EventBindingsChanged ( class UPlayerInput_X* PlayerInput );
 	void EventActionToggled ( class UPlayerInput_X* PlayerInput, struct FName ActionName, unsigned long bEnabled );
 };
 
 UClass* UPlayerInput_X::pClassPointer = NULL;
 
 // Class ProjectX.PointLightComponent_X
-// 0x0008 (0x0210 - 0x0208)
+// 0x0008 (0x0214 - 0x020C)
 class UPointLightComponent_X : public UPointLightComponent
 {
 public:
-	class UDistributionFloatConstantCurve*             BrightnessOverTime;                               		// 0x0208 (0x0004) [0x0000000004080009]              ( CPF_Edit | CPF_ExportObject | CPF_Component | CPF_EditInline )
-	float                                              AttachTime;                                       		// 0x020C (0x0004) [0x0000000000002000]              ( CPF_Transient )
+	class UDistributionFloatConstantCurve*             BrightnessOverTime;                               		// 0x020C (0x0004) [0x0000000004080009]              ( CPF_Edit | CPF_ExportObject | CPF_Component | CPF_EditInline )
+	float                                              AttachTime;                                       		// 0x0210 (0x0004) [0x0000000000002000]              ( CPF_Transient )
 
 private:
 	static UClass* pClassPointer;
@@ -3235,7 +3276,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3391 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3405 ];
 
 		return pClassPointer;
 	};
@@ -3268,7 +3309,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3393 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3407 ];
 
 		return pClassPointer;
 	};
@@ -3316,7 +3357,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3395 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3409 ];
 
 		return pClassPointer;
 	};
@@ -3341,7 +3382,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3397 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3411 ];
 
 		return pClassPointer;
 	};
@@ -3372,6 +3413,7 @@ public:
 	unsigned long                                      bAuthorized : 1;                                  		// 0x0068 (0x0004) [0x0000000000000000] [0x00000001] 
 	unsigned long                                      bConnected : 1;                                   		// 0x0068 (0x0004) [0x0000000000000000] [0x00000002] 
 	unsigned long                                      bPerConConnected : 1;                             		// 0x0068 (0x0004) [0x0000000000000000] [0x00000004] 
+	unsigned long                                      bMonitorPerCon : 1;                               		// 0x0068 (0x0004) [0x0000000000004002] [0x00000008] ( CPF_Const | CPF_Config )
 	class UError*                                      DisabledError;                                    		// 0x006C (0x0004) [0x0000000000000000]              
 	TArray< class UError* >                            DisabledErrorStack;                               		// 0x0070 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
 	class UError*                                      MaintenanceError;                                 		// 0x007C (0x0004) [0x0000000000000000]              
@@ -3397,7 +3439,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3399 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3413 ];
 
 		return pClassPointer;
 	};
@@ -3466,7 +3508,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3401 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3415 ];
 
 		return pClassPointer;
 	};
@@ -3492,7 +3534,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3403 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3417 ];
 
 		return pClassPointer;
 	};
@@ -3501,6 +3543,50 @@ public:
 };
 
 UClass* UPsyNetLocator_X::pClassPointer = NULL;
+
+// Class ProjectX.PsyNetLocatorHttp_X
+// 0x0000 (0x0064 - 0x0064)
+class UPsyNetLocatorHttp_X : public UPsyNetLocator_X
+{
+public:
+
+private:
+	static UClass* pClassPointer;
+
+public:
+	static UClass* StaticClass()
+	{
+		if ( ! pClassPointer )
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3419 ];
+
+		return pClassPointer;
+	};
+
+};
+
+UClass* UPsyNetLocatorHttp_X::pClassPointer = NULL;
+
+// Class ProjectX.PsyNetLocatorWebSocket_X
+// 0x0000 (0x0064 - 0x0064)
+class UPsyNetLocatorWebSocket_X : public UPsyNetLocator_X
+{
+public:
+
+private:
+	static UClass* pClassPointer;
+
+public:
+	static UClass* StaticClass()
+	{
+		if ( ! pClassPointer )
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3421 ];
+
+		return pClassPointer;
+	};
+
+};
+
+UClass* UPsyNetLocatorWebSocket_X::pClassPointer = NULL;
 
 // Class ProjectX.PsyNetMessage_X
 // 0x0010 (0x004C - 0x003C)
@@ -3517,7 +3603,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3405 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3423 ];
 
 		return pClassPointer;
 	};
@@ -3544,7 +3630,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3407 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3425 ];
 
 		return pClassPointer;
 	};
@@ -3571,7 +3657,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3409 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3427 ];
 
 		return pClassPointer;
 	};
@@ -3615,7 +3701,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3411 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3429 ];
 
 		return pClassPointer;
 	};
@@ -3662,7 +3748,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3413 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3431 ];
 
 		return pClassPointer;
 	};
@@ -3687,7 +3773,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3415 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3433 ];
 
 		return pClassPointer;
 	};
@@ -3723,7 +3809,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3417 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3435 ];
 
 		return pClassPointer;
 	};
@@ -3761,7 +3847,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3419 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3437 ];
 
 		return pClassPointer;
 	};
@@ -3785,7 +3871,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3421 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3439 ];
 
 		return pClassPointer;
 	};
@@ -3797,17 +3883,17 @@ public:
 UClass* URandomStream_X::pClassPointer = NULL;
 
 // Class ProjectX.RenderProfiler_X
-// 0x002C (0x0228 - 0x01FC)
+// 0x002C (0x023C - 0x0210)
 class ARenderProfiler_X : public AActor
 {
 public:
-	float                                              TimePerPrimitive;                                 		// 0x01FC (0x0004) [0x0000000000000001]              ( CPF_Edit )
-	TArray< struct FPrimitiveComponentProfile >        PrimitiveProfiles;                                		// 0x0200 (0x000C) [0x0000000000482000]              ( CPF_Transient | CPF_Component | CPF_NeedCtorLink )
-	int                                                CurrentIndex;                                     		// 0x020C (0x0004) [0x0000000000002000]              ( CPF_Transient )
-	unsigned long                                      bInclusive : 1;                                   		// 0x0210 (0x0004) [0x0000000000002000] [0x00000001] ( CPF_Transient )
-	float                                              PrimitiveTime;                                    		// 0x0214 (0x0004) [0x0000000000002000]              ( CPF_Transient )
-	struct FScriptDelegate                             __EventFinished__Delegate;                        		// 0x0218 (0x0010) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	unsigned char                                      UnknownData00[ 0x4 ];                             		// 0x021C (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
+	float                                              TimePerPrimitive;                                 		// 0x0210 (0x0004) [0x0000000000000001]              ( CPF_Edit )
+	TArray< struct FPrimitiveComponentProfile >        PrimitiveProfiles;                                		// 0x0214 (0x000C) [0x0000000000482000]              ( CPF_Transient | CPF_Component | CPF_NeedCtorLink )
+	int                                                CurrentIndex;                                     		// 0x0220 (0x0004) [0x0000000000002000]              ( CPF_Transient )
+	unsigned long                                      bInclusive : 1;                                   		// 0x0224 (0x0004) [0x0000000000002000] [0x00000001] ( CPF_Transient )
+	float                                              PrimitiveTime;                                    		// 0x0228 (0x0004) [0x0000000000002000]              ( CPF_Transient )
+	struct FScriptDelegate                             __EventFinished__Delegate;                        		// 0x022C (0x0010) [0x0000000000400000]              ( CPF_NeedCtorLink )
+	unsigned char                                      UnknownData00[ 0x4 ];                             		// 0x0230 (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
 
 private:
 	static UClass* pClassPointer;
@@ -3816,7 +3902,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3423 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3441 ];
 
 		return pClassPointer;
 	};
@@ -3858,7 +3944,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3425 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3443 ];
 
 		return pClassPointer;
 	};
@@ -3867,6 +3953,7 @@ public:
 	void NotifySuccess ( );
 	void NotifyError ( class UError* InError );
 	bool eventShouldResendOnFail ( class UError* InError );
+	class UErrorType* eventOverrideErrorType ( class UErrorType* ErrorType );
 	void eventOnComplete ( );
 	void eventOnFail ( );
 	void eventOnSuccess ( );
@@ -3896,7 +3983,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3427 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3445 ];
 
 		return pClassPointer;
 	};
@@ -3923,7 +4010,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3429 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3447 ];
 
 		return pClassPointer;
 	};
@@ -3952,7 +4039,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3431 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3449 ];
 
 		return pClassPointer;
 	};
@@ -3990,7 +4077,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3433 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3451 ];
 
 		return pClassPointer;
 	};
@@ -4013,46 +4100,6 @@ public:
 
 UClass* URPCQueue_X::pClassPointer = NULL;
 
-// Class ProjectX.SaveGame_X
-// 0x0038 (0x0074 - 0x003C)
-class USaveGame_X : public UObject
-{
-public:
-	int                                                SoftVersion;                                      		// 0x003C (0x0004) [0x0000000000002002]              ( CPF_Const | CPF_Transient )
-	int                                                HardVersion;                                      		// 0x0040 (0x0004) [0x0000000000002002]              ( CPF_Const | CPF_Transient )
-	struct FString                                     SaveFileName;                                     		// 0x0044 (0x000C) [0x0000000000402000]              ( CPF_Transient | CPF_NeedCtorLink )
-	class UTickComponent_X*                            TickComponent;                                    		// 0x0050 (0x0004) [0x0000000004082008]              ( CPF_ExportObject | CPF_Transient | CPF_Component | CPF_EditInline )
-	struct FScriptDelegate                             __EventSaveFail__Delegate;                        		// 0x0054 (0x0010) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	unsigned char                                      UnknownData00[ 0x4 ];                             		// 0x0058 (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
-	struct FScriptDelegate                             __EventLoadFail__Delegate;                        		// 0x0064 (0x0010) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	unsigned char                                      UnknownData01[ 0x4 ];                             		// 0x0068 (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3435 ];
-
-		return pClassPointer;
-	};
-
-	struct FString GetSaveFilename ( );
-	void OnInit ( );
-	void OnLoaded ( );
-	unsigned char Load ( unsigned long bMustExist, unsigned long bIgnoreErrors );
-	void ClearSaveTimer ( );
-	void SetSaveTimer ( float Delay );
-	bool SaveNow ( );
-	void Save ( );
-	void EventLoadFail ( class USaveGame_X* SaveGame );
-	void EventSaveFail ( class USaveGame_X* SaveGame );
-};
-
-UClass* USaveGame_X::pClassPointer = NULL;
-
 // Class ProjectX.SeqAct_NonNativeUpdate_X
 // 0x0000 (0x00FC - 0x00FC)
 class USeqAct_NonNativeUpdate_X : public USequenceAction
@@ -4066,7 +4113,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3437 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3453 ];
 
 		return pClassPointer;
 	};
@@ -4089,7 +4136,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3439 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3455 ];
 
 		return pClassPointer;
 	};
@@ -4112,7 +4159,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3441 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3457 ];
 
 		return pClassPointer;
 	};
@@ -4137,7 +4184,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3443 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3459 ];
 
 		return pClassPointer;
 	};
@@ -4166,7 +4213,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3445 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3461 ];
 
 		return pClassPointer;
 	};
@@ -4191,7 +4238,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3447 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3463 ];
 
 		return pClassPointer;
 	};
@@ -4221,7 +4268,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3449 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3465 ];
 
 		return pClassPointer;
 	};
@@ -4243,35 +4290,6 @@ public:
 
 UClass* UTickableStateObject_X::pClassPointer = NULL;
 
-// Class ProjectX.AutomationScript_X
-// 0x000C (0x0064 - 0x0058)
-class UAutomationScript_X : public UTickableStateObject_X
-{
-public:
-	TArray< struct FString >                           Commands;                                         		// 0x0058 (0x000C) [0x0000000000402000]              ( CPF_Transient | CPF_NeedCtorLink )
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3451 ];
-
-		return pClassPointer;
-	};
-
-	void Wait ( float Time );
-	void ExecuteCommand ( struct FString Command );
-	void eventExecuteNextCommand ( );
-	void Start ( );
-	void LoadCommandsFromText ( struct FString Text );
-	void LoadCommandsFromFile ( struct FString FilePath );
-};
-
-UClass* UAutomationScript_X::pClassPointer = NULL;
-
 // Class ProjectX.Online_X
 // 0x0008 (0x0060 - 0x0058)
 class UOnline_X : public UTickableStateObject_X
@@ -4287,7 +4305,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3453 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3467 ];
 
 		return pClassPointer;
 	};
@@ -4320,7 +4338,7 @@ public:
 UClass* UOnline_X::pClassPointer = NULL;
 
 // Class ProjectX.OnlineGame_Base_X
-// 0x0084 (0x00E4 - 0x0060)
+// 0x0080 (0x00E0 - 0x0060)
 class UOnlineGame_Base_X : public UOnline_X
 {
 public:
@@ -4332,19 +4350,18 @@ public:
 	class UOnlineImageDownloaderWeb_X*                 ImageDownloader;                                  		// 0x0084 (0x0004) [0x0000000000000000]              
 	class UOnlineGameDLC_X*                            DLC;                                              		// 0x0088 (0x0004) [0x0000000000000001]              ( CPF_Edit )
 	class UOnlineGameSkill_X*                          Skill;                                            		// 0x008C (0x0004) [0x0000000000000001]              ( CPF_Edit )
-	class UOnlineGameSkillGroups_X*                    SkillGroups;                                      		// 0x0090 (0x0004) [0x0000000000000001]              ( CPF_Edit )
-	class UOnlineGamePlayerTitles_X*                   PlayerTitles;                                     		// 0x0094 (0x0004) [0x0000000000000001]              ( CPF_Edit )
-	struct FString                                     StartServerCommand;                               		// 0x0098 (0x000C) [0x0000000000400003]              ( CPF_Edit | CPF_Const | CPF_NeedCtorLink )
-	class UWebCache_X*                                 WebCache;                                         		// 0x00A4 (0x0004) [0x0000000000000000]              
-	class UPsyNetStaticData_X*                         PsyNetStaticData;                                 		// 0x00A8 (0x0004) [0x0000000004080008]              ( CPF_ExportObject | CPF_Component | CPF_EditInline )
-	unsigned long                                      bLockGameSettings : 1;                            		// 0x00AC (0x0004) [0x0000000000002000] [0x00000001] ( CPF_Transient )
-	unsigned char                                      CurrentConnectionStatus;                          		// 0x00B0 (0x0001) [0x0000000000002000]              ( CPF_Transient )
-	struct FString                                     ServerName;                                       		// 0x00B4 (0x000C) [0x0000000000402000]              ( CPF_Transient | CPF_NeedCtorLink )
-	struct FString                                     CachedOptions;                                    		// 0x00C0 (0x000C) [0x0000000000402000]              ( CPF_Transient | CPF_NeedCtorLink )
-	class UOnlineConfigDispatcher_X*                   OnlineConfigDispatcher;                           		// 0x00CC (0x0004) [0x0000000000002000]              ( CPF_Transient )
-	class UOnlineGameWordFilter_X*                     WordFilter;                                       		// 0x00D0 (0x0004) [0x0000000000002000]              ( CPF_Transient )
-	struct FScriptDelegate                             __EventInternetConnectionChanged__Delegate;       		// 0x00D4 (0x0010) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	unsigned char                                      UnknownData00[ 0x4 ];                             		// 0x00D8 (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
+	class UOnlineGamePlayerTitles_X*                   PlayerTitles;                                     		// 0x0090 (0x0004) [0x0000000000000001]              ( CPF_Edit )
+	struct FString                                     StartServerCommand;                               		// 0x0094 (0x000C) [0x0000000000400003]              ( CPF_Edit | CPF_Const | CPF_NeedCtorLink )
+	class UWebCache_X*                                 WebCache;                                         		// 0x00A0 (0x0004) [0x0000000000000000]              
+	class UPsyNetStaticData_X*                         PsyNetStaticData;                                 		// 0x00A4 (0x0004) [0x0000000004080008]              ( CPF_ExportObject | CPF_Component | CPF_EditInline )
+	unsigned long                                      bLockGameSettings : 1;                            		// 0x00A8 (0x0004) [0x0000000000002000] [0x00000001] ( CPF_Transient )
+	unsigned char                                      CurrentConnectionStatus;                          		// 0x00AC (0x0001) [0x0000000000002000]              ( CPF_Transient )
+	struct FString                                     ServerName;                                       		// 0x00B0 (0x000C) [0x0000000000402000]              ( CPF_Transient | CPF_NeedCtorLink )
+	struct FString                                     CachedOptions;                                    		// 0x00BC (0x000C) [0x0000000000402000]              ( CPF_Transient | CPF_NeedCtorLink )
+	class UOnlineConfigDispatcher_X*                   OnlineConfigDispatcher;                           		// 0x00C8 (0x0004) [0x0000000000002000]              ( CPF_Transient )
+	class UOnlineGameWordFilter_X*                     WordFilter;                                       		// 0x00CC (0x0004) [0x0000000000002000]              ( CPF_Transient )
+	struct FScriptDelegate                             __EventInternetConnectionChanged__Delegate;       		// 0x00D0 (0x0010) [0x0000000000400000]              ( CPF_NeedCtorLink )
+	unsigned char                                      UnknownData00[ 0x4 ];                             		// 0x00D4 (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
 
 private:
 	static UClass* pClassPointer;
@@ -4353,7 +4370,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3455 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3469 ];
 
 		return pClassPointer;
 	};
@@ -4366,7 +4383,7 @@ public:
 	void HandleInternetConnectionChanged ( unsigned long bConnected );
 	void HandleConnectionStatusChanged ( unsigned char ConnectionStatus );
 	void SetDefaultSearchType ( class UClass* OnlineSearchClass );
-	void KickAllPlayers ( );
+	void KickAllPlayers ( struct FString Reason );
 	void DelayedShutdownServer ( );
 	void OnExit ( );
 	int GetPlaylistPlayerCount ( class UGameSettingPlaylist_X* Playlist );
@@ -4377,44 +4394,45 @@ public:
 	void OnNewGameInfoCreated ( class AGameInfo_X* Game );
 	void InitOnlineSubsystemInterfaces ( );
 	void OnInit ( );
-	class UOnlineGame_Base_X* GetInstance ( class UClass* Type );
 	void EventInternetConnectionChanged ( unsigned long bConnected );
 };
 
 UClass* UOnlineGame_Base_X::pClassPointer = NULL;
 
 // Class ProjectX.OnlineGame_X
-// 0x008C (0x0170 - 0x00E4)
+// 0x009C (0x017C - 0x00E0)
 class UOnlineGame_X : public UOnlineGame_Base_X
 {
 public:
-	class UOnlineGameAccount_X*                        Account;                                          		// 0x00E4 (0x0004) [0x0000000000000001]              ( CPF_Edit )
-	class UOnlineGameMatchmaking_X*                    Matchmaking;                                      		// 0x00E8 (0x0004) [0x0000000000000001]              ( CPF_Edit )
-	class UOnlineGamePrivateMatch_X*                   PrivateMatch;                                     		// 0x00EC (0x0004) [0x0000000000000001]              ( CPF_Edit )
-	class UOnlineGameServerBrowser_X*                  ServerBrowser;                                    		// 0x00F0 (0x0004) [0x0000000000000001]              ( CPF_Edit )
-	class UOnlineGameLanBrowser_X*                     LanBrowser;                                       		// 0x00F4 (0x0004) [0x0000000000000001]              ( CPF_Edit )
-	class UOnlineGameLeaderboards_X*                   Leaderboards;                                     		// 0x00F8 (0x0004) [0x0000000000000001]              ( CPF_Edit )
-	class UOnlineGamePopulation_X*                     Population;                                       		// 0x00FC (0x0004) [0x0000000000002000]              ( CPF_Transient )
-	class UOnlineGameCommunity_X*                      Community;                                        		// 0x0100 (0x0004) [0x0000000000002000]              ( CPF_Transient )
-	class UOnlineGameVoice_X*                          Voice;                                            		// 0x0104 (0x0004) [0x0000000000002000]              ( CPF_Transient )
-	class UOnlineGameParty_X*                          Party;                                            		// 0x0108 (0x0004) [0x0000000000000001]              ( CPF_Edit )
-	class UOnlineGameInvite_X*                         GameInvite;                                       		// 0x010C (0x0004) [0x0000000000000001]              ( CPF_Edit )
-	class UOnlineGameJoinGame_X*                       JoinGame;                                         		// 0x0110 (0x0004) [0x0000000000000001]              ( CPF_Edit )
-	class UOnlineGameRegions_X*                        Regions;                                          		// 0x0114 (0x0004) [0x0000000000000001]              ( CPF_Edit )
-	class UOnlineGamePrivileges_X*                     Privileges;                                       		// 0x0118 (0x0004) [0x0000000000000000]              
-	class UOnlineGameWordFilterProcessor_X*            WordFilterProcessor;                              		// 0x011C (0x0004) [0x0000000000002000]              ( CPF_Transient )
-	class UOnlineGameVersion_X*                        GameVersion;                                      		// 0x0120 (0x0004) [0x0000000000002000]              ( CPF_Transient )
-	class UOnlinePlayer_X*                             PlayerArchetype;                                  		// 0x0124 (0x0004) [0x0000000000000001]              ( CPF_Edit )
-	TArray< class UOnlinePlayer_X* >                   OnlinePlayers;                                    		// 0x0128 (0x000C) [0x0000000000402000]              ( CPF_Transient | CPF_NeedCtorLink )
-	class UOnlineLegalText_X*                          Eula;                                             		// 0x0134 (0x0004) [0x0000000004080008]              ( CPF_ExportObject | CPF_Component | CPF_EditInline )
-	class UOnlineLegalText_X*                          PrivacyPolicy;                                    		// 0x0138 (0x0004) [0x0000000004080008]              ( CPF_ExportObject | CPF_Component | CPF_EditInline )
-	class UOnlineLegalText_X*                          ToS;                                              		// 0x013C (0x0004) [0x0000000004080008]              ( CPF_ExportObject | CPF_Component | CPF_EditInline )
-	struct FScriptDelegate                             __EventConnectionError__Delegate;                 		// 0x0140 (0x0010) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	unsigned char                                      UnknownData00[ 0x4 ];                             		// 0x0144 (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
-	struct FScriptDelegate                             __EventPlayerPsyNetLogin__Delegate;               		// 0x0150 (0x0010) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	unsigned char                                      UnknownData01[ 0x4 ];                             		// 0x0154 (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
-	struct FScriptDelegate                             __EventPlayerPsyNetLogout__Delegate;              		// 0x0160 (0x0010) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	unsigned char                                      UnknownData02[ 0x4 ];                             		// 0x0164 (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
+	class UOnlineGameAccount_X*                        Account;                                          		// 0x00E0 (0x0004) [0x0000000000000001]              ( CPF_Edit )
+	class UOnlineGameMatchmaking_X*                    Matchmaking;                                      		// 0x00E4 (0x0004) [0x0000000000000001]              ( CPF_Edit )
+	class UOnlineGamePrivateMatch_X*                   PrivateMatch;                                     		// 0x00E8 (0x0004) [0x0000000000000001]              ( CPF_Edit )
+	class UOnlineGameServerBrowser_X*                  ServerBrowser;                                    		// 0x00EC (0x0004) [0x0000000000000001]              ( CPF_Edit )
+	class UOnlineGameLanBrowser_X*                     LanBrowser;                                       		// 0x00F0 (0x0004) [0x0000000000000001]              ( CPF_Edit )
+	class UOnlineGameLeaderboards_X*                   Leaderboards;                                     		// 0x00F4 (0x0004) [0x0000000000000001]              ( CPF_Edit )
+	class UOnlineGamePopulation_X*                     Population;                                       		// 0x00F8 (0x0004) [0x0000000000002000]              ( CPF_Transient )
+	class UOnlineGameCommunity_X*                      Community;                                        		// 0x00FC (0x0004) [0x0000000000002000]              ( CPF_Transient )
+	class UOnlineGameVoice_X*                          Voice;                                            		// 0x0100 (0x0004) [0x0000000000002000]              ( CPF_Transient )
+	class UOnlineGameParty_X*                          Party;                                            		// 0x0104 (0x0004) [0x0000000000000001]              ( CPF_Edit )
+	class UOnlineGameInvite_X*                         GameInvite;                                       		// 0x0108 (0x0004) [0x0000000000000001]              ( CPF_Edit )
+	class UOnlineGameJoinGame_X*                       JoinGame;                                         		// 0x010C (0x0004) [0x0000000000000001]              ( CPF_Edit )
+	class UOnlineGameRegions_X*                        Regions;                                          		// 0x0110 (0x0004) [0x0000000000000001]              ( CPF_Edit )
+	class UOnlineGamePrivileges_X*                     Privileges;                                       		// 0x0114 (0x0004) [0x0000000000000000]              
+	class UOnlineGameWordFilterProcessor_X*            WordFilterProcessor;                              		// 0x0118 (0x0004) [0x0000000000002000]              ( CPF_Transient )
+	class UOnlineGameVersion_X*                        GameVersion;                                      		// 0x011C (0x0004) [0x0000000000002000]              ( CPF_Transient )
+	class UOnlinePlayer_X*                             PlayerArchetype;                                  		// 0x0120 (0x0004) [0x0000000000000001]              ( CPF_Edit )
+	TArray< class UOnlinePlayer_X* >                   OnlinePlayers;                                    		// 0x0124 (0x000C) [0x0000000000402000]              ( CPF_Transient | CPF_NeedCtorLink )
+	class UOnlineLegalText_X*                          Eula;                                             		// 0x0130 (0x0004) [0x0000000004080008]              ( CPF_ExportObject | CPF_Component | CPF_EditInline )
+	class UOnlineLegalText_X*                          PrivacyPolicy;                                    		// 0x0134 (0x0004) [0x0000000004080008]              ( CPF_ExportObject | CPF_Component | CPF_EditInline )
+	class UOnlineLegalText_X*                          ToS;                                              		// 0x0138 (0x0004) [0x0000000004080008]              ( CPF_ExportObject | CPF_Component | CPF_EditInline )
+	unsigned long                                      bRequestPublicIP : 1;                             		// 0x013C (0x0004) [0x0000000000004000] [0x00000001] ( CPF_Config )
+	struct FString                                     PublicIP;                                         		// 0x0140 (0x000C) [0x0000000000402000]              ( CPF_Transient | CPF_NeedCtorLink )
+	struct FScriptDelegate                             __EventConnectionError__Delegate;                 		// 0x014C (0x0010) [0x0000000000400000]              ( CPF_NeedCtorLink )
+	unsigned char                                      UnknownData00[ 0x4 ];                             		// 0x0150 (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
+	struct FScriptDelegate                             __EventPlayerPsyNetLogin__Delegate;               		// 0x015C (0x0010) [0x0000000000400000]              ( CPF_NeedCtorLink )
+	unsigned char                                      UnknownData01[ 0x4 ];                             		// 0x0160 (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
+	struct FScriptDelegate                             __EventPlayerPsyNetLogout__Delegate;              		// 0x016C (0x0010) [0x0000000000400000]              ( CPF_NeedCtorLink )
+	unsigned char                                      UnknownData02[ 0x4 ];                             		// 0x0170 (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
 
 private:
 	static UClass* pClassPointer;
@@ -4423,12 +4441,14 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3457 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3471 ];
 
 		return pClassPointer;
 	};
 
 	void PrintDebugInfo ( class UDebugDrawer* Drawer );
+	void HandlePublicIPComplete ( class URPC_GetPublicIP_X* RPC );
+	void HandlePsyNetLogin ( class UPsyNetConnection_X* Connection );
 	void NotifyPlayerPsyNetLogout ( struct FScriptDelegate Callback );
 	void NotifyPlayerPsyNetLogin ( struct FScriptDelegate Callback );
 	bool IsSignedIn ( int ControllerId );
@@ -4444,9 +4464,11 @@ public:
 	struct FUniqueNetId eventGetPrimaryPlayerID ( );
 	class UOnlinePlayer_X* eventGetPrimaryPlayer ( );
 	void RemoveOnlinePlayer ( class ULocalPlayer_X* LocalPlayer );
+	void AddOnlinePlayer ( class UOnlinePlayer_X* OnlinePlayer );
 	class UOnlinePlayer_X* CreateOnlinePlayer ( class ULocalPlayer_X* LocalPlayer );
 	void SetPlayedWith ( struct FUniqueNetId PlayerID );
 	void GetPlayerAvatar ( struct FUniqueNetId PlayerID, struct FScriptDelegate ReadOnlineAvatarCompleteDelegate, unsigned char Size );
+	void ClearPendingAvatarDownloads ( );
 	void SetVoiceVolume ( float NewValue );
 	void OnNewGameInfoCreated ( class AGameInfo_X* Game );
 	void OnMainMenuOpened ( );
@@ -4462,11 +4484,11 @@ public:
 UClass* UOnlineGame_X::pClassPointer = NULL;
 
 // Class ProjectX.OnlineGameServer_X
-// 0x0004 (0x00E8 - 0x00E4)
+// 0x0004 (0x00E4 - 0x00E0)
 class UOnlineGameServer_X : public UOnlineGame_Base_X
 {
 public:
-	class UPsyNetConnection_X*                         PsyNetConnection;                                 		// 0x00E4 (0x0004) [0x0000000000000000]              
+	class UPsyNetConnection_X*                         PsyNetConnection;                                 		// 0x00E0 (0x0004) [0x0000000000000000]              
 
 private:
 	static UClass* pClassPointer;
@@ -4475,7 +4497,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3459 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3473 ];
 
 		return pClassPointer;
 	};
@@ -4487,41 +4509,42 @@ public:
 UClass* UOnlineGameServer_X::pClassPointer = NULL;
 
 // Class ProjectX.OnlineGameDedicatedServer_X
-// 0x0168 (0x0250 - 0x00E8)
+// 0x0168 (0x024C - 0x00E4)
 class UOnlineGameDedicatedServer_X : public UOnlineGameServer_X
 {
 public:
-	unsigned char                                      UnknownData00[ 0x8 ];                             		// 0x00E8 (0x0008) UNKNOWN PROPERTY: QWordProperty ProjectX.OnlineGameDedicatedServer_X.GameServerID
-	struct FString                                     GameServerHost;                                   		// 0x00F0 (0x000C) [0x0000000000402000]              ( CPF_Transient | CPF_NeedCtorLink )
-	class UOnlineGameStats_X*                          GameStats;                                        		// 0x00FC (0x0004) [0x0000000000002000]              ( CPF_Transient )
-	class UOnlineGameDedicatedServerRegistration_X*    Registration;                                     		// 0x0100 (0x0004) [0x0000000000000001]              ( CPF_Edit )
-	class UOnlineGameReservations_X*                   Reservations;                                     		// 0x0104 (0x0004) [0x0000000000000001]              ( CPF_Edit )
-	class UClanforgeReservation_X*                     Clanforge;                                        		// 0x0108 (0x0004) [0x0000000000002000]              ( CPF_Transient )
-	struct FString                                     Region;                                           		// 0x010C (0x000C) [0x0000000000402000]              ( CPF_Transient | CPF_NeedCtorLink )
-	int                                                CurrentPlaylistId;                                		// 0x0118 (0x0004) [0x0000000000000000]              
-	int                                                MutatorIndex;                                     		// 0x011C (0x0004) [0x0000000000000000]              
-	float                                              AverageMMR;                                       		// 0x0120 (0x0004) [0x0000000000002000]              ( CPF_Transient )
-	int                                                MachineId;                                        		// 0x0124 (0x0004) [0x0000000000002000]              ( CPF_Transient )
-	struct FCustomMatchSettings                        CustomMatch;                                      		// 0x0128 (0x0060) [0x0000000000402000]              ( CPF_Transient | CPF_NeedCtorLink )
-	struct FUniqueNetId                                CustomMatchOwner;                                 		// 0x0188 (0x0048) [0x0000000000002000]              ( CPF_Transient )
-	unsigned long                                      bQueuedShutdown : 1;                              		// 0x01D0 (0x0004) [0x0000000000002000] [0x00000001] ( CPF_Transient )
-	unsigned long                                      bFindingReplacementServer : 1;                    		// 0x01D0 (0x0004) [0x0000000000002000] [0x00000002] ( CPF_Transient )
-	unsigned long                                      bDisableMatchmakingBan : 1;                       		// 0x01D0 (0x0004) [0x0000000000002000] [0x00000004] ( CPF_Transient )
-	struct FString                                     MatchGUID;                                        		// 0x01D4 (0x000C) [0x0000000000402000]              ( CPF_Transient | CPF_NeedCtorLink )
-	struct FScriptDelegate                             __EventFoundNewDedicatedServerForPlayers__Delegate;		// 0x01E0 (0x0010) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	unsigned char                                      UnknownData01[ 0x4 ];                             		// 0x01E4 (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
-	struct FScriptDelegate                             __EventAverageMMRChanged__Delegate;               		// 0x01F0 (0x0010) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	unsigned char                                      UnknownData02[ 0x4 ];                             		// 0x01F4 (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
-	struct FScriptDelegate                             __EventPlaylistSet__Delegate;                     		// 0x0200 (0x0010) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	unsigned char                                      UnknownData03[ 0x4 ];                             		// 0x0204 (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
-	struct FScriptDelegate                             __EventPrivateMatchSettingsChanged__Delegate;     		// 0x0210 (0x0010) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	unsigned char                                      UnknownData04[ 0x4 ];                             		// 0x0214 (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
-	struct FScriptDelegate                             __EventInactive__Delegate;                        		// 0x0220 (0x0010) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	unsigned char                                      UnknownData05[ 0x4 ];                             		// 0x0224 (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
-	struct FScriptDelegate                             __EventActive__Delegate;                          		// 0x0230 (0x0010) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	unsigned char                                      UnknownData06[ 0x4 ];                             		// 0x0234 (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
-	struct FScriptDelegate                             __EventMatchGUIDChanged__Delegate;                		// 0x0240 (0x0010) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	unsigned char                                      UnknownData07[ 0x4 ];                             		// 0x0244 (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
+	unsigned char                                      UnknownData00[ 0x8 ];                             		// 0x00E4 (0x0008) UNKNOWN PROPERTY: QWordProperty ProjectX.OnlineGameDedicatedServer_X.GameServerID
+	struct FString                                     GameServerHost;                                   		// 0x00EC (0x000C) [0x0000000000402000]              ( CPF_Transient | CPF_NeedCtorLink )
+	class UOnlineGameStats_X*                          GameStats;                                        		// 0x00F8 (0x0004) [0x0000000000002000]              ( CPF_Transient )
+	class UOnlineGameDedicatedServerRegistration_X*    Registration;                                     		// 0x00FC (0x0004) [0x0000000000000001]              ( CPF_Edit )
+	class UOnlineGameReservations_X*                   Reservations;                                     		// 0x0100 (0x0004) [0x0000000000000001]              ( CPF_Edit )
+	class UClanforgeReservation_X*                     Clanforge;                                        		// 0x0104 (0x0004) [0x0000000000002000]              ( CPF_Transient )
+	struct FString                                     Region;                                           		// 0x0108 (0x000C) [0x0000000000402000]              ( CPF_Transient | CPF_NeedCtorLink )
+	int                                                CurrentPlaylistId;                                		// 0x0114 (0x0004) [0x0000000000000000]              
+	int                                                MutatorIndex;                                     		// 0x0118 (0x0004) [0x0000000000000000]              
+	float                                              AverageMMR;                                       		// 0x011C (0x0004) [0x0000000000002000]              ( CPF_Transient )
+	int                                                MachineId;                                        		// 0x0120 (0x0004) [0x0000000000002000]              ( CPF_Transient )
+	struct FCustomMatchSettings                        CustomMatch;                                      		// 0x0124 (0x0060) [0x0000000000402000]              ( CPF_Transient | CPF_NeedCtorLink )
+	struct FUniqueNetId                                CustomMatchOwner;                                 		// 0x0184 (0x0048) [0x0000000000002000]              ( CPF_Transient )
+	unsigned long                                      bQueuedShutdown : 1;                              		// 0x01CC (0x0004) [0x0000000000002000] [0x00000001] ( CPF_Transient )
+	unsigned long                                      bFindingReplacementServer : 1;                    		// 0x01CC (0x0004) [0x0000000000002000] [0x00000002] ( CPF_Transient )
+	unsigned long                                      bDisableMatchmakingBan : 1;                       		// 0x01CC (0x0004) [0x0000000000002000] [0x00000004] ( CPF_Transient )
+	unsigned long                                      bBotTest : 1;                                     		// 0x01CC (0x0004) [0x0000000000002000] [0x00000008] ( CPF_Transient )
+	struct FString                                     MatchGUID;                                        		// 0x01D0 (0x000C) [0x0000000000402000]              ( CPF_Transient | CPF_NeedCtorLink )
+	struct FScriptDelegate                             __EventFoundNewDedicatedServerForPlayers__Delegate;		// 0x01DC (0x0010) [0x0000000000400000]              ( CPF_NeedCtorLink )
+	unsigned char                                      UnknownData01[ 0x4 ];                             		// 0x01E0 (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
+	struct FScriptDelegate                             __EventAverageMMRChanged__Delegate;               		// 0x01EC (0x0010) [0x0000000000400000]              ( CPF_NeedCtorLink )
+	unsigned char                                      UnknownData02[ 0x4 ];                             		// 0x01F0 (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
+	struct FScriptDelegate                             __EventPlaylistSet__Delegate;                     		// 0x01FC (0x0010) [0x0000000000400000]              ( CPF_NeedCtorLink )
+	unsigned char                                      UnknownData03[ 0x4 ];                             		// 0x0200 (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
+	struct FScriptDelegate                             __EventPrivateMatchSettingsChanged__Delegate;     		// 0x020C (0x0010) [0x0000000000400000]              ( CPF_NeedCtorLink )
+	unsigned char                                      UnknownData04[ 0x4 ];                             		// 0x0210 (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
+	struct FScriptDelegate                             __EventInactive__Delegate;                        		// 0x021C (0x0010) [0x0000000000400000]              ( CPF_NeedCtorLink )
+	unsigned char                                      UnknownData05[ 0x4 ];                             		// 0x0220 (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
+	struct FScriptDelegate                             __EventActive__Delegate;                          		// 0x022C (0x0010) [0x0000000000400000]              ( CPF_NeedCtorLink )
+	unsigned char                                      UnknownData06[ 0x4 ];                             		// 0x0230 (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
+	struct FScriptDelegate                             __EventMatchGUIDChanged__Delegate;                		// 0x023C (0x0010) [0x0000000000400000]              ( CPF_NeedCtorLink )
+	unsigned char                                      UnknownData07[ 0x4 ];                             		// 0x0240 (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
 
 private:
 	static UClass* pClassPointer;
@@ -4530,7 +4553,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3461 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3475 ];
 
 		return pClassPointer;
 	};
@@ -4544,17 +4567,20 @@ public:
 	unsigned char GetTeamNum ( struct FUniqueNetId PlayerID );
 	bool KickPlayersOnGameEventDestroyed ( );
 	bool IsRankedMatch ( );
+	class UGameSettingPlaylist_X* GetPlaylist ( );
 	void OnExit ( );
 	void HandleNewServerIPRPC ( class URPC_CheckReplacementDedicatedServer_X* RPC );
 	void CheckNewServerIP ( );
 	void CheckNewServerTimeout ( );
 	void CheckStartShutdown ( int GameTimeRemaining );
+	bool AllowServerMigration ( );
 	void UpdateGameTime ( int TimeSeconds );
 	void FindNewDedicatedServerForPlayers ( struct FScriptDelegate InDelegate );
 	bool IsInPostGameLobby ( );
 	bool IsTravellingToNextMap ( );
 	void UpdateOnlineGame ( );
-	bool AllowSplitscreenJoin ( class APlayerReplicationInfo* PrimaryPRI, struct FUniqueNetId PlayerID, struct FString PlayerName );
+	bool AllowSplitscreenJoinRankedMatch ( );
+	bool AllowSplitscreenJoin ( class APlayerReplicationInfo* PrimaryPRI, struct FUniqueNetId PlayerID, struct FString PlayerName, struct FString* Error );
 	void PlayerLoggedOut ( class APlayerReplicationInfo* PRI );
 	void PlayerLoggedIn ( class APlayerReplicationInfo* PRI );
 	void AllowPlayerLogin ( struct FString Options, struct FUniqueNetId PlayerID, struct FString* ErrorMessage );
@@ -4611,7 +4637,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3463 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3477 ];
 
 		return pClassPointer;
 	};
@@ -4656,7 +4682,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3465 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3479 ];
 
 		return pClassPointer;
 	};
@@ -4670,6 +4696,7 @@ public:
 	void GetLeaderboardFriends ( class UOnlinePlayer_X* OnlinePlayer, struct FName NewLeaderboardID, struct FScriptDelegate NewDelegate, struct FScriptDelegate FailedDelegate );
 	void HandleGetAvatar ( struct FUniqueNetId PlayerID, class UTexture* Avatar, struct FString OnlinePlayerName );
 	void RequestPlayerAvatar ( struct FUniqueNetId PlayerID );
+	void RequestClearPendingAvatarDownloads ( );
 	void HandleGetLeaderboardRPC ( class URPC_GetLeaderboardBase_X* RPC );
 	void GetLeaderboard ( struct FName NewLeaderboardID, unsigned long bGlobal, struct FScriptDelegate NewDelegate, struct FScriptDelegate FailedDelegate );
 	bool GetCachedLeaderboardData ( struct FName LeaderboardId, TArray< struct FLeaderboardData >* LeaderboardDataList );
@@ -4687,7 +4714,7 @@ public:
 UClass* UOnlineGameLeaderboards_X::pClassPointer = NULL;
 
 // Class ProjectX.OnlineGameReservations_X
-// 0x005C (0x00BC - 0x0060)
+// 0x0068 (0x00C8 - 0x0060)
 class UOnlineGameReservations_X : public UOnline_X
 {
 public:
@@ -4705,10 +4732,11 @@ public:
 	TArray< struct FTeamPairHistory >                  TeamPairHistories;                                		// 0x0088 (0x000C) [0x0000000000402000]              ( CPF_Transient | CPF_NeedCtorLink )
 	class UCrossplayConfig_X*                          Crossplay;                                        		// 0x0094 (0x0004) [0x0000000000000001]              ( CPF_Edit )
 	class UMapPrefsConfig_X*                           MapPrefsConfig;                                   		// 0x0098 (0x0004) [0x0000000000000001]              ( CPF_Edit )
-	struct FScriptDelegate                             __EventReservationsUpdated__Delegate;             		// 0x009C (0x0010) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	unsigned char                                      UnknownData00[ 0x4 ];                             		// 0x00A0 (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
-	struct FScriptDelegate                             __EventMigrationJoinOccurred__Delegate;           		// 0x00AC (0x0010) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	unsigned char                                      UnknownData01[ 0x4 ];                             		// 0x00B0 (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
+	TArray< struct FPendingReservation >               PendingReservations;                              		// 0x009C (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
+	struct FScriptDelegate                             __EventReservationsUpdated__Delegate;             		// 0x00A8 (0x0010) [0x0000000000400000]              ( CPF_NeedCtorLink )
+	unsigned char                                      UnknownData00[ 0x4 ];                             		// 0x00AC (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
+	struct FScriptDelegate                             __EventMigrationJoinOccurred__Delegate;           		// 0x00B8 (0x0010) [0x0000000000400000]              ( CPF_NeedCtorLink )
+	unsigned char                                      UnknownData01[ 0x4 ];                             		// 0x00BC (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
 
 private:
 	static UClass* pClassPointer;
@@ -4717,13 +4745,19 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3467 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3481 ];
 
 		return pClassPointer;
 	};
 
+	bool __OnlineGameReservations_X__HasTimeoutPlayers ( struct FReservationData P );
+	bool __OnlineGameReservations_X__HasMultipleReservedTeams ( int TeamID );
+	int __OnlineGameReservations_X__HasMultipleReservedTeams ( struct FReservationData P );
 	bool __OnlineGameReservations_X__AllPlayersReserved ( struct FReservationData P );
 	bool __OnlineGameReservations_X__AllPlayersInGame ( struct FReservationData P );
+	void __OnlineGameReservations_X__SetServerTraveling ( struct FPendingReservation P );
+	struct FUniqueNetId __OnlineGameReservations_X__GetPlayerIDs ( struct FReservationData Player );
+	TArray< struct FUniqueNetId > GetPlayerIDs ( TArray< struct FUniqueNetId >* MapLocal_7E18F3284656EF014239C0BF2A75E810 );
 	float GetMapLoadTimeout ( unsigned char Platform );
 	void GetAccumulatedPrefs ( TArray< struct FName >* Likes, TArray< struct FName >* Dislikes );
 	void PrintDebugInfo ( class UDebugDrawer* Drawer );
@@ -4761,6 +4795,8 @@ public:
 	bool HasGameEnded ( );
 	bool HasGameStarted ( );
 	bool CanStartMatch ( );
+	bool HasMultipleReservedTeams ( TArray< int >* MapLocal_AA698AC8448DCFB5D0967BB493B335F0, TArray< int >* FilterLocal_5F941196414A9B7A28E1F1BECC704174, TArray< int >* DistinctLocal_3BBB97AE4644D7597256918DDDEC940E );
+	bool HasTimeoutPlayers ( );
 	bool HasJoiningPlayers ( );
 	bool IsEmpty ( );
 	bool IsNearlyFull ( );
@@ -4779,7 +4815,7 @@ public:
 	bool AssignScrambledTeams ( int TeamSize, TArray< struct FTeamPairHistory >* History, TArray< struct FReservationData >* TestPlayers );
 	bool AssignTeams ( int TeamSize, TArray< struct FReservationData >* TestPlayers );
 	void HandleSkillSynced ( class UOnlineGameSkill_X* SkillSystem, struct FUniqueNetId PlayerID, class UError* Error );
-	bool AllowSplitscreenJoin ( class APlayerReplicationInfo* PrimaryPRI, struct FUniqueNetId PlayerID, struct FString PlayerName );
+	bool AllowSplitscreenJoin ( class APlayerReplicationInfo* PrimaryPRI, struct FUniqueNetId PlayerID, struct FString PlayerName, struct FString* Error );
 	bool IsCheatingSplitscreenReservation ( class UAddReservationMessage_X* Message );
 	bool IsCheatingSplitscreen ( struct FUniqueNetId PrimaryPlayerID, struct FUniqueNetId SplitscreenPlayerID );
 	struct FReservationData CreateReservationData ( struct FUniqueNetId PlayerID, struct FString PlayerName, struct FUniqueNetId PartyID, unsigned char Status );
@@ -4788,20 +4824,22 @@ public:
 	void SetPlayers ( TArray< struct FReservationData >* TempPlayers );
 	TArray< struct FReservationData > AddPlayersFromReservationMessage ( class UAddReservationMessage_X* ReservationMessage, class UTcpConnection* Connection );
 	bool IsUnique ( TArray< struct FName >* Prefs );
-	bool HandlePrivateReservation ( class UTcpConnection* Connection, class UAddReservationMessagePrivate_X* Message );
+	void ForcePrivateMatch ( struct FCustomMatchSettings InSettings, struct FUniqueNetId* StructInitializer_D43C98E84F4B706D6262C7A3AD0E666C );
+	bool HandlePrivateReservation ( class UTcpConnection* Connection, class UAddReservationMessagePrivate_X* Message, struct FPendingReservation* StructInitializer_C6D2C8B54E9FC2863495FBAA45747FC3 );
 	void SendGetKeysRPCs ( class UTcpConnection* Connection, class UAddReservationMessage_X* Message );
 	void HandlePrivateReservationMessage ( class UTcpConnection* Connection, class UAddReservationMessagePrivate_X* Message );
 	bool CanAcceptReservationsForServerKey ( class UAddReservationMessagePublic_X* Message, unsigned long bServerKey );
 	void RemoveKeysRPC ( class URPC_GetKeys_X* RPC );
 	void HandleGetKeysRPCFail ( class URPC_GetKeys_X* RPC );
 	void AddNetworkKeys ( class URPC_GetKeys_X* RPC );
+	void ProcessReservationMessage ( class UTcpConnection* Connection, class UAddReservationMessage_X* Message );
 	void HandleGetKeysRPCSuccess ( class URPC_GetKeys_X* RPC );
 	void HandleGetKeysRPC ( class URPC_GetKeys_X* RPC );
 	void StartMatch ( );
 	class UReservationsReadyMessage_X* CreateReadyMessage ( );
 	bool ShouldSyncSkills ( );
 	bool IsSoloPlaylist ( int PlaylistId );
-	bool HandlePublicReservation ( class UTcpConnection* Connection, class UAddReservationMessagePublic_X* Message );
+	bool HandlePublicReservation ( class UTcpConnection* Connection, class UAddReservationMessagePublic_X* Message, struct FPendingReservation* StructInitializer_F01CBCB0408B48261EAA1CAC1EC9D69A );
 	void HandlePublicReservationMessage ( class UTcpConnection* Connection, class UAddReservationMessagePublic_X* Message );
 	void HandlePingMessage ( class UTcpConnection* Connection, class UObject* Message );
 	void OnInit ( );
@@ -4824,7 +4862,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3469 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3483 ];
 
 		return pClassPointer;
 	};
@@ -4835,37 +4873,39 @@ public:
 UClass* UOnlineGameStats_X::pClassPointer = NULL;
 
 // Class ProjectX.OnlinePlayer_X
-// 0x00E8 (0x0148 - 0x0060)
+// 0x00FC (0x015C - 0x0060)
 class UOnlinePlayer_X : public UOnline_X
 {
 public:
 	class UOnlinePlayerFriends_X*                      Friends;                                          		// 0x0060 (0x0004) [0x0000000000000001]              ( CPF_Edit )
 	class UOnlinePlayerAuthentication_X*               Authentication;                                   		// 0x0064 (0x0004) [0x0000000000000001]              ( CPF_Edit )
 	class UPsyNetConnection_X*                         PsyNetConnection;                                 		// 0x0068 (0x0004) [0x0000000000000001]              ( CPF_Edit )
-	struct FString                                     PlayerName;                                       		// 0x006C (0x000C) [0x0000000000402000]              ( CPF_Transient | CPF_NeedCtorLink )
-	struct FUniqueNetId                                PlayerID;                                         		// 0x0078 (0x0048) [0x0000000000002000]              ( CPF_Transient )
-	unsigned char                                      LoginStatus;                                      		// 0x00C0 (0x0001) [0x0000000000002000]              ( CPF_Transient )
-	int                                                LocalPlayerNum;                                   		// 0x00C4 (0x0004) [0x0000000000002000]              ( CPF_Transient )
-	unsigned long                                      bLoggingIn : 1;                                   		// 0x00C8 (0x0004) [0x0000000000000000] [0x00000001] 
-	unsigned long                                      bLoggingOut : 1;                                  		// 0x00C8 (0x0004) [0x0000000000000000] [0x00000002] 
-	unsigned long                                      bPsyNetLogout : 1;                                		// 0x00C8 (0x0004) [0x0000000000004002] [0x00000004] ( CPF_Const | CPF_Config )
-	class UError*                                      LoginError;                                       		// 0x00CC (0x0004) [0x0000000000002000]              ( CPF_Transient )
-	class UError*                                      LoginStatusError;                                 		// 0x00D0 (0x0004) [0x0000000000000000]              
-	class UError*                                      BannedError;                                      		// 0x00D4 (0x0004) [0x0000000000000000]              
-	struct FScriptDelegate                             __EventLoginComplete__Delegate;                   		// 0x00D8 (0x0010) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	unsigned char                                      UnknownData00[ 0x4 ];                             		// 0x00DC (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
-	struct FScriptDelegate                             __EventLogoutComplete__Delegate;                  		// 0x00E8 (0x0010) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	unsigned char                                      UnknownData01[ 0x4 ];                             		// 0x00EC (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
-	struct FScriptDelegate                             __EventLoginStatusChanged__Delegate;              		// 0x00F8 (0x0010) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	unsigned char                                      UnknownData02[ 0x4 ];                             		// 0x00FC (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
-	struct FScriptDelegate                             __EventCountryUpdated__Delegate;                  		// 0x0108 (0x0010) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	unsigned char                                      UnknownData03[ 0x4 ];                             		// 0x010C (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
-	struct FScriptDelegate                             __EventCanPlayOnlineChanged__Delegate;            		// 0x0118 (0x0010) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	unsigned char                                      UnknownData04[ 0x4 ];                             		// 0x011C (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
-	struct FScriptDelegate                             __EventShowKeyboardComplete__Delegate;            		// 0x0128 (0x0010) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	unsigned char                                      UnknownData05[ 0x4 ];                             		// 0x012C (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
-	struct FScriptDelegate                             __EventPreFlushExit__Delegate;                    		// 0x0138 (0x0010) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	unsigned char                                      UnknownData06[ 0x4 ];                             		// 0x013C (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
+	class UOnlinePlayerStorage_X*                      Storage;                                          		// 0x006C (0x0004) [0x0000000000000001]              ( CPF_Edit )
+	struct FString                                     PlayerName;                                       		// 0x0070 (0x000C) [0x0000000000402000]              ( CPF_Transient | CPF_NeedCtorLink )
+	struct FUniqueNetId                                PlayerID;                                         		// 0x007C (0x0048) [0x0000000000002000]              ( CPF_Transient )
+	unsigned char                                      LoginStatus;                                      		// 0x00C4 (0x0001) [0x0000000000002000]              ( CPF_Transient )
+	int                                                LocalPlayerNum;                                   		// 0x00C8 (0x0004) [0x0000000000002000]              ( CPF_Transient )
+	unsigned long                                      bLoggingIn : 1;                                   		// 0x00CC (0x0004) [0x0000000000000000] [0x00000001] 
+	unsigned long                                      bLoggingOut : 1;                                  		// 0x00CC (0x0004) [0x0000000000000000] [0x00000002] 
+	class UError*                                      LoginError;                                       		// 0x00D0 (0x0004) [0x0000000000002000]              ( CPF_Transient )
+	class UError*                                      LoginStatusError;                                 		// 0x00D4 (0x0004) [0x0000000000000000]              
+	class UError*                                      BannedError;                                      		// 0x00D8 (0x0004) [0x0000000000000000]              
+	struct FScriptDelegate                             __EventLoginComplete__Delegate;                   		// 0x00DC (0x0010) [0x0000000000400000]              ( CPF_NeedCtorLink )
+	unsigned char                                      UnknownData00[ 0x4 ];                             		// 0x00E0 (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
+	struct FScriptDelegate                             __EventLogoutComplete__Delegate;                  		// 0x00EC (0x0010) [0x0000000000400000]              ( CPF_NeedCtorLink )
+	unsigned char                                      UnknownData01[ 0x4 ];                             		// 0x00F0 (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
+	struct FScriptDelegate                             __EventLoginStatusChanged__Delegate;              		// 0x00FC (0x0010) [0x0000000000400000]              ( CPF_NeedCtorLink )
+	unsigned char                                      UnknownData02[ 0x4 ];                             		// 0x0100 (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
+	struct FScriptDelegate                             __EventCountryUpdated__Delegate;                  		// 0x010C (0x0010) [0x0000000000400000]              ( CPF_NeedCtorLink )
+	unsigned char                                      UnknownData03[ 0x4 ];                             		// 0x0110 (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
+	struct FScriptDelegate                             __EventCanPlayOnlineChanged__Delegate;            		// 0x011C (0x0010) [0x0000000000400000]              ( CPF_NeedCtorLink )
+	unsigned char                                      UnknownData04[ 0x4 ];                             		// 0x0120 (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
+	struct FScriptDelegate                             __EventShowKeyboardComplete__Delegate;            		// 0x012C (0x0010) [0x0000000000400000]              ( CPF_NeedCtorLink )
+	unsigned char                                      UnknownData05[ 0x4 ];                             		// 0x0130 (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
+	struct FScriptDelegate                             __EventPreFlushExit__Delegate;                    		// 0x013C (0x0010) [0x0000000000400000]              ( CPF_NeedCtorLink )
+	unsigned char                                      UnknownData06[ 0x4 ];                             		// 0x0140 (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
+	struct FScriptDelegate                             __EventOnlineNameChanged__Delegate;               		// 0x014C (0x0010) [0x0000000000400000]              ( CPF_NeedCtorLink )
+	unsigned char                                      UnknownData07[ 0x4 ];                             		// 0x0150 (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
 
 private:
 	static UClass* pClassPointer;
@@ -4874,7 +4914,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3471 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3485 ];
 
 		return pClassPointer;
 	};
@@ -4882,7 +4922,7 @@ public:
 	void GetPlayersLikesDislikes ( class UGameSettingPlaylist_X* Playlist, TArray< struct FName >* PlayerLikes, TArray< struct FName >* PlayerDislikes );
 	void PrintDebugInfo ( class UDebugDrawer* Drawer );
 	bool IsGuestAccount ( );
-	void SetPlayerName ( struct FString NewName );
+	void SetPlayerName ( struct FString InName );
 	void UpdateSplitscreenId ( );
 	bool IsUpdateRequired ( );
 	struct FString GetOnlineName ( );
@@ -4923,8 +4963,11 @@ public:
 	void HandleBanned ( class UOnlinePlayerAuthentication_X* Auth );
 	void HandleAuthLoginChange ( class UOnlinePlayerAuthentication_X* Auth );
 	void HandleLoginRPC ( class UOnlinePlayerAuthentication_X* Auth, class URPC_LoginAuthPlayer_X* RPC );
+	bool UseWebSocket ( class URPC_LoginAuthPlayer_X* RPC );
 	void OnInit ( );
+	void eventConstruct ( );
 	class UOnlineGame_X* GetOnlineGame ( );
+	void EventOnlineNameChanged ( class UOnlinePlayer_X* Player );
 	void EventPreFlushExit ( );
 	void EventShowKeyboardComplete ( struct FString NewText, unsigned long bCanceled );
 	void EventCanPlayOnlineChanged ( class UOnlinePlayer_X* Player );
@@ -4937,7 +4980,7 @@ public:
 UClass* UOnlinePlayer_X::pClassPointer = NULL;
 
 // Class ProjectX.OnlinePlayerAuthentication_X
-// 0x0114 (0x0174 - 0x0060)
+// 0x0128 (0x0188 - 0x0060)
 class UOnlinePlayerAuthentication_X : public UOnline_X
 {
 public:
@@ -4952,26 +4995,29 @@ public:
 	class UError*                                      AuthLoginError;                                   		// 0x00D0 (0x0004) [0x0000000000000000]              
 	float                                              BannedUntilTime;                                  		// 0x00D4 (0x0004) [0x0000000000002000]              ( CPF_Transient )
 	struct FString                                     BannedReason;                                     		// 0x00D8 (0x000C) [0x0000000000402000]              ( CPF_Transient | CPF_NeedCtorLink )
-	struct FString                                     EncryptedAuthTicket;                              		// 0x00E4 (0x000C) [0x0000000000402000]              ( CPF_Transient | CPF_NeedCtorLink )
-	int                                                AuthRequestFailureMax;                            		// 0x00F0 (0x0004) [0x0000000000004000]              ( CPF_Config )
-	int                                                AuthRequestRetryTime;                             		// 0x00F4 (0x0004) [0x0000000000000002]              ( CPF_Const )
-	int                                                AuthRequestFailureCount;                          		// 0x00F8 (0x0004) [0x0000000000002000]              ( CPF_Transient )
-	struct FString                                     AuthenticatedName;                                		// 0x00FC (0x000C) [0x0000000000402000]              ( CPF_Transient | CPF_NeedCtorLink )
-	unsigned char                                      PlayerAuthState;                                  		// 0x0108 (0x0001) [0x0000000000002000]              ( CPF_Transient )
-	float                                              LoginRetryDelay;                                  		// 0x010C (0x0004) [0x0000000000000001]              ( CPF_Edit )
-	class UOnlineGameTrial_X*                          Trial;                                            		// 0x0110 (0x0004) [0x0000000000000001]              ( CPF_Edit )
-	struct FScriptDelegate                             __EventLoginChanged__Delegate;                    		// 0x0114 (0x0010) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	unsigned char                                      UnknownData01[ 0x4 ];                             		// 0x0118 (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
-	struct FScriptDelegate                             __EventLoginSuccessRPC__Delegate;                 		// 0x0124 (0x0010) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	unsigned char                                      UnknownData02[ 0x4 ];                             		// 0x0128 (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
-	struct FScriptDelegate                             __EventBanned__Delegate;                          		// 0x0134 (0x0010) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	unsigned char                                      UnknownData03[ 0x4 ];                             		// 0x0138 (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
-	struct FScriptDelegate                             __EventAuthenticatedNameChanged__Delegate;        		// 0x0144 (0x0010) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	unsigned char                                      UnknownData04[ 0x4 ];                             		// 0x0148 (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
-	struct FScriptDelegate                             __EventPlayerAuthStateChanged__Delegate;          		// 0x0154 (0x0010) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	unsigned char                                      UnknownData05[ 0x4 ];                             		// 0x0158 (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
-	struct FScriptDelegate                             __EventLoginResult__Delegate;                     		// 0x0164 (0x0010) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	unsigned char                                      UnknownData06[ 0x4 ];                             		// 0x0168 (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
+	TArray< struct FString >                           BannedCitations;                                  		// 0x00E4 (0x000C) [0x0000000000402000]              ( CPF_Transient | CPF_NeedCtorLink )
+	struct FString                                     EncryptedAuthTicket;                              		// 0x00F0 (0x000C) [0x0000000000402000]              ( CPF_Transient | CPF_NeedCtorLink )
+	int                                                AuthRequestFailureMax;                            		// 0x00FC (0x0004) [0x0000000000004000]              ( CPF_Config )
+	int                                                AuthRequestRetryTime;                             		// 0x0100 (0x0004) [0x0000000000000002]              ( CPF_Const )
+	int                                                AuthRequestFailureCount;                          		// 0x0104 (0x0004) [0x0000000000002000]              ( CPF_Transient )
+	struct FString                                     AuthenticatedName;                                		// 0x0108 (0x000C) [0x0000000000402000]              ( CPF_Transient | CPF_NeedCtorLink )
+	unsigned char                                      PlayerAuthState;                                  		// 0x0114 (0x0001) [0x0000000000002000]              ( CPF_Transient )
+	float                                              LoginRetryDelay;                                  		// 0x0118 (0x0004) [0x0000000000000001]              ( CPF_Edit )
+	float                                              DelayBetweenAuthRPCs;                             		// 0x011C (0x0004) [0x0000000000000001]              ( CPF_Edit )
+	float                                              LastSendAuthRPCTime;                              		// 0x0120 (0x0004) [0x0000000000000000]              
+	class UOnlineGameTrial_X*                          Trial;                                            		// 0x0124 (0x0004) [0x0000000000000001]              ( CPF_Edit )
+	struct FScriptDelegate                             __EventLoginChanged__Delegate;                    		// 0x0128 (0x0010) [0x0000000000400000]              ( CPF_NeedCtorLink )
+	unsigned char                                      UnknownData01[ 0x4 ];                             		// 0x012C (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
+	struct FScriptDelegate                             __EventLoginSuccessRPC__Delegate;                 		// 0x0138 (0x0010) [0x0000000000400000]              ( CPF_NeedCtorLink )
+	unsigned char                                      UnknownData02[ 0x4 ];                             		// 0x013C (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
+	struct FScriptDelegate                             __EventBanned__Delegate;                          		// 0x0148 (0x0010) [0x0000000000400000]              ( CPF_NeedCtorLink )
+	unsigned char                                      UnknownData03[ 0x4 ];                             		// 0x014C (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
+	struct FScriptDelegate                             __EventAuthenticatedNameChanged__Delegate;        		// 0x0158 (0x0010) [0x0000000000400000]              ( CPF_NeedCtorLink )
+	unsigned char                                      UnknownData04[ 0x4 ];                             		// 0x015C (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
+	struct FScriptDelegate                             __EventPlayerAuthStateChanged__Delegate;          		// 0x0168 (0x0010) [0x0000000000400000]              ( CPF_NeedCtorLink )
+	unsigned char                                      UnknownData05[ 0x4 ];                             		// 0x016C (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
+	struct FScriptDelegate                             __EventLoginResult__Delegate;                     		// 0x0178 (0x0010) [0x0000000000400000]              ( CPF_NeedCtorLink )
+	unsigned char                                      UnknownData06[ 0x4 ];                             		// 0x017C (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
 
 private:
 	static UClass* pClassPointer;
@@ -4980,7 +5026,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3473 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3487 ];
 
 		return pClassPointer;
 	};
@@ -4994,9 +5040,9 @@ public:
 	void HandleTrialStatusChanged ( class UOnlineGameTrial_X* InTrial );
 	void OnChangeAuthenticatedName ( struct FString NewName );
 	bool NeedToAuthenticateName ( );
-	void HandleReceivedAuthorizationCode ( unsigned long bSuccess, struct FString AuthorizationCode, struct FString EncryptedTicket, int IssuerID );
-	bool RequestAuthorizationCode ( );
-	bool RequiresAuthorizationCode ( );
+	void HandleAuthTicket ( unsigned long bSuccess, struct FString AuthTicket );
+	bool RequestAuthTicket ( );
+	bool RequiresAuthTicket ( );
 	void ReLogin ( );
 	void Logout ( );
 	void SetAuthLoginError ( class UError* E );
@@ -5008,10 +5054,11 @@ public:
 	void HandleLoginStatusChanged ( class UOnlinePlayer_X* Player );
 	int GetBannedMinutesRemaining ( );
 	bool ParseBanned ( class URPC_LoginAuthPlayer_X* RPC );
+	void SetDefaultPlayerAuthState ( );
 	void SetPlayerAuthState ( unsigned char InPlayerAuthState );
 	void ReceiveAuthenticatedName ( struct FString ReceivedName );
 	void OnLoginFailRPC ( class URPC_LoginAuthPlayer_X* RPC );
-	void OnLoginSuccessRPC ( class URPC_LoginAuthPlayer_X* RPC );
+	void OnLoginSuccessRPC ( class URPC_LoginAuthPlayer_X* RPC, TArray< struct FString >* ArrayInitializer_9322435D472548737446A397C96F7347 );
 	void SendLoginRPC ( );
 	void PsyNetLogin ( struct FScriptDelegate Callback );
 	void OnRemoved ( );
@@ -5039,7 +5086,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3475 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3489 ];
 
 		return pClassPointer;
 	};
@@ -5071,7 +5118,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3477 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3491 ];
 
 		return pClassPointer;
 	};
@@ -5099,7 +5146,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3479 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3493 ];
 
 		return pClassPointer;
 	};
@@ -5132,7 +5179,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3481 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3495 ];
 
 		return pClassPointer;
 	};
@@ -5172,7 +5219,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3483 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3497 ];
 
 		return pClassPointer;
 	};
@@ -5196,7 +5243,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3485 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3499 ];
 
 		return pClassPointer;
 	};
@@ -5231,7 +5278,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3487 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3501 ];
 
 		return pClassPointer;
 	};
@@ -5284,7 +5331,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3489 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3503 ];
 
 		return pClassPointer;
 	};
@@ -5313,7 +5360,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3491 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3505 ];
 
 		return pClassPointer;
 	};
@@ -5340,7 +5387,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3493 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3507 ];
 
 		return pClassPointer;
 	};
@@ -5362,7 +5409,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3495 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3509 ];
 
 		return pClassPointer;
 	};
@@ -5385,7 +5432,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3497 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3511 ];
 
 		return pClassPointer;
 	};
@@ -5411,7 +5458,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3499 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3513 ];
 
 		return pClassPointer;
 	};
@@ -5456,7 +5503,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3501 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3515 ];
 
 		return pClassPointer;
 	};
@@ -5489,7 +5536,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3503 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3517 ];
 
 		return pClassPointer;
 	};
@@ -5526,7 +5573,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 47641 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 47744 ];
 
 		return pClassPointer;
 	};
@@ -5565,7 +5612,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 47910 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 48009 ];
 
 		return pClassPointer;
 	};
@@ -5594,7 +5641,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 47930 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 48029 ];
 
 		return pClassPointer;
 	};
@@ -5609,7 +5656,7 @@ public:
 UClass* UAddReservationMessage_X::pClassPointer = NULL;
 
 // Class ProjectX.OnlineGameParty_X
-// 0x02A4 (0x0304 - 0x0060)
+// 0x027C (0x02DC - 0x0060)
 class UOnlineGameParty_X : public UOnline_X
 {
 public:
@@ -5627,70 +5674,64 @@ public:
 	struct FName                                       LastSearchState;                                  		// 0x00DC (0x0008) [0x0000000000002000]              ( CPF_Transient )
 	struct FPartyJoinMatchSettings                     MatchSettings;                                    		// 0x00E4 (0x002C) [0x0000000000402000]              ( CPF_Transient | CPF_NeedCtorLink )
 	unsigned char                                      ProcessingStatus;                                 		// 0x0110 (0x0001) [0x0000000000002000]              ( CPF_Transient )
-	float                                              SkillCacheTime;                                   		// 0x0114 (0x0004) [0x0000000000000001]              ( CPF_Edit )
-	float                                              LastSkillSyncTime;                                		// 0x0118 (0x0004) [0x0000000000002000]              ( CPF_Transient )
-	int                                                PendingPartyLocalPlayerNum;                       		// 0x011C (0x0004) [0x0000000000002000]              ( CPF_Transient )
-	struct FUniqueLobbyId                              PendingPartyId;                                   		// 0x0120 (0x000C) [0x0000000000002000]              ( CPF_Transient )
-	struct FPendingInviteData                          PendingInvite;                                    		// 0x012C (0x0014) [0x0000000000000000]              
-	TArray< struct FPlaylistSkillRestrictionInfo >     PlaylistRestrictions;                             		// 0x0140 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	struct FString                                     NotInSameOnlineGameError;                         		// 0x014C (0x000C) [0x0000000000408002]              ( CPF_Const | CPF_Localized | CPF_NeedCtorLink )
-	struct FString                                     MissingLicenseAgreementError;                     		// 0x0158 (0x000C) [0x0000000000408002]              ( CPF_Const | CPF_Localized | CPF_NeedCtorLink )
-	class UPartyConfig_X*                              PartyConfig;                                      		// 0x0164 (0x0004) [0x0000000000000001]              ( CPF_Edit )
-	class URankedConfig_X*                             RankedConfig;                                     		// 0x0168 (0x0004) [0x0000000000000001]              ( CPF_Edit )
-	class UOnlineGameTrial_X*                          Trial;                                            		// 0x016C (0x0004) [0x0000000000000001]              ( CPF_Edit )
-	class UPsyNetConfig_X*                             Config;                                           		// 0x0170 (0x0004) [0x0000000000000001]              ( CPF_Edit )
-	class UOnlineLobbyInterface*                       PlatformLobbyInterface;                           		// 0x0174 (0x0008) [0x0000000000000000]              
-	unsigned char                                      UnknownData00[ 0x4 ];                             		// 0x0178 (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
-	class UParties_X*                                  PsyNetLobbyInterface;                             		// 0x017C (0x0004) [0x0000000000000000]              
-	int                                                CreatePartyLocalPlayerNum;                        		// 0x0180 (0x0004) [0x0000000000000000]              
-	struct FScriptDelegate                             __EventPartyCreated__Delegate;                    		// 0x0184 (0x0010) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	unsigned char                                      UnknownData01[ 0x4 ];                             		// 0x0188 (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
-	struct FScriptDelegate                             __EventPlayerInvited__Delegate;                   		// 0x0194 (0x0010) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	unsigned char                                      UnknownData02[ 0x4 ];                             		// 0x0198 (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
-	struct FScriptDelegate                             __EventPartyChanged__Delegate;                    		// 0x01A4 (0x0010) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	unsigned char                                      UnknownData03[ 0x4 ];                             		// 0x01A8 (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
-	struct FScriptDelegate                             __EventPartySizeChanged__Delegate;                		// 0x01B4 (0x0010) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	unsigned char                                      UnknownData04[ 0x4 ];                             		// 0x01B8 (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
-	struct FScriptDelegate                             __EventSearchStatusChanged__Delegate;             		// 0x01C4 (0x0010) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	unsigned char                                      UnknownData05[ 0x4 ];                             		// 0x01C8 (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
-	struct FScriptDelegate                             __EventPartyError__Delegate;                      		// 0x01D4 (0x0010) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	unsigned char                                      UnknownData06[ 0x4 ];                             		// 0x01D8 (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
-	struct FScriptDelegate                             __EventPartyJoinGameError__Delegate;              		// 0x01E4 (0x0010) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	unsigned char                                      UnknownData07[ 0x4 ];                             		// 0x01E8 (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
-	struct FScriptDelegate                             __EventPartyJoinGameSuccess__Delegate;            		// 0x01F4 (0x0010) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	unsigned char                                      UnknownData08[ 0x4 ];                             		// 0x01F8 (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
-	struct FScriptDelegate                             __EventPartyDestroyed__Delegate;                  		// 0x0204 (0x0010) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	unsigned char                                      UnknownData09[ 0x4 ];                             		// 0x0208 (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
-	struct FScriptDelegate                             __EventConfirmJoinGameMessage__Delegate;          		// 0x0214 (0x0010) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	unsigned char                                      UnknownData10[ 0x4 ];                             		// 0x0218 (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
-	struct FScriptDelegate                             __EventLeaderLeftOnlineGame__Delegate;            		// 0x0224 (0x0010) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	unsigned char                                      UnknownData11[ 0x4 ];                             		// 0x0228 (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
-	struct FScriptDelegate                             __EventProcessingStatusChanged__Delegate;         		// 0x0234 (0x0010) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	unsigned char                                      UnknownData12[ 0x4 ];                             		// 0x0238 (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
-	struct FScriptDelegate                             __EventDisableCrossPlayChanged__Delegate;         		// 0x0244 (0x0010) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	unsigned char                                      UnknownData13[ 0x4 ];                             		// 0x0248 (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
-	struct FScriptDelegate                             __EventPlaylistSkillRestrictionChange__Delegate;  		// 0x0254 (0x0010) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	unsigned char                                      UnknownData14[ 0x4 ];                             		// 0x0258 (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
-	struct FScriptDelegate                             __EventPlayerTradingChanged__Delegate;            		// 0x0264 (0x0010) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	unsigned char                                      UnknownData15[ 0x4 ];                             		// 0x0268 (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
-	struct FScriptDelegate                             __EventInviteToTrade__Delegate;                   		// 0x0274 (0x0010) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	unsigned char                                      UnknownData16[ 0x4 ];                             		// 0x0278 (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
-	struct FScriptDelegate                             __EventAcceptedInviteToTrade__Delegate;           		// 0x0284 (0x0010) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	unsigned char                                      UnknownData17[ 0x4 ];                             		// 0x0288 (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
-	struct FScriptDelegate                             __EventCloseInviteToTrade__Delegate;              		// 0x0294 (0x0010) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	unsigned char                                      UnknownData18[ 0x4 ];                             		// 0x0298 (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
-	struct FScriptDelegate                             __EventReadyToTrade__Delegate;                    		// 0x02A4 (0x0010) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	unsigned char                                      UnknownData19[ 0x4 ];                             		// 0x02A8 (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
-	struct FScriptDelegate                             __EventNotReadyToTrade__Delegate;                 		// 0x02B4 (0x0010) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	unsigned char                                      UnknownData20[ 0x4 ];                             		// 0x02B8 (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
-	struct FScriptDelegate                             __EventTradeReady__Delegate;                      		// 0x02C4 (0x0010) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	unsigned char                                      UnknownData21[ 0x4 ];                             		// 0x02C8 (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
-	struct FScriptDelegate                             __EventAnotherInviteToTrade__Delegate;            		// 0x02D4 (0x0010) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	unsigned char                                      UnknownData22[ 0x4 ];                             		// 0x02D8 (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
-	struct FScriptDelegate                             __EventPlayerInMatchChanged__Delegate;            		// 0x02E4 (0x0010) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	unsigned char                                      UnknownData23[ 0x4 ];                             		// 0x02E8 (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
-	struct FScriptDelegate                             __EventPlayerIsCurrentlyTrading__Delegate;        		// 0x02F4 (0x0010) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	unsigned char                                      UnknownData24[ 0x4 ];                             		// 0x02F8 (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
+	int                                                PendingPartyLocalPlayerNum;                       		// 0x0114 (0x0004) [0x0000000000002000]              ( CPF_Transient )
+	struct FUniqueLobbyId                              PendingPartyId;                                   		// 0x0118 (0x000C) [0x0000000000002000]              ( CPF_Transient )
+	struct FPendingInviteData                          PendingInvite;                                    		// 0x0124 (0x0014) [0x0000000000000000]              
+	struct FString                                     NotInSameOnlineGameError;                         		// 0x0138 (0x000C) [0x0000000000408002]              ( CPF_Const | CPF_Localized | CPF_NeedCtorLink )
+	struct FString                                     MissingLicenseAgreementError;                     		// 0x0144 (0x000C) [0x0000000000408002]              ( CPF_Const | CPF_Localized | CPF_NeedCtorLink )
+	class UPartyConfig_X*                              PartyConfig;                                      		// 0x0150 (0x0004) [0x0000000000000001]              ( CPF_Edit )
+	class UOnlineGameTrial_X*                          Trial;                                            		// 0x0154 (0x0004) [0x0000000000000001]              ( CPF_Edit )
+	class UPsyNetConfig_X*                             Config;                                           		// 0x0158 (0x0004) [0x0000000000000001]              ( CPF_Edit )
+	class UOnlineLobbyInterface*                       PlatformLobbyInterface;                           		// 0x015C (0x0008) [0x0000000000000000]              
+	unsigned char                                      UnknownData00[ 0x4 ];                             		// 0x0160 (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
+	class UParties_X*                                  PsyNetLobbyInterface;                             		// 0x0164 (0x0004) [0x0000000000000000]              
+	int                                                CreatePartyLocalPlayerNum;                        		// 0x0168 (0x0004) [0x0000000000000000]              
+	struct FScriptDelegate                             __EventPartyCreated__Delegate;                    		// 0x016C (0x0010) [0x0000000000400000]              ( CPF_NeedCtorLink )
+	unsigned char                                      UnknownData01[ 0x4 ];                             		// 0x0170 (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
+	struct FScriptDelegate                             __EventPlayerInvited__Delegate;                   		// 0x017C (0x0010) [0x0000000000400000]              ( CPF_NeedCtorLink )
+	unsigned char                                      UnknownData02[ 0x4 ];                             		// 0x0180 (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
+	struct FScriptDelegate                             __EventPartyChanged__Delegate;                    		// 0x018C (0x0010) [0x0000000000400000]              ( CPF_NeedCtorLink )
+	unsigned char                                      UnknownData03[ 0x4 ];                             		// 0x0190 (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
+	struct FScriptDelegate                             __EventPartySizeChanged__Delegate;                		// 0x019C (0x0010) [0x0000000000400000]              ( CPF_NeedCtorLink )
+	unsigned char                                      UnknownData04[ 0x4 ];                             		// 0x01A0 (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
+	struct FScriptDelegate                             __EventSearchStatusChanged__Delegate;             		// 0x01AC (0x0010) [0x0000000000400000]              ( CPF_NeedCtorLink )
+	unsigned char                                      UnknownData05[ 0x4 ];                             		// 0x01B0 (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
+	struct FScriptDelegate                             __EventPartyError__Delegate;                      		// 0x01BC (0x0010) [0x0000000000400000]              ( CPF_NeedCtorLink )
+	unsigned char                                      UnknownData06[ 0x4 ];                             		// 0x01C0 (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
+	struct FScriptDelegate                             __EventPartyJoinGameError__Delegate;              		// 0x01CC (0x0010) [0x0000000000400000]              ( CPF_NeedCtorLink )
+	unsigned char                                      UnknownData07[ 0x4 ];                             		// 0x01D0 (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
+	struct FScriptDelegate                             __EventPartyJoinGameSuccess__Delegate;            		// 0x01DC (0x0010) [0x0000000000400000]              ( CPF_NeedCtorLink )
+	unsigned char                                      UnknownData08[ 0x4 ];                             		// 0x01E0 (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
+	struct FScriptDelegate                             __EventPartyDestroyed__Delegate;                  		// 0x01EC (0x0010) [0x0000000000400000]              ( CPF_NeedCtorLink )
+	unsigned char                                      UnknownData09[ 0x4 ];                             		// 0x01F0 (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
+	struct FScriptDelegate                             __EventConfirmJoinGameMessage__Delegate;          		// 0x01FC (0x0010) [0x0000000000400000]              ( CPF_NeedCtorLink )
+	unsigned char                                      UnknownData10[ 0x4 ];                             		// 0x0200 (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
+	struct FScriptDelegate                             __EventLeaderLeftOnlineGame__Delegate;            		// 0x020C (0x0010) [0x0000000000400000]              ( CPF_NeedCtorLink )
+	unsigned char                                      UnknownData11[ 0x4 ];                             		// 0x0210 (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
+	struct FScriptDelegate                             __EventProcessingStatusChanged__Delegate;         		// 0x021C (0x0010) [0x0000000000400000]              ( CPF_NeedCtorLink )
+	unsigned char                                      UnknownData12[ 0x4 ];                             		// 0x0220 (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
+	struct FScriptDelegate                             __EventDisableCrossPlayChanged__Delegate;         		// 0x022C (0x0010) [0x0000000000400000]              ( CPF_NeedCtorLink )
+	unsigned char                                      UnknownData13[ 0x4 ];                             		// 0x0230 (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
+	struct FScriptDelegate                             __EventPlayerTradingChanged__Delegate;            		// 0x023C (0x0010) [0x0000000000400000]              ( CPF_NeedCtorLink )
+	unsigned char                                      UnknownData14[ 0x4 ];                             		// 0x0240 (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
+	struct FScriptDelegate                             __EventInviteToTrade__Delegate;                   		// 0x024C (0x0010) [0x0000000000400000]              ( CPF_NeedCtorLink )
+	unsigned char                                      UnknownData15[ 0x4 ];                             		// 0x0250 (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
+	struct FScriptDelegate                             __EventAcceptedInviteToTrade__Delegate;           		// 0x025C (0x0010) [0x0000000000400000]              ( CPF_NeedCtorLink )
+	unsigned char                                      UnknownData16[ 0x4 ];                             		// 0x0260 (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
+	struct FScriptDelegate                             __EventCloseInviteToTrade__Delegate;              		// 0x026C (0x0010) [0x0000000000400000]              ( CPF_NeedCtorLink )
+	unsigned char                                      UnknownData17[ 0x4 ];                             		// 0x0270 (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
+	struct FScriptDelegate                             __EventReadyToTrade__Delegate;                    		// 0x027C (0x0010) [0x0000000000400000]              ( CPF_NeedCtorLink )
+	unsigned char                                      UnknownData18[ 0x4 ];                             		// 0x0280 (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
+	struct FScriptDelegate                             __EventNotReadyToTrade__Delegate;                 		// 0x028C (0x0010) [0x0000000000400000]              ( CPF_NeedCtorLink )
+	unsigned char                                      UnknownData19[ 0x4 ];                             		// 0x0290 (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
+	struct FScriptDelegate                             __EventTradeReady__Delegate;                      		// 0x029C (0x0010) [0x0000000000400000]              ( CPF_NeedCtorLink )
+	unsigned char                                      UnknownData20[ 0x4 ];                             		// 0x02A0 (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
+	struct FScriptDelegate                             __EventAnotherInviteToTrade__Delegate;            		// 0x02AC (0x0010) [0x0000000000400000]              ( CPF_NeedCtorLink )
+	unsigned char                                      UnknownData21[ 0x4 ];                             		// 0x02B0 (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
+	struct FScriptDelegate                             __EventPlayerInMatchChanged__Delegate;            		// 0x02BC (0x0010) [0x0000000000400000]              ( CPF_NeedCtorLink )
+	unsigned char                                      UnknownData22[ 0x4 ];                             		// 0x02C0 (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
+	struct FScriptDelegate                             __EventPlayerIsCurrentlyTrading__Delegate;        		// 0x02CC (0x0010) [0x0000000000400000]              ( CPF_NeedCtorLink )
+	unsigned char                                      UnknownData23[ 0x4 ];                             		// 0x02D0 (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
 
 private:
 	static UClass* pClassPointer;
@@ -5699,7 +5740,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 47943 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 48040 ];
 
 		return pClassPointer;
 	};
@@ -5712,7 +5753,8 @@ public:
 	void HandleReadyToTrade ( class UOnlineMessageComponent_X* Component, class UObject* Message );
 	void ReadyToTrade ( unsigned long bReadyToTrade );
 	void SetPartyMessageHandlerTradeProductUpdate ( unsigned long bAddHandler );
-	void ClearTradingPlayer ( unsigned long bWasCanceled );
+	void ClearLocalTradingPlayer ( unsigned long bWasCanceled );
+	bool ClearTradingPlayer ( struct FUniqueNetId PartyMemberID );
 	void HandleAcceptInviteToTrade ( class UOnlineMessageComponent_X* Component, class UObject* Message );
 	bool CanAcceptTrade ( );
 	void AcceptInviteToTrade ( unsigned long bAccepted );
@@ -5722,7 +5764,6 @@ public:
 	void HandleInviteToTradeMessage ( class UOnlineMessageComponent_X* Component, class UPartyMessage_InviteToTrade_X* Message );
 	void InvitePlayerToTrade ( struct FUniqueNetId InMemberId );
 	bool IsPlayerTrading ( struct FUniqueNetId InMemberId );
-	void ClearAllPlayersTrading ( );
 	void SetPlayersTrading ( struct FUniqueNetId InMember1Id, struct FUniqueNetId InMember2Id, unsigned long bTrading );
 	struct FString GetMemberName ( struct FUniqueNetId InMemberId );
 	TArray< struct FUniqueNetId > GetOrderedPartyMemberIDs ( );
@@ -5734,23 +5775,7 @@ public:
 	struct FString GetPlayerRatingString ( struct FUniqueNetId PlayerID, int Playlist );
 	void OnPartyError ( class UError* Error );
 	void HandlePartyError ( struct FString Error );
-	void HandleRankedConfigChanged ( );
-	void UpdatePlaylistRestrictions ( );
-	struct FPlaylistSkillRestrictionInfo GetPlaylistSkillRestrictionInfo ( int PlaylistId );
-	bool IsPlaylistSkillRestricted ( int PlaylistId );
-	void HandleGroupSkillSynced ( class UOnlineGameSkillGroups_X* SkillObj, TArray< struct FUniqueNetId > PlayerIDs, class UError* Error );
-	void HandlePlayerSkillSynced ( class UOnlineGameSkill_X* SkillObj, struct FUniqueNetId PlayerID, class UError* Error );
-	float GetAverageSkill ( int Playlist );
-	float GetGroupSkill ( int Playlist );
-	float GetSkill ( int Playlist );
-	void SyncUpdatedSkills ( );
-	void SyncIndividualSkills ( );
-	void SyncGroupSkills ( );
-	void SyncSkills ( unsigned long bFromCache );
-	void SyncPlayerSkill ( struct FUniqueNetId MemberId );
-	void HandlePsyNetLogin ( );
 	void OnPartyChanged ( );
-	bool UseGroupMMR ( );
 	bool TryGetValueInt ( struct FString Key, TArray< struct FLobbyMetaData >* MetaData, int* Value );
 	bool PartyHasDisableCrossPlay ( );
 	void SetDisableCrossPlayForMember ( struct FUniqueNetId PartyMemberID, unsigned long bDisableCrossPlay );
@@ -5772,6 +5797,8 @@ public:
 	void HandlePsyNetLoginChanged ( class UOnlinePlayerAuthentication_X* Auth );
 	void HandleLocalPlayerLoginStatusChanged ( class UOnlinePlayer_X* Player );
 	void HandleLocalPlayerLeave ( class ULocalPlayer* Player );
+	void UpdatePartyMember ( class ULocalPlayer_X* Player );
+	void HandleOnlinePlayerNameChanged ( class UOnlinePlayer_X* Player );
 	void HandleLocalPlayerJoin ( class ULocalPlayer* Player );
 	void ProcessLocalPlayersMessage ( class UPartyMessage_LocalPlayers_X* Message );
 	void HandleLocalPlayers ( class UOnlineMessageComponent_X* Component, class UObject* ObjMessage );
@@ -5815,15 +5842,18 @@ public:
 	void BroadcastStateDelayed ( );
 	void BroadcastState ( );
 	void HandleLobbyMemberStatusUpdate ( int MemberIndex, int InstigatorIndex, struct FString Status, struct FActiveLobbyInfo* LobbyInfo );
+	void CancelJoinGameFromPartyDestroyed ( class UOnlineGameParty_X* PartyObject );
 	void HandlePartyJoinGameComplete ( unsigned long bSuccess, struct FString FailReason );
 	void HandleConfirmJoinGame ( struct FPartyJoinMatchSettings InSettings );
 	bool JoinFriend ( struct FUniqueNetId PartyMemberID );
 	bool WantsToFollowTheLeaderOutOfGame ( );
+	bool IsInSameMatch ( struct FUniqueNetId PartyMemberA, struct FUniqueNetId PartymemberB );
 	void HandlePartyJoinGame ( class UOnlineMessageComponent_X* Component, class UObject* MessageObject );
+	bool CanBroadcastMatchmakingMessages ( );
 	void BroadcastPartyServer ( );
 	void HandleServerReserved ( );
 	void HandleJoinGameComplete ( unsigned long bSuccess, struct FString FailReason );
-	struct FPartyMemberServer GetPartyMemberServer ( struct FPartyMemberServer* StructInitializer_AFEA523A4351CD49A3FDC7ACE4A2758E );
+	struct FPartyMemberServer GetPartyMemberServer ( struct FPartyMemberServer* StructInitializer_A14FF4584224245B374C708E05811EB6 );
 	void HandlePartyMemberJoinGame ( class UOnlineMessageComponent_X* Component, class UPartyMessage_PartyMemberJoinGame_X* MessageObject );
 	bool SetPartyMemberJoinGame ( struct FUniqueNetId* PlayerID, struct FPartyMemberServer* Server );
 	void BroadcastPartyMember ( struct FUniqueNetId PlayerID, struct FPartyMemberServer Server );
@@ -5834,17 +5864,18 @@ public:
 	bool IsPlayerInParty ( struct FUniqueNetId* PlayerID );
 	bool KickPlayer ( struct FUniqueNetId PlayerID, unsigned char Reason );
 	bool ShowInviteUI ( unsigned char LocalUserNum );
-	bool LeaveParty ( struct FString Reason );
+	bool LeaveParty ( struct FString Reason, struct FUniqueLobbyId* StructInitializer_0EEE7C704C4D292A57E0DCAF12ABFE47 );
 	bool IsInCurrentGame ( struct FUniqueNetId MemberId );
 	bool IsPartyLeader ( );
 	bool IsInParty ( );
 	void HandleJoinPartyPrivilegeCheck ( class UPrivilegeCheck_X* PrivilegeCheck );
-	void JoinParty ( int LocalPlayerNum, struct FUniqueLobbyId* InPartyId, struct FPendingInviteData* StructInitializer_32EDC2A84E21FDB3AB4576BFE281BDBC );
+	void JoinParty ( int LocalPlayerNum, struct FUniqueLobbyId* InPartyId, struct FPendingInviteData* StructInitializer_02282E2440F8609DC3FE3AA52C804E7A );
 	void CheckPartyTimeout ( );
 	void StartPartyTimeout ( );
 	void OnPartyCreated ( unsigned long bWasSuccessful, struct FString Error, struct FUniqueLobbyId* InPartyId );
 	bool CreatePartyInternal ( );
 	bool CreateParty ( int LocalPlayerNum, struct FScriptDelegate Handler );
+	class UOnlineLobbyInterface* GetCreatePartyPlatformInterface ( );
 	bool ShouldCreatePsyNetParty ( );
 	void SetLobbyInterfacePsyNet ( );
 	void HandlePlayerInvitedPsyNet ( unsigned long bAccepted, struct FUniqueLobbyId* InLobbyId, struct FUniqueNetId* FriendId );
@@ -5852,7 +5883,6 @@ public:
 	void HandlePlayerInvited ( unsigned long bAccepted, struct FUniqueLobbyId* InLobbyId, struct FUniqueNetId* FriendId );
 	void HandlePartySizeTracker ( class UOnlineGameParty_X* PartyObject );
 	void HandlePrimaryPlayerIdChanged ( class UOnlineGameAccount_X* InAccount, struct FUniqueNetId PlayerID );
-	void HandleInternetConnectionChanged ( unsigned long bConnected );
 	class UPartyMetrics_X* GetMetrics ( );
 	void SetLobbyInterface ( class UOnlineLobbyInterface* Lobby );
 	bool IsUsingPsyNetParty ( );
@@ -5868,7 +5898,6 @@ public:
 	void EventAcceptedInviteToTrade ( class UOnlineGameParty_X* PartyObject );
 	void EventInviteToTrade ( class UOnlineGameParty_X* PartyObject, struct FUniqueNetId InMemberId );
 	void EventPlayerTradingChanged ( class UOnlineGameParty_X* PartyObject, struct FUniqueNetId InMemberId, unsigned long bIsPlayerTrading );
-	void EventPlaylistSkillRestrictionChange ( class UOnlineGameParty_X* PartyObject );
 	void EventDisableCrossPlayChanged ( class UOnlineGameParty_X* PartyObject );
 	void EventProcessingStatusChanged ( class UOnlineGameParty_X* PartyObject );
 	void EventLeaderLeftOnlineGame ( class UOnlineGameParty_X* PartyObject );
@@ -5906,7 +5935,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 47946 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 48043 ];
 
 		return pClassPointer;
 	};
@@ -5914,6 +5943,7 @@ public:
 	void PrintDebugInfo ( class UDebugDrawer* Drawer );
 	void OnMainMenuOpened ( );
 	int GetNumLocalPlayers ( );
+	void SendUpdatePlayerCurrentGameRPC ( );
 	void SendUpdatePlayerCurrentGameRequest ( );
 	void UpdateCurrentGame ( );
 	void ClearCurrentPlaylist ( );
@@ -5944,7 +5974,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 47975 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 48072 ];
 
 		return pClassPointer;
 	};
@@ -5970,7 +6000,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 47983 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 48080 ];
 
 		return pClassPointer;
 	};
@@ -6005,7 +6035,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 48006 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 48103 ];
 
 		return pClassPointer;
 	};
@@ -6017,7 +6047,7 @@ public:
 	void HandleSkillsUpdateFailed ( class URPC_X* RPC );
 	void SetPlayerSeasonReward ( struct FPlayerSeasonRewardProgress Reward );
 	void ReplicateSeasonReward ( struct FPlayerSeasonRewardProgress Reward );
-	void HandleSkillsUpdated ( class URPC_X* RPC, struct FPlayerSeasonRewardProgress* StructInitializer_F54BD0A74488A7A36CD0F8BFB968D382 );
+	void HandleSkillsUpdated ( class URPC_X* RPC, struct FPlayerSeasonRewardProgress* StructInitializer_8C606A674EBD0B00535960A884487B9A );
 	void SubmitMatch ( class UMatchRecorder_X* MatchRecorder, struct FString MatchGUID );
 	void Clear ( );
 	float GetMMR ( float Mu, float Sigma );
@@ -6053,7 +6083,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 48015 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 48112 ];
 
 		return pClassPointer;
 	};
@@ -6090,7 +6120,9 @@ public:
 	unsigned long                                      bSolo : 1;                                        		// 0x0058 (0x0004) [0x0000000000000001] [0x00000004] ( CPF_Edit )
 	unsigned long                                      bNew : 1;                                         		// 0x0058 (0x0004) [0x0000000000000001] [0x00000008] ( CPF_Edit )
 	unsigned long                                      bApplyQuitPenalty : 1;                            		// 0x0058 (0x0004) [0x0000000000000001] [0x00000010] ( CPF_Edit )
-	unsigned long                                      bHidden : 1;                                      		// 0x0058 (0x0004) [0x0000000000000001] [0x00000020] ( CPF_Edit )
+	unsigned long                                      bAllowClubs : 1;                                  		// 0x0058 (0x0004) [0x0000000000000001] [0x00000020] ( CPF_Edit )
+	unsigned long                                      bHidden : 1;                                      		// 0x0058 (0x0004) [0x0000000000000001] [0x00000040] ( CPF_Edit )
+	unsigned long                                      bPlayersVSBots : 1;                               		// 0x0058 (0x0004) [0x0000000000000001] [0x00000080] ( CPF_Edit )
 	int                                                PlaylistId;                                       		// 0x005C (0x0004) [0x0000000000000001]              ( CPF_Edit )
 	TArray< class UPresetMutators_X* >                 PresetMutators;                                   		// 0x0060 (0x000C) [0x0000000000400001]              ( CPF_Edit | CPF_NeedCtorLink )
 	struct FName                                       MapName;                                          		// 0x006C (0x0008) [0x0000000000000001]              ( CPF_Edit )
@@ -6103,7 +6135,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 48019 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 48116 ];
 
 		return pClassPointer;
 	};
@@ -6132,7 +6164,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 48142 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 48239 ];
 
 		return pClassPointer;
 	};
@@ -6160,7 +6192,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 48222 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 48319 ];
 
 		return pClassPointer;
 	};
@@ -6196,7 +6228,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 48230 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 48327 ];
 
 		return pClassPointer;
 	};
@@ -6230,7 +6262,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 48267 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 48364 ];
 
 		return pClassPointer;
 	};
@@ -6259,7 +6291,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 48335 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 48432 ];
 
 		return pClassPointer;
 	};
@@ -6287,7 +6319,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 48465 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 48562 ];
 
 		return pClassPointer;
 	};
@@ -6316,7 +6348,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 48492 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 48589 ];
 
 		return pClassPointer;
 	};
@@ -6326,13 +6358,13 @@ public:
 UClass* UCDN_X::pClassPointer = NULL;
 
 // Class ProjectX.HUD_X
-// 0x000C (0x0490 - 0x0484)
+// 0x000C (0x04A4 - 0x0498)
 class AHUD_X : public AHUD
 {
 public:
-	class UObject*                                     ShowDebugObject;                                  		// 0x0484 (0x0004) [0x0000000000002000]              ( CPF_Transient )
-	class UDebugDrawer_X*                              DebugDrawer;                                      		// 0x0488 (0x0004) [0x0000000000002000]              ( CPF_Transient )
-	class UTexture*                                    DebugTexture;                                     		// 0x048C (0x0004) [0x0000000000002000]              ( CPF_Transient )
+	class UObject*                                     ShowDebugObject;                                  		// 0x0498 (0x0004) [0x0000000000002000]              ( CPF_Transient )
+	class UDebugDrawer_X*                              DebugDrawer;                                      		// 0x049C (0x0004) [0x0000000000002000]              ( CPF_Transient )
+	class UTexture*                                    DebugTexture;                                     		// 0x04A0 (0x0004) [0x0000000000002000]              ( CPF_Transient )
 
 private:
 	static UClass* pClassPointer;
@@ -6341,7 +6373,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 48525 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 48611 ];
 
 		return pClassPointer;
 	};
@@ -6349,6 +6381,7 @@ public:
 	void SetShowDebugObject ( class UObject* inObj );
 	void ShowDebugInfo ( float* out_YL, float* out_YPos );
 	void ShowDebug ( struct FName DebugType );
+	void DebugCategory ( struct FName DebugType );
 	void DebugCategorySwitch ( unsigned long bForward );
 	void DrawPauseScreen ( );
 	bool ShouldShowConsoleMessage ( struct FConsoleMessage InConsoleMessage );
@@ -6375,7 +6408,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 48528 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 48614 ];
 
 		return pClassPointer;
 	};
@@ -6386,6 +6419,33 @@ public:
 };
 
 UClass* UOnlineImageDownloaderWeb_X::pClassPointer = NULL;
+
+// Class ProjectX.__CheatManager_X__RandomSleep
+// 0x0010 (0x004C - 0x003C)
+class U__CheatManager_X__RandomSleep : public UObject
+{
+public:
+	float                                              MinDelay;                                         		// 0x003C (0x0004) [0x0000000000000000]              
+	float                                              MaxDelay;                                         		// 0x0040 (0x0004) [0x0000000000000000]              
+	float                                              MinSleep;                                         		// 0x0044 (0x0004) [0x0000000000000000]              
+	float                                              MaxSleep;                                         		// 0x0048 (0x0004) [0x0000000000000000]              
+
+private:
+	static UClass* pClassPointer;
+
+public:
+	static UClass* StaticClass()
+	{
+		if ( ! pClassPointer )
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 48621 ];
+
+		return pClassPointer;
+	};
+
+	void __CheatManager_X__RandomSleep ( );
+};
+
+UClass* U__CheatManager_X__RandomSleep::pClassPointer = NULL;
 
 // Class ProjectX.ITakeDamage_X
 // 0x0000 (0x003C - 0x003C)
@@ -6400,7 +6460,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 48592 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 48692 ];
 
 		return pClassPointer;
 	};
@@ -6431,7 +6491,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 48602 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 48702 ];
 
 		return pClassPointer;
 	};
@@ -6454,13 +6514,13 @@ public:
 UClass* UDebugDrawer_X::pClassPointer = NULL;
 
 // Class ProjectX.OnlineGameLanServer_X
-// 0x00AC (0x0194 - 0x00E8)
+// 0x00AC (0x0190 - 0x00E4)
 class UOnlineGameLanServer_X : public UOnlineGameServer_X
 {
 public:
-	class UOnlineGameLanReservations_X*                Reservations;                                     		// 0x00E8 (0x0004) [0x0000000000000001]              ( CPF_Edit )
-	struct FCustomMatchSettings                        CustomMatch;                                      		// 0x00EC (0x0060) [0x0000000000402000]              ( CPF_Transient | CPF_NeedCtorLink )
-	struct FUniqueNetId                                CustomMatchOwner;                                 		// 0x014C (0x0048) [0x0000000000002000]              ( CPF_Transient )
+	class UOnlineGameLanReservations_X*                Reservations;                                     		// 0x00E4 (0x0004) [0x0000000000000001]              ( CPF_Edit )
+	struct FCustomMatchSettings                        CustomMatch;                                      		// 0x00E8 (0x0060) [0x0000000000402000]              ( CPF_Transient | CPF_NeedCtorLink )
+	struct FUniqueNetId                                CustomMatchOwner;                                 		// 0x0148 (0x0048) [0x0000000000002000]              ( CPF_Transient )
 
 private:
 	static UClass* pClassPointer;
@@ -6469,14 +6529,14 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 48685 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 48788 ];
 
 		return pClassPointer;
 	};
 
 	void StartReservationTimeout ( );
 	void PlayerLoggedOut ( class APlayerReplicationInfo* PRI );
-	bool AllowSplitscreenJoin ( class APlayerReplicationInfo* PrimaryPRI, struct FUniqueNetId PlayerID, struct FString PlayerName );
+	bool AllowSplitscreenJoin ( class APlayerReplicationInfo* PrimaryPRI, struct FUniqueNetId PlayerID, struct FString PlayerName, struct FString* Error );
 	void PlayerLoggedIn ( class APlayerReplicationInfo* PRI );
 	void AllowPlayerLogin ( struct FString Options, struct FUniqueNetId PlayerID, struct FString* ErrorMessage );
 	void TravelToMap ( struct FString ServerCommand );
@@ -6506,14 +6566,14 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 48688 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 48791 ];
 
 		return pClassPointer;
 	};
 
 	struct FUniqueNetId GetCustomMatchOwner ( );
 	struct FCustomMatchSettings GetCustomMatchSettings ( );
-	bool AllowSplitscreenJoin ( class APlayerReplicationInfo* PrimaryPRI, struct FUniqueNetId PlayerID, struct FString PlayerName );
+	bool AllowSplitscreenJoin ( class APlayerReplicationInfo* PrimaryPRI, struct FUniqueNetId PlayerID, struct FString PlayerName, struct FString* Error );
 	void PlayerLoggedOut ( class APlayerReplicationInfo* PRI );
 	void PlayerLoggedIn ( class APlayerReplicationInfo* PRI );
 	void AllowPlayerLogin ( struct FString Options, struct FUniqueNetId PlayerID, struct FString* ErrorMessage );
@@ -6522,13 +6582,13 @@ public:
 UClass* UIOnlineGameHost_X::pClassPointer = NULL;
 
 // Class ProjectX.Explosion_X
-// 0x000C (0x0208 - 0x01FC)
+// 0x000C (0x021C - 0x0210)
 class AExplosion_X : public AActor
 {
 public:
-	class UExplosionComponent_X*                       ExplosionComponent;                               		// 0x01FC (0x0004) [0x0000000004080009]              ( CPF_Edit | CPF_ExportObject | CPF_Component | CPF_EditInline )
-	class AFXActor_X*                                  FXActorArchetype;                                 		// 0x0200 (0x0004) [0x0000000000000021]              ( CPF_Edit | CPF_Net )
-	class AFXActor_X*                                  FXActor;                                          		// 0x0204 (0x0004) [0x0000000000002000]              ( CPF_Transient )
+	class UExplosionComponent_X*                       ExplosionComponent;                               		// 0x0210 (0x0004) [0x0000000004080009]              ( CPF_Edit | CPF_ExportObject | CPF_Component | CPF_EditInline )
+	class AFXActor_X*                                  FXActorArchetype;                                 		// 0x0214 (0x0004) [0x0000000000000021]              ( CPF_Edit | CPF_Net )
+	class AFXActor_X*                                  FXActor;                                          		// 0x0218 (0x0004) [0x0000000000002000]              ( CPF_Transient )
 
 private:
 	static UClass* pClassPointer;
@@ -6537,7 +6597,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 49067 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 49187 ];
 
 		return pClassPointer;
 	};
@@ -6567,7 +6627,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 49275 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 49370 ];
 
 		return pClassPointer;
 	};
@@ -6577,7 +6637,7 @@ public:
 UClass* USeqAct_TriggerFXActor_X::pClassPointer = NULL;
 
 // Class ProjectX.GameInfo_MapProfiler_X
-// 0x0000 (0x0410 - 0x0410)
+// 0x0000 (0x0424 - 0x0424)
 class AGameInfo_MapProfiler_X : public AGameInfo_X
 {
 public:
@@ -6589,7 +6649,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 49393 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 49500 ];
 
 		return pClassPointer;
 	};
@@ -6617,7 +6677,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 49443 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 49550 ];
 
 		return pClassPointer;
 	};
@@ -6641,6 +6701,8 @@ public:
 	unsigned long                                      bHidden : 1;                                      		// 0x005C (0x0004) [0x0000000000000001] [0x00000008] ( CPF_Edit )
 	unsigned long                                      bNew : 1;                                         		// 0x005C (0x0004) [0x0000000000000001] [0x00000010] ( CPF_Edit )
 	unsigned long                                      bApplyQuitPenalty : 1;                            		// 0x005C (0x0004) [0x0000000000000001] [0x00000020] ( CPF_Edit )
+	unsigned long                                      bAllowClubs : 1;                                  		// 0x005C (0x0004) [0x0000000000000001] [0x00000040] ( CPF_Edit )
+	unsigned long                                      bPlayersVSBots : 1;                               		// 0x005C (0x0004) [0x0000000000000001] [0x00000080] ( CPF_Edit )
 	TArray< class UPresetMutators_X* >                 PresetMutators;                                   		// 0x0060 (0x000C) [0x0000000000400001]              ( CPF_Edit | CPF_NeedCtorLink )
 	struct FName                                       MapName;                                          		// 0x006C (0x0008) [0x0000000000000001]              ( CPF_Edit )
 	struct FString                                     ServerCommand;                                    		// 0x0074 (0x000C) [0x0000000000400001]              ( CPF_Edit | CPF_NeedCtorLink )
@@ -6652,7 +6714,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 49469 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 49577 ];
 
 		return pClassPointer;
 	};
@@ -6662,7 +6724,7 @@ public:
 UClass* UPlaylistSettings_X::pClassPointer = NULL;
 
 // Class ProjectX.OnlineGameJoinGame_X
-// 0x0234 (0x0294 - 0x0060)
+// 0x0230 (0x0290 - 0x0060)
 class UOnlineGameJoinGame_X : public UOnline_X
 {
 public:
@@ -6693,26 +6755,25 @@ public:
 	struct FString                                     PendingBugItMessage;                              		// 0x017C (0x000C) [0x0000000000402000]              ( CPF_Transient | CPF_NeedCtorLink )
 	TArray< class UPlayer* >                           JoinedPlayers;                                    		// 0x0188 (0x000C) [0x0000000000402000]              ( CPF_Transient | CPF_NeedCtorLink )
 	struct FCustomMatchSettings                        CustomMatch;                                      		// 0x0194 (0x0060) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	int                                                ReservationAttemptsForOneServer;                  		// 0x01F4 (0x0004) [0x0000000000002000]              ( CPF_Transient )
-	TArray< class URPC_GenerateKeys_X* >               GenerateKeysRPCs;                                 		// 0x01F8 (0x000C) [0x0000000000402000]              ( CPF_Transient | CPF_NeedCtorLink )
-	struct FScriptDelegate                             __EventJoinGameComplete__Delegate;                		// 0x0204 (0x0010) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	unsigned char                                      UnknownData00[ 0x4 ];                             		// 0x0208 (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
-	struct FScriptDelegate                             __EventStatusUpdate__Delegate;                    		// 0x0214 (0x0010) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	unsigned char                                      UnknownData01[ 0x4 ];                             		// 0x0218 (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
-	struct FScriptDelegate                             __EventCountdownStarted__Delegate;                		// 0x0224 (0x0010) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	unsigned char                                      UnknownData02[ 0x4 ];                             		// 0x0228 (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
-	struct FScriptDelegate                             __EventCountdownEnded__Delegate;                  		// 0x0234 (0x0010) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	unsigned char                                      UnknownData03[ 0x4 ];                             		// 0x0238 (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
-	struct FScriptDelegate                             __EventServerBeaconAddressChanged__Delegate;      		// 0x0244 (0x0010) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	unsigned char                                      UnknownData04[ 0x4 ];                             		// 0x0248 (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
-	struct FScriptDelegate                             __EventServerReserved__Delegate;                  		// 0x0254 (0x0010) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	unsigned char                                      UnknownData05[ 0x4 ];                             		// 0x0258 (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
-	struct FScriptDelegate                             __EventPasswordRequired__Delegate;                		// 0x0264 (0x0010) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	unsigned char                                      UnknownData06[ 0x4 ];                             		// 0x0268 (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
-	struct FScriptDelegate                             __EventJoiningGame__Delegate;                     		// 0x0274 (0x0010) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	unsigned char                                      UnknownData07[ 0x4 ];                             		// 0x0278 (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
-	struct FScriptDelegate                             __EventMaxPlayersChanged__Delegate;               		// 0x0284 (0x0010) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	unsigned char                                      UnknownData08[ 0x4 ];                             		// 0x0288 (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
+	TArray< class URPC_GenerateKeys_X* >               GenerateKeysRPCs;                                 		// 0x01F4 (0x000C) [0x0000000000402000]              ( CPF_Transient | CPF_NeedCtorLink )
+	struct FScriptDelegate                             __EventJoinGameComplete__Delegate;                		// 0x0200 (0x0010) [0x0000000000400000]              ( CPF_NeedCtorLink )
+	unsigned char                                      UnknownData00[ 0x4 ];                             		// 0x0204 (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
+	struct FScriptDelegate                             __EventStatusUpdate__Delegate;                    		// 0x0210 (0x0010) [0x0000000000400000]              ( CPF_NeedCtorLink )
+	unsigned char                                      UnknownData01[ 0x4 ];                             		// 0x0214 (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
+	struct FScriptDelegate                             __EventCountdownStarted__Delegate;                		// 0x0220 (0x0010) [0x0000000000400000]              ( CPF_NeedCtorLink )
+	unsigned char                                      UnknownData02[ 0x4 ];                             		// 0x0224 (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
+	struct FScriptDelegate                             __EventCountdownEnded__Delegate;                  		// 0x0230 (0x0010) [0x0000000000400000]              ( CPF_NeedCtorLink )
+	unsigned char                                      UnknownData03[ 0x4 ];                             		// 0x0234 (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
+	struct FScriptDelegate                             __EventServerBeaconAddressChanged__Delegate;      		// 0x0240 (0x0010) [0x0000000000400000]              ( CPF_NeedCtorLink )
+	unsigned char                                      UnknownData04[ 0x4 ];                             		// 0x0244 (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
+	struct FScriptDelegate                             __EventServerReserved__Delegate;                  		// 0x0250 (0x0010) [0x0000000000400000]              ( CPF_NeedCtorLink )
+	unsigned char                                      UnknownData05[ 0x4 ];                             		// 0x0254 (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
+	struct FScriptDelegate                             __EventPasswordRequired__Delegate;                		// 0x0260 (0x0010) [0x0000000000400000]              ( CPF_NeedCtorLink )
+	unsigned char                                      UnknownData06[ 0x4 ];                             		// 0x0264 (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
+	struct FScriptDelegate                             __EventJoiningGame__Delegate;                     		// 0x0270 (0x0010) [0x0000000000400000]              ( CPF_NeedCtorLink )
+	unsigned char                                      UnknownData07[ 0x4 ];                             		// 0x0274 (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
+	struct FScriptDelegate                             __EventMaxPlayersChanged__Delegate;               		// 0x0280 (0x0010) [0x0000000000400000]              ( CPF_NeedCtorLink )
+	unsigned char                                      UnknownData08[ 0x4 ];                             		// 0x0284 (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
 
 private:
 	static UClass* pClassPointer;
@@ -6721,7 +6782,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 49544 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 49653 ];
 
 		return pClassPointer;
 	};
@@ -6776,7 +6837,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 49779 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 49888 ];
 
 		return pClassPointer;
 	};
@@ -6789,6 +6850,7 @@ public:
 	class UGFxModal_X* AddCancelButton ( struct FString LocalizedText, struct FScriptDelegate OnClick );
 	class UGFxModal_X* SetCancellable ( unsigned long bCancellable );
 	class UGFxModal_X* SetDefaultSelectedButtonIndex ( int buttonIndex );
+	class UGFxModal_X* SetIcon ( struct FString IconName );
 	class UGFxModal_X* SetBody ( struct FString LocalizedText );
 	class UGFxModal_X* SetTitle ( struct FString LocalizedText );
 	void SetGFxObject ( class UGFxObject* Obj );
@@ -6799,29 +6861,29 @@ public:
 UClass* UGFxModal_X::pClassPointer = NULL;
 
 // Class ProjectX.GRI_X
-// 0x0340 (0x058C - 0x024C)
+// 0x0340 (0x05A0 - 0x0260)
 class AGRI_X : public AGameReplicationInfo
 {
 public:
-	int                                                ReplicatedGamePlaylist;                           		// 0x024C (0x0004) [0x0000000000002020]              ( CPF_Net | CPF_Transient )
-	int                                                ReplicatedGameMutatorIndex;                       		// 0x0250 (0x0004) [0x0000000000002020]              ( CPF_Net | CPF_Transient )
-	struct FReplicatedReservationData                  Reservations[ 0x8 ];                              		// 0x0254 (0x02C0) [0x0000000000402020]              ( CPF_Net | CPF_Transient | CPF_NeedCtorLink )
-	unsigned char                                      UnknownData00[ 0x8 ];                             		// 0x0514 (0x0008) UNKNOWN PROPERTY: QWordProperty ProjectX.GRI_X.GameServerID
-	unsigned long                                      bGameStarted : 1;                                 		// 0x051C (0x0004) [0x0000000000002020] [0x00000001] ( CPF_Net | CPF_Transient )
-	unsigned long                                      bGameEnded : 1;                                   		// 0x051C (0x0004) [0x0000000000002000] [0x00000002] ( CPF_Transient )
-	struct FString                                     MatchGUID;                                        		// 0x0520 (0x000C) [0x0000000000400020]              ( CPF_Net | CPF_NeedCtorLink )
-	struct FScriptDelegate                             __EventSpawned__Delegate;                         		// 0x052C (0x0010) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	unsigned char                                      UnknownData01[ 0x4 ];                             		// 0x0530 (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
-	struct FScriptDelegate                             __EventGameDataSelected__Delegate;                		// 0x053C (0x0010) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	unsigned char                                      UnknownData02[ 0x4 ];                             		// 0x0540 (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
-	struct FScriptDelegate                             __EventReservationsUpdated__Delegate;             		// 0x054C (0x0010) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	unsigned char                                      UnknownData03[ 0x4 ];                             		// 0x0550 (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
-	struct FScriptDelegate                             __EventServerNameChanged__Delegate;               		// 0x055C (0x0010) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	unsigned char                                      UnknownData04[ 0x4 ];                             		// 0x0560 (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
-	struct FScriptDelegate                             __EventGameStarted__Delegate;                     		// 0x056C (0x0010) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	unsigned char                                      UnknownData05[ 0x4 ];                             		// 0x0570 (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
-	struct FScriptDelegate                             __EventMatchGUIDChanged__Delegate;                		// 0x057C (0x0010) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	unsigned char                                      UnknownData06[ 0x4 ];                             		// 0x0580 (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
+	int                                                ReplicatedGamePlaylist;                           		// 0x0260 (0x0004) [0x0000000000002020]              ( CPF_Net | CPF_Transient )
+	int                                                ReplicatedGameMutatorIndex;                       		// 0x0264 (0x0004) [0x0000000000002020]              ( CPF_Net | CPF_Transient )
+	struct FReplicatedReservationData                  Reservations[ 0x8 ];                              		// 0x0268 (0x02C0) [0x0000000000402020]              ( CPF_Net | CPF_Transient | CPF_NeedCtorLink )
+	unsigned char                                      UnknownData00[ 0x8 ];                             		// 0x0528 (0x0008) UNKNOWN PROPERTY: QWordProperty ProjectX.GRI_X.GameServerID
+	unsigned long                                      bGameStarted : 1;                                 		// 0x0530 (0x0004) [0x0000000000002020] [0x00000001] ( CPF_Net | CPF_Transient )
+	unsigned long                                      bGameEnded : 1;                                   		// 0x0530 (0x0004) [0x0000000000002000] [0x00000002] ( CPF_Transient )
+	struct FString                                     MatchGUID;                                        		// 0x0534 (0x000C) [0x0000000000400020]              ( CPF_Net | CPF_NeedCtorLink )
+	struct FScriptDelegate                             __EventSpawned__Delegate;                         		// 0x0540 (0x0010) [0x0000000000400000]              ( CPF_NeedCtorLink )
+	unsigned char                                      UnknownData01[ 0x4 ];                             		// 0x0544 (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
+	struct FScriptDelegate                             __EventGameDataSelected__Delegate;                		// 0x0550 (0x0010) [0x0000000000400000]              ( CPF_NeedCtorLink )
+	unsigned char                                      UnknownData02[ 0x4 ];                             		// 0x0554 (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
+	struct FScriptDelegate                             __EventReservationsUpdated__Delegate;             		// 0x0560 (0x0010) [0x0000000000400000]              ( CPF_NeedCtorLink )
+	unsigned char                                      UnknownData03[ 0x4 ];                             		// 0x0564 (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
+	struct FScriptDelegate                             __EventServerNameChanged__Delegate;               		// 0x0570 (0x0010) [0x0000000000400000]              ( CPF_NeedCtorLink )
+	unsigned char                                      UnknownData04[ 0x4 ];                             		// 0x0574 (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
+	struct FScriptDelegate                             __EventGameStarted__Delegate;                     		// 0x0580 (0x0010) [0x0000000000400000]              ( CPF_NeedCtorLink )
+	unsigned char                                      UnknownData05[ 0x4 ];                             		// 0x0584 (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
+	struct FScriptDelegate                             __EventMatchGUIDChanged__Delegate;                		// 0x0590 (0x0010) [0x0000000000400000]              ( CPF_NeedCtorLink )
+	unsigned char                                      UnknownData06[ 0x4 ];                             		// 0x0594 (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
 
 private:
 	static UClass* pClassPointer;
@@ -6830,7 +6892,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 49985 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 50097 ];
 
 		return pClassPointer;
 	};
@@ -6848,12 +6910,13 @@ public:
 	bool HasSelectedGameData ( );
 	void SetGameStarted ( );
 	void SetOfflineGameData ( struct FName PlaylistName );
+	void NotifyOnGameDataSelected ( struct FScriptDelegate Callback );
 	void SetGameData ( int NewPlaylistID, int MutatorIndex );
 	void HandleGamePlaylistSet ( class UOnlineGameDedicatedServer_X* DedicatedServer );
 	void OnReservationsUpdated ( );
-	void SetReservations ( TArray< struct FReplicatedReservationData > InReservations, struct FReplicatedReservationData* StructInitializer_70587EC84232C343FB7A2CA95225903D );
-	struct FReplicatedReservationData ConvertReservation ( struct FReservationData Data, struct FReplicatedReservationData* StructInitializer_5F7AB1F34899F2B001AE2DB5A3C6009C );
-	void UpdateReservations ( TArray< struct FReplicatedReservationData >* MapLocal_57BFC85444E8DD0D05872CBA57A7782C );
+	void SetReservations ( TArray< struct FReplicatedReservationData > InReservations, struct FReplicatedReservationData* StructInitializer_696813BE4D9ED57B95A60BA1A5AE29D0 );
+	struct FReplicatedReservationData ConvertReservation ( struct FReservationData Data, struct FReplicatedReservationData* StructInitializer_486DFEB94C5AB94536757BAC3AE09B1F );
+	void UpdateReservations ( TArray< struct FReplicatedReservationData >* MapLocal_E8CA046A4E7449D53641C4B1782469C2 );
 	void eventReplicatedEvent ( struct FName VarName );
 	void eventPostBeginPlay ( );
 	void EventMatchGUIDChanged ( class AGRI_X* GRI );
@@ -6880,7 +6943,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 50223 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 50340 ];
 
 		return pClassPointer;
 	};
@@ -6907,7 +6970,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 50231 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 50348 ];
 
 		return pClassPointer;
 	};
@@ -6935,7 +6998,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 50245 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 50362 ];
 
 		return pClassPointer;
 	};
@@ -6961,7 +7024,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 50261 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 50378 ];
 
 		return pClassPointer;
 	};
@@ -6983,7 +7046,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 50309 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 50427 ];
 
 		return pClassPointer;
 	};
@@ -7016,7 +7079,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 50311 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 50429 ];
 
 		return pClassPointer;
 	};
@@ -7061,7 +7124,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 50474 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 50592 ];
 
 		return pClassPointer;
 	};
@@ -7098,7 +7161,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 50484 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 50600 ];
 
 		return pClassPointer;
 	};
@@ -7128,7 +7191,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 50485 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 50601 ];
 
 		return pClassPointer;
 	};
@@ -7163,7 +7226,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 50490 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 50606 ];
 
 		return pClassPointer;
 	};
@@ -7184,50 +7247,6 @@ public:
 
 UClass* UOnlineGameWordFilter_X::pClassPointer = NULL;
 
-// Class ProjectX.OnlineGameSkillGroups_X
-// 0x0040 (0x00A0 - 0x0060)
-class UOnlineGameSkillGroups_X : public UOnline_X
-{
-public:
-	TArray< struct FGroupSkillSyncRequest >            SyncRequests;                                     		// 0x0060 (0x000C) [0x0000000000402000]              ( CPF_Transient | CPF_NeedCtorLink )
-	TArray< struct FUniqueNetId >                      PlayerIDMap;                                      		// 0x006C (0x000C) [0x0000000000402000]              ( CPF_Transient | CPF_NeedCtorLink )
-	TArray< struct FPlayerGroup >                      Groups;                                           		// 0x0078 (0x000C) [0x0000000000402000]              ( CPF_Transient | CPF_NeedCtorLink )
-	TArray< struct FCachedGroupSkillRating >           GroupRatings;                                     		// 0x0084 (0x000C) [0x0000000000402000]              ( CPF_Transient | CPF_NeedCtorLink )
-	struct FScriptDelegate                             __EventGroupSkillSynced__Delegate;                		// 0x0090 (0x0010) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	unsigned char                                      UnknownData00[ 0x4 ];                             		// 0x0094 (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 50535 ];
-
-		return pClassPointer;
-	};
-
-	struct FUniqueNetId __OnlineGameSkillGroups_X__ReverseMapPlayerIDs ( int PlayerIdx );
-	void HandleSkillsUpdateFailed ( class URPC_X* RPCObject );
-	void HandleSkillsUpdated ( class URPC_X* RPCObject );
-	void SubmitMatch ( class UMatchRecorder_X* MatchRecorder );
-	TArray< struct FUniqueNetId > ReverseMapPlayerIDs ( TArray< int > PlayerIndexes, TArray< struct FUniqueNetId >* MapLocal_499332D543E1F2705F20B7B08B077C92 );
-	int HashPlayerIndexes ( TArray< int >* PlayerIndexes );
-	int MapPlayerID ( struct FUniqueNetId PlayerID );
-	TArray< int > MapPlayerIDs ( TArray< struct FUniqueNetId >* PlayerIDs, TArray< int >* MapLocal_9BDDE8DB4751D1FC7EABC7B6B7C43674, TArray< int >* SortLocal_937217404315D232C25A87830F1E0D69 );
-	int GetOrCreatePlayerGroup ( TArray< struct FUniqueNetId > Players );
-	int GetOrCreateGroupRating ( TArray< struct FUniqueNetId > Players, int Playlist );
-	struct FTierSkillRating GetGroupSkillRating ( TArray< struct FUniqueNetId > Players, int Playlist );
-	void HandleSyncComplete ( class URPC_X* RPCObject );
-	void SyncGroupSkill ( TArray< struct FUniqueNetId > Players, struct FScriptDelegate Callback );
-	void CacheSkill ( TArray< struct FUniqueNetId > Players, int Playlist, float Mu, float Sigma, int Tier );
-	void PreCacheSkill ( TArray< struct FUniqueNetId > Players, int Playlist, float Mu, float Sigma, int Tier );
-	void EventGroupSkillSynced ( class UOnlineGameSkillGroups_X* Skill, TArray< struct FUniqueNetId > PlayerIDs, class UError* Error );
-};
-
-UClass* UOnlineGameSkillGroups_X::pClassPointer = NULL;
-
 // Class ProjectX.OnlineGameWordFilterProcessor_X
 // 0x0020 (0x0080 - 0x0060)
 class UOnlineGameWordFilterProcessor_X : public UOnline_X
@@ -7245,7 +7264,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 50546 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 50662 ];
 
 		return pClassPointer;
 	};
@@ -7278,7 +7297,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 50548 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 50664 ];
 
 		return pClassPointer;
 	};
@@ -7328,7 +7347,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 50550 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 50666 ];
 
 		return pClassPointer;
 	};
@@ -7357,7 +7376,7 @@ public:
 UClass* UOnlineGameRegions_X::pClassPointer = NULL;
 
 // Class ProjectX.OnlineGameInvite_X
-// 0x00C4 (0x0124 - 0x0060)
+// 0x00D4 (0x0134 - 0x0060)
 class UOnlineGameInvite_X : public UOnline_X
 {
 public:
@@ -7376,6 +7395,8 @@ public:
 	unsigned char                                      UnknownData02[ 0x4 ];                             		// 0x0108 (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
 	struct FScriptDelegate                             __EventPasswordRequired__Delegate;                		// 0x0114 (0x0010) [0x0000000000400000]              ( CPF_NeedCtorLink )
 	unsigned char                                      UnknownData03[ 0x4 ];                             		// 0x0118 (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
+	struct FScriptDelegate                             __EventPsyNetPartyInviteAccepted__Delegate;       		// 0x0124 (0x0010) [0x0000000000400000]              ( CPF_NeedCtorLink )
+	unsigned char                                      UnknownData04[ 0x4 ];                             		// 0x0128 (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
 
 private:
 	static UClass* pClassPointer;
@@ -7384,7 +7405,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 50552 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 50668 ];
 
 		return pClassPointer;
 	};
@@ -7393,6 +7414,7 @@ public:
 	void JoinGameInviteGame ( struct FJoinMatchSettings Settings );
 	void OnGameInviteAccepted ( struct FString ErrorString, struct FOnlineGameSearchResult* InviteResult );
 	void OnInit ( );
+	void EventPsyNetPartyInviteAccepted ( struct FString PartyID );
 	void EventPasswordRequired ( );
 	void EventConfirmationRequired ( struct FName ConfirmationReason );
 	void EventGameInviteComplete ( unsigned long bSuccess, struct FString FailReason );
@@ -7416,7 +7438,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 50554 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 50670 ];
 
 		return pClassPointer;
 	};
@@ -7447,7 +7469,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 50556 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 50672 ];
 
 		return pClassPointer;
 	};
@@ -7477,7 +7499,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 50558 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 50674 ];
 
 		return pClassPointer;
 	};
@@ -7519,7 +7541,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 50561 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 50677 ];
 
 		return pClassPointer;
 	};
@@ -7576,7 +7598,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 50563 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 50679 ];
 
 		return pClassPointer;
 	};
@@ -7622,7 +7644,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 50566 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 50682 ];
 
 		return pClassPointer;
 	};
@@ -7669,7 +7691,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 50565 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 50681 ];
 
 		return pClassPointer;
 	};
@@ -7713,7 +7735,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 50568 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 50684 ];
 
 		return pClassPointer;
 	};
@@ -7731,13 +7753,12 @@ public:
 	void GetGameServerID ( );
 	int SortPlaylists ( int A, int B );
 	struct FString GetPartyMembersString ( );
-	struct FString GetSkillsString ( );
 	struct FString GetLocalizedRegionsString ( );
 	struct FString GetRegionsString ( );
 	struct FString GetLocalizedPlaylistsString ( );
 	struct FString GetPlaylistsString ( );
 	void OnExit ( );
-	bool StartSearch ( TArray< int > InPreferredPlaylists, TArray< struct FString > InPreferredRegions, TArray< int >* SortLocal_1D175EE14E85DDDA81E9188743052726 );
+	bool StartSearch ( TArray< int > InPreferredPlaylists, TArray< struct FString > InPreferredRegions, TArray< int >* SortLocal_8CF2D37840C10F0023FFBD8C1293E6F2 );
 	void OnInit ( );
 	void EventMatchmakingCanceledOnPartySizeChanged ( class UOnlineGameMatchmaking_X* InMatchMaking );
 	void EventMatchmakingError ( class UOnlineGameMatchmaking_X* InMatchMaking, class UError* Error );
@@ -7767,7 +7788,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 50575 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 50691 ];
 
 		return pClassPointer;
 	};
@@ -7807,7 +7828,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 50576 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 50692 ];
 
 		return pClassPointer;
 	};
@@ -7835,7 +7856,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 50577 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 50693 ];
 
 		return pClassPointer;
 	};
@@ -7869,7 +7890,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 50578 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 50694 ];
 
 		return pClassPointer;
 	};
@@ -7899,7 +7920,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 50581 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 50697 ];
 
 		return pClassPointer;
 	};
@@ -7909,6 +7930,29 @@ public:
 };
 
 UClass* USystemMetrics_X::pClassPointer = NULL;
+
+// Class ProjectX.RPC_GetPublicIP_X
+// 0x000C (0x00A8 - 0x009C)
+class URPC_GetPublicIP_X : public URPC_X
+{
+public:
+	struct FString                                     IP;                                               		// 0x009C (0x000C) [0x0000000000402000]              ( CPF_Transient | CPF_NeedCtorLink )
+
+private:
+	static UClass* pClassPointer;
+
+public:
+	static UClass* StaticClass()
+	{
+		if ( ! pClassPointer )
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 50763 ];
+
+		return pClassPointer;
+	};
+
+};
+
+UClass* URPC_GetPublicIP_X::pClassPointer = NULL;
 
 // Class ProjectX.RPC_UpdatePlayerPlaylist_X
 // 0x0008 (0x00A4 - 0x009C)
@@ -7925,7 +7969,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 50726 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 50862 ];
 
 		return pClassPointer;
 	};
@@ -7958,7 +8002,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 50739 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 50870 ];
 
 		return pClassPointer;
 	};
@@ -7989,16 +8033,16 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 50770 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 50901 ];
 
 		return pClassPointer;
 	};
 
 	struct FString __OnlineGameBlog_X__GetMotD ( struct FMotDMessage M );
 	void AddUniqueMotDMessage ( struct FString NewMessage, struct FName NewMessageTag );
-	void AddAdditionalMotDMessage ( struct FString NewMessage, struct FName NewMessageTag, struct FMotDMessage* StructInitializer_EE8856C34D2B4684602D288094C253B3 );
-	void RemoveAdditionalMessagesByTag ( struct FName MessageTag, TArray< struct FMotDMessage >* FilterLocal_4792BE194B9105A9B805AFAA2DD2A322 );
-	struct FString GetMotD ( TArray< struct FString >* MapLocal_B597BADB47640482A595BCA7EDD0112A );
+	void AddAdditionalMotDMessage ( struct FString NewMessage, struct FName NewMessageTag, struct FMotDMessage* StructInitializer_69BFD2EB428217AC9E59FB8919D90A23 );
+	void RemoveAdditionalMessagesByTag ( struct FName MessageTag, TArray< struct FMotDMessage >* FilterLocal_A4978CA04506E5A2C8E9F1B70DD1C739 );
+	struct FString GetMotD ( TArray< struct FString >* MapLocal_FD964BB94FFAB060CFCE83A355E93A49 );
 	void ParseBlogInfo ( );
 	void Init ( );
 };
@@ -8019,12 +8063,12 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 50793 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 50924 ];
 
 		return pClassPointer;
 	};
 
-	bool LambdaCallback ( struct FMotDMessage M );
+	bool __OnlineGameBlog_X__RemoveAdditionalMessagesByTag ( struct FMotDMessage M );
 };
 
 UClass* U__OnlineGameBlog_X__RemoveAdditionalMessagesByTag::pClassPointer = NULL;
@@ -8047,7 +8091,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 50800 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 50931 ];
 
 		return pClassPointer;
 	};
@@ -8060,15 +8104,16 @@ public:
 UClass* UBlogTiles_X::pClassPointer = NULL;
 
 // Class ProjectX.OnlineGameDedicatedServerRegistration_X
-// 0x0014 (0x0074 - 0x0060)
+// 0x0018 (0x0078 - 0x0060)
 class UOnlineGameDedicatedServerRegistration_X : public UOnline_X
 {
 public:
-	class UCacheTimer_X*                               HeartbeatTimer;                                   		// 0x0060 (0x0004) [0x0000000004080009]              ( CPF_Edit | CPF_ExportObject | CPF_Component | CPF_EditInline )
-	int                                                GameTimeTimer;                                    		// 0x0064 (0x0004) [0x0000000000000001]              ( CPF_Edit )
-	int                                                GameTimeSeconds;                                  		// 0x0068 (0x0004) [0x0000000000002000]              ( CPF_Transient )
-	class URPC_X*                                      UpdateGameServerRPC;                              		// 0x006C (0x0004) [0x0000000000002000]              ( CPF_Transient )
-	float                                              PsyNetDisconnectShutdownTime;                     		// 0x0070 (0x0004) [0x0000000000000003]              ( CPF_Edit | CPF_Const )
+	class UServerConfig_X*                             Config;                                           		// 0x0060 (0x0004) [0x0000000000000001]              ( CPF_Edit )
+	class UCacheTimer_X*                               HeartbeatTimer;                                   		// 0x0064 (0x0004) [0x0000000004080009]              ( CPF_Edit | CPF_ExportObject | CPF_Component | CPF_EditInline )
+	int                                                GameTimeTimer;                                    		// 0x0068 (0x0004) [0x0000000000000001]              ( CPF_Edit )
+	int                                                GameTimeSeconds;                                  		// 0x006C (0x0004) [0x0000000000002000]              ( CPF_Transient )
+	class URPC_X*                                      UpdateGameServerRPC;                              		// 0x0070 (0x0004) [0x0000000000002000]              ( CPF_Transient )
+	float                                              PsyNetDisconnectShutdownTime;                     		// 0x0074 (0x0004) [0x0000000000000003]              ( CPF_Edit | CPF_Const )
 
 private:
 	static UClass* pClassPointer;
@@ -8077,7 +8122,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 50824 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 50956 ];
 
 		return pClassPointer;
 	};
@@ -8091,13 +8136,14 @@ public:
 	void HandleUpdateServerFailed ( class URPC_UpdateGameServer_X* RPC );
 	void HandleUpdateServerSucces ( class URPC_UpdateGameServer_X* RPC );
 	void HandleCreateServerFailed ( class URPC_CreateGameServer_X* RPC );
-	void HandleCreateServerSucces ( class URPC_CreateGameServer_X* RPC );
+	void HandleCreateServerSucces ( class URPC_CreateGameServer_X* RPC, struct FCustomMatchSettings* StructInitializer_2585F81E4D1E70CC7125C1B90516D6D5 );
 	void SetServerNotJoinable ( );
 	void SendUpdateServerRPC ( );
 	struct FString GetServerType ( );
 	void SendCreateServerRPC ( );
 	void SendUpdateRequest ( );
 	void UpdateServer ( );
+	void HandleConfigUpdate ( );
 	void UnregisterServer ( );
 	void RegisterServer ( );
 	void OnInit ( );
@@ -8123,7 +8169,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 50833 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 50965 ];
 
 		return pClassPointer;
 	};
@@ -8153,7 +8199,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 50932 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 51067 ];
 
 		return pClassPointer;
 	};
@@ -8179,7 +8225,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 50946 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 51082 ];
 
 		return pClassPointer;
 	};
@@ -8204,7 +8250,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 50953 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 51089 ];
 
 		return pClassPointer;
 	};
@@ -8233,7 +8279,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 51004 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 51141 ];
 
 		return pClassPointer;
 	};
@@ -8265,7 +8311,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 51022 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 51160 ];
 
 		return pClassPointer;
 	};
@@ -8293,7 +8339,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 51025 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 51164 ];
 
 		return pClassPointer;
 	};
@@ -8324,7 +8370,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 51031 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 51170 ];
 
 		return pClassPointer;
 	};
@@ -8350,7 +8396,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 51045 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 51184 ];
 
 		return pClassPointer;
 	};
@@ -8363,7 +8409,7 @@ public:
 UClass* URPC_UpdateCustomGameServer_X::pClassPointer = NULL;
 
 // Class ProjectX.RPC_UpdateGameServer_X
-// 0x0044 (0x00E0 - 0x009C)
+// 0x004C (0x00E8 - 0x009C)
 class URPC_UpdateGameServer_X : public URPC_X
 {
 public:
@@ -8374,11 +8420,11 @@ public:
 	int                                                NumPlayersTeam2;                                  		// 0x00B0 (0x0004) [0x0000000000000000]              
 	int                                                ReservationsTeam1;                                		// 0x00B4 (0x0004) [0x0000000000000000]              
 	int                                                ReservationsTeam2;                                		// 0x00B8 (0x0004) [0x0000000000000000]              
-	int                                                AvgSkill;                                         		// 0x00BC (0x0004) [0x0000000000000000]              
-	unsigned long                                      bIsPostGame : 1;                                  		// 0x00C0 (0x0004) [0x0000000000000000] [0x00000001] 
-	int                                                TimeRemaining;                                    		// 0x00C4 (0x0004) [0x0000000000000000]              
-	struct FString                                     ExclusivePlatform;                                		// 0x00C8 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	TArray< struct FString >                           PlayersPlatforms;                                 		// 0x00D4 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
+	unsigned long                                      bIsPostGame : 1;                                  		// 0x00BC (0x0004) [0x0000000000000000] [0x00000001] 
+	int                                                TimeRemaining;                                    		// 0x00C0 (0x0004) [0x0000000000000000]              
+	struct FString                                     ExclusivePlatform;                                		// 0x00C4 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
+	TArray< struct FString >                           PlayersPlatforms;                                 		// 0x00D0 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
+	TArray< struct FUniqueNetId >                      PlayerIDs;                                        		// 0x00DC (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
 
 private:
 	static UClass* pClassPointer;
@@ -8387,7 +8433,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 51059 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 51198 ];
 
 		return pClassPointer;
 	};
@@ -8396,7 +8442,7 @@ public:
 	class URPC_UpdateGameServer_X* SetExclusivePlatform ( struct FString InExclusivePlatform );
 	class URPC_UpdateGameServer_X* SetTimeRemaining ( int InTimeRemaining );
 	class URPC_UpdateGameServer_X* SetIsPostGame ( unsigned long bInIsPostGame );
-	class URPC_UpdateGameServer_X* SetAvgSkill ( int InAvgSkill );
+	class URPC_UpdateGameServer_X* SetPlayerIDs ( TArray< struct FUniqueNetId > InPlayerIDs );
 	class URPC_UpdateGameServer_X* SetReservationsTeam2 ( int InReservationsTeam2 );
 	class URPC_UpdateGameServer_X* SetReservationsTeam1 ( int InReservationsTeam1 );
 	class URPC_UpdateGameServer_X* SetNumPlayersTeam2 ( int InNumPlayersTeam2 );
@@ -8429,7 +8475,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 51064 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 51203 ];
 
 		return pClassPointer;
 	};
@@ -8443,6 +8489,29 @@ public:
 };
 
 UClass* URPC_CreateGameServer_X::pClassPointer = NULL;
+
+// Class ProjectX.ServerConfig_X
+// 0x0004 (0x0050 - 0x004C)
+class UServerConfig_X : public UOnlineConfig_X
+{
+public:
+	float                                              HeartbeatSeconds;                                 		// 0x004C (0x0004) [0x0000000000000001]              ( CPF_Edit )
+
+private:
+	static UClass* pClassPointer;
+
+public:
+	static UClass* StaticClass()
+	{
+		if ( ! pClassPointer )
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 51267 ];
+
+		return pClassPointer;
+	};
+
+};
+
+UClass* UServerConfig_X::pClassPointer = NULL;
 
 // Class ProjectX.PartyErrors_X
 // 0x0064 (0x00B8 - 0x0054)
@@ -8482,7 +8551,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 51236 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 51382 ];
 
 		return pClassPointer;
 	};
@@ -8490,28 +8559,6 @@ public:
 };
 
 UClass* UPartyErrors_X::pClassPointer = NULL;
-
-// Class ProjectX.ReservationsTravelingMessage_X
-// 0x0000 (0x003C - 0x003C)
-class UReservationsTravelingMessage_X : public UBeaconMessage_X
-{
-public:
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 51376 ];
-
-		return pClassPointer;
-	};
-
-};
-
-UClass* UReservationsTravelingMessage_X::pClassPointer = NULL;
 
 // Class ProjectX.ReservationsFullMessage_X
 // 0x0000 (0x003C - 0x003C)
@@ -8526,7 +8573,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 51377 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 51522 ];
 
 		return pClassPointer;
 	};
@@ -8548,7 +8595,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 51378 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 51523 ];
 
 		return pClassPointer;
 	};
@@ -8558,11 +8605,10 @@ public:
 UClass* UReservationsTeamFullMessage_X::pClassPointer = NULL;
 
 // Class ProjectX.ReservationsWaitingMessage_X
-// 0x0004 (0x0040 - 0x003C)
+// 0x0000 (0x003C - 0x003C)
 class UReservationsWaitingMessage_X : public UBeaconMessage_X
 {
 public:
-	int                                                WaitingForPlayerCount;                            		// 0x003C (0x0004) [0x0000000000000000]              
 
 private:
 	static UClass* pClassPointer;
@@ -8571,12 +8617,11 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 51379 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 51524 ];
 
 		return pClassPointer;
 	};
 
-	class UReservationsWaitingMessage_X* SetWaitingForPlayers ( int WaitingReserved, int WaitingMax );
 };
 
 UClass* UReservationsWaitingMessage_X::pClassPointer = NULL;
@@ -8596,7 +8641,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 51380 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 51525 ];
 
 		return pClassPointer;
 	};
@@ -8620,7 +8665,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 51381 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 51526 ];
 
 		return pClassPointer;
 	};
@@ -8642,7 +8687,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 51382 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 51527 ];
 
 		return pClassPointer;
 	};
@@ -8665,7 +8710,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 51383 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 51528 ];
 
 		return pClassPointer;
 	};
@@ -8688,7 +8733,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 51384 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 51529 ];
 
 		return pClassPointer;
 	};
@@ -8710,7 +8755,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 51385 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 51530 ];
 
 		return pClassPointer;
 	};
@@ -8732,7 +8777,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 51386 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 51531 ];
 
 		return pClassPointer;
 	};
@@ -8755,7 +8800,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 51387 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 51532 ];
 
 		return pClassPointer;
 	};
@@ -8779,7 +8824,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 51414 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 51559 ];
 
 		return pClassPointer;
 	};
@@ -8809,7 +8854,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 51445 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 51590 ];
 
 		return pClassPointer;
 	};
@@ -8833,7 +8878,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 51450 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 51595 ];
 
 		return pClassPointer;
 	};
@@ -8861,7 +8906,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 51662 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 51806 ];
 
 		return pClassPointer;
 	};
@@ -8907,7 +8952,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 51839 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 51983 ];
 
 		return pClassPointer;
 	};
@@ -8931,7 +8976,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 51838 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 51982 ];
 
 		return pClassPointer;
 	};
@@ -8955,7 +9000,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 51844 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 51988 ];
 
 		return pClassPointer;
 	};
@@ -8981,7 +9026,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 51876 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 52020 ];
 
 		return pClassPointer;
 	};
@@ -9005,7 +9050,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 51875 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 52019 ];
 
 		return pClassPointer;
 	};
@@ -9029,7 +9074,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 51881 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 52025 ];
 
 		return pClassPointer;
 	};
@@ -9071,7 +9116,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 51908 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 52052 ];
 
 		return pClassPointer;
 	};
@@ -9107,7 +9152,7 @@ public:
 	void EventPerConReceivedIncomingFriendRequest ( struct FOnlineFriend FriendData );
 	void EventPerConReceivedFriendFriendStatusUpdate ( struct FOnlineFriend FriendData );
 	void EventPerConReceivedFriendAcceptedRequest ( struct FOnlineFriend FriendData );
-	void EventPerConReceivedFriendChatMessage ( struct FString InMessage, struct FUniqueNetId SenderId );
+	void EventPerConReceivedFriendChatMessage ( struct FString InMessage, struct FUniqueNetId SenderId, unsigned long bIsLocal );
 	void EventPsyNetPendingFriendRequests ( TArray< struct FOnlineFriend > FriendData );
 	void EventPsyNetPlayerSearch ( TArray< struct FOnlineFriend > FriendData, struct FString SearchString );
 	void EventPsyNetFriendRequestSentSuccess ( struct FUniqueNetId FriendId );
@@ -9132,7 +9177,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 51915 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 52059 ];
 
 		return pClassPointer;
 	};
@@ -9156,7 +9201,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 51914 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 52058 ];
 
 		return pClassPointer;
 	};
@@ -9180,7 +9225,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 51920 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 52064 ];
 
 		return pClassPointer;
 	};
@@ -9214,7 +9259,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 52031 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 52176 ];
 
 		return pClassPointer;
 	};
@@ -9244,7 +9289,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 52107 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 52244 ];
 
 		return pClassPointer;
 	};
@@ -9275,7 +9320,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 52126 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 52263 ];
 
 		return pClassPointer;
 	};
@@ -9305,7 +9350,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 52146 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 52285 ];
 
 		return pClassPointer;
 	};
@@ -9323,7 +9368,7 @@ public:
 UClass* URPC_StartMatchmaking_X::pClassPointer = NULL;
 
 // Class ProjectX.Parties_X
-// 0x018C (0x01C8 - 0x003C)
+// 0x019C (0x01D8 - 0x003C)
 class UParties_X : public UObject
 {
 public:
@@ -9367,8 +9412,10 @@ public:
 	unsigned char                                      UnknownData13[ 0x4 ];                             		// 0x019C (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
 	struct FScriptDelegate                             __OnLobbyDestroyed__Delegate;                     		// 0x01A8 (0x0010) [0x0000000000400000]              ( CPF_NeedCtorLink )
 	unsigned char                                      UnknownData14[ 0x4 ];                             		// 0x01AC (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
-	struct FScriptDelegate                             __OnHostStartPlayTogether__Delegate;              		// 0x01B8 (0x0010) [0x0000000000400000]              ( CPF_NeedCtorLink )
+	struct FScriptDelegate                             __EventPartyChatRecieved__Delegate;               		// 0x01B8 (0x0010) [0x0000000000400000]              ( CPF_NeedCtorLink )
 	unsigned char                                      UnknownData15[ 0x4 ];                             		// 0x01BC (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
+	struct FScriptDelegate                             __OnHostStartPlayTogether__Delegate;              		// 0x01C8 (0x0010) [0x0000000000400000]              ( CPF_NeedCtorLink )
+	unsigned char                                      UnknownData16[ 0x4 ];                             		// 0x01CC (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
 
 private:
 	static UClass* pClassPointer;
@@ -9377,14 +9424,16 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 52166 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 52289 ];
 
 		return pClassPointer;
 	};
 
+	void HandlePsyNetPartyInviteAccepted ( struct FString PartyID, struct FUniqueNetId* StructInitializer_C7FBA39E4B65CA0D1666E7B68267790B );
 	struct FString GetPsyNetPartyID ( );
-	struct FUniqueNetId FindPartyLeaderID ( TArray< struct FPsyNetPartyMember >* Members, struct FUniqueNetId* StructInitializer_D0F36BCB411836DE1620EBA197F8EC9B );
+	struct FUniqueNetId FindPartyLeaderID ( TArray< struct FPsyNetPartyMember >* Members, struct FUniqueNetId* StructInitializer_337C55374A19027CFBC723ABDC696A39 );
 	void HandleOwnerChanged ( class UPsyNetService_PartyOwnerChanged_X* Notification );
+	void HandleChatNotification ( class UPsyNetService_PartyChat_X* Notifications );
 	void HandleSystemNotification ( class UPsyNetService_PartySystem_X* Notifications );
 	void HandleUserKicked ( class UPsyNetService_PartyUserKicked_X* Notification );
 	void HandleUserDisconnected ( class UPsyNetService_PartyUserDisconnected_X* Notification );
@@ -9400,7 +9449,7 @@ public:
 	void SetPsyNetChannel ( class UPsyNetChannel_X* InChannel );
 	void TimeoutPerconReconnect ( );
 	void SetPsyNetConnection ( class UPsyNetConnection_X* InConnection );
-	void ClearLobbyData ( struct FActiveLobbyInfo* StructInitializer_DE2C1F30492152781920D0B9F8B17243 );
+	void ClearLobbyData ( struct FActiveLobbyInfo* StructInitializer_6ABA7DB5455F97752BC566B4DA28CEF9 );
 	void DestroyLobby ( unsigned char Reason );
 	void HandlePerConDisconnected ( class UPsyNetConnection_X* Connection );
 	void HandlePerConConnected ( class UPsyNetConnection_X* Connection );
@@ -9446,6 +9495,7 @@ public:
 	void HandleLobbyCreateFailed ( class URPC_PartyCreate_X* RpcPartyCreate );
 	void HandleLobbyCreated ( class URPC_PartyCreate_X* RpcPartyCreate );
 	bool CreateLobby ( int LocalPlayerNum, int MaxPlayers, unsigned char Type, TArray< struct FLobbyMetaData > InitialSettings );
+	void EventPartyChatRecieved ( struct FUniqueNetId PlayerID, struct FString Text );
 	void ClearLobbyDestroyedDelegate ( struct FScriptDelegate LobbyDestroyedDelegate );
 	void AddLobbyDestroyedDelegate ( struct FScriptDelegate LobbyDestroyedDelegate );
 	void OnLobbyDestroyed ( unsigned char Reason, struct FUniqueLobbyId* LobbyId );
@@ -9511,7 +9561,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 52236 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 52375 ];
 
 		return pClassPointer;
 	};
@@ -9536,7 +9586,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 52245 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 52384 ];
 
 		return pClassPointer;
 	};
@@ -9561,7 +9611,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 52318 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 52455 ];
 
 		return pClassPointer;
 	};
@@ -9587,7 +9637,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 52319 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 52456 ];
 
 		return pClassPointer;
 	};
@@ -9615,7 +9665,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 52320 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 52457 ];
 
 		return pClassPointer;
 	};
@@ -9645,7 +9695,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 52321 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 52458 ];
 
 		return pClassPointer;
 	};
@@ -9670,7 +9720,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 52322 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 52459 ];
 
 		return pClassPointer;
 	};
@@ -9695,7 +9745,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 52323 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 52460 ];
 
 		return pClassPointer;
 	};
@@ -9721,7 +9771,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 52324 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 52461 ];
 
 		return pClassPointer;
 	};
@@ -9746,7 +9796,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 52325 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 52462 ];
 
 		return pClassPointer;
 	};
@@ -9772,7 +9822,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 52326 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 52463 ];
 
 		return pClassPointer;
 	};
@@ -9798,7 +9848,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 52327 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 52464 ];
 
 		return pClassPointer;
 	};
@@ -9822,7 +9872,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 52343 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 52479 ];
 
 		return pClassPointer;
 	};
@@ -9847,7 +9897,7 @@ UClass* UPartyMetrics_X::pClassPointer = NULL;
 class UPartyConfig_X : public UOnlineConfig_X
 {
 public:
-	unsigned long                                      bCompressMessages : 1;                            		// 0x004C (0x0004) [0x0000000000000001] [0x00000001] ( CPF_Edit )
+	unsigned long                                      bCompressMessages : 1;                            		// 0x004C (0x0004) [0x0000000000004000] [0x00000001] ( CPF_Config )
 
 private:
 	static UClass* pClassPointer;
@@ -9856,7 +9906,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 52650 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 52776 ];
 
 		return pClassPointer;
 	};
@@ -9880,7 +9930,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 52671 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 52797 ];
 
 		return pClassPointer;
 	};
@@ -9890,37 +9940,6 @@ public:
 };
 
 UClass* UPartyMessage_ReadyToTrade_X::pClassPointer = NULL;
-
-// Class ProjectX.RankedConfig_X
-// 0x0034 (0x0080 - 0x004C)
-class URankedConfig_X : public UOnlineConfig_X
-{
-public:
-	struct FString                                     SeasonEndTime;                                    		// 0x004C (0x000C) [0x0000000000400001]              ( CPF_Edit | CPF_NeedCtorLink )
-	int                                                PartyMaxTierGap;                                  		// 0x0058 (0x0004) [0x0000000000000001]              ( CPF_Edit )
-	int                                                ReconnectTimeoutSeconds;                          		// 0x005C (0x0004) [0x0000000000000001]              ( CPF_Edit )
-	TArray< int >                                      SkillTierToSeasonRewardLevel;                     		// 0x0060 (0x000C) [0x0000000000400001]              ( CPF_Edit | CPF_NeedCtorLink )
-	TArray< int >                                      SeasonRewardRequiredWinsPerLevel;                 		// 0x006C (0x000C) [0x0000000000400001]              ( CPF_Edit | CPF_NeedCtorLink )
-	unsigned char                                      UnknownData00[ 0x8 ];                             		// 0x0078 (0x0008) UNKNOWN PROPERTY: QWordProperty ProjectX.RankedConfig_X.SeasonEndTimeSeconds
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 52783 ];
-
-		return pClassPointer;
-	};
-
-	bool HasSeasonEnded ( );
-	int GetSeasonTimeRemaining ( );
-	void Apply ( );
-};
-
-UClass* URankedConfig_X::pClassPointer = NULL;
 
 // Class ProjectX.RPC_GetPlayerTitles_X
 // 0x0054 (0x00F0 - 0x009C)
@@ -9937,7 +9956,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 53007 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 53091 ];
 
 		return pClassPointer;
 	};
@@ -9946,6 +9965,36 @@ public:
 };
 
 UClass* URPC_GetPlayerTitles_X::pClassPointer = NULL;
+
+// Class ProjectX.RankedConfig_X
+// 0x0030 (0x007C - 0x004C)
+class URankedConfig_X : public UOnlineConfig_X
+{
+public:
+	struct FString                                     SeasonEndTime;                                    		// 0x004C (0x000C) [0x0000000000400001]              ( CPF_Edit | CPF_NeedCtorLink )
+	int                                                ReconnectTimeoutSeconds;                          		// 0x0058 (0x0004) [0x0000000000000001]              ( CPF_Edit )
+	TArray< int >                                      SkillTierToSeasonRewardLevel;                     		// 0x005C (0x000C) [0x0000000000400001]              ( CPF_Edit | CPF_NeedCtorLink )
+	TArray< int >                                      SeasonRewardRequiredWinsPerLevel;                 		// 0x0068 (0x000C) [0x0000000000400001]              ( CPF_Edit | CPF_NeedCtorLink )
+	unsigned char                                      UnknownData00[ 0x8 ];                             		// 0x0074 (0x0008) UNKNOWN PROPERTY: QWordProperty ProjectX.RankedConfig_X.SeasonEndTimeSeconds
+
+private:
+	static UClass* pClassPointer;
+
+public:
+	static UClass* StaticClass()
+	{
+		if ( ! pClassPointer )
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 53180 ];
+
+		return pClassPointer;
+	};
+
+	bool HasSeasonEnded ( );
+	int GetSeasonTimeRemaining ( );
+	void Apply ( );
+};
+
+UClass* URankedConfig_X::pClassPointer = NULL;
 
 // Class ProjectX.RPC_GetPopulation_X
 // 0x000C (0x00A8 - 0x009C)
@@ -9961,7 +10010,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 53133 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 53218 ];
 
 		return pClassPointer;
 	};
@@ -9983,7 +10032,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 53169 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 53254 ];
 
 		return pClassPointer;
 	};
@@ -10006,7 +10055,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 53181 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 53266 ];
 
 		return pClassPointer;
 	};
@@ -10030,7 +10079,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 53268 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 53353 ];
 
 		return pClassPointer;
 	};
@@ -10053,7 +10102,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 53272 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 53357 ];
 
 		return pClassPointer;
 	};
@@ -10076,7 +10125,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 53328 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 53413 ];
 
 		return pClassPointer;
 	};
@@ -10100,7 +10149,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 53382 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 53473 ];
 
 		return pClassPointer;
 	};
@@ -10138,7 +10187,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 53428 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 53518 ];
 
 		return pClassPointer;
 	};
@@ -10148,16 +10197,16 @@ public:
 UClass* UMapPrefsConfig_X::pClassPointer = NULL;
 
 // Class ProjectX.PRI_X
-// 0x0030 (0x0328 - 0x02F8)
+// 0x0030 (0x0360 - 0x0330)
 class APRI_X : public APlayerReplicationInfo
 {
 public:
-	struct FScriptDelegate                             __EventPlayerNameChanged__Delegate;               		// 0x02F8 (0x0010) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	unsigned char                                      UnknownData00[ 0x4 ];                             		// 0x02FC (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
-	struct FScriptDelegate                             __EventUniqueIdChanged__Delegate;                 		// 0x0308 (0x0010) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	unsigned char                                      UnknownData01[ 0x4 ];                             		// 0x030C (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
-	struct FScriptDelegate                             __EventTeamChanged__Delegate;                     		// 0x0318 (0x0010) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	unsigned char                                      UnknownData02[ 0x4 ];                             		// 0x031C (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
+	struct FScriptDelegate                             __EventPlayerNameChanged__Delegate;               		// 0x0330 (0x0010) [0x0000000000400000]              ( CPF_NeedCtorLink )
+	unsigned char                                      UnknownData00[ 0x4 ];                             		// 0x0334 (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
+	struct FScriptDelegate                             __EventUniqueIdChanged__Delegate;                 		// 0x0340 (0x0010) [0x0000000000400000]              ( CPF_NeedCtorLink )
+	unsigned char                                      UnknownData01[ 0x4 ];                             		// 0x0344 (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
+	struct FScriptDelegate                             __EventTeamChanged__Delegate;                     		// 0x0350 (0x0010) [0x0000000000400000]              ( CPF_NeedCtorLink )
+	unsigned char                                      UnknownData02[ 0x4 ];                             		// 0x0354 (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
 
 private:
 	static UClass* pClassPointer;
@@ -10166,7 +10215,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 53527 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 53619 ];
 
 		return pClassPointer;
 	};
@@ -10204,7 +10253,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 53687 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 53810 ];
 
 		return pClassPointer;
 	};
@@ -10231,7 +10280,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 53790 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 53916 ];
 
 		return pClassPointer;
 	};
@@ -10257,7 +10306,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 53871 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 53997 ];
 
 		return pClassPointer;
 	};
@@ -10287,7 +10336,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 53879 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 54005 ];
 
 		return pClassPointer;
 	};
@@ -10320,7 +10369,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 53940 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 54068 ];
 
 		return pClassPointer;
 	};
@@ -10350,7 +10399,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 53956 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 54084 ];
 
 		return pClassPointer;
 	};
@@ -10379,7 +10428,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 53994 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 54122 ];
 
 		return pClassPointer;
 	};
@@ -10403,7 +10452,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 54058 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 54186 ];
 
 		return pClassPointer;
 	};
@@ -10412,11 +10461,15 @@ public:
 
 UClass* UWordFilterConfig_X::pClassPointer = NULL;
 
-// Class ProjectX.RPC_LogoutPlayer_X
-// 0x0000 (0x009C - 0x009C)
-class URPC_LogoutPlayer_X : public URPC_X
+// Class ProjectX.OnlinePlayerStorage_X
+// 0x0010 (0x0070 - 0x0060)
+class UOnlinePlayerStorage_X : public UOnline_X
 {
 public:
+	class UOnlinePlayerStorageQueue_X*                 Queue;                                            		// 0x0060 (0x0004) [0x0000000000000000]              
+	class UOnlinePlayerStorageSync_X*                  Sync;                                             		// 0x0064 (0x0004) [0x0000000000000000]              
+	class UOnlinePlayerStorageManifest_X*              Manifest;                                         		// 0x0068 (0x0004) [0x0000000000000000]              
+	class USerializer_X*                               Serializer;                                       		// 0x006C (0x0004) [0x0000000000000001]              ( CPF_Edit )
 
 private:
 	static UClass* pClassPointer;
@@ -10425,17 +10478,18 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 54255 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 54311 ];
 
 		return pClassPointer;
 	};
 
+	void OnInit ( );
 };
 
-UClass* URPC_LogoutPlayer_X::pClassPointer = NULL;
+UClass* UOnlinePlayerStorage_X::pClassPointer = NULL;
 
 // Class ProjectX.RPC_LoginAuthPlayer_X
-// 0x008C (0x0128 - 0x009C)
+// 0x0098 (0x0134 - 0x009C)
 class URPC_LoginAuthPlayer_X : public URPC_X
 {
 public:
@@ -10455,6 +10509,7 @@ public:
 	int                                                BannedMinutes;                                    		// 0x010C (0x0004) [0x0000000000002000]              ( CPF_Transient )
 	struct FString                                     BannedMessage;                                    		// 0x0110 (0x000C) [0x0000000000402000]              ( CPF_Transient | CPF_NeedCtorLink )
 	struct FString                                     VerifiedPlayerName;                               		// 0x011C (0x000C) [0x0000000000402000]              ( CPF_Transient | CPF_NeedCtorLink )
+	TArray< struct FString >                           BannedCitations;                                  		// 0x0128 (0x000C) [0x0000000000402000]              ( CPF_Transient | CPF_NeedCtorLink )
 
 private:
 	static UClass* pClassPointer;
@@ -10463,7 +10518,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 54302 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 54427 ];
 
 		return pClassPointer;
 	};
@@ -10482,13 +10537,14 @@ public:
 UClass* URPC_LoginAuthPlayer_X::pClassPointer = NULL;
 
 // Class ProjectX.PsyNetService_FriendChatReceived_X
-// 0x005C (0x00B0 - 0x0054)
+// 0x0060 (0x00B4 - 0x0054)
 class UPsyNetService_FriendChatReceived_X : public UPsyNetClientService_X
 {
 public:
 	struct FUniqueNetId                                FromPlayerID;                                     		// 0x0054 (0x0048) [0x0000000000000000]              
 	struct FString                                     Message;                                          		// 0x009C (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	unsigned char                                      UnknownData00[ 0x8 ];                             		// 0x00A8 (0x0008) UNKNOWN PROPERTY: QWordProperty ProjectX.PsyNetService_FriendChatReceived_X.TimeStamp
+	unsigned long                                      IsLocalMessage : 1;                               		// 0x00A8 (0x0004) [0x0000000000000000] [0x00000001] 
+	unsigned char                                      UnknownData00[ 0x8 ];                             		// 0x00AC (0x0008) UNKNOWN PROPERTY: QWordProperty ProjectX.PsyNetService_FriendChatReceived_X.TimeStamp
 
 private:
 	static UClass* pClassPointer;
@@ -10497,7 +10553,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 54458 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 54594 ];
 
 		return pClassPointer;
 	};
@@ -10520,7 +10576,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 54460 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 54596 ];
 
 		return pClassPointer;
 	};
@@ -10544,7 +10600,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 54459 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 54595 ];
 
 		return pClassPointer;
 	};
@@ -10566,7 +10622,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 54461 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 54597 ];
 
 		return pClassPointer;
 	};
@@ -10588,7 +10644,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 54462 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 54598 ];
 
 		return pClassPointer;
 	};
@@ -10611,7 +10667,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 54463 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 54599 ];
 
 		return pClassPointer;
 	};
@@ -10642,7 +10698,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 54848 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 54994 ];
 
 		return pClassPointer;
 	};
@@ -10686,7 +10742,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 55059 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 55205 ];
 
 		return pClassPointer;
 	};
@@ -10714,12 +10770,12 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 55083 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 55229 ];
 
 		return pClassPointer;
 	};
 
-	void LambdaCallback ( class UPsyNetMessage_X* Response, class UError* Error );
+	void __RPCQueue_X__CreateBatch ( class UPsyNetMessage_X* Response, class UError* Error );
 };
 
 UClass* U__RPCQueue_X__CreateBatch::pClassPointer = NULL;
@@ -10744,7 +10800,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 55089 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 55235 ];
 
 		return pClassPointer;
 	};
@@ -10776,7 +10832,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 55094 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 55240 ];
 
 		return pClassPointer;
 	};
@@ -10806,7 +10862,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 55125 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 55270 ];
 
 		return pClassPointer;
 	};
@@ -10835,7 +10891,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 55174 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 55319 ];
 
 		return pClassPointer;
 	};
@@ -10870,7 +10926,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 55240 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 55385 ];
 
 		return pClassPointer;
 	};
@@ -10894,12 +10950,12 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 55281 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 55426 ];
 
 		return pClassPointer;
 	};
 
-	void LambdaCallback ( class UError* Err );
+	void __RPC_X__CreateTask ( class UError* Err );
 };
 
 UClass* U__RPC_X__CreateTask::pClassPointer = NULL;
@@ -10925,7 +10981,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 55291 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 55436 ];
 
 		return pClassPointer;
 	};
@@ -10960,7 +11016,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 55315 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 55460 ];
 
 		return pClassPointer;
 	};
@@ -10991,7 +11047,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 55407 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 55552 ];
 
 		return pClassPointer;
 	};
@@ -11001,120 +11057,6 @@ public:
 };
 
 UClass* USeqAct_SpawnArchetype_X::pClassPointer = NULL;
-
-// Class ProjectX.RPC_GetGroupSkills_X
-// 0x0018 (0x00B4 - 0x009C)
-class URPC_GetGroupSkills_X : public URPC_X
-{
-public:
-	TArray< struct FUniqueNetId >                      Players;                                          		// 0x009C (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	TArray< struct FPlaylistTierSkillRating >          Skills;                                           		// 0x00A8 (0x000C) [0x0000000000402000]              ( CPF_Transient | CPF_NeedCtorLink )
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 55680 ];
-
-		return pClassPointer;
-	};
-
-	class URPC_GetGroupSkills_X* SetPlayers ( TArray< struct FUniqueNetId > InPlayers );
-};
-
-UClass* URPC_GetGroupSkills_X::pClassPointer = NULL;
-
-// Class ProjectX.RPC_UpdateGroupSkills_X
-// 0x0038 (0x00D4 - 0x009C)
-class URPC_UpdateGroupSkills_X : public URPC_X
-{
-public:
-	class UMatchRecorder_X*                            MatchRecorder;                                    		// 0x009C (0x0004) [0x0000000000002000]              ( CPF_Transient )
-	int                                                Playlist;                                         		// 0x00A0 (0x0004) [0x0000000000000000]              
-	TArray< struct FSkillMatchParty >                  Winners;                                          		// 0x00A4 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	TArray< struct FSkillMatchParty >                  Losers;                                           		// 0x00B0 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	TArray< struct FSkillMatchPartyRating >            PartySkills;                                      		// 0x00BC (0x000C) [0x0000000000402000]              ( CPF_Transient | CPF_NeedCtorLink )
-	TArray< struct FGroupSkillRating >                 GroupSkills;                                      		// 0x00C8 (0x000C) [0x0000000000402000]              ( CPF_Transient | CPF_NeedCtorLink )
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 55768 ];
-
-		return pClassPointer;
-	};
-
-	void CreateGroupSkillsFor ( TArray< struct FSkillMatchParty > MatchParties );
-	void CreateGroupSkills ( );
-	void eventOnSuccess ( );
-	void AddToGroup ( struct FUniqueNetId PlayerID, int PartyID, float PctTimePlayed, unsigned long bQuitter, TArray< struct FSkillMatchParty >* Groups );
-	class URPC_UpdateGroupSkills_X* AddLoser ( struct FUniqueNetId PlayerID, int PartyID, float PctTimePlayed, unsigned long bQuitter );
-	class URPC_UpdateGroupSkills_X* AddWinner ( struct FUniqueNetId PlayerID, int PartyID, float PctTimePlayed, unsigned long bQuitter );
-	class URPC_UpdateGroupSkills_X* SetMatch ( class UMatchRecorder_X* InRecorder );
-};
-
-UClass* URPC_UpdateGroupSkills_X::pClassPointer = NULL;
-
-// Class ProjectX.RPC_SetGroupSkills_X
-// 0x0020 (0x00BC - 0x009C)
-class URPC_SetGroupSkills_X : public URPC_X
-{
-public:
-	TArray< struct FUniqueNetId >                      Players;                                          		// 0x009C (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	TArray< int >                                      Playlists;                                        		// 0x00A8 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	float                                              Mu;                                               		// 0x00B4 (0x0004) [0x0000000000000000]              
-	float                                              Sigma;                                            		// 0x00B8 (0x0004) [0x0000000000000000]              
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 55788 ];
-
-		return pClassPointer;
-	};
-
-	class URPC_SetGroupSkills_X* SetSkills ( TArray< struct FUniqueNetId > InPlayers, TArray< int > InPlaylists, float InMu, float InSigma );
-};
-
-UClass* URPC_SetGroupSkills_X::pClassPointer = NULL;
-
-// Class ProjectX.RPC_SetGroupTiers_X
-// 0x0020 (0x00BC - 0x009C)
-class URPC_SetGroupTiers_X : public URPC_X
-{
-public:
-	TArray< struct FUniqueNetId >                      Players;                                          		// 0x009C (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	TArray< int >                                      Playlists;                                        		// 0x00A8 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	int                                                Tier;                                             		// 0x00B4 (0x0004) [0x0000000000000000]              
-	int                                                MatchesPlayed;                                    		// 0x00B8 (0x0004) [0x0000000000000000]              
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 55804 ];
-
-		return pClassPointer;
-	};
-
-	class URPC_SetGroupTiers_X* SetTiers ( TArray< struct FUniqueNetId > InPlayers, TArray< int > InPlaylists, int InTier, int InMatchesPlayed );
-};
-
-UClass* URPC_SetGroupTiers_X::pClassPointer = NULL;
 
 // Class ProjectX.RPC_TestPlayerID_X
 // 0x0090 (0x012C - 0x009C)
@@ -11131,7 +11073,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 55820 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 55803 ];
 
 		return pClassPointer;
 	};
@@ -11161,7 +11103,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 55951 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 55894 ];
 
 		return pClassPointer;
 	};
@@ -11188,7 +11130,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 56043 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 55990 ];
 
 		return pClassPointer;
 	};
@@ -11211,7 +11153,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 56301 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 56235 ];
 
 		return pClassPointer;
 	};
@@ -11238,7 +11180,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 56353 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 56289 ];
 
 		return pClassPointer;
 	};
@@ -11270,7 +11212,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 56402 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 56338 ];
 
 		return pClassPointer;
 	};
@@ -11294,7 +11236,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 56414 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 56350 ];
 
 		return pClassPointer;
 	};
@@ -11317,7 +11259,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 56424 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 56360 ];
 
 		return pClassPointer;
 	};
@@ -11347,7 +11289,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 56436 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 56372 ];
 
 		return pClassPointer;
 	};
@@ -11360,32 +11302,6 @@ public:
 };
 
 UClass* UCheckReservationService_X::pClassPointer = NULL;
-
-// Class ProjectX.NetworkConfig_X
-// 0x0004 (0x0050 - 0x004C)
-class UNetworkConfig_X : public UOnlineConfig_X
-{
-public:
-	unsigned long                                      bEnableDynamicIP : 1;                             		// 0x004C (0x0004) [0x0000000000000001] [0x00000001] ( CPF_Edit )
-	unsigned long                                      bHadDynamicIP : 1;                                		// 0x004C (0x0004) [0x0000000000002000] [0x00000002] ( CPF_Transient )
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 56485 ];
-
-		return pClassPointer;
-	};
-
-	void Undo ( );
-	void Apply ( );
-};
-
-UClass* UNetworkConfig_X::pClassPointer = NULL;
 
 // Class ProjectX.OnlineResource_X
 // 0x0034 (0x007C - 0x0048)
@@ -11407,7 +11323,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 56501 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 56431 ];
 
 		return pClassPointer;
 	};
@@ -11439,7 +11355,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 56547 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 56477 ];
 
 		return pClassPointer;
 	};
@@ -11463,7 +11379,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 56560 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 56490 ];
 
 		return pClassPointer;
 	};
@@ -11488,7 +11404,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 56626 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 56561 ];
 
 		return pClassPointer;
 	};
@@ -11515,7 +11431,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 56642 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 56577 ];
 
 		return pClassPointer;
 	};
@@ -11540,7 +11456,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 56684 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 56619 ];
 
 		return pClassPointer;
 	};
@@ -11563,7 +11479,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 56735 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 56670 ];
 
 		return pClassPointer;
 	};
@@ -11591,7 +11507,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 56764 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 56700 ];
 
 		return pClassPointer;
 	};
@@ -11622,7 +11538,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 56790 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 56726 ];
 
 		return pClassPointer;
 	};
@@ -11650,7 +11566,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 56804 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 56740 ];
 
 		return pClassPointer;
 	};
@@ -11678,7 +11594,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 56952 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 56890 ];
 
 		return pClassPointer;
 	};
@@ -11705,7 +11621,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 56990 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 56928 ];
 
 		return pClassPointer;
 	};
@@ -11714,33 +11630,11 @@ public:
 	bool GetPermissionFromString ( struct FName PermissionName, unsigned char* Permission );
 	TArray< unsigned char > ConvertPermissions ( TArray< struct FName > PermissionNames );
 	struct FPlayerPermissionsList ConvertPlayerPermissions ( struct FUniqueNetId PlayerID );
-	TArray< struct FPlayerPermissionsList > GetPlayerPermissions ( TArray< struct FPlayerPermissionsList >* MapLocal_22BFB40D414F4A5ED3F5BE945DEC1674 );
+	TArray< struct FPlayerPermissionsList > GetPlayerPermissions ( TArray< struct FPlayerPermissionsList >* MapLocal_63D780F34358A2BF65A6FDB43C7F1011 );
 	class URPC_GetPlayerPermissions_X* SetPlayers ( TArray< struct FUniqueNetId >* InPlayerIDs );
 };
 
 UClass* URPC_GetPlayerPermissions_X::pClassPointer = NULL;
-
-// Class ProjectX.PsyNetLocatorHttp_X
-// 0x0000 (0x0064 - 0x0064)
-class UPsyNetLocatorHttp_X : public UPsyNetLocator_X
-{
-public:
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 57015 ];
-
-		return pClassPointer;
-	};
-
-};
-
-UClass* UPsyNetLocatorHttp_X::pClassPointer = NULL;
 
 // Class ProjectX.RPC_AddPlayerToRole_X
 // 0x0004 (0x00A0 - 0x009C)
@@ -11756,7 +11650,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 57052 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 56990 ];
 
 		return pClassPointer;
 	};
@@ -11780,7 +11674,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 57094 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 57031 ];
 
 		return pClassPointer;
 	};
@@ -11805,7 +11699,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 57100 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 57037 ];
 
 		return pClassPointer;
 	};
@@ -11816,11 +11710,13 @@ public:
 UClass* URPC_SetSeasonReward_X::pClassPointer = NULL;
 
 // Class ProjectX.__AdHocBrowser_X__CreateErrorDelegate
-// 0x0004 (0x0040 - 0x003C)
+// 0x0014 (0x0050 - 0x003C)
 class U__AdHocBrowser_X__CreateErrorDelegate : public UObject
 {
 public:
 	class UAsyncTask*                                  Task;                                             		// 0x003C (0x0004) [0x0000000000000000]              
+	struct FScriptDelegate                             ErrorDelegate;                                    		// 0x0040 (0x0010) [0x0000000000400000]              ( CPF_NeedCtorLink )
+	unsigned char                                      UnknownData00[ 0x4 ];                             		// 0x0044 (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
 
 private:
 	static UClass* pClassPointer;
@@ -11829,12 +11725,13 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 57115 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 57052 ];
 
 		return pClassPointer;
 	};
 
-	void LambdaCallback ( class UError* Error );
+	void __AdHocBrowser_X__CreateErrorDelegate ( );
+	void __AdHocBrowser_X__CreateErrorDelegate ( class UError* Error );
 };
 
 UClass* U__AdHocBrowser_X__CreateErrorDelegate::pClassPointer = NULL;
@@ -11858,7 +11755,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 57119 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 57058 ];
 
 		return pClassPointer;
 	};
@@ -11878,12 +11775,14 @@ public:
 UClass* UAdHocBrowser_X::pClassPointer = NULL;
 
 // Class ProjectX.__AdHocBrowser_X__CreateServer
-// 0x0010 (0x004C - 0x003C)
+// 0x0020 (0x005C - 0x003C)
 class U__AdHocBrowser_X__CreateServer : public UObject
 {
 public:
 	struct FString                                     MetaData;                                         		// 0x003C (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
 	class UAsyncTask*                                  Task;                                             		// 0x0048 (0x0004) [0x0000000000000000]              
+	struct FScriptDelegate                             ApcDelegate;                                      		// 0x004C (0x0010) [0x0000000000400000]              ( CPF_NeedCtorLink )
+	unsigned char                                      UnknownData00[ 0x4 ];                             		// 0x0050 (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
 
 private:
 	static UClass* pClassPointer;
@@ -11892,12 +11791,13 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 57125 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 57060 ];
 
 		return pClassPointer;
 	};
 
-	void LambdaCallback ( );
+	void __AdHocBrowser_X__CreateServer ( );
+	//void __AdHocBrowser_X__CreateServer ( );
 };
 
 UClass* U__AdHocBrowser_X__CreateServer::pClassPointer = NULL;
@@ -11918,22 +11818,24 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 57137 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 57070 ];
 
 		return pClassPointer;
 	};
 
-	void LambdaCallback ( );
+	void __AdHocBrowser_X__JoinServer ( );
 };
 
 UClass* U__AdHocBrowser_X__JoinServer::pClassPointer = NULL;
 
 // Class ProjectX.__AdHocInterface_X__DisableAdHoc
-// 0x0004 (0x0040 - 0x003C)
+// 0x0014 (0x0050 - 0x003C)
 class U__AdHocInterface_X__DisableAdHoc : public UObject
 {
 public:
 	class UAsyncTask*                                  Task;                                             		// 0x003C (0x0004) [0x0000000000000000]              
+	struct FScriptDelegate                             DestroyedDelegate;                                		// 0x0040 (0x0010) [0x0000000000400000]              ( CPF_NeedCtorLink )
+	unsigned char                                      UnknownData00[ 0x4 ];                             		// 0x0044 (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
 
 private:
 	static UClass* pClassPointer;
@@ -11942,12 +11844,13 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 57143 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 57076 ];
 
 		return pClassPointer;
 	};
 
-	void LambdaCallback ( );
+	void __AdHocInterface_X__DisableAdHoc ( );
+	//void __AdHocInterface_X__DisableAdHoc ( );
 };
 
 UClass* U__AdHocInterface_X__DisableAdHoc::pClassPointer = NULL;
@@ -11969,7 +11872,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 57146 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 57081 ];
 
 		return pClassPointer;
 	};
@@ -11983,11 +11886,13 @@ public:
 UClass* UAdHocInterface_X::pClassPointer = NULL;
 
 // Class ProjectX.__AdHocInterface_X__EnableAdHoc
-// 0x0004 (0x0040 - 0x003C)
+// 0x0014 (0x0050 - 0x003C)
 class U__AdHocInterface_X__EnableAdHoc : public UObject
 {
 public:
 	class UAsyncTask*                                  Task;                                             		// 0x003C (0x0004) [0x0000000000000000]              
+	struct FScriptDelegate                             InitDelegate;                                     		// 0x0040 (0x0010) [0x0000000000400000]              ( CPF_NeedCtorLink )
+	unsigned char                                      UnknownData00[ 0x4 ];                             		// 0x0044 (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
 
 private:
 	static UClass* pClassPointer;
@@ -11996,12 +11901,13 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 57153 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 57084 ];
 
 		return pClassPointer;
 	};
 
-	void LambdaCallback ( );
+	void __AdHocInterface_X__EnableAdHoc ( );
+	//void __AdHocInterface_X__EnableAdHoc ( );
 };
 
 UClass* U__AdHocInterface_X__EnableAdHoc::pClassPointer = NULL;
@@ -12023,12 +11929,12 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 57170 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 57099 ];
 
 		return pClassPointer;
 	};
 
-	void LambdaCallback ( class URPC_CheckReservation_X* RPC );
+	void __CheckReservationService_X__SendRequest ( class URPC_CheckReservation_X* RPC );
 };
 
 UClass* U__CheckReservationService_X__SendRequest::pClassPointer = NULL;
@@ -12053,7 +11959,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 57177 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 57106 ];
 
 		return pClassPointer;
 	};
@@ -12087,12 +11993,12 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 57189 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 57118 ];
 
 		return pClassPointer;
 	};
 
-	void LambdaCallback ( );
+	void __ExecuteServiceTask__NotifyOnResult ( );
 };
 
 UClass* U__ExecuteServiceTask__NotifyOnResult::pClassPointer = NULL;
@@ -12112,12 +12018,12 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 57193 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 57122 ];
 
 		return pClassPointer;
 	};
 
-	void LambdaCallback ( class UError* Err );
+	void __ExecuteServiceTask__NotifyOnResultComplete ( class UError* Err );
 };
 
 UClass* U__ExecuteServiceTask__NotifyOnResultComplete::pClassPointer = NULL;
@@ -12137,12 +12043,12 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 57198 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 57127 ];
 
 		return pClassPointer;
 	};
 
-	void LambdaCallback ( );
+	void __ExecuteServiceTask__SetResultWhen ( );
 };
 
 UClass* U__ExecuteServiceTask__SetResultWhen::pClassPointer = NULL;
@@ -12167,7 +12073,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 57204 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 57133 ];
 
 		return pClassPointer;
 	};
@@ -12201,7 +12107,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 57207 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 57136 ];
 
 		return pClassPointer;
 	};
@@ -12225,12 +12131,12 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 57221 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 57150 ];
 
 		return pClassPointer;
 	};
 
-	void LambdaCallback ( );
+	void __LanSearchTask__NotifyOnResult ( );
 };
 
 UClass* U__LanSearchTask__NotifyOnResult::pClassPointer = NULL;
@@ -12250,12 +12156,12 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 57225 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 57154 ];
 
 		return pClassPointer;
 	};
 
-	void LambdaCallback ( class UError* Err );
+	void __LanSearchTask__NotifyOnResultComplete ( class UError* Err );
 };
 
 UClass* U__LanSearchTask__NotifyOnResultComplete::pClassPointer = NULL;
@@ -12275,12 +12181,12 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 57230 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 57159 ];
 
 		return pClassPointer;
 	};
 
-	void LambdaCallback ( );
+	void __LanSearchTask__SetResultWhen ( );
 };
 
 UClass* U__LanSearchTask__SetResultWhen::pClassPointer = NULL;
@@ -12299,12 +12205,12 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 57236 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 57165 ];
 
 		return pClassPointer;
 	};
 
-	void LambdaCallback ( class UError* _ );
+	void __PartyMessageQueue_X__SendMessage ( class UError* _ );
 };
 
 UClass* U__PartyMessageQueue_X__SendMessage::pClassPointer = NULL;
@@ -12328,7 +12234,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 57240 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 57169 ];
 
 		return pClassPointer;
 	};
@@ -12361,12 +12267,12 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 57243 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 57172 ];
 
 		return pClassPointer;
 	};
 
-	void LambdaCallback ( class UError* _ );
+	void __PsyNetConnection_X__ProcessServiceCall ( class UError* _ );
 };
 
 UClass* U__PsyNetConnection_X__ProcessServiceCall::pClassPointer = NULL;
@@ -12386,12 +12292,12 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 57250 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 57179 ];
 
 		return pClassPointer;
 	};
 
-	void LambdaCallback ( class UWebRequest_X* Request );
+	void __PsyNetMessengerHttp_X__SendMessage ( class UWebRequest_X* Request );
 };
 
 UClass* U__PsyNetMessengerHttp_X__SendMessage::pClassPointer = NULL;
@@ -12410,12 +12316,12 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 57257 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 57186 ];
 
 		return pClassPointer;
 	};
 
-	void LambdaCallback ( );
+	void __PsyNetRequestQue_X__SendRequest ( );
 };
 
 UClass* U__PsyNetRequestQue_X__SendRequest::pClassPointer = NULL;
@@ -12437,7 +12343,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 57260 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 57189 ];
 
 		return pClassPointer;
 	};
@@ -12467,12 +12373,12 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 57263 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 57192 ];
 
 		return pClassPointer;
 	};
 
-	bool LambdaCallback ( class UPsyNetChannel_X* C );
+	bool __PsyNetServiceProvider_X__CreateChannel ( class UPsyNetChannel_X* C );
 };
 
 UClass* U__PsyNetServiceProvider_X__CreateChannel::pClassPointer = NULL;
@@ -12501,7 +12407,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 57268 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 57196 ];
 
 		return pClassPointer;
 	};
@@ -12538,22 +12444,24 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 57271 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 57200 ];
 
 		return pClassPointer;
 	};
 
-	void LambdaCallback ( class UPsyNetClientService_X* Result, class UError* Error );
+	void __PsyNetServiceProvider_X__ExecuteRequest ( class UPsyNetClientService_X* Result, class UError* Error );
 };
 
 UClass* U__PsyNetServiceProvider_X__ExecuteRequest::pClassPointer = NULL;
 
 // Class ProjectX.__PsyNetServiceProvider_X__ExecuteServiceMessage
-// 0x000C (0x0048 - 0x003C)
+// 0x0014 (0x0050 - 0x003C)
 class U__PsyNetServiceProvider_X__ExecuteServiceMessage : public UObject
 {
 public:
 	struct FString                                     ServiceName;                                      		// 0x003C (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
+	class UPsyNetClientService_X*                      Service;                                          		// 0x0048 (0x0004) [0x0000000000000000]              
+	class UExecuteServiceTask*                         Task;                                             		// 0x004C (0x0004) [0x0000000000000000]              
 
 private:
 	static UClass* pClassPointer;
@@ -12562,12 +12470,13 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 57278 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 57207 ];
 
 		return pClassPointer;
 	};
 
-	void LambdaCallback ( class UPsyNetClientService_X* R, class UError* E );
+	void __PsyNetServiceProvider_X__ExecuteServiceMessage ( class UError* Err );
+	void __PsyNetServiceProvider_X__ExecuteServiceMessage ( class UPsyNetClientService_X* R, class UError* E );
 };
 
 UClass* U__PsyNetServiceProvider_X__ExecuteServiceMessage::pClassPointer = NULL;
@@ -12587,12 +12496,12 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 57307 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 57234 ];
 
 		return pClassPointer;
 	};
 
-	void LambdaCallback ( );
+	void __SendRequestTask__NotifyOnResult ( );
 };
 
 UClass* U__SendRequestTask__NotifyOnResult::pClassPointer = NULL;
@@ -12612,12 +12521,12 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 57311 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 57238 ];
 
 		return pClassPointer;
 	};
 
-	void LambdaCallback ( class UError* Err );
+	void __SendRequestTask__NotifyOnResultComplete ( class UError* Err );
 };
 
 UClass* U__SendRequestTask__NotifyOnResultComplete::pClassPointer = NULL;
@@ -12637,12 +12546,12 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 57316 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 57243 ];
 
 		return pClassPointer;
 	};
 
-	void LambdaCallback ( );
+	void __SendRequestTask__SetResultWhen ( );
 };
 
 UClass* U__SendRequestTask__SetResultWhen::pClassPointer = NULL;
@@ -12661,12 +12570,12 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 57322 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 57249 ];
 
 		return pClassPointer;
 	};
 
-	void LambdaCallback ( );
+	void __TaskGate_X__Add ( );
 };
 
 UClass* U__TaskGate_X__Add::pClassPointer = NULL;
@@ -12686,7 +12595,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 57325 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 57252 ];
 
 		return pClassPointer;
 	};
@@ -12700,13 +12609,15 @@ public:
 UClass* UTaskGate_X::pClassPointer = NULL;
 
 // Class ProjectX.__TaskGate_X__AddWithTimeout
-// 0x0014 (0x0050 - 0x003C)
+// 0x0024 (0x0060 - 0x003C)
 class U__TaskGate_X__AddWithTimeout : public UObject
 {
 public:
 	class UAsyncTask*                                  Task;                                             		// 0x003C (0x0004) [0x0000000000000000]              
 	class UErrorType*                                  TimeoutError;                                     		// 0x0040 (0x0004) [0x0000000000000000]              
 	struct FString                                     ErrorMessage;                                     		// 0x0044 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
+	struct FScriptDelegate                             TimeoutDelegate;                                  		// 0x0050 (0x0010) [0x0000000000400000]              ( CPF_NeedCtorLink )
+	unsigned char                                      UnknownData00[ 0x4 ];                             		// 0x0054 (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
 
 private:
 	static UClass* pClassPointer;
@@ -12715,12 +12626,13 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 57328 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 57255 ];
 
 		return pClassPointer;
 	};
 
-	void LambdaCallback ( );
+	void __TaskGate_X__AddWithTimeout ( );
+	//void __TaskGate_X__AddWithTimeout ( );
 };
 
 UClass* U__TaskGate_X__AddWithTimeout::pClassPointer = NULL;
@@ -12748,7 +12660,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 57439 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 57360 ];
 
 		return pClassPointer;
 	};
@@ -12776,7 +12688,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 57477 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 57398 ];
 
 		return pClassPointer;
 	};
@@ -12802,7 +12714,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 57553 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 57474 ];
 
 		return pClassPointer;
 	};
@@ -12826,7 +12738,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 57552 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 57473 ];
 
 		return pClassPointer;
 	};
@@ -12851,7 +12763,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 57750 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 57673 ];
 
 		return pClassPointer;
 	};
@@ -12875,7 +12787,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 57754 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 57677 ];
 
 		return pClassPointer;
 	};
@@ -12898,7 +12810,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 57812 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 57735 ];
 
 		return pClassPointer;
 	};
@@ -12922,7 +12834,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 57814 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 57737 ];
 
 		return pClassPointer;
 	};
@@ -12930,6 +12842,30 @@ public:
 };
 
 UClass* URPC_PartyLeave_X::pClassPointer = NULL;
+
+// Class ProjectX.RPC_PartyChat_X
+// 0x000C (0x00B4 - 0x00A8)
+class URPC_PartyChat_X : public URPC_PartyBase_X
+{
+public:
+	struct FString                                     Message;                                          		// 0x00A8 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
+
+private:
+	static UClass* pClassPointer;
+
+public:
+	static UClass* StaticClass()
+	{
+		if ( ! pClassPointer )
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 57747 ];
+
+		return pClassPointer;
+	};
+
+	class URPC_PartyChat_X* SetText ( struct FString InText );
+};
+
+UClass* URPC_PartyChat_X::pClassPointer = NULL;
 
 // Class ProjectX.RPC_PartyChangeOwner_X
 // 0x00B0 (0x0158 - 0x00A8)
@@ -12947,7 +12883,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 57860 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 57786 ];
 
 		return pClassPointer;
 	};
@@ -12971,7 +12907,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 57876 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 57802 ];
 
 		return pClassPointer;
 	};
@@ -12995,7 +12931,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 57889 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 57815 ];
 
 		return pClassPointer;
 	};
@@ -13020,7 +12956,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 57921 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 57847 ];
 
 		return pClassPointer;
 	};
@@ -13049,7 +12985,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 57948 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 57874 ];
 
 		return pClassPointer;
 	};
@@ -13071,7 +13007,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 57947 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 57873 ];
 
 		return pClassPointer;
 	};
@@ -13093,7 +13029,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 57956 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 57882 ];
 
 		return pClassPointer;
 	};
@@ -13115,7 +13051,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 57957 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 57883 ];
 
 		return pClassPointer;
 	};
@@ -13143,7 +13079,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 57958 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 57884 ];
 
 		return pClassPointer;
 	};
@@ -13165,7 +13101,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 57959 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 57885 ];
 
 		return pClassPointer;
 	};
@@ -13187,7 +13123,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 57960 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 57886 ];
 
 		return pClassPointer;
 	};
@@ -13215,7 +13151,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 57961 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 57887 ];
 
 		return pClassPointer;
 	};
@@ -13223,6 +13159,28 @@ public:
 };
 
 UClass* UPsyNetService_PartyOwnerChanged_X::pClassPointer = NULL;
+
+// Class ProjectX.PsyNetService_PartyChat_X
+// 0x0000 (0x0118 - 0x0118)
+class UPsyNetService_PartyChat_X : public UPsyNetService_Party_X
+{
+public:
+
+private:
+	static UClass* pClassPointer;
+
+public:
+	static UClass* StaticClass()
+	{
+		if ( ! pClassPointer )
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 57888 ];
+
+		return pClassPointer;
+	};
+
+};
+
+UClass* UPsyNetService_PartyChat_X::pClassPointer = NULL;
 
 // Class ProjectX.PerConMetrics_X
 // 0x001C (0x0070 - 0x0054)
@@ -13244,7 +13202,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 58071 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 58007 ];
 
 		return pClassPointer;
 	};
@@ -13293,14 +13251,14 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 58118 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 58054 ];
 
 		return pClassPointer;
 	};
 
 	bool __PerConMonitor_X__HandleBatchError ( float RemoveTime );
 	bool IsPerConRelevantError ( class UError* Error );
-	void HandleBatchError ( class URPCQueue_X* InQueue, class UError* Error, TArray< float >* FilterLocal_03105FD746B8ADF85CEC1991A07C68D9 );
+	void HandleBatchError ( class URPCQueue_X* InQueue, class UError* Error, TArray< float >* FilterLocal_EE7BC6DB470A7CAAC76982B7361AADF7 );
 	void HandleInvalidMessage ( class UPsyNetMessengerWebSocket_X* InMessenger, struct FString Substring );
 	void HandleDisconnected ( class UPsyNetMessengerWebSocket_X* InMessenger, int Code, struct FString Reason );
 	void HandleConnectFail ( class UPsyNetMessengerWebSocket_X* InMessenger );
@@ -13324,7 +13282,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 58280 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 58217 ];
 
 		return pClassPointer;
 	};
@@ -13332,28 +13290,6 @@ public:
 };
 
 UClass* UPsyNetService_DuplicateLogin_X::pClassPointer = NULL;
-
-// Class ProjectX.PsyNetLocatorWebSocket_X
-// 0x0000 (0x0064 - 0x0064)
-class UPsyNetLocatorWebSocket_X : public UPsyNetLocator_X
-{
-public:
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 58370 ];
-
-		return pClassPointer;
-	};
-
-};
-
-UClass* UPsyNetLocatorWebSocket_X::pClassPointer = NULL;
 
 // Class ProjectX.PsyNetService_AAS_X
 // 0x0008 (0x005C - 0x0054)
@@ -13370,7 +13306,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 58533 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 58468 ];
 
 		return pClassPointer;
 	};
@@ -13395,7 +13331,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 58540 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 58475 ];
 
 		return pClassPointer;
 	};
@@ -13419,7 +13355,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 58636 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 58570 ];
 
 		return pClassPointer;
 	};
@@ -13444,7 +13380,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 58662 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 58596 ];
 
 		return pClassPointer;
 	};
@@ -13470,7 +13406,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 58741 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 58674 ];
 
 		return pClassPointer;
 	};
@@ -13482,6 +13418,536 @@ public:
 };
 
 UClass* UUdpLanServer_X::pClassPointer = NULL;
+
+// Class ProjectX.__OnlinePlayerFriends_X__DownloadPendingFriendRequests
+// 0x0010 (0x004C - 0x003C)
+class U__OnlinePlayerFriends_X__DownloadPendingFriendRequests : public UObject
+{
+public:
+	struct FScriptDelegate                             Callback;                                         		// 0x003C (0x0010) [0x0000000000400000]              ( CPF_NeedCtorLink )
+	unsigned char                                      UnknownData00[ 0x4 ];                             		// 0x0040 (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
+
+private:
+	static UClass* pClassPointer;
+
+public:
+	static UClass* StaticClass()
+	{
+		if ( ! pClassPointer )
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 58764 ];
+
+		return pClassPointer;
+	};
+
+};
+
+UClass* U__OnlinePlayerFriends_X__DownloadPendingFriendRequests::pClassPointer = NULL;
+
+// Class ProjectX.__OnlinePlayerFriends_X__SearchForPlayerByName
+// 0x001C (0x0058 - 0x003C)
+class U__OnlinePlayerFriends_X__SearchForPlayerByName : public UObject
+{
+public:
+	struct FScriptDelegate                             Callback;                                         		// 0x003C (0x0010) [0x0000000000400000]              ( CPF_NeedCtorLink )
+	unsigned char                                      UnknownData00[ 0x4 ];                             		// 0x0040 (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
+	struct FString                                     FriendName;                                       		// 0x004C (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
+
+private:
+	static UClass* pClassPointer;
+
+public:
+	static UClass* StaticClass()
+	{
+		if ( ! pClassPointer )
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 58767 ];
+
+		return pClassPointer;
+	};
+
+};
+
+UClass* U__OnlinePlayerFriends_X__SearchForPlayerByName::pClassPointer = NULL;
+
+// Class ProjectX.SetPlayerStorageResult_X
+// 0x000C (0x0048 - 0x003C)
+class USetPlayerStorageResult_X : public UObject
+{
+public:
+	TArray< struct FSetPlayerStorageResultItem >       Items;                                            		// 0x003C (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
+
+private:
+	static UClass* pClassPointer;
+
+public:
+	static UClass* StaticClass()
+	{
+		if ( ! pClassPointer )
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 58771 ];
+
+		return pClassPointer;
+	};
+
+};
+
+UClass* USetPlayerStorageResult_X::pClassPointer = NULL;
+
+// Class ProjectX.__OnlinePlayerStorageQueue_X__MapResultItem
+// 0x000C (0x0048 - 0x003C)
+class U__OnlinePlayerStorageQueue_X__MapResultItem : public UObject
+{
+public:
+	struct FSetPlayerStorageResultItem                 Item;                                             		// 0x003C (0x000C) [0x0000000000000000]              
+
+private:
+	static UClass* pClassPointer;
+
+public:
+	static UClass* StaticClass()
+	{
+		if ( ! pClassPointer )
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 58775 ];
+
+		return pClassPointer;
+	};
+
+	bool __OnlinePlayerStorageQueue_X__MapResultItem ( struct FPendingStorage P );
+};
+
+UClass* U__OnlinePlayerStorageQueue_X__MapResultItem::pClassPointer = NULL;
+
+// Class ProjectX.OnlinePlayerStorageQueue_X
+// 0x003C (0x0078 - 0x003C)
+class UOnlinePlayerStorageQueue_X : public UObject
+{
+public:
+	class UOnlinePlayerStorageConfig_X*                Config;                                           		// 0x003C (0x0004) [0x0000000000000001]              ( CPF_Edit )
+	TArray< struct FPendingStorage >                   QueuedObjects;                                    		// 0x0040 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
+	TArray< struct FPendingStorage >                   PendingObjects;                                   		// 0x004C (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
+	struct FScriptDelegate                             __EventStorageSuccess__Delegate;                  		// 0x0058 (0x0010) [0x0000000000400000]              ( CPF_NeedCtorLink )
+	unsigned char                                      UnknownData00[ 0x4 ];                             		// 0x005C (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
+	struct FScriptDelegate                             __EventStorageError__Delegate;                    		// 0x0068 (0x0010) [0x0000000000400000]              ( CPF_NeedCtorLink )
+	unsigned char                                      UnknownData01[ 0x4 ];                             		// 0x006C (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
+
+private:
+	static UClass* pClassPointer;
+
+public:
+	static UClass* StaticClass()
+	{
+		if ( ! pClassPointer )
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 58777 ];
+
+		return pClassPointer;
+	};
+
+	void __OnlinePlayerStorageQueue_X__Construct ( struct FString _ );
+	void __OnlinePlayerStorageQueue_X__SendBatch ( struct FPendingStorage P );
+	void __OnlinePlayerStorageQueue_X__SendBatch1 ( class URPC_X* RPC );
+	void __OnlinePlayerStorageQueue_X__HandleStorageSuccess ( struct FPendingStorage P );
+	void __OnlinePlayerStorageQueue_X__HandleStorageSuccess1 ( struct FSetPlayerStorageRequestItem R );
+	void __OnlinePlayerStorageQueue_X__HandleStorageError ( struct FPendingStorage P );
+	bool __OnlinePlayerStorageQueue_X__HandleStorageError1 ( struct FPendingStorage P );
+	void HandleStorageError ( class UError* Error, TArray< struct FPendingStorage >* FilterLocal_314E1B914EC839E1C4CEB4A639DB97DA );
+	struct FPendingStorage MapResultItem ( struct FSetPlayerStorageResultItem Item, struct FPendingStorage* StructInitializer_5E10843C46D57911E1AFBD93EEE33014 );
+	void HandleStorageSuccess ( class URPC_PlayerStorageSet_X* RPC, TArray< struct FPendingStorage >* MapLocal_B4904F25422E23A820EDECAC7D6E826F );
+	void PartitionStorageRequests ( TArray< struct FPendingStorage >* OutQueue, TArray< struct FSetPlayerStorageRequestItem >* OutOfDate, TArray< struct FPendingStorage >* UpToDate, struct FSetPlayerStorageRequestItem* StructInitializer_3C555FC245AFD4F60AA1A0B941E888B8 );
+	void SendBatch ( );
+	void QueueBatch ( );
+	void QueueObject ( class UObject* DataObj, int ClientTick );
+	void HandleLocalPlayerLeave ( class ULocalPlayer_X* OldPlayer );
+	void eventConstruct ( );
+	void EventStorageError ( class UError* Error );
+	void EventStorageSuccess ( class UObject* Data, int ServerTick );
+};
+
+UClass* UOnlinePlayerStorageQueue_X::pClassPointer = NULL;
+
+// Class ProjectX.__OnlinePlayerStorageSync_X__PopRequestObject
+// 0x0008 (0x0044 - 0x003C)
+class U__OnlinePlayerStorageSync_X__PopRequestObject : public UObject
+{
+public:
+	struct FName                                       Category;                                         		// 0x003C (0x0008) [0x0000000000000000]              
+
+private:
+	static UClass* pClassPointer;
+
+public:
+	static UClass* StaticClass()
+	{
+		if ( ! pClassPointer )
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 58786 ];
+
+		return pClassPointer;
+	};
+
+	bool __OnlinePlayerStorageSync_X__PopRequestObject ( class UObject* O );
+};
+
+UClass* U__OnlinePlayerStorageSync_X__PopRequestObject::pClassPointer = NULL;
+
+// Class ProjectX.OnlinePlayerStorageSync_X
+// 0x001C (0x0058 - 0x003C)
+class UOnlinePlayerStorageSync_X : public UObject
+{
+public:
+	TArray< class UObject* >                           RequestedObjects;                                 		// 0x003C (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
+	struct FScriptDelegate                             __EventSyncSuccess__Delegate;                     		// 0x0048 (0x0010) [0x0000000000400000]              ( CPF_NeedCtorLink )
+	unsigned char                                      UnknownData00[ 0x4 ];                             		// 0x004C (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
+
+private:
+	static UClass* pClassPointer;
+
+public:
+	static UClass* StaticClass()
+	{
+		if ( ! pClassPointer )
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 58791 ];
+
+		return pClassPointer;
+	};
+
+	class UObject* __OnlinePlayerStorageSync_X__SyncObjects ( struct FOnlinePlayerStorageSyncRequest R );
+	void __OnlinePlayerStorageSync_X__HandleSyncSuccess ( struct FOnlinePlayerStorageSyncResult Result );
+	void __OnlinePlayerStorageSync_X__HandleSyncError ( class UObject* O );
+	void HandleSyncError ( class UError* Error, TArray< class UObject* >* NewRequestObjects );
+	class UObject* InstanceSyncData ( class UObject* LocalObject, TArray< unsigned char >* Bytes );
+	class UObject* PopRequestObject ( struct FName Category );
+	struct FOnlinePlayerStorageSyncResult MapResultItem ( struct FGetPlayerStorageResultItem Item, struct FOnlinePlayerStorageSyncResult* StructInitializer_626069A74CE5387DE1E5199C7CCAFCF9 );
+	void HandleSyncSuccess ( class URPC_PlayerStorageGet_X* RPC, TArray< struct FOnlinePlayerStorageSyncResult >* MapLocal_D38A9BD14773280AC2E99AA1FE6F2566 );
+	int CrcObject ( class UObject* Data );
+	struct FGetPlayerStorageRequestItem MapRequestItem ( struct FOnlinePlayerStorageSyncRequest Request, struct FGetPlayerStorageRequestItem* StructInitializer_CAA0A539446724837046658A2AAC1A65 );
+	class UAsyncTask* SyncObjects ( TArray< struct FOnlinePlayerStorageSyncRequest >* Requests, TArray< class UObject* >* MapLocal_6A5F7ED74AF9B9F8E72B3DA15DA0C66E, TArray< struct FGetPlayerStorageRequestItem >* MapLocal_63D190D14837AF77DF7D49801011B52E );
+	void EventSyncSuccess ( struct FOnlinePlayerStorageSyncResult* Result );
+};
+
+UClass* UOnlinePlayerStorageSync_X::pClassPointer = NULL;
+
+// Class ProjectX.__OnlinePlayerStorageSync_X__SyncObjects
+// 0x000C (0x0048 - 0x003C)
+class U__OnlinePlayerStorageSync_X__SyncObjects : public UObject
+{
+public:
+	TArray< class UObject* >                           NewRequestObjects;                                		// 0x003C (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
+
+private:
+	static UClass* pClassPointer;
+
+public:
+	static UClass* StaticClass()
+	{
+		if ( ! pClassPointer )
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 58793 ];
+
+		return pClassPointer;
+	};
+
+	void __OnlinePlayerStorageSync_X__SyncObjects ( class UError* E );
+};
+
+UClass* U__OnlinePlayerStorageSync_X__SyncObjects::pClassPointer = NULL;
+
+// Class ProjectX.DynamicValue_X
+// 0x0020 (0x005C - 0x003C)
+class UDynamicValue_X : public UObject
+{
+public:
+	float                                              DefaultValue;                                     		// 0x003C (0x0004) [0x0000000000000001]              ( CPF_Edit )
+	unsigned long                                      bClampMax : 1;                                    		// 0x0040 (0x0004) [0x0000000000000001] [0x00000001] ( CPF_Edit )
+	unsigned long                                      bClampMin : 1;                                    		// 0x0040 (0x0004) [0x0000000000000001] [0x00000002] ( CPF_Edit )
+	float                                              MaxValue;                                         		// 0x0044 (0x0004) [0x0000000000000001]              ( CPF_Edit )
+	float                                              MinValue;                                         		// 0x0048 (0x0004) [0x0000000000000001]              ( CPF_Edit )
+	TArray< class UDynamicValueModifier_X* >           Modifiers;                                        		// 0x004C (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
+	float                                              CachedValue;                                      		// 0x0058 (0x0004) [0x0000000000000000]              
+
+private:
+	static UClass* pClassPointer;
+
+public:
+	static UClass* StaticClass()
+	{
+		if ( ! pClassPointer )
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 58800 ];
+
+		return pClassPointer;
+	};
+
+	void PrintDebugInfo ( class UDebugDrawer* Drawer );
+	struct FString GetDebugValue ( );
+	float GetValue ( );
+	void Tick ( float DeltaTime );
+	void RemoveModifier ( class UDynamicValueModifier_X* Mod );
+	class UDynamicValueModifier_X* AddModifier ( class UDynamicValueModifier_X* Mod );
+	void eventConstruct ( );
+};
+
+UClass* UDynamicValue_X::pClassPointer = NULL;
+
+// Class ProjectX.DynamicValueModifier_X
+// 0x0014 (0x0050 - 0x003C)
+class UDynamicValueModifier_X : public UObject
+{
+public:
+	struct FString                                     DisplayName;                                      		// 0x003C (0x000C) [0x0000000000400001]              ( CPF_Edit | CPF_NeedCtorLink )
+	unsigned char                                      Type;                                             		// 0x0048 (0x0001) [0x0000000000000001]              ( CPF_Edit )
+	int                                                Priority;                                         		// 0x004C (0x0004) [0x0000000000000001]              ( CPF_Edit )
+
+private:
+	static UClass* pClassPointer;
+
+public:
+	static UClass* StaticClass()
+	{
+		if ( ! pClassPointer )
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 58803 ];
+
+		return pClassPointer;
+	};
+
+	struct FString GetDebugValue ( );
+	struct FString GetDebugString ( );
+	bool Expired ( );
+	float GetValue ( );
+	void Tick ( float DeltaTime );
+};
+
+UClass* UDynamicValueModifier_X::pClassPointer = NULL;
+
+// Class ProjectX.DynamicValueModifierCurve_X
+// 0x0020 (0x0070 - 0x0050)
+class UDynamicValueModifierCurve_X : public UDynamicValueModifier_X
+{
+public:
+	struct FInterpCurveFloat                           Curve;                                            		// 0x0050 (0x0010) [0x0000000000400001]              ( CPF_Edit | CPF_NeedCtorLink )
+	struct FScriptDelegate                             __GetValueDelegate__Delegate;                     		// 0x0060 (0x0010) [0x0000000000400000]              ( CPF_NeedCtorLink )
+	unsigned char                                      UnknownData00[ 0x4 ];                             		// 0x0064 (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
+
+private:
+	static UClass* pClassPointer;
+
+public:
+	static UClass* StaticClass()
+	{
+		if ( ! pClassPointer )
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 58845 ];
+
+		return pClassPointer;
+	};
+
+	struct FString GetDebugValue ( );
+	float GetValue ( );
+	float GetValueDelegate ( );
+};
+
+UClass* UDynamicValueModifierCurve_X::pClassPointer = NULL;
+
+// Class ProjectX.DynamicValueModifierDuration_X
+// 0x001C (0x006C - 0x0050)
+class UDynamicValueModifierDuration_X : public UDynamicValueModifier_X
+{
+public:
+	float                                              Duration;                                         		// 0x0050 (0x0004) [0x0000000000000001]              ( CPF_Edit )
+	float                                              Value;                                            		// 0x0054 (0x0004) [0x0000000000000001]              ( CPF_Edit )
+	struct FInterpCurveFloat                           CurveValue;                                       		// 0x0058 (0x0010) [0x0000000000400001]              ( CPF_Edit | CPF_NeedCtorLink )
+	unsigned long                                      bUseCurve : 1;                                    		// 0x0068 (0x0004) [0x0000000000000001] [0x00000001] ( CPF_Edit )
+
+private:
+	static UClass* pClassPointer;
+
+public:
+	static UClass* StaticClass()
+	{
+		if ( ! pClassPointer )
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 58855 ];
+
+		return pClassPointer;
+	};
+
+	struct FString GetDebugString ( );
+	float GetValue ( );
+	bool Expired ( );
+	void Tick ( float DeltaTime );
+};
+
+UClass* UDynamicValueModifierDuration_X::pClassPointer = NULL;
+
+// Class ProjectX.GetPlayerStorageResult_X
+// 0x000C (0x0048 - 0x003C)
+class UGetPlayerStorageResult_X : public UObject
+{
+public:
+	TArray< struct FGetPlayerStorageResultItem >       Items;                                            		// 0x003C (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
+
+private:
+	static UClass* pClassPointer;
+
+public:
+	static UClass* StaticClass()
+	{
+		if ( ! pClassPointer )
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 58869 ];
+
+		return pClassPointer;
+	};
+
+};
+
+UClass* UGetPlayerStorageResult_X::pClassPointer = NULL;
+
+// Class ProjectX.OnlinePlayerStorageManifest_X
+// 0x000C (0x0048 - 0x003C)
+class UOnlinePlayerStorageManifest_X : public UObject
+{
+public:
+	TArray< struct UOnlinePlayerStorageManifest_X_FStorageMetadata > MetaData;                                         		// 0x003C (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
+
+private:
+	static UClass* pClassPointer;
+
+public:
+	static UClass* StaticClass()
+	{
+		if ( ! pClassPointer )
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 58882 ];
+
+		return pClassPointer;
+	};
+
+	int GetChecksum ( struct FName Category );
+	void SetChecksum ( struct FName Category, int Checksum );
+	int GetIndex ( struct FName Category );
+};
+
+UClass* UOnlinePlayerStorageManifest_X::pClassPointer = NULL;
+
+// Class ProjectX.OnlinePlayerStorageConfig_X
+// 0x0004 (0x0050 - 0x004C)
+class UOnlinePlayerStorageConfig_X : public UOnlineConfig_X
+{
+public:
+	float                                              QueueBatchDelay;                                  		// 0x004C (0x0004) [0x0000000000000001]              ( CPF_Edit )
+
+private:
+	static UClass* pClassPointer;
+
+public:
+	static UClass* StaticClass()
+	{
+		if ( ! pClassPointer )
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 58888 ];
+
+		return pClassPointer;
+	};
+
+};
+
+UClass* UOnlinePlayerStorageConfig_X::pClassPointer = NULL;
+
+// Class ProjectX.RPC_PlayerStorageSet_X
+// 0x0058 (0x00F4 - 0x009C)
+class URPC_PlayerStorageSet_X : public URPC_X
+{
+public:
+	struct FUniqueNetId                                PlayerID;                                         		// 0x009C (0x0048) [0x0000000000000000]              
+	TArray< struct FSetPlayerStorageRequestItem >      Items;                                            		// 0x00E4 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
+	class USetPlayerStorageResult_X*                   Result;                                           		// 0x00F0 (0x0004) [0x0000000000002000]              ( CPF_Transient )
+
+private:
+	static UClass* pClassPointer;
+
+public:
+	static UClass* StaticClass()
+	{
+		if ( ! pClassPointer )
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 58931 ];
+
+		return pClassPointer;
+	};
+
+	class UObject* eventGetResponseObject ( );
+};
+
+UClass* URPC_PlayerStorageSet_X::pClassPointer = NULL;
+
+// Class ProjectX.SaveLock_X
+// 0x0004 (0x0040 - 0x003C)
+class USaveLock_X : public UObject
+{
+public:
+	class UGFxEngine_X*                                GFxEngine;                                        		// 0x003C (0x0004) [0x0000000000000000]              
+
+private:
+	static UClass* pClassPointer;
+
+public:
+	static UClass* StaticClass()
+	{
+		if ( ! pClassPointer )
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 58932 ];
+
+		return pClassPointer;
+	};
+
+	bool StaticAllowSave ( );
+	bool AllowSave ( );
+};
+
+UClass* USaveLock_X::pClassPointer = NULL;
+
+// Class ProjectX.RPC_PlayerStorageGet_X
+// 0x0058 (0x00F4 - 0x009C)
+class URPC_PlayerStorageGet_X : public URPC_X
+{
+public:
+	struct FUniqueNetId                                PlayerID;                                         		// 0x009C (0x0048) [0x0000000000000000]              
+	TArray< struct FGetPlayerStorageRequestItem >      Items;                                            		// 0x00E4 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
+	class UGetPlayerStorageResult_X*                   Result;                                           		// 0x00F0 (0x0004) [0x0000000000002000]              ( CPF_Transient )
+
+private:
+	static UClass* pClassPointer;
+
+public:
+	static UClass* StaticClass()
+	{
+		if ( ! pClassPointer )
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 59005 ];
+
+		return pClassPointer;
+	};
+
+	class UObject* eventGetResponseObject ( );
+};
+
+UClass* URPC_PlayerStorageGet_X::pClassPointer = NULL;
+
+// Class ProjectX.SmoothDynamicValue_X
+// 0x000C (0x0068 - 0x005C)
+class USmoothDynamicValue_X : public UDynamicValue_X
+{
+public:
+	float                                              LerpUpSpeed;                                      		// 0x005C (0x0004) [0x0000000000000001]              ( CPF_Edit )
+	float                                              LerpDownSpeed;                                    		// 0x0060 (0x0004) [0x0000000000000001]              ( CPF_Edit )
+	float                                              SmoothedCachedValue;                              		// 0x0064 (0x0004) [0x0000000000002000]              ( CPF_Transient )
+
+private:
+	static UClass* pClassPointer;
+
+public:
+	static UClass* StaticClass()
+	{
+		if ( ! pClassPointer )
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 59080 ];
+
+		return pClassPointer;
+	};
+
+	struct FString GetDebugValue ( );
+	float GetValue ( );
+	void Tick ( float DeltaTime );
+	void eventConstruct ( );
+};
+
+UClass* USmoothDynamicValue_X::pClassPointer = NULL;
 
 
 #ifdef _MSC_VER

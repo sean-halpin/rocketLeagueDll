@@ -86,6 +86,12 @@ struct AActor_execPrintDebugInfo_Parms
 	class UDebugDrawer*                                Drawer;                                           		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 };
 
+// Function Engine.Actor.ForceNetUpdatePacket
+// [0x00020401] ( FUNC_Final | FUNC_Native )
+struct AActor_execForceNetUpdatePacket_Parms
+{
+};
+
 // Function Engine.Actor.ForceNetUpdate
 // [0x00020401] ( FUNC_Final | FUNC_Native )
 struct AActor_execForceNetUpdate_Parms
@@ -2361,6 +2367,13 @@ struct AActor_execForceUpdateComponents_Parms
 	unsigned long                                      bTransformOnly : 1;                               		// 0x0004 (0x0004) [0x0000000000000090] [0x00000001] ( CPF_OptionalParm | CPF_Parm )
 };
 
+// Function Engine.Actor.EventHiddenChanged
+// [0x00120000] 
+struct AActor_execEventHiddenChanged_Parms
+{
+	class AActor*                                      Target;                                           		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
+};
+
 // Function Engine.Actor.OnTimer
 // [0x00140001] ( FUNC_Final )
 struct AActor_execOnTimer_Parms
@@ -3080,6 +3093,13 @@ struct UEngine_execGetGameVersion_Parms
 	unsigned char                                      ReturnValue;                                      		// 0x0000 (0x0001) [0x0000000000000580]              ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
 };
 
+// Function Engine.Engine.GetFeatureName
+// [0x00022401] ( FUNC_Final | FUNC_Native )
+struct UEngine_execGetFeatureName_Parms
+{
+	struct FName                                       ReturnValue;                                      		// 0x0000 (0x0008) [0x0000000000000580]              ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
+};
+
 // Function Engine.Engine.GetFeatureSystem
 // [0x00022401] ( FUNC_Final | FUNC_Native )
 struct UEngine_execGetFeatureSystem_Parms
@@ -3091,14 +3111,14 @@ struct UEngine_execGetFeatureSystem_Parms
 // [0x00020400] ( FUNC_Native )
 struct UEngine_execSetNetworkSecurityKey_Parms
 {
-	struct FNetworkEncryptionKey                       SecurityKey;                                      		// 0x0000 (0x0088) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
+	struct FNetworkEncryptionKey                       SecurityKey;                                      		// 0x0000 (0x0084) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function Engine.Engine.AddNetworkSecurityKey
 // [0x00020400] ( FUNC_Native )
 struct UEngine_execAddNetworkSecurityKey_Parms
 {
-	struct FNetworkEncryptionKey                       SecurityKey;                                      		// 0x0000 (0x0088) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
+	struct FNetworkEncryptionKey                       SecurityKey;                                      		// 0x0000 (0x0084) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function Engine.Engine.GetSystemSettingFloat
@@ -4344,18 +4364,6 @@ struct AGameInstance_execInstanceRemove_Parms
 struct AGameInstance_execInstanceAdd_Parms
 {
 	class AActor*                                      A;                                                		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
-};
-
-// Function Engine.HUD.NotifyBadConnection
-// [0x00020800] ( FUNC_Event )
-struct AHUD_eventNotifyBadConnection_Parms
-{
-	float                                              Ping;                                             		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
-	int                                                InPacketLoss;                                     		// 0x0004 (0x0004) [0x0000000000000080]              ( CPF_Parm )
-	int                                                OutPacketLoss;                                    		// 0x0008 (0x0004) [0x0000000000000080]              ( CPF_Parm )
-	float                                              ReceiveTime;                                      		// 0x000C (0x0004) [0x0000000000000080]              ( CPF_Parm )
-	float                                              AckTime;                                          		// 0x0010 (0x0004) [0x0000000000000080]              ( CPF_Parm )
-	float                                              NetSpeed;                                         		// 0x0014 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 };
 
 // Function Engine.HUD.OnLostFocusPause
@@ -6109,6 +6117,14 @@ struct AGameInfo_execGetIntOption_Parms
 struct AGameInfo_execSanitizePlayerName_Parms
 {
 	struct FString                                     PlayerName;                                       		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
+	struct FString                                     ReturnValue;                                      		// 0x000C (0x000C) [0x0000000000400580]              ( CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink )
+};
+
+// Function Engine.GameInfo.SanitizeWhitespace
+// [0x00022401] ( FUNC_Final | FUNC_Native )
+struct AGameInfo_execSanitizeWhitespace_Parms
+{
+	struct FString                                     Text;                                             		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 	struct FString                                     ReturnValue;                                      		// 0x000C (0x000C) [0x0000000000400580]              ( CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink )
 };
 
@@ -12921,6 +12937,7 @@ struct APlayerController_execClearAckedMoves_Parms
 struct APlayerController_execServerUpdatePing_Parms
 {
 	int                                                NewPing;                                          		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
+	// float                                           NewPingInSeconds;                                 		// 0x0004 (0x0004) [0x0000000000000000]              
 };
 
 // Function Engine.PlayerController.UpdateStateFromAdjustment
@@ -12992,13 +13009,6 @@ struct APlayerController_execClientAdjustPosition_Parms
 struct APlayerController_execClientAckGoodMove_Parms
 {
 	float                                              TimeStamp;                                        		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
-};
-
-// Function Engine.PlayerController.ClientCapBandwidth
-// [0x010201C2] 
-struct APlayerController_execClientCapBandwidth_Parms
-{
-	int                                                Cap;                                              		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 };
 
 // Function Engine.PlayerController.ShortClientAdjustPosition
@@ -14124,13 +14134,6 @@ struct APlayerController_execGetServerNetworkAddress_Parms
 struct APlayerController_execGetPlayerNetworkAddress_Parms
 {
 	struct FString                                     ReturnValue;                                      		// 0x0000 (0x000C) [0x0000000000400580]              ( CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink )
-};
-
-// Function Engine.PlayerController.SetNetSpeed
-// [0x00020401] ( FUNC_Final | FUNC_Native )
-struct APlayerController_execSetNetSpeed_Parms
-{
-	int                                                NewSpeed;                                         		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
 };
 
 // Function Engine.CheatManager.AnalyticsEndSession
@@ -16724,6 +16727,22 @@ struct UJsonObject_execGetObject_Parms
 	class UJsonObject*                                 ReturnValue;                                      		// 0x000C (0x0004) [0x0000000000000580]              ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
 };
 
+// Function Engine.OnlineAuthInterface.RequestAccountAuthorization
+// [0x00020000] 
+struct UOnlineAuthInterface_execRequestAccountAuthorization_Parms
+{
+	struct FUniqueNetId                                PlayerID;                                         		// 0x0000 (0x0048) [0x0000000000000080]              ( CPF_Parm )
+	struct FScriptDelegate                             Callback;                                         		// 0x0048 (0x0010) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
+	class UAsyncTask*                                  ReturnValue;                                      		// 0x0058 (0x0004) [0x0000000000000580]              ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
+};
+
+// Function Engine.OnlineAuthInterface.OnAccountAuthorization
+// [0x00120000] 
+struct UOnlineAuthInterface_execOnAccountAuthorization_Parms
+{
+	struct FString                                     Token;                                            		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
+};
+
 // Function Engine.OnlineAuthInterface.OnLoginChanged
 // [0x00020000] 
 struct UOnlineAuthInterface_execOnLoginChanged_Parms
@@ -16731,46 +16750,37 @@ struct UOnlineAuthInterface_execOnLoginChanged_Parms
 	unsigned long                                      bLoggedIn : 1;                                    		// 0x0000 (0x0004) [0x0000000000000080] [0x00000001] ( CPF_Parm )
 };
 
-// Function Engine.OnlineAuthInterface.RequiresMTXAuthorizationCode
+// Function Engine.OnlineAuthInterface.RequestMtxCode
 // [0x00020000] 
-struct UOnlineAuthInterface_execRequiresMTXAuthorizationCode_Parms
-{
-	unsigned long                                      ReturnValue : 1;                                  		// 0x0000 (0x0004) [0x0000000000000580] [0x00000001] ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-};
-
-// Function Engine.OnlineAuthInterface.RequiresAuthorizationCode
-// [0x00020000] 
-struct UOnlineAuthInterface_execRequiresAuthorizationCode_Parms
-{
-	unsigned long                                      ReturnValue : 1;                                  		// 0x0000 (0x0004) [0x0000000000000580] [0x00000001] ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-};
-
-// Function Engine.OnlineAuthInterface.IsRequestingAuthorizationCode
-// [0x00020000] 
-struct UOnlineAuthInterface_execIsRequestingAuthorizationCode_Parms
+struct UOnlineAuthInterface_execRequestMtxCode_Parms
 {
 	struct FUniqueNetId                                PlayerID;                                         		// 0x0000 (0x0048) [0x0000000000000080]              ( CPF_Parm )
 	struct FScriptDelegate                             Callback;                                         		// 0x0048 (0x0010) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 	unsigned long                                      ReturnValue : 1;                                  		// 0x0058 (0x0004) [0x0000000000000580] [0x00000001] ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
 };
 
-// Function Engine.OnlineAuthInterface.RequestAuthorizationCode
+// Function Engine.OnlineAuthInterface.RequestAuthTicket
 // [0x00020000] 
-struct UOnlineAuthInterface_execRequestAuthorizationCode_Parms
+struct UOnlineAuthInterface_execRequestAuthTicket_Parms
 {
 	struct FUniqueNetId                                PlayerID;                                         		// 0x0000 (0x0048) [0x0000000000000080]              ( CPF_Parm )
 	struct FScriptDelegate                             Callback;                                         		// 0x0048 (0x0010) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 	unsigned long                                      ReturnValue : 1;                                  		// 0x0058 (0x0004) [0x0000000000000580] [0x00000001] ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
 };
 
-// Function Engine.OnlineAuthInterface.OnReceivedAuthorizationCode
+// Function Engine.OnlineAuthInterface.RequiresAuthTicket
+// [0x00020000] 
+struct UOnlineAuthInterface_execRequiresAuthTicket_Parms
+{
+	unsigned long                                      ReturnValue : 1;                                  		// 0x0000 (0x0004) [0x0000000000000580] [0x00000001] ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
+};
+
+// Function Engine.OnlineAuthInterface.OnReceivedAuthCode
 // [0x00120000] 
-struct UOnlineAuthInterface_execOnReceivedAuthorizationCode_Parms
+struct UOnlineAuthInterface_execOnReceivedAuthCode_Parms
 {
 	unsigned long                                      bSuccess : 1;                                     		// 0x0000 (0x0004) [0x0000000000000080] [0x00000001] ( CPF_Parm )
-	struct FString                                     AuthorizationCode;                                		// 0x0004 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
-	struct FString                                     EncryptedTicket;                                  		// 0x0010 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
-	int                                                IssuerID;                                         		// 0x001C (0x0004) [0x0000000000000080]              ( CPF_Parm )
+	struct FString                                     Code;                                             		// 0x0004 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
 };
 
 // Function Engine.OnlineAuthInterface.GetServerAddr
@@ -17778,6 +17788,14 @@ struct UOnlineStatsWrite_execOnStatsWriteComplete_Parms
 {
 };
 
+// Function Engine.OnlineSubsystem.CanSendOfflinePartyInvite
+// [0x00020000] 
+struct UOnlineSubsystem_execCanSendOfflinePartyInvite_Parms
+{
+	struct FUniqueNetId                                PlayerID;                                         		// 0x0000 (0x0048) [0x0000000000000080]              ( CPF_Parm )
+	unsigned long                                      ReturnValue : 1;                                  		// 0x0048 (0x0004) [0x0000000000000580] [0x00000001] ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
+};
+
 // Function Engine.OnlineSubsystem.UniqueNetIDIsValid
 // [0x00022401] ( FUNC_Final | FUNC_Native )
 struct UOnlineSubsystem_execUniqueNetIDIsValid_Parms
@@ -18024,6 +18042,19 @@ struct UOnlineSubsystem_execIsEnabled_Parms
 struct UOnlineSubsystem_execSetPlayedWith_Parms
 {
 	struct FUniqueNetId                                PlayerNetId;                                      		// 0x0000 (0x0048) [0x0000000000000082]              ( CPF_Const | CPF_Parm )
+};
+
+// Function Engine.OnlineSubsystem.ClearPendingAvatarDownloads
+// [0x00020000] 
+struct UOnlineSubsystem_execClearPendingAvatarDownloads_Parms
+{
+};
+
+// Function Engine.OnlineSubsystem.UseSubSystemAvatar
+// [0x00020002] 
+struct UOnlineSubsystem_execUseSubSystemAvatar_Parms
+{
+	unsigned long                                      ReturnValue : 1;                                  		// 0x0000 (0x0004) [0x0000000000000580] [0x00000001] ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
 };
 
 // Function Engine.OnlineSubsystem.ReadOnlineAvatar
