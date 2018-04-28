@@ -1090,7 +1090,8 @@
 	SaveDataVersion_GameplaySettings                   = 20,
 	SaveDataVersion_CustomMatchSettings                = 21,
 	SaveDataVersion_FreeplayMap                        = 22,
-	SaveDataVersion_MAX                                = 23
+	SaveDataVersion_SaveSingleSeason                   = 23,
+	SaveDataVersion_MAX                                = 24
 };*/
 
 // Enum TAGame._CrowdTypes_TA.ECrowdValueType
@@ -1110,6 +1111,15 @@
 	TrademarkGlyph_Registered                          = 1,
 	TrademarkGlyph_Copyright                           = 2,
 	TrademarkGlyph_MAX                                 = 3
+};*/
+
+// Enum TAGame.StatTitle_TA.EStatTrackingUnitType
+/*enum EStatTrackingUnitType
+{
+	CountUnit                                          = 0,
+	SpeedUnit                                          = 1,
+	DistanceUnit                                       = 2,
+	EStatTrackingUnitType_MAX                          = 3
 };*/
 
 // Enum TAGame.ProfileVersions_TA.EProfileVersion
@@ -1145,15 +1155,6 @@
 	ProfileVersion_ClubColors2                         = 27,
 	ProfileVersion_CarColors2                          = 28,
 	ProfileVersion_MAX                                 = 29
-};*/
-
-// Enum TAGame.StatTitle_TA.EStatTrackingUnitType
-/*enum EStatTrackingUnitType
-{
-	CountUnit                                          = 0,
-	SpeedUnit                                          = 1,
-	DistanceUnit                                       = 2,
-	EStatTrackingUnitType_MAX                          = 3
 };*/
 
 // Enum TAGame.TourStatus_TA.ETourStatus
@@ -1334,7 +1335,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3520 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3521 ];
 
 		return pClassPointer;
 	};
@@ -1362,7 +1363,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3522 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3523 ];
 
 		return pClassPointer;
 	};
@@ -1451,7 +1452,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3524 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3525 ];
 
 		return pClassPointer;
 	};
@@ -1535,7 +1536,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3526 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3527 ];
 
 		return pClassPointer;
 	};
@@ -1578,7 +1579,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3528 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3529 ];
 
 		return pClassPointer;
 	};
@@ -1608,7 +1609,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3530 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3531 ];
 
 		return pClassPointer;
 	};
@@ -1631,7 +1632,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3532 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3533 ];
 
 		return pClassPointer;
 	};
@@ -1655,7 +1656,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3534 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3535 ];
 
 		return pClassPointer;
 	};
@@ -1700,7 +1701,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3536 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3537 ];
 
 		return pClassPointer;
 	};
@@ -1733,7 +1734,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3538 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3539 ];
 
 		return pClassPointer;
 	};
@@ -1754,7 +1755,7 @@ public:
 	void GatherCars ( );
 	void DisableVSync ( );
 	void SetupPlayers ( );
-	void FilterProducts ( struct FString InCommand, TArray< class UProductSlot_TA* >* FilterLocal_B0B69F374B0F87280E66A39B2023440A );
+	void FilterProducts ( struct FString InCommand, TArray< class UProductSlot_TA* >* FilterLocal_4ED057B44BB0DD53F50F2CBA1040E92C );
 	void eventPostBeginPlay ( );
 };
 
@@ -1776,7 +1777,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3540 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3541 ];
 
 		return pClassPointer;
 	};
@@ -1813,7 +1814,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3542 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3543 ];
 
 		return pClassPointer;
 	};
@@ -1825,25 +1826,25 @@ public:
 UClass* URimSpinner_TA::pClassPointer = NULL;
 
 // Class TAGame.PlayerControllerBase_TA
-// 0x005C (0x0698 - 0x063C)
+// 0x005C (0x0694 - 0x0638)
 class APlayerControllerBase_TA : public APlayerController_X
 {
 public:
-	float                                              SpectatorCameraAccel;                             		// 0x063C (0x0004) [0x0000000000000001]              ( CPF_Edit )
-	struct FVector                                     SpectatorVelXY;                                   		// 0x0640 (0x000C) [0x0000000000002000]              ( CPF_Transient )
-	float                                              SpectatorVelZ;                                    		// 0x064C (0x0004) [0x0000000000002000]              ( CPF_Transient )
-	class UPostProcessManager_TA*                      PostProcessManagerArchetype;                      		// 0x0650 (0x0004) [0x0000000000000001]              ( CPF_Edit )
-	class UPostProcessManager_TA*                      PostProcessManager;                               		// 0x0654 (0x0004) [0x0000000000002000]              ( CPF_Transient )
-	int                                                SpectatorPitchDir;                                		// 0x0658 (0x0004) [0x0000000000002000]              ( CPF_Transient )
-	int                                                SwivelPitchDir;                                   		// 0x065C (0x0004) [0x0000000000002000]              ( CPF_Transient )
-	class ASpectatorVolume_TA*                         SpectatorVolume;                                  		// 0x0660 (0x0004) [0x0000000000002000]              ( CPF_Transient )
-	class UPlayerBanner_TA*                            PlayerBanner;                                     		// 0x0664 (0x0004) [0x0000000004080008]              ( CPF_ExportObject | CPF_Component | CPF_EditInline )
-	struct FScriptDelegate                             __EventLoadingUnfairMatch__Delegate;              		// 0x0668 (0x0010) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	unsigned char                                      UnknownData00[ 0x4 ];                             		// 0x066C (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
-	struct FScriptDelegate                             __EventRemoveSSPlayer__Delegate;                  		// 0x0678 (0x0010) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	unsigned char                                      UnknownData01[ 0x4 ];                             		// 0x067C (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
-	struct FScriptDelegate                             __EventReceivedCurrencyDrop__Delegate;            		// 0x0688 (0x0010) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	unsigned char                                      UnknownData02[ 0x4 ];                             		// 0x068C (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
+	float                                              SpectatorCameraAccel;                             		// 0x0638 (0x0004) [0x0000000000000001]              ( CPF_Edit )
+	struct FVector                                     SpectatorVelXY;                                   		// 0x063C (0x000C) [0x0000000000002000]              ( CPF_Transient )
+	float                                              SpectatorVelZ;                                    		// 0x0648 (0x0004) [0x0000000000002000]              ( CPF_Transient )
+	class UPostProcessManager_TA*                      PostProcessManagerArchetype;                      		// 0x064C (0x0004) [0x0000000000000001]              ( CPF_Edit )
+	class UPostProcessManager_TA*                      PostProcessManager;                               		// 0x0650 (0x0004) [0x0000000000002000]              ( CPF_Transient )
+	int                                                SpectatorPitchDir;                                		// 0x0654 (0x0004) [0x0000000000002000]              ( CPF_Transient )
+	int                                                SwivelPitchDir;                                   		// 0x0658 (0x0004) [0x0000000000002000]              ( CPF_Transient )
+	class ASpectatorVolume_TA*                         SpectatorVolume;                                  		// 0x065C (0x0004) [0x0000000000002000]              ( CPF_Transient )
+	class UPlayerBanner_TA*                            PlayerBanner;                                     		// 0x0660 (0x0004) [0x0000000004080008]              ( CPF_ExportObject | CPF_Component | CPF_EditInline )
+	struct FScriptDelegate                             __EventLoadingUnfairMatch__Delegate;              		// 0x0664 (0x0010) [0x0000000000400000]              ( CPF_NeedCtorLink )
+	unsigned char                                      UnknownData00[ 0x4 ];                             		// 0x0668 (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
+	struct FScriptDelegate                             __EventRemoveSSPlayer__Delegate;                  		// 0x0674 (0x0010) [0x0000000000400000]              ( CPF_NeedCtorLink )
+	unsigned char                                      UnknownData01[ 0x4 ];                             		// 0x0678 (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
+	struct FScriptDelegate                             __EventReceivedCurrencyDrop__Delegate;            		// 0x0684 (0x0010) [0x0000000000400000]              ( CPF_NeedCtorLink )
+	unsigned char                                      UnknownData02[ 0x4 ];                             		// 0x0688 (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
 
 private:
 	static UClass* pClassPointer;
@@ -1852,7 +1853,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3544 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3545 ];
 
 		return pClassPointer;
 	};
@@ -1866,10 +1867,10 @@ public:
 	void SetWorldSelectionAllowed ( unsigned long bAllowSelection );
 	void SetPlayerInput ( class UClass* NewInputClass );
 	void StartLanMatch ( struct FCustomMatchSettings* Settings );
-	struct FString BuildMatchOptionsLan ( struct FCustomMatchSettings* Settings, TArray< struct FString >* ArrayInitializer_805768BD4975E16F454F21A6373C7139 );
-	void StartSplitscreenMatch ( struct FCustomMatchSettings* Settings, TArray< struct FString >* ArrayInitializer_A1BD0EEC48C6134BE540E88CBCAFE504 );
+	struct FString BuildMatchOptionsLan ( struct FCustomMatchSettings* Settings, TArray< struct FString >* ArrayInitializer_7ADCDE6B40DF9DBE1EAD60821243B784 );
+	void StartSplitscreenMatch ( struct FCustomMatchSettings* Settings, TArray< struct FString >* ArrayInitializer_F2594D7A4D4F54C148DC1C83DD9C1CD7 );
 	void StartMatch ( struct FName PlaylistName, struct FString URL );
-	struct FString BuildMatchOptions ( class UGameSettingPlaylist_X* Playlist, TArray< struct FString > Options, struct FCustomMatchSettings* Settings, struct FString* ReduceLocal_5CF3671F4530C02D5AF4B7BDD056BD00 );
+	struct FString BuildMatchOptions ( class UGameSettingPlaylist_X* Playlist, TArray< struct FString > Options, struct FCustomMatchSettings* Settings, struct FString* ReduceLocal_3C81843B48EB4F62420EF8B80A0633F0 );
 	struct FString JoinOption ( struct FString FullString, struct FString Value );
 	struct FName GetValidMapName ( struct FName InName, int GameMode );
 	void ClientRemoveSSPlayer ( struct FString Reason, struct FString Title );
@@ -1901,69 +1902,71 @@ public:
 UClass* APlayerControllerBase_TA::pClassPointer = NULL;
 
 // Class TAGame.PlayerController_TA
-// 0x025C (0x08F4 - 0x0698)
+// 0x0270 (0x0904 - 0x0694)
 class APlayerController_TA : public APlayerControllerBase_TA
 {
 public:
-	struct FClientData                                 Client;                                           		// 0x0698 (0x0040) [0x0000000000402000]              ( CPF_Transient | CPF_NeedCtorLink )
-	unsigned long                                      bAdjustingSimTime : 1;                            		// 0x06D8 (0x0004) [0x0000000000002000] [0x00000001] ( CPF_Transient )
-	unsigned long                                      bReceivedServerShutdownMessage : 1;               		// 0x06D8 (0x0004) [0x0000000000002000] [0x00000002] ( CPF_Transient )
-	unsigned long                                      bPendingIdleKick : 1;                             		// 0x06D8 (0x0004) [0x0000000000002020] [0x00000004] ( CPF_Net | CPF_Transient )
-	unsigned long                                      bUseDebugInputs : 1;                              		// 0x06D8 (0x0004) [0x0000000000000000] [0x00000008] 
-	unsigned long                                      bJumpPressed : 1;                                 		// 0x06D8 (0x0004) [0x0000000000000000] [0x00000010] 
-	unsigned long                                      bBoostPressed : 1;                                		// 0x06D8 (0x0004) [0x0000000000000000] [0x00000020] 
-	unsigned long                                      bHandbrakePressed : 1;                            		// 0x06D8 (0x0004) [0x0000000000000000] [0x00000040] 
-	unsigned long                                      bHasPitchedBack : 1;                              		// 0x06D8 (0x0004) [0x0000000000000000] [0x00000080] 
-	float                                              TimeClientAckdAdjustSimTime;                      		// 0x06DC (0x0004) [0x0000000000002000]              ( CPF_Transient )
-	int                                                ReplicatedInputBufferSize;                        		// 0x06E0 (0x0004) [0x0000000000002020]              ( CPF_Net | CPF_Transient )
-	struct FClientStatsData                            ClientStats;                                      		// 0x06E4 (0x000C) [0x0000000000002000]              ( CPF_Transient )
-	class ACar_TA*                                     Car;                                              		// 0x06F0 (0x0004) [0x0000000000002000]              ( CPF_Transient )
-	class APRI_TA*                                     PRI;                                              		// 0x06F4 (0x0004) [0x0000000000002000]              ( CPF_Transient )
-	struct FVehicleInputs                              VehicleInput;                                     		// 0x06F8 (0x0020) [0x0000000000002000]              ( CPF_Transient )
-	struct FString                                     LoginURL;                                         		// 0x0718 (0x000C) [0x0000000000402000]              ( CPF_Transient | CPF_NeedCtorLink )
-	unsigned char                                      VoiceFilter;                                      		// 0x0724 (0x0001) [0x0000000000002000]              ( CPF_Transient )
-	unsigned char                                      ChatFilter;                                       		// 0x0725 (0x0001) [0x0000000000002000]              ( CPF_Transient )
-	struct FChatSpamData                               ChatSpam;                                         		// 0x0728 (0x0018) [0x0000000000000001]              ( CPF_Edit )
-	struct FChatBanData                                ChatBan;                                          		// 0x0740 (0x0020) [0x0000000000000000]              
-	class ULightBarComponent_TA*                       LightBar;                                         		// 0x0760 (0x0004) [0x0000000004080008]              ( CPF_ExportObject | CPF_Component | CPF_EditInline )
-	class UGameMusicComponent_TA*                      MusicComponent;                                   		// 0x0764 (0x0004) [0x0000000004080008]              ( CPF_ExportObject | CPF_Component | CPF_EditInline )
-	class UListenerLocationComponent_TA*               ListenerLocationComponent;                        		// 0x0768 (0x0004) [0x0000000004080008]              ( CPF_ExportObject | CPF_Component | CPF_EditInline )
-	class UAudioPriorityComponent_TA*                  AudioPriorityComponent;                           		// 0x076C (0x0004) [0x0000000004080008]              ( CPF_ExportObject | CPF_Component | CPF_EditInline )
-	class APRI_TA*                                     FollowTarget;                                     		// 0x0770 (0x0004) [0x0000000000002000]              ( CPF_Transient )
-	class UOnlineGameTrial_X*                          Trial;                                            		// 0x0774 (0x0004) [0x0000000000000001]              ( CPF_Edit )
-	class ACamera*                                     SpectatorCameraArchetype;                         		// 0x0778 (0x0004) [0x0000000000000001]              ( CPF_Edit )
-	class AHUD*                                        SpectatorHUDArchetype;                            		// 0x077C (0x0004) [0x0000000000000001]              ( CPF_Edit )
-	class UClass*                                      SpectatorInputClass;                              		// 0x0780 (0x0004) [0x0000000000000001]              ( CPF_Edit )
-	class ACamera*                                     EditorCameraArchetype;                            		// 0x0784 (0x0004) [0x0000000000000001]              ( CPF_Edit )
-	class AHUD*                                        EditorHUDArchetype;                               		// 0x0788 (0x0004) [0x0000000000000001]              ( CPF_Edit )
-	class UClass*                                      EditorInputClass;                                 		// 0x078C (0x0004) [0x0000000000000001]              ( CPF_Edit )
-	class UInterface_GameEditor_TA*                    MoveActor;                                        		// 0x0790 (0x0008) [0x0000000000000000]              
-	unsigned char                                      UnknownData00[ 0x4 ];                             		// 0x0794 (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
-	struct FVector                                     MoveActorGrabOffset;                              		// 0x0798 (0x000C) [0x0000000000000000]              
-	float                                              MoveActorGrabIncrement;                           		// 0x07A4 (0x0004) [0x0000000000000000]              
-	float                                              MinMoveActorGrabDistance;                         		// 0x07A8 (0x0004) [0x0000000000000000]              
-	float                                              MouseIncrementSpeed;                              		// 0x07AC (0x0004) [0x0000000000000000]              
-	float                                              BallVelocityIncrementAmount;                      		// 0x07B0 (0x0004) [0x0000000000000000]              
-	int                                                BallVelocityIncrementFireCount;                   		// 0x07B4 (0x0004) [0x0000000000000000]              
-	float                                              BallVelocityIncrementFireCountMax;                		// 0x07B8 (0x0004) [0x0000000000000000]              
-	float                                              BallVelocityIncrementSpeedDefault;                		// 0x07BC (0x0004) [0x0000000000000000]              
-	float                                              BallVelocityIncrementSpeedMax;                    		// 0x07C0 (0x0004) [0x0000000000000000]              
-	float                                              CrosshairTraceDistance;                           		// 0x07C4 (0x0004) [0x0000000000000000]              
-	class AActor*                                      TracedCrosshairActor;                             		// 0x07C8 (0x0004) [0x0000000000000000]              
-	TArray< struct FCrosshairExtentInfo >              CrosshairTraceExtents;                            		// 0x07CC (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	class UInterface_GameEditor_TA*                    RotatedActor;                                     		// 0x07D8 (0x0008) [0x0000000000000000]              
-	unsigned char                                      UnknownData01[ 0x4 ];                             		// 0x07DC (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
-	struct FVector                                     RotateActorCameraLocationOffset;                  		// 0x07E0 (0x000C) [0x0000000000000000]              
-	struct FVector                                     RotateActorCameraRotationOffset;                  		// 0x07EC (0x000C) [0x0000000000000000]              
-	int                                                RotateActorCameraSide;                            		// 0x07F8 (0x0004) [0x0000000000000000]              
-	float                                              DesiredCameraSide;                                		// 0x07FC (0x0004) [0x0000000000000000]              
-	float                                              PawnTypeChangedTime;                              		// 0x0800 (0x0004) [0x0000000000000000]              
-	int                                                SelectedSpawnArchetype;                           		// 0x0804 (0x0004) [0x0000000000000000]              
-	struct FVehicleInputs                              DebugInputs;                                      		// 0x0808 (0x0020) [0x0000000000002000]              ( CPF_Transient )
-	int                                                MinClientInputRate;                               		// 0x0828 (0x0004) [0x0000000000004001]              ( CPF_Edit | CPF_Config )
-	int                                                MedianClientInputRate;                            		// 0x082C (0x0004) [0x0000000000004001]              ( CPF_Edit | CPF_Config )
-	int                                                MaxClientInputRate;                               		// 0x0830 (0x0004) [0x0000000000004001]              ( CPF_Edit | CPF_Config )
-	int                                                ConfiguredClientInputRate;                        		// 0x0834 (0x0004) [0x0000000000004001]              ( CPF_Edit | CPF_Config )
+	struct FClientData                                 Client;                                           		// 0x0694 (0x0040) [0x0000000000402000]              ( CPF_Transient | CPF_NeedCtorLink )
+	unsigned long                                      bAdjustingSimTime : 1;                            		// 0x06D4 (0x0004) [0x0000000000002000] [0x00000001] ( CPF_Transient )
+	unsigned long                                      bReceivedPlayerAndPRI : 1;                        		// 0x06D4 (0x0004) [0x0000000000002000] [0x00000002] ( CPF_Transient )
+	unsigned long                                      bReceivedServerShutdownMessage : 1;               		// 0x06D4 (0x0004) [0x0000000000002000] [0x00000004] ( CPF_Transient )
+	unsigned long                                      bPendingIdleKick : 1;                             		// 0x06D4 (0x0004) [0x0000000000002020] [0x00000008] ( CPF_Net | CPF_Transient )
+	unsigned long                                      bUseDebugInputs : 1;                              		// 0x06D4 (0x0004) [0x0000000000000000] [0x00000010] 
+	unsigned long                                      bJumpPressed : 1;                                 		// 0x06D4 (0x0004) [0x0000000000000000] [0x00000020] 
+	unsigned long                                      bBoostPressed : 1;                                		// 0x06D4 (0x0004) [0x0000000000000000] [0x00000040] 
+	unsigned long                                      bHandbrakePressed : 1;                            		// 0x06D4 (0x0004) [0x0000000000000000] [0x00000080] 
+	unsigned long                                      bHasPitchedBack : 1;                              		// 0x06D4 (0x0004) [0x0000000000000000] [0x00000100] 
+	float                                              TimeClientAckdAdjustSimTime;                      		// 0x06D8 (0x0004) [0x0000000000002000]              ( CPF_Transient )
+	int                                                ReplicatedInputBufferSize;                        		// 0x06DC (0x0004) [0x0000000000002020]              ( CPF_Net | CPF_Transient )
+	struct FClientStatsData                            ClientStats;                                      		// 0x06E0 (0x000C) [0x0000000000002000]              ( CPF_Transient )
+	class ACar_TA*                                     Car;                                              		// 0x06EC (0x0004) [0x0000000000002000]              ( CPF_Transient )
+	class APRI_TA*                                     PRI;                                              		// 0x06F0 (0x0004) [0x0000000000002000]              ( CPF_Transient )
+	struct FVehicleInputs                              VehicleInput;                                     		// 0x06F4 (0x0020) [0x0000000000002000]              ( CPF_Transient )
+	struct FString                                     LoginURL;                                         		// 0x0714 (0x000C) [0x0000000000402000]              ( CPF_Transient | CPF_NeedCtorLink )
+	unsigned char                                      VoiceFilter;                                      		// 0x0720 (0x0001) [0x0000000000002000]              ( CPF_Transient )
+	unsigned char                                      ChatFilter;                                       		// 0x0721 (0x0001) [0x0000000000002000]              ( CPF_Transient )
+	struct FChatSpamData                               ChatSpam;                                         		// 0x0724 (0x0018) [0x0000000000000001]              ( CPF_Edit )
+	struct FChatBanData                                ChatBan;                                          		// 0x073C (0x0020) [0x0000000000000000]              
+	class ULightBarComponent_TA*                       LightBar;                                         		// 0x075C (0x0004) [0x0000000004080008]              ( CPF_ExportObject | CPF_Component | CPF_EditInline )
+	class UGameMusicComponent_TA*                      MusicComponent;                                   		// 0x0760 (0x0004) [0x0000000004080008]              ( CPF_ExportObject | CPF_Component | CPF_EditInline )
+	class UListenerLocationComponent_TA*               ListenerLocationComponent;                        		// 0x0764 (0x0004) [0x0000000004080008]              ( CPF_ExportObject | CPF_Component | CPF_EditInline )
+	class UAudioPriorityComponent_TA*                  AudioPriorityComponent;                           		// 0x0768 (0x0004) [0x0000000004080008]              ( CPF_ExportObject | CPF_Component | CPF_EditInline )
+	class APRI_TA*                                     FollowTarget;                                     		// 0x076C (0x0004) [0x0000000000002000]              ( CPF_Transient )
+	class UOnlineGameTrial_X*                          Trial;                                            		// 0x0770 (0x0004) [0x0000000000000001]              ( CPF_Edit )
+	class ACamera*                                     SpectatorCameraArchetype;                         		// 0x0774 (0x0004) [0x0000000000000001]              ( CPF_Edit )
+	class AHUD*                                        SpectatorHUDArchetype;                            		// 0x0778 (0x0004) [0x0000000000000001]              ( CPF_Edit )
+	class UClass*                                      SpectatorInputClass;                              		// 0x077C (0x0004) [0x0000000000000001]              ( CPF_Edit )
+	class ACamera*                                     EditorCameraArchetype;                            		// 0x0780 (0x0004) [0x0000000000000001]              ( CPF_Edit )
+	class AHUD*                                        EditorHUDArchetype;                               		// 0x0784 (0x0004) [0x0000000000000001]              ( CPF_Edit )
+	class UClass*                                      EditorInputClass;                                 		// 0x0788 (0x0004) [0x0000000000000001]              ( CPF_Edit )
+	class UInterface_GameEditor_TA*                    MoveActor;                                        		// 0x078C (0x0008) [0x0000000000000000]              
+	unsigned char                                      UnknownData00[ 0x4 ];                             		// 0x0790 (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
+	struct FVector                                     MoveActorGrabOffset;                              		// 0x0794 (0x000C) [0x0000000000000000]              
+	float                                              MoveActorGrabIncrement;                           		// 0x07A0 (0x0004) [0x0000000000000000]              
+	float                                              MinMoveActorGrabDistance;                         		// 0x07A4 (0x0004) [0x0000000000000000]              
+	float                                              MouseIncrementSpeed;                              		// 0x07A8 (0x0004) [0x0000000000000000]              
+	float                                              BallVelocityIncrementAmount;                      		// 0x07AC (0x0004) [0x0000000000000000]              
+	int                                                BallVelocityIncrementFireCount;                   		// 0x07B0 (0x0004) [0x0000000000000000]              
+	float                                              BallVelocityIncrementFireCountMax;                		// 0x07B4 (0x0004) [0x0000000000000000]              
+	float                                              BallVelocityIncrementSpeedDefault;                		// 0x07B8 (0x0004) [0x0000000000000000]              
+	float                                              BallVelocityIncrementSpeedMax;                    		// 0x07BC (0x0004) [0x0000000000000000]              
+	float                                              CrosshairTraceDistance;                           		// 0x07C0 (0x0004) [0x0000000000000000]              
+	class AActor*                                      TracedCrosshairActor;                             		// 0x07C4 (0x0004) [0x0000000000000000]              
+	TArray< struct FCrosshairExtentInfo >              CrosshairTraceExtents;                            		// 0x07C8 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
+	class UInterface_GameEditor_TA*                    RotatedActor;                                     		// 0x07D4 (0x0008) [0x0000000000000000]              
+	unsigned char                                      UnknownData01[ 0x4 ];                             		// 0x07D8 (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
+	struct FVector                                     RotateActorCameraLocationOffset;                  		// 0x07DC (0x000C) [0x0000000000000000]              
+	struct FVector                                     RotateActorCameraRotationOffset;                  		// 0x07E8 (0x000C) [0x0000000000000000]              
+	int                                                RotateActorCameraSide;                            		// 0x07F4 (0x0004) [0x0000000000000000]              
+	float                                              DesiredCameraSide;                                		// 0x07F8 (0x0004) [0x0000000000000000]              
+	float                                              PawnTypeChangedTime;                              		// 0x07FC (0x0004) [0x0000000000000000]              
+	int                                                SelectedSpawnArchetype;                           		// 0x0800 (0x0004) [0x0000000000000000]              
+	struct FVehicleInputs                              DebugInputs;                                      		// 0x0804 (0x0020) [0x0000000000002000]              ( CPF_Transient )
+	int                                                MinClientInputRate;                               		// 0x0824 (0x0004) [0x0000000000004001]              ( CPF_Edit | CPF_Config )
+	int                                                MedianClientInputRate;                            		// 0x0828 (0x0004) [0x0000000000004001]              ( CPF_Edit | CPF_Config )
+	int                                                MaxClientInputRate;                               		// 0x082C (0x0004) [0x0000000000004001]              ( CPF_Edit | CPF_Config )
+	int                                                ConfiguredClientInputRate;                        		// 0x0830 (0x0004) [0x0000000000004001]              ( CPF_Edit | CPF_Config )
+	float                                              TimeSinceLastMovePacket;                          		// 0x0834 (0x0004) [0x0000000000002000]              ( CPF_Transient )
 	float                                              TimeLastReplicatedMovePacket;                     		// 0x0838 (0x0004) [0x0000000000002000]              ( CPF_Transient )
 	class UPlatformMetrics_TA*                         PlatformMetrics;                                  		// 0x083C (0x0004) [0x0000000004082008]              ( CPF_ExportObject | CPF_Transient | CPF_Component | CPF_EditInline )
 	float                                              MouseXDeadZone;                                   		// 0x0840 (0x0004) [0x0000000000000000]              
@@ -1992,6 +1995,8 @@ public:
 	unsigned char                                      UnknownData06[ 0x4 ];                             		// 0x08D8 (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
 	struct FScriptDelegate                             __EventSelectBallCamTarget__Delegate;             		// 0x08E4 (0x0010) [0x0000000000400000]              ( CPF_NeedCtorLink )
 	unsigned char                                      UnknownData07[ 0x4 ];                             		// 0x08E8 (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
+	struct FScriptDelegate                             __EventConnectionTrackerAttached__Delegate;       		// 0x08F4 (0x0010) [0x0000000000400000]              ( CPF_NeedCtorLink )
+	unsigned char                                      UnknownData08[ 0x4 ];                             		// 0x08F8 (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
 
 private:
 	static UClass* pClassPointer;
@@ -2000,7 +2005,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3546 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3547 ];
 
 		return pClassPointer;
 	};
@@ -2044,7 +2049,7 @@ public:
 	void FollowPlayer ( class APRI_TA* InPlayer );
 	void ClientSkillUpdated ( struct FPlayerSkillRating Rating, int Playlist );
 	void GetHearSoundTransform ( struct FVector* OutLocation, struct FRotator* OutRotation );
-	void ServerReportPlayer ( unsigned char ReasonID, struct FUniqueNetId PlayerID, struct FString PlayerName, struct FReportedPlayerInfo* StructInitializer_2260330E4E4C1455E96F1AAA1FEEECDC, struct FReportPlayerData* StructInitializer_5412049E4A1ACA0BF7CFA793FCC0C542, struct FReportPlayerData* StructInitializer_F45D22424605BAED07588E9B41B84A49 );
+	void ServerReportPlayer ( unsigned char ReasonID, struct FUniqueNetId PlayerID, struct FString PlayerName, struct FReportedPlayerInfo* StructInitializer_D9FBA00B4F59AAC0CF56329B8B9C66DD, struct FReportPlayerData* StructInitializer_DAB815E34CCA3B2A7FA3E2A8D81155E3, struct FReportPlayerData* StructInitializer_A2B2B8364C0CE84FCD2C3B8CBF6B33A3 );
 	void HandleLocalStatEvent ( class APRI_TA* InPRI, class UStatEvent_TA* StatEvent, int Count );
 	void OnPendingIdleKickChanged ( );
 	void SetPendingIdleKick ( unsigned long bPending );
@@ -2161,6 +2166,7 @@ public:
 	void HandlePersistentCameraSet ( class APRI_TA* InPRI );
 	void TryReplicateTotalXP ( );
 	void OnReceivedPRI ( );
+	void OnReceivedPlayerAndPRI ( );
 	void InitProfileSettings ( unsigned long bJustReceivedPlayer );
 	bool IsVoiceVolumeEnabled ( );
 	void ClientSetLevelSessionID ( struct FGuid Id );
@@ -2170,6 +2176,7 @@ public:
 	void HandleGRISpawned ( class AGRI_X* GRI );
 	void eventPostBeginPlay ( );
 	void eventReplicatedEvent ( struct FName EventName );
+	void EventConnectionTrackerAttached ( class APlayerController_TA* PC, class UClientConnectionTracker_TA* Tracker );
 	void EventSelectBallCamTarget ( class APlayerController_TA* PC, int Direction );
 	void EventTrainingEditorActorModified ( );
 	void EventMuteChanged ( class APlayerController_TA* PC, struct FUniqueNetId PlayerID, unsigned long bMuted );
@@ -2201,7 +2208,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3548 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3549 ];
 
 		return pClassPointer;
 	};
@@ -2235,14 +2242,14 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3550 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3551 ];
 
 		return pClassPointer;
 	};
 
 	void Debug ( );
 	void Goto ( struct FString Label );
-	void Define ( struct FString Key, struct FString Value, struct FAutomationMacro* StructInitializer_5744BCE7426E909C0D3562AABF091DC7 );
+	void Define ( struct FString Key, struct FString Value, struct FAutomationMacro* StructInitializer_47F5DF3543EB0688AD4937BDC925B27D );
 	void AutoExec ( struct FString File );
 	void Label ( struct FString Id );
 	void Wait ( float Time );
@@ -2275,7 +2282,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3552 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3553 ];
 
 		return pClassPointer;
 	};
@@ -2336,7 +2343,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3554 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3555 ];
 
 		return pClassPointer;
 	};
@@ -2457,7 +2464,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3556 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3557 ];
 
 		return pClassPointer;
 	};
@@ -2547,7 +2554,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3558 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3559 ];
 
 		return pClassPointer;
 	};
@@ -2588,7 +2595,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3560 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3561 ];
 
 		return pClassPointer;
 	};
@@ -2616,7 +2623,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3562 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3563 ];
 
 		return pClassPointer;
 	};
@@ -2647,7 +2654,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3564 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3565 ];
 
 		return pClassPointer;
 	};
@@ -2685,7 +2692,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3566 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3567 ];
 
 		return pClassPointer;
 	};
@@ -2719,7 +2726,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3568 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3569 ];
 
 		return pClassPointer;
 	};
@@ -2770,7 +2777,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3570 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3571 ];
 
 		return pClassPointer;
 	};
@@ -2826,7 +2833,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3572 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3573 ];
 
 		return pClassPointer;
 	};
@@ -2862,7 +2869,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3574 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3575 ];
 
 		return pClassPointer;
 	};
@@ -2895,7 +2902,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3576 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3577 ];
 
 		return pClassPointer;
 	};
@@ -2921,7 +2928,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3578 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3579 ];
 
 		return pClassPointer;
 	};
@@ -2946,7 +2953,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3580 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3581 ];
 
 		return pClassPointer;
 	};
@@ -2977,7 +2984,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3582 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3583 ];
 
 		return pClassPointer;
 	};
@@ -3019,7 +3026,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3584 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3585 ];
 
 		return pClassPointer;
 	};
@@ -3060,7 +3067,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3586 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3587 ];
 
 		return pClassPointer;
 	};
@@ -3088,7 +3095,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3588 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3589 ];
 
 		return pClassPointer;
 	};
@@ -3116,7 +3123,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3590 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3591 ];
 
 		return pClassPointer;
 	};
@@ -3139,7 +3146,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3592 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3593 ];
 
 		return pClassPointer;
 	};
@@ -3164,7 +3171,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3594 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3595 ];
 
 		return pClassPointer;
 	};
@@ -3192,7 +3199,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3596 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3597 ];
 
 		return pClassPointer;
 	};
@@ -3232,7 +3239,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3598 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3599 ];
 
 		return pClassPointer;
 	};
@@ -3256,7 +3263,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3600 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3601 ];
 
 		return pClassPointer;
 	};
@@ -3279,7 +3286,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3602 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3603 ];
 
 		return pClassPointer;
 	};
@@ -3303,7 +3310,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3604 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3605 ];
 
 		return pClassPointer;
 	};
@@ -3331,7 +3338,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3606 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3607 ];
 
 		return pClassPointer;
 	};
@@ -3360,7 +3367,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3608 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3609 ];
 
 		return pClassPointer;
 	};
@@ -3384,7 +3391,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3610 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3611 ];
 
 		return pClassPointer;
 	};
@@ -3409,7 +3416,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3612 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3613 ];
 
 		return pClassPointer;
 	};
@@ -3431,7 +3438,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3614 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3615 ];
 
 		return pClassPointer;
 	};
@@ -3455,7 +3462,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3616 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3617 ];
 
 		return pClassPointer;
 	};
@@ -3477,7 +3484,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3618 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3619 ];
 
 		return pClassPointer;
 	};
@@ -3499,7 +3506,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3620 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3621 ];
 
 		return pClassPointer;
 	};
@@ -3521,7 +3528,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3622 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3623 ];
 
 		return pClassPointer;
 	};
@@ -3544,7 +3551,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3624 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3625 ];
 
 		return pClassPointer;
 	};
@@ -3566,7 +3573,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3626 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3627 ];
 
 		return pClassPointer;
 	};
@@ -3591,7 +3598,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3628 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3629 ];
 
 		return pClassPointer;
 	};
@@ -3622,7 +3629,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3630 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3631 ];
 
 		return pClassPointer;
 	};
@@ -3645,7 +3652,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3632 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3633 ];
 
 		return pClassPointer;
 	};
@@ -3668,7 +3675,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3634 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3635 ];
 
 		return pClassPointer;
 	};
@@ -3694,7 +3701,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3636 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3637 ];
 
 		return pClassPointer;
 	};
@@ -3717,7 +3724,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3638 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3639 ];
 
 		return pClassPointer;
 	};
@@ -3749,7 +3756,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3640 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3641 ];
 
 		return pClassPointer;
 	};
@@ -3795,7 +3802,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3642 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3643 ];
 
 		return pClassPointer;
 	};
@@ -3852,7 +3859,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3644 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3645 ];
 
 		return pClassPointer;
 	};
@@ -3880,7 +3887,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3646 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3647 ];
 
 		return pClassPointer;
 	};
@@ -3920,7 +3927,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3648 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3649 ];
 
 		return pClassPointer;
 	};
@@ -3990,7 +3997,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3650 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3651 ];
 
 		return pClassPointer;
 	};
@@ -4021,7 +4028,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3652 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3653 ];
 
 		return pClassPointer;
 	};
@@ -4049,7 +4056,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3654 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3655 ];
 
 		return pClassPointer;
 	};
@@ -4076,7 +4083,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3656 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3657 ];
 
 		return pClassPointer;
 	};
@@ -4112,7 +4119,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3658 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3659 ];
 
 		return pClassPointer;
 	};
@@ -4141,7 +4148,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3660 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3661 ];
 
 		return pClassPointer;
 	};
@@ -4178,7 +4185,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3662 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3663 ];
 
 		return pClassPointer;
 	};
@@ -4238,7 +4245,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3664 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3665 ];
 
 		return pClassPointer;
 	};
@@ -4282,7 +4289,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3666 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3667 ];
 
 		return pClassPointer;
 	};
@@ -4333,7 +4340,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3668 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3669 ];
 
 		return pClassPointer;
 	};
@@ -4402,7 +4409,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3670 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3671 ];
 
 		return pClassPointer;
 	};
@@ -4487,7 +4494,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3672 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3673 ];
 
 		return pClassPointer;
 	};
@@ -4524,7 +4531,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3674 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3675 ];
 
 		return pClassPointer;
 	};
@@ -4583,7 +4590,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3676 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3677 ];
 
 		return pClassPointer;
 	};
@@ -4614,7 +4621,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3678 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3679 ];
 
 		return pClassPointer;
 	};
@@ -4643,7 +4650,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3680 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3681 ];
 
 		return pClassPointer;
 	};
@@ -4679,7 +4686,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3682 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3683 ];
 
 		return pClassPointer;
 	};
@@ -4729,7 +4736,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3684 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3685 ];
 
 		return pClassPointer;
 	};
@@ -4756,7 +4763,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3686 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3687 ];
 
 		return pClassPointer;
 	};
@@ -4780,7 +4787,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3688 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3689 ];
 
 		return pClassPointer;
 	};
@@ -4804,7 +4811,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3690 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3691 ];
 
 		return pClassPointer;
 	};
@@ -4826,7 +4833,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3692 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3693 ];
 
 		return pClassPointer;
 	};
@@ -4856,7 +4863,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3694 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3695 ];
 
 		return pClassPointer;
 	};
@@ -4889,7 +4896,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3696 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3697 ];
 
 		return pClassPointer;
 	};
@@ -4923,7 +4930,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3698 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3699 ];
 
 		return pClassPointer;
 	};
@@ -4961,7 +4968,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3700 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3701 ];
 
 		return pClassPointer;
 	};
@@ -4991,7 +4998,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3702 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3703 ];
 
 		return pClassPointer;
 	};
@@ -5018,7 +5025,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3704 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3705 ];
 
 		return pClassPointer;
 	};
@@ -5048,7 +5055,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3706 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3707 ];
 
 		return pClassPointer;
 	};
@@ -5077,7 +5084,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3708 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3709 ];
 
 		return pClassPointer;
 	};
@@ -5116,7 +5123,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3710 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3711 ];
 
 		return pClassPointer;
 	};
@@ -5141,7 +5148,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3712 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3713 ];
 
 		return pClassPointer;
 	};
@@ -5167,7 +5174,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3714 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3715 ];
 
 		return pClassPointer;
 	};
@@ -5197,7 +5204,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3716 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3717 ];
 
 		return pClassPointer;
 	};
@@ -5226,7 +5233,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3718 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3719 ];
 
 		return pClassPointer;
 	};
@@ -5255,7 +5262,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3720 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3721 ];
 
 		return pClassPointer;
 	};
@@ -5279,7 +5286,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3722 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3723 ];
 
 		return pClassPointer;
 	};
@@ -5308,7 +5315,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3724 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3725 ];
 
 		return pClassPointer;
 	};
@@ -5366,7 +5373,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3726 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3727 ];
 
 		return pClassPointer;
 	};
@@ -5435,7 +5442,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3728 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3729 ];
 
 		return pClassPointer;
 	};
@@ -5457,7 +5464,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3730 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3731 ];
 
 		return pClassPointer;
 	};
@@ -5499,7 +5506,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3732 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3733 ];
 
 		return pClassPointer;
 	};
@@ -5528,7 +5535,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3734 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3735 ];
 
 		return pClassPointer;
 	};
@@ -5557,7 +5564,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3736 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3737 ];
 
 		return pClassPointer;
 	};
@@ -5584,7 +5591,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3738 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3739 ];
 
 		return pClassPointer;
 	};
@@ -5612,7 +5619,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3740 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3741 ];
 
 		return pClassPointer;
 	};
@@ -5659,7 +5666,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3742 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3743 ];
 
 		return pClassPointer;
 	};
@@ -5706,7 +5713,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3744 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3745 ];
 
 		return pClassPointer;
 	};
@@ -5753,7 +5760,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3746 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3747 ];
 
 		return pClassPointer;
 	};
@@ -5813,7 +5820,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3748 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3749 ];
 
 		return pClassPointer;
 	};
@@ -5879,7 +5886,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3750 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3751 ];
 
 		return pClassPointer;
 	};
@@ -5958,7 +5965,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3752 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3753 ];
 
 		return pClassPointer;
 	};
@@ -5988,7 +5995,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3754 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3755 ];
 
 		return pClassPointer;
 	};
@@ -6112,14 +6119,13 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3756 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3757 ];
 
 		return pClassPointer;
 	};
 
 	void __GameEvent_TA__PostBeginPlay ( class UOnlineGameDedicatedServer_X* _, struct FCustomMatchSettings Settings );
 	struct FUniqueNetId __GameEvent_TA__CheckForBannedPlayers ( class APRI_TA* PRI );
-	bool __GameEvent_TA__CheckForBannedPlayers1 ( class APRI_TA* PRI );
 	bool AllowPausing ( class APlayerController* PC );
 	void PrintDebugInfo ( class UDebugDrawer* Drawer );
 	bool SuppressModalDialogs ( );
@@ -6129,7 +6135,7 @@ public:
 	void CheckChatBanned ( class APlayerController_TA* PC );
 	void HandlePlayerBanStatusResponse ( class UBanSync_TA* BanSync, class URPC_GetBanStatus_TA* RPC );
 	class APlayerController_TA* FindPCForUniqueID ( struct FUniqueNetId PlayerID );
-	void CheckForBannedPlayers ( TArray< class APRI_TA* >* FilterLocal_815B617E4E59B4D2604EADA5E8DB4549, TArray< struct FUniqueNetId >* MapLocal_2F744E7A476769AA87E97CA73A3641BF );
+	void CheckForBannedPlayers ( TArray< class APRI_TA* >* FilterLocal_971EBC5F438BA7D59E527DB3234B08C0, TArray< struct FUniqueNetId >* MapLocal_AC47DC384A549F2AA8D78C9494334C50 );
 	bool AllowSplitScreenPlayer ( );
 	void AddPlayerChatMessage ( struct FUniqueNetId PlayerID, unsigned char ChatChannel, class ATeamInfo* Team, struct FString Message );
 	void ConditionalStartSpectatorMatch ( );
@@ -6312,7 +6318,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3758 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3759 ];
 
 		return pClassPointer;
 	};
@@ -6379,7 +6385,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3760 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3761 ];
 
 		return pClassPointer;
 	};
@@ -6402,7 +6408,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3762 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3763 ];
 
 		return pClassPointer;
 	};
@@ -6453,7 +6459,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3764 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3765 ];
 
 		return pClassPointer;
 	};
@@ -6496,7 +6502,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3766 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3767 ];
 
 		return pClassPointer;
 	};
@@ -6542,7 +6548,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3768 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3769 ];
 
 		return pClassPointer;
 	};
@@ -6594,7 +6600,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3770 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3771 ];
 
 		return pClassPointer;
 	};
@@ -6619,7 +6625,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3772 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3773 ];
 
 		return pClassPointer;
 	};
@@ -6644,7 +6650,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3774 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3775 ];
 
 		return pClassPointer;
 	};
@@ -6667,7 +6673,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3776 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3777 ];
 
 		return pClassPointer;
 	};
@@ -6725,7 +6731,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3778 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3779 ];
 
 		return pClassPointer;
 	};
@@ -6758,7 +6764,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3780 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3781 ];
 
 		return pClassPointer;
 	};
@@ -6789,7 +6795,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3782 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3783 ];
 
 		return pClassPointer;
 	};
@@ -6813,7 +6819,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3784 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3785 ];
 
 		return pClassPointer;
 	};
@@ -6835,7 +6841,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3786 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3787 ];
 
 		return pClassPointer;
 	};
@@ -6858,7 +6864,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3788 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3789 ];
 
 		return pClassPointer;
 	};
@@ -6884,7 +6890,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3790 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3791 ];
 
 		return pClassPointer;
 	};
@@ -6921,7 +6927,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3792 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3793 ];
 
 		return pClassPointer;
 	};
@@ -6987,7 +6993,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3794 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3795 ];
 
 		return pClassPointer;
 	};
@@ -7030,7 +7036,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3796 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3797 ];
 
 		return pClassPointer;
 	};
@@ -7060,7 +7066,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3798 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3799 ];
 
 		return pClassPointer;
 	};
@@ -7089,7 +7095,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3800 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3801 ];
 
 		return pClassPointer;
 	};
@@ -7116,7 +7122,7 @@ public:
 	void HandleScoreUpdated ( class ATeam_TA* Team );
 	void RecordInitialScores ( );
 	void RecordInitialPlayers ( );
-	void RecordStartEvents ( TArray< struct FName >* MapLocal_E2D66EFC4E5377A20657EE8C764C5239 );
+	void RecordStartEvents ( TArray< struct FName >* MapLocal_119B64D1425E6217388C959B43823F0A );
 	void HandleMatchEnded ( class AGameEvent_Soccar_TA* G );
 	void HandleOvertime ( class AGameEvent_Soccar_TA* G );
 	void HandleStat ( class AStatFactory_TA* Factory, class APRI_TA* PRI, class UStatEvent_TA* StatEvent, class ABall_TA* Ball, int BallHitIndex, class APRI_TA* Victim );
@@ -7156,7 +7162,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3802 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3803 ];
 
 		return pClassPointer;
 	};
@@ -7183,7 +7189,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3804 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3805 ];
 
 		return pClassPointer;
 	};
@@ -7215,7 +7221,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3806 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3807 ];
 
 		return pClassPointer;
 	};
@@ -7256,7 +7262,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3808 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3809 ];
 
 		return pClassPointer;
 	};
@@ -7293,7 +7299,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3810 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3811 ];
 
 		return pClassPointer;
 	};
@@ -7328,7 +7334,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3812 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3813 ];
 
 		return pClassPointer;
 	};
@@ -7353,7 +7359,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3814 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3815 ];
 
 		return pClassPointer;
 	};
@@ -7385,7 +7391,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3816 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3817 ];
 
 		return pClassPointer;
 	};
@@ -7418,7 +7424,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3818 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3819 ];
 
 		return pClassPointer;
 	};
@@ -7442,7 +7448,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3820 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3821 ];
 
 		return pClassPointer;
 	};
@@ -7474,7 +7480,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3822 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3823 ];
 
 		return pClassPointer;
 	};
@@ -7502,16 +7508,15 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3824 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3825 ];
 
 		return pClassPointer;
 	};
 
 	void __OnlineProduct_TA__OnLoaded ( class UProductAttribute_Certified_TA* Certified );
-	bool __OnlineProduct_TA__OnLoaded1 ( class UProductAttribute_Certified_TA* Certified );
-	void __OnlineProduct_TA__OnLoaded2 ( class UProductAttribute_TA* A );
-	void OnLoaded ( TArray< class UProductAttribute_Certified_TA* >* OfTypeLocal_F31484B542E5CF5AF1AC06B8EDC56AFD, TArray< class UProductAttribute_Certified_TA* >* FilterLocal_A6BDD85E4292183FA1F9118ECC19EC37 );
-	void RemoveAttributes ( class UClass* AttributeClass, TArray< class UProductAttribute_TA* >* FilterLocal_E9B7C2124D404DAF23333490CFF049DF );
+	void __OnlineProduct_TA__OnLoaded ( class UProductAttribute_TA* A );
+	void OnLoaded ( TArray< class UProductAttribute_Certified_TA* >* OfTypeLocal_C0DA4F7D4374E333005256A45C9C229C, TArray< class UProductAttribute_Certified_TA* >* FilterLocal_CCFB8EAA42135B396D892081DE8DF678 );
+	void RemoveAttributes ( class UClass* AttributeClass, TArray< class UProductAttribute_TA* >* FilterLocal_FD545F284878834E2D0C28AED23881A0 );
 	void RemoveAttribute ( class UProductAttribute_TA* InAttribute );
 	void AddAttribute ( class UProductAttribute_TA* InAttribute );
 	class UProduct_TA* GetProduct ( );
@@ -7552,7 +7557,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3826 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3827 ];
 
 		return pClassPointer;
 	};
@@ -7580,7 +7585,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3828 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3829 ];
 
 		return pClassPointer;
 	};
@@ -7611,7 +7616,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3830 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3831 ];
 
 		return pClassPointer;
 	};
@@ -7637,7 +7642,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3832 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3833 ];
 
 		return pClassPointer;
 	};
@@ -7670,7 +7675,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3834 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3835 ];
 
 		return pClassPointer;
 	};
@@ -7696,7 +7701,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3836 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3837 ];
 
 		return pClassPointer;
 	};
@@ -7734,7 +7739,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3838 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3839 ];
 
 		return pClassPointer;
 	};
@@ -7771,7 +7776,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3840 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3841 ];
 
 		return pClassPointer;
 	};
@@ -7809,7 +7814,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3842 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3843 ];
 
 		return pClassPointer;
 	};
@@ -7833,7 +7838,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3844 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3845 ];
 
 		return pClassPointer;
 	};
@@ -7864,7 +7869,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3846 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3847 ];
 
 		return pClassPointer;
 	};
@@ -7941,7 +7946,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3848 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3849 ];
 
 		return pClassPointer;
 	};
@@ -7973,7 +7978,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3850 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3851 ];
 
 		return pClassPointer;
 	};
@@ -7996,7 +8001,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3852 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3853 ];
 
 		return pClassPointer;
 	};
@@ -8026,7 +8031,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3854 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3855 ];
 
 		return pClassPointer;
 	};
@@ -8049,7 +8054,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3856 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3857 ];
 
 		return pClassPointer;
 	};
@@ -8071,7 +8076,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3858 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3859 ];
 
 		return pClassPointer;
 	};
@@ -8106,7 +8111,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3860 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3861 ];
 
 		return pClassPointer;
 	};
@@ -8135,7 +8140,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3862 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3863 ];
 
 		return pClassPointer;
 	};
@@ -8162,7 +8167,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3864 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3865 ];
 
 		return pClassPointer;
 	};
@@ -8184,7 +8189,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3866 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3867 ];
 
 		return pClassPointer;
 	};
@@ -8214,7 +8219,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3868 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3869 ];
 
 		return pClassPointer;
 	};
@@ -8243,7 +8248,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3870 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3871 ];
 
 		return pClassPointer;
 	};
@@ -8278,7 +8283,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3872 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3873 ];
 
 		return pClassPointer;
 	};
@@ -8302,7 +8307,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3874 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3875 ];
 
 		return pClassPointer;
 	};
@@ -8336,7 +8341,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3876 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3877 ];
 
 		return pClassPointer;
 	};
@@ -8360,7 +8365,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3878 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3879 ];
 
 		return pClassPointer;
 	};
@@ -8386,7 +8391,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3880 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3881 ];
 
 		return pClassPointer;
 	};
@@ -8420,7 +8425,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3882 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3883 ];
 
 		return pClassPointer;
 	};
@@ -8448,7 +8453,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3884 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3885 ];
 
 		return pClassPointer;
 	};
@@ -8482,7 +8487,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3886 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3887 ];
 
 		return pClassPointer;
 	};
@@ -8506,7 +8511,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3888 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3889 ];
 
 		return pClassPointer;
 	};
@@ -8529,7 +8534,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3890 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3891 ];
 
 		return pClassPointer;
 	};
@@ -8541,7 +8546,7 @@ public:
 	void ApplyToPlayerBanner ( class UPlayerBanner_TA* Banner, class UProductPaint_TA* Paint );
 	void ApplyToFXActor ( class UProductAttribute_PaintSettings_TA* PaintSettings, class UProductPaint_TA* Paint, class AFXActor_TA* FXActor );
 	struct FLinearColor GetPaintColor ( class UProductAttribute_PaintSettings_TA* PaintSettings, class UProductPaint_TA* Paint, unsigned char PaintVariant );
-	void ApplyToSetParameter ( class UProductAttribute_PaintSettings_TA* PaintSettings, class UProductPaint_TA* Paint, class UISetParameter* Target, TArray< struct FPaintAttributeParameter >* FilterLocal_6BBD87554C1B0098C001DFA27CADF613 );
+	void ApplyToSetParameter ( class UProductAttribute_PaintSettings_TA* PaintSettings, class UProductPaint_TA* Paint, class UISetParameter* Target, TArray< struct FPaintAttributeParameter >* FilterLocal_BC1559164F3B9D803AA48F8ABDF8D13D );
 	void ApplyToBody ( class UProductAttribute_PaintSettings_TA* PaintSettings, class UProductPaint_TA* Paint, class UCarMeshComponentBase_TA* Mesh );
 	void ApplyToMesh ( class UProductAttribute_PaintSettings_TA* PaintSettings, class UProductPaint_TA* Paint, class UMeshComponent* Mesh, unsigned long bSkinAsset );
 	void ApplyPaintToObject ( class UProductAttribute_PaintSettings_TA* PaintSettings, class UProductPaint_TA* Paint, class UObject* Target, unsigned long bSkinAsset );
@@ -8567,7 +8572,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3892 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3893 ];
 
 		return pClassPointer;
 	};
@@ -8591,7 +8596,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3894 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3895 ];
 
 		return pClassPointer;
 	};
@@ -8614,7 +8619,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3896 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3897 ];
 
 		return pClassPointer;
 	};
@@ -8641,7 +8646,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3898 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3899 ];
 
 		return pClassPointer;
 	};
@@ -8664,7 +8669,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3900 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3901 ];
 
 		return pClassPointer;
 	};
@@ -8692,7 +8697,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3902 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3903 ];
 
 		return pClassPointer;
 	};
@@ -8717,7 +8722,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3904 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3905 ];
 
 		return pClassPointer;
 	};
@@ -8740,7 +8745,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3906 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3907 ];
 
 		return pClassPointer;
 	};
@@ -8767,7 +8772,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3908 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3909 ];
 
 		return pClassPointer;
 	};
@@ -8801,7 +8806,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3910 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3911 ];
 
 		return pClassPointer;
 	};
@@ -8851,7 +8856,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3912 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3913 ];
 
 		return pClassPointer;
 	};
@@ -8882,7 +8887,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3914 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3915 ];
 
 		return pClassPointer;
 	};
@@ -8890,15 +8895,13 @@ public:
 	void __ProductLoader_TA__LoadProducts ( class UProduct_TA* P );
 	bool __ProductLoader_TA__AddForcedProducts ( class UProductAsset_TA* Asset );
 	void __ProductLoader_TA__AddMissingSlots ( class UProductSlot_TA* Slot );
-	bool __ProductLoader_TA__AddMissingSlots1 ( class UProductSlot_TA* Slot );
-	bool __ProductLoader_TA__AddMissingSlots2 ( class UProductSlot_TA* Slot );
 	void PrintDebugInfo ( class UDebugDrawer* Drawer );
 	void CancelLoad ( );
 	void OnAllAssetsLoaded ( );
 	void HandleRequiredAssetLoaded ( struct FAssetLoadResult Result );
 	void AddEngineAudio ( );
-	void AddMissingSlots ( TArray< class UProductSlot_TA* >* FilterLocal_F1E461564DFF187B236FEA98CA43D5BD, TArray< class UProductSlot_TA* >* FilterLocal_5FA4588441EDC96A2D1C9B815F955FA9 );
-	void AddForcedProducts ( TArray< class UProductAsset_TA* >* FilterLocal_2117E73F4737C22AF5F76DBB5AA25206 );
+	void AddMissingSlots ( TArray< class UProductSlot_TA* >* FilterLocal_4C74A2FE4CC7586C995832B80B0FF9CE, TArray< class UProductSlot_TA* >* FilterLocal_BE65EF584CA174BE0E3B69B5B33E4442 );
+	void AddForcedProducts ( TArray< class UProductAsset_TA* >* FilterLocal_3179005B43891BF0804D6CAD6A329280 );
 	void OnAllLoadoutAssetsLoaded ( );
 	void HandleLoadoutAssetLoaded ( struct FAssetLoadResult Result );
 	void HandleAssetLoaded ( struct FAssetLoadResult Result );
@@ -8932,7 +8935,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3916 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3917 ];
 
 		return pClassPointer;
 	};
@@ -8968,7 +8971,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3918 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3919 ];
 
 		return pClassPointer;
 	};
@@ -9008,7 +9011,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3920 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3921 ];
 
 		return pClassPointer;
 	};
@@ -9035,7 +9038,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3922 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3923 ];
 
 		return pClassPointer;
 	};
@@ -9084,7 +9087,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3924 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3925 ];
 
 		return pClassPointer;
 	};
@@ -9110,7 +9113,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3926 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3927 ];
 
 		return pClassPointer;
 	};
@@ -9142,7 +9145,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3928 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3929 ];
 
 		return pClassPointer;
 	};
@@ -9167,7 +9170,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3930 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3931 ];
 
 		return pClassPointer;
 	};
@@ -9199,7 +9202,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3932 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3933 ];
 
 		return pClassPointer;
 	};
@@ -9228,7 +9231,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3934 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3935 ];
 
 		return pClassPointer;
 	};
@@ -9278,7 +9281,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3936 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3937 ];
 
 		return pClassPointer;
 	};
@@ -9332,7 +9335,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3938 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3939 ];
 
 		return pClassPointer;
 	};
@@ -9389,7 +9392,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3940 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3941 ];
 
 		return pClassPointer;
 	};
@@ -9439,7 +9442,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3942 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3943 ];
 
 		return pClassPointer;
 	};
@@ -9465,7 +9468,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3944 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3945 ];
 
 		return pClassPointer;
 	};
@@ -9490,7 +9493,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3946 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3947 ];
 
 		return pClassPointer;
 	};
@@ -9574,7 +9577,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3948 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3949 ];
 
 		return pClassPointer;
 	};
@@ -9626,7 +9629,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3950 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3951 ];
 
 		return pClassPointer;
 	};
@@ -9663,7 +9666,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3952 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3953 ];
 
 		return pClassPointer;
 	};
@@ -9708,7 +9711,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3954 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3955 ];
 
 		return pClassPointer;
 	};
@@ -9748,7 +9751,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3956 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3957 ];
 
 		return pClassPointer;
 	};
@@ -9761,7 +9764,7 @@ public:
 	void ForceSave ( );
 	void Save ( );
 	void UserIgnoredLoadFailure ( unsigned long bValue );
-	void HandleProceedWithDefaultSaveData ( struct FLoadObjectResult* StructInitializer_3CD0B81D4DB04BF6F0BE7B974F54C46C );
+	void HandleProceedWithDefaultSaveData ( struct FLoadObjectResult* StructInitializer_0B6DA52843B30A2BD53BAB85F62DE468 );
 	void DisableSaving ( );
 	void EnableSaving ( );
 	void HandleDataLoaded ( struct FLoadObjectResult Result );
@@ -9810,7 +9813,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3958 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3959 ];
 
 		return pClassPointer;
 	};
@@ -9818,7 +9821,7 @@ public:
 	void CancelGetHeaders ( struct FScriptDelegate Callback );
 	void GetHeaders ( int InControllerID, struct FString InPath, struct FString InPattern, struct FScriptDelegate Callback );
 	void SetNewFileSaveCount ( int Count );
-	void eventHandleSaveResult ( unsigned char Result, struct FSaveObjectResult* StructInitializer_3F56C93F4B36357527226B922A568BCD );
+	void eventHandleSaveResult ( unsigned char Result, struct FSaveObjectResult* StructInitializer_1719337E4BD79AF08263388D26AB9E5B );
 	class UError* GetSaveError ( unsigned char Result );
 	class UError* GetLoadError ( unsigned char InResult );
 	void LoadAsync ( int ControllerIndex, class UObject* RootObj, struct FString PathName, unsigned long bExactFileMatch, struct FScriptDelegate Callback );
@@ -9861,7 +9864,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3960 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3961 ];
 
 		return pClassPointer;
 	};
@@ -9887,7 +9890,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3962 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3963 ];
 
 		return pClassPointer;
 	};
@@ -9916,7 +9919,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3964 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3965 ];
 
 		return pClassPointer;
 	};
@@ -9943,7 +9946,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3966 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3967 ];
 
 		return pClassPointer;
 	};
@@ -9971,7 +9974,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3968 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3969 ];
 
 		return pClassPointer;
 	};
@@ -10013,7 +10016,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3970 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3971 ];
 
 		return pClassPointer;
 	};
@@ -10048,7 +10051,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3972 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3973 ];
 
 		return pClassPointer;
 	};
@@ -10081,7 +10084,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3974 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3975 ];
 
 		return pClassPointer;
 	};
@@ -10109,7 +10112,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3976 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3977 ];
 
 		return pClassPointer;
 	};
@@ -10134,7 +10137,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3978 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3979 ];
 
 		return pClassPointer;
 	};
@@ -10156,7 +10159,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3980 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3981 ];
 
 		return pClassPointer;
 	};
@@ -10205,7 +10208,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3982 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3983 ];
 
 		return pClassPointer;
 	};
@@ -10237,7 +10240,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3984 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3985 ];
 
 		return pClassPointer;
 	};
@@ -10261,7 +10264,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3986 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3987 ];
 
 		return pClassPointer;
 	};
@@ -10315,7 +10318,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3988 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3989 ];
 
 		return pClassPointer;
 	};
@@ -10334,7 +10337,7 @@ public:
 	void ResetMaterials ( class UMeshComponent* Mesh );
 	void InitMaterials ( );
 	bool FilterTeamAttributes ( class UProductAttribute_TA* Attribute );
-	void ApplyAttributes ( class UProductAsset_TA* Asset, class UObject* Target, TArray< class UProductAttribute_TA* >* ConcatLocal_A517B95348B49421B0798EA34BBD0134, TArray< class UProductAttribute_TA* >* FilterLocal_B579A9C44115D3C5893C628350639DCF );
+	void ApplyAttributes ( class UProductAsset_TA* Asset, class UObject* Target, TArray< class UProductAttribute_TA* >* ConcatLocal_2E4A898144FB2776D98F4A8F11500073, TArray< class UProductAttribute_TA* >* FilterLocal_BC4D70E5471DDED13B4AF785D9C4339E );
 	void SetIsLocalPlayer ( unsigned long bIsLocal );
 	bool IsColorBlind ( );
 	struct FLinearColor GetCustomColor ( );
@@ -10397,7 +10400,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3990 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3991 ];
 
 		return pClassPointer;
 	};
@@ -10440,7 +10443,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3992 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3993 ];
 
 		return pClassPointer;
 	};
@@ -10473,7 +10476,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3994 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3995 ];
 
 		return pClassPointer;
 	};
@@ -10512,7 +10515,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3996 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3997 ];
 
 		return pClassPointer;
 	};
@@ -10537,7 +10540,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3998 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 3999 ];
 
 		return pClassPointer;
 	};
@@ -10559,7 +10562,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 4000 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 4001 ];
 
 		return pClassPointer;
 	};
@@ -10582,7 +10585,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 4002 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 4003 ];
 
 		return pClassPointer;
 	};
@@ -10613,7 +10616,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 4004 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 4005 ];
 
 		return pClassPointer;
 	};
@@ -10642,7 +10645,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 4006 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 4007 ];
 
 		return pClassPointer;
 	};
@@ -10706,7 +10709,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 4008 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 4009 ];
 
 		return pClassPointer;
 	};
@@ -10776,7 +10779,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 4010 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 4011 ];
 
 		return pClassPointer;
 	};
@@ -10805,7 +10808,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 4012 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 4013 ];
 
 		return pClassPointer;
 	};
@@ -10847,7 +10850,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 4014 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 4015 ];
 
 		return pClassPointer;
 	};
@@ -10877,7 +10880,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 4016 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 4017 ];
 
 		return pClassPointer;
 	};
@@ -10901,7 +10904,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 4018 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 4019 ];
 
 		return pClassPointer;
 	};
@@ -10924,7 +10927,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 4020 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 4021 ];
 
 		return pClassPointer;
 	};
@@ -10960,7 +10963,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 4022 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 4023 ];
 
 		return pClassPointer;
 	};
@@ -11023,7 +11026,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 4024 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 4025 ];
 
 		return pClassPointer;
 	};
@@ -11070,7 +11073,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 4026 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 4027 ];
 
 		return pClassPointer;
 	};
@@ -11144,7 +11147,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 4028 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 4029 ];
 
 		return pClassPointer;
 	};
@@ -11179,7 +11182,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 4030 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 4031 ];
 
 		return pClassPointer;
 	};
@@ -11207,7 +11210,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 4032 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 4033 ];
 
 		return pClassPointer;
 	};
@@ -11230,7 +11233,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 59100 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 59110 ];
 
 		return pClassPointer;
 	};
@@ -11382,7 +11385,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 59392 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 59402 ];
 
 		return pClassPointer;
 	};
@@ -11437,7 +11440,7 @@ public:
 	void ServerSetVoteStatus ( class AVoteActor_TA* VoteActor, unsigned char NewVote );
 	void SetPodiumTitle ( int Index, struct FMemberTitleStat InTitle );
 	void ReplicatePodiumTitles ( );
-	void ClearPodiumTitle ( struct FMemberTitleStat* StructInitializer_8462460D4535085408761FA036DF4108, struct FMemberTitleStat* StructInitializer_287E4DEC48A3B9D668E2A394E66B546E );
+	void ClearPodiumTitle ( struct FMemberTitleStat* StructInitializer_71C0899546C90D07423376896C1BE4F4, struct FMemberTitleStat* StructInitializer_76BA7EFD41B860D2B3FDB2AF691264E4 );
 	void OnMatchAdmin ( );
 	void OnMVPChange ( );
 	void NotifyWonMVP ( );
@@ -11509,12 +11512,12 @@ public:
 	void InitCertifiedProductStat ( int ProductID, class UProductAttribute_Certified_TA* Certified );
 	void RemoveCertifiedProductStat ( );
 	void InitFromAttributes ( struct FLoadoutData* Loadout, struct FLoadoutAttributesArray* LoadoutAttributes );
-	void InitClientLoadoutOnlineData ( struct FLoadoutAttributesArray* LoadoutAttributes, struct FClientLoadoutOnlineData* OutClientData, TArray< class UProductAttribute_TA* >* FilterLocal_D670025F405B10455E647E90DFBAAC69 );
+	void InitClientLoadoutOnlineData ( struct FLoadoutAttributesArray* LoadoutAttributes, struct FClientLoadoutOnlineData* OutClientData, TArray< class UProductAttribute_TA* >* FilterLocal_A8EB7F9F4413933C270C79B4A898C4F2 );
 	bool ValidatePaintedAttribute ( class UProductAttribute_Painted_TA* Current, class UProductAttribute_Painted_TA* Actual );
 	bool ValidateCertifiedAttribute ( struct FOnlineProductStat ProductStat, class UProductAttribute_Certified_TA* Actual );
-	bool ValidateOnlineLoadout ( struct FLoadoutData* OutLoadout, struct FLoadoutAttributesArray* OutAttributes, struct FClientLoadoutOnlineData* OutOnlineLoadout, TArray< class UOnlineProduct_TA* >* OnlineProducts, struct FClientLoadoutOnlineProduct* StructInitializer_8A8FEE5741BC8D49D2E76AB47D74592A, struct FProductAttributesArray* StructInitializer_999D646E4A4F54775737E2A515CA97EA );
+	bool ValidateOnlineLoadout ( struct FLoadoutData* OutLoadout, struct FLoadoutAttributesArray* OutAttributes, struct FClientLoadoutOnlineData* OutOnlineLoadout, TArray< class UOnlineProduct_TA* >* OnlineProducts, struct FClientLoadoutOnlineProduct* StructInitializer_5B324D964D0149E0FE4777BE1040113C, struct FProductAttributesArray* StructInitializer_A37D912F4B0740D4D39AEC8A58E67AC8 );
 	void HandleOnlineLoadoutReceived ( class URPC_ProductsLoadoutGet_TA* RPC );
-	void RemoveIrrelevantAttributes ( struct FLoadoutData* Loadout, struct FLoadoutAttributesArray* OutLoadoutAttributes, TArray< class UProductAttribute_TA* >* FilterLocal_B010AEFD4BE89340BE8C90B53AE82090 );
+	void RemoveIrrelevantAttributes ( struct FLoadoutData* Loadout, struct FLoadoutAttributesArray* OutLoadoutAttributes, TArray< class UProductAttribute_TA* >* FilterLocal_4845D23C4482782DED3294B7C0E5CF4F );
 	void InitLoadoutAttributesForTeam ( class APRI_X* PRI );
 	void SetLoadouts ( struct FLoadoutData* Loadouts, struct FLoadoutAttributesArray* LoadoutAttributes );
 	void ServerSetLoadout ( struct FServerSetLoadoutParams Params );
@@ -11593,7 +11596,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 59467 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 59477 ];
 
 		return pClassPointer;
 	};
@@ -11680,7 +11683,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 59707 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 59717 ];
 
 		return pClassPointer;
 	};
@@ -11903,7 +11906,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 59736 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 59746 ];
 
 		return pClassPointer;
 	};
@@ -11922,7 +11925,7 @@ public:
 	unsigned char GetWeatherVariant ( );
 	bool IsTurbulentWeather ( );
 	bool HasItemQualityEquipped ( unsigned char Quality );
-	TArray< class UOnlineProduct_TA* > GetEquippedOnlineProducts ( TArray< class UOnlineProduct_TA* >* MapLocal_3E72442A41D465567341DBABFC816FDD, TArray< class UOnlineProduct_TA* >* FilterLocal_08882B81497C1FF52D1CE6BED27DD1CD );
+	TArray< class UOnlineProduct_TA* > GetEquippedOnlineProducts ( TArray< class UOnlineProduct_TA* >* MapLocal_62B7DBD2452070D35CABB89E8AC38147, TArray< class UOnlineProduct_TA* >* FilterLocal_1C646D404EC4CAAE17F3EE958722715B );
 	void CheckUnlockStormTrooper ( );
 	void Save ( );
 	bool AddToIntList ( int Number, TArray< int >* Out_IntList );
@@ -11959,7 +11962,7 @@ public:
 	bool PlayingMapOrVariant ( struct FName MapName );
 	bool PlayingMap ( struct FString MapName );
 	void CheckUnlockedAllGameAchievements ( );
-	void CheckAllCarSlotsCustomized ( int ProductID, TArray< class UProductSlot_TA* >* ArrayInitializer_D3A1431C4419DADBCEFE0EA4A2E399A3, TArray< class UProductSlot_TA* >* FilterLocal_CCF41EDC49181B2B29C3E7B71AC6CD52 );
+	void CheckAllCarSlotsCustomized ( int ProductID, TArray< class UProductSlot_TA* >* ArrayInitializer_57A17A1D4513003C21B33D8A2EF37F42, TArray< class UProductSlot_TA* >* FilterLocal_D80F075D4F050B85A56C088252885AEA );
 	void HandleReplayStarted ( class AGameInfo_Replay_TA* Game );
 	void HandleProductEquipped ( int ProductID );
 	void ListenForRegisteredVoter ( );
@@ -12060,7 +12063,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 59793 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 59803 ];
 
 		return pClassPointer;
 	};
@@ -12092,7 +12095,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 59792 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 59802 ];
 
 		return pClassPointer;
 	};
@@ -12134,7 +12137,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 59797 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 59807 ];
 
 		return pClassPointer;
 	};
@@ -12225,7 +12228,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 59796 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 59806 ];
 
 		return pClassPointer;
 	};
@@ -12384,12 +12387,12 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 59937 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 59947 ];
 
 		return pClassPointer;
 	};
 
-	struct FFPSBucketMetrics __GameEvent_Soccar_TA__ReportFps ( struct FFpsBucketData Bucket, struct FFPSBucketMetrics* StructInitializer_EC464D934773C43FF59EE1B9505AB3EF );
+	struct FFPSBucketMetrics __GameEvent_Soccar_TA__ReportFps ( struct FFpsBucketData Bucket, struct FFPSBucketMetrics* StructInitializer_7C9BB5694992B4115FBA3C8D344C7123 );
 	bool __GameEvent_Soccar_TA__UpdateTeamScores ( class ATeam_TA* T );
 	void __GameEvent_Soccar_TA__CheckStart ( class ATeam_TA* T );
 	void __ReplicatedServerPerformanceState__ChangeNotifyFunc ( );
@@ -12442,7 +12445,7 @@ public:
 	bool AutoSelectTeam ( class AController* C );
 	void OnMatchWinnerSet ( );
 	void OnGameWinnerSet ( );
-	class APRI_TA* GetMVP ( class ATeam_TA* WinningTeam, TArray< class APRI_TA* >* SortLocal_6314A63346677462AFE7B897347514CE );
+	class APRI_TA* GetMVP ( class ATeam_TA* WinningTeam, TArray< class APRI_TA* >* SortLocal_09ACCEE845BDD3E34A4CB89AC21579BB );
 	int MVPSort ( class APRI_TA* A, class APRI_TA* B );
 	void HandleHitGoal ( class ABall_TA* Ball, class UGoal_TA* Goal );
 	void ClearReplicatedScoredOnTeam ( );
@@ -12492,7 +12495,7 @@ public:
 	bool GetSpawnOrientation ( class AController* ForPlayer, struct FVector* out_Location, struct FRotator* out_Rotation );
 	void ClearReplicatedStatEvent ( );
 	void HandleGaveStat ( class AStatFactory_TA* Factory, class APRI_TA* ToPRI, class UStatEvent_TA* StatEvent, class ABall_TA* Ball, int BallHitIndex, class APRI_TA* Victim );
-	void ReportFps ( class UFpsBucketRecorder_TA* Recorder, TArray< struct FFPSBucketMetrics >* MapLocal_FCC4DE3A45BB2AA0976EE3909ED96819 );
+	void ReportFps ( class UFpsBucketRecorder_TA* Recorder, TArray< struct FFPSBucketMetrics >* MapLocal_70B7883E4FB3FD42FC64F4BE9C9E5364 );
 	void eventDestroyed ( );
 	void InitCrowdManager ( );
 	void InitField ( );
@@ -12556,7 +12559,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 59936 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 59946 ];
 
 		return pClassPointer;
 	};
@@ -12605,7 +12608,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 59965 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 59975 ];
 
 		return pClassPointer;
 	};
@@ -12650,7 +12653,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 59964 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 59974 ];
 
 		return pClassPointer;
 	};
@@ -12692,7 +12695,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 59963 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 59973 ];
 
 		return pClassPointer;
 	};
@@ -12715,7 +12718,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 60034 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 60044 ];
 
 		return pClassPointer;
 	};
@@ -12752,7 +12755,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 60037 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 60047 ];
 
 		return pClassPointer;
 	};
@@ -12809,7 +12812,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 60066 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 60076 ];
 
 		return pClassPointer;
 	};
@@ -12859,7 +12862,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 60069 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 60079 ];
 
 		return pClassPointer;
 	};
@@ -12970,7 +12973,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 60087 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 60097 ];
 
 		return pClassPointer;
 	};
@@ -12981,11 +12984,10 @@ public:
 	void __SaveData_TA__ValidateLoadouts ( class UProfile_TA* P );
 	bool __SaveData_TA__GetNewProducts ( class UProduct_TA* P );
 	void __SaveData_TA__HandleOnlineProductsReceived ( class UOnlineProduct_TA* P );
-	void __SaveData_TA__InstantiateSaveObjects1 ( class UClass* T );
 	class USaveObject_TA* __SaveData_TA__InstantiateSaveObjects ( class UClass* T );
 	void UpdateVideoSettings ( class UVideoSettingsSave_TA* Settings );
 	void UpdateSaveObjectReference ( class USaveObject_TA* NewObject );
-	void InstantiateSaveObjects ( TArray< class UClass* >* ArrayInitializer_3EE41326487E00CBDC586AB1BAB9F9A1, TArray< class USaveObject_TA* >* MapLocal_5614ABC54273C6F358B442AE9D1F050C );
+	void InstantiateSaveObjects ( TArray< class UClass* >* ArrayInitializer_32DAB2A44E10EF1734A8909DD5214502, TArray< class USaveObject_TA* >* MapLocal_A59863984B917A0AE19C979641C04FA4 );
 	void UpdateTrialStatus ( class UOnlineGameTrial_X* Trial );
 	TArray< int > GetUniqueSeriesIDs ( );
 	void HandleKonamiCode ( );
@@ -13011,8 +13013,8 @@ public:
 	void SyncOnlineProducts ( );
 	void OnlineStorageSyncSuccess ( struct FOnlinePlayerStorageSyncResult* Result );
 	bool IsOnlinePlayerStorageSyncSuccess ( );
-	struct FOnlinePlayerStorageSyncRequest SaveObjectToSyncRequest ( class USaveObject_TA* SaveObject, struct FOnlinePlayerStorageSyncRequest* StructInitializer_D3A6A0F1423D30E5B61819AC2893EA4B );
-	class UAsyncTask* SyncOnlinePlayerStorage ( TArray< class USaveObject_TA* >* ConcatLocal_BCD6C4164A135C25E162C1B156A48F18, TArray< struct FOnlinePlayerStorageSyncRequest >* MapLocal_09379F8D4D33C4B3A14C1AA700B26A62 );
+	struct FOnlinePlayerStorageSyncRequest SaveObjectToSyncRequest ( class USaveObject_TA* SaveObject, struct FOnlinePlayerStorageSyncRequest* StructInitializer_AFAC950B494EABD9ABDFA7A7A2495DB4 );
+	class UAsyncTask* SyncOnlinePlayerStorage ( TArray< class USaveObject_TA* >* ConcatLocal_57681470447B6650EFF85A8215FA19EB, TArray< struct FOnlinePlayerStorageSyncRequest >* MapLocal_1AA1E29B417221B80F8AB8BFD199F743 );
 	void SyncCloudData ( class UOnlinePlayer_X* OnlinePlayer );
 	bool CanSyncOnlineData ( struct FUniqueNetId PlayerID );
 	void ResetOnlineSaveData ( );
@@ -13035,10 +13037,10 @@ public:
 	void RemoveOnlineProductId ( );
 	void GiveOnlineProduct ( class UOnlineProduct_TA* OnlineProduct );
 	class UOnlineProduct_TA* GiveOnlineProductData ( struct FOnlineProductData NewProductData );
-	TArray< class UOnlineProduct_TA* > GiveOnlineProductDatas ( TArray< struct FOnlineProductData > NewProductDatas, TArray< class UOnlineProduct_TA* >* MapLocal_B033B3BF4A751DF9EB77638DACA495B8 );
+	TArray< class UOnlineProduct_TA* > GiveOnlineProductDatas ( TArray< struct FOnlineProductData > NewProductDatas, TArray< class UOnlineProduct_TA* >* MapLocal_2FA613134FA27FA60D1AA19D0FFC86A7 );
 	bool DisableContainerNotifications ( );
 	void HandleDefaultProductsUnlocked ( );
-	TArray< class UProduct_TA* > GetNewProducts ( TArray< class UProduct_TA* >* MapLocal_F24A41534636977EC5C5A8ACBED44CBD, TArray< class UProduct_TA* >* FilterLocal_D1174AB045F48EFFD68C52BA32A2AD18, TArray< class UProduct_TA* >* DistinctLocal_60EE1A7E4DD228D3465784A476561CEE );
+	TArray< class UProduct_TA* > GetNewProducts ( TArray< class UProduct_TA* >* MapLocal_0A69E8EB4B8803AE50C72B97452DCE39, TArray< class UProduct_TA* >* FilterLocal_537280DA494E9869BC9B5294D35D235F, TArray< class UProduct_TA* >* DistinctLocal_B17E86DD47B9108D25DCE98B1E538EBC );
 	class UProduct_TA* GetProductFromOnlineID ( );
 	int GetProductIDFromOnlineID ( );
 	class UOnlineProduct_TA* GetFirstOnlineProduct ( int ProductID );
@@ -13140,7 +13142,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 60100 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 60110 ];
 
 		return pClassPointer;
 	};
@@ -13255,7 +13257,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 60114 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 60124 ];
 
 		return pClassPointer;
 	};
@@ -13279,7 +13281,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 60148 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 60158 ];
 
 		return pClassPointer;
 	};
@@ -13318,7 +13320,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 60228 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 60238 ];
 
 		return pClassPointer;
 	};
@@ -13331,7 +13333,7 @@ public:
 	void SetData ( struct FLoadoutData* Data );
 	struct FLoadoutData GetData ( );
 	void ApplyRequiredProducts ( int ProductID, struct FLoadoutData* Data );
-	void ValidateForcedProducts ( int TeamIndex, struct FLoadoutData* Data, TArray< int >* MapLocal_51E2C9784761DCCA4CCDDDB8991D80E8 );
+	void ValidateForcedProducts ( int TeamIndex, struct FLoadoutData* Data, TArray< int >* MapLocal_F869FEF844B2F8BA1F9BF78F77F42A79 );
 	void ValidateProductID ( class UProfile_TA* ForProfile, struct FString SlotName, int* ProductID );
 	void StaticValidate ( class UProfile_TA* ForProfile, struct FLoadoutTeamPaint* Paint, TArray< int >* OutProducts );
 	void Validate ( );
@@ -13361,7 +13363,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 60261 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 60271 ];
 
 		return pClassPointer;
 	};
@@ -13413,13 +13415,13 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 60313 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 60323 ];
 
 		return pClassPointer;
 	};
 
 	void __PlayerInput_TA__Construct ( class UPlayerInput_X* _ );
-	TArray< struct FBindingAction > GetDefaultActions ( struct FBindingAction* StructInitializer_9882A2624A69B2FE587C89B56576237B, struct FBindingAction* StructInitializer_636835CD4ABABC5D55C7BB90284D596E, struct FBindingAction* StructInitializer_881765704275F85062B1E0A9CEC6C9C6, struct FBindingAction* StructInitializer_C094E4B9439206C59170698C250EDB93, struct FBindingAction* StructInitializer_DCB8B22844EA4C1958A401A5C5354E0F, struct FBindingAction* StructInitializer_35D39C214837C60968D4C48704EDF9A6, struct FBindingAction* StructInitializer_9DC55D664FDF165DC4B56197251ACB5B, struct FBindingAction* StructInitializer_5563A72E4547A46F08B8FB891D19786B, struct FBindingAction* StructInitializer_1B5CA78246927CE5F2D0BEA8DA400C07, struct FBindingAction* StructInitializer_B06750A04939E7E925AFF88F14DE6450, struct FBindingAction* StructInitializer_CBA8E2224C0BD66844A7FAA6533D6FDF, struct FBindingAction* StructInitializer_AF1AC29942B51E1A55630E9BE03BF9CA, struct FBindingAction* StructInitializer_2F1B913940FAE4EFF2C82093330E8A29, struct FBindingAction* StructInitializer_03D0615A447649782DBB44BBEF71BA08, struct FBindingAction* StructInitializer_EB9B40144C5B1BDF989276BCF9A63677, struct FBindingAction* StructInitializer_F5DA6E3C4113704089414CAC23CEADE3, struct FBindingAction* StructInitializer_1EE5ED2847EE206FBE903EA37151B7DE, struct FBindingAction* StructInitializer_D39EE7984A6F6EDC3BC800BCD4BEBA4A, struct FBindingAction* StructInitializer_B58D13F14D8BA0E87817F983D24BDDDC, struct FBindingAction* StructInitializer_294B0E474DE5930BCAAA87A93AE35576, struct FBindingAction* StructInitializer_E96086A34A9F0D54631E268D1E7DBD2D, struct FBindingAction* StructInitializer_252452E84C2EF9AE3FF06CAFE7F7CB90, struct FBindingAction* StructInitializer_999A1BBA40F6392D847A97B2E907EBBF, struct FBindingAction* StructInitializer_C467306A4E4CF4C012EC0080278A5076, struct FBindingAction* StructInitializer_5C305884433E963865C85CBA390710B6, struct FBindingAction* StructInitializer_2060AFB042D70771201427BB6778ADB7, struct FBindingAction* StructInitializer_9EDF9BF848EE4A8434500EABCEBA7CD2, struct FBindingAction* StructInitializer_E05CFC604466B2D62BA838AFFD066C54, struct FBindingAction* StructInitializer_F81F6981453A33F0012E4A8B71033AB2, struct FBindingAction* StructInitializer_4A063BCA4E4AE8DDE8CDC68B65AC90CA, struct FBindingAction* StructInitializer_9591D39240B3602C98897CB926DB15DB, struct FBindingAction* StructInitializer_1F879C4F4F1CF1DBE2553BB900C18D90, struct FBindingAction* StructInitializer_BE4C62A6457B685D3EE0409B7F22CE39, struct FBindingAction* StructInitializer_797A7C3045CB39C5BAD4FFA1BBC09778, struct FBindingAction* StructInitializer_E9AFCFCE44534ED0EE49E0BBC47336E6, struct FBindingAction* StructInitializer_6C98B2E846F067A7B8EED2ADDDC4CDAF, struct FBindingAction* StructInitializer_AF4FE95B430D442E023D118AE05DF655, struct FBindingAction* StructInitializer_E7B584AD4A96D282D25B1BBBD1ADCCC3, struct FBindingAction* StructInitializer_25D82E47449104AF7F02EC944DD80FC6, struct FBindingAction* StructInitializer_B9B98EC74076AB0FBD03B1B35268F293, struct FBindingAction* StructInitializer_9F38700042431E7B9BFD9888F867BF8A, struct FBindingAction* StructInitializer_3287749049FD7248DB77329CF71367ED, struct FBindingAction* StructInitializer_A43C43E744CCE9D2F8F581B935789066, struct FBindingAction* StructInitializer_80591D774D9AD0030A1243BD50A52501, struct FBindingAction* StructInitializer_C15D6BAC46EDAD08F15F3B88E76DD64C, struct FBindingAction* StructInitializer_FF0D0EAE4429047F21AF68B58F6B313F, struct FBindingAction* StructInitializer_C804E4A34C7712CFAE3D11A2D15C1C71, struct FBindingAction* StructInitializer_D974A9A84F4531E4BA1E29BE3F8C6C25, struct FBindingAction* StructInitializer_BD33B5034A5D8C916089249F08982E55, struct FBindingAction* StructInitializer_4687BBFC489FAD111F641F9CD1D8142B, struct FBindingAction* StructInitializer_06BD863F417EAEE25BDC7997EFFEE2BF, struct FBindingAction* StructInitializer_22F2EC7649E7B7CE653A60863F9F2907, struct FBindingAction* StructInitializer_6D93F1AC4D93B0B5B11417A7DD98CADD, struct FBindingAction* StructInitializer_BCFEAD6D424992D68E9A59969FD6CBB3, struct FBindingAction* StructInitializer_039B47D548155F9809D52880F7A67294, struct FBindingAction* StructInitializer_E6C913FC44B8AFFE129C6791714F242A, struct FBindingAction* StructInitializer_2E7A80DE4608F9D3BFB170859DDFC50D, struct FBindingAction* StructInitializer_FB938E3D42C06F5CE3C78D903ECEC159, struct FBindingAction* StructInitializer_12CEE09D402D888C9A999D8194B810EB, struct FBindingAction* StructInitializer_62A929F44A0BBF23D6A639A400A8122A, struct FBindingAction* StructInitializer_E2D4613D4A121D2F67BBDEADB6E93401, struct FBindingAction* StructInitializer_7DD50A094AD267D4DE5D45A746CBE48B, struct FBindingAction* StructInitializer_3C84F6D6471D1FC9735D65BE0E422D33, struct FBindingAction* StructInitializer_F77882B149FCD1C55773CABEA647E742, struct FBindingAction* StructInitializer_7236738E4ED31B50D5AD18B36989AFAC, struct FBindingAction* StructInitializer_7F269253484EBB270F66F695EC1B5E4A, struct FBindingAction* StructInitializer_41203C1742E221A026C4498D1205036F, struct FBindingAction* StructInitializer_E61D5D7245B958CDF725FB87AF1F2E95, struct FBindingAction* StructInitializer_627F434B4601F4A26C8B7B9CB14734A1, struct FBindingAction* StructInitializer_F5658FD349D93B9378BC0D9131759847, struct FBindingAction* StructInitializer_AFB69D5644AC865022354A9C1452B8E5, struct FBindingAction* StructInitializer_5C01AA614EC58CD967C883BB35DFB14A, struct FBindingAction* StructInitializer_69C8AD7D4E17C67454EB43A7F51085D5, struct FBindingAction* StructInitializer_4C3F9402466306B3974115A526F6B411, struct FBindingAction* StructInitializer_3BE16D114FA9F222D8A6409D8FAE192D, struct FBindingAction* StructInitializer_4851BEA7426725F371CAE3B3AD0A1C54, struct FBindingAction* StructInitializer_4F9ED3FC4CA406967FEE68A7786EC75D, struct FBindingAction* StructInitializer_EE465099498DE050C28171A7E5E1FCC2, struct FBindingAction* StructInitializer_B7B0A25A4315B0DF27CE5EB906A4B305, struct FBindingAction* StructInitializer_75E754BF4B66B10A94517FABA831A186, struct FBindingAction* StructInitializer_5AE0A41240284B33EBECF9BB0CA3ED01, struct FBindingAction* StructInitializer_70A71FEF4B034BFA0121EDAC4BD83FA5, struct FBindingAction* StructInitializer_97FB3F784D61F077221B7EBEC5D16BE3, struct FBindingAction* StructInitializer_396F52FE4B410420E9669AA12446EB35, struct FBindingAction* StructInitializer_75DCD5FD427B4E136B9E88BCDC2C7863, struct FBindingAction* StructInitializer_8379AF7E43BDCC35A5ACA0A57E009AF6, struct FBindingAction* StructInitializer_5B4A8FA34325CD9B820B89B20D0D8D77, struct FBindingAction* StructInitializer_8CB88C5146257F7E201FDABFAB4D1C56, struct FBindingAction* StructInitializer_475DEBEB465CD5366ADA94B90E9AB152, struct FBindingAction* StructInitializer_7F07173844E5AACDB2D2CEB09CF5A2F1, struct FBindingAction* StructInitializer_F600620C4C698917D877BB950597CA0F, struct FBindingAction* StructInitializer_A7B8CC0C446269D728AE368ABAD2CDFF, struct FBindingAction* StructInitializer_C76AD0804EE75DD5A4531CA1052C3721, struct FBindingAction* StructInitializer_51A09E7941CF5762E7B422A4FA2ECDA3, struct FBindingAction* StructInitializer_1F01C73B4A41A6567C3432AD177945DD, struct FBindingAction* StructInitializer_1F2C8DBC45AC9FA1E9C3199CE21735C6, struct FBindingAction* StructInitializer_61B9D7CC47A08D2619532A9D4CD4AB8A, struct FBindingAction* StructInitializer_50966B874E9C3CFC8103C0A184EB1429 );
+	TArray< struct FBindingAction > GetDefaultActions ( struct FBindingAction* StructInitializer_66DFD49544D3FC0B3661E18B344A9BED, struct FBindingAction* StructInitializer_3B757D16469FD3DA71CDFC9EA130C912, struct FBindingAction* StructInitializer_99716C514152170DCEA1F3BEA98939A3, struct FBindingAction* StructInitializer_75F6BACB4852006969277E8418996CD4, struct FBindingAction* StructInitializer_7C1F79D44F40155E70FEB2841D14A233, struct FBindingAction* StructInitializer_FF0148D54B82E83FA781D2ACE1DC1F0A, struct FBindingAction* StructInitializer_E511290547B024120563A5BE9B66197E, struct FBindingAction* StructInitializer_973A0DE141C378D0A3D963B33672E961, struct FBindingAction* StructInitializer_3DAC4E574776D23231DF5681EE9B06B2, struct FBindingAction* StructInitializer_16B26B52418642FC4B650C8E596188CD, struct FBindingAction* StructInitializer_90CBC34D403385ED60EBD09B05C6F739, struct FBindingAction* StructInitializer_7559CAC445E4A100428BD7A20D2A2DF5, struct FBindingAction* StructInitializer_A52171EC4322F6BD02DB3D9797063A92, struct FBindingAction* StructInitializer_31596A5B447071AC21F079BD16541376, struct FBindingAction* StructInitializer_2CF33DF84358DC9D087502BDF5D8E64F, struct FBindingAction* StructInitializer_AE137DE847CFB4BBE3D6EFABCF1E000A, struct FBindingAction* StructInitializer_79F5ADC74690DF7C951915BB62E59F5C, struct FBindingAction* StructInitializer_C3958895472910A4E34B48B1486B9AFF, struct FBindingAction* StructInitializer_353CF6B449FB9E0F87CB6B9EABAF1F13, struct FBindingAction* StructInitializer_BE89E48645284270FBD854B05E885D2E, struct FBindingAction* StructInitializer_F40A214C451775D4B8E9FBB1E2E0CAEA, struct FBindingAction* StructInitializer_3C5ADC25449634EBB6971F8ED02FE866, struct FBindingAction* StructInitializer_EC6F656F4458280524E394A6C33662B4, struct FBindingAction* StructInitializer_16B33C234765E8336FB4A1B9BE88ECC7, struct FBindingAction* StructInitializer_7357A2494E5E0C16ADEF76BE7C987159, struct FBindingAction* StructInitializer_8F8B37AD4B02DF52F46823BC3EE62C61, struct FBindingAction* StructInitializer_2F6F14E34D866F24EE3BF9BB6CE59120, struct FBindingAction* StructInitializer_269059814B4BE58BB44376B0E1AD3EB8, struct FBindingAction* StructInitializer_EB82C722464EF5C6331A10AE65924E0D, struct FBindingAction* StructInitializer_F1F3C59D4964BC810777F7AEA20E5179, struct FBindingAction* StructInitializer_EF5CB83846A2F71A24C73B843A84BD7A, struct FBindingAction* StructInitializer_AF662D1D4E4A936DE6520C99D8695A20, struct FBindingAction* StructInitializer_B32724D14C9C95281EA5798C4944FD93, struct FBindingAction* StructInitializer_3F462A624E26F5A6BF258DA7D138FEC9, struct FBindingAction* StructInitializer_5E6B7CD341FC430E08C3559905286567, struct FBindingAction* StructInitializer_717F540F4C2163EEA1CE9384A1AD0596, struct FBindingAction* StructInitializer_ADC7148F4BB6A2BC891F7A8FC674B54E, struct FBindingAction* StructInitializer_75D0278949E2ED95CFA67B9E16AD9D35, struct FBindingAction* StructInitializer_976F5B584750218D579BFFA7AA1BD8DB, struct FBindingAction* StructInitializer_1D56C80A4F188CB68A96D79A2640C9C5, struct FBindingAction* StructInitializer_299C30754480CED3033FA68CE6690F23, struct FBindingAction* StructInitializer_19D051804ECECC1EE7ED6FA279BDD62D, struct FBindingAction* StructInitializer_E77AC5A342BDE408DCF9109D56033399, struct FBindingAction* StructInitializer_0E2651BD436D891B51683D92E6B18297, struct FBindingAction* StructInitializer_168145B6468498CB915BB9AB9846B9C3, struct FBindingAction* StructInitializer_7A6429A9410E3A0527E572AD8E820148, struct FBindingAction* StructInitializer_3869ECAD4DB31110C30AA4B2003B235A, struct FBindingAction* StructInitializer_52CE79FA4657C8C2AA0A01A1A4057803, struct FBindingAction* StructInitializer_AAC218564813CA921A3152B3F456C8DF, struct FBindingAction* StructInitializer_E3C614FE4929D2C8EECF09AE454D1640, struct FBindingAction* StructInitializer_3DE17936456380F8915D6EAE1E76B350, struct FBindingAction* StructInitializer_0AA91F084DC0606E43431F9721A31343, struct FBindingAction* StructInitializer_7A0B996049FEA7A66C4D5C80B02D2942, struct FBindingAction* StructInitializer_DC8591D449C0E626C9574CA49D2CFF2B, struct FBindingAction* StructInitializer_513809924CEBD9F90A944BB33EED8215, struct FBindingAction* StructInitializer_0733B3D945D199A462B048BC87D509A0, struct FBindingAction* StructInitializer_5C9BD0AC4E66DE2574334193B92B4A25, struct FBindingAction* StructInitializer_3E8E83D043497B9F3FDAA0BCE4B01AB8, struct FBindingAction* StructInitializer_5FBEC6C243F775444FCD4F9F51EDE182, struct FBindingAction* StructInitializer_F1803B574B967AFCC4F8F1BA0E13049C, struct FBindingAction* StructInitializer_3CBD57344752496E78ECD691E5AAF124, struct FBindingAction* StructInitializer_01E3717547D99F302D7967BFA08BF391, struct FBindingAction* StructInitializer_524A9D2F451736360919579CCF48A4EB, struct FBindingAction* StructInitializer_5ABE1D1546254E2C8650B58FBA8F0D1E, struct FBindingAction* StructInitializer_392DDEF4464AFBCE2AC7DCA8CB34B976, struct FBindingAction* StructInitializer_DBE4BE7942D8E00652E3C38E02EFC6A2, struct FBindingAction* StructInitializer_6A849599430EDA0B4828B49087AE67B1, struct FBindingAction* StructInitializer_0833ED154AB045F9848EC494106AD351, struct FBindingAction* StructInitializer_384E4720491A7A5A6C292BB7B9354C7C, struct FBindingAction* StructInitializer_6799C338424E64A7B7112EB369BEAA9B, struct FBindingAction* StructInitializer_94BA5A40413A245F58703D8419A6BACF, struct FBindingAction* StructInitializer_B8FDC2244DA73E2330B3E7965E0AB4F1, struct FBindingAction* StructInitializer_B9C2FA9940B33D6E4D0C88BF21B0B1A1, struct FBindingAction* StructInitializer_B50ABCCC415F44B887EE878A49CE589F, struct FBindingAction* StructInitializer_3620CB9F42D3E5BF93F37A80A18B649B, struct FBindingAction* StructInitializer_10D769FA4CF67F304EED39A620950EBE, struct FBindingAction* StructInitializer_BF483C964B5A03776C050788CC6D7A26, struct FBindingAction* StructInitializer_8E09EE994A14F47498ACB09B7603B665, struct FBindingAction* StructInitializer_B33A86354A5FC271847A43A6289196BD, struct FBindingAction* StructInitializer_2A1C7D0C4942E2EABC20158A1EC783FE, struct FBindingAction* StructInitializer_A2E2DFA440DCFD30AE34DC8830E05967, struct FBindingAction* StructInitializer_7C89E5F14445C8CEAFFB5DBC6543537E, struct FBindingAction* StructInitializer_E23638014C4CEB20C1052E88198657BA, struct FBindingAction* StructInitializer_4960416C4107C9EB08E2D390C1284BD6, struct FBindingAction* StructInitializer_6E56AFDF4D13F93BAC23CAB95CBB849B, struct FBindingAction* StructInitializer_A2E5E2AD44640ACC9BCDF49D1306F446, struct FBindingAction* StructInitializer_121F306840F49D1F28174CAB9950D5C6, struct FBindingAction* StructInitializer_0F6B1E30449C451C042600A5E8710670, struct FBindingAction* StructInitializer_40E0B0164693C4EE01BAE182A74462F0, struct FBindingAction* StructInitializer_462CBD584E315AF8C3E9E2A5EDADCE1F, struct FBindingAction* StructInitializer_09F1EC9047A5D506F32D4BB8030BC3CA, struct FBindingAction* StructInitializer_D4EEF935463B876B0E53F9905DACB1EC, struct FBindingAction* StructInitializer_5891DF8545C81B13B4534D8329EC1A2C, struct FBindingAction* StructInitializer_2F2366544F93860C7C8D2C9997D5A0E5, struct FBindingAction* StructInitializer_E3D889D345B80DB5F1415699BA664F35, struct FBindingAction* StructInitializer_93C9D6E04C6C709425190B901FFE0A7D, struct FBindingAction* StructInitializer_8CA93B7E480B26A30D2507A4E0EA41BB, struct FBindingAction* StructInitializer_D31800A94B282DDC5238D394AE02A920 );
 	void UpdateTargetSelect ( class APlayerController_TA* PC );
 	struct FName GetKeyForAction ( struct FName Action, unsigned long bGamepad );
 	struct FString GetUIKeyForAction ( struct FName Action, unsigned long bGamepad );
@@ -13451,7 +13453,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 60345 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 60355 ];
 
 		return pClassPointer;
 	};
@@ -13480,7 +13482,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 60352 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 60362 ];
 
 		return pClassPointer;
 	};
@@ -13488,7 +13490,7 @@ public:
 	class UProfile_TA* GetProfile ( );
 	void OnTradeInFailed ( );
 	void OnTradeInComplete ( );
-	void HandleTradeInComplete ( class URPC_ProductsTradeIn_TA* RPC, TArray< class UOnlineProduct_TA* >* MapLocal_87E4100E40319F4DDB3C209A7CD357B2 );
+	void HandleTradeInComplete ( class URPC_ProductsTradeIn_TA* RPC, TArray< class UOnlineProduct_TA* >* MapLocal_CF2280424CA143549CF4DAB0C55EDD66 );
 	void HandleTradeQuantityModified ( class UOnlineProduct_TA* OnlineProduct, unsigned long bAddProduct );
 	void PerformTradeIn ( );
 	void CancelTradeIn ( );
@@ -13520,7 +13522,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 60358 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 60368 ];
 
 		return pClassPointer;
 	};
@@ -13570,7 +13572,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 60361 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 60371 ];
 
 		return pClassPointer;
 	};
@@ -13653,7 +13655,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 60375 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 60385 ];
 
 		return pClassPointer;
 	};
@@ -13712,7 +13714,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 60374 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 60384 ];
 
 		return pClassPointer;
 	};
@@ -13754,7 +13756,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 60373 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 60383 ];
 
 		return pClassPointer;
 	};
@@ -13780,7 +13782,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 60372 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 60382 ];
 
 		return pClassPointer;
 	};
@@ -13824,7 +13826,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 60391 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 60401 ];
 
 		return pClassPointer;
 	};
@@ -13851,7 +13853,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 60423 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 60433 ];
 
 		return pClassPointer;
 	};
@@ -13883,7 +13885,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 60434 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 60444 ];
 
 		return pClassPointer;
 	};
@@ -13919,7 +13921,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 60446 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 60456 ];
 
 		return pClassPointer;
 	};
@@ -13928,12 +13930,12 @@ public:
 	struct FString DetermineLevelTitle ( int Level );
 	int CalculateRequiredXPForLevel ( int Level );
 	int CalculatePlayerLevel ( int XP, unsigned long bShowLog );
-	bool AllProductsUnlocked ( class UProfile_TA* Profile, TArray< class UProductSlot_TA* >* ArrayResultLocal_AD848A8D4FF67A72A4A19FB076527B1F );
+	bool AllProductsUnlocked ( class UProfile_TA* Profile, TArray< class UProductSlot_TA* >* ArrayResultLocal_A200B5744AA01400B3F3F1B2A1FBC223 );
 	void PruneSkinsForLockedCars ( class UProductSlot_TA* ProductSlot, class UProfile_TA* Profile, TArray< int >* LockedProductIDs );
 	int PickRandomItemFromSlot ( class UProductSlot_TA* ProductSlot, class UProfile_TA* Profile );
 	bool SlotContainsLockedProducts ( class UProductSlot_TA* ProductSlot, class UProfile_TA* Profile );
 	bool SlotContainsLockedDropProducts ( class UProductSlot_TA* ProductSlot, class UProfile_TA* Profile );
-	class UProductSlot_TA* PickRandomSlot ( class UProfile_TA* Profile, TArray< class UProductSlot_TA* >* ArrayResultLocal_1D8446C94079DC7E4775FB85ABF7A024, TArray< class UProductSlot_TA* >* FilterLocal_93DCA1694CFDB93D0B76D5A1CD67F60A );
+	class UProductSlot_TA* PickRandomSlot ( class UProfile_TA* Profile, TArray< class UProductSlot_TA* >* ArrayResultLocal_3EF9576D4D0657055B895ABE121D9E70, TArray< class UProductSlot_TA* >* FilterLocal_7FE7E43C46619CB7D22691AB304142FE );
 	int GetRandomLockedProductID ( class UProfile_TA* Profile );
 };
 
@@ -13952,7 +13954,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 60587 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 60597 ];
 
 		return pClassPointer;
 	};
@@ -13981,7 +13983,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 60597 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 60607 ];
 
 		return pClassPointer;
 	};
@@ -14028,7 +14030,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 60613 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 60623 ];
 
 		return pClassPointer;
 	};
@@ -14061,7 +14063,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 60671 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 60681 ];
 
 		return pClassPointer;
 	};
@@ -14097,7 +14099,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 60683 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 60693 ];
 
 		return pClassPointer;
 	};
@@ -14130,7 +14132,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 61099 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 61109 ];
 
 		return pClassPointer;
 	};
@@ -14187,7 +14189,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 61190 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 61200 ];
 
 		return pClassPointer;
 	};
@@ -14259,7 +14261,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 61254 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 61264 ];
 
 		return pClassPointer;
 	};
@@ -14284,7 +14286,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 61276 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 61286 ];
 
 		return pClassPointer;
 	};
@@ -14309,7 +14311,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 61363 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 61373 ];
 
 		return pClassPointer;
 	};
@@ -14336,7 +14338,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 61408 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 61418 ];
 
 		return pClassPointer;
 	};
@@ -14361,7 +14363,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 61669 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 61679 ];
 
 		return pClassPointer;
 	};
@@ -14384,7 +14386,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 61707 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 61717 ];
 
 		return pClassPointer;
 	};
@@ -14407,7 +14409,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 61876 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 61886 ];
 
 		return pClassPointer;
 	};
@@ -14431,7 +14433,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 61907 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 61917 ];
 
 		return pClassPointer;
 	};
@@ -14457,7 +14459,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 61910 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 61920 ];
 
 		return pClassPointer;
 	};
@@ -14487,7 +14489,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 61936 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 61946 ];
 
 		return pClassPointer;
 	};
@@ -14517,7 +14519,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 61987 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 61997 ];
 
 		return pClassPointer;
 	};
@@ -14547,7 +14549,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 62007 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 62017 ];
 
 		return pClassPointer;
 	};
@@ -14573,7 +14575,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 62025 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 62035 ];
 
 		return pClassPointer;
 	};
@@ -14599,7 +14601,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 62039 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 62049 ];
 
 		return pClassPointer;
 	};
@@ -14624,7 +14626,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 62070 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 62080 ];
 
 		return pClassPointer;
 	};
@@ -14652,7 +14654,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 62081 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 62091 ];
 
 		return pClassPointer;
 	};
@@ -14679,7 +14681,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 62092 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 62102 ];
 
 		return pClassPointer;
 	};
@@ -14704,7 +14706,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 62102 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 62112 ];
 
 		return pClassPointer;
 	};
@@ -14727,7 +14729,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 62112 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 62122 ];
 
 		return pClassPointer;
 	};
@@ -14752,7 +14754,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 62137 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 62147 ];
 
 		return pClassPointer;
 	};
@@ -14777,7 +14779,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 62144 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 62154 ];
 
 		return pClassPointer;
 	};
@@ -14802,7 +14804,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 62153 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 62163 ];
 
 		return pClassPointer;
 	};
@@ -14828,7 +14830,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 62165 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 62175 ];
 
 		return pClassPointer;
 	};
@@ -14851,7 +14853,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 62175 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 62185 ];
 
 		return pClassPointer;
 	};
@@ -14885,7 +14887,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 62177 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 62187 ];
 
 		return pClassPointer;
 	};
@@ -14911,7 +14913,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 62207 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 62217 ];
 
 		return pClassPointer;
 	};
@@ -14936,7 +14938,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 62216 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 62226 ];
 
 		return pClassPointer;
 	};
@@ -14962,7 +14964,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 62224 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 62234 ];
 
 		return pClassPointer;
 	};
@@ -14989,7 +14991,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 62231 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 62241 ];
 
 		return pClassPointer;
 	};
@@ -15014,7 +15016,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 62244 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 62254 ];
 
 		return pClassPointer;
 	};
@@ -15039,7 +15041,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 62251 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 62261 ];
 
 		return pClassPointer;
 	};
@@ -15074,7 +15076,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 62265 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 62275 ];
 
 		return pClassPointer;
 	};
@@ -15099,7 +15101,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 62284 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 62294 ];
 
 		return pClassPointer;
 	};
@@ -15126,7 +15128,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 62293 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 62303 ];
 
 		return pClassPointer;
 	};
@@ -15151,7 +15153,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 62304 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 62314 ];
 
 		return pClassPointer;
 	};
@@ -15177,7 +15179,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 62312 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 62322 ];
 
 		return pClassPointer;
 	};
@@ -15207,7 +15209,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 62326 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 62336 ];
 
 		return pClassPointer;
 	};
@@ -15233,7 +15235,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 62343 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 62353 ];
 
 		return pClassPointer;
 	};
@@ -15263,7 +15265,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 62345 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 62355 ];
 
 		return pClassPointer;
 	};
@@ -15291,7 +15293,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 62438 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 62448 ];
 
 		return pClassPointer;
 	};
@@ -15320,7 +15322,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 62441 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 62451 ];
 
 		return pClassPointer;
 	};
@@ -15387,7 +15389,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 62485 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 62495 ];
 
 		return pClassPointer;
 	};
@@ -15436,7 +15438,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 62487 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 62497 ];
 
 		return pClassPointer;
 	};
@@ -15472,7 +15474,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 62492 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 62502 ];
 
 		return pClassPointer;
 	};
@@ -15525,7 +15527,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 62510 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 62520 ];
 
 		return pClassPointer;
 	};
@@ -15575,7 +15577,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 62543 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 62553 ];
 
 		return pClassPointer;
 	};
@@ -15636,14 +15638,13 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 62553 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 62563 ];
 
 		return pClassPointer;
 	};
 
 	void __GameViewportClient_TA__Init ( class AGameEvent_TA* _ );
 	void __GameViewportClient_TA__Init ( class ULocalPlayer* _ );
-	//void __GameViewportClient_TA__Init ( class ULocalPlayer* _ );
 	int __GameViewportClient_TA__AddSplitScreenPlayer ( class ULocalPlayer* LP );
 	void NotifyPlayerRemoved ( int PlayerIndex, class ULocalPlayer* RemovedPlayer );
 	void SetNameplateScaleModifier ( float Value );
@@ -15655,7 +15656,7 @@ public:
 	void UpdateNumLocalPlayers ( );
 	float GetAspectRatio ( class ULocalPlayer* Player );
 	class ULocalPlayer* eventCreatePlayer ( int ControllerId, unsigned long bSpawnActor, struct FString* OutError );
-	void AddSplitScreenPlayer ( TArray< int >* MapLocal_6B6318CB4922913FEFA18EB026966BAB );
+	void AddSplitScreenPlayer ( TArray< int >* MapLocal_E715154246562D9E0B445586FCEB9A00 );
 	void HandleUserSignInComplete_CreateSplitScreenPlayer ( unsigned char LocalUserNum );
 	void InitiateAsyncLoginForSplitscreen ( int ControllerId );
 	bool HandleSplitScreenJoinAsync ( int ControllerId );
@@ -15702,7 +15703,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 62602 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 62612 ];
 
 		return pClassPointer;
 	};
@@ -15741,7 +15742,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 62611 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 62621 ];
 
 		return pClassPointer;
 	};
@@ -15768,7 +15769,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 62620 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 62630 ];
 
 		return pClassPointer;
 	};
@@ -15806,7 +15807,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 62622 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 62632 ];
 
 		return pClassPointer;
 	};
@@ -15846,7 +15847,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 62643 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 62653 ];
 
 		return pClassPointer;
 	};
@@ -15879,7 +15880,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 62661 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 62671 ];
 
 		return pClassPointer;
 	};
@@ -15929,7 +15930,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 62684 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 62694 ];
 
 		return pClassPointer;
 	};
@@ -15978,7 +15979,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 62783 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 62793 ];
 
 		return pClassPointer;
 	};
@@ -16034,7 +16035,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 62939 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 62949 ];
 
 		return pClassPointer;
 	};
@@ -16075,7 +16076,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 62941 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 62951 ];
 
 		return pClassPointer;
 	};
@@ -16125,7 +16126,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 62943 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 62953 ];
 
 		return pClassPointer;
 	};
@@ -16176,7 +16177,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 62951 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 62961 ];
 
 		return pClassPointer;
 	};
@@ -16207,7 +16208,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 62978 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 62988 ];
 
 		return pClassPointer;
 	};
@@ -16254,7 +16255,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 62988 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 62998 ];
 
 		return pClassPointer;
 	};
@@ -16363,7 +16364,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 63085 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 63095 ];
 
 		return pClassPointer;
 	};
@@ -16475,7 +16476,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 63171 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 63181 ];
 
 		return pClassPointer;
 	};
@@ -16499,7 +16500,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 63551 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 63561 ];
 
 		return pClassPointer;
 	};
@@ -16528,7 +16529,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 63559 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 63569 ];
 
 		return pClassPointer;
 	};
@@ -16556,7 +16557,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 63578 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 63588 ];
 
 		return pClassPointer;
 	};
@@ -16581,7 +16582,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 63592 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 63602 ];
 
 		return pClassPointer;
 	};
@@ -16609,7 +16610,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 63601 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 63611 ];
 
 		return pClassPointer;
 	};
@@ -16641,7 +16642,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 63624 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 63634 ];
 
 		return pClassPointer;
 	};
@@ -16668,7 +16669,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 63641 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 63651 ];
 
 		return pClassPointer;
 	};
@@ -16704,7 +16705,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 63657 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 63667 ];
 
 		return pClassPointer;
 	};
@@ -16735,7 +16736,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 63739 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 63749 ];
 
 		return pClassPointer;
 	};
@@ -16767,7 +16768,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 63837 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 63847 ];
 
 		return pClassPointer;
 	};
@@ -16793,7 +16794,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 63898 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 63908 ];
 
 		return pClassPointer;
 	};
@@ -16818,7 +16819,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 64030 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 64040 ];
 
 		return pClassPointer;
 	};
@@ -16847,7 +16848,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 64141 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 64151 ];
 
 		return pClassPointer;
 	};
@@ -16880,7 +16881,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 64386 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 64396 ];
 
 		return pClassPointer;
 	};
@@ -16915,7 +16916,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 64661 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 64671 ];
 
 		return pClassPointer;
 	};
@@ -16946,7 +16947,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 64663 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 64673 ];
 
 		return pClassPointer;
 	};
@@ -16976,7 +16977,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 64662 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 64672 ];
 
 		return pClassPointer;
 	};
@@ -17004,7 +17005,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 64747 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 64757 ];
 
 		return pClassPointer;
 	};
@@ -17033,7 +17034,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 64905 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 64915 ];
 
 		return pClassPointer;
 	};
@@ -17069,7 +17070,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 65041 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 65051 ];
 
 		return pClassPointer;
 	};
@@ -17183,7 +17184,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 65161 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 65171 ];
 
 		return pClassPointer;
 	};
@@ -17192,16 +17193,15 @@ public:
 	void __Profile_TA__CommonInit ( class USaveObject_TA* S );
 	void __Profile_TA__Unload ( class USaveObject_TA* S );
 	bool __Profile_TA__GetUniqueNetId ( class ULocalPlayer* P );
-	void __Profile_TA__InstantiateSaveObjects1 ( class UClass* T );
 	class USaveObject_TA* __Profile_TA__InstantiateSaveObjects ( class UClass* T );
 	void UpdateSaveObjectReference ( class USaveObject_TA* NewObject );
-	void InstantiateSaveObjects ( TArray< class UClass* >* ArrayInitializer_C8F3BB3643258629A0BFA5A0625C9C57, TArray< class USaveObject_TA* >* MapLocal_9248D0304E3A263A7CA24F849BFFD7E8 );
+	void InstantiateSaveObjects ( TArray< class UClass* >* ArrayInitializer_62B2654240EE36193DD9C5A76D1CAF20, TArray< class USaveObject_TA* >* MapLocal_1D5A995F43FA94B9710808B4A46C7F7B );
 	struct FUniqueNetId GetUniqueNetId ( );
-	TArray< struct FProfileProduct > GetProfileProducts ( struct FProfileProduct* StructInitializer_9AA4F36542C2026040768C8C97BB4335 );
+	TArray< struct FProfileProduct > GetProfileProducts ( struct FProfileProduct* StructInitializer_44955F9547D150D3B5FED0AAA6480914 );
 	void PrintDebugInfo ( class UDebugDrawer* Drawer );
 	bool AllowContainerNotifications ( );
 	bool GetBallTrajectoryEnabled ( );
-	void ResetAllSavedControlBindings ( TArray< struct FPlayerBinding >* ArrayInitializer_C04FCE02422B0A56317A3BBD46AFAE82, TArray< struct FPlayerBinding >* ArrayInitializer_C139582D4C72984D4CEF5FAB795A8964 );
+	void ResetAllSavedControlBindings ( TArray< struct FPlayerBinding >* ArrayInitializer_BAC41DDF4D1132268502599203EE0113, TArray< struct FPlayerBinding >* ArrayInitializer_2E98497345A082957119F2BB172A2048 );
 	void SetControlsPreset ( struct FName PresetName );
 	void AddLoadoutProductData ( int SlotIndex, int ProductID, class UOnlineProduct_TA* OnlineProduct, TArray< class UProductAttribute_TA* > Attributes, TArray< struct FLoadoutProductData >* OutProducts );
 	void InitServerSetLoadoutParams ( struct FLoadoutData* Loadouts, TArray< struct FProfileProduct > ProfileProducts, struct FServerSetLoadoutParams* OutParams );
@@ -17213,7 +17213,7 @@ public:
 	struct FCustomMatchSettings GetCustomMatchSettings ( unsigned char Type );
 	class UGameTags_TA* GetGameTags ( unsigned char Type );
 	void ValidateLoadoutSet ( class ULoadoutSet_TA* InLoadoutSet );
-	void ValidateLoadoutsWithProduct ( TArray< class ULoadoutSet_TA* >* FilterLocal_5F9114AC40CC9BE37A920C89AEEFD72B );
+	void ValidateLoadoutsWithProduct ( TArray< class ULoadoutSet_TA* >* FilterLocal_56357E1B4481D69F3925099AAA87DFD5 );
 	void ValidateLoadouts ( );
 	void RemoveGameSettingsTag ( struct FString GameSettingName );
 	void ResetOnlineProfile ( );
@@ -17245,7 +17245,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 65190 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 65200 ];
 
 		return pClassPointer;
 	};
@@ -17286,7 +17286,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 65204 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 65214 ];
 
 		return pClassPointer;
 	};
@@ -17328,7 +17328,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 65241 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 65251 ];
 
 		return pClassPointer;
 	};
@@ -17355,7 +17355,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 65242 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 65252 ];
 
 		return pClassPointer;
 	};
@@ -17380,7 +17380,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 65250 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 65260 ];
 
 		return pClassPointer;
 	};
@@ -17392,16 +17392,16 @@ public:
 UClass* UEngineAudioPreviewRev_TA::pClassPointer = NULL;
 
 // Class TAGame.PlayerController_Menu_TA
-// 0x0030 (0x06C8 - 0x0698)
+// 0x0030 (0x06C4 - 0x0694)
 class APlayerController_Menu_TA : public APlayerControllerBase_TA
 {
 public:
-	TArray< class UPlayerInputSequence_TA* >           InputSequences;                                   		// 0x0698 (0x000C) [0x0000000000400001]              ( CPF_Edit | CPF_NeedCtorLink )
-	unsigned long                                      bExecutedKonamiCode : 1;                          		// 0x06A4 (0x0004) [0x0000000000002000] [0x00000001] ( CPF_Transient )
-	struct FScriptDelegate                             __EventKonamiCode__Delegate;                      		// 0x06A8 (0x0010) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	unsigned char                                      UnknownData00[ 0x4 ];                             		// 0x06AC (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
-	struct FScriptDelegate                             __EventBecomePrimaryPlayer__Delegate;             		// 0x06B8 (0x0010) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	unsigned char                                      UnknownData01[ 0x4 ];                             		// 0x06BC (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
+	TArray< class UPlayerInputSequence_TA* >           InputSequences;                                   		// 0x0694 (0x000C) [0x0000000000400001]              ( CPF_Edit | CPF_NeedCtorLink )
+	unsigned long                                      bExecutedKonamiCode : 1;                          		// 0x06A0 (0x0004) [0x0000000000002000] [0x00000001] ( CPF_Transient )
+	struct FScriptDelegate                             __EventKonamiCode__Delegate;                      		// 0x06A4 (0x0010) [0x0000000000400000]              ( CPF_NeedCtorLink )
+	unsigned char                                      UnknownData00[ 0x4 ];                             		// 0x06A8 (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
+	struct FScriptDelegate                             __EventBecomePrimaryPlayer__Delegate;             		// 0x06B4 (0x0010) [0x0000000000400000]              ( CPF_NeedCtorLink )
+	unsigned char                                      UnknownData01[ 0x4 ];                             		// 0x06B8 (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
 
 private:
 	static UClass* pClassPointer;
@@ -17410,7 +17410,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 65315 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 65325 ];
 
 		return pClassPointer;
 	};
@@ -17450,7 +17450,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 65344 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 65354 ];
 
 		return pClassPointer;
 	};
@@ -17477,7 +17477,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 65373 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 65383 ];
 
 		return pClassPointer;
 	};
@@ -17507,7 +17507,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 65377 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 65387 ];
 
 		return pClassPointer;
 	};
@@ -17532,7 +17532,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 65390 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 65400 ];
 
 		return pClassPointer;
 	};
@@ -17554,7 +17554,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 65395 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 65405 ];
 
 		return pClassPointer;
 	};
@@ -17593,7 +17593,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 65400 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 65410 ];
 
 		return pClassPointer;
 	};
@@ -17670,7 +17670,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 65433 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 65443 ];
 
 		return pClassPointer;
 	};
@@ -17750,7 +17750,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 65546 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 65556 ];
 
 		return pClassPointer;
 	};
@@ -17779,7 +17779,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 65565 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 65575 ];
 
 		return pClassPointer;
 	};
@@ -17817,7 +17817,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 65584 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 65594 ];
 
 		return pClassPointer;
 	};
@@ -17865,7 +17865,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 65583 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 65593 ];
 
 		return pClassPointer;
 	};
@@ -17892,7 +17892,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 65582 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 65592 ];
 
 		return pClassPointer;
 	};
@@ -17929,7 +17929,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 65614 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 65624 ];
 
 		return pClassPointer;
 	};
@@ -17960,7 +17960,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 65683 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 65693 ];
 
 		return pClassPointer;
 	};
@@ -17982,7 +17982,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 65685 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 65695 ];
 
 		return pClassPointer;
 	};
@@ -18005,7 +18005,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 65738 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 65748 ];
 
 		return pClassPointer;
 	};
@@ -18030,7 +18030,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 65749 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 65759 ];
 
 		return pClassPointer;
 	};
@@ -18053,7 +18053,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 65759 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 65769 ];
 
 		return pClassPointer;
 	};
@@ -18083,19 +18083,13 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 65784 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 65794 ];
 
 		return pClassPointer;
 	};
 
 	void __SoundSettingsManager_TA__HandleSoundSettingsLoaded ( );
-	//void __SoundSettingsManager_TA__HandleSoundSettingsLoaded ( );
-	//void __SoundSettingsManager_TA__HandleSoundSettingsLoaded ( );
-	//void __SoundSettingsManager_TA__HandleSoundSettingsLoaded ( );
-	//void __SoundSettingsManager_TA__HandleSoundSettingsLoaded ( );
-	//void __SoundSettingsManager_TA__HandleSoundSettingsLoaded ( );
 	void __SoundSettingsManager_TA__HandleSoundSettingsControllerLoaded ( );
-	//void __SoundSettingsManager_TA__HandleSoundSettingsControllerLoaded ( );
 	void SetControllerSoundMode ( unsigned char NewValue );
 	void HandleLocalPlayerCountChange ( class ULocalPlayer* Player );
 	void SetControllerVolume ( float NewValue );
@@ -18133,7 +18127,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 65822 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 65832 ];
 
 		return pClassPointer;
 	};
@@ -18159,7 +18153,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 65914 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 65924 ];
 
 		return pClassPointer;
 	};
@@ -18186,7 +18180,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 65934 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 65944 ];
 
 		return pClassPointer;
 	};
@@ -18210,7 +18204,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 66321 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 66331 ];
 
 		return pClassPointer;
 	};
@@ -18243,7 +18237,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 66337 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 66347 ];
 
 		return pClassPointer;
 	};
@@ -18287,7 +18281,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 66370 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 66380 ];
 
 		return pClassPointer;
 	};
@@ -18310,7 +18304,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 66494 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 66504 ];
 
 		return pClassPointer;
 	};
@@ -18356,7 +18350,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 66529 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 66539 ];
 
 		return pClassPointer;
 	};
@@ -18385,7 +18379,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 66562 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 66572 ];
 
 		return pClassPointer;
 	};
@@ -18419,7 +18413,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 66573 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 66583 ];
 
 		return pClassPointer;
 	};
@@ -18427,7 +18421,7 @@ public:
 	int __MatchSeries_TA__GetGamesPlayed ( int Sum, struct FSeriesTeam Team );
 	int GetSeriesWinCount ( int InSeriesLength );
 	int GetSeriesWinner ( );
-	int GetGamesPlayed ( int* ReduceLocal_51A0E5414F150C107D87839BCC4DF217 );
+	int GetGamesPlayed ( int* ReduceLocal_4030E38B4050F8DF01D5BC8C67208956 );
 	bool AllGamesPlayed ( );
 	void ForfeitGame ( int WinningTeamIndex );
 	void ScoreGame ( int TeamIndex );
@@ -18453,7 +18447,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 66726 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 66736 ];
 
 		return pClassPointer;
 	};
@@ -18476,7 +18470,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 66755 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 66765 ];
 
 		return pClassPointer;
 	};
@@ -18499,7 +18493,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 66756 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 66766 ];
 
 		return pClassPointer;
 	};
@@ -18522,7 +18516,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 66757 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 66767 ];
 
 		return pClassPointer;
 	};
@@ -18546,7 +18540,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 66758 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 66768 ];
 
 		return pClassPointer;
 	};
@@ -18572,7 +18566,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 66759 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 66769 ];
 
 		return pClassPointer;
 	};
@@ -18598,7 +18592,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 66760 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 66770 ];
 
 		return pClassPointer;
 	};
@@ -18622,7 +18616,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 66761 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 66771 ];
 
 		return pClassPointer;
 	};
@@ -18645,7 +18639,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 66817 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 66827 ];
 
 		return pClassPointer;
 	};
@@ -18671,7 +18665,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 66903 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 66913 ];
 
 		return pClassPointer;
 	};
@@ -18703,7 +18697,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 66905 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 66915 ];
 
 		return pClassPointer;
 	};
@@ -18734,7 +18728,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 66932 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 66942 ];
 
 		return pClassPointer;
 	};
@@ -18764,14 +18758,14 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 67088 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 67098 ];
 
 		return pClassPointer;
 	};
 
 	int GetRandomColorID ( class UCarColorSet_TA* Set );
 	void RandomizeTeamPaint ( struct FLoadoutData* Data );
-	void RandomizeSlot ( class UProfile_TA* Profile, class UProductSlot_TA* Slot, struct FLoadoutData* Data, TArray< class UOnlineProduct_TA* >* ArrayInitializer_62764BEE4E616E6423BF168B5A937604 );
+	void RandomizeSlot ( class UProfile_TA* Profile, class UProductSlot_TA* Slot, struct FLoadoutData* Data, TArray< class UOnlineProduct_TA* >* ArrayInitializer_AF1B34FD4B1BE5C17B94C98FB47A4CDD );
 	void Randomize ( class UProfile_TA* Profile, struct FLoadoutData* Loadouts );
 	void RandomizeLoadout ( class UProfile_TA* Profile, struct FLoadoutData* Loadout );
 	void RandomizerLog ( struct FString LogStr );
@@ -18802,7 +18796,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 67149 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 67159 ];
 
 		return pClassPointer;
 	};
@@ -18881,7 +18875,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 67148 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 67158 ];
 
 		return pClassPointer;
 	};
@@ -18893,11 +18887,11 @@ public:
 	void PrintDebugInfo ( class UDebugDrawer* Drawer );
 	void DrawNameplatesTexture ( );
 	void DrawHUD ( );
-	void HandleReplayAutoSave ( class AReplayDirector_TA* Director, struct FUniqueNetId* StructInitializer_3F39DC6945D21798B1B8F9BEB9B4B72C );
+	void HandleReplayAutoSave ( class AReplayDirector_TA* Director, struct FUniqueNetId* StructInitializer_DDD52CF747C002B5FC96E1822A64E5AF );
 	void HandleVoteFinished ( class AVoteActor_TA* VoteActor );
 	void HandleVoteStarted ( class AVoteActor_TA* VoteActor );
-	void NotifyChatBanned ( struct FUniqueNetId* StructInitializer_FFDDFA5C4DEEEF19C84A13819A7C23CF );
-	void NotifyChatDisabled ( float Time, struct FUniqueNetId* StructInitializer_884486C842F9A2527029ACA49BE0041F );
+	void NotifyChatBanned ( struct FUniqueNetId* StructInitializer_7F2FA9BC482583603CE523BA682F3602 );
+	void NotifyChatDisabled ( float Time, struct FUniqueNetId* StructInitializer_35B2DAA64455560D8ED180A4F31F2A90 );
 	void ChatPreset ( int Index );
 	void HandleInternetConnectionChanged ( unsigned long bConnected );
 	void NotifyClientTravel ( );
@@ -18983,7 +18977,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 67173 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 67183 ];
 
 		return pClassPointer;
 	};
@@ -19031,7 +19025,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 67353 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 67363 ];
 
 		return pClassPointer;
 	};
@@ -19054,7 +19048,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 67396 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 67406 ];
 
 		return pClassPointer;
 	};
@@ -19080,7 +19074,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 67470 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 67480 ];
 
 		return pClassPointer;
 	};
@@ -19106,7 +19100,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 67475 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 67485 ];
 
 		return pClassPointer;
 	};
@@ -19135,7 +19129,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 67482 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 67492 ];
 
 		return pClassPointer;
 	};
@@ -19147,14 +19141,14 @@ public:
 	void RegisterLanServer ( );
 	void SubmitLanServerMetaData ( );
 	struct FString BuildLanServerMetaData ( );
-	void RebuildReservations ( struct FReplicatedReservationData* StructInitializer_C9463E5948EEDAA9F3BC218EA3D1A020 );
+	void RebuildReservations ( struct FReplicatedReservationData* StructInitializer_D2ED3A8F4138BB423AE20E8C35B37A2E );
 	void TimerUpdateReservations ( );
 	void UpdateReservations ( );
 	void TimeoutLoadingPlayers ( );
 	float GetMapLoadTime ( unsigned char Platform );
 	void RemoveLoadingPlayer ( struct FUniqueNetId PlayerID );
 	int GetMaxPlayers ( );
-	int GetNumPlayers ( TArray< int >* MapLocal_B3F36FD94471616E60F69C87CB7D1DC7, int* ReduceLocal_4A0B3C114B6A0CA26A77B79110F15CD2 );
+	int GetNumPlayers ( TArray< int >* MapLocal_BD0C831D4AD02A496035CAB5799A26DE, int* ReduceLocal_FA174EAA43240DD74D1B88BE06596533 );
 	void KickConnectedPlayers ( );
 	struct FUniqueNetId GetCustomMatchOwner ( );
 	struct FCustomMatchSettings GetCustomMatchSettings ( );
@@ -19163,7 +19157,7 @@ public:
 	bool AllowSplitscreenJoin ( class APlayerReplicationInfo* PrimaryPRI, struct FUniqueNetId PlayerID, struct FString PlayerName, struct FString* Error );
 	bool IsLocalPlayer ( struct FUniqueNetId PlayerID );
 	bool CanAddPlayers ( int Count );
-	void AllowPlayerLogin ( struct FString Options, struct FUniqueNetId PlayerID, struct FString* ErrorMessage, struct FLoadingPlayer* StructInitializer_28A659A5460C74E1556A53948DA795DD );
+	void AllowPlayerLogin ( struct FString Options, struct FUniqueNetId PlayerID, struct FString* ErrorMessage, struct FLoadingPlayer* StructInitializer_B591AC564461B577A1BE78879B516BDC );
 	void HandleGRIChanged ( );
 	void Init ( class AGameEvent_TA* InGameEvent );
 };
@@ -19184,7 +19178,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 67484 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 67494 ];
 
 		return pClassPointer;
 	};
@@ -19215,12 +19209,12 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 67526 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 67536 ];
 
 		return pClassPointer;
 	};
 
-	void __ArenaSoundManager_TA__Attached ( class AGameEvent_TA* G, class ACar_TA* C );
+	void __ArenaSoundManager_TA__RegisterGameEventCallbacks ( class AGameEvent_TA* G, class ACar_TA* C );
 	void ClearBallExplodeState ( );
 	void HandleBallExploded ( class ABall_TA* Ball );
 	void HandlePostTimeSkip ( class UReplay_TA* Replay );
@@ -19246,6 +19240,8 @@ public:
 	void HandleOvertimeUpdated ( class AGameEvent_Soccar_TA* InGameEvent );
 	void HandleStatEvent ( class AGameEvent_Soccar_TA* InGameEvent, class UStatEvent_TA* StatEvent );
 	void HandleGameStateChanged ( class AGameEvent_TA* InGameEvent );
+	void PlaySound ( class UAkSoundCue* Sound );
+	void RegisterGameEventCallbacks ( class AGameEvent_Soccar_TA* InSoccarGame );
 	void eventDetached ( );
 	void eventAttached ( );
 };
@@ -19267,7 +19263,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 67532 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 67542 ];
 
 		return pClassPointer;
 	};
@@ -19296,7 +19292,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 67541 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 67551 ];
 
 		return pClassPointer;
 	};
@@ -19318,7 +19314,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 67560 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 67570 ];
 
 		return pClassPointer;
 	};
@@ -19342,7 +19338,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 67751 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 67761 ];
 
 		return pClassPointer;
 	};
@@ -19393,7 +19389,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 67799 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 67809 ];
 
 		return pClassPointer;
 	};
@@ -19422,7 +19418,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 67849 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 67859 ];
 
 		return pClassPointer;
 	};
@@ -19452,7 +19448,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 67920 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 67930 ];
 
 		return pClassPointer;
 	};
@@ -19480,7 +19476,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 67975 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 67985 ];
 
 		return pClassPointer;
 	};
@@ -19504,7 +19500,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 67984 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 67994 ];
 
 		return pClassPointer;
 	};
@@ -19526,7 +19522,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 68082 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 68092 ];
 
 		return pClassPointer;
 	};
@@ -19548,7 +19544,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 68092 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 68102 ];
 
 		return pClassPointer;
 	};
@@ -19576,7 +19572,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 68094 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 68104 ];
 
 		return pClassPointer;
 	};
@@ -19602,7 +19598,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 68099 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 68109 ];
 
 		return pClassPointer;
 	};
@@ -19624,7 +19620,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 68203 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 68213 ];
 
 		return pClassPointer;
 	};
@@ -19634,14 +19630,15 @@ public:
 UClass* USeqEvent_LiveReplay_TA::pClassPointer = NULL;
 
 // Class TAGame.RPC_MatchComplete_TA
-// 0x0028 (0x00C4 - 0x009C)
+// 0x002C (0x00C8 - 0x009C)
 class URPC_MatchComplete_TA : public URPC_X
 {
 public:
-	struct FString                                     MatchGUID;                                        		// 0x009C (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	TArray< struct FOnlinePlayerMatchData >            MatchData;                                        		// 0x00A8 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	unsigned char                                      GameVersion;                                      		// 0x00B4 (0x0001) [0x0000000000000000]              
-	TArray< struct FOnlineProductDrop >                Drops;                                            		// 0x00B8 (0x000C) [0x0000000000402000]              ( CPF_Transient | CPF_NeedCtorLink )
+	int                                                PlaylistId;                                       		// 0x009C (0x0004) [0x0000000000000000]              
+	struct FString                                     MatchGUID;                                        		// 0x00A0 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
+	TArray< struct FOnlinePlayerMatchData >            MatchData;                                        		// 0x00AC (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
+	unsigned char                                      GameVersion;                                      		// 0x00B8 (0x0001) [0x0000000000000000]              
+	TArray< struct FOnlineProductDrop >                Drops;                                            		// 0x00BC (0x000C) [0x0000000000402000]              ( CPF_Transient | CPF_NeedCtorLink )
 
 private:
 	static UClass* pClassPointer;
@@ -19650,16 +19647,17 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 68230 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 68240 ];
 
 		return pClassPointer;
 	};
 
-	TArray< struct FCurrencyDrop > GetCurrencyDrops ( struct FUniqueNetId* PlayerID, TArray< struct FCurrencyDrop >* ArrayInitializer_A514C5884F97144B1474209754CFACDA );
+	TArray< struct FCurrencyDrop > GetCurrencyDrops ( struct FUniqueNetId* PlayerID, TArray< struct FCurrencyDrop >* ArrayInitializer_427AEE8344B6B302F412049B2F10009A );
 	TArray< struct FOnlineProductData > GetDrops ( struct FUniqueNetId* PlayerID );
 	class URPC_MatchComplete_TA* SetMatchData ( TArray< struct FOnlinePlayerMatchData >* InMatchData );
 	class URPC_MatchComplete_TA* SetGameVersion ( unsigned char InGameVersion );
 	class URPC_MatchComplete_TA* SetMatchGUID ( struct FString InGuid );
+	class URPC_MatchComplete_TA* SetPlaylistID ( int InPlaylistID );
 };
 
 UClass* URPC_MatchComplete_TA::pClassPointer = NULL;
@@ -19685,7 +19683,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 68324 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 68334 ];
 
 		return pClassPointer;
 	};
@@ -19716,7 +19714,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 68344 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 68354 ];
 
 		return pClassPointer;
 	};
@@ -19746,7 +19744,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 68362 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 68372 ];
 
 		return pClassPointer;
 	};
@@ -19770,7 +19768,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 68371 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 68381 ];
 
 		return pClassPointer;
 	};
@@ -19802,7 +19800,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 68374 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 68384 ];
 
 		return pClassPointer;
 	};
@@ -19827,7 +19825,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 68423 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 68433 ];
 
 		return pClassPointer;
 	};
@@ -19851,7 +19849,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 68501 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 68511 ];
 
 		return pClassPointer;
 	};
@@ -19874,7 +19872,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 68541 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 68554 ];
 
 		return pClassPointer;
 	};
@@ -19897,7 +19895,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 68543 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 68556 ];
 
 		return pClassPointer;
 	};
@@ -19940,7 +19938,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 68564 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 68577 ];
 
 		return pClassPointer;
 	};
@@ -19984,7 +19982,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 68568 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 68581 ];
 
 		return pClassPointer;
 	};
@@ -20062,7 +20060,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 68570 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 68583 ];
 
 		return pClassPointer;
 	};
@@ -20081,9 +20079,9 @@ public:
 	void UpdateCarData ( float DeltaTime, struct FCarData* Data );
 	struct FCarData GetCarDataForPRI ( class APRI_TA* PRI );
 	struct FCarData GetCarData ( class ACar_TA* ForCar );
-	void UpdateCarsData ( float DeltaTime, struct FCarData* StructInitializer_F19534E948F2377D000E908EDCFE1E9B );
+	void UpdateCarsData ( float DeltaTime, struct FCarData* StructInitializer_D338D65F4B24F9B65ABB7B8842AB3A09 );
 	void UpdateGoalData ( float DeltaTime, struct FGoalData* Data );
-	void UpdateGoalsData ( float DeltaTime, struct FGoalData* StructInitializer_F0A76A42474BA759221AF2B3249D33E8 );
+	void UpdateGoalsData ( float DeltaTime, struct FGoalData* StructInitializer_BBE06809438018A900DD5697A22D3230 );
 	void UpdateBallData ( );
 	void eventTick ( float DeltaTime );
 	class AGameEvent_Soccar_TA* GetSoccarEvent ( );
@@ -20154,7 +20152,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 68571 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 68584 ];
 
 		return pClassPointer;
 	};
@@ -20162,44 +20160,18 @@ public:
 	void __CrowdSoundManager_TA__Detached ( class ACrowdActor_TA* C );
 	class UAkSoundCue* __CrowdSoundManager_TA__InitCrowd ( class UCrowdSounds_TA* S );
 	float __CrowdSoundManager_TA__InitModifiers ( );
-	//float __CrowdSoundManager_TA__InitModifiers ( );
-	//float __CrowdSoundManager_TA__InitModifiers ( );
-	//float __CrowdSoundManager_TA__InitModifiers ( );
-	//float __CrowdSoundManager_TA__InitModifiers ( );
-	//float __CrowdSoundManager_TA__InitModifiers ( );
-	//float __CrowdSoundManager_TA__InitModifiers ( );
-	//float __CrowdSoundManager_TA__InitModifiers ( );
-	//float __CrowdSoundManager_TA__InitModifiers ( );
-	//float __CrowdSoundManager_TA__InitModifiers ( );
-	//float __CrowdSoundManager_TA__InitModifiers ( );
-	//float __CrowdSoundManager_TA__InitModifiers ( );
-	//float __CrowdSoundManager_TA__InitModifiers ( );
-	//float __CrowdSoundManager_TA__InitModifiers ( );
-	//float __CrowdSoundManager_TA__InitModifiers ( );
-	//float __CrowdSoundManager_TA__InitModifiers ( );
 	bool __CrowdSoundManager_TA__PlayCrowdActorSound ( class ACrowdActor_TA* C );
 	bool __CrowdSoundManager_TA__StopCrowdActorSound ( class ACrowdActor_TA* C );
 	void __CrowdSoundManager_TA__HandleGameStateChanged ( class ACrowdActor_TA* C );
-	//void __CrowdSoundManager_TA__HandleGameStateChanged ( class ACrowdActor_TA* C );
 	class UAkSoundCue* __CrowdSoundManager_TA__HandleOvertimeUpdated ( class UCrowdSounds_TA* S );
 	class UAkSoundCue* __CrowdSoundManager_TA__PlayMatchEndedEncore ( class UCrowdSounds_TA* S );
 	class UAkSoundCue* __CrowdSoundManager_TA__GoalScored ( class UCrowdSounds_TA* S );
 	void __CrowdSoundManager_TA__GoalScored ( class ACrowdActor_TA* C );
-	//void __CrowdSoundManager_TA__GoalScored ( class ACrowdActor_TA* C );
 	class UAkSoundCue* __CrowdSoundManager_TA__HandleGameWinnerSet ( class UCrowdSounds_TA* S );
-	//class UAkSoundCue* __CrowdSoundManager_TA__HandleGameWinnerSet ( class UCrowdSounds_TA* S );
-	//class UAkSoundCue* __CrowdSoundManager_TA__HandleGameWinnerSet ( class UCrowdSounds_TA* S );
 	void __CrowdSoundManager_TA__HandleDemolish ( class ACrowdActor_TA* C );
-	//void __CrowdSoundManager_TA__HandleDemolish ( class ACrowdActor_TA* C );
 	void __CrowdSoundManager_TA__HandleGameTimeUpdated ( class ACrowdActor_TA* C );
-	float __CrowdSoundManager_TA__HandleGameTimeUpdated ( );
 	void __CrowdSoundManager_TA__HandleCarHitBall ( class ACrowdActor_TA* C );
-	//void __CrowdSoundManager_TA__HandleCarHitBall ( class ACrowdActor_TA* C );
 	void __CrowdSoundManager_TA__CheckGoals ( class ACrowdActor_TA* C );
-	//void __CrowdSoundManager_TA__CheckGoals ( class ACrowdActor_TA* C );
-	//void __CrowdSoundManager_TA__CheckGoals ( class ACrowdActor_TA* C );
-	//void __CrowdSoundManager_TA__CheckGoals ( class ACrowdActor_TA* C );
-	//void __CrowdSoundManager_TA__CheckGoals ( class ACrowdActor_TA* C );
 	void __CrowdSoundManager_TA__CheckAerial ( class ACrowdActor_TA* C );
 	class UAkSoundCue* __CrowdSoundManager_TA__CheckEnergy ( class UCrowdSounds_TA* S );
 	void PrintDebugInfo ( class UDebugDrawer* Drawer );
@@ -20222,6 +20194,7 @@ public:
 	float GetScoreSeparation ( );
 	void UpdateScoreState ( );
 	void UpdateStates ( );
+	void TickValues ( float DeltaTime );
 	void TickActive ( float DeltaTime );
 	void eventTick ( float DeltaTime );
 	void AfterGoalScored ( );
@@ -20231,8 +20204,8 @@ public:
 	void HandleOvertimeUpdated ( class AGameEvent_Soccar_TA* InGameEvent );
 	void HandleGameStateChanged ( class AGameEvent_TA* G );
 	void ClearPendingCrowdFlags ( );
-	void StopCrowdActorSound ( struct FScriptDelegate GetSoundDelegate, TArray< class ACrowdActor_TA* >* FilterLocal_36BF962841FAB76F4551EBB9C04EBA09 );
-	void PlayCrowdActorSound ( struct FScriptDelegate GetSoundDelegate, TArray< class ACrowdActor_TA* >* FilterLocal_A40FCA5A45F8F90ACBBF609FA645A9F0 );
+	void StopCrowdActorSound ( struct FScriptDelegate GetSoundDelegate, TArray< class ACrowdActor_TA* >* FilterLocal_7A3B6BA14BCD3D5D27C581A19B507169 );
+	void PlayCrowdActorSound ( struct FScriptDelegate GetSoundDelegate, TArray< class ACrowdActor_TA* >* FilterLocal_A7762FC6445844479DF4AB844A28F209 );
 	class UAkSoundCue* GetSound ( class UCrowdSounds_TA* InSounds );
 	class UDynamicValueModifier_X* AddDynamicModifier ( class UDynamicValue_X* Value, class UDynamicValueModifier_X* ModArchetype );
 	bool CanModifyCrowd ( );
@@ -20260,7 +20233,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 68594 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 68607 ];
 
 		return pClassPointer;
 	};
@@ -20284,7 +20257,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 68729 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 68742 ];
 
 		return pClassPointer;
 	};
@@ -20379,7 +20352,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 68790 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 68803 ];
 
 		return pClassPointer;
 	};
@@ -20466,7 +20439,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 68821 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 68834 ];
 
 		return pClassPointer;
 	};
@@ -20499,7 +20472,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 69009 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 69022 ];
 
 		return pClassPointer;
 	};
@@ -20555,7 +20528,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 69092 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 69105 ];
 
 		return pClassPointer;
 	};
@@ -20590,7 +20563,7 @@ public:
 	void PopUISoundState ( struct FName StateName );
 	void PushUISoundState ( struct FName StateName );
 	void CheckoutCompleteFlashNNX ( );
-	void OpenStoreOverlay ( TArray< struct FString >* ArrayInitializer_B364536C4BB66AF397B234B8D3026DD8 );
+	void OpenStoreOverlay ( TArray< struct FString >* ArrayInitializer_C30265F74CFBB1BBF9B54889C53EFC03 );
 	void UpsellClosed ( );
 	void UpsellOpened ( struct FString Context );
 	void OnOpenUpsell ( struct FString Context );
@@ -20678,7 +20651,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 69093 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 69106 ];
 
 		return pClassPointer;
 	};
@@ -20726,7 +20699,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 69097 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 69110 ];
 
 		return pClassPointer;
 	};
@@ -20748,7 +20721,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 69173 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 69186 ];
 
 		return pClassPointer;
 	};
@@ -20772,7 +20745,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 69174 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 69187 ];
 
 		return pClassPointer;
 	};
@@ -20800,7 +20773,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 69219 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 69232 ];
 
 		return pClassPointer;
 	};
@@ -20836,7 +20809,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 69218 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 69231 ];
 
 		return pClassPointer;
 	};
@@ -20864,7 +20837,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 69283 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 69296 ];
 
 		return pClassPointer;
 	};
@@ -20908,7 +20881,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 69329 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 69342 ];
 
 		return pClassPointer;
 	};
@@ -20935,7 +20908,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 69355 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 69368 ];
 
 		return pClassPointer;
 	};
@@ -20959,7 +20932,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 69434 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 69447 ];
 
 		return pClassPointer;
 	};
@@ -20975,11 +20948,11 @@ public:
 UClass* AGameInfo_Cinematic_TA::pClassPointer = NULL;
 
 // Class TAGame.PlayerController_Cinematic_TA
-// 0x0004 (0x0640 - 0x063C)
+// 0x0004 (0x063C - 0x0638)
 class APlayerController_Cinematic_TA : public APlayerController_X
 {
 public:
-	class UPostProcessManager_X*                       PostProcessManagerArchetype;                      		// 0x063C (0x0004) [0x0000000000000001]              ( CPF_Edit )
+	class UPostProcessManager_X*                       PostProcessManagerArchetype;                      		// 0x0638 (0x0004) [0x0000000000000001]              ( CPF_Edit )
 
 private:
 	static UClass* pClassPointer;
@@ -20988,7 +20961,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 69452 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 69465 ];
 
 		return pClassPointer;
 	};
@@ -21012,7 +20985,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 69472 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 69485 ];
 
 		return pClassPointer;
 	};
@@ -21051,11 +21024,12 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 69486 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 69499 ];
 
 		return pClassPointer;
 	};
 
+	void SetUIState ( struct FString NewState );
 	void HandleSafeZoneRatioUpdated ( class UGameViewportClient_TA* GVC );
 	void HandleUIScaleModifierUpdated ( class UGameViewportClient_TA* GVC );
 	void HandleAvailableGamepadTypeChanged ( class UGFxEngine_X* Engine );
@@ -21126,7 +21100,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 69505 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 69519 ];
 
 		return pClassPointer;
 	};
@@ -21198,7 +21172,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 69511 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 69525 ];
 
 		return pClassPointer;
 	};
@@ -21235,7 +21209,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 69512 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 69526 ];
 
 		return pClassPointer;
 	};
@@ -21285,16 +21259,16 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 69514 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 69528 ];
 
 		return pClassPointer;
 	};
 
 	void ClearPreview ( );
-	void StopExplosion ( TArray< int >* ArrayInitializer_F75A79B548221489158F66961884C1B1 );
-	void PlayExplosion ( TArray< int >* ArrayInitializer_A53EA45C4073E16E20A0E3A233202E05 );
+	void StopExplosion ( TArray< int >* ArrayInitializer_6AA47DAF4F69470FA41418AFCD0275DB );
+	void PlayExplosion ( TArray< int >* ArrayInitializer_050C844647601A3A048DEF9E2AB21A24 );
 	void HandleProductLoaded ( class UProductLoader_TA* InLoader );
-	void SetProduct ( int ProductID, TArray< int >* ArrayInitializer_8895F830425C98234FF676A90623FC93 );
+	void SetProduct ( int ProductID, TArray< int >* ArrayInitializer_1540E6B3478B48D8873FE0A9B35358DA );
 	void SetLoadout ( struct FLoadoutData* InLoadout );
 	void UpdateExplosion ( );
 	void SetPreviewSlot ( class UProductSlot_TA* InSlot );
@@ -21324,7 +21298,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 69520 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 69534 ];
 
 		return pClassPointer;
 	};
@@ -21359,7 +21333,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 69523 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 69537 ];
 
 		return pClassPointer;
 	};
@@ -21388,7 +21362,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 69592 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 69606 ];
 
 		return pClassPointer;
 	};
@@ -21410,7 +21384,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 69600 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 69614 ];
 
 		return pClassPointer;
 	};
@@ -21433,7 +21407,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 69605 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 69619 ];
 
 		return pClassPointer;
 	};
@@ -21467,7 +21441,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 69657 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 69671 ];
 
 		return pClassPointer;
 	};
@@ -21481,7 +21455,7 @@ public:
 	struct FName GetNextMapName ( );
 	struct FString GetMapsString ( TArray< class UMapData_TA* > Maps );
 	void SetMapPlayed ( class UMapData_TA* Map );
-	class UMapData_TA* GetNextMap ( TArray< struct FMapGroup >* MapLocal_C1DCAE6C4D5B768B90E67E8268A07F41 );
+	class UMapData_TA* GetNextMap ( TArray< struct FMapGroup >* MapLocal_249437FC46BDD922D8048AB1693CCB71 );
 	void RebuildRemainingGroups ( );
 	void SetMaps ( TArray< class UMapData_TA* > Maps );
 };
@@ -21503,7 +21477,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 69663 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 69677 ];
 
 		return pClassPointer;
 	};
@@ -21534,7 +21508,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 69692 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 69706 ];
 
 		return pClassPointer;
 	};
@@ -21566,7 +21540,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 69714 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 69728 ];
 
 		return pClassPointer;
 	};
@@ -21589,7 +21563,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 69723 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 69737 ];
 
 		return pClassPointer;
 	};
@@ -21612,7 +21586,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 69726 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 69740 ];
 
 		return pClassPointer;
 	};
@@ -21636,7 +21610,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 69731 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 69745 ];
 
 		return pClassPointer;
 	};
@@ -21660,7 +21634,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 69768 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 69782 ];
 
 		return pClassPointer;
 	};
@@ -21703,7 +21677,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 69875 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 69889 ];
 
 		return pClassPointer;
 	};
@@ -21740,7 +21714,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 69968 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 69982 ];
 
 		return pClassPointer;
 	};
@@ -21765,16 +21739,16 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 69972 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 69986 ];
 
 		return pClassPointer;
 	};
 
 	struct FString ___TourTypes_TA__StripDisabledGameTags ( struct FString Tags, struct FName Setting );
-	TArray< struct FName > ___TourTypes_TA__StripDisabledGameTags ( class UGameSettingCategory_X* GSC, TArray< struct FName >* MapLocal_E3E7B1E54BC00D6599B3CFA5A3BE20A5 );
+	TArray< struct FName > ___TourTypes_TA__StripDisabledGameTags ( class UGameSettingCategory_X* GSC, TArray< struct FName >* MapLocal_E6813A2D499911EB56FAA7AF2FEEE499 );
 	struct FName ___TourTypes_TA__StripDisabledGameTags ( class UGameSetting_X* GS );
 	bool ___TourTypes_TA__StripDisabledGameTags ( class UGameSettingCategory_X* GSC );
-	struct FString StripDisabledGameTags ( struct FString GameTags, TArray< class UGameSettingCategory_X* >* GameSettingCategories, TArray< class UGameSettingCategory_X* >* FilterLocal_3023FB8B4496ED4C717FBA82BF35434E, TArray< struct FName >* MapManyLocal_2886ECAE4BD20A8EF74AC5A5F0AEDEFB, TArray< struct FName >* ConcatLocal_008722B44469D4D046BC94854DFF9EC8, struct FString* ReduceLocal_223B6C5A4B98C0F5441919AEF90F2A94 );
+	struct FString StripDisabledGameTags ( struct FString GameTags, TArray< class UGameSettingCategory_X* >* GameSettingCategories, TArray< class UGameSettingCategory_X* >* FilterLocal_49AF58F646DEAB584AA3FBB73136CC0A, TArray< struct FName >* MapManyLocal_A487F80E46DA6EBE8F3B60B255B094C1, TArray< struct FName >* ConcatLocal_6FDC6A8C40BA625BB937868B9F5130EA, struct FString* ReduceLocal_E8A19E1844F16DE19F281CA2B479CEA4 );
 };
 
 UClass* U_TourTypes_TA::pClassPointer = NULL;
@@ -21803,7 +21777,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 69975 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 69989 ];
 
 		return pClassPointer;
 	};
@@ -21860,7 +21834,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 69978 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 69992 ];
 
 		return pClassPointer;
 	};
@@ -21890,7 +21864,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 69989 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 70003 ];
 
 		return pClassPointer;
 	};
@@ -21905,7 +21879,7 @@ public:
 	void OnChatMessage ( int Team, struct FString PlayerName, struct FString Message, unsigned char ChatChannel, unsigned long bLocalPlayer, struct FUniqueNetId SenderId );
 	void AddChatMessage ( int Team, struct FString PlayerName, struct FString Message, unsigned char ChatChannel, unsigned long bLocalPlayer, struct FUniqueNetId SenderId, unsigned long bTransient, unsigned long bPreset );
 	void DispatchChatMessage ( struct FString Message, unsigned char ChatChannel, struct FUniqueNetId Recipient );
-	void HandleMessageSanitizeError ( struct FString OriginalPhrase, class UError* Error, struct FUniqueNetId* StructInitializer_CCD0D24941AD09F4968738B8E761E5F1 );
+	void HandleMessageSanitizeError ( struct FString OriginalPhrase, class UError* Error, struct FUniqueNetId* StructInitializer_9E2E277647F2A8A752646E81B1844862 );
 	void HandleMessageSanitized ( struct FString Original, struct FString Sanitized );
 	void EraseChatByType ( unsigned char ChatChannel, struct FUniqueNetId PersonaId );
 	void HandleReceivedUnfriendNotice ( struct FUniqueNetId PersonaId );
@@ -21945,7 +21919,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 70024 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 70038 ];
 
 		return pClassPointer;
 	};
@@ -21971,7 +21945,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 70091 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 70105 ];
 
 		return pClassPointer;
 	};
@@ -22009,7 +21983,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 70134 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 70148 ];
 
 		return pClassPointer;
 	};
@@ -22017,13 +21991,13 @@ public:
 	struct FString __GFxData_Community_TA__UpdateFromCache ( class UGFxData_BlogTile_TA* GFxBlogTile );
 	void ShowHelp ( );
 	int TileEpochCompare ( class UBlogTile_X* Left, class UBlogTile_X* Right );
-	TArray< class UBlogTile_X* > GetActiveTiles ( int NumOfActiveTiles, TArray< class UBlogTile_X* >* BlogTiles, TArray< class UBlogTile_X* >* FilterLocal_E6C3DC374B1B63FEEB16C9A876AE96F6, TArray< class UBlogTile_X* >* SortLocal_AF60872C482D8B71765B20B7C9544369, TArray< class UBlogTile_X* >* FilterLocal_3635D7B44FBB48C050BD77B2645055D1 );
+	TArray< class UBlogTile_X* > GetActiveTiles ( int NumOfActiveTiles, TArray< class UBlogTile_X* >* BlogTiles, TArray< class UBlogTile_X* >* FilterLocal_2838D11E4B42AB48BB77728D3D5F2D3C, TArray< class UBlogTile_X* >* SortLocal_D1098BA04AB4E1875F46E993C1BBB7B8, TArray< class UBlogTile_X* >* FilterLocal_9173F49542951644F5D43087E6ADD3F4 );
 	class UBlogTile_X* GetActiveTile ( TArray< class UBlogTile_X* >* BlogTiles );
 	void AddActiveTiles ( unsigned char TileType, int NumOfActiveTiles, TArray< class UBlogTile_X* >* BlogTiles );
 	void AddActiveTile ( unsigned char TileType, TArray< class UBlogTile_X* >* BlogTiles );
 	void AddBlogTile ( class UBlogTile_X* BlogTile, unsigned char TileType );
 	void HandleTextSynced ( class UOnlineStaticTextSync_X* TextSync );
-	void UpdateFromCache ( TArray< struct FString >* MapLocal_233AE6304D45F7DF9EFEB3858569A1B4 );
+	void UpdateFromCache ( TArray< struct FString >* MapLocal_C4317C134A6F3C355E8D75B7D54B97C6 );
 	void HandleCacheLoaded ( class UBlogTileCache_TA* InCache );
 	void ClearBlogTileNewInfo ( int Row );
 	void UpdateBlog ( );
@@ -22048,14 +22022,14 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 70141 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 70155 ];
 
 		return pClassPointer;
 	};
 
 	bool __BlogTileCache_TA__UpdateTileIDs ( struct FString ActiveTileID );
 	bool IsUnreadTileID ( struct FString TileID );
-	void UpdateTileIDs ( TArray< struct FString >* ActiveTileIDs, TArray< struct FString >* FilterLocal_2988D4874438C48C33B1949AE1C226B5 );
+	void UpdateTileIDs ( TArray< struct FString >* ActiveTileIDs, TArray< struct FString >* FilterLocal_61322BFC459185E8BD1594A27732577B );
 };
 
 UClass* UBlogTileCache_TA::pClassPointer = NULL;
@@ -22079,7 +22053,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 70151 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 70165 ];
 
 		return pClassPointer;
 	};
@@ -22109,13 +22083,12 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 70159 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 70173 ];
 
 		return pClassPointer;
 	};
 
 	bool __GFxData_Community_TA__GetActiveTiles ( class UBlogTile_X* BlogTile );
-	//bool __GFxData_Community_TA__GetActiveTiles ( class UBlogTile_X* BlogTile );
 };
 
 UClass* U__GFxData_Community_TA__GetActiveTiles::pClassPointer = NULL;
@@ -22134,7 +22107,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 70181 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 70195 ];
 
 		return pClassPointer;
 	};
@@ -22168,7 +22141,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 70224 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 70238 ];
 
 		return pClassPointer;
 	};
@@ -22182,8 +22155,8 @@ public:
 	void ReseToDefaults ( );
 	void OnBindingSet ( );
 	void OnRecordBindingCanceled ( );
-	struct FUIPlayerBinding MapUIBinding ( struct FPlayerBinding Binding, struct FUIPlayerBinding* StructInitializer_B18801CF4DB4013CB7DA03A8EFEFC8A6 );
-	void InitUIBindings ( struct FName PresetName, TArray< struct FUIPlayerBinding >* MapLocal_8DF041574D202746029E89B7A691048C, TArray< struct FUIPlayerBinding >* MapLocal_DB7EBB9B4A99C773747C2AB64F63C4B7 );
+	struct FUIPlayerBinding MapUIBinding ( struct FPlayerBinding Binding, struct FUIPlayerBinding* StructInitializer_7C8AA3494BC610DCFB2DFD9AD7E4602D );
+	void InitUIBindings ( struct FName PresetName, TArray< struct FUIPlayerBinding >* MapLocal_58614F154201728CC3F9AEB8DD821FB5, TArray< struct FUIPlayerBinding >* MapLocal_2651522146230D7D454BBFB288946B1A );
 	void InvertAxisForBinding ( struct FName Action, TArray< struct FPlayerBinding >* OutBindings );
 	void InvertAxis ( struct FName Axis );
 	void RemoveBinding ( struct FName Action, struct FName Key, unsigned char AxisSign, TArray< struct FPlayerBinding >* OutBindings );
@@ -22225,7 +22198,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 70274 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 70288 ];
 
 		return pClassPointer;
 	};
@@ -22258,7 +22231,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 70276 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 70290 ];
 
 		return pClassPointer;
 	};
@@ -22290,7 +22263,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 70376 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 70390 ];
 
 		return pClassPointer;
 	};
@@ -22319,7 +22292,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 70389 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 70403 ];
 
 		return pClassPointer;
 	};
@@ -22377,7 +22350,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 70448 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 70462 ];
 
 		return pClassPointer;
 	};
@@ -22445,7 +22418,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 70506 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 70520 ];
 
 		return pClassPointer;
 	};
@@ -22524,7 +22497,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 70563 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 70577 ];
 
 		return pClassPointer;
 	};
@@ -22547,7 +22520,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 70562 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 70576 ];
 
 		return pClassPointer;
 	};
@@ -22571,7 +22544,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 70591 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 70605 ];
 
 		return pClassPointer;
 	};
@@ -22633,7 +22606,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 70642 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 70656 ];
 
 		return pClassPointer;
 	};
@@ -22660,8 +22633,8 @@ public:
 	int GetTimeHoldRemaining ( );
 	void UpdateTeamProductData ( );
 	void UpdateAllProductData ( );
-	bool SlotContainsNewProducts ( int SlotIndex, TArray< class UProduct_TA* >* ArrayResultLocal_55F4751D4706250C9D61F185E398CE3E );
-	bool FolderContainsNewProducts ( TArray< class UProduct_TA* >* ArrayResultLocal_4B3C6C3E4B02F897355E2BA0F06DBBDA );
+	bool SlotContainsNewProducts ( int SlotIndex, TArray< class UProduct_TA* >* ArrayResultLocal_13264A63450ECCF19E370F86BBB2140F );
+	bool FolderContainsNewProducts ( TArray< class UProduct_TA* >* ArrayResultLocal_85EA3D1C4C5696A7F6C579BA637B33DC );
 	bool HasNewOnlineProducts ( );
 	int GetBaseProductID ( );
 	struct FString GetProductLongLabel ( int InProductID );
@@ -22669,10 +22642,10 @@ public:
 	struct FString GetProductTrademarkLabel ( int InProductID );
 	struct FString GetProductLabel ( int InProductID );
 	void OnProductLoaded ( int ThumbnailSize );
-	struct FString BuildAttributeTableStr ( TArray< class UGFxData_ProductAttribute_TA* >* Attributes, TArray< struct FName >* MapLocal_226890BE46ED804E048CC1AAA34D8EE1 );
-	TArray< class UGFxData_ProductAttribute_TA* > InstanceAttributes ( class UIProductAttributeProvider_TA* AttributeProvider, TArray< class UClass* >* MapLocal_1A88D8BD41EF3C26CC36308C5A1A9BFB, TArray< class UGFxData_ProductAttribute_TA* >* MapLocal_B253BB1048873F32BDE6BA81C4D44943 );
+	struct FString BuildAttributeTableStr ( TArray< class UGFxData_ProductAttribute_TA* >* Attributes, TArray< struct FName >* MapLocal_1C6FC7394A747B4285C3248943EFB613 );
+	TArray< class UGFxData_ProductAttribute_TA* > InstanceAttributes ( class UIProductAttributeProvider_TA* AttributeProvider, TArray< class UClass* >* MapLocal_DF8D637446E57D7CFB91519C6331456D, TArray< class UGFxData_ProductAttribute_TA* >* MapLocal_E77F385C49B7E690C9530B8DABAACEC2 );
 	void ClearAttributes ( );
-	void UpdateProductData ( struct FLoadingProduct ProductData, TArray< class UProduct_TA* >* ArrayResultLocal_43BD11E347151EA9A8D371B9C5D4C115 );
+	void UpdateProductData ( struct FLoadingProduct ProductData, TArray< class UProduct_TA* >* ArrayResultLocal_4B9A73784DE585961C8C9EA83B183C96 );
 	bool CanBePlayerTraded ( class UProduct_TA* Product );
 	bool CanBeTradedIn ( );
 	void HandleRenderTargetUpdate ( class UTextureRenderTarget2D* Texture );
@@ -22722,7 +22695,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 70694 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 70708 ];
 
 		return pClassPointer;
 	};
@@ -22760,7 +22733,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 70762 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 70776 ];
 
 		return pClassPointer;
 	};
@@ -22813,7 +22786,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 70781 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 70795 ];
 
 		return pClassPointer;
 	};
@@ -22839,12 +22812,12 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 70797 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 70811 ];
 
 		return pClassPointer;
 	};
 
-	TArray< class UProductAttribute_TA* > GetAttributes ( TArray< class UProductAttribute_TA* >* ArrayInitializer_C4531640410E5AB9C23D44940D378A85 );
+	TArray< class UProductAttribute_TA* > GetAttributes ( TArray< class UProductAttribute_TA* >* ArrayInitializer_919B2558497C8576997FBCBB0648190C );
 	void Validate ( class UProfile_TA* ForProfile );
 };
 
@@ -22864,7 +22837,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 70853 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 70867 ];
 
 		return pClassPointer;
 	};
@@ -22896,7 +22869,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 70867 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 70881 ];
 
 		return pClassPointer;
 	};
@@ -22945,7 +22918,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 70937 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 70951 ];
 
 		return pClassPointer;
 	};
@@ -22982,7 +22955,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 70940 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 70954 ];
 
 		return pClassPointer;
 	};
@@ -23012,7 +22985,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 71008 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 71022 ];
 
 		return pClassPointer;
 	};
@@ -23047,7 +23020,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 71132 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 71146 ];
 
 		return pClassPointer;
 	};
@@ -23085,7 +23058,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 71136 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 71150 ];
 
 		return pClassPointer;
 	};
@@ -23119,17 +23092,17 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 71138 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 71152 ];
 
 		return pClassPointer;
 	};
 
 	struct FString __SkillDecayMessageHandler_TA__GetDecayedPlaylistsString ( class UGameSettingPlaylist_X* DecayedPlaylist );
 	void SetPlaylistSkillData ( struct FPlaylistSkillData Data );
-	struct FPlaylistSkillData GetPlaylistSkillData ( int Playlist, struct FPlaylistSkillData* StructInitializer_49FE0B61442EC1344E3B2A907A44CE5B );
+	struct FPlaylistSkillData GetPlaylistSkillData ( int Playlist, struct FPlaylistSkillData* StructInitializer_9CB8F2594758B7F9955F28B387D1B174 );
 	void CheckForSkillDecay ( );
-	struct FString GetDecayedPlaylistsString ( TArray< class UGameSettingPlaylist_X* >* DecayedPlaylists, TArray< struct FString >* MapLocal_C1D7074A48ECB2E2EC85C7A0A3596183 );
-	void HandleSkillDecayed ( TArray< class UGameSettingPlaylist_X* >* InDecayedPlaylists, TArray< class UGameSettingPlaylist_X* >* FilterLocal_0E8AEE46409352A2E141BD80D2C64DE3 );
+	struct FString GetDecayedPlaylistsString ( TArray< class UGameSettingPlaylist_X* >* DecayedPlaylists, TArray< struct FString >* MapLocal_CC69920C42B9451306B0269698963F69 );
+	void HandleSkillDecayed ( TArray< class UGameSettingPlaylist_X* >* InDecayedPlaylists, TArray< class UGameSettingPlaylist_X* >* FilterLocal_B881954D43604B8B531CCEB697C01C57 );
 	void HandlePlaylistsChanged ( class UOnlineGamePlaylists_X* Playlists );
 	void HandleSkillSynced ( class UOnlineGameSkill_X* Skill, struct FUniqueNetId PlayerID, class UError* Error );
 	void HandlePlaylistSkillDataLoaded ( class UPlaylistSkillDataSave_TA* InPlaylistSkillSave );
@@ -23151,7 +23124,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 71148 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 71162 ];
 
 		return pClassPointer;
 	};
@@ -23184,7 +23157,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 71170 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 71184 ];
 
 		return pClassPointer;
 	};
@@ -23225,7 +23198,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 71178 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 71192 ];
 
 		return pClassPointer;
 	};
@@ -23268,7 +23241,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 71222 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 71236 ];
 
 		return pClassPointer;
 	};
@@ -23313,7 +23286,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 71225 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 71239 ];
 
 		return pClassPointer;
 	};
@@ -23361,7 +23334,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 71238 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 71252 ];
 
 		return pClassPointer;
 	};
@@ -23393,7 +23366,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 71243 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 71257 ];
 
 		return pClassPointer;
 	};
@@ -23437,7 +23410,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 71272 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 71286 ];
 
 		return pClassPointer;
 	};
@@ -23453,7 +23426,7 @@ public:
 	void DisplayNextMessage ( );
 	void AddMessageUpdate ( int DelayFromStart, struct FString MessageKey );
 	void PopulateMessageUpdates ( );
-	TArray< struct FName > GetAccessiblePlaylists ( TArray< struct FName >* FilterLocal_7C3B022D42F44933D7B266AEA489C510, TArray< struct FName >* FilterLocal_C90E4ECA454693D21FD6849D20065107 );
+	TArray< struct FName > GetAccessiblePlaylists ( TArray< struct FName >* FilterLocal_363B76E640A2DAD3C356AEACFA43FD5A, TArray< struct FName >* FilterLocal_2133B5AF400DE6F7966E30A658469058 );
 	void StartMatchmaking ( );
 	void SetMatchmakingViewTab ( unsigned char InMatchmakingViewTab );
 	void SetRegionSelection ( int Row, unsigned long bSelected );
@@ -23492,7 +23465,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 71288 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 71302 ];
 
 		return pClassPointer;
 	};
@@ -23531,7 +23504,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 71307 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 71321 ];
 
 		return pClassPointer;
 	};
@@ -23575,7 +23548,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 71400 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 71414 ];
 
 		return pClassPointer;
 	};
@@ -23593,8 +23566,8 @@ public:
 	void GoToUrl ( );
 	void HandlePlaylistsToggled ( class UPlayerInput_X* PlayerInput, struct FName ActionName, unsigned long bEnabled );
 	struct FString PrintPlaylist ( TArray< class UAkSoundCue* >* Tracks );
-	TArray< class UAkSoundCue* > AppendTracks ( TArray< class UAkSoundCue* > Tracks, struct FGFxMusicPlaylist GFxPlaylist, TArray< class UAkSoundCue* >* ConcatLocal_8C7B6503492CA7467EA05DB922372FD2 );
-	TArray< class UAkSoundCue* > BuildTracklist ( TArray< struct FGFxMusicPlaylist >* InGFxPlaylists, TArray< struct FGFxMusicPlaylist >* FilterLocal_B8A11F25467EAA82022A9F9AE283D374, TArray< class UAkSoundCue* >* ReduceLocal_3D70ECF64DB9411A43ACC9A7F626977B, TArray< class UAkSoundCue* >* DistinctLocal_14EA9C50466650A487FF63A574AFFC5C );
+	TArray< class UAkSoundCue* > AppendTracks ( TArray< class UAkSoundCue* > Tracks, struct FGFxMusicPlaylist GFxPlaylist, TArray< class UAkSoundCue* >* ConcatLocal_4759E3364E98D94B91914CA292CDEA3D );
+	TArray< class UAkSoundCue* > BuildTracklist ( TArray< struct FGFxMusicPlaylist >* InGFxPlaylists, TArray< struct FGFxMusicPlaylist >* FilterLocal_2E76ABE34D9376475FB00F8478310814, TArray< class UAkSoundCue* >* ReduceLocal_FA2463BE48763160E8A481A462DF92C1, TArray< class UAkSoundCue* >* DistinctLocal_521086E3413D8956F69D5EA240BC0C47 );
 	void ValidateCurrentTrack ( );
 	void SetPlaylistSelected ( int Row, unsigned long bSelected );
 	class UMusicMetrics_TA* GetMetrics ( );
@@ -23609,11 +23582,11 @@ public:
 	void PlayCreditsTheme ( );
 	void SetPlaylistSelectedByName ( struct FName PlaylistName, unsigned long bSelected );
 	void HandleSaveDataLoaded ( class UMusicPlayerSave_TA* InMusicSave );
-	struct FGFxMusicPlaylist PlaylistToGFxData ( class UMusicPlaylist_TA* P, struct FGFxMusicPlaylist* StructInitializer_8B54243F4648CD291D1BA08415E853C4 );
+	struct FGFxMusicPlaylist PlaylistToGFxData ( class UMusicPlaylist_TA* P, struct FGFxMusicPlaylist* StructInitializer_76B516FD44B90C27B7EC119C796DDD66 );
 	void RegisterLoadingScreenCallbacks ( );
 	void InitGameMusicPlayer ( );
 	void eventOnRemoved ( );
-	void eventOnShellSet ( TArray< struct FGameVersionMusicTheme >* SortLocal_02A4D4CE44325BDD76358598F95947BC, TArray< struct FGFxMusicPlaylist >* MapLocal_A37FD5744667468440B953BD40AF5CB8, TArray< class UAkSoundCue* >* ArrayInitializer_F198F4EF466B089C9EF7639158AA3AD1 );
+	void eventOnShellSet ( TArray< struct FGameVersionMusicTheme >* SortLocal_8FE274FD4E509D74A8816F8500A8B468, TArray< struct FGFxMusicPlaylist >* MapLocal_0600A8974809FE98089F9E882F89F367, TArray< class UAkSoundCue* >* ArrayInitializer_EB58ECEE48BF4ECC287B988EFBB7B745 );
 };
 
 UClass* UGFxData_MusicPlayer_TA::pClassPointer = NULL;
@@ -23635,7 +23608,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 71425 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 71439 ];
 
 		return pClassPointer;
 	};
@@ -23662,7 +23635,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 71427 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 71441 ];
 
 		return pClassPointer;
 	};
@@ -23689,11 +23662,13 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 71448 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 71462 ];
 
 		return pClassPointer;
 	};
 
+	void FollowLink ( struct FName Track, struct FString URL );
+	void RecordFollowLink ( struct FString URL );
 	float GetMusicVolume ( );
 	void PlaylistSelected ( struct FName Playlist, unsigned long bSelected );
 	void RecordPlaylistSelected ( class UMusicPlaylist_TA* Playlist, unsigned long bSelected );
@@ -23721,7 +23696,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 71487 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 71501 ];
 
 		return pClassPointer;
 	};
@@ -23759,7 +23734,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 71498 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 71512 ];
 
 		return pClassPointer;
 	};
@@ -23802,7 +23777,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 71549 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 71564 ];
 
 		return pClassPointer;
 	};
@@ -23833,7 +23808,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 71568 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 71583 ];
 
 		return pClassPointer;
 	};
@@ -23872,7 +23847,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 71644 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 71659 ];
 
 		return pClassPointer;
 	};
@@ -23955,7 +23930,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 71813 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 71828 ];
 
 		return pClassPointer;
 	};
@@ -23967,34 +23942,10 @@ public:
 	void HandlePlayerNameChanged ( class APRI_X* InPRI );
 	void eventOnRemoved ( );
 	void SetPRI ( class APRI_TA* InPRI );
-	void eventOnShellSet ( );
 	class UOnlineGame_X* GetOnlineGame ( );
 };
 
 UClass* UGFxData_PlayerRecord_TA::pClassPointer = NULL;
-
-// Class TAGame.PlayerReportConfig_TA
-// 0x000C (0x0058 - 0x004C)
-class UPlayerReportConfig_TA : public UOnlineConfig_X
-{
-public:
-	TArray< struct FPlayerReport >                     PlayerReports;                                    		// 0x004C (0x000C) [0x0000000040400001]              ( CPF_Edit | CPF_NeedCtorLink | CPF_EditInlineNotify )
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 71838 ];
-
-		return pClassPointer;
-	};
-
-};
-
-UClass* UPlayerReportConfig_TA::pClassPointer = NULL;
 
 // Class TAGame.GFxData_PRI_TA
 // 0x0114 (0x0168 - 0x0054)
@@ -24050,7 +24001,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 71864 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 71877 ];
 
 		return pClassPointer;
 	};
@@ -24110,14 +24061,14 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 71984 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 71997 ];
 
 		return pClassPointer;
 	};
 
 	void EquipColor ( int InColorID );
 	void EquipProduct ( );
-	struct FUniqueNetId GetPlayerID ( struct FUniqueNetId* StructInitializer_9760AE604194882C080ED8941C18D8A2 );
+	struct FUniqueNetId GetPlayerID ( struct FUniqueNetId* StructInitializer_222D964841B5E12CC49DF6826AFF1D16 );
 	void SetBanner ( class UPlayerBanner_TA* InBanner );
 	void SetProfile ( class UProfile_TA* InProfile );
 	void SetPRI ( class APRI_TA* InPRI );
@@ -24158,7 +24109,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 72028 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 72041 ];
 
 		return pClassPointer;
 	};
@@ -24176,7 +24127,7 @@ public:
 	void CancelSearch ( );
 	void SetRegionSelection ( int Row, unsigned long bSelected );
 	struct FString GetPreferredRegion ( );
-	void HandleRegionsSynced ( class UGFxData_Regions_TA* RegionsData, TArray< struct FString >* ArrayInitializer_D029EC6D48CA532DC781498EE8FEB711, struct FGFxRegion* StructInitializer_2C88419A4E5FAC1E916F699DF0C041F1 );
+	void HandleRegionsSynced ( class UGFxData_Regions_TA* RegionsData, TArray< struct FString >* ArrayInitializer_C4A1634B4EABCC93AF9707A13FE4DE94, struct FGFxRegion* StructInitializer_1F011D9D4BCEE428192432A578950ECA );
 	void SetPublic ( unsigned long bValue );
 	void SetPassword ( struct FString InPassword );
 	void SetServerName ( struct FString InServerName );
@@ -24206,7 +24157,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 72084 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 72097 ];
 
 		return pClassPointer;
 	};
@@ -24231,7 +24182,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 72083 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 72096 ];
 
 		return pClassPointer;
 	};
@@ -24254,7 +24205,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 72118 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 72131 ];
 
 		return pClassPointer;
 	};
@@ -24288,7 +24239,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 72168 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 72181 ];
 
 		return pClassPointer;
 	};
@@ -24316,7 +24267,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 72192 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 72205 ];
 
 		return pClassPointer;
 	};
@@ -24342,7 +24293,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 72225 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 72238 ];
 
 		return pClassPointer;
 	};
@@ -24367,7 +24318,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 72297 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 72310 ];
 
 		return pClassPointer;
 	};
@@ -24391,7 +24342,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 72305 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 72318 ];
 
 		return pClassPointer;
 	};
@@ -24416,7 +24367,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 72336 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 72349 ];
 
 		return pClassPointer;
 	};
@@ -24439,7 +24390,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 72339 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 72352 ];
 
 		return pClassPointer;
 	};
@@ -24464,15 +24415,14 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 72346 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 72359 ];
 
 		return pClassPointer;
 	};
 
-	bool __GFxProductAttributeMap_TA__MapAttributes1 ( class UClass* GFxAttribute );
 	class UClass* __GFxProductAttributeMap_TA__MapAttributes ( class UClass* Attribute );
 	class UClass* MapAttribute ( class UClass* AttributeClass );
-	TArray< class UClass* > MapAttributes ( TArray< class UClass* >* Attributes, TArray< class UClass* >* MapLocal_228CA71D4CA56F814A7B04897B7FF5E3, TArray< class UClass* >* FilterLocal_26CF6AA945BF5B18123A03B43EF2B84D );
+	TArray< class UClass* > MapAttributes ( TArray< class UClass* >* Attributes, TArray< class UClass* >* MapLocal_FFAD2E0E419755FB23F2D58C97220B56, TArray< class UClass* >* FilterLocal_3D98CC044282E021B7912F8497C8C6CB );
 };
 
 UClass* UGFxProductAttributeMap_TA::pClassPointer = NULL;
@@ -24491,7 +24441,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 72364 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 72377 ];
 
 		return pClassPointer;
 	};
@@ -24515,7 +24465,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 72405 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 72418 ];
 
 		return pClassPointer;
 	};
@@ -24546,7 +24496,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 72426 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 72439 ];
 
 		return pClassPointer;
 	};
@@ -24588,7 +24538,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 72443 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 72456 ];
 
 		return pClassPointer;
 	};
@@ -24613,7 +24563,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 72455 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 72468 ];
 
 		return pClassPointer;
 	};
@@ -24636,7 +24586,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 72577 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 72590 ];
 
 		return pClassPointer;
 	};
@@ -24659,7 +24609,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 72592 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 72605 ];
 
 		return pClassPointer;
 	};
@@ -24687,7 +24637,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 72596 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 72609 ];
 
 		return pClassPointer;
 	};
@@ -24729,7 +24679,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 72614 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 72627 ];
 
 		return pClassPointer;
 	};
@@ -24773,7 +24723,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 72681 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 72694 ];
 
 		return pClassPointer;
 	};
@@ -24823,7 +24773,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 72775 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 72788 ];
 
 		return pClassPointer;
 	};
@@ -24855,7 +24805,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 72792 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 72805 ];
 
 		return pClassPointer;
 	};
@@ -24863,7 +24813,7 @@ public:
 	int SortWeekMatch ( struct FSeasonMatch A, struct FSeasonMatch B );
 	void SetDifficulty ( int NewDifficulty );
 	void SetBots ( struct FString BotID0, struct FString BotName0, struct FString BotID1, struct FString BotName1, struct FString BotID2, struct FString BotName2 );
-	void LoadWeekMatches ( int Week, TArray< struct FSeasonMatch >* SortLocal_730F85B3472BC2D68BC36498F016CAC8 );
+	void LoadWeekMatches ( int Week, TArray< struct FSeasonMatch >* SortLocal_D8FF3CC8457CC44D2C3DC681C11B0CFA );
 	void CalcCurrentWeekRankings ( );
 	void UpdateSeasonWeeks ( );
 	void HandleWeekSimulated ( class USeason_TA* InSeason );
@@ -24888,7 +24838,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 72874 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 72887 ];
 
 		return pClassPointer;
 	};
@@ -24910,7 +24860,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 72878 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 72891 ];
 
 		return pClassPointer;
 	};
@@ -24933,7 +24883,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 72880 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 72893 ];
 
 		return pClassPointer;
 	};
@@ -24956,7 +24906,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 72882 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 72895 ];
 
 		return pClassPointer;
 	};
@@ -24979,7 +24929,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 72896 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 72909 ];
 
 		return pClassPointer;
 	};
@@ -25011,7 +24961,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 72901 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 72914 ];
 
 		return pClassPointer;
 	};
@@ -25055,7 +25005,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 72992 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 73005 ];
 
 		return pClassPointer;
 	};
@@ -25091,7 +25041,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 73004 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 73017 ];
 
 		return pClassPointer;
 	};
@@ -25138,7 +25088,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 73050 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 73063 ];
 
 		return pClassPointer;
 	};
@@ -25208,17 +25158,14 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 73123 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 73136 ];
 
 		return pClassPointer;
 	};
 
 	void __GFxData_Settings_TA__InitCameraSettings ( class UGFxData_UserSetting_TA* Setting, float Value );
 	float __GFxData_Settings_TA__InitCameraSettings ( );
-	//void __GFxData_Settings_TA__InitCameraSettings ( class UGFxData_UserSetting_TA* Setting, float Value );
-	//float __GFxData_Settings_TA__InitCameraSettings ( );
 	void __GFxData_Settings_TA__InitCameraSettings ( class UGFxData_UserSetting_TA* Setting, unsigned long Value );
-	bool __GFxData_Settings_TA__InitCameraSettings1 ( );
 	void TriggerSettingChangedEvent ( struct FName SettingName );
 	void SetDodgeInputThreshold ( class UGFxData_UserSetting_TA* UserSetting, float Value );
 	float GetDodgeInputThreshold ( class UGFxData_UserSetting_TA* UserSetting );
@@ -25456,7 +25403,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 73141 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 73154 ];
 
 		return pClassPointer;
 	};
@@ -25508,7 +25455,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 73145 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 73158 ];
 
 		return pClassPointer;
 	};
@@ -25543,7 +25490,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 73147 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 73160 ];
 
 		return pClassPointer;
 	};
@@ -25572,7 +25519,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 73152 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 73165 ];
 
 		return pClassPointer;
 	};
@@ -25598,7 +25545,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 73156 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 73169 ];
 
 		return pClassPointer;
 	};
@@ -25624,7 +25571,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 73237 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 73250 ];
 
 		return pClassPointer;
 	};
@@ -25647,7 +25594,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 73239 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 73252 ];
 
 		return pClassPointer;
 	};
@@ -25669,7 +25616,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 73267 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 73280 ];
 
 		return pClassPointer;
 	};
@@ -25693,7 +25640,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 73294 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 73307 ];
 
 		return pClassPointer;
 	};
@@ -25723,7 +25670,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 73670 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 73683 ];
 
 		return pClassPointer;
 	};
@@ -25761,7 +25708,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 73736 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 73749 ];
 
 		return pClassPointer;
 	};
@@ -25792,7 +25739,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 73953 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 73966 ];
 
 		return pClassPointer;
 	};
@@ -25819,7 +25766,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 73955 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 73968 ];
 
 		return pClassPointer;
 	};
@@ -25847,7 +25794,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 73985 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 73998 ];
 
 		return pClassPointer;
 	};
@@ -25870,7 +25817,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 73999 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 74012 ];
 
 		return pClassPointer;
 	};
@@ -25900,7 +25847,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 74003 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 74016 ];
 
 		return pClassPointer;
 	};
@@ -25951,7 +25898,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 74066 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 74079 ];
 
 		return pClassPointer;
 	};
@@ -25982,7 +25929,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 74085 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 74098 ];
 
 		return pClassPointer;
 	};
@@ -26007,14 +25954,14 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 74115 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 74128 ];
 
 		return pClassPointer;
 	};
 
-	struct FGFxStatData __GFxData_Stats_TA__OnShellSet ( class UStatEvent_TA* StatEvent, struct FGFxStatData* StructInitializer_80D88E954D9F2609E5DB8597F2252792 );
+	struct FGFxStatData __GFxData_Stats_TA__OnShellSet ( class UStatEvent_TA* StatEvent, struct FGFxStatData* StructInitializer_86FF94BA4031ABA404D06387F544B28F );
 	void LoadSavedStats ( );
-	void eventOnShellSet ( TArray< struct FGFxStatData >* MapLocal_8A98B36F402D424CD7CD5AA6CE1E93EB );
+	void eventOnShellSet ( TArray< struct FGFxStatData >* MapLocal_102138BD4615453ABFA4D799DE22C4D0 );
 };
 
 UClass* UGFxData_Stats_TA::pClassPointer = NULL;
@@ -26033,7 +25980,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 74133 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 74146 ];
 
 		return pClassPointer;
 	};
@@ -26065,7 +26012,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 74235 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 74249 ];
 
 		return pClassPointer;
 	};
@@ -26118,7 +26065,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 74286 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 74300 ];
 
 		return pClassPointer;
 	};
@@ -26237,7 +26184,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 74285 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 74299 ];
 
 		return pClassPointer;
 	};
@@ -26249,7 +26196,7 @@ public:
 	unsigned char GetTrainingType ( );
 	void Save ( );
 	void HandleSaveResult ( struct FSaveObjectResult Result );
-	void SaveInternal ( struct FSaveObjectResult* StructInitializer_6C7775834A3657F0C6E858A94EAF3175 );
+	void SaveInternal ( struct FSaveObjectResult* StructInitializer_E7657FBE468D5BB17BD3AB8F1851FBCA );
 	void OnTrainingModeLoaded ( );
 	void DuplicateRound ( int Index );
 	void SetMetaData ( struct FString NewName, unsigned char NewType, unsigned char NewDifficulty, TArray< int > NewTags );
@@ -26330,7 +26277,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 74317 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 74331 ];
 
 		return pClassPointer;
 	};
@@ -26368,7 +26315,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 74396 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 74410 ];
 
 		return pClassPointer;
 	};
@@ -26413,7 +26360,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 74525 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 74539 ];
 
 		return pClassPointer;
 	};
@@ -26491,13 +26438,12 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 74545 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 74559 ];
 
 		return pClassPointer;
 	};
 
 	void __TourSettings_TA__Init ( struct FString Original, struct FString Sanitized );
-	//void __TourSettings_TA__Init ( struct FString Original, struct FString Sanitized );
 	bool __TourSettings_TA__HandleRegionsSynced ( struct FGFxRegion R );
 	void HandleRegionsSynced ( class UGFxData_Regions_TA* RegionsData );
 	void UpdateRegion ( class UGFxData_Regions_TA* RegionsData );
@@ -26521,7 +26467,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 74557 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 74571 ];
 
 		return pClassPointer;
 	};
@@ -26553,7 +26499,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 74644 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 74658 ];
 
 		return pClassPointer;
 	};
@@ -26598,7 +26544,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 74867 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 74881 ];
 
 		return pClassPointer;
 	};
@@ -26641,7 +26587,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 74930 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 74944 ];
 
 		return pClassPointer;
 	};
@@ -26680,7 +26626,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 74936 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 74950 ];
 
 		return pClassPointer;
 	};
@@ -26703,7 +26649,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 74978 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 74992 ];
 
 		return pClassPointer;
 	};
@@ -26726,7 +26672,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 74980 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 74994 ];
 
 		return pClassPointer;
 	};
@@ -26752,7 +26698,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 74987 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 75001 ];
 
 		return pClassPointer;
 	};
@@ -26780,7 +26726,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 75004 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 75018 ];
 
 		return pClassPointer;
 	};
@@ -26804,7 +26750,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 75010 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 75024 ];
 
 		return pClassPointer;
 	};
@@ -26829,7 +26775,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 75014 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 75028 ];
 
 		return pClassPointer;
 	};
@@ -26857,7 +26803,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 75026 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 75040 ];
 
 		return pClassPointer;
 	};
@@ -26882,7 +26828,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 75041 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 75055 ];
 
 		return pClassPointer;
 	};
@@ -26905,7 +26851,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 75076 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 75090 ];
 
 		return pClassPointer;
 	};
@@ -26931,7 +26877,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 75077 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 75091 ];
 
 		return pClassPointer;
 	};
@@ -26962,7 +26908,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 75116 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 75130 ];
 
 		return pClassPointer;
 	};
@@ -26987,7 +26933,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 75130 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 75144 ];
 
 		return pClassPointer;
 	};
@@ -27012,7 +26958,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 75202 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 75216 ];
 
 		return pClassPointer;
 	};
@@ -27038,7 +26984,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 75218 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 75232 ];
 
 		return pClassPointer;
 	};
@@ -27071,7 +27017,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 75367 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 75381 ];
 
 		return pClassPointer;
 	};
@@ -27101,7 +27047,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 75466 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 75480 ];
 
 		return pClassPointer;
 	};
@@ -27131,7 +27077,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 75498 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 75512 ];
 
 		return pClassPointer;
 	};
@@ -27155,7 +27101,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 75557 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 75571 ];
 
 		return pClassPointer;
 	};
@@ -27183,7 +27129,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 75587 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 75601 ];
 
 		return pClassPointer;
 	};
@@ -27210,7 +27156,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 75730 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 75744 ];
 
 		return pClassPointer;
 	};
@@ -27235,7 +27181,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 75736 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 75750 ];
 
 		return pClassPointer;
 	};
@@ -27262,7 +27208,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 75756 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 75770 ];
 
 		return pClassPointer;
 	};
@@ -27297,7 +27243,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 75781 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 75795 ];
 
 		return pClassPointer;
 	};
@@ -27329,7 +27275,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 75801 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 75815 ];
 
 		return pClassPointer;
 	};
@@ -27352,7 +27298,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 75803 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 75817 ];
 
 		return pClassPointer;
 	};
@@ -27383,7 +27329,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 75816 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 75830 ];
 
 		return pClassPointer;
 	};
@@ -27410,7 +27356,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 75830 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 75844 ];
 
 		return pClassPointer;
 	};
@@ -27434,7 +27380,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 75839 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 75853 ];
 
 		return pClassPointer;
 	};
@@ -27459,7 +27405,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 75846 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 75860 ];
 
 		return pClassPointer;
 	};
@@ -27483,7 +27429,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 75851 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 75865 ];
 
 		return pClassPointer;
 	};
@@ -27513,7 +27459,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 75857 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 75871 ];
 
 		return pClassPointer;
 	};
@@ -27539,7 +27485,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 75874 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 75888 ];
 
 		return pClassPointer;
 	};
@@ -27565,7 +27511,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 75880 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 75894 ];
 
 		return pClassPointer;
 	};
@@ -27601,7 +27547,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 75911 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 75925 ];
 
 		return pClassPointer;
 	};
@@ -27641,7 +27587,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 75914 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 75928 ];
 
 		return pClassPointer;
 	};
@@ -27671,7 +27617,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 75917 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 75931 ];
 
 		return pClassPointer;
 	};
@@ -27703,7 +27649,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 75916 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 75930 ];
 
 		return pClassPointer;
 	};
@@ -27731,7 +27677,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 75918 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 75932 ];
 
 		return pClassPointer;
 	};
@@ -27758,7 +27704,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 75919 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 75933 ];
 
 		return pClassPointer;
 	};
@@ -27790,7 +27736,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 75940 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 75954 ];
 
 		return pClassPointer;
 	};
@@ -27800,8 +27746,8 @@ public:
 	bool __OnlineGameTourServer_TA__AllPlayersInGame ( struct FTourTeam T );
 	bool __OnlineGameTourServer_TA__AllPlayersInGame ( struct FTourPlayer P );
 	void __OnlineGameTourServer_TA__InitGameEventTeamScoresWhenInitialized ( class ATeam_Soccar_TA* T );
-	int GetTeamScore ( int TeamIndex, TArray< struct FTourMatchGame >* FilterLocal_816FACD2427948E4B356118B664F1EBA );
-	void InitGameEventTeamScoresWhenInitialized ( class AGameEvent_Soccar_TA* GameEvent, TArray< class ATeam_Soccar_TA* >* OfTypeLocal_3D41759A4127BDBAC517039667ECBA42 );
+	int GetTeamScore ( int TeamIndex, TArray< struct FTourMatchGame >* FilterLocal_31697DD84F262C1B6B1D4E9A35DA8352 );
+	void InitGameEventTeamScoresWhenInitialized ( class AGameEvent_Soccar_TA* GameEvent, TArray< class ATeam_Soccar_TA* >* OfTypeLocal_A3FD48D740DB7B181ADA68B448CE761D );
 	void InitGameEventTeamScores ( class AGameEvent_Soccar_TA* GameEvent );
 	int GetTeamIndexFromTeamID ( int TeamID );
 	void InitMatchSeriesScores ( class UMatchSeries_TA* MatchSeries );
@@ -27815,7 +27761,7 @@ public:
 	bool IsPlayerRegistered ( struct FUniqueNetId PlayerID );
 	bool AllPlayersRegistered ( TArray< struct FReservationPlayerData >* Players );
 	bool CanAcceptReservations ( class UAddReservationMessagePublic_X* Message );
-	TArray< class UMapData_TA* > FilterMapData ( int GameMode, TArray< struct FName >* FilterMaps, TArray< class UMapData_TA* >* FilterLocal_2E50688842898BB3429AF4A61997F800 );
+	TArray< class UMapData_TA* > FilterMapData ( int GameMode, TArray< struct FName >* FilterMaps, TArray< class UMapData_TA* >* FilterLocal_6616E7674AB2FE067B3A618578F85EF7 );
 	void UpdatePlayerTeam ( class APlayerReplicationInfo* PRI, class AGameEvent_Team_TA* GameEventTeam );
 	bool AllPlayersInGame ( );
 	bool IsBotTeam ( int TeamID );
@@ -27824,7 +27770,8 @@ public:
 	void InitTourSettings ( struct FTourServerSettings* NewSettings );
 	void HandleGamePlaylistSet ( class UOnlineGameDedicatedServer_X* DedicatedServer );
 	bool IsTournamentSet ( );
-	bool IsTournamentPlaylist ( );
+	bool IsTournamentPlaylist ( int PlaylistId );
+	bool HasTournamentPlaylist ( );
 	void ClearSettings ( );
 	void OnInit ( );
 };
@@ -27848,7 +27795,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 76030 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 76044 ];
 
 		return pClassPointer;
 	};
@@ -27876,7 +27823,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 76052 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 76066 ];
 
 		return pClassPointer;
 	};
@@ -27904,7 +27851,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 76090 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 76104 ];
 
 		return pClassPointer;
 	};
@@ -27934,7 +27881,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 76123 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 76137 ];
 
 		return pClassPointer;
 	};
@@ -27958,7 +27905,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 76124 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 76138 ];
 
 		return pClassPointer;
 	};
@@ -27987,7 +27934,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 76227 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 76241 ];
 
 		return pClassPointer;
 	};
@@ -28019,7 +27966,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 76250 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 76264 ];
 
 		return pClassPointer;
 	};
@@ -28048,7 +27995,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 76267 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 76281 ];
 
 		return pClassPointer;
 	};
@@ -28082,7 +28029,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 76292 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 76306 ];
 
 		return pClassPointer;
 	};
@@ -28090,8 +28037,8 @@ public:
 	void __GFxData_TradeLobby_TA__GetLocalProductOfferings ( class UOnlineProduct_TA* Offering );
 	void __GFxData_TradeLobby_TA__GetRemoteProductOfferings ( class UOnlineProduct_TA* Offering );
 	struct FString GetRemotePlayerName ( );
-	TArray< class UOnlineProduct_TA* > GetProductOfferings ( class UOnlineProductStoreSet_TA* OfferingSet, TArray< class UOnlineProduct_TA* >* ArrayResultLocal_D32560F14B646A6CB8A385B037ECCC37, TArray< class UOnlineProduct_TA* >* FilterLocal_8C50A3514FC977077F702EB7BA3B504A );
-	TArray< class UOnlineProduct_TA* > GetKeyOfferings ( class UOnlineProductStoreSet_TA* OfferingSet, TArray< class UOnlineProduct_TA* >* ArrayResultLocal_0BA9F0E14A4027D7490D5CA5B49B847A, TArray< class UOnlineProduct_TA* >* FilterLocal_73416C074BB0FC8E5E43DC83A2B634A2 );
+	TArray< class UOnlineProduct_TA* > GetProductOfferings ( class UOnlineProductStoreSet_TA* OfferingSet, TArray< class UOnlineProduct_TA* >* ArrayResultLocal_B5B8DD3C4417FE96D4B3C4A130E3C133, TArray< class UOnlineProduct_TA* >* FilterLocal_2B39646C4EB55AFE993FD1BA0C1FFF9B );
+	TArray< class UOnlineProduct_TA* > GetKeyOfferings ( class UOnlineProductStoreSet_TA* OfferingSet, TArray< class UOnlineProduct_TA* >* ArrayResultLocal_62F8D58A492B2D335AE58DAAFA01608C, TArray< class UOnlineProduct_TA* >* FilterLocal_11C6947940954F88F0B75BA3C6156041 );
 	bool IsNotKeyProduct ( class UOnlineProduct_TA* OnlineProduct );
 	bool IsKeyProduct ( class UOnlineProduct_TA* OnlineProduct );
 	int GetRemoteKeyOfferingCount ( );
@@ -28150,7 +28097,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 76380 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 76394 ];
 
 		return pClassPointer;
 	};
@@ -28173,7 +28120,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 76382 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 76396 ];
 
 		return pClassPointer;
 	};
@@ -28198,7 +28145,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 76385 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 76399 ];
 
 		return pClassPointer;
 	};
@@ -28225,20 +28172,21 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 76389 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 76403 ];
 
 		return pClassPointer;
 	};
 
 	bool __OnlineGameReservations_TA__HandlePublicReservation ( struct FUniqueNetId P );
 	struct FUniqueNetId __OnlineGameReservations_TA__HandlePublicReservation ( struct FReservationPlayerData P );
+	bool ShouldCheckPlatformRestrictions ( class UAddReservationMessagePublic_X* Message );
 	bool CanAcceptReservations ( class UAddReservationMessagePublic_X* Message );
 	TArray< int > GetPrecacheProductIDs ( );
 	class UReservationsReadyMessage_X* CreateReadyMessage ( );
 	void ClearReservations ( );
 	void AddLoadout ( struct FUniqueNetId PlayerID, TArray< int > ProductIDs );
 	TArray< struct FReservationData > AddPlayersFromReservationMessage ( class UAddReservationMessage_X* ReservationMessage, class UTcpConnection* Connection );
-	bool HandlePublicReservation ( class UTcpConnection* Connection, class UAddReservationMessagePublic_X* Message, TArray< struct FUniqueNetId >* MapLocal_6A2612584B8E5843A8FD588450138C58, TArray< struct FUniqueNetId >* FilterLocal_ACD662724E7FABBE8FC06AAA1CD784C9 );
+	bool HandlePublicReservation ( class UTcpConnection* Connection, class UAddReservationMessagePublic_X* Message, TArray< struct FUniqueNetId >* MapLocal_5A5712704AF55FF91D99BA89DBD00CF7, TArray< struct FUniqueNetId >* FilterLocal_E3A453B64611A46D0ED771AE83A23CE9 );
 };
 
 UClass* UOnlineGameReservations_TA::pClassPointer = NULL;
@@ -28256,7 +28204,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 76443 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 76462 ];
 
 		return pClassPointer;
 	};
@@ -28290,7 +28238,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 76481 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 76500 ];
 
 		return pClassPointer;
 	};
@@ -28322,7 +28270,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 76483 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 76502 ];
 
 		return pClassPointer;
 	};
@@ -28345,7 +28293,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 76485 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 76504 ];
 
 		return pClassPointer;
 	};
@@ -28369,7 +28317,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 76530 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 76549 ];
 
 		return pClassPointer;
 	};
@@ -28395,7 +28343,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 76571 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 76590 ];
 
 		return pClassPointer;
 	};
@@ -28422,7 +28370,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 76593 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 76612 ];
 
 		return pClassPointer;
 	};
@@ -28448,7 +28396,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 76603 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 76622 ];
 
 		return pClassPointer;
 	};
@@ -28475,7 +28423,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 76806 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 76825 ];
 
 		return pClassPointer;
 	};
@@ -28510,7 +28458,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 76814 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 76833 ];
 
 		return pClassPointer;
 	};
@@ -28542,7 +28490,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 76842 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 76861 ];
 
 		return pClassPointer;
 	};
@@ -28577,7 +28525,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 76866 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 76885 ];
 
 		return pClassPointer;
 	};
@@ -28609,7 +28557,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 76909 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 76928 ];
 
 		return pClassPointer;
 	};
@@ -28621,12 +28569,12 @@ public:
 UClass* UPlayerInput_Menu_TA::pClassPointer = NULL;
 
 // Class TAGame.PlayerController_Replay_TA
-// 0x0008 (0x06A0 - 0x0698)
+// 0x0008 (0x069C - 0x0694)
 class APlayerController_Replay_TA : public APlayerControllerBase_TA
 {
 public:
-	class AHUD*                                        SplitscreenHUDArchetype;                          		// 0x0698 (0x0004) [0x0000000000000001]              ( CPF_Edit )
-	class AGameEvent_TA*                               GameEvent;                                        		// 0x069C (0x0004) [0x0000000000002000]              ( CPF_Transient )
+	class AHUD*                                        SplitscreenHUDArchetype;                          		// 0x0694 (0x0004) [0x0000000000000001]              ( CPF_Edit )
+	class AGameEvent_TA*                               GameEvent;                                        		// 0x0698 (0x0004) [0x0000000000002000]              ( CPF_Transient )
 
 private:
 	static UClass* pClassPointer;
@@ -28635,7 +28583,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 76910 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 76929 ];
 
 		return pClassPointer;
 	};
@@ -28660,7 +28608,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 76923 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 76942 ];
 
 		return pClassPointer;
 	};
@@ -28688,7 +28636,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 76934 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 76953 ];
 
 		return pClassPointer;
 	};
@@ -28734,7 +28682,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 76941 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 76960 ];
 
 		return pClassPointer;
 	};
@@ -28799,7 +28747,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 76940 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 76959 ];
 
 		return pClassPointer;
 	};
@@ -28835,7 +28783,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 77012 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 77031 ];
 
 		return pClassPointer;
 	};
@@ -28861,7 +28809,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 77073 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 77085 ];
 
 		return pClassPointer;
 	};
@@ -28906,7 +28854,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 77384 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 77397 ];
 
 		return pClassPointer;
 	};
@@ -28946,7 +28894,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 77417 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 77430 ];
 
 		return pClassPointer;
 	};
@@ -29008,7 +28956,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 77423 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 77436 ];
 
 		return pClassPointer;
 	};
@@ -29083,7 +29031,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 77484 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 77497 ];
 
 		return pClassPointer;
 	};
@@ -29132,7 +29080,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 77483 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 77496 ];
 
 		return pClassPointer;
 	};
@@ -29162,7 +29110,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 77482 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 77495 ];
 
 		return pClassPointer;
 	};
@@ -29197,7 +29145,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 77702 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 77728 ];
 
 		return pClassPointer;
 	};
@@ -29221,7 +29169,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 77731 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 77757 ];
 
 		return pClassPointer;
 	};
@@ -29245,7 +29193,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 77738 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 77764 ];
 
 		return pClassPointer;
 	};
@@ -29268,7 +29216,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 77876 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 77902 ];
 
 		return pClassPointer;
 	};
@@ -29277,7 +29225,7 @@ public:
 	void CheckForNewBindings ( TArray< struct FPlayerBinding > DefaultBindings, TArray< struct FPlayerBinding >* Bindings );
 	TArray< struct FPlayerBinding > MergeUserBindings ( TArray< struct FPlayerBinding >* DefaultBindings, TArray< struct FPlayerBinding >* UserBindings );
 	void RemoveDefaultBindings ( TArray< struct FPlayerBinding >* DefaultBindings, TArray< struct FPlayerBinding >* Bindings );
-	void RemoveDuplicateBindingIndexes ( TArray< int >* Indexes, TArray< struct FPlayerBinding >* Bindings, TArray< int >* SortLocal_70174EA048C1D2F4EBF577AC019ACCCA );
+	void RemoveDuplicateBindingIndexes ( TArray< int >* Indexes, TArray< struct FPlayerBinding >* Bindings, TArray< int >* SortLocal_537603FC41226F6506FCF0A8ED380CC8 );
 	TArray< int > FindDuplicateBindingIndexes ( TArray< struct FPlayerBinding >* Bindings );
 	void SetDefaultRemappable ( struct FName Action, TArray< struct FPlayerBinding >* DefaultBindings, TArray< struct FPlayerBinding >* Bindings );
 	void SetDefaultPressType ( struct FName Action, TArray< struct FPlayerBinding >* DefaultBindings, TArray< struct FPlayerBinding >* Bindings );
@@ -29300,7 +29248,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 77902 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 77928 ];
 
 		return pClassPointer;
 	};
@@ -29323,7 +29271,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 77905 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 77931 ];
 
 		return pClassPointer;
 	};
@@ -29347,7 +29295,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 77947 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 77973 ];
 
 		return pClassPointer;
 	};
@@ -29371,7 +29319,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 77954 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 77980 ];
 
 		return pClassPointer;
 	};
@@ -29393,7 +29341,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 78062 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 78088 ];
 
 		return pClassPointer;
 	};
@@ -29417,7 +29365,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 78444 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 78470 ];
 
 		return pClassPointer;
 	};
@@ -29440,7 +29388,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 78474 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 78500 ];
 
 		return pClassPointer;
 	};
@@ -29462,7 +29410,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 78562 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 78588 ];
 
 		return pClassPointer;
 	};
@@ -29484,7 +29432,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 78636 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 78662 ];
 
 		return pClassPointer;
 	};
@@ -29506,7 +29454,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 78685 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 78711 ];
 
 		return pClassPointer;
 	};
@@ -29531,7 +29479,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 78828 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 78854 ];
 
 		return pClassPointer;
 	};
@@ -29558,7 +29506,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 78846 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 78872 ];
 
 		return pClassPointer;
 	};
@@ -29584,7 +29532,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 78856 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 78882 ];
 
 		return pClassPointer;
 	};
@@ -29608,7 +29556,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 78863 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 78889 ];
 
 		return pClassPointer;
 	};
@@ -29633,7 +29581,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 78874 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 78900 ];
 
 		return pClassPointer;
 	};
@@ -29656,7 +29604,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 78877 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 78903 ];
 
 		return pClassPointer;
 	};
@@ -29679,7 +29627,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 78882 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 78908 ];
 
 		return pClassPointer;
 	};
@@ -29702,7 +29650,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 78888 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 78914 ];
 
 		return pClassPointer;
 	};
@@ -29727,7 +29675,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 78897 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 78923 ];
 
 		return pClassPointer;
 	};
@@ -29754,7 +29702,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 78990 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 79016 ];
 
 		return pClassPointer;
 	};
@@ -29779,7 +29727,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 78993 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 79019 ];
 
 		return pClassPointer;
 	};
@@ -29802,7 +29750,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 79019 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 79045 ];
 
 		return pClassPointer;
 	};
@@ -29828,13 +29776,13 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 79085 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 79111 ];
 
 		return pClassPointer;
 	};
 
 	void __Tags__ChangeNotifyFunc ( );
-	void ConvertToGameTags ( class UObject* InOuter, TArray< class UGameTags_TA* >* GameTags, TArray< struct FKeyValuePair >* Pairs, TArray< class UGameTags_TA* >* MapLocal_63757C1E474D540A85B9BB828CAA5577 );
+	void ConvertToGameTags ( class UObject* InOuter, TArray< class UGameTags_TA* >* GameTags, TArray< struct FKeyValuePair >* Pairs, TArray< class UGameTags_TA* >* MapLocal_7EC50DA94A56F2B0F2354991845BBB02 );
 	void RemoveValue ( struct FString Value );
 	struct FString CreateGameTagsStr ( );
 	void SetValue ( struct FString Key, struct FString Value );
@@ -29859,7 +29807,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 79096 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 79122 ];
 
 		return pClassPointer;
 	};
@@ -29882,7 +29830,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 79103 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 79129 ];
 
 		return pClassPointer;
 	};
@@ -29890,6 +29838,7 @@ public:
 	struct FCustomMatchTeamSettings ConvertTeamColorSettings ( struct FCustomMatchTeamSettings Settings );
 	struct FCustomMatchSettings ConvertClubColorSettings ( struct FCustomMatchSettings Settings );
 	void ClubColors2 ( class UProfile_TA* Profile );
+	void ClearSeasons ( class UProfile_TA* Profile );
 	void ClearTutorial ( class UProfile_TA* Profile );
 	void SparseBindingsArrays ( class UProfile_TA* Profile );
 	void GamepadSettings ( class UProfile_TA* Profile );
@@ -29934,7 +29883,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 79229 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 79255 ];
 
 		return pClassPointer;
 	};
@@ -29957,7 +29906,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 79695 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 79723 ];
 
 		return pClassPointer;
 	};
@@ -29985,7 +29934,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 79701 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 79729 ];
 
 		return pClassPointer;
 	};
@@ -30010,7 +29959,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 79723 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 79751 ];
 
 		return pClassPointer;
 	};
@@ -30036,7 +29985,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 79729 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 79757 ];
 
 		return pClassPointer;
 	};
@@ -30062,7 +30011,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 79738 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 79766 ];
 
 		return pClassPointer;
 	};
@@ -30088,7 +30037,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 79822 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 79850 ];
 
 		return pClassPointer;
 	};
@@ -30116,7 +30065,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 79825 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 79853 ];
 
 		return pClassPointer;
 	};
@@ -30147,13 +30096,13 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 79830 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 79858 ];
 
 		return pClassPointer;
 	};
 
 	bool __InitialUserSettingsSender_TA__TryToSendInitialSettings ( class UGFxData_UserSetting_TA* S );
-	void TryToSendInitialSettings ( TArray< class UGFxData_UserSetting_TA* >* FilterLocal_A2BAA5B34965910B6E29E392843901E9 );
+	void TryToSendInitialSettings ( TArray< class UGFxData_UserSetting_TA* >* FilterLocal_D5BC671A4724708ABC9BE88D93EB7B4D );
 	void HandlePsyNetLoginChange ( class UOnlinePlayerAuthentication_X* Auth );
 	void HandleGFxShellCreated ( class UGFxEngine_X* Engine, class UGFxShell_X* InShell );
 	void Init ( class ULocalPlayer_TA* InPlayer );
@@ -30178,7 +30127,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 79834 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 79862 ];
 
 		return pClassPointer;
 	};
@@ -30211,7 +30160,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 79839 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 79867 ];
 
 		return pClassPointer;
 	};
@@ -30221,6 +30170,7 @@ public:
 	void UpdateCustomMatchSettings ( class USaveData_TA* SaveData );
 	void UpdateGameplaySettings ( class USaveData_TA* SaveData );
 	void UpdateVideoSettings ( class USaveData_TA* SaveData );
+	void UpdateSaveSingleSeason ( class USaveData_TA* SaveData, TArray< class USeason_TA* >* ArrayInitializer_8A5DED374455E8604E24998B844B9792 );
 	void UpdateSeasons ( class USaveData_TA* SaveData );
 	void UpdateTournamentSettings ( class USaveData_TA* SaveData );
 	void UpdateClientXP ( class USaveData_TA* SaveData );
@@ -30257,20 +30207,18 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 79874 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 79902 ];
 
 		return pClassPointer;
 	};
 
 	class UProduct_TA* __EngineAudioUnlocker_TA__FixupUnlockedEngineAudio ( struct FBodyToEngineAudioPair Pair );
 	bool __EngineAudioUnlocker_TA__FixupUnlockedEngineAudio ( class UProduct_TA* Product );
-	//bool __EngineAudioUnlocker_TA__FixupUnlockedEngineAudio ( class UProduct_TA* Product );
-	//bool __EngineAudioUnlocker_TA__FixupUnlockedEngineAudio ( class UProduct_TA* Product );
 	class UProduct_TA* __EngineAudioUnlocker_TA__FixupUnlockedEngineAudio ( int Id );
 	int __EngineAudioUnlocker_TA__FixupUnlockedEngineAudio ( class UOnlineProduct_TA* Product );
 	class UProduct_TA* __EngineAudioUnlocker_TA__UnlockEnginesForBody ( struct FBodyToEngineAudioPair Pair );
-	void UnlockEnginesForBody ( class UProductsOfflineSave_TA* ProductsOfflineSave, class UProduct_TA* Body, TArray< struct FBodyToEngineAudioPair >* FilterLocal_D75669DA4E1508EC220F4D9E68B718D6, TArray< class UProduct_TA* >* MapLocal_2768D2E54A6C837E8E7644B2DABCACE5, TArray< class UProduct_TA* >* DistinctLocal_CEA52E89494A6C6D9C716CBA5E0EFD29 );
-	void FixupUnlockedEngineAudio ( class USaveData_TA* SaveData, TArray< int >* MapLocal_C1D50D664E6223CD51A45995B947F644, TArray< class UProduct_TA* >* MapLocal_D4A072EA40AC2462A506EBAAF6988BAB, TArray< class UProduct_TA* >* FilterLocal_510B2B274E069FE67211ED9B59A08D98, TArray< class UProduct_TA* >* DistinctLocal_87A860B74942B7AC17FD6888969AB8D8, TArray< class UProduct_TA* >* FilterLocal_8CD62C9A4E96DF63C19C55B717D714FD, TArray< class UProduct_TA* >* FilterLocal_3A53261D4F002719094E00B83D410803, TArray< struct FBodyToEngineAudioPair >* FilterLocal_4CF9AAF44AFD3C5BE43EF09F32739C0F, TArray< class UProduct_TA* >* MapLocal_56122D3B446E4A9E68DBD8BEC37F0118, TArray< class UProduct_TA* >* DistinctLocal_62ED3A064286B5348B33E2875B15DC56, TArray< class UProduct_TA* >* FilterLocal_2FF379B340596CCCD9CCEDB2CF0E5681 );
+	void UnlockEnginesForBody ( class UProductsOfflineSave_TA* ProductsOfflineSave, class UProduct_TA* Body, TArray< struct FBodyToEngineAudioPair >* FilterLocal_484887324AEC3E40717CE4973FD0E5A3, TArray< class UProduct_TA* >* MapLocal_8F4548DF48626BEF3E9F40BF5DAF8344, TArray< class UProduct_TA* >* DistinctLocal_647C6CA049A1DE66AF2D5D83E0942BD6 );
+	void FixupUnlockedEngineAudio ( class USaveData_TA* SaveData, TArray< int >* MapLocal_762EA49D416C892A9FFC21B5113E33BC, TArray< class UProduct_TA* >* MapLocal_8D83C4614BED6C1B98147993CF2C767E, TArray< class UProduct_TA* >* FilterLocal_A986A3124C66173DA7213FA53467473F, TArray< class UProduct_TA* >* DistinctLocal_7A7912E3499D58E90DC5B398F9F4241B, TArray< class UProduct_TA* >* FilterLocal_21D8E8254383318630EA9DA66FF1F091, TArray< class UProduct_TA* >* FilterLocal_BA2769D041E3D1A890ACD8975BE10FCB, TArray< struct FBodyToEngineAudioPair >* FilterLocal_B7FF35BB46E396C20553E184637F47F5, TArray< class UProduct_TA* >* MapLocal_DB53FCF2454FAB8F7FD9A68A57A670DA, TArray< class UProduct_TA* >* DistinctLocal_647CC1984CC8A33DC469568C406A730B, TArray< class UProduct_TA* >* FilterLocal_78680D8346B07FD478DB93A8FA21BD02 );
 };
 
 UClass* UEngineAudioUnlocker_TA::pClassPointer = NULL;
@@ -30289,7 +30237,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 80039 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 80067 ];
 
 		return pClassPointer;
 	};
@@ -30313,7 +30261,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 80045 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 80073 ];
 
 		return pClassPointer;
 	};
@@ -30336,7 +30284,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 80046 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 80074 ];
 
 		return pClassPointer;
 	};
@@ -30362,7 +30310,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 80080 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 80108 ];
 
 		return pClassPointer;
 	};
@@ -30386,7 +30334,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 80167 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 80195 ];
 
 		return pClassPointer;
 	};
@@ -30410,7 +30358,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 80212 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 80240 ];
 
 		return pClassPointer;
 	};
@@ -30432,7 +30380,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 80311 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 80339 ];
 
 		return pClassPointer;
 	};
@@ -30468,7 +30416,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 80314 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 80342 ];
 
 		return pClassPointer;
 	};
@@ -30501,7 +30449,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 80344 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 80372 ];
 
 		return pClassPointer;
 	};
@@ -30533,7 +30481,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 80469 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 80497 ];
 
 		return pClassPointer;
 	};
@@ -30562,7 +30510,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 80480 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 80508 ];
 
 		return pClassPointer;
 	};
@@ -30586,7 +30534,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 80495 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 80523 ];
 
 		return pClassPointer;
 	};
@@ -30616,7 +30564,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 80501 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 80529 ];
 
 		return pClassPointer;
 	};
@@ -30647,7 +30595,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 80520 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 80548 ];
 
 		return pClassPointer;
 	};
@@ -30674,7 +30622,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 80556 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 80584 ];
 
 		return pClassPointer;
 	};
@@ -30697,7 +30645,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 80562 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 80590 ];
 
 		return pClassPointer;
 	};
@@ -30722,7 +30670,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 80569 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 80597 ];
 
 		return pClassPointer;
 	};
@@ -30745,7 +30693,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 80575 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 80603 ];
 
 		return pClassPointer;
 	};
@@ -30769,7 +30717,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 80578 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 80606 ];
 
 		return pClassPointer;
 	};
@@ -30792,7 +30740,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 80583 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 80611 ];
 
 		return pClassPointer;
 	};
@@ -30816,7 +30764,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 80587 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 80615 ];
 
 		return pClassPointer;
 	};
@@ -30841,7 +30789,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 80593 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 80621 ];
 
 		return pClassPointer;
 	};
@@ -30866,7 +30814,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 80600 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 80628 ];
 
 		return pClassPointer;
 	};
@@ -30891,7 +30839,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 80608 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 80636 ];
 
 		return pClassPointer;
 	};
@@ -30916,7 +30864,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 80614 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 80642 ];
 
 		return pClassPointer;
 	};
@@ -30943,7 +30891,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 80621 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 80649 ];
 
 		return pClassPointer;
 	};
@@ -30970,7 +30918,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 80629 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 80657 ];
 
 		return pClassPointer;
 	};
@@ -30996,7 +30944,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 80637 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 80665 ];
 
 		return pClassPointer;
 	};
@@ -31023,7 +30971,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 80648 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 80676 ];
 
 		return pClassPointer;
 	};
@@ -31048,7 +30996,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 80654 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 80682 ];
 
 		return pClassPointer;
 	};
@@ -31074,7 +31022,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 80682 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 80710 ];
 
 		return pClassPointer;
 	};
@@ -31098,7 +31046,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 80695 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 80723 ];
 
 		return pClassPointer;
 	};
@@ -31122,7 +31070,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 80701 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 80729 ];
 
 		return pClassPointer;
 	};
@@ -31152,7 +31100,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 80707 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 80735 ];
 
 		return pClassPointer;
 	};
@@ -31188,7 +31136,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 80723 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 80751 ];
 
 		return pClassPointer;
 	};
@@ -31218,7 +31166,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 80775 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 80803 ];
 
 		return pClassPointer;
 	};
@@ -31242,7 +31190,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 80782 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 80810 ];
 
 		return pClassPointer;
 	};
@@ -31268,7 +31216,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 80828 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 80856 ];
 
 		return pClassPointer;
 	};
@@ -31295,7 +31243,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 81382 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 81410 ];
 
 		return pClassPointer;
 	};
@@ -31317,7 +31265,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 81428 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 81456 ];
 
 		return pClassPointer;
 	};
@@ -31345,7 +31293,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 81431 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 81459 ];
 
 		return pClassPointer;
 	};
@@ -31379,7 +31327,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 81454 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 81482 ];
 
 		return pClassPointer;
 	};
@@ -31407,7 +31355,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 81569 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 81597 ];
 
 		return pClassPointer;
 	};
@@ -31436,7 +31384,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 81578 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 81606 ];
 
 		return pClassPointer;
 	};
@@ -31461,7 +31409,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 81594 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 81622 ];
 
 		return pClassPointer;
 	};
@@ -31486,7 +31434,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 82392 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 82420 ];
 
 		return pClassPointer;
 	};
@@ -31510,12 +31458,12 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 83531 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 83559 ];
 
 		return pClassPointer;
 	};
 
-	TArray< class UProductAttribute_TA* > GetAttributes ( TArray< class UProductAttribute_TA* >* ArrayInitializer_A5C156424F9D8EE72BC601B1F0F293B1 );
+	TArray< class UProductAttribute_TA* > GetAttributes ( TArray< class UProductAttribute_TA* >* ArrayInitializer_ADB227E040FBB989E0AC23B2079327B6 );
 	void Validate ( class UProfile_TA* ForProfile );
 	class UProductSlot_TA* GetPlayerSlot ( );
 	int GetDefaultProductID ( );
@@ -31543,7 +31491,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 83549 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 83577 ];
 
 		return pClassPointer;
 	};
@@ -31576,7 +31524,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 83585 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 83613 ];
 
 		return pClassPointer;
 	};
@@ -31601,7 +31549,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 83612 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 83640 ];
 
 		return pClassPointer;
 	};
@@ -31625,7 +31573,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 83633 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 83661 ];
 
 		return pClassPointer;
 	};
@@ -31652,7 +31600,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 83722 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 83750 ];
 
 		return pClassPointer;
 	};
@@ -31675,7 +31623,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 84264 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 84292 ];
 
 		return pClassPointer;
 	};
@@ -31697,7 +31645,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 84270 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 84298 ];
 
 		return pClassPointer;
 	};
@@ -31722,13 +31670,12 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 84450 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 84478 ];
 
 		return pClassPointer;
 	};
 
 	void __EngineAudioUnlocker_TA__FixupUnlockedEngineAudio ( class UProduct_TA* Product );
-	bool __EngineAudioUnlocker_TA__FixupUnlockedEngineAudio1 ( class UProduct_TA* Product );
 	bool __EngineAudioUnlocker_TA__FixupUnlockedEngineAudio ( struct FBodyToEngineAudioPair Pair );
 };
 
@@ -31749,7 +31696,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 84509 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 84537 ];
 
 		return pClassPointer;
 	};
@@ -31773,7 +31720,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 84659 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 84687 ];
 
 		return pClassPointer;
 	};
@@ -31803,7 +31750,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 84890 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 84918 ];
 
 		return pClassPointer;
 	};
@@ -31815,8 +31762,98 @@ public:
 
 UClass* UVersionHelper_TA::pClassPointer = NULL;
 
+// Class TAGame.ArenaSoundPlayer_TA
+// 0x0004 (0x0214 - 0x0210)
+class AArenaSoundPlayer_TA : public AActor
+{
+public:
+	class UAkSoundSource*                              SoundSource;                                      		// 0x0210 (0x0004) [0x0000000004080008]              ( CPF_ExportObject | CPF_Component | CPF_EditInline )
+
+private:
+	static UClass* pClassPointer;
+
+public:
+	static UClass* StaticClass()
+	{
+		if ( ! pClassPointer )
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 85295 ];
+
+		return pClassPointer;
+	};
+
+	void eventPostBeginPlay ( );
+};
+
+UClass* AArenaSoundPlayer_TA::pClassPointer = NULL;
+
+// Class TAGame.__BanSync_TA__GetChatBanExpiration
+// 0x0048 (0x0084 - 0x003C)
+class U__BanSync_TA__GetChatBanExpiration : public UObject
+{
+public:
+	struct FUniqueNetId                                PlayerID;                                         		// 0x003C (0x0048) [0x0000000000000000]              
+
+private:
+	static UClass* pClassPointer;
+
+public:
+	static UClass* StaticClass()
+	{
+		if ( ! pClassPointer )
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 85306 ];
+
+		return pClassPointer;
+	};
+
+	bool __BanSync_TA__GetChatBanExpiration ( struct FBanStatus Ban );
+};
+
+UClass* U__BanSync_TA__GetChatBanExpiration::pClassPointer = NULL;
+
+// Class TAGame.ConnectionQualityConfig_TA
+// 0x0058 (0x00A4 - 0x004C)
+class UConnectionQualityConfig_TA : public UOnlineConfig_X
+{
+public:
+	float                                              ClientPollRate;                                   		// 0x004C (0x0004) [0x0000000000000000]              
+	float                                              ClientDelayBeforePolling;                         		// 0x0050 (0x0004) [0x0000000000000000]              
+	float                                              ClientUpdateDelay;                                		// 0x0054 (0x0004) [0x0000000000000000]              
+	float                                              MediocrePing;                                     		// 0x0058 (0x0004) [0x0000000000000000]              
+	float                                              BadPing;                                          		// 0x005C (0x0004) [0x0000000000000000]              
+	float                                              RecentBadPingFlagPercent;                         		// 0x0060 (0x0004) [0x0000000000000000]              
+	float                                              BadAckTime;                                       		// 0x0064 (0x0004) [0x0000000000000000]              
+	float                                              BadReceiveTime;                                   		// 0x0068 (0x0004) [0x0000000000000000]              
+	float                                              MediocreJitter;                                   		// 0x006C (0x0004) [0x0000000000000000]              
+	float                                              BadJitter;                                        		// 0x0070 (0x0004) [0x0000000000000000]              
+	float                                              JitterRollingAverageTimespan;                     		// 0x0074 (0x0004) [0x0000000000000000]              
+	float                                              RecentBadJitterFlagPercent;                       		// 0x0078 (0x0004) [0x0000000000000000]              
+	float                                              MediocrePacketLossPercent;                        		// 0x007C (0x0004) [0x0000000000000000]              
+	float                                              BadPacketLossPercent;                             		// 0x0080 (0x0004) [0x0000000000000000]              
+	float                                              PacketLossRollingAverageTimespan;                 		// 0x0084 (0x0004) [0x0000000000000000]              
+	float                                              RecentBadPacketLossFlagPercent;                   		// 0x0088 (0x0004) [0x0000000000000000]              
+	float                                              RecentPoorConnectionRollingTimespan;              		// 0x008C (0x0004) [0x0000000000000000]              
+	float                                              NotificationDelayInDays;                          		// 0x0090 (0x0004) [0x0000000000000000]              
+	unsigned long                                      bShouldProvidePoorConnectionHelp : 1;             		// 0x0094 (0x0004) [0x0000000000000000] [0x00000001] 
+	struct FString                                     PoorConnectionHelpNotificationURL;                		// 0x0098 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
+
+private:
+	static UClass* pClassPointer;
+
+public:
+	static UClass* StaticClass()
+	{
+		if ( ! pClassPointer )
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 85353 ];
+
+		return pClassPointer;
+	};
+
+};
+
+UClass* UConnectionQualityConfig_TA::pClassPointer = NULL;
+
 // Class TAGame.CrowdSoundSettings_TA
-// 0x0154 (0x0190 - 0x003C)
+// 0x0158 (0x0194 - 0x003C)
 class UCrowdSoundSettings_TA : public UObject
 {
 public:
@@ -31894,9 +31931,10 @@ public:
 	float                                              TenseNearGoalDuration;                            		// 0x0160 (0x0004) [0x0000000000000001]              ( CPF_Edit )
 	float                                              TenseNearGoalDistance;                            		// 0x0164 (0x0004) [0x0000000000000001]              ( CPF_Edit )
 	float                                              TenseClearDistance;                               		// 0x0168 (0x0004) [0x0000000000000001]              ( CPF_Edit )
-	TArray< struct FCrowdValueState >                  ExcitementStates;                                 		// 0x016C (0x000C) [0x0000000000400001]              ( CPF_Edit | CPF_NeedCtorLink )
-	TArray< struct FCrowdValueState >                  TensionStates;                                    		// 0x0178 (0x000C) [0x0000000000400001]              ( CPF_Edit | CPF_NeedCtorLink )
-	TArray< struct FCrowdScoreState >                  ScoreStates;                                      		// 0x0184 (0x000C) [0x0000000000400001]              ( CPF_Edit | CPF_NeedCtorLink )
+	float                                              PostGameExcitement;                               		// 0x016C (0x0004) [0x0000000000000001]              ( CPF_Edit )
+	TArray< struct FCrowdValueState >                  ExcitementStates;                                 		// 0x0170 (0x000C) [0x0000000000400001]              ( CPF_Edit | CPF_NeedCtorLink )
+	TArray< struct FCrowdValueState >                  TensionStates;                                    		// 0x017C (0x000C) [0x0000000000400001]              ( CPF_Edit | CPF_NeedCtorLink )
+	TArray< struct FCrowdScoreState >                  ScoreStates;                                      		// 0x0188 (0x000C) [0x0000000000400001]              ( CPF_Edit | CPF_NeedCtorLink )
 
 private:
 	static UClass* pClassPointer;
@@ -31905,7 +31943,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 85163 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 85440 ];
 
 		return pClassPointer;
 	};
@@ -31927,7 +31965,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 85306 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 85583 ];
 
 		return pClassPointer;
 	};
@@ -31951,7 +31989,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 85495 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 85775 ];
 
 		return pClassPointer;
 	};
@@ -31976,7 +32014,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 85502 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 85782 ];
 
 		return pClassPointer;
 	};
@@ -31985,96 +32023,6 @@ public:
 };
 
 UClass* U__CrowdSoundManager_TA__PlayCrowdActorSound::pClassPointer = NULL;
-
-// Class TAGame.ArenaSoundPlayer_TA
-// 0x0004 (0x0214 - 0x0210)
-class AArenaSoundPlayer_TA : public AActor
-{
-public:
-	class UAkSoundSource*                              SoundSource;                                      		// 0x0210 (0x0004) [0x0000000004080008]              ( CPF_ExportObject | CPF_Component | CPF_EditInline )
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 85658 ];
-
-		return pClassPointer;
-	};
-
-	void eventPostBeginPlay ( );
-};
-
-UClass* AArenaSoundPlayer_TA::pClassPointer = NULL;
-
-// Class TAGame.__BanSync_TA__GetChatBanExpiration
-// 0x0048 (0x0084 - 0x003C)
-class U__BanSync_TA__GetChatBanExpiration : public UObject
-{
-public:
-	struct FUniqueNetId                                PlayerID;                                         		// 0x003C (0x0048) [0x0000000000000000]              
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 85667 ];
-
-		return pClassPointer;
-	};
-
-	bool __BanSync_TA__GetChatBanExpiration ( struct FBanStatus Ban );
-};
-
-UClass* U__BanSync_TA__GetChatBanExpiration::pClassPointer = NULL;
-
-// Class TAGame.ConnectionQualityConfig_TA
-// 0x0058 (0x00A4 - 0x004C)
-class UConnectionQualityConfig_TA : public UOnlineConfig_X
-{
-public:
-	float                                              ClientPollRate;                                   		// 0x004C (0x0004) [0x0000000000000000]              
-	float                                              ClientDelayBeforePolling;                         		// 0x0050 (0x0004) [0x0000000000000000]              
-	float                                              ClientUpdateDelay;                                		// 0x0054 (0x0004) [0x0000000000000000]              
-	float                                              MediocrePing;                                     		// 0x0058 (0x0004) [0x0000000000000000]              
-	float                                              BadPing;                                          		// 0x005C (0x0004) [0x0000000000000000]              
-	float                                              RecentBadPingFlagPercent;                         		// 0x0060 (0x0004) [0x0000000000000000]              
-	float                                              BadAckTime;                                       		// 0x0064 (0x0004) [0x0000000000000000]              
-	float                                              BadReceiveTime;                                   		// 0x0068 (0x0004) [0x0000000000000000]              
-	float                                              MediocreJitter;                                   		// 0x006C (0x0004) [0x0000000000000000]              
-	float                                              BadJitter;                                        		// 0x0070 (0x0004) [0x0000000000000000]              
-	float                                              JitterRollingAverageTimespan;                     		// 0x0074 (0x0004) [0x0000000000000000]              
-	float                                              RecentBadJitterFlagPercent;                       		// 0x0078 (0x0004) [0x0000000000000000]              
-	float                                              MediocrePacketLossPercent;                        		// 0x007C (0x0004) [0x0000000000000000]              
-	float                                              BadPacketLossPercent;                             		// 0x0080 (0x0004) [0x0000000000000000]              
-	float                                              PacketLossRollingAverageTimespan;                 		// 0x0084 (0x0004) [0x0000000000000000]              
-	float                                              RecentBadPacketLossFlagPercent;                   		// 0x0088 (0x0004) [0x0000000000000000]              
-	float                                              RecentPoorConnectionRollingTimespan;              		// 0x008C (0x0004) [0x0000000000000000]              
-	float                                              NotificationDelayInDays;                          		// 0x0090 (0x0004) [0x0000000000000000]              
-	unsigned long                                      bShouldProvidePoorConnectionHelp : 1;             		// 0x0094 (0x0004) [0x0000000000000000] [0x00000001] 
-	struct FString                                     PoorConnectionHelpNotificationURL;                		// 0x0098 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 85730 ];
-
-		return pClassPointer;
-	};
-
-};
-
-UClass* UConnectionQualityConfig_TA::pClassPointer = NULL;
 
 // Class TAGame.__GameObserver_TA__GetOffensiveGoal
 // 0x0004 (0x0040 - 0x003C)
@@ -32090,7 +32038,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 85906 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 85949 ];
 
 		return pClassPointer;
 	};
@@ -32114,7 +32062,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 85912 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 85955 ];
 
 		return pClassPointer;
 	};
@@ -32138,7 +32086,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 85949 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 85992 ];
 
 		return pClassPointer;
 	};
@@ -32162,7 +32110,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 85956 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 85999 ];
 
 		return pClassPointer;
 	};
@@ -32171,31 +32119,6 @@ public:
 };
 
 UClass* U__GameObserver_TA__GetCarData::pClassPointer = NULL;
-
-// Class TAGame.__GameTags_TA__ConvertToGameTags
-// 0x0008 (0x0044 - 0x003C)
-class U__GameTags_TA__ConvertToGameTags : public UObject
-{
-public:
-	class UGameTags_TA*                                NoneCoalescing_78E6FA204B3F11E678251C85054D7376;  		// 0x003C (0x0004) [0x0000000000000000]              
-	class UObject*                                     InOuter;                                          		// 0x0040 (0x0004) [0x0000000000000000]              
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 86036 ];
-
-		return pClassPointer;
-	};
-
-	class UGameTags_TA* __GameTags_TA__ConvertToGameTags ( class UGameTags_TA* G );
-};
-
-UClass* U__GameTags_TA__ConvertToGameTags::pClassPointer = NULL;
 
 // Class TAGame.LanServerMetaData_TA
 // 0x0078 (0x00B4 - 0x003C)
@@ -32302,7 +32225,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 86546 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 86567 ];
 
 		return pClassPointer;
 	};
@@ -32350,7 +32273,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 86562 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 86583 ];
 
 		return pClassPointer;
 	};
@@ -32365,7 +32288,7 @@ public:
 	void Cancel ( );
 	void HandleUnsubscribe ( );
 	class UAsyncTask* Unsubscribe ( struct FUniqueNetId PlayerID );
-	TArray< class UTourSettings_TA* > Select ( TArray< class UTourSettings_TA* >* FilterLocal_E1627A8C42C9B5B38A41B89C2A64BE5B );
+	TArray< class UTourSettings_TA* > Select ( TArray< class UTourSettings_TA* >* FilterLocal_B411FCA2492C54A4C9A9A3AD50F5214E );
 	class UTourSettings_TA* GetTournament ( );
 	void HandleTourActivated ( class UOnlineGameTournaments_TA* Tournament, class UTourEvent_TA* TourEvent );
 	void HandleCheckInWindowChange ( class UTourCheckInWindowWatcher_TA* Watcher, class UTourSettings_TA* Tournament );
@@ -32404,7 +32327,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 86567 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 86588 ];
 
 		return pClassPointer;
 	};
@@ -32453,7 +32376,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 86587 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 86608 ];
 
 		return pClassPointer;
 	};
@@ -32493,7 +32416,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 86598 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 86619 ];
 
 		return pClassPointer;
 	};
@@ -32520,7 +32443,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 86600 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 86621 ];
 
 		return pClassPointer;
 	};
@@ -32549,7 +32472,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 86602 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 86623 ];
 
 		return pClassPointer;
 	};
@@ -32582,7 +32505,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 86604 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 86625 ];
 
 		return pClassPointer;
 	};
@@ -32611,7 +32534,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 86606 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 86627 ];
 
 		return pClassPointer;
 	};
@@ -32647,7 +32570,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 86608 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 86629 ];
 
 		return pClassPointer;
 	};
@@ -32682,7 +32605,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 86613 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 86634 ];
 
 		return pClassPointer;
 	};
@@ -32714,7 +32637,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 86614 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 86635 ];
 
 		return pClassPointer;
 	};
@@ -32747,7 +32670,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 86616 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 86637 ];
 
 		return pClassPointer;
 	};
@@ -32783,7 +32706,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 86617 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 86638 ];
 
 		return pClassPointer;
 	};
@@ -32810,7 +32733,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 86618 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 86639 ];
 
 		return pClassPointer;
 	};
@@ -32821,82 +32744,6 @@ public:
 };
 
 UClass* UTourMatchServerBrowser_TA::pClassPointer = NULL;
-
-// Class TAGame.MapGroups_TA
-// 0x0000 (0x003C - 0x003C)
-class UMapGroups_TA : public UObject
-{
-public:
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 86794 ];
-
-		return pClassPointer;
-	};
-
-	TArray< class UMapData_TA* > __MapGroups_TA__BuildMaps ( TArray< class UMapData_TA* > Sum, struct FMapGroup Group, TArray< class UMapData_TA* >* ConcatLocal_EB6ECB434710EDD2CA60248616956FBF );
-	TArray< class UMapData_TA* > BuildMaps ( TArray< struct FMapGroup >* Groups, TArray< class UMapData_TA* >* ReduceLocal_FEED611C4EBCC691AC329CA74DCEED71, TArray< class UMapData_TA* >* DistinctLocal_9DAC7272427B251CB89500B39DDDFB1F );
-	TArray< struct FMapGroup > BuildGroups ( TArray< class UMapData_TA* >* AvailableMaps, TArray< struct FMapGroup >* SourceGroups, TArray< class UMapData_TA* >* FilterLocal_D045AF4640B868A07B151AAA2A4881FC );
-};
-
-UClass* UMapGroups_TA::pClassPointer = NULL;
-
-// Class TAGame.LoadoutUtils_TA
-// 0x0000 (0x003C - 0x003C)
-class ULoadoutUtils_TA : public UObject
-{
-public:
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 86991 ];
-
-		return pClassPointer;
-	};
-
-	void ConformRandomizedLoadoutData ( class ULoadout_TA* Loadout );
-	void FixupDeprecatedTeamPaint ( class ULoadout_TA* Loadout );
-	void ConvertFromOldCustomPaint ( class ULoadout_TA* Loadout, class UCarColorSet_TA* OldSet, class UCarColorSet_TA* NewSet );
-	void ConvertFromOldTeamPaint ( class ULoadout_TA* Loadout, class UCarColorSet_TA* OldSet, class UCarColorSet_TA* NewSet );
-	void ConvertFromOldLoadout ( class ULoadout_TA* OldLoadout, class ULoadout_TA* NewLoadout, int TeamIndex );
-};
-
-UClass* ULoadoutUtils_TA::pClassPointer = NULL;
-
-// Class TAGame.__ProfileVersions_TA__CarColors2
-// 0x000C (0x0048 - 0x003C)
-class U__ProfileVersions_TA__CarColors2 : public UObject
-{
-public:
-	TArray< class ATeam_TA* >                          TeamArchetypes;                                   		// 0x003C (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 86998 ];
-
-		return pClassPointer;
-	};
-
-	void __ProfileVersions_TA__CarColors2 ( class ULoadoutSet_TA* Set );
-};
-
-UClass* U__ProfileVersions_TA__CarColors2::pClassPointer = NULL;
 
 // Class TAGame.ServerPerformanceConfig_TA
 // 0x0014 (0x0060 - 0x004C)
@@ -32916,7 +32763,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 87067 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 86715 ];
 
 		return pClassPointer;
 	};
@@ -32943,7 +32790,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 87099 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 86747 ];
 
 		return pClassPointer;
 	};
@@ -32975,14 +32822,14 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 87220 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 86864 ];
 
 		return pClassPointer;
 	};
 
 	void OnMatchComplete ( );
 	void HandleGRISpawned ( class AGRI_X* GRI );
-	void HandleGameStateChanged ( class AGameEvent_TA* G, TArray< class ATeam_Soccar_TA* >* OfTypeLocal_D81B4226489C39DE6B5D0A989B345572 );
+	void HandleGameStateChanged ( class AGameEvent_TA* G, TArray< class ATeam_Soccar_TA* >* OfTypeLocal_DD77A05C498CDFD34BAD1DA333997153 );
 	void HandleGameEventRemoved ( class UObject* Obj );
 	void HandleGameEventAdded ( class AGameEvent_Soccar_TA* InGameEvent );
 	void HandleGameDataSelected ( int PlaylistId, int MutatorIndex );
@@ -32992,6 +32839,107 @@ public:
 };
 
 UClass* UTourEventMatchComplete_TA::pClassPointer = NULL;
+
+// Class TAGame.__GameTags_TA__ConvertToGameTags
+// 0x0008 (0x0044 - 0x003C)
+class U__GameTags_TA__ConvertToGameTags : public UObject
+{
+public:
+	class UGameTags_TA*                                NoneCoalescing_5896C0D94493A54EBEC9148894FB4668;  		// 0x003C (0x0004) [0x0000000000000000]              
+	class UObject*                                     InOuter;                                          		// 0x0040 (0x0004) [0x0000000000000000]              
+
+private:
+	static UClass* pClassPointer;
+
+public:
+	static UClass* StaticClass()
+	{
+		if ( ! pClassPointer )
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 86935 ];
+
+		return pClassPointer;
+	};
+
+	class UGameTags_TA* __GameTags_TA__ConvertToGameTags ( class UGameTags_TA* G );
+};
+
+UClass* U__GameTags_TA__ConvertToGameTags::pClassPointer = NULL;
+
+// Class TAGame.MapGroups_TA
+// 0x0000 (0x003C - 0x003C)
+class UMapGroups_TA : public UObject
+{
+public:
+
+private:
+	static UClass* pClassPointer;
+
+public:
+	static UClass* StaticClass()
+	{
+		if ( ! pClassPointer )
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 87040 ];
+
+		return pClassPointer;
+	};
+
+	TArray< class UMapData_TA* > __MapGroups_TA__BuildMaps ( TArray< class UMapData_TA* > Sum, struct FMapGroup Group, TArray< class UMapData_TA* >* ConcatLocal_F5889A11494248FE6A9F3EB5EA676B1F );
+	TArray< class UMapData_TA* > BuildMaps ( TArray< struct FMapGroup >* Groups, TArray< class UMapData_TA* >* ReduceLocal_9AAC9E31478D256B9D1EDE83E73F03E5, TArray< class UMapData_TA* >* DistinctLocal_56394C8949244D9C9D416B899FE273A5 );
+	TArray< struct FMapGroup > BuildGroups ( TArray< class UMapData_TA* >* AvailableMaps, TArray< struct FMapGroup >* SourceGroups, TArray< class UMapData_TA* >* FilterLocal_7B0BD1D543CB1CCA046D0AB4392DC011 );
+};
+
+UClass* UMapGroups_TA::pClassPointer = NULL;
+
+// Class TAGame.LoadoutUtils_TA
+// 0x0000 (0x003C - 0x003C)
+class ULoadoutUtils_TA : public UObject
+{
+public:
+
+private:
+	static UClass* pClassPointer;
+
+public:
+	static UClass* StaticClass()
+	{
+		if ( ! pClassPointer )
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 87265 ];
+
+		return pClassPointer;
+	};
+
+	void ConformRandomizedLoadoutData ( class ULoadout_TA* Loadout );
+	void FixupDeprecatedTeamPaint ( class ULoadout_TA* Loadout );
+	void ConvertFromOldCustomPaint ( class ULoadout_TA* Loadout, class UCarColorSet_TA* OldSet, class UCarColorSet_TA* NewSet );
+	void ConvertFromOldTeamPaint ( class ULoadout_TA* Loadout, class UCarColorSet_TA* OldSet, class UCarColorSet_TA* NewSet );
+	void ConvertFromOldLoadout ( class ULoadout_TA* OldLoadout, class ULoadout_TA* NewLoadout, int TeamIndex );
+};
+
+UClass* ULoadoutUtils_TA::pClassPointer = NULL;
+
+// Class TAGame.__ProfileVersions_TA__CarColors2
+// 0x000C (0x0048 - 0x003C)
+class U__ProfileVersions_TA__CarColors2 : public UObject
+{
+public:
+	TArray< class ATeam_TA* >                          TeamArchetypes;                                   		// 0x003C (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
+
+private:
+	static UClass* pClassPointer;
+
+public:
+	static UClass* StaticClass()
+	{
+		if ( ! pClassPointer )
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 87272 ];
+
+		return pClassPointer;
+	};
+
+	void __ProfileVersions_TA__CarColors2 ( class ULoadoutSet_TA* Set );
+};
+
+UClass* U__ProfileVersions_TA__CarColors2::pClassPointer = NULL;
 
 // Class TAGame.CameraStateSelector_TA
 // 0x0010 (0x0058 - 0x0048)
@@ -33008,7 +32956,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 87393 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 87567 ];
 
 		return pClassPointer;
 	};
@@ -33038,7 +32986,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 87678 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 87722 ];
 
 		return pClassPointer;
 	};
@@ -33064,7 +33012,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 87772 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 87816 ];
 
 		return pClassPointer;
 	};
@@ -33087,7 +33035,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 87773 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 87817 ];
 
 		return pClassPointer;
 	};
@@ -33115,7 +33063,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 87849 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 87909 ];
 
 		return pClassPointer;
 	};
@@ -33144,7 +33092,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 87853 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 87913 ];
 
 		return pClassPointer;
 	};
@@ -33154,17 +33102,11 @@ public:
 
 UClass* U__TourStatus_TA__GetStatus::pClassPointer = NULL;
 
-// Class TAGame.StoredChatData_TA
-// 0x0070 (0x00AC - 0x003C)
-class UStoredChatData_TA : public UObject
+// Class TAGame.ProductStat_Assists_TA
+// 0x0000 (0x0070 - 0x0070)
+class UProductStat_Assists_TA : public UProductStat_SoccarEventBase_TA
 {
 public:
-	unsigned char                                      ChatChannel;                                      		// 0x003C (0x0001) [0x0000000000000000]              
-	struct FUniqueNetId                                PersonaId;                                        		// 0x0040 (0x0048) [0x0000000000000000]              
-	struct FString                                     PlayerName;                                       		// 0x0088 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	unsigned char                                      UnknownData00[ 0x8 ];                             		// 0x0094 (0x0008) UNKNOWN PROPERTY: QWordProperty TAGame.StoredChatData_TA.LastChatUpdate
-	TArray< struct FChatData >                         Chat;                                             		// 0x009C (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	int                                                MaxChatLength;                                    		// 0x00A8 (0x0004) [0x0000000000002000]              ( CPF_Transient )
 
 private:
 	static UClass* pClassPointer;
@@ -33173,23 +33115,21 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 87877 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 88095 ];
 
 		return pClassPointer;
 	};
 
-	void RepopulateChat ( class UGFxData_Chat_TA* GFxChat );
-	void StoreChatMessage ( struct FString Message, unsigned long bIsLocal );
+	void OnStatEvent ( class UStatEvent_TA* StatEvent );
 };
 
-UClass* UStoredChatData_TA::pClassPointer = NULL;
+UClass* UProductStat_Assists_TA::pClassPointer = NULL;
 
-// Class TAGame.__ChatHistory_TA__FindHistory
-// 0x0048 (0x0084 - 0x003C)
-class U__ChatHistory_TA__FindHistory : public UObject
+// Class TAGame.ProductStat_AerialGoals_TA
+// 0x0000 (0x0070 - 0x0070)
+class UProductStat_AerialGoals_TA : public UProductStat_SoccarEventBase_TA
 {
 public:
-	struct FUniqueNetId                                PersonaId;                                        		// 0x003C (0x0048) [0x0000000000000000]              
 
 private:
 	static UClass* pClassPointer;
@@ -33198,15 +33138,222 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 87906 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 88096 ];
 
 		return pClassPointer;
 	};
 
-	bool __ChatHistory_TA__FindHistory ( class UStoredChatData_TA* N );
+	void OnStatEvent ( class UStatEvent_TA* StatEvent );
 };
 
-UClass* U__ChatHistory_TA__FindHistory::pClassPointer = NULL;
+UClass* UProductStat_AerialGoals_TA::pClassPointer = NULL;
+
+// Class TAGame.ProductStat_BackwardsGoals_TA
+// 0x0000 (0x0070 - 0x0070)
+class UProductStat_BackwardsGoals_TA : public UProductStat_SoccarEventBase_TA
+{
+public:
+
+private:
+	static UClass* pClassPointer;
+
+public:
+	static UClass* StaticClass()
+	{
+		if ( ! pClassPointer )
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 88097 ];
+
+		return pClassPointer;
+	};
+
+	void OnStatEvent ( class UStatEvent_TA* StatEvent );
+};
+
+UClass* UProductStat_BackwardsGoals_TA::pClassPointer = NULL;
+
+// Class TAGame.ProductStat_BicycleGoals_TA
+// 0x0000 (0x0070 - 0x0070)
+class UProductStat_BicycleGoals_TA : public UProductStat_SoccarEventBase_TA
+{
+public:
+
+private:
+	static UClass* pClassPointer;
+
+public:
+	static UClass* StaticClass()
+	{
+		if ( ! pClassPointer )
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 88098 ];
+
+		return pClassPointer;
+	};
+
+	void OnStatEvent ( class UStatEvent_TA* StatEvent );
+};
+
+UClass* UProductStat_BicycleGoals_TA::pClassPointer = NULL;
+
+// Class TAGame.ProductStat_Centers_TA
+// 0x0000 (0x0070 - 0x0070)
+class UProductStat_Centers_TA : public UProductStat_SoccarEventBase_TA
+{
+public:
+
+private:
+	static UClass* pClassPointer;
+
+public:
+	static UClass* StaticClass()
+	{
+		if ( ! pClassPointer )
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 88099 ];
+
+		return pClassPointer;
+	};
+
+	void OnStatEvent ( class UStatEvent_TA* StatEvent );
+};
+
+UClass* UProductStat_Centers_TA::pClassPointer = NULL;
+
+// Class TAGame.ProductStat_Clears_TA
+// 0x0000 (0x0070 - 0x0070)
+class UProductStat_Clears_TA : public UProductStat_SoccarEventBase_TA
+{
+public:
+
+private:
+	static UClass* pClassPointer;
+
+public:
+	static UClass* StaticClass()
+	{
+		if ( ! pClassPointer )
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 88100 ];
+
+		return pClassPointer;
+	};
+
+	void OnStatEvent ( class UStatEvent_TA* StatEvent );
+};
+
+UClass* UProductStat_Clears_TA::pClassPointer = NULL;
+
+// Class TAGame.ProductStat_Juggles_TA
+// 0x0000 (0x0070 - 0x0070)
+class UProductStat_Juggles_TA : public UProductStat_SoccarEventBase_TA
+{
+public:
+
+private:
+	static UClass* pClassPointer;
+
+public:
+	static UClass* StaticClass()
+	{
+		if ( ! pClassPointer )
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 88101 ];
+
+		return pClassPointer;
+	};
+
+	void OnStatEvent ( class UStatEvent_TA* StatEvent );
+};
+
+UClass* UProductStat_Juggles_TA::pClassPointer = NULL;
+
+// Class TAGame.ProductStat_LongGoals_TA
+// 0x0000 (0x0070 - 0x0070)
+class UProductStat_LongGoals_TA : public UProductStat_SoccarEventBase_TA
+{
+public:
+
+private:
+	static UClass* pClassPointer;
+
+public:
+	static UClass* StaticClass()
+	{
+		if ( ! pClassPointer )
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 88102 ];
+
+		return pClassPointer;
+	};
+
+	void OnStatEvent ( class UStatEvent_TA* StatEvent );
+};
+
+UClass* UProductStat_LongGoals_TA::pClassPointer = NULL;
+
+// Class TAGame.ProductStat_MVPs_TA
+// 0x0000 (0x0070 - 0x0070)
+class UProductStat_MVPs_TA : public UProductStat_SoccarEventBase_TA
+{
+public:
+
+private:
+	static UClass* pClassPointer;
+
+public:
+	static UClass* StaticClass()
+	{
+		if ( ! pClassPointer )
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 88103 ];
+
+		return pClassPointer;
+	};
+
+	void OnStatEvent ( class UStatEvent_TA* StatEvent );
+};
+
+UClass* UProductStat_MVPs_TA::pClassPointer = NULL;
+
+// Class TAGame.ProductStat_ShotsOnGoal_TA
+// 0x0000 (0x0070 - 0x0070)
+class UProductStat_ShotsOnGoal_TA : public UProductStat_SoccarEventBase_TA
+{
+public:
+
+private:
+	static UClass* pClassPointer;
+
+public:
+	static UClass* StaticClass()
+	{
+		if ( ! pClassPointer )
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 88104 ];
+
+		return pClassPointer;
+	};
+
+	void OnStatEvent ( class UStatEvent_TA* StatEvent );
+};
+
+UClass* UProductStat_ShotsOnGoal_TA::pClassPointer = NULL;
+
+// Class TAGame.ProductStat_TurtleGoals_TA
+// 0x0000 (0x0070 - 0x0070)
+class UProductStat_TurtleGoals_TA : public UProductStat_SoccarEventBase_TA
+{
+public:
+
+private:
+	static UClass* pClassPointer;
+
+public:
+	static UClass* StaticClass()
+	{
+		if ( ! pClassPointer )
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 88105 ];
+
+		return pClassPointer;
+	};
+
+	void OnStatEvent ( class UStatEvent_TA* StatEvent );
+};
+
+UClass* UProductStat_TurtleGoals_TA::pClassPointer = NULL;
 
 // Class TAGame.Save_TA
 // 0x002C (0x0068 - 0x003C)
@@ -33226,7 +33373,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 87992 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 88168 ];
 
 		return pClassPointer;
 	};
@@ -33258,7 +33405,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 87991 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 88167 ];
 
 		return pClassPointer;
 	};
@@ -33280,7 +33427,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 88117 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 88294 ];
 
 		return pClassPointer;
 	};
@@ -33302,7 +33449,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 88124 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 88301 ];
 
 		return pClassPointer;
 	};
@@ -33324,7 +33471,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 88184 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 88360 ];
 
 		return pClassPointer;
 	};
@@ -33333,11 +33480,17 @@ public:
 
 UClass* AGameEditor_Pawn_TA::pClassPointer = NULL;
 
-// Class TAGame.ProductStat_BicycleGoals_TA
-// 0x0000 (0x0070 - 0x0070)
-class UProductStat_BicycleGoals_TA : public UProductStat_SoccarEventBase_TA
+// Class TAGame.StoredChatData_TA
+// 0x0070 (0x00AC - 0x003C)
+class UStoredChatData_TA : public UObject
 {
 public:
+	unsigned char                                      ChatChannel;                                      		// 0x003C (0x0001) [0x0000000000000000]              
+	struct FUniqueNetId                                PersonaId;                                        		// 0x0040 (0x0048) [0x0000000000000000]              
+	struct FString                                     PlayerName;                                       		// 0x0088 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
+	unsigned char                                      UnknownData00[ 0x8 ];                             		// 0x0094 (0x0008) UNKNOWN PROPERTY: QWordProperty TAGame.StoredChatData_TA.LastChatUpdate
+	TArray< struct FChatData >                         Chat;                                             		// 0x009C (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
+	int                                                MaxChatLength;                                    		// 0x00A8 (0x0004) [0x0000000000002000]              ( CPF_Transient )
 
 private:
 	static UClass* pClassPointer;
@@ -33346,21 +33499,23 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 88373 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 88385 ];
 
 		return pClassPointer;
 	};
 
-	void OnStatEvent ( class UStatEvent_TA* StatEvent );
+	void RepopulateChat ( class UGFxData_Chat_TA* GFxChat );
+	void StoreChatMessage ( struct FString Message, unsigned long bIsLocal );
 };
 
-UClass* UProductStat_BicycleGoals_TA::pClassPointer = NULL;
+UClass* UStoredChatData_TA::pClassPointer = NULL;
 
-// Class TAGame.ProductStat_Centers_TA
-// 0x0000 (0x0070 - 0x0070)
-class UProductStat_Centers_TA : public UProductStat_SoccarEventBase_TA
+// Class TAGame.__ChatHistory_TA__FindHistory
+// 0x0048 (0x0084 - 0x003C)
+class U__ChatHistory_TA__FindHistory : public UObject
 {
 public:
+	struct FUniqueNetId                                PersonaId;                                        		// 0x003C (0x0048) [0x0000000000000000]              
 
 private:
 	static UClass* pClassPointer;
@@ -33369,222 +33524,15 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 88374 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 88419 ];
 
 		return pClassPointer;
 	};
 
-	void OnStatEvent ( class UStatEvent_TA* StatEvent );
+	bool __ChatHistory_TA__FindHistory ( class UStoredChatData_TA* N );
 };
 
-UClass* UProductStat_Centers_TA::pClassPointer = NULL;
-
-// Class TAGame.ProductStat_AerialGoals_TA
-// 0x0000 (0x0070 - 0x0070)
-class UProductStat_AerialGoals_TA : public UProductStat_SoccarEventBase_TA
-{
-public:
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 88375 ];
-
-		return pClassPointer;
-	};
-
-	void OnStatEvent ( class UStatEvent_TA* StatEvent );
-};
-
-UClass* UProductStat_AerialGoals_TA::pClassPointer = NULL;
-
-// Class TAGame.ProductStat_Assists_TA
-// 0x0000 (0x0070 - 0x0070)
-class UProductStat_Assists_TA : public UProductStat_SoccarEventBase_TA
-{
-public:
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 88376 ];
-
-		return pClassPointer;
-	};
-
-	void OnStatEvent ( class UStatEvent_TA* StatEvent );
-};
-
-UClass* UProductStat_Assists_TA::pClassPointer = NULL;
-
-// Class TAGame.ProductStat_BackwardsGoals_TA
-// 0x0000 (0x0070 - 0x0070)
-class UProductStat_BackwardsGoals_TA : public UProductStat_SoccarEventBase_TA
-{
-public:
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 88377 ];
-
-		return pClassPointer;
-	};
-
-	void OnStatEvent ( class UStatEvent_TA* StatEvent );
-};
-
-UClass* UProductStat_BackwardsGoals_TA::pClassPointer = NULL;
-
-// Class TAGame.ProductStat_Clears_TA
-// 0x0000 (0x0070 - 0x0070)
-class UProductStat_Clears_TA : public UProductStat_SoccarEventBase_TA
-{
-public:
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 88378 ];
-
-		return pClassPointer;
-	};
-
-	void OnStatEvent ( class UStatEvent_TA* StatEvent );
-};
-
-UClass* UProductStat_Clears_TA::pClassPointer = NULL;
-
-// Class TAGame.ProductStat_Juggles_TA
-// 0x0000 (0x0070 - 0x0070)
-class UProductStat_Juggles_TA : public UProductStat_SoccarEventBase_TA
-{
-public:
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 88379 ];
-
-		return pClassPointer;
-	};
-
-	void OnStatEvent ( class UStatEvent_TA* StatEvent );
-};
-
-UClass* UProductStat_Juggles_TA::pClassPointer = NULL;
-
-// Class TAGame.ProductStat_LongGoals_TA
-// 0x0000 (0x0070 - 0x0070)
-class UProductStat_LongGoals_TA : public UProductStat_SoccarEventBase_TA
-{
-public:
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 88380 ];
-
-		return pClassPointer;
-	};
-
-	void OnStatEvent ( class UStatEvent_TA* StatEvent );
-};
-
-UClass* UProductStat_LongGoals_TA::pClassPointer = NULL;
-
-// Class TAGame.ProductStat_MVPs_TA
-// 0x0000 (0x0070 - 0x0070)
-class UProductStat_MVPs_TA : public UProductStat_SoccarEventBase_TA
-{
-public:
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 88381 ];
-
-		return pClassPointer;
-	};
-
-	void OnStatEvent ( class UStatEvent_TA* StatEvent );
-};
-
-UClass* UProductStat_MVPs_TA::pClassPointer = NULL;
-
-// Class TAGame.ProductStat_ShotsOnGoal_TA
-// 0x0000 (0x0070 - 0x0070)
-class UProductStat_ShotsOnGoal_TA : public UProductStat_SoccarEventBase_TA
-{
-public:
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 88382 ];
-
-		return pClassPointer;
-	};
-
-	void OnStatEvent ( class UStatEvent_TA* StatEvent );
-};
-
-UClass* UProductStat_ShotsOnGoal_TA::pClassPointer = NULL;
-
-// Class TAGame.ProductStat_TurtleGoals_TA
-// 0x0000 (0x0070 - 0x0070)
-class UProductStat_TurtleGoals_TA : public UProductStat_SoccarEventBase_TA
-{
-public:
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 88383 ];
-
-		return pClassPointer;
-	};
-
-	void OnStatEvent ( class UStatEvent_TA* StatEvent );
-};
-
-UClass* UProductStat_TurtleGoals_TA::pClassPointer = NULL;
+UClass* U__ChatHistory_TA__FindHistory::pClassPointer = NULL;
 
 // Class TAGame.__MapGroups_TA__BuildGroups
 // 0x000C (0x0048 - 0x003C)
@@ -33600,7 +33548,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 88724 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 88770 ];
 
 		return pClassPointer;
 	};
@@ -33624,7 +33572,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 88783 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 88831 ];
 
 		return pClassPointer;
 	};
@@ -33649,7 +33597,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 88838 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 88886 ];
 
 		return pClassPointer;
 	};
@@ -33675,7 +33623,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 88884 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 88932 ];
 
 		return pClassPointer;
 	};
@@ -33699,7 +33647,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 88897 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 88945 ];
 
 		return pClassPointer;
 	};
@@ -33723,7 +33671,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 88912 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 88960 ];
 
 		return pClassPointer;
 	};
@@ -33759,7 +33707,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 88920 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 88968 ];
 
 		return pClassPointer;
 	};
@@ -33769,7 +33717,7 @@ public:
 	void __TourGameUpdateDispatcher_TA__OnUpdated ( );
 	void __TourGameUpdateDispatcher_TA__SendUpdateGameRPC ( class URPC_X* RPC );
 	void __GameData__ChangeNotifyFunc ( );
-	void HandleSeriesGameForfeit ( class UMatchSeries_TA* InMatchSeries, int WinningTeamIndex, struct FTourMatchGame* StructInitializer_B2139D37486C5A5D90821DB260B9DB56 );
+	void HandleSeriesGameForfeit ( class UMatchSeries_TA* InMatchSeries, int WinningTeamIndex, struct FTourMatchGame* StructInitializer_92EB67074E66F4F613BC31ACC3B1EF27 );
 	void SendUpdateGameRPC ( int InGameNum, struct FTourMatchGame InGameData, int SeriesWinnerID );
 	int GetTeamID ( class ATeam_TA* Team );
 	void HandleOvertimeUpdated ( class AGameEvent_Soccar_TA* GameEvent );
@@ -33778,7 +33726,7 @@ public:
 	void OnUpdated ( );
 	void HandleStartNewRound ( class AGameEvent_Soccar_TA* GameEvent );
 	void HandleGameEnded ( class AGameEvent_Soccar_TA* GameEvent );
-	void Init ( class AGameEvent_Soccar_TA* GameEvent, struct FTourServerSettings* Settings, TArray< int >* MapLocal_2B65D7B149CB5AD12163F3AC8FE07D3C );
+	void Init ( class AGameEvent_Soccar_TA* GameEvent, struct FTourServerSettings* Settings, TArray< int >* MapLocal_88BD66B64DA81BEC910A989570DA350F );
 	void EventUpdateError ( class UError* Error );
 };
 
@@ -33798,7 +33746,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 88947 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 88995 ];
 
 		return pClassPointer;
 	};
@@ -33822,7 +33770,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 89127 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 89176 ];
 
 		return pClassPointer;
 	};
@@ -33848,7 +33796,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 89137 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 89186 ];
 
 		return pClassPointer;
 	};
@@ -33873,7 +33821,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 89160 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 89240 ];
 
 		return pClassPointer;
 	};
@@ -33898,7 +33846,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 89168 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 89248 ];
 
 		return pClassPointer;
 	};
@@ -33907,6 +33855,30 @@ public:
 };
 
 UClass* UPartyMessage_TourPreCheckIn_TA::pClassPointer = NULL;
+
+// Class TAGame.__TourEventMatchComplete_TA__HandleGameStateChanged
+// 0x0004 (0x0040 - 0x003C)
+class U__TourEventMatchComplete_TA__HandleGameStateChanged : public UObject
+{
+public:
+	int                                                HalfMatchGames;                                   		// 0x003C (0x0004) [0x0000000000000000]              
+
+private:
+	static UClass* pClassPointer;
+
+public:
+	static UClass* StaticClass()
+	{
+		if ( ! pClassPointer )
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 89408 ];
+
+		return pClassPointer;
+	};
+
+	bool __TourEventMatchComplete_TA__HandleGameStateChanged ( class ATeam_Soccar_TA* T );
+};
+
+UClass* U__TourEventMatchComplete_TA__HandleGameStateChanged::pClassPointer = NULL;
 
 // Class TAGame.__TourMatchServerBrowser_TA__GetMatchServer
 // 0x0010 (0x004C - 0x003C)
@@ -33923,7 +33895,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 89326 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 89426 ];
 
 		return pClassPointer;
 	};
@@ -33950,7 +33922,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 89329 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 89429 ];
 
 		return pClassPointer;
 	};
@@ -33962,233 +33934,6 @@ public:
 };
 
 UClass* URPC_TourGetMatchServer_TA::pClassPointer = NULL;
-
-// Class TAGame.__TourSettingsCache_TA__Find
-// 0x0008 (0x0044 - 0x003C)
-class U__TourSettingsCache_TA__Find : public UObject
-{
-public:
-	unsigned char                                      UnknownData00[ 0x8 ];                             		// 0x003C (0x0008) UNKNOWN PROPERTY: QWordProperty TAGame.__TourSettingsCache_TA__Find.TourID
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 89385 ];
-
-		return pClassPointer;
-	};
-
-	bool __TourSettingsCache_TA__Find ( class UTourSettings_TA* T );
-};
-
-UClass* U__TourSettingsCache_TA__Find::pClassPointer = NULL;
-
-// Class TAGame.__TourSubscriptions_TA__GetTournament
-// 0x0008 (0x0044 - 0x003C)
-class U__TourSubscriptions_TA__GetTournament : public UObject
-{
-public:
-	unsigned char                                      UnknownData00[ 0x8 ];                             		// 0x003C (0x0008) UNKNOWN PROPERTY: QWordProperty TAGame.__TourSubscriptions_TA__GetTournament.TourID
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 89396 ];
-
-		return pClassPointer;
-	};
-
-	bool __TourSubscriptions_TA__GetTournament ( class UTourSettings_TA* T );
-};
-
-UClass* U__TourSubscriptions_TA__GetTournament::pClassPointer = NULL;
-
-// Class TAGame.RPC_TourUnsubscribe_TA
-// 0x0050 (0x00EC - 0x009C)
-class URPC_TourUnsubscribe_TA : public URPC_X
-{
-public:
-	struct FUniqueNetId                                PlayerID;                                         		// 0x009C (0x0048) [0x0000000000000000]              
-	unsigned char                                      UnknownData00[ 0x8 ];                             		// 0x00E4 (0x0008) UNKNOWN PROPERTY: QWordProperty TAGame.RPC_TourUnsubscribe_TA.TournamentID
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 89402 ];
-
-		return pClassPointer;
-	};
-
-	class URPC_TourUnsubscribe_TA* SetTournamentID ( );
-	class URPC_TourUnsubscribe_TA* SetPlayerID ( struct FUniqueNetId InPlayerId );
-};
-
-UClass* URPC_TourUnsubscribe_TA::pClassPointer = NULL;
-
-// Class TAGame.__TourSubscriptions_TA__Select
-// 0x000C (0x0048 - 0x003C)
-class U__TourSubscriptions_TA__Select : public UObject
-{
-public:
-	unsigned char                                      UnknownData00[ 0xC ];                             		// 0x003C (0x000C) UNKNOWN PROPERTY: ArrayProperty TAGame.__TourSubscriptions_TA__Select.TourIDs
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 89437 ];
-
-		return pClassPointer;
-	};
-
-	bool __TourSubscriptions_TA__Select ( class UTourSettings_TA* T );
-};
-
-UClass* U__TourSubscriptions_TA__Select::pClassPointer = NULL;
-
-// Class TAGame.RPC_TourGetSubscriptions_TA
-// 0x00A8 (0x0144 - 0x009C)
-class URPC_TourGetSubscriptions_TA : public URPC_X
-{
-public:
-	struct FUniqueNetId                                PlayerID;                                         		// 0x009C (0x0048) [0x0000000000000000]              
-	TArray< class UTourSettings_TA* >                  Tournaments;                                      		// 0x00E4 (0x000C) [0x0000000000402000]              ( CPF_Transient | CPF_NeedCtorLink )
-	unsigned char                                      UnknownData00[ 0xC ];                             		// 0x00F0 (0x000C) UNKNOWN PROPERTY: ArrayProperty TAGame.RPC_TourGetSubscriptions_TA.CreatorOf
-	unsigned char                                      UnknownData01[ 0xC ];                             		// 0x00FC (0x000C) UNKNOWN PROPERTY: ArrayProperty TAGame.RPC_TourGetSubscriptions_TA.AdminOf
-	unsigned char                                      UnknownData02[ 0xC ];                             		// 0x0108 (0x000C) UNKNOWN PROPERTY: ArrayProperty TAGame.RPC_TourGetSubscriptions_TA.Registered
-	unsigned char                                      UnknownData03[ 0x8 ];                             		// 0x0114 (0x0008) UNKNOWN PROPERTY: QWordProperty TAGame.RPC_TourGetSubscriptions_TA.ActiveTournamentID
-	struct FTourTeam                                   ActiveTeam;                                       		// 0x011C (0x0028) [0x0000000000402000]              ( CPF_Transient | CPF_NeedCtorLink )
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 89465 ];
-
-		return pClassPointer;
-	};
-
-	class URPC_TourGetSubscriptions_TA* SetPlayerID ( struct FUniqueNetId InPlayerId );
-};
-
-UClass* URPC_TourGetSubscriptions_TA::pClassPointer = NULL;
-
-// Class TAGame.GFxTourList_TA
-// 0x000C (0x0054 - 0x0048)
-class UGFxTourList_TA : public UComponent
-{
-public:
-	class UGFxShell_X*                                 Shell;                                            		// 0x0048 (0x0004) [0x0000000000002000]              ( CPF_Transient )
-	class UTourList_TA*                                TourList;                                         		// 0x004C (0x0004) [0x0000000004082008]              ( CPF_ExportObject | CPF_Transient | CPF_Component | CPF_EditInline )
-	class UClass*                                      GFxDataClass;                                     		// 0x0050 (0x0004) [0x0000000000002000]              ( CPF_Transient )
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 89478 ];
-
-		return pClassPointer;
-	};
-
-	void __GFxTourList_TA__HandleTournamentsChanged ( class UTourSettings_TA* T );
-	void HandleTournamentsChanged ( class UTourList_TA* InTourList );
-	void Init ( class UGFxShell_X* InShell, class UTourList_TA* InTourList, class UClass* InGFxDataClass );
-};
-
-UClass* UGFxTourList_TA::pClassPointer = NULL;
-
-// Class TAGame.GFxData_TourSubscription_TA
-// 0x0000 (0x0054 - 0x0054)
-class UGFxData_TourSubscription_TA : public UGFxDataRow_X
-{
-public:
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 89481 ];
-
-		return pClassPointer;
-	};
-
-	void SetProxy ( class UObject* InProxyObject );
-};
-
-UClass* UGFxData_TourSubscription_TA::pClassPointer = NULL;
-
-// Class TAGame.__TourList_TA__AddUnique
-// 0x0004 (0x0040 - 0x003C)
-class U__TourList_TA__AddUnique : public UObject
-{
-public:
-	class UTourSettings_TA*                            Tournament;                                       		// 0x003C (0x0004) [0x0000000000000000]              
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 89525 ];
-
-		return pClassPointer;
-	};
-
-	bool __TourList_TA__AddUnique ( class UTourSettings_TA* T );
-};
-
-UClass* U__TourList_TA__AddUnique::pClassPointer = NULL;
-
-// Class TAGame.__TourEventMatchComplete_TA__HandleGameStateChanged
-// 0x0004 (0x0040 - 0x003C)
-class U__TourEventMatchComplete_TA__HandleGameStateChanged : public UObject
-{
-public:
-	int                                                HalfMatchGames;                                   		// 0x003C (0x0004) [0x0000000000000000]              
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 89597 ];
-
-		return pClassPointer;
-	};
-
-	bool __TourEventMatchComplete_TA__HandleGameStateChanged ( class ATeam_Soccar_TA* T );
-};
-
-UClass* U__TourEventMatchComplete_TA__HandleGameStateChanged::pClassPointer = NULL;
 
 // Class TAGame.PartyMessage_TourCheckIn_TA
 // 0x0044 (0x00C8 - 0x0084)
@@ -34206,7 +33951,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 89614 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 89447 ];
 
 		return pClassPointer;
 	};
@@ -34233,7 +33978,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 89615 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 89448 ];
 
 		return pClassPointer;
 	};
@@ -34264,7 +34009,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 89647 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 89482 ];
 
 		return pClassPointer;
 	};
@@ -34294,7 +34039,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 89651 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 89486 ];
 
 		return pClassPointer;
 	};
@@ -34318,7 +34063,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 89672 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 89509 ];
 
 		return pClassPointer;
 	};
@@ -34346,18 +34091,18 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 89678 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 89515 ];
 
 		return pClassPointer;
 	};
 
 	void __GFxData_TourSubscriptions_TA__Unsubscribe ( class UError* E );
-	struct FSubscriptionInfo __GFxData_TourSubscriptions_TA__HandleCreatedChanged ( struct FSubscriptionInfo* StructInitializer_5F3AD11C482B2FC0B6083E963867343D );
-	struct FSubscriptionInfo __GFxData_TourSubscriptions_TA__HandleAdminOfChanged ( struct FSubscriptionInfo* StructInitializer_8D6829CF4E7F2394C095AEB6A7022D3A );
-	struct FSubscriptionInfo __GFxData_TourSubscriptions_TA__HandleRegisteredToChanged ( struct FSubscriptionInfo* StructInitializer_12266BDF4EF12F303EBD6B93943D4F11 );
-	void HandleRegisteredToChanged ( TArray< struct FSubscriptionInfo >* MapLocal_4205789142C63B86318486B140337E23 );
-	void HandleAdminOfChanged ( TArray< struct FSubscriptionInfo >* MapLocal_D9A572884704F4DE26E2D09BA6A440FA );
-	void HandleCreatedChanged ( TArray< struct FSubscriptionInfo >* MapLocal_F14CBBA14A4BA3E59B4C8E862FDDE474 );
+	struct FSubscriptionInfo __GFxData_TourSubscriptions_TA__HandleCreatedChanged ( struct FSubscriptionInfo* StructInitializer_34FD9D2642BBA8309D7AB483DCF0506D );
+	struct FSubscriptionInfo __GFxData_TourSubscriptions_TA__HandleAdminOfChanged ( struct FSubscriptionInfo* StructInitializer_9F4631D74069F03962E0EEB9CE034E42 );
+	struct FSubscriptionInfo __GFxData_TourSubscriptions_TA__HandleRegisteredToChanged ( struct FSubscriptionInfo* StructInitializer_50F02F104E803274882FCE82546F3397 );
+	void HandleRegisteredToChanged ( TArray< struct FSubscriptionInfo >* MapLocal_4F10A5FE44D15B6EC4373CBF892E200C );
+	void HandleAdminOfChanged ( TArray< struct FSubscriptionInfo >* MapLocal_FE74440C4CC0A72EA2F5169BEB685694 );
+	void HandleCreatedChanged ( TArray< struct FSubscriptionInfo >* MapLocal_A58452E844F0003B3B32CB9D56ED50CD );
 	void HandleCancelCreated ( class URPC_TourCancelCreated_TA* RPC );
 	void CancelCreated ( );
 	void Unsubscribe ( );
@@ -34383,7 +34128,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 89699 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 89536 ];
 
 		return pClassPointer;
 	};
@@ -34392,6 +34137,209 @@ public:
 };
 
 UClass* U__TourRegistration_TA__Register::pClassPointer = NULL;
+
+// Class TAGame.__TourSettingsCache_TA__Find
+// 0x0008 (0x0044 - 0x003C)
+class U__TourSettingsCache_TA__Find : public UObject
+{
+public:
+	unsigned char                                      UnknownData00[ 0x8 ];                             		// 0x003C (0x0008) UNKNOWN PROPERTY: QWordProperty TAGame.__TourSettingsCache_TA__Find.TourID
+
+private:
+	static UClass* pClassPointer;
+
+public:
+	static UClass* StaticClass()
+	{
+		if ( ! pClassPointer )
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 89639 ];
+
+		return pClassPointer;
+	};
+
+	bool __TourSettingsCache_TA__Find ( class UTourSettings_TA* T );
+};
+
+UClass* U__TourSettingsCache_TA__Find::pClassPointer = NULL;
+
+// Class TAGame.__TourSubscriptions_TA__GetTournament
+// 0x0008 (0x0044 - 0x003C)
+class U__TourSubscriptions_TA__GetTournament : public UObject
+{
+public:
+	unsigned char                                      UnknownData00[ 0x8 ];                             		// 0x003C (0x0008) UNKNOWN PROPERTY: QWordProperty TAGame.__TourSubscriptions_TA__GetTournament.TourID
+
+private:
+	static UClass* pClassPointer;
+
+public:
+	static UClass* StaticClass()
+	{
+		if ( ! pClassPointer )
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 89655 ];
+
+		return pClassPointer;
+	};
+
+	bool __TourSubscriptions_TA__GetTournament ( class UTourSettings_TA* T );
+};
+
+UClass* U__TourSubscriptions_TA__GetTournament::pClassPointer = NULL;
+
+// Class TAGame.RPC_TourUnsubscribe_TA
+// 0x0050 (0x00EC - 0x009C)
+class URPC_TourUnsubscribe_TA : public URPC_X
+{
+public:
+	struct FUniqueNetId                                PlayerID;                                         		// 0x009C (0x0048) [0x0000000000000000]              
+	unsigned char                                      UnknownData00[ 0x8 ];                             		// 0x00E4 (0x0008) UNKNOWN PROPERTY: QWordProperty TAGame.RPC_TourUnsubscribe_TA.TournamentID
+
+private:
+	static UClass* pClassPointer;
+
+public:
+	static UClass* StaticClass()
+	{
+		if ( ! pClassPointer )
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 89661 ];
+
+		return pClassPointer;
+	};
+
+	class URPC_TourUnsubscribe_TA* SetTournamentID ( );
+	class URPC_TourUnsubscribe_TA* SetPlayerID ( struct FUniqueNetId InPlayerId );
+};
+
+UClass* URPC_TourUnsubscribe_TA::pClassPointer = NULL;
+
+// Class TAGame.__TourSubscriptions_TA__Select
+// 0x000C (0x0048 - 0x003C)
+class U__TourSubscriptions_TA__Select : public UObject
+{
+public:
+	unsigned char                                      UnknownData00[ 0xC ];                             		// 0x003C (0x000C) UNKNOWN PROPERTY: ArrayProperty TAGame.__TourSubscriptions_TA__Select.TourIDs
+
+private:
+	static UClass* pClassPointer;
+
+public:
+	static UClass* StaticClass()
+	{
+		if ( ! pClassPointer )
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 89692 ];
+
+		return pClassPointer;
+	};
+
+	bool __TourSubscriptions_TA__Select ( class UTourSettings_TA* T );
+};
+
+UClass* U__TourSubscriptions_TA__Select::pClassPointer = NULL;
+
+// Class TAGame.RPC_TourGetSubscriptions_TA
+// 0x00A8 (0x0144 - 0x009C)
+class URPC_TourGetSubscriptions_TA : public URPC_X
+{
+public:
+	struct FUniqueNetId                                PlayerID;                                         		// 0x009C (0x0048) [0x0000000000000000]              
+	TArray< class UTourSettings_TA* >                  Tournaments;                                      		// 0x00E4 (0x000C) [0x0000000000402000]              ( CPF_Transient | CPF_NeedCtorLink )
+	unsigned char                                      UnknownData00[ 0xC ];                             		// 0x00F0 (0x000C) UNKNOWN PROPERTY: ArrayProperty TAGame.RPC_TourGetSubscriptions_TA.CreatorOf
+	unsigned char                                      UnknownData01[ 0xC ];                             		// 0x00FC (0x000C) UNKNOWN PROPERTY: ArrayProperty TAGame.RPC_TourGetSubscriptions_TA.AdminOf
+	unsigned char                                      UnknownData02[ 0xC ];                             		// 0x0108 (0x000C) UNKNOWN PROPERTY: ArrayProperty TAGame.RPC_TourGetSubscriptions_TA.Registered
+	unsigned char                                      UnknownData03[ 0x8 ];                             		// 0x0114 (0x0008) UNKNOWN PROPERTY: QWordProperty TAGame.RPC_TourGetSubscriptions_TA.ActiveTournamentID
+	struct FTourTeam                                   ActiveTeam;                                       		// 0x011C (0x0028) [0x0000000000402000]              ( CPF_Transient | CPF_NeedCtorLink )
+
+private:
+	static UClass* pClassPointer;
+
+public:
+	static UClass* StaticClass()
+	{
+		if ( ! pClassPointer )
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 89718 ];
+
+		return pClassPointer;
+	};
+
+	class URPC_TourGetSubscriptions_TA* SetPlayerID ( struct FUniqueNetId InPlayerId );
+};
+
+UClass* URPC_TourGetSubscriptions_TA::pClassPointer = NULL;
+
+// Class TAGame.GFxTourList_TA
+// 0x000C (0x0054 - 0x0048)
+class UGFxTourList_TA : public UComponent
+{
+public:
+	class UGFxShell_X*                                 Shell;                                            		// 0x0048 (0x0004) [0x0000000000002000]              ( CPF_Transient )
+	class UTourList_TA*                                TourList;                                         		// 0x004C (0x0004) [0x0000000004082008]              ( CPF_ExportObject | CPF_Transient | CPF_Component | CPF_EditInline )
+	class UClass*                                      GFxDataClass;                                     		// 0x0050 (0x0004) [0x0000000000002000]              ( CPF_Transient )
+
+private:
+	static UClass* pClassPointer;
+
+public:
+	static UClass* StaticClass()
+	{
+		if ( ! pClassPointer )
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 89731 ];
+
+		return pClassPointer;
+	};
+
+	void __GFxTourList_TA__HandleTournamentsChanged ( class UTourSettings_TA* T );
+	void HandleTournamentsChanged ( class UTourList_TA* InTourList );
+	void Init ( class UGFxShell_X* InShell, class UTourList_TA* InTourList, class UClass* InGFxDataClass );
+};
+
+UClass* UGFxTourList_TA::pClassPointer = NULL;
+
+// Class TAGame.GFxData_TourSubscription_TA
+// 0x0000 (0x0054 - 0x0054)
+class UGFxData_TourSubscription_TA : public UGFxDataRow_X
+{
+public:
+
+private:
+	static UClass* pClassPointer;
+
+public:
+	static UClass* StaticClass()
+	{
+		if ( ! pClassPointer )
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 89734 ];
+
+		return pClassPointer;
+	};
+
+	void SetProxy ( class UObject* InProxyObject );
+};
+
+UClass* UGFxData_TourSubscription_TA::pClassPointer = NULL;
+
+// Class TAGame.__TourList_TA__AddUnique
+// 0x0004 (0x0040 - 0x003C)
+class U__TourList_TA__AddUnique : public UObject
+{
+public:
+	class UTourSettings_TA*                            Tournament;                                       		// 0x003C (0x0004) [0x0000000000000000]              
+
+private:
+	static UClass* pClassPointer;
+
+public:
+	static UClass* StaticClass()
+	{
+		if ( ! pClassPointer )
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 89775 ];
+
+		return pClassPointer;
+	};
+
+	bool __TourList_TA__AddUnique ( class UTourSettings_TA* T );
+};
+
+UClass* U__TourList_TA__AddUnique::pClassPointer = NULL;
 
 // Class TAGame.SeqEvent_PreviewGoalExplosion_TA
 // 0x0004 (0x0118 - 0x0114)
@@ -34407,7 +34355,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 90053 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 90102 ];
 
 		return pClassPointer;
 	};
@@ -34437,7 +34385,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 90094 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 90137 ];
 
 		return pClassPointer;
 	};
@@ -34480,7 +34428,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 90096 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 90139 ];
 
 		return pClassPointer;
 	};
@@ -34503,7 +34451,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 90111 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 90154 ];
 
 		return pClassPointer;
 	};
@@ -34545,7 +34493,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 90479 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 90528 ];
 
 		return pClassPointer;
 	};
@@ -34579,7 +34527,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 90641 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 90690 ];
 
 		return pClassPointer;
 	};
@@ -34589,6 +34537,33 @@ public:
 };
 
 UClass* URPC_TourCancelCreated_TA::pClassPointer = NULL;
+
+// Class TAGame.RPC_MicroTransactions_ClaimEntitlements_TA
+// 0x0060 (0x00FC - 0x009C)
+class URPC_MicroTransactions_ClaimEntitlements_TA : public URPC_X
+{
+public:
+	struct FUniqueNetId                                PlayerID;                                         		// 0x009C (0x0048) [0x0000000000000000]              
+	struct FString                                     AuthCode;                                         		// 0x00E4 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
+	TArray< struct FOnlineProductData >                Products;                                         		// 0x00F0 (0x000C) [0x0000000000402000]              ( CPF_Transient | CPF_NeedCtorLink )
+
+private:
+	static UClass* pClassPointer;
+
+public:
+	static UClass* StaticClass()
+	{
+		if ( ! pClassPointer )
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 90740 ];
+
+		return pClassPointer;
+	};
+
+	class URPC_MicroTransactions_ClaimEntitlements_TA* SetAuthCode ( struct FString InAuthCode );
+	class URPC_MicroTransactions_ClaimEntitlements_TA* SetPlayerID ( struct FUniqueNetId InPlayerId );
+};
+
+UClass* URPC_MicroTransactions_ClaimEntitlements_TA::pClassPointer = NULL;
 
 // Class TAGame.__MenuSequencer_TA__SetSequence
 // 0x0004 (0x0040 - 0x003C)
@@ -34604,7 +34579,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 90695 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 90820 ];
 
 		return pClassPointer;
 	};
@@ -34628,7 +34603,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 90701 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 90826 ];
 
 		return pClassPointer;
 	};
@@ -34637,33 +34612,6 @@ public:
 };
 
 UClass* U__MenuSequencer_TA__GetSequence::pClassPointer = NULL;
-
-// Class TAGame.RPC_MicroTransactions_ClaimEntitlements_TA
-// 0x0060 (0x00FC - 0x009C)
-class URPC_MicroTransactions_ClaimEntitlements_TA : public URPC_X
-{
-public:
-	struct FUniqueNetId                                PlayerID;                                         		// 0x009C (0x0048) [0x0000000000000000]              
-	struct FString                                     AuthCode;                                         		// 0x00E4 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	TArray< struct FOnlineProductData >                Products;                                         		// 0x00F0 (0x000C) [0x0000000000402000]              ( CPF_Transient | CPF_NeedCtorLink )
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 90747 ];
-
-		return pClassPointer;
-	};
-
-	class URPC_MicroTransactions_ClaimEntitlements_TA* SetAuthCode ( struct FString InAuthCode );
-	class URPC_MicroTransactions_ClaimEntitlements_TA* SetPlayerID ( struct FUniqueNetId InPlayerId );
-};
-
-UClass* URPC_MicroTransactions_ClaimEntitlements_TA::pClassPointer = NULL;
 
 // Class TAGame.SeqEvent_MTXGarageReveal_TA
 // 0x0000 (0x0114 - 0x0114)
@@ -34678,7 +34626,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 90810 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 90859 ];
 
 		return pClassPointer;
 	};
@@ -34701,7 +34649,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 91020 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 91063 ];
 
 		return pClassPointer;
 	};
@@ -34731,7 +34679,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 91048 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 91091 ];
 
 		return pClassPointer;
 	};
@@ -34773,7 +34721,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 91095 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 91138 ];
 
 		return pClassPointer;
 	};
@@ -34817,7 +34765,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 91428 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 91467 ];
 
 		return pClassPointer;
 	};
@@ -34841,7 +34789,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 91429 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 91468 ];
 
 		return pClassPointer;
 	};
@@ -34865,7 +34813,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 91430 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 91469 ];
 
 		return pClassPointer;
 	};
@@ -34888,7 +34836,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 91431 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 91470 ];
 
 		return pClassPointer;
 	};
@@ -34911,7 +34859,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 91432 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 91471 ];
 
 		return pClassPointer;
 	};
@@ -34935,7 +34883,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 91433 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 91472 ];
 
 		return pClassPointer;
 	};
@@ -34959,7 +34907,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 91434 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 91473 ];
 
 		return pClassPointer;
 	};
@@ -34983,7 +34931,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 91435 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 91474 ];
 
 		return pClassPointer;
 	};
@@ -35007,7 +34955,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 91436 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 91475 ];
 
 		return pClassPointer;
 	};
@@ -35045,7 +34993,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 91496 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 91574 ];
 
 		return pClassPointer;
 	};
@@ -35109,7 +35057,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 91544 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 91622 ];
 
 		return pClassPointer;
 	};
@@ -35140,7 +35088,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 91641 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 91684 ];
 
 		return pClassPointer;
 	};
@@ -35167,7 +35115,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 91686 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 91729 ];
 
 		return pClassPointer;
 	};
@@ -35195,7 +35143,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 91701 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 91744 ];
 
 		return pClassPointer;
 	};
@@ -35224,7 +35172,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 91726 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 91769 ];
 
 		return pClassPointer;
 	};
@@ -35254,7 +35202,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 91828 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 91871 ];
 
 		return pClassPointer;
 	};
@@ -35281,7 +35229,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 91891 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 91934 ];
 
 		return pClassPointer;
 	};
@@ -35304,7 +35252,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 91943 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 91986 ];
 
 		return pClassPointer;
 	};
@@ -35327,7 +35275,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 91944 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 91987 ];
 
 		return pClassPointer;
 	};
@@ -35352,7 +35300,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 92001 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 92044 ];
 
 		return pClassPointer;
 	};
@@ -35378,7 +35326,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 92016 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 92059 ];
 
 		return pClassPointer;
 	};
@@ -35401,7 +35349,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 92027 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 92070 ];
 
 		return pClassPointer;
 	};
@@ -35424,7 +35372,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 92040 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 92083 ];
 
 		return pClassPointer;
 	};
@@ -35452,7 +35400,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 92044 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 92087 ];
 
 		return pClassPointer;
 	};
@@ -35519,7 +35467,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 92047 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 92090 ];
 
 		return pClassPointer;
 	};
@@ -35543,7 +35491,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 92058 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 92101 ];
 
 		return pClassPointer;
 	};
@@ -35579,7 +35527,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 92064 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 92107 ];
 
 		return pClassPointer;
 	};
@@ -35594,7 +35542,7 @@ public:
 	int GetGameTagIndex ( struct FString GameTagCategory, struct FString Value );
 	void SetSelectedGameMode ( int GameMode );
 	void SetSelectedMapName ( struct FName MapName );
-	void InitMutatorCustomGameSettings ( TArray< class UGameSettingCategory_X* >* FilterLocal_012EA3454B9CAAE4BE649CA0C1DD3F89 );
+	void InitMutatorCustomGameSettings ( TArray< class UGameSettingCategory_X* >* FilterLocal_98A084A24F9D4615BE291E89B55320B5 );
 	void InitCustomGameSettings ( );
 	void RefreshCustomGameSettings ( int MutatorCategoryIndex, int MutatorSettingIndex );
 	void OnUpdatedSettings ( );
@@ -35627,7 +35575,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 92066 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 92109 ];
 
 		return pClassPointer;
 	};
@@ -35663,20 +35611,20 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 92077 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 92120 ];
 
 		return pClassPointer;
 	};
 
-	struct FFilterProductSlot __GFxData_ProductFilter_TA__InitProductSlots ( class UProductSlot_TA* Slot, struct FFilterProductSlot* StructInitializer_EBE3317044A8A1D11F6F9681E1EE3B3F );
+	struct FFilterProductSlot __GFxData_ProductFilter_TA__InitProductSlots ( class UProductSlot_TA* Slot, struct FFilterProductSlot* StructInitializer_729879274BDA59B657269F8DD013C420 );
 	class UProduct_TA* __GFxData_ProductFilter_TA__RefreshPreviewQuantity ( int Id );
 	void RemoveNewProduct ( );
 	void PopFilterType ( unsigned char Type );
 	void PushFilterType ( unsigned char Type );
 	void ClearFilterType ( unsigned char Type );
-	void UpdateProductSlotNewItems ( TArray< class UProduct_TA* >* FilterLocal_4D1F85374C80AF979285CCA1CC5650B2 );
+	void UpdateProductSlotNewItems ( TArray< class UProduct_TA* >* FilterLocal_A9030FAB4DA80A7CDF9CFCB9403A6A8D );
 	void UpdateFromType ( unsigned char Type );
-	void RefreshPreviewQuantity ( unsigned char Type, TArray< class UProduct_TA* >* MapLocal_D4A8D72642F4A659C09DC1A10FF8F843 );
+	void RefreshPreviewQuantity ( unsigned char Type, TArray< class UProduct_TA* >* MapLocal_9EA46F45432DC3E3DFD7BCAD3DD42214 );
 	void HandleBatchPreviewQuantity ( );
 	void ApplyKeyTradeRestrictionOption ( unsigned char Type, struct FProductFilter* OutFilter );
 	void ApplyContainerNotificationOption ( struct FProductFilter* OutFilter );
@@ -35692,7 +35640,7 @@ public:
 	void SetQualitySelected ( int Row, unsigned long bSelected, unsigned char FilterType );
 	void SetSlotSelected ( int Row, unsigned long bSelected, unsigned char FilterType );
 	void SetLabel ( struct FString NewLabel, unsigned char FilterType );
-	void FilterProducts ( unsigned char FilterType, TArray< class UProduct_TA* >* FilterLocal_0E9905124E6032C950537A96F7CF4956, TArray< class UOnlineProduct_TA* >* FilterLocal_62F25EA042588BD720CD29977DC005BD );
+	void FilterProducts ( unsigned char FilterType, TArray< class UProduct_TA* >* FilterLocal_FACF56034C493A272B560795AC2E97FB, TArray< class UOnlineProduct_TA* >* FilterLocal_F8124EA84EDDE4EB02664E9054B81C99 );
 	void UpdateProductSeriesIDs ( struct FProductFilter* InFilter );
 	void UpdateProductAttributes ( struct FProductFilter* InFilter );
 	void UpdateProductQualities ( struct FProductFilter* InFilter );
@@ -35703,7 +35651,7 @@ public:
 	void InitProductAttributes ( );
 	void InitProductQualities ( );
 	void HandleDisableContainerChanged ( );
-	void InitProductSlots ( TArray< struct FFilterProductSlot >* MapLocal_D091E51A49D040CA3FA9B49B562007F1 );
+	void InitProductSlots ( TArray< struct FFilterProductSlot >* MapLocal_4FC86AF14B96FDFCDA16EBBA4CD63051 );
 	void eventOnShellSet ( );
 	class UProfile_TA* GetProfile ( );
 };
@@ -35724,7 +35672,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 92079 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 92122 ];
 
 		return pClassPointer;
 	};
@@ -35748,7 +35696,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 92085 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 92128 ];
 
 		return pClassPointer;
 	};
@@ -35773,13 +35721,12 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 92091 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 92134 ];
 
 		return pClassPointer;
 	};
 
 	bool __GFxData_ProductFilter_TA__UpdateProductSlotNewItems ( class UProduct_TA* Product );
-	//bool __GFxData_ProductFilter_TA__UpdateProductSlotNewItems ( class UProduct_TA* Product );
 };
 
 UClass* U__GFxData_ProductFilter_TA__UpdateProductSlotNewItems::pClassPointer = NULL;
@@ -35798,7 +35745,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 92108 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 92151 ];
 
 		return pClassPointer;
 	};
@@ -35825,7 +35772,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 92113 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 92156 ];
 
 		return pClassPointer;
 	};
@@ -35854,7 +35801,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 92115 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 92158 ];
 
 		return pClassPointer;
 	};
@@ -35888,7 +35835,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 92117 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 92160 ];
 
 		return pClassPointer;
 	};
@@ -35915,7 +35862,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 92121 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 92164 ];
 
 		return pClassPointer;
 	};
@@ -35953,7 +35900,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 92124 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 92167 ];
 
 		return pClassPointer;
 	};
@@ -35978,7 +35925,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 92131 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 92174 ];
 
 		return pClassPointer;
 	};
@@ -36003,7 +35950,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 92142 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 92185 ];
 
 		return pClassPointer;
 	};
@@ -36044,7 +35991,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 92146 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 92189 ];
 
 		return pClassPointer;
 	};
@@ -36056,7 +36003,7 @@ public:
 	struct FString GetOnlineStatusError ( );
 	void HandleMapSelectionChange ( class UGFxData_MapSelection_TA* GFxMapSelection, struct FName MapName, unsigned long bSelected );
 	void HandleMapListChange ( class UGFxData_MapSelection_TA* GFxMapSelection );
-	void HandlePlatformSelectionChange ( class UGFxData_TourPlatforms_TA* GFxPlatforms, TArray< unsigned char > NewPlatforms, TArray< struct FString >* MapLocal_FA6E1C804C6020C1CA15229E7B679C24 );
+	void HandlePlatformSelectionChange ( class UGFxData_TourPlatforms_TA* GFxPlatforms, TArray< unsigned char > NewPlatforms, TArray< struct FString >* MapLocal_B83452E340FD40A2FB8515905A4CAF15 );
 	void GFxRewardsToTourRewards ( TArray< struct FGFxTournamentReward >* GFxRewards, TArray< struct FTourReward >* TourRewards );
 	void RemoveReward ( int Placement );
 	void AddReward ( int Placement );
@@ -36071,9 +36018,9 @@ public:
 	void HandleError ( class UError* Error );
 	void OnCreateComplete ( );
 	void HandleCreateTournament ( class UTourSettings_TA* Tournament, struct FTourPrivateCredentials Credentials );
-	void CreateTournament ( struct FTourPrivateCredentials* StructInitializer_79DC1B7E408E474175E11B9668A67EB0 );
-	void Update ( TArray< unsigned char >* MapLocal_847EACCF4D7A12CFB7B488907AA68397 );
-	TArray< struct FName > GetDefaultDisabledMaps ( TArray< struct FName >* MapLocal_46DA836C47C93BCAE2076E856D547FEF, TArray< struct FName >* MapLocal_3DF43B1447EC38FB0177988D47396134, TArray< struct FName >* FilterLocal_95B22E7D4585D1F30E1ADBBD0095ABF9 );
+	void CreateTournament ( struct FTourPrivateCredentials* StructInitializer_693335874E2E45461B1A7CBE231AE4E2 );
+	void Update ( TArray< unsigned char >* MapLocal_6ABBD3B649F8D335D6C7C8B588F2DC1B );
+	TArray< struct FName > GetDefaultDisabledMaps ( TArray< struct FName >* MapLocal_727D40794D1B4D1706B7B6AEC9B068B8, TArray< struct FName >* MapLocal_EEE43EF8446835154380E7AED178C716, TArray< struct FName >* FilterLocal_4A905B6A4DD6F4FE5D33A2A4AFDED64A );
 	class UTourSettings_TA* CreateDefaultSettings ( );
 	void OnProfileSet ( );
 	void eventOnShellSet ( );
@@ -36096,7 +36043,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 92149 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 92192 ];
 
 		return pClassPointer;
 	};
@@ -36120,7 +36067,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 92156 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 92199 ];
 
 		return pClassPointer;
 	};
@@ -36156,7 +36103,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 92161 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 92204 ];
 
 		return pClassPointer;
 	};
@@ -36166,7 +36113,7 @@ public:
 	void __GFxData_TourEvent_TA__OnShellSet ( class UTourSubscriptions_TA* S );
 	bool __GFxData_TourEvent_TA__GetNextStartingTournament ( class UTourSettings_TA* T );
 	int __GFxData_TourEvent_TA__GetNextStartingTournament ( class UTourSettings_TA* L, class UTourSettings_TA* R );
-	class UTourSettings_TA* GetNextStartingTournament ( TArray< class UTourSettings_TA* >* ArrayResultLocal_EA17523240F0D7897DC564A84948F2B1, TArray< class UTourSettings_TA* >* SortLocal_EEE92D7B435EEEC1E6E1BF8C091AFE39 );
+	class UTourSettings_TA* GetNextStartingTournament ( TArray< class UTourSettings_TA* >* ArrayResultLocal_4AB058B04D35FEEA01A487A54BBED75D, TArray< class UTourSettings_TA* >* SortLocal_9973CF704637FBDF8F3422934530DF18 );
 	void ReadyForNextMatch ( );
 	void ConditionalStepRound ( );
 	void Deactivate ( );
@@ -36201,7 +36148,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 92163 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 92206 ];
 
 		return pClassPointer;
 	};
@@ -36238,7 +36185,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 92167 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 92210 ];
 
 		return pClassPointer;
 	};
@@ -36246,7 +36193,7 @@ public:
 	void __GFxData_TourSearch_TA__OnShellSet ( class UGFxData_Regions_TA* R );
 	void __GFxData_TourSearch_TA__Search ( class URPC_TourGetPublic_TA* RPC );
 	int __GFxData_TourSearch_TA__HandleSearchResults ( class UTourSettings_TA* L, class UTourSettings_TA* R );
-	void ResetSearch ( TArray< class UTourSettings_TA* >* ArrayInitializer_752380754EF180913C00389C63BEDD98 );
+	void ResetSearch ( TArray< class UTourSettings_TA* >* ArrayInitializer_C5C028EE4D6A1BD27B138FBCA7AEFA5D );
 	void HandlePrivateSearchResults ( class UTourSettings_TA* Tournament, struct FTourPrivateCredentials Credentials );
 	void FindPrivate ( struct FString Title, struct FString Password );
 	void SetShowIneligibleRank ( unsigned long bValue );
@@ -36258,7 +36205,7 @@ public:
 	void SetText ( struct FString InText );
 	void SetRegionSelection ( int Row, unsigned long bSelected );
 	void OnSearchComplete ( );
-	void HandleSearchResults ( TArray< class UTourSettings_TA* >* Results, TArray< class UTourSettings_TA* >* SortLocal_B1398DE2418C0A852EFEEF9602089174 );
+	void HandleSearchResults ( TArray< class UTourSettings_TA* >* Results, TArray< class UTourSettings_TA* >* SortLocal_A9FAECB34E2792BD8E5201958A2A8C2D );
 	void HandleError ( class UError* Error );
 	void Search ( );
 	void eventOnRemoved ( );
@@ -36283,7 +36230,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 92169 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 92212 ];
 
 		return pClassPointer;
 	};
@@ -36308,7 +36255,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 92172 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 92215 ];
 
 		return pClassPointer;
 	};
@@ -36333,12 +36280,12 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 92177 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 92220 ];
 
 		return pClassPointer;
 	};
 
-	class ULoadoutPair_TA* CreatePair ( struct FString InPairName, TArray< class ULoadoutTeam_TA* >* ArrayInitializer_1E95709D49025D4A99099FB00A90B0E0 );
+	class ULoadoutPair_TA* CreatePair ( struct FString InPairName, TArray< class ULoadoutTeam_TA* >* ArrayInitializer_EF6D29EA414D8EC9534E1E9808A4B951 );
 };
 
 UClass* ULoadoutPair_TA::pClassPointer = NULL;
@@ -36357,7 +36304,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 92179 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 92222 ];
 
 		return pClassPointer;
 	};
@@ -36382,7 +36329,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 92181 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 92224 ];
 
 		return pClassPointer;
 	};
@@ -36405,7 +36352,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 92185 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 92228 ];
 
 		return pClassPointer;
 	};
@@ -36416,7 +36363,7 @@ public:
 	class ULoadoutPair_TA* SetToPair ( class ULoadoutSet_TA* Set );
 	class ULoadoutTeam_TA* Loadout1ToTeam ( class ULoadout_TA** Loadout );
 	struct FLoadoutTeam LoadoutDataToTeam ( struct FLoadoutData Loadout );
-	struct FLoadoutTeamColor PaintToColor ( struct FLoadoutTeamPaint* Paint, struct FLoadoutTeamColor* StructInitializer_70023F7049EE9EE7E87EC5AE361EE83C );
+	struct FLoadoutTeamColor PaintToColor ( struct FLoadoutTeamPaint* Paint, struct FLoadoutTeamColor* StructInitializer_C2720C49430FA78D32BFD3AC7DBF96E8 );
 };
 
 UClass* ULoadoutConverter_TA::pClassPointer = NULL;
@@ -36435,7 +36382,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 92189 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 92232 ];
 
 		return pClassPointer;
 	};
@@ -36462,7 +36409,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 92194 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 92237 ];
 
 		return pClassPointer;
 	};
@@ -36486,7 +36433,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 92196 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 92239 ];
 
 		return pClassPointer;
 	};
@@ -36509,13 +36456,13 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 92201 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 92244 ];
 
 		return pClassPointer;
 	};
 
 	int GetSiblingMatch ( int MatchID );
-	int CalcTeamWins ( int TeamID, struct FTourMatch* MatchData, TArray< struct FTourMatchGame >* FilterLocal_69BE147645196FFAD5305695313FCA73 );
+	int CalcTeamWins ( int TeamID, struct FTourMatch* MatchData, TArray< struct FTourMatchGame >* FilterLocal_6F4BE92D4E0739B1BDFA8FAD372883E0 );
 	int NextRound ( int Round );
 	struct FIntPair CalcPrevMatchIDs ( int Round, int Order );
 	struct FIntPair MakeIntPair ( int A, int B );
@@ -36549,13 +36496,12 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 92204 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 92247 ];
 
 		return pClassPointer;
 	};
 
 	int __TourBracketSimulator_TA__GetEarliestUnifinishedRound ( struct FTourMatch M );
-	bool __TourBracketSimulator_TA__GetEarliestUnifinishedRound1 ( struct FTourMatch M );
 	int __TourBracketSimulator_TA__RoundStep ( struct FTourMatch M );
 	void GameSet ( int MatchID, int GameIndex, int Team0Score, int Team1Score, int GameTimeSeconds, unsigned long bOverTime, struct FTourBracket* Bracket );
 	void GameStep ( int MatchID, int GameIndex, int WinningTeamIdx, struct FTourBracket* Bracket );
@@ -36564,8 +36510,8 @@ public:
 	void InternalStepMatchGames ( int MatchID, int Team0Games, int Team1Games, struct FTourBracket* Bracket );
 	void MatchStep ( int MatchID, int Team0Games, int Team1Games, struct FTourBracket* Bracket );
 	void GetRandScore ( int MaxScore, int* Score0, int* Score1 );
-	void RoundStep ( int SeriesLength, struct FTourBracket* Bracket, TArray< struct FTourMatch >* FilterLocal_1EE83606411234906B5FC0B15090E178, TArray< int >* MapLocal_08708E7C4F3A478FE69BFC980DFA673A );
-	int GetEarliestUnifinishedRound ( TArray< struct FTourMatch >* Matches, TArray< struct FTourMatch >* FilterLocal_98C822134812B06CAF4104B253A9C308, TArray< int >* MapLocal_BB3131B44FC8A4939DF765B081D7CE73, int* ReduceLocal_409D4D864974404492F5768DA33FCCAC );
+	void RoundStep ( int SeriesLength, struct FTourBracket* Bracket, TArray< struct FTourMatch >* FilterLocal_6C5A5CBA4C391BBFDF9C8F983E87B081, TArray< int >* MapLocal_34E6765248120EF412F7118FBBC21E2B );
+	int GetEarliestUnifinishedRound ( TArray< struct FTourMatch >* Matches, TArray< struct FTourMatch >* FilterLocal_C5BDC3BA4E38465A7CEF788993AD85F8, TArray< int >* MapLocal_D6F8DD6B4BB4F27F15DCA1A211192037, int* ReduceLocal_5848C3114E247E8FA90C43AED97498F6 );
 	int MaxWorkaround ( int A, int B );
 };
 
@@ -36588,7 +36534,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 92206 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 92249 ];
 
 		return pClassPointer;
 	};
@@ -36616,7 +36562,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 92213 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 92256 ];
 
 		return pClassPointer;
 	};
@@ -36643,17 +36589,17 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 92216 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 92259 ];
 
 		return pClassPointer;
 	};
 
-	struct FTourPlayer __TourService_PsyNet_TA__BuildTeam ( struct FUniqueNetId Id, struct FTourPlayer* StructInitializer_6669ED344334B1B77D0E90AF696DE644 );
+	struct FTourPlayer __TourService_PsyNet_TA__BuildTeam ( struct FUniqueNetId Id, struct FTourPlayer* StructInitializer_45AA40A84B1FC6D8AC3D07B87B45DB3D );
 	struct FScriptDelegate GetCheckReservationDelegate ( );
 	class UAsyncTask* StartMatchmaking ( struct FUniqueNetId PlayerID, struct FScriptDelegate Callback );
 	class UAsyncTask* GetMatch ( struct FUniqueNetId PlayerID, struct FScriptDelegate Callback );
 	class UAsyncTask* GetBracket ( struct FUniqueNetId PlayerID, struct FScriptDelegate Callback );
-	struct FTourTeam BuildTeam ( int TeamID, struct FCustomMatchTeamSettings Settings, TArray< struct FUniqueNetId > Players, TArray< struct FTourPlayer >* MapLocal_89E6485A4938B0E7FC3C11A521186B55 );
+	struct FTourTeam BuildTeam ( int TeamID, struct FCustomMatchTeamSettings Settings, TArray< struct FUniqueNetId > Players, TArray< struct FTourPlayer >* MapLocal_C6221970480F126821A5E2BD04826300 );
 	class UAsyncTask* CheckIn ( struct FUniqueNetId PlayerID, struct FCustomMatchTeamSettings Settings, TArray< struct FUniqueNetId > Team, int TeamID, struct FScriptDelegate Callback );
 	class UAsyncTask* RegisterTournament ( struct FUniqueNetId PlayerID, struct FTourPrivateCredentials Credentials, struct FScriptDelegate Callback );
 	class UAsyncTask* CreateTournament ( struct FUniqueNetId PlayerID, struct FTourCreateSettings Settings, struct FScriptDelegate Callback );
@@ -36676,7 +36622,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 92221 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 92264 ];
 
 		return pClassPointer;
 	};
@@ -36702,7 +36648,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 92225 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 92268 ];
 
 		return pClassPointer;
 	};
@@ -36728,7 +36674,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 92228 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 92271 ];
 
 		return pClassPointer;
 	};
@@ -36754,7 +36700,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 92232 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 92275 ];
 
 		return pClassPointer;
 	};
@@ -36780,7 +36726,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 92235 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 92278 ];
 
 		return pClassPointer;
 	};
@@ -36806,7 +36752,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 92239 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 92282 ];
 
 		return pClassPointer;
 	};
@@ -36832,7 +36778,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 92242 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 92285 ];
 
 		return pClassPointer;
 	};
@@ -36859,7 +36805,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 92246 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 92289 ];
 
 		return pClassPointer;
 	};
@@ -36886,7 +36832,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 92249 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 92292 ];
 
 		return pClassPointer;
 	};
@@ -36910,7 +36856,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 92254 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 92297 ];
 
 		return pClassPointer;
 	};
@@ -36943,7 +36889,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 92260 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 92303 ];
 
 		return pClassPointer;
 	};
@@ -36965,7 +36911,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 92272 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 92315 ];
 
 		return pClassPointer;
 	};
@@ -36989,7 +36935,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 92274 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 92317 ];
 
 		return pClassPointer;
 	};
@@ -37027,7 +36973,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 92290 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 92333 ];
 
 		return pClassPointer;
 	};
@@ -37051,7 +36997,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 92305 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 92348 ];
 
 		return pClassPointer;
 	};
@@ -37076,7 +37022,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 92313 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 92356 ];
 
 		return pClassPointer;
 	};
@@ -37105,7 +37051,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 92321 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 92364 ];
 
 		return pClassPointer;
 	};
@@ -37130,7 +37076,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 92347 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 92390 ];
 
 		return pClassPointer;
 	};
@@ -37154,7 +37100,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 92350 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 92393 ];
 
 		return pClassPointer;
 	};
@@ -37180,7 +37126,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 92359 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 92402 ];
 
 		return pClassPointer;
 	};
@@ -37206,7 +37152,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 92367 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 92410 ];
 
 		return pClassPointer;
 	};
@@ -37235,7 +37181,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 92372 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 92415 ];
 
 		return pClassPointer;
 	};
@@ -37260,7 +37206,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 92380 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 92423 ];
 
 		return pClassPointer;
 	};
@@ -37288,7 +37234,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 92385 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 92428 ];
 
 		return pClassPointer;
 	};
@@ -37319,7 +37265,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 92395 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 92438 ];
 
 		return pClassPointer;
 	};
@@ -37328,7 +37274,7 @@ public:
 	bool __CameraState_Countdown_TA__FindNextCar ( class ACar_TA* C );
 	void UpdateTextureStreaming ( );
 	void UpdateNextCar ( );
-	class ACar_TA* FindNextCar ( TArray< struct FCarData >* FilterLocal_EAE83F4541126FF8E1DCBDA71A9918F8 );
+	class ACar_TA* FindNextCar ( TArray< struct FCarData >* FilterLocal_5B770A124DEAC840250C128823507B98 );
 	bool ShouldKeepExecuting ( );
 	bool ShouldExecute ( );
 	void EndCameraState ( );
@@ -37356,7 +37302,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 92427 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 92470 ];
 
 		return pClassPointer;
 	};
@@ -37384,7 +37330,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 92453 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 92496 ];
 
 		return pClassPointer;
 	};
@@ -37408,7 +37354,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 92457 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 92500 ];
 
 		return pClassPointer;
 	};
@@ -37435,7 +37381,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 92462 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 92505 ];
 
 		return pClassPointer;
 	};
@@ -37462,7 +37408,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 92472 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 92515 ];
 
 		return pClassPointer;
 	};
@@ -37488,7 +37434,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 92482 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 92525 ];
 
 		return pClassPointer;
 	};
@@ -37521,7 +37467,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 92501 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 92544 ];
 
 		return pClassPointer;
 	};
@@ -37556,7 +37502,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 92515 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 92558 ];
 
 		return pClassPointer;
 	};
@@ -37588,7 +37534,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 92562 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 92605 ];
 
 		return pClassPointer;
 	};
@@ -37623,7 +37569,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 92592 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 92635 ];
 
 		return pClassPointer;
 	};
@@ -37648,7 +37594,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 92596 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 92639 ];
 
 		return pClassPointer;
 	};
@@ -37682,7 +37628,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 92604 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 92647 ];
 
 		return pClassPointer;
 	};
@@ -37712,7 +37658,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 92635 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 92678 ];
 
 		return pClassPointer;
 	};
@@ -37761,7 +37707,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 92646 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 92689 ];
 
 		return pClassPointer;
 	};
@@ -37789,7 +37735,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 92704 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 92747 ];
 
 		return pClassPointer;
 	};
@@ -37815,7 +37761,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 92714 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 92757 ];
 
 		return pClassPointer;
 	};
@@ -37841,7 +37787,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 92724 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 92767 ];
 
 		return pClassPointer;
 	};
@@ -37875,7 +37821,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 92749 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 92792 ];
 
 		return pClassPointer;
 	};
@@ -37899,7 +37845,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 92765 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 92808 ];
 
 		return pClassPointer;
 	};
@@ -37922,7 +37868,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 92767 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 92810 ];
 
 		return pClassPointer;
 	};
@@ -37944,7 +37890,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 92773 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 92816 ];
 
 		return pClassPointer;
 	};
@@ -37974,7 +37920,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 92776 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 92819 ];
 
 		return pClassPointer;
 	};
@@ -38016,7 +37962,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 92808 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 92851 ];
 
 		return pClassPointer;
 	};
@@ -38053,7 +37999,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 92878 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 92921 ];
 
 		return pClassPointer;
 	};
@@ -38082,7 +38028,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 92893 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 92936 ];
 
 		return pClassPointer;
 	};
@@ -38128,7 +38074,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 92933 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 92976 ];
 
 		return pClassPointer;
 	};
@@ -38166,7 +38112,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 92936 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 92979 ];
 
 		return pClassPointer;
 	};
@@ -38202,7 +38148,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 92954 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 92997 ];
 
 		return pClassPointer;
 	};
@@ -38242,7 +38188,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 93003 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 93046 ];
 
 		return pClassPointer;
 	};
@@ -38276,7 +38222,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 93035 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 93078 ];
 
 		return pClassPointer;
 	};
@@ -38306,7 +38252,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 93046 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 93089 ];
 
 		return pClassPointer;
 	};
@@ -38341,7 +38287,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 93092 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 93135 ];
 
 		return pClassPointer;
 	};
@@ -38368,7 +38314,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 93102 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 93145 ];
 
 		return pClassPointer;
 	};
@@ -38390,7 +38336,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 93104 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 93147 ];
 
 		return pClassPointer;
 	};
@@ -38413,7 +38359,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 93106 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 93149 ];
 
 		return pClassPointer;
 	};
@@ -38440,7 +38386,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 93118 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 93161 ];
 
 		return pClassPointer;
 	};
@@ -38464,7 +38410,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 93123 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 93166 ];
 
 		return pClassPointer;
 	};
@@ -38492,7 +38438,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 93125 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 93168 ];
 
 		return pClassPointer;
 	};
@@ -38522,7 +38468,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 93149 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 93192 ];
 
 		return pClassPointer;
 	};
@@ -38552,7 +38498,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 93160 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 93203 ];
 
 		return pClassPointer;
 	};
@@ -38586,7 +38532,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 93178 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 93221 ];
 
 		return pClassPointer;
 	};
@@ -38616,7 +38562,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 93199 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 93242 ];
 
 		return pClassPointer;
 	};
@@ -38644,16 +38590,16 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 93215 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 93258 ];
 
 		return pClassPointer;
 	};
 
-	struct FGFxBanCitation __GFxData_ChatBan_TA__HandleRecievedChatBanStatus ( struct FString Citation, struct FGFxBanCitation* StructInitializer_1CF544484DA97FE7BEB55CB8F3269881 );
-	struct FGFxBanCitation __GFxData_ChatBan_TA__HandleAuthBanned ( struct FString Citation, struct FGFxBanCitation* StructInitializer_0D1ED8314453FBBBAF151B808EF97A51 );
+	struct FGFxBanCitation __GFxData_ChatBan_TA__HandleRecievedChatBanStatus ( struct FString Citation, struct FGFxBanCitation* StructInitializer_2B8A80C6419401745A7BB88C950DB0C7 );
+	struct FGFxBanCitation __GFxData_ChatBan_TA__HandleAuthBanned ( struct FString Citation, struct FGFxBanCitation* StructInitializer_BF0FFC884090790F395075B8749CF7DB );
 	void OnSyncChatBanStatus ( );
-	void HandleAuthBanned ( class UOnlinePlayerAuthentication_X* InAuth, TArray< struct FGFxBanCitation >* MapLocal_AA7FABD3464550FCDF2B5A9739A6D566 );
-	void HandleRecievedChatBanStatus ( class URPC_GetChatBanStatus_TA* RPC, TArray< struct FGFxBanCitation >* MapLocal_440FC5A7464C7F7EAC73478982D3E653 );
+	void HandleAuthBanned ( class UOnlinePlayerAuthentication_X* InAuth, TArray< struct FGFxBanCitation >* MapLocal_616A06AD463A7210C3BC33B03794D2C0 );
+	void HandleRecievedChatBanStatus ( class URPC_GetChatBanStatus_TA* RPC, TArray< struct FGFxBanCitation >* MapLocal_2B5A6C5C48C012A10589028E6E530AD4 );
 	void SyncChatBanStatus ( class UPsyNetConnection_X* Connection );
 	void CheckAuthBanned ( class UOnlinePlayerAuthentication_X* InAuth );
 	void eventOnShellSet ( );
@@ -38678,7 +38624,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 93245 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 93288 ];
 
 		return pClassPointer;
 	};
@@ -38701,14 +38647,15 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 93251 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 93294 ];
 
 		return pClassPointer;
 	};
 
 	void AcceptedHelpModal ( class UGFxModal_X* Modal );
 	void CheckConnectionQualityHelp ( );
-	void OnGameStarted ( class AGRI_X* GRI );
+	void OnTrackerAttached ( class APlayerController_TA* PC, class UClientConnectionTracker_TA* Tracker );
+	void HandleControllerReceived ( class UPlayer* InController );
 	void OnGRISpawned ( class AGRI_X* GRI );
 	void eventOnRemoved ( );
 	void eventOnShellSet ( );
@@ -38732,7 +38679,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 93274 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 93322 ];
 
 		return pClassPointer;
 	};
@@ -38740,9 +38687,9 @@ public:
 	void __GFxData_ContainerDrops_TA__HandleGetContainerDropTableResponse ( class UOnlineProduct_TA* Op );
 	int __GFxData_ContainerDrops_TA__GetMatchingProductSeries ( struct FOnlineProductData ProductData );
 	struct FString GetPossibleContainerDrops ( int ProductID );
-	TArray< struct FString > GetMatchingProductSeries ( int SeriesID, TArray< int >* MapLocal_7C823002448DD7DEBE3CBC962734D379 );
+	TArray< struct FString > GetMatchingProductSeries ( int SeriesID, TArray< int >* MapLocal_4F03F7CA47B5BFB39EF122B5C2342672 );
 	void OnContainersUpdated ( );
-	void HandleGetContainerDropTableResponse ( class URPC_MicroTransactions_GetContainerDropTable_TA* RPC, TArray< class UOnlineProduct_TA* >* MapLocal_AB6C358B4DD30DABD7D79281EBCF7987 );
+	void HandleGetContainerDropTableResponse ( class URPC_MicroTransactions_GetContainerDropTable_TA* RPC, TArray< class UOnlineProduct_TA* >* MapLocal_E431BC9E43ACEA948B3ECEA8EFFE3C95 );
 	class UOnlineProduct_TA* CreateTempOnlineProduct ( struct FOnlineProductData Data );
 	void GetContentDrops ( );
 	void HandlePsyNetLoginChange ( class UOnlinePlayerAuthentication_X* Auth );
@@ -38767,7 +38714,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 93295 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 93343 ];
 
 		return pClassPointer;
 	};
@@ -38798,7 +38745,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 93350 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 93398 ];
 
 		return pClassPointer;
 	};
@@ -38839,7 +38786,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 93417 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 93465 ];
 
 		return pClassPointer;
 	};
@@ -38872,7 +38819,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 93453 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 93501 ];
 
 		return pClassPointer;
 	};
@@ -38896,7 +38843,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 93459 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 93507 ];
 
 		return pClassPointer;
 	};
@@ -38921,7 +38868,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 93618 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 93666 ];
 
 		return pClassPointer;
 	};
@@ -38945,7 +38892,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 93620 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 93668 ];
 
 		return pClassPointer;
 	};
@@ -38975,13 +38922,11 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 93639 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 93687 ];
 
 		return pClassPointer;
 	};
 
-	void __GFxData_LanBrowser_TA__Refresh ( class UError* _ );
-	//void __GFxData_LanBrowser_TA__Refresh ( class UError* Error );
 	void CreateServerGFxData ( class ULanServerRecord_X* Server );
 	void OnRefreshed ( );
 	void OnRefreshError ( );
@@ -39014,7 +38959,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 93655 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 93703 ];
 
 		return pClassPointer;
 	};
@@ -39052,7 +38997,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 93658 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 93706 ];
 
 		return pClassPointer;
 	};
@@ -39094,7 +39039,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 93727 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 93775 ];
 
 		return pClassPointer;
 	};
@@ -39106,7 +39051,7 @@ public:
 	void SetPreviewTeam ( int Team );
 	void SetEditingLoadoutSet ( int Index );
 	void RandomizePreset ( int Index );
-	void SetupNextRandomLoadout ( struct FLoadoutData* Loadouts, struct FLoadoutData* StructInitializer_14EAC1E94FAE97FFE2762A8055ECF134 );
+	void SetupNextRandomLoadout ( struct FLoadoutData* Loadouts, struct FLoadoutData* StructInitializer_094D1AE942237EE2B1944E996D4FBB80 );
 	bool HasPresetNamed ( struct FString NewName );
 	void RenamePreset ( int Index, struct FString NewName );
 	void DeletePreset ( int Index );
@@ -39147,7 +39092,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 93799 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 93847 ];
 
 		return pClassPointer;
 	};
@@ -39185,7 +39130,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 93806 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 93854 ];
 
 		return pClassPointer;
 	};
@@ -39227,18 +39172,17 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 93899 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 93947 ];
 
 		return pClassPointer;
 	};
 
-	struct FGFxMapSelectionData __GFxData_MapSelection_TA__HandleMapListChanged ( struct FGFxMapData M, struct FGFxMapSelectionData* StructInitializer_432366EB467378BF06608DA1134A8C08 );
+	struct FGFxMapSelectionData __GFxData_MapSelection_TA__HandleMapListChanged ( struct FGFxMapData M, struct FGFxMapSelectionData* StructInitializer_48D0E43A4D127DACE086A1A8DCA26044 );
 	struct FName __GFxData_MapSelection_TA__GetDisabledMaps ( struct FGFxMapSelectionData MapItem );
-	bool __GFxData_MapSelection_TA__GetDisabledMaps1 ( struct FGFxMapSelectionData MapItem );
 	void SetSelected ( int Row, unsigned long bSelected );
 	void SetDisabledMaps ( TArray< struct FName >* MapNames );
-	TArray< struct FName > GetDisabledMaps ( TArray< struct FGFxMapSelectionData >* FilterLocal_9325574B4B253515B3D65CB53DD1636B, TArray< struct FName >* MapLocal_99C966464560C99058B7F28CD04A302B );
-	void HandleMapListChanged ( class UGFxData_Map_TA* GFxMaps, TArray< struct FGFxMapSelectionData >* MapLocal_07DC04D54B421907AF62CF803B3C5D54 );
+	TArray< struct FName > GetDisabledMaps ( TArray< struct FGFxMapSelectionData >* FilterLocal_943D31894E8C27B15FBE7FBC95B7C0F6, TArray< struct FName >* MapLocal_C961124545F0B124CE2E8FB52C905721 );
+	void HandleMapListChanged ( class UGFxData_Map_TA* GFxMaps, TArray< struct FGFxMapSelectionData >* MapLocal_950D2ED4493232CB0B69879DA81B723A );
 	void eventOnShellSet ( );
 	void EventSelectionChange ( class UGFxData_MapSelection_TA* GFxMapSelection, struct FName MapName, unsigned long bSelected );
 	void EventMapListChange ( class UGFxData_MapSelection_TA* GFxMapSelection );
@@ -39261,7 +39205,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 93946 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 93994 ];
 
 		return pClassPointer;
 	};
@@ -39292,7 +39236,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 94100 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 94148 ];
 
 		return pClassPointer;
 	};
@@ -39325,7 +39269,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 94145 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 94193 ];
 
 		return pClassPointer;
 	};
@@ -39351,7 +39295,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 94154 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 94202 ];
 
 		return pClassPointer;
 	};
@@ -39376,17 +39320,63 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 94158 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 94206 ];
 
 		return pClassPointer;
 	};
 
 	int GetPlayerBanner ( struct FUniqueNetId PlayerID );
 	void DestroyPlayerBanner ( );
-	int CreatePlayerBanner ( struct FGFxPlayerBannerRef* StructInitializer_C8B6E25B4884B5DB5F03758B899B7AD2 );
+	int CreatePlayerBanner ( struct FGFxPlayerBannerRef* StructInitializer_7149ECF542A17D19D645AD84E0D9F795 );
 };
 
 UClass* UGFxData_PlayerBanners_TA::pClassPointer = NULL;
+
+// Class TAGame.GFxData_PlayerReport_TA
+// 0x0000 (0x0054 - 0x0054)
+class UGFxData_PlayerReport_TA : public UGFxDataSingleton_X
+{
+public:
+
+private:
+	static UClass* pClassPointer;
+
+public:
+	static UClass* StaticClass()
+	{
+		if ( ! pClassPointer )
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 94229 ];
+
+		return pClassPointer;
+	};
+
+	void eventOnShellSet ( );
+};
+
+UClass* UGFxData_PlayerReport_TA::pClassPointer = NULL;
+
+// Class TAGame.PlayerReportConfig_TA
+// 0x000C (0x0058 - 0x004C)
+class UPlayerReportConfig_TA : public UOnlineConfig_X
+{
+public:
+	TArray< struct FPlayerReportReason >               Reasons;                                          		// 0x004C (0x000C) [0x0000000040400001]              ( CPF_Edit | CPF_NeedCtorLink | CPF_EditInlineNotify )
+
+private:
+	static UClass* pClassPointer;
+
+public:
+	static UClass* StaticClass()
+	{
+		if ( ! pClassPointer )
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 94231 ];
+
+		return pClassPointer;
+	};
+
+};
+
+UClass* UPlayerReportConfig_TA::pClassPointer = NULL;
 
 // Class TAGame.GFxData_PlayerTitles_TA
 // 0x0014 (0x0068 - 0x0054)
@@ -39404,14 +39394,14 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 94181 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 94233 ];
 
 		return pClassPointer;
 	};
 
 	void SetPlayerTitle ( struct FName Title );
 	void UpdateSelectedTitle ( struct FName Title );
-	void UpdateTitles ( class UOnlineGamePlayerTitles_X* OnlineTitles, TArray< struct FName >* ArrayResultLocal_94C6A0694371277D21DE499B5687A4BE, TArray< struct FPlayerTitleData >* MapLocal_DD6AC11F4291E3025BD436ADFC3A38C9 );
+	void UpdateTitles ( class UOnlineGamePlayerTitles_X* OnlineTitles, TArray< struct FName >* ArrayResultLocal_4DF5B9B949046C0C184443BAEA0E1400, TArray< struct FPlayerTitleData >* MapLocal_C42DE3B043BDB905AABEC4BF2698ACD0 );
 	void HandleSaveLoaded ( class UProfileLoadoutSave_TA* InSave );
 	void HandleProfileSet ( class ULocalPlayer_TA* P );
 	void eventOnShellSet ( );
@@ -39432,7 +39422,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 94202 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 94254 ];
 
 		return pClassPointer;
 	};
@@ -39459,7 +39449,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 94399 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 94451 ];
 
 		return pClassPointer;
 	};
@@ -39492,7 +39482,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 94420 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 94472 ];
 
 		return pClassPointer;
 	};
@@ -39523,7 +39513,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 94430 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 94482 ];
 
 		return pClassPointer;
 	};
@@ -39555,7 +39545,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 94472 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 94524 ];
 
 		return pClassPointer;
 	};
@@ -39582,7 +39572,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 94484 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 94536 ];
 
 		return pClassPointer;
 	};
@@ -39612,7 +39602,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 94492 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 94544 ];
 
 		return pClassPointer;
 	};
@@ -39652,7 +39642,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 94533 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 94585 ];
 
 		return pClassPointer;
 	};
@@ -39684,7 +39674,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 94545 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 94597 ];
 
 		return pClassPointer;
 	};
@@ -39729,14 +39719,12 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 94559 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 94611 ];
 
 		return pClassPointer;
 	};
 
 	void __SpecialEventConfig_TA__Apply ( class UOnlineImageDownloaderWeb_X* Downloader, struct FDownloadedImage Image );
-	//void __SpecialEventConfig_TA__Apply ( class UOnlineImageDownloaderWeb_X* Downloader, struct FDownloadedImage Image );
-	//void __SpecialEventConfig_TA__Apply ( class UOnlineImageDownloaderWeb_X* Downloader, struct FDownloadedImage Image );
 	int GetSecondsRemaining ( );
 	unsigned char GetState ( );
 	void Apply ( );
@@ -39765,7 +39753,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 94600 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 94652 ];
 
 		return pClassPointer;
 	};
@@ -39778,7 +39766,7 @@ public:
 	void HandlePurchaseFail ( class URPC_X* RPC );
 	void PurchaseReward ( int StoreProductID );
 	struct FGFxSpecialEventReward CreateEventReward ( struct FSpecialEventReward InReward );
-	void SetRewards ( TArray< struct FSpecialEventReward > InRewards, TArray< struct FGFxSpecialEventReward >* MapLocal_14663C034FA63C6D80ED249D4A912078 );
+	void SetRewards ( TArray< struct FSpecialEventReward > InRewards, TArray< struct FGFxSpecialEventReward >* MapLocal_3F91D539402986A27516FEA2D6EA622F );
 	void GetRewards ( );
 	void SetCurrency ( struct FEventCurrencyData InCurrency );
 	void OnReceivedCurrency ( class URPC_GetSpecialEventCurrency_TA* RPC );
@@ -39803,7 +39791,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 94622 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 94674 ];
 
 		return pClassPointer;
 	};
@@ -39828,7 +39816,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 94621 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 94673 ];
 
 		return pClassPointer;
 	};
@@ -39855,7 +39843,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 94639 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 94691 ];
 
 		return pClassPointer;
 	};
@@ -39882,7 +39870,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 94667 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 94719 ];
 
 		return pClassPointer;
 	};
@@ -39911,7 +39899,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 94682 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 94734 ];
 
 		return pClassPointer;
 	};
@@ -39950,7 +39938,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 94735 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 94787 ];
 
 		return pClassPointer;
 	};
@@ -39981,7 +39969,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 94739 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 94791 ];
 
 		return pClassPointer;
 	};
@@ -40005,7 +39993,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 94845 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 94897 ];
 
 		return pClassPointer;
 	};
@@ -40030,7 +40018,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 94851 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 94903 ];
 
 		return pClassPointer;
 	};
@@ -40059,7 +40047,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 94967 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 95019 ];
 
 		return pClassPointer;
 	};
@@ -40072,11 +40060,11 @@ public:
 	void SelectRow ( int Row );
 	int FindPlatformIndex ( TArray< unsigned char >* InPlatforms );
 	bool CompareOnlinePlatforms ( TArray< unsigned char > Right, TArray< unsigned char >* Left );
-	struct FString BuildPlatformLabel ( TArray< unsigned char > Group, TArray< struct FString >* MapLocal_E8435A06495570380C6D2A842A8057E4 );
+	struct FString BuildPlatformLabel ( TArray< unsigned char > Group, TArray< struct FString >* MapLocal_6BA3930C45D14C0564EA149407B16302 );
 	TArray< unsigned char > GetSelectedPlatforms ( );
 	void SetSelectedPlatforms ( TArray< unsigned char >* SelectedPlatforms );
-	struct FGFxTourPlatformGroup CreateGFxGroup ( struct FCrossplayGroup CrossplayGroup, TArray< unsigned char >* FilterLocal_45A3781C441E882223F24FB1A519BF72 );
-	void InitPlatformGroups ( TArray< struct FCrossplayGroup >* FilterLocal_569C980447D063075AF93A95B3400871, struct FGFxTourPlatformGroup* StructInitializer_F91995694E98BC2F286D13810BD75058, TArray< struct FGFxTourPlatformGroup >* MapLocal_6EBF844C42E897B9FB591C8F1249CF08, struct FGFxTourPlatformGroup* StructInitializer_D10DC7C343008F5400DE78A6D8E0E62D, TArray< unsigned char >* ArrayInitializer_3C303B524CA4D5F800C9CC80CC62B4EB );
+	struct FGFxTourPlatformGroup CreateGFxGroup ( struct FCrossplayGroup CrossplayGroup, TArray< unsigned char >* FilterLocal_20109C6741258D648FFA2EB3CAE278B8 );
+	void InitPlatformGroups ( TArray< struct FCrossplayGroup >* FilterLocal_6A7AF74F4B53B140DA4ED29CF22BB68E, struct FGFxTourPlatformGroup* StructInitializer_69CDCDDC495E3B4C207238AA9BBC92CC, TArray< struct FGFxTourPlatformGroup >* MapLocal_108C76DA4341C85A1B5BF0BCCE3F6141, struct FGFxTourPlatformGroup* StructInitializer_1F6E97F74789EAAC33A08BBC636D5020, TArray< unsigned char >* ArrayInitializer_22072458418A1A397A2D7B978F50A170 );
 	void eventOnShellSet ( );
 	void EventSelectionChange ( class UGFxData_TourPlatforms_TA* GFxPlatforms, TArray< unsigned char > NewPlatforms );
 };
@@ -40106,7 +40094,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 94971 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 95023 ];
 
 		return pClassPointer;
 	};
@@ -40121,7 +40109,7 @@ public:
 	void HandleRewardsComplete ( TArray< struct FTourReward > InRewards );
 	void HandleError ( class UError* Error );
 	void MenuClosed ( );
-	void Update ( TArray< unsigned char >* MapLocal_E136706E4F882F341071F793609E1663 );
+	void Update ( TArray< unsigned char >* MapLocal_F00653E7473FB5171617628787C5474D );
 	void LogTournamentNotFound ( );
 	void eventOnRemoved ( );
 	void eventOnShellSet ( );
@@ -40147,7 +40135,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 95025 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 95077 ];
 
 		return pClassPointer;
 	};
@@ -40177,7 +40165,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 95181 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 95233 ];
 
 		return pClassPointer;
 	};
@@ -40207,7 +40195,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 95259 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 95311 ];
 
 		return pClassPointer;
 	};
@@ -40232,7 +40220,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 95271 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 95323 ];
 
 		return pClassPointer;
 	};
@@ -40259,7 +40247,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 95276 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 95328 ];
 
 		return pClassPointer;
 	};
@@ -40288,7 +40276,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 95307 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 95359 ];
 
 		return pClassPointer;
 	};
@@ -40342,7 +40330,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 95311 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 95363 ];
 
 		return pClassPointer;
 	};
@@ -40401,7 +40389,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 95432 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 95484 ];
 
 		return pClassPointer;
 	};
@@ -40426,7 +40414,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 95433 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 95485 ];
 
 		return pClassPointer;
 	};
@@ -40453,7 +40441,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 95436 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 95488 ];
 
 		return pClassPointer;
 	};
@@ -40495,7 +40483,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 95439 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 95491 ];
 
 		return pClassPointer;
 	};
@@ -40511,7 +40499,7 @@ public:
 	void HandleFavoritesLoaded ( class UGFxData_TrainingModeBrowser_TA* B );
 	void GetLocalTrainingFiles ( unsigned long bLoadingFavorites );
 	void HandleTrainingModeDownloadPlay ( class UGFxData_TrainingMode_TA* OutTrainingMode, struct FString InCode, struct FString Filename );
-	void HandleTrainingModeFavorited ( class UGFxData_TrainingMode_TA* OutTrainingMode, unsigned long bAdded, struct FFavoritedFileMetaData* StructInitializer_E9AC5CFA4093A7AB63CF9B8F1CBA5CD7 );
+	void HandleTrainingModeFavorited ( class UGFxData_TrainingMode_TA* OutTrainingMode, unsigned long bAdded, struct FFavoritedFileMetaData* StructInitializer_1D6A9E9C47D2E3E14C949F8062DE8EEE );
 	int GetFavoriteIndex ( struct FString Id );
 	bool IsFavorited ( struct FString InGuid );
 	void HandleBrowseResults ( class URPC_TrainingEditor_BrowseTrainingData_TA* RPC );
@@ -40532,7 +40520,7 @@ public:
 	void HandleListPlayerTrainingDataTimestamp ( class URPC_TrainingEditor_ListPlayerTrainingDataTimestamp_TA* RPC );
 	void EvaluateUpdateAtTimes ( );
 	void SetFavoriteUpdatedAtTime ( struct FString InCode );
-	void SyncFavoritedModes ( struct FFavoritedFileMetaData* StructInitializer_A54E9D8142565B20323F07AD9897E0EF );
+	void SyncFavoritedModes ( struct FFavoritedFileMetaData* StructInitializer_B2C531EE4FFF9F2A5461D2AA29599FA4 );
 	void HandleTrainingModeWordFilterError ( class UGFxData_TrainingMode_TA* OutTrainingMode, class UError* Error );
 	void HandleLocalTrainingModeLoaded ( class UGFxData_TrainingMode_TA* OutTrainingMode, unsigned long bSuccess );
 	void HandleTrainingModeLoaded ( class UGFxData_TrainingMode_TA* OutTrainingMode, unsigned long bSuccess );
@@ -40543,7 +40531,7 @@ public:
 	void DisplayError ( class UError* Error );
 	class UTrainingEditorMetrics_TA* GetTrainingMetrics ( );
 	void NotifyWhenFavoritesLoaded ( struct FScriptDelegate Callback );
-	void HandleFavorites ( TArray< struct FString > Files, unsigned char Result, struct FFavoritedFileMetaData* StructInitializer_486C3C9B47E7A5D27DDCDEBDCCAC0A49 );
+	void HandleFavorites ( TArray< struct FString > Files, unsigned char Result, struct FFavoritedFileMetaData* StructInitializer_94BDF9734F271357E6A77191994BFEC9 );
 	void HandlePsyNetLogin ( class UOnlinePlayer_X* OnlinePlayer );
 	void OnShellSet ( );
 	void EventAllTrainingFilesLoaded ( class UGFxData_TrainingModeBrowser_TA* Browser );
@@ -40566,7 +40554,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 95444 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 95496 ];
 
 		return pClassPointer;
 	};
@@ -40591,7 +40579,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 95445 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 95497 ];
 
 		return pClassPointer;
 	};
@@ -40616,7 +40604,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 95545 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 95597 ];
 
 		return pClassPointer;
 	};
@@ -40641,7 +40629,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 95662 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 95714 ];
 
 		return pClassPointer;
 	};
@@ -40665,7 +40653,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 95667 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 95719 ];
 
 		return pClassPointer;
 	};
@@ -40700,7 +40688,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 95693 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 95745 ];
 
 		return pClassPointer;
 	};
@@ -40745,7 +40733,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 95757 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 95809 ];
 
 		return pClassPointer;
 	};
@@ -40773,7 +40761,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 95778 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 95830 ];
 
 		return pClassPointer;
 	};
@@ -40799,7 +40787,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 95782 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 95834 ];
 
 		return pClassPointer;
 	};
@@ -40827,7 +40815,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 95811 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 95863 ];
 
 		return pClassPointer;
 	};
@@ -40854,7 +40842,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 95819 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 95871 ];
 
 		return pClassPointer;
 	};
@@ -40879,7 +40867,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 95830 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 95882 ];
 
 		return pClassPointer;
 	};
@@ -40904,7 +40892,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 95832 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 95884 ];
 
 		return pClassPointer;
 	};
@@ -40951,7 +40939,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 95851 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 95903 ];
 
 		return pClassPointer;
 	};
@@ -40991,7 +40979,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 95972 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 96024 ];
 
 		return pClassPointer;
 	};
@@ -41016,7 +41004,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 95978 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 96030 ];
 
 		return pClassPointer;
 	};
@@ -41040,7 +41028,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 95980 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 96032 ];
 
 		return pClassPointer;
 	};
@@ -41063,7 +41051,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 96035 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 96087 ];
 
 		return pClassPointer;
 	};
@@ -41088,7 +41076,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 96039 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 96091 ];
 
 		return pClassPointer;
 	};
@@ -41118,7 +41106,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 96053 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 96105 ];
 
 		return pClassPointer;
 	};
@@ -41143,7 +41131,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 96061 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 96113 ];
 
 		return pClassPointer;
 	};
@@ -41168,7 +41156,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 96067 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 96119 ];
 
 		return pClassPointer;
 	};
@@ -41192,7 +41180,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 96072 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 96124 ];
 
 		return pClassPointer;
 	};
@@ -41215,7 +41203,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 96087 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 96139 ];
 
 		return pClassPointer;
 	};
@@ -41238,7 +41226,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 96091 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 96143 ];
 
 		return pClassPointer;
 	};
@@ -41263,7 +41251,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 96097 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 96149 ];
 
 		return pClassPointer;
 	};
@@ -41287,7 +41275,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 96103 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 96155 ];
 
 		return pClassPointer;
 	};
@@ -41309,7 +41297,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 96114 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 96166 ];
 
 		return pClassPointer;
 	};
@@ -41332,7 +41320,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 96118 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 96170 ];
 
 		return pClassPointer;
 	};
@@ -41355,7 +41343,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 96166 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 96224 ];
 
 		return pClassPointer;
 	};
@@ -41378,7 +41366,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 96168 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 96226 ];
 
 		return pClassPointer;
 	};
@@ -41401,7 +41389,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 96172 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 96230 ];
 
 		return pClassPointer;
 	};
@@ -41424,7 +41412,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 96189 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 96247 ];
 
 		return pClassPointer;
 	};
@@ -41449,7 +41437,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 96195 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 96253 ];
 
 		return pClassPointer;
 	};
@@ -41474,7 +41462,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 96202 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 96260 ];
 
 		return pClassPointer;
 	};
@@ -41499,7 +41487,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 96212 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 96270 ];
 
 		return pClassPointer;
 	};
@@ -41525,7 +41513,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 96223 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 96281 ];
 
 		return pClassPointer;
 	};
@@ -41550,7 +41538,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 96228 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 96286 ];
 
 		return pClassPointer;
 	};
@@ -41576,7 +41564,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 96239 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 96297 ];
 
 		return pClassPointer;
 	};
@@ -41607,13 +41595,13 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 96249 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 96307 ];
 
 		return pClassPointer;
 	};
 
 	class URPC_Challenge_MatchComplete_TA* SetGameEventData ( class AGameEvent_Soccar_TA* GameEvent );
-	class URPC_Challenge_MatchComplete_TA* AddPlayerData ( class APRI_TA* PRI, struct FStatData* StructInitializer_7D37EF7B4FDFB4AD08E1008132A84BA2 );
+	class URPC_Challenge_MatchComplete_TA* AddPlayerData ( class APRI_TA* PRI, struct FStatData* StructInitializer_EC1ED61B4FB977EAEDC809A31747B32B );
 };
 
 UClass* URPC_Challenge_MatchComplete_TA::pClassPointer = NULL;
@@ -41634,7 +41622,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 96278 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 96336 ];
 
 		return pClassPointer;
 	};
@@ -41660,7 +41648,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 96290 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 96348 ];
 
 		return pClassPointer;
 	};
@@ -41685,7 +41673,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 96300 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 96358 ];
 
 		return pClassPointer;
 	};
@@ -41708,7 +41696,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 96306 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 96364 ];
 
 		return pClassPointer;
 	};
@@ -41733,7 +41721,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 96308 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 96366 ];
 
 		return pClassPointer;
 	};
@@ -41760,7 +41748,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 96319 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 96377 ];
 
 		return pClassPointer;
 	};
@@ -41784,7 +41772,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 96330 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 96388 ];
 
 		return pClassPointer;
 	};
@@ -41806,7 +41794,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 96332 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 96390 ];
 
 		return pClassPointer;
 	};
@@ -41829,7 +41817,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 96346 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 96404 ];
 
 		return pClassPointer;
 	};
@@ -41852,7 +41840,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 96364 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 96422 ];
 
 		return pClassPointer;
 	};
@@ -41879,7 +41867,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 96372 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 96430 ];
 
 		return pClassPointer;
 	};
@@ -41910,15 +41898,15 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 96387 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 96445 ];
 
 		return pClassPointer;
 	};
 
 	void eventOnSuccess ( );
-	class URPC_ProductsDebugAddProduct_TA* SetCertified ( int CertifiedId, struct FAddProductAttribute* StructInitializer_21253C1A4E5E72C2368C6CB40D7482E7 );
-	class URPC_ProductsDebugAddProduct_TA* SetRentalLength ( int RentalLengthDays, struct FAddProductAttribute* StructInitializer_65D4B138422B2429E50F5FA6A969A9A0 );
-	class URPC_ProductsDebugAddProduct_TA* SetExpirationTime ( struct FAddProductAttribute* StructInitializer_99403ADF454E189FBAB71EB6EC721935, struct FAddProductAttribute* StructInitializer_9666877342405A46098EE08052F65331 );
+	class URPC_ProductsDebugAddProduct_TA* SetCertified ( int CertifiedId, struct FAddProductAttribute* StructInitializer_6DF19F49444E8246CE8E8B86DDA299EE );
+	class URPC_ProductsDebugAddProduct_TA* SetRentalLength ( int RentalLengthDays, struct FAddProductAttribute* StructInitializer_BE108FD14FBAA86461F4C79D68ABB9AF );
+	class URPC_ProductsDebugAddProduct_TA* SetExpirationTime ( struct FAddProductAttribute* StructInitializer_49FBB3F0430915C934C413A05D90618C, struct FAddProductAttribute* StructInitializer_24AC96AC471B7CC9B210FDB447E444C7 );
 	class URPC_ProductsDebugAddProduct_TA* SetSeriesID ( int InSeriesID );
 	class URPC_ProductsDebugAddProduct_TA* SetProductID ( int InProductID );
 	class URPC_ProductsDebugAddProduct_TA* SetPlayerID ( struct FUniqueNetId InPlayerId );
@@ -41945,7 +41933,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 96422 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 96480 ];
 
 		return pClassPointer;
 	};
@@ -41980,7 +41968,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 96445 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 96503 ];
 
 		return pClassPointer;
 	};
@@ -42016,7 +42004,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 96472 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 96530 ];
 
 		return pClassPointer;
 	};
@@ -42048,14 +42036,14 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 96505 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 96563 ];
 
 		return pClassPointer;
 	};
 
 	void eventOnSuccess ( );
 	class URPC_PsyNetGetVanities_TA* AddVanityType ( unsigned char inType );
-	class URPC_PsyNetGetVanities_TA* AddPlayerIDs ( TArray< struct FUniqueNetId > InPlayerIDs, TArray< struct FUniqueNetId >* ConcatLocal_1699B8F441E9FB8E2CF072AA602C434E );
+	class URPC_PsyNetGetVanities_TA* AddPlayerIDs ( TArray< struct FUniqueNetId > InPlayerIDs, TArray< struct FUniqueNetId >* ConcatLocal_FE410C534A63FE38B46770B908321D6C );
 	class URPC_PsyNetGetVanities_TA* AddPlayerID ( struct FUniqueNetId InPlayerId );
 };
 
@@ -42074,7 +42062,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 96536 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 96594 ];
 
 		return pClassPointer;
 	};
@@ -42100,7 +42088,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 96566 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 96624 ];
 
 		return pClassPointer;
 	};
@@ -42128,7 +42116,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 96643 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 96701 ];
 
 		return pClassPointer;
 	};
@@ -42153,7 +42141,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 96668 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 96726 ];
 
 		return pClassPointer;
 	};
@@ -42179,7 +42167,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 96696 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 96754 ];
 
 		return pClassPointer;
 	};
@@ -42223,7 +42211,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 96710 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 96768 ];
 
 		return pClassPointer;
 	};
@@ -42273,7 +42261,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 96783 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 96841 ];
 
 		return pClassPointer;
 	};
@@ -42300,7 +42288,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 96807 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 96865 ];
 
 		return pClassPointer;
 	};
@@ -42325,7 +42313,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 96812 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 96870 ];
 
 		return pClassPointer;
 	};
@@ -42349,7 +42337,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 96817 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 96875 ];
 
 		return pClassPointer;
 	};
@@ -42373,7 +42361,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 96821 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 96879 ];
 
 		return pClassPointer;
 	};
@@ -42398,7 +42386,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 96827 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 96885 ];
 
 		return pClassPointer;
 	};
@@ -42426,7 +42414,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 96834 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 96892 ];
 
 		return pClassPointer;
 	};
@@ -42449,7 +42437,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 96842 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 96900 ];
 
 		return pClassPointer;
 	};
@@ -42475,7 +42463,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 96846 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 96904 ];
 
 		return pClassPointer;
 	};
@@ -42499,7 +42487,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 96857 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 96915 ];
 
 		return pClassPointer;
 	};
@@ -42527,7 +42515,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 96861 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 96919 ];
 
 		return pClassPointer;
 	};
@@ -42557,7 +42545,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 96876 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 96934 ];
 
 		return pClassPointer;
 	};
@@ -42582,7 +42570,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 96888 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 96946 ];
 
 		return pClassPointer;
 	};
@@ -42611,7 +42599,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 96893 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 96951 ];
 
 		return pClassPointer;
 	};
@@ -42639,7 +42627,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 96909 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 96967 ];
 
 		return pClassPointer;
 	};
@@ -42664,7 +42652,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 96916 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 96974 ];
 
 		return pClassPointer;
 	};
@@ -42690,7 +42678,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 96922 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 96980 ];
 
 		return pClassPointer;
 	};
@@ -42716,7 +42704,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 96928 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 96986 ];
 
 		return pClassPointer;
 	};
@@ -42742,7 +42730,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 96937 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 96995 ];
 
 		return pClassPointer;
 	};
@@ -42768,7 +42756,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 96946 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 97004 ];
 
 		return pClassPointer;
 	};
@@ -42793,7 +42781,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 96955 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 97013 ];
 
 		return pClassPointer;
 	};
@@ -42820,7 +42808,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 96969 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 97027 ];
 
 		return pClassPointer;
 	};
@@ -42844,7 +42832,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 96975 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 97033 ];
 
 		return pClassPointer;
 	};
@@ -42870,7 +42858,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 96980 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 97038 ];
 
 		return pClassPointer;
 	};
@@ -42894,7 +42882,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 96986 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 97044 ];
 
 		return pClassPointer;
 	};
@@ -42921,7 +42909,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 96996 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 97054 ];
 
 		return pClassPointer;
 	};
@@ -42944,7 +42932,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 96999 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 97057 ];
 
 		return pClassPointer;
 	};
@@ -42966,7 +42954,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 97002 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 97060 ];
 
 		return pClassPointer;
 	};
@@ -42988,7 +42976,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 97004 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 97062 ];
 
 		return pClassPointer;
 	};
@@ -43019,7 +43007,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 97030 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 97088 ];
 
 		return pClassPointer;
 	};
@@ -43051,7 +43039,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 97070 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 97128 ];
 
 		return pClassPointer;
 	};
@@ -43075,7 +43063,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 97082 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 97140 ];
 
 		return pClassPointer;
 	};
@@ -43100,7 +43088,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 97089 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 97147 ];
 
 		return pClassPointer;
 	};
@@ -43143,7 +43131,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 97096 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 97154 ];
 
 		return pClassPointer;
 	};
@@ -43182,7 +43170,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 97142 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 97200 ];
 
 		return pClassPointer;
 	};
@@ -43211,7 +43199,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 97164 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 97222 ];
 
 		return pClassPointer;
 	};
@@ -43237,7 +43225,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 97171 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 97229 ];
 
 		return pClassPointer;
 	};
@@ -43267,7 +43255,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 97178 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 97236 ];
 
 		return pClassPointer;
 	};
@@ -43297,7 +43285,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 97191 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 97249 ];
 
 		return pClassPointer;
 	};
@@ -43328,7 +43316,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 97200 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 97258 ];
 
 		return pClassPointer;
 	};
@@ -43356,7 +43344,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 97210 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 97268 ];
 
 		return pClassPointer;
 	};
@@ -43381,7 +43369,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 97218 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 97276 ];
 
 		return pClassPointer;
 	};
@@ -43417,7 +43405,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 97223 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 97281 ];
 
 		return pClassPointer;
 	};
@@ -43446,7 +43434,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 97246 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 97304 ];
 
 		return pClassPointer;
 	};
@@ -43481,7 +43469,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 97261 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 97319 ];
 
 		return pClassPointer;
 	};
@@ -43506,7 +43494,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 97277 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 97335 ];
 
 		return pClassPointer;
 	};
@@ -43532,7 +43520,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 97294 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 97352 ];
 
 		return pClassPointer;
 	};
@@ -43555,7 +43543,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 97301 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 97359 ];
 
 		return pClassPointer;
 	};
@@ -43583,7 +43571,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 97310 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 97368 ];
 
 		return pClassPointer;
 	};
@@ -43615,7 +43603,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 97366 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 97424 ];
 
 		return pClassPointer;
 	};
@@ -43645,7 +43633,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 97370 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 97428 ];
 
 		return pClassPointer;
 	};
@@ -43672,7 +43660,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 97391 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 97449 ];
 
 		return pClassPointer;
 	};
@@ -43704,7 +43692,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 97421 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 97479 ];
 
 		return pClassPointer;
 	};
@@ -43736,7 +43724,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 97496 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 97554 ];
 
 		return pClassPointer;
 	};
@@ -43762,7 +43750,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 97739 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 97797 ];
 
 		return pClassPointer;
 	};
@@ -43785,7 +43773,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 97751 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 97809 ];
 
 		return pClassPointer;
 	};
@@ -43813,7 +43801,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 97775 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 97833 ];
 
 		return pClassPointer;
 	};
@@ -43839,7 +43827,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if ( ! pClassPointer )
-			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 97782 ];
+			pClassPointer = (UClass*) UObject::GObjObjects()->Data[ 97840 ];
 
 		return pClassPointer;
 	};

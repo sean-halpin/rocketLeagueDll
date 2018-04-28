@@ -142,7 +142,7 @@ void OnAttach() {
 			if (!playerController->bDeleteMe) {
 				if (playerController->Car != NULL) {
 					if (((int)fDeltaTime) % 1 == 0) {
-						if (gameBall == NULL || gameBall->bDeleteMe) { continue }
+						if (gameBall == NULL || gameBall->bDeleteMe) { continue; }
 						printf("Car.X %.6f ", playerCar->Location.X);
 						printf("Car.Y %.6f ", playerCar->Location.Y);
 						printf("Car.Z %.6f \n", playerCar->Location.Z);
