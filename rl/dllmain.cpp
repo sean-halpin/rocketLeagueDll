@@ -50,20 +50,14 @@ void __declspec (naked) __stdcall hkProcessEventWP()
 		{
 			fDeltaTime += 1;
 			if (playerController == NULL && pCallObject != NULL) {
-				playerController = (APlayerController_TA*)pCallObject;
-				playerCar = playerController->Car;
-				gameEvent = playerController->GetGameEvent();
-				gameBall = gameEvent->ArenaSound->SoccarGame->GameBalls.Data[gameEvent->ArenaSound->SoccarGame->GameBalls.Count - 1];
+				if (fDeltaTime - fDeltaTime_InitGameStateLast > 1000) {
+					fDeltaTime_InitGameStateLast = fDeltaTime;
+					playerController = (APlayerController_TA*)pCallObject;
+					playerCar = playerController->Car;
+					gameEvent = playerController->GetGameEvent();
+					gameBall = gameEvent->ArenaSound->SoccarGame->GameBalls.Data[gameEvent->ArenaSound->SoccarGame->GameBalls.Count - 1];
+				}
 			}
-			//if (pCallObject != NULL && (playerController->bDeleteMe || playerCar->bDeleteMe || gameEvent->bDeleteMe || gameBall->bDeleteMe)) {
-			//	if (fDeltaTime - fDeltaTime_InitGameStateLast > 1000) {
-			//		fDeltaTime_InitGameStateLast = fDeltaTime;
-			//		playerController = (APlayerController_TA*)pCallObject;
-			//		playerCar = playerController->Car;
-			//		gameEvent = playerController->GetGameEvent();
-			//		gameBall = gameEvent->ArenaSound->SoccarGame->GameBalls.Data[gameEvent->ArenaSound->SoccarGame->GameBalls.Count - 1];
-			//	}
-			//}
 		}
 		else if (!strcmp(FunctionName, "Function Engine.PlayerController.Destroyed"))
 		{
@@ -146,11 +140,11 @@ void OnAttach() {
 			findInstanceAndHookVMT("PlayerController_TA TheWorld.PersistentLevel.PlayerController_TA", playerController);
 		}
 
-		if (playerController != NULL && playerController->Pawn != NULL) {
+		if (playerController != NULL) {
 			if (!playerController->bDeleteMe) {
 				if (playerController->Car != NULL) {
 					if (((int)fDeltaTime) % 1 == 0) {
-						if (gameBall == NULL || gameBall->bDeleteMe) { 
+						if (gameEvent != NULL && gameBall == NULL || gameBall->bDeleteMe) {
 							if (gameEvent->ArenaSound->SoccarGame->GameBalls.Data != NULL) {
 								gameBall = gameEvent->ArenaSound->SoccarGame->GameBalls.Data[gameEvent->ArenaSound->SoccarGame->GameBalls.Count - 1];
 							}
