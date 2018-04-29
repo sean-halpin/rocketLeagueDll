@@ -3205,20 +3205,20 @@ struct FTourStatus
 	struct FString                                     TeamName;                                         		// 0x0010 (0x000C) [0x0000000040400000]              ( CPF_NeedCtorLink | CPF_EditInlineNotify )
 };
 
-// ScriptStruct TAGame.GameEvent_GameEditor_TA.SpawnArchetypeData
-// 0x0008
-struct FSpawnArchetypeData
-{
-	class AActor*                                      Archetype;                                        		// 0x0000 (0x0004) [0x0000000000000000]              
-	int                                                MaxSpawnCount;                                    		// 0x0004 (0x0004) [0x0000000000000000]              
-};
-
 // ScriptStruct TAGame.GameEditor_Ring_TA.ActorTouchRecordData
 // 0x0010
 struct FActorTouchRecordData
 {
 	class AActor*                                      Actor;                                            		// 0x0000 (0x0004) [0x0000000000000000]              
 	struct FVector                                     TouchDirection;                                   		// 0x0004 (0x000C) [0x0000000000000000]              
+};
+
+// ScriptStruct TAGame.GameEvent_GameEditor_TA.SpawnArchetypeData
+// 0x0008
+struct FSpawnArchetypeData
+{
+	class AActor*                                      Archetype;                                        		// 0x0000 (0x0004) [0x0000000000000000]              
+	int                                                MaxSpawnCount;                                    		// 0x0004 (0x0004) [0x0000000000000000]              
 };
 
 // ScriptStruct TAGame.ProductMetrics_TA.PaintMetricsData
@@ -3314,14 +3314,6 @@ struct FMenuSequencePair
 struct FSubscriptionInfo
 {
 	unsigned char                                      UnknownData00[ 0x8 ];                             		// 0x0000 (0x0008) UNKNOWN PROPERTY: QWordProperty TAGame.GFxData_TourSubscriptions_TA.SubscriptionInfo.Id
-};
-
-// ScriptStruct TAGame.PlayerReportConfig_TA.PlayerReport
-// 0x0010
-struct FPlayerReport
-{
-	int                                                ReasonID;                                         		// 0x0000 (0x0004) [0x0000000000000000]              
-	struct FString                                     Reason;                                           		// 0x0004 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
 };
 
 // ScriptStruct TAGame.StoredChatData_TA.ChatData
@@ -3780,6 +3772,14 @@ struct FSequenceData
 	class UProductSlot_TA*                             Slot;                                             		// 0x0000 (0x0004) [0x0000000000000000]              
 	float                                              AnimDelay;                                        		// 0x0004 (0x0004) [0x0000000000000000]              
 	unsigned long                                      bAssetLoaded : 1;                                 		// 0x0008 (0x0004) [0x0000000000000000] [0x00000001] 
+};
+
+// ScriptStruct TAGame.PlayerReportConfig_TA.PlayerReportReason
+// 0x0010
+struct FPlayerReportReason
+{
+	int                                                ReasonID;                                         		// 0x0000 (0x0004) [0x0000000040000000]              ( CPF_EditInlineNotify )
+	struct FString                                     Reason;                                           		// 0x0004 (0x000C) [0x0000000040400000]              ( CPF_NeedCtorLink | CPF_EditInlineNotify )
 };
 
 // ScriptStruct TAGame.RPC_Challenge_MatchComplete_TA.StatData

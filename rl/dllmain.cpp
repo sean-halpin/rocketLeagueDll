@@ -11,9 +11,10 @@ DWORD	ProcessEventWP = 0;
 UINT	ProcessEventWP_Index = 0;
 
 float fDeltaTime = 0.0;
-AGameEvent_Soccar_TA * gameEvent = NULL;
+ABall_TA * gameBall = NULL;
+ACar_TA* playerCar = NULL;
+AGameEvent_TA * gameEvent = NULL;
 APlayerController_TA* playerController = NULL; //PlayerController_TA TheWorld.PersistentLevel.PlayerController_TA //APlayerController
-AActor* ball = NULL; ////Ball_TA TheWorld.PersistentLevel.Ball_TA //ABall_TA
 
 /* [...] */
 typedef void(__stdcall* tProcessEventWP) (UFunction*, void*, void*);
@@ -49,6 +50,9 @@ void __declspec (naked) __stdcall hkProcessEventWP()
 			fDeltaTime += 1;
 			if (playerController == NULL && pCallObject != NULL) {
 				playerController = (APlayerController_TA*)pCallObject;
+				playerCar = playerController->Car;
+				gameEvent = playerController->GetGameEvent();
+				gameBall = gameEvent->ArenaSound->SoccarGame->GameBalls.Data[gameEvent->ArenaSound->SoccarGame->GameBalls.Count - 1];
 			}
 		}
 		else if (!strcmp(FunctionName, "Function Engine.PlayerController.Destroyed"))
@@ -56,6 +60,8 @@ void __declspec (naked) __stdcall hkProcessEventWP()
 			if (pCallObject != NULL && playerController == pCallObject)
 			{
 				playerController = NULL;
+				gameEvent = NULL;
+				gameBall = NULL;
 			}
 		}
 	}
@@ -134,52 +140,46 @@ void OnAttach() {
 
 		if (playerController != NULL && playerController->Pawn != NULL) {
 			if (!playerController->bDeleteMe) {
-				if (playerController->Car != NULL &&
-					playerController->Car->BallIndicator != NULL &&
-					playerController->Car->BallIndicator->Ball != NULL) {
-					if (!playerController->Car->BallIndicator->Ball->bDeleteMe) {
-						if (((int)fDeltaTime) % 1 == 0) {
-							if (ball == NULL || ball->bDeleteMe) {
-								ball = playerController->Car->BallIndicator->Ball;
-							}
-							printf("Car.X %.6f ", playerController->Location.X);
-							printf("Car.Y %.6f ", playerController->Location.Y);
-							printf("Car.Z %.6f \n", playerController->Location.Z);
-							printf("Ball.X %.6f ", ball->Location.X);
-							printf("Ball.Y %.6f ", ball->Location.Y);
-							printf("Ball.Z %.6f \n", ball->Location.Z);
-							printf("Throttle %.6f ", playerController->LastInputs.Throttle);
-							printf("Steer %.6f ", playerController->LastInputs.Steer);
-							printf("Pitch %.6f ", playerController->LastInputs.Pitch);
-							printf("Yaw %.6f ", playerController->LastInputs.Yaw);
-							printf("Roll %.6f \n", playerController->LastInputs.Roll);
-							printf("DodgeForward %.6f ", playerController->LastInputs.DodgeForward);
-							printf("DodgeStrafe %.6f ", playerController->LastInputs.DodgeStrafe);
-							printf("bJump %lu ", playerController->LastInputs.bJump);
-							printf("bActivateBoost %lu ", playerController->LastInputs.bActivateBoost);
-							printf("bHoldingBoost %lu ", playerController->LastInputs.bHoldingBoost);
-							printf("bHandbrake %lu ", playerController->LastInputs.bHandbrake);
-							printf("bJumped %lu \n", playerController->LastInputs.bJumped);
-							//
-							dataFile << playerController->Location.X; dataFile << ",";
-							dataFile << playerController->Location.Y; dataFile << ",";
-							dataFile << playerController->Location.Z; dataFile << ",";
-							dataFile << ball->Location.X; dataFile << ",";
-							dataFile << ball->Location.Y; dataFile << ",";
-							dataFile << ball->Location.Z; dataFile << ",";
-							dataFile << playerController->LastInputs.Throttle; dataFile << ",";
-							dataFile << playerController->LastInputs.Steer; dataFile << ",";
-							dataFile << playerController->LastInputs.Pitch; dataFile << ",";
-							dataFile << playerController->LastInputs.Yaw; dataFile << ",";
-							dataFile << playerController->LastInputs.Roll; dataFile << ",";
-							dataFile << playerController->LastInputs.DodgeForward; dataFile << ",";
-							dataFile << playerController->LastInputs.DodgeStrafe; dataFile << ",";
-							dataFile << playerController->LastInputs.bJump; dataFile << ",";
-							dataFile << playerController->LastInputs.bActivateBoost; dataFile << ",";
-							dataFile << playerController->LastInputs.bHoldingBoost; dataFile << ",";
-							dataFile << playerController->LastInputs.bHandbrake; dataFile << ",";
-							dataFile << playerController->LastInputs.bJumped; dataFile << "\n";
-						}
+				if (playerController->Car != NULL) {
+					if (((int)fDeltaTime) % 1 == 0) {
+						if (gameBall == NULL || gameBall->bDeleteMe) { continue; }
+						printf("Car.X %.6f ", playerCar->Location.X);
+						printf("Car.Y %.6f ", playerCar->Location.Y);
+						printf("Car.Z %.6f \n", playerCar->Location.Z);
+						printf("Ball.X %.6f ", gameBall->Location.X);
+						printf("Ball.Y %.6f ", gameBall->Location.Y);
+						printf("Ball.Z %.6f \n", gameBall->Location.Z);
+						printf("Throttle %.6f ", playerController->LastInputs.Throttle);
+						printf("Steer %.6f ", playerController->LastInputs.Steer);
+						printf("Pitch %.6f ", playerController->LastInputs.Pitch);
+						printf("Yaw %.6f ", playerController->LastInputs.Yaw);
+						printf("Roll %.6f \n", playerController->LastInputs.Roll);
+						printf("DodgeForward %.6f ", playerController->LastInputs.DodgeForward);
+						printf("DodgeStrafe %.6f ", playerController->LastInputs.DodgeStrafe);
+						printf("bJump %lu ", playerController->LastInputs.bJump);
+						printf("bActivateBoost %lu ", playerController->LastInputs.bActivateBoost);
+						printf("bHoldingBoost %lu ", playerController->LastInputs.bHoldingBoost);
+						printf("bHandbrake %lu ", playerController->LastInputs.bHandbrake);
+						printf("bJumped %lu \n", playerController->LastInputs.bJumped);
+						//
+						dataFile << playerCar->Location.X; dataFile << ",";
+						dataFile << playerCar->Location.Y; dataFile << ",";
+						dataFile << playerCar->Location.Z; dataFile << ",";
+						dataFile << gameBall->Location.X; dataFile << ",";
+						dataFile << gameBall->Location.Y; dataFile << ",";
+						dataFile << gameBall->Location.Z; dataFile << ",";
+						dataFile << playerController->LastInputs.Throttle; dataFile << ",";
+						dataFile << playerController->LastInputs.Steer; dataFile << ",";
+						dataFile << playerController->LastInputs.Pitch; dataFile << ",";
+						dataFile << playerController->LastInputs.Yaw; dataFile << ",";
+						dataFile << playerController->LastInputs.Roll; dataFile << ",";
+						dataFile << playerController->LastInputs.DodgeForward; dataFile << ",";
+						dataFile << playerController->LastInputs.DodgeStrafe; dataFile << ",";
+						dataFile << playerController->LastInputs.bJump; dataFile << ",";
+						dataFile << playerController->LastInputs.bActivateBoost; dataFile << ",";
+						dataFile << playerController->LastInputs.bHoldingBoost; dataFile << ",";
+						dataFile << playerController->LastInputs.bHandbrake; dataFile << ",";
+						dataFile << playerController->LastInputs.bJumped; dataFile << "\n";
 					}
 				}
 			}
