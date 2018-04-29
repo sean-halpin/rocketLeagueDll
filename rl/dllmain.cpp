@@ -11,6 +11,7 @@ DWORD	ProcessEventWP = 0;
 UINT	ProcessEventWP_Index = 0;
 
 float fDeltaTime = 0.0;
+float fDeltaTime_InitGameStateLast = 0.0;
 ABall_TA * gameBall = NULL;
 ACar_TA* playerCar = NULL;
 AGameEvent_TA * gameEvent = NULL;
@@ -54,14 +55,21 @@ void __declspec (naked) __stdcall hkProcessEventWP()
 				gameEvent = playerController->GetGameEvent();
 				gameBall = gameEvent->ArenaSound->SoccarGame->GameBalls.Data[gameEvent->ArenaSound->SoccarGame->GameBalls.Count - 1];
 			}
+			//if (pCallObject != NULL && (playerController->bDeleteMe || playerCar->bDeleteMe || gameEvent->bDeleteMe || gameBall->bDeleteMe)) {
+			//	if (fDeltaTime - fDeltaTime_InitGameStateLast > 1000) {
+			//		fDeltaTime_InitGameStateLast = fDeltaTime;
+			//		playerController = (APlayerController_TA*)pCallObject;
+			//		playerCar = playerController->Car;
+			//		gameEvent = playerController->GetGameEvent();
+			//		gameBall = gameEvent->ArenaSound->SoccarGame->GameBalls.Data[gameEvent->ArenaSound->SoccarGame->GameBalls.Count - 1];
+			//	}
+			//}
 		}
 		else if (!strcmp(FunctionName, "Function Engine.PlayerController.Destroyed"))
 		{
-			if (pCallObject != NULL && playerController == pCallObject)
+			if (pCallObject != NULL)// && playerController == pCallObject)
 			{
 				playerController = NULL;
-				gameEvent = NULL;
-				gameBall = NULL;
 			}
 		}
 	}
@@ -142,7 +150,14 @@ void OnAttach() {
 			if (!playerController->bDeleteMe) {
 				if (playerController->Car != NULL) {
 					if (((int)fDeltaTime) % 1 == 0) {
-						if (gameBall == NULL || gameBall->bDeleteMe) { continue; }
+						if (gameBall == NULL || gameBall->bDeleteMe) { 
+							if (gameEvent->ArenaSound->SoccarGame->GameBalls.Data != NULL) {
+								gameBall = gameEvent->ArenaSound->SoccarGame->GameBalls.Data[gameEvent->ArenaSound->SoccarGame->GameBalls.Count - 1];
+							}
+							else {
+								continue;
+							}
+						}
 						printf("Car.X %.6f ", playerCar->Location.X);
 						printf("Car.Y %.6f ", playerCar->Location.Y);
 						printf("Car.Z %.6f \n", playerCar->Location.Z);
