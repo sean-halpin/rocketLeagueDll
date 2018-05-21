@@ -142,13 +142,17 @@ void OnAttach() {
 			if (!playerController->bDeleteMe) {
 				if (playerController->Car != NULL) {
 					if (((int)fDeltaTime) % 1 == 0) {
-						if (gameBall == NULL || gameBall->bDeleteMe) { continue; }
+						if (gameBall == NULL || gameBall->bDeleteMe) {
+							playerCar = playerController->Car;
+							gameBall = gameEvent->ArenaSound->SoccarGame->GameBalls.Data[gameEvent->ArenaSound->SoccarGame->GameBalls.Count - 1];
+							continue;
+						}
 						printf("Car.X %.6f ", playerCar->Location.X);
 						printf("Car.Y %.6f ", playerCar->Location.Y);
 						printf("Car.Z %.6f \n", playerCar->Location.Z);
-						printf("Car.Pitch %.6f ", playerCar->Rotation.Pitch);
-						printf("Car.Yaw %.6f ", playerCar->Rotation.Yaw);
-						printf("Car.Roll %.6f \n", playerCar->Rotation.Roll);
+						printf("Car.Pitch %d ", playerCar->Rotation.Pitch);
+						printf("Car.Yaw %d ", playerCar->Rotation.Yaw);
+						printf("Car.Roll %d \n", playerCar->Rotation.Roll);
 						printf("Ball.X %.6f ", gameBall->Location.X);
 						printf("Ball.Y %.6f ", gameBall->Location.Y);
 						printf("Ball.Z %.6f \n", gameBall->Location.Z);
@@ -162,7 +166,7 @@ void OnAttach() {
 						printf("Roll %.6f \n", playerController->LastInputs.Roll);
 						printf("DodgeForward %.6f ", playerController->LastInputs.DodgeForward);
 						printf("DodgeStrafe %.6f ", playerController->LastInputs.DodgeStrafe);
-						printf("bJump %lu ", playerController->LastInputs.bJump);
+						printf("bJump %lu \n", playerController->LastInputs.bJump);
 						printf("bActivateBoost %lu ", playerController->LastInputs.bActivateBoost);
 						printf("bHoldingBoost %lu ", playerController->LastInputs.bHoldingBoost);
 						printf("bHandbrake %lu ", playerController->LastInputs.bHandbrake);
